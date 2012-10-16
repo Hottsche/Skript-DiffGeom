@@ -22,21 +22,19 @@
 
 \begin{dfn*}
   Eine $n$-dimensionale \CmMark{topologische Mannigfaltigkeit} $M$ ist ein topologischer Hausdorff-Raum mit einer abzählbaren Basis der Topologie in dem zu jedem Punkt $p \in M$ eine offene Menge $U$ mit $p \in U$ existiert und ein Homöomorphismus $\phi \colon U \to V$ auf eine offene Menge $V \subset \R^{n}$.
-\end{dfn*}
 
 % Abbildung 1-1
 \CmPutSvg{1-1-topologische-mf}{8.5cm}
 
-\begin{dfn*}
   $\varphi' \circ \varphi^{-1}$ ist ein Homöomorphismus offener Mengen des $\R^n$ bzw. $\R^m$. Nach dem Satz von Brouwer (1912) gilt dann $m = n$. Damit ist die Dimension einer zusammenhängenden topologischen Mannigfaltigkeit eindeutig definiert.\\
 
-  Die Abbildung $\varphi \colon U \to V \subset \R^n$ heißt \CmMark{Karte} von $M$ um $p$, die Menge $U$ hei0t Kartengebiet.\\
+  Die Abbildung $\varphi \colon U \to V \subset \R^n$ heißt \CmMark{Karte} von $M$ um $p$, die Menge $U$ heißt \CmMark{Kartengebiet}.\\
 
-  Eine Menge von Karten $\mathcal A = \{(\varphi_{\alpha}, U_{\alpha}) \mid \alpha \ in J \}$ heißt \CmMark{Atlas} von $M$, falls $\bigcup_{\alpha \in J}U_{\alpha} = M$.\\
+  Eine Menge von Karten $\mathcal A = \{(\varphi_{\alpha}, U_{\alpha}) \mid \alpha \in J \}$ heißt \CmMark{Atlas} von $M$, falls $\bigcup_{\alpha \in J}U_{\alpha} = M$.\\
 
   Ein Atlas $\mathcal A$ von $M$ heißt $C^k$-Atlas, wenn für alle $\alpha, \beta \in J$ mit $U_{\alpha} \cap U_{\beta} \neq \emptyset$ der sogenannte \CmMark{Kartenwechsel}:
   \begin{align*}
-    \varphi_{\beta} \circ \varphi_{\alpha}^{-1}\colon \varphi_{\alpha}(U_{\alpha} \cap U_{\beta} \to \varphi_{\beta}(U_{\alpha} \cap U_{\beta})
+    \varphi_{\beta} \circ \varphi_{\alpha}^{-1}\colon \varphi_{\alpha}(U_{\alpha} \cap U_{\beta}) \to \varphi_{\beta}(U_{\alpha} \cap U_{\beta})
   \end{align*}
   ein $C^k$-Diffeomorphismus ist.\\
 
@@ -44,9 +42,9 @@
   \CmPutSvg{1-2-kartenwechsel}{8cm}
 
 
-  Eine Karte $\psi \colon U \to V$ von $M$ heißt \CmMark{verträglich} mit einem $C^k$-Atlas $\mathcal A  \{(\varphi_{\alpha},U_{\alpha}) \mid \alpha \in J\}$ wenn jeder Kartenwechsel
+  Eine Karte $\psi \colon U \to V$ von $M$ heißt \CmMark{verträglich} mit einem $C^k$-Atlas $\mathcal A = \{(\varphi_{\alpha},U_{\alpha}) \mid \alpha \in J\}$ wenn jeder Kartenwechsel
   \begin{align*}
-    \varphi_{\alpha} \circ \psi(U \cap U_{\alpha}) \to \varphi_{\alpha}(U \cap U_{alpha})
+    \varphi_{\alpha} \circ \psi(U \cap U_{\alpha}) \to \varphi_{\alpha}(U \cap U_{\alpha})
   \end{align*}
   ein $C^k$-Diffeomorphismus ist, i.e. $\mathcal A' = \mathcal A \cup \{(\psi, U)\}$ ist ebenfalls ein $C^k$-Atlas.\\
 
@@ -79,7 +77,7 @@
     \begin{align*}
       \varphi' \colon U' = \{(\sin t, \cos t) \mid t \in (-\pi,\pi)\} \to (-\pi,\pi)
     \end{align*}
-    ebenfalls. $\mathcal A  \{(\varphi, U), (\varphi',U')\}$ ist ein Atlas von $S^1$, denn $U \cup U' = S^1$.
+    ebenfalls. $\mathcal A = \{(\varphi, U), (\varphi',U')\}$ ist ein Atlas von $S^1$, denn $U \cup U' = S^1$.
     \begin{align*}
       & \varphi' \circ \varphi^{-1} \colon \varphi(U \cap U') \to \varphi'(U \cap U')\\
       & (0,\pi)\cup(\pi,2\pi) \to (-\pi,0)\cup(0,\pi), t \mapsto \begin{cases}
