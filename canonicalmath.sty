@@ -209,7 +209,7 @@
   \RequirePackage{marginnote}
 
   \newcommand{\CmMarginThmHead}[1]{\textsf{\textbf{#1}}}
-  \newcommand{\CmMarginThmNum}{\arabic{section}.\ifthenelse{\boolean{enableDeepNumbering}}{\arabic{subsection}}{}.\arabic{thmglobal}\xspace}
+  \newcommand{\CmMarginThmNum}{\arabic{section}.\ifthenelse{\boolean{enableDeepNumbering}}{\arabic{subsection}.}{}\arabic{thmglobal}\xspace}
   \newcommand{\CmMarginThmDescription}[1][]{\ifthenelse{\isempty{#1}}{}{ \textit{#1}}}
   \newlength{\cmMarginThmSpaceBottom}
   \setlength{\cmMarginThmSpaceBottom}{0.3cm}

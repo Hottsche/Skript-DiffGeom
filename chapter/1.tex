@@ -7,9 +7,7 @@
 %% Mitschrieb und Textsatz von Jan-Bernhard Kordaß.
 %%
 
-\section{Übersicht}
-
-% ABB 1.1
+\section*{Übersicht}
 
 \begin{itemize}
 \item Mannigfaltigkeiten, Tangentialvektoren
@@ -23,16 +21,11 @@
 \section{Differenzierbare Mannigfaltigkeiten}
 
 \begin{dfn*}
-  Eine $n$-dimensionale \CmMark{topologische Mannigfaltigkeit} $M$ ist ein topologischer Hausdorff-Raum mit einer abzählbaren Basis der Topologie in dem zu jedem Punkt $p \in M$ eine offene Menge $U$ mit $p \in U$ existiert und ein Homöomorphismus
-  \begin{align*}
-    \phi \colon U \to V
-  \end{align*}
-  auf eine offene Menge $V \subset \R^{n}$.
+  Eine $n$-dimensionale \CmMark{topologische Mannigfaltigkeit} $M$ ist ein topologischer Hausdorff-Raum mit einer abzählbaren Basis der Topologie in dem zu jedem Punkt $p \in M$ eine offene Menge $U$ mit $p \in U$ existiert und ein Homöomorphismus $\phi \colon U \to V$ auf eine offene Menge $V \subset \R^{n}$.
 \end{dfn*}
 
-% Bem: Satz von Brouwer: Sind zwei Mengen im $\R^n$ und $\R^{m}$ homöomorph, dann gilt schon $n = m$. (Schwer zu beweisen.)
-
-% ABB 1.2
+% Abbildung 1-1
+\CmPutSvg{1-1-topologische-mf}{8.5cm}
 
 \begin{dfn*}
   $\varphi' \circ \varphi^{-1}$ ist ein Homöomorphismus offener Mengen des $\R^n$ bzw. $\R^m$. Nach dem Satz von Brouwer (1912) gilt dann $m = n$. Damit ist die Dimension einer zusammenhängenden topologischen Mannigfaltigkeit eindeutig definiert.\\
@@ -47,7 +40,9 @@
   \end{align*}
   ein $C^k$-Diffeomorphismus ist.\\
 
-  % ABB 1.3
+  % Abbildung 1-2
+  \CmPutSvg{1-2-kartenwechsel}{8cm}
+
 
   Eine Karte $\psi \colon U \to V$ von $M$ heißt \CmMark{verträglich} mit einem $C^k$-Atlas $\mathcal A  \{(\varphi_{\alpha},U_{\alpha}) \mid \alpha \in J\}$ wenn jeder Kartenwechsel
   \begin{align*}
@@ -60,19 +55,21 @@
 \end{dfn*}
 
 \begin{dfn}[differenzierbare Mannigfaltigkeit]
-  Eine \CmMark{differenzierbare Mannigfaltigkeit} der Klasse $C^k$ ist eine topologische Mannigfaltigkeit zusammen mit einer $C^{k}$-differenzierbaren Struktur.
+  Eine \CmMark{differenzierbare Mannigfaltigkeit} der Klasse $C^k$ ist eine topologische Mannigfaltigkeit zusammen mit einer $C^{k}$-differenzierbaren Struktur.\\
 \end{dfn}
 
 \begin{bsp}
+  Einige Beispiele für glatte Mannigfaltigkeiten:
   \begin{enumerate}
   \item $M = \R^n, \mathcal A = \{(\Id_{\R^n},\R^n)\}$
   \item $M \subset \R^n$ offen, $\mathcal A = \{(\imath_{M},M)\}$
   \item $S^1 \subset \R^2$ ist eine eindimensionale $C^{\infty}$-Mannigfaltigkeit:
     \begin{align*}
-      \mathcal A = \{sin t, \cos t) \mid t \in (0,2\pi)\
+      \mathcal A = \{(sin t, \cos t) \mid t \in (0,2\pi)\}
     \end{align*}
 
-    % ABB 1.4
+    % Abbildung 1-3
+    \CmMarginSvg[-2cm]{1-3-karten-der-s1}{3cm}
 
     ist offen in $S^1$ und
     \begin{align*}
@@ -101,7 +98,8 @@
 
   \item $S^n = \{(x^0, x^1, \ldots, x^n) \mid \sum_{i = 0}^n(x^{i})^2 = 1\}$.\\
 
-    %% ABB 1.5: S2
+    %% Abbildung 1.4
+    \CmMarginSvg{1-4-s3-sphaere}{3.5cm}
 
     Betrachte den Nordpol $N = (1,0,\ldots,0)$ und den Südpol $S = (-1,0,\ldots,0)$ und die Abbildung
     \begin{align*}
@@ -116,36 +114,41 @@
 
 \begin{dfn}[Differenzierbare Abbildungen]
   
-% ABB 1.6
+% Abbildung 1-5
+\CmPutSvg{1-5-glatte-abb}{9cm}
 
 Eine stetige Abbildung $f \colon M \to N$ zwischen glatten Mannigfaltigkeiten $M$ und $N$ heißt \CmMark{glatt} ($C^{\infty}$-differenzierbar), wenn es zu jedem $p \in M$ Karten $(\varphi, U)$ in $M$ um $p$ und $(\varphi', U')$ in $N$ um $f(p)$ gibt, so dass $\acute{\varphi} \circ f\circ\varphi^{-1}$ glatt ist.\\
 
-Die Menge aller glatten Abbildungen von $M$ nach $N$ wied $C^{\infty}(M,N)$ genannt.
+Die Menge aller glatten Abbildungen von $M$ nach $N$ wird $C^{\infty}(M,N)$ genannt.
 
 \end{dfn}
 
-\textbf{Konvention}: Ab jetzt sind alle Mannigfaltigkeiten, wie auch alle Abbildungen glatt.
+\textbf{Konvention}: Ab jetzt seien zunächst alle Mannigfaltigkeiten, wie auch alle Abbildungen als glatt vorrausgesetzt.
 
 \begin{bem}
   Da Kartenwechsel $C^{\infty}$ sind, gilt obige Bedingung automatisch für alle Karten von $M$ und $N$ (evtl. nach Einschränkung).
 \end{bem}
 
 \begin{bsp}
+  Es folgen zwei Beispiele für diffenrenzierbare Abbildungen:
   \begin{enumerate}
-  \item $(\varphi,U) \in \mathcal A \to \varphi \in C^{\infty}(U,\R^n)$, $\Id_{\R^n}\circ \varphi \circ \varphi^{-1} = \varphi \circ \varphi^{-1} \in C^{\infty}$.
+  \item $(\varphi,U) \in \mathcal A \Rightarrow \varphi \in C^{\infty}(U,\R^n)$, denn
+    \begin{align*}
+      \Id_{\R^n}\circ \varphi \circ \varphi^{-1} = \varphi \circ \varphi^{-1} \in C^{\infty}.
+    \end{align*}
   \item $f \in C^{\infty}(M,N), \ g \in C^{\infty}(N,P) \Rightarrow g \circ f \in C^{\infty}(M,P)$, denn
     \begin{align*}
-      \varphi_p \circ g \circ f \circ \varphi^{-1}_m = (\varphi_p \circ g \circ \varphi_n^{-1}) \circ (\varphi_n \circ f \circ \varphi_m^{-1}) \in C^{\infty}
+      \varphi_p \circ g \circ f \circ \varphi^{-1}_m = (\varphi_p \circ g \circ \varphi_n^{-1}) \circ (\varphi_n \circ f \circ \varphi_m^{-1}) \in C^{\infty}.
     \end{align*}
   \end{enumerate}
 \end{bsp}
 
-\begin{dfn*}
+\begin{dfn}[Diffeomorphismus]
   Eine Abbildung $f \colon M \to N$ heißt \CmMark{Diffeomorphismus}, wenn $f$ bijektiv ist und $f$, sowie $f^{-1}$ $C^{\infty}$-Abbildungen von $M$ nach $N$ sind. Insbesondere haben $M$ und $N$ in diesem Fall dieselbe Dimension.\\
 
 Die Menge der Diffeomorphismen von $M$ nach $N$ wird mit $\Diff(M,N)$ bezeichnet. Die Menge der Diffeomorphismen von $M$ nach $M$ wird mit $\Diff(M)$ bezeichnet. $(\Diff(M), \circ)$ ist eine Gruppe.
 
-\end{dfn*}
+\end{dfn}
 
 %%% Local Variables: 
 %%% mode: latex

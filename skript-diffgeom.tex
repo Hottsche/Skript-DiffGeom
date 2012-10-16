@@ -5,25 +5,50 @@
 %% Mitschrieb und Textsatz von Jan-Bernhard Kordaß.
 %%
 
-\documentclass[a4paper, 11pt]{scrartcl}
+\documentclass[a4paper, twoside, 11pt]{scrartcl}
 
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 
 \usepackage[ngerman]{babel}
-\usepackage[left=2.5cm,right=2cm,top=2cm,bottom=3cm]{geometry}
+\usepackage[a4paper, top=2.5cm, bottom=3cm, left=2.5cm, right=5cm]{geometry}
 
 \usepackage{fancyhdr}
 
+\usepackage{marginnote}
+
 \usepackage{canonicalsync}
-\CsUsePackage[/home/JB/Projects/tex-package-canonical-math]{canonicalmath}
+\CsUsePackage[/home/JB/Projects/tex-package-canonical-sync/]{canonicalsync}
+\CsUsePackageWithOptions[/home/JB/Projects/tex-package-canonical-math/]{canonicalmath}{marginthm}
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{transparent}
+\usepackage{wrapfig}
+
+\graphicspath{{img/}}
+
+\parindent0pt
+
+\setlist[enumerate]{label=(\arabic*), itemsep=0cm, leftmargin=1cm}
 
 \begin{document}
 
-\CmHeadline[WS 2012/13]{Vorlesung Differentialgeometrie}{Gehalten von Dr. Grensing}{Jan-Bernhard Kordaß}
+\CmHeadline{Vorlesung Differentialgeometrie}{Gehalten von Dr. Grensing}{Wintersemester 2012/13}
 
 \vspace{0.5cm}
+
+Version \textbf{0.01} \quad Build: \today
+
+\paragraph{Wichtiger Hinweis:}
+Dies ist eine Zusammenfassung der Vorlesung "`Differentialtopologie"' von Dr. Grensing im Wintersemester 2012/13 am KIT und dient lediglich dazu die Inhalte für meine eigene Verwendung besser zusammenzufassen und aufzubereiten. Es besteht weder eine Garantie über Vollständigkeit, noch Korrektheit der enthaltenen Aussagen.\\
+
+Bei Anmerkungen bzw. beim Auffinden von Fehlern schicken Sie bitte eine E-Mail an
+\begin{center}
+  jan-bernhard.kordass@student.kit.edu
+\end{center}
 
 \input{chapter/1}
 

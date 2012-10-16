@@ -6,17 +6,17 @@
 %% work the same with other package.
 %% 
 %% Copyright (C) 2012 Jan-Bernhard Kordaß
-%%
+%% 
 %% This program is free software: you can redistribute it and/or modify
 %% it under the terms of the GNU General Public License as published by
 %% the Free Software Foundation, either version 3 of the License, or
 %% (at your option) any later version.
-%%
+%% 
 %% This program is distributed in the hope that it will be useful,
 %% but WITHOUT ANY WARRANTY; without even the implied warranty of
 %% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 %% GNU General Public License for more details.
-%%
+%% 
 %% You should have received a copy of the GNU General Public License
 %% along with this program.  If not, see <http://www.gnu.org/licenses/>.
 %% 
@@ -26,12 +26,18 @@
 \RequirePackage{xifthen}
 
 
+
+\newboolean{csUseWithOptions}
+\setboolean{csUseWithOptions}{false}
+\newcommand{\csLastOptions}{}
+
+
 % update functionality
 
 \newcommand{\CsUsePackage}[2][]{
   % check if there is a sync path given
   \ifthenelse{\isempty{#1}}{
-    \RequirePackage{#2}
+    \CsRequireIntern{#2}
   }{
     % lets see if the update functionality can be used (all relevant files exist}
     \IfFileExists{#1/#2.sty}{
@@ -52,7 +58,7 @@
         {\immediate\write18{cp #1/#2.sty #2.sty}}
       }
       % everything should be in the right place now, so require package
-      \RequirePackage{#2}
+      \CsRequireIntern{#2}
 
       % shell escape is turned of, the only thing we can do now is inform
       \else
@@ -65,11 +71,26 @@
       \fi
 
       % Though shell escape is not working, require package anyway
-      \RequirePackage{#2}
+      \CsRequireIntern{#2}
 
       \fi
     }{
       \PackageWarning{canonicalsync}{The package file (#2) was not found at the given location (#1). Please specify a valid development location if you intended to use the synchronisation feature.}
     }
   }
+}
+
+\newcommand{\CsRequireIntern}[1]{
+  \ifthenelse{\boolean{csUseWithOptions}}{
+    \RequirePackage[\csLastOptions]{#1}
+  }{
+    \RequirePackage{#1}
+  }
+}
+
+\newcommand{\CsUsePackageWithOptions}[3][]{%
+  \setboolean{csUseWithOptions}{true}
+  \expandafter \renewcommand{\csLastOptions}{#3}%
+  \CsUsePackage[#1]{#2}
+  \setboolean{csUseWithOptions}{false}
 }
