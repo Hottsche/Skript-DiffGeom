@@ -1,0 +1,2 @@
+preamble "\\thispagestyle{fancy}\n\n\\begin{theindex}\\thispagestyle{fancy}\n"
+postamble "\n\n\\end{theindex}\n"
