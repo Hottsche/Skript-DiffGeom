@@ -1,0 +1,33 @@
+# Temporary files
+*~
+*.out
+.goutputstream-*
+*\#*\#
+*.\#*
+
+# Tex files
+*.aux
+*.idx
+*.ilg
+*.ind
+*.log
+*.toc
+*.log
+*.bbl
+*.blg
+*_region_.tex
+
+# Editor files
+*.kilepr
+
+# Material and Backup files
+mat
+*.tar.gz
+*.backup
+
+# Release tex files
+*.pdf
+*.ps
+*.dvi
+*.html
+*/ltxpng/*
