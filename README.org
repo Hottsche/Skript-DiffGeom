@@ -1,0 +1,22 @@
+* Skript-DiffGeom
+  
+  Skript zur Vorlesung [[http://www.math.kit.edu/iag5/lehre/difgeo2012w/de]["Differentialgeometrie"]] bei Dr. Grensing am Karlsruher Institut für Technologie (KIT) im Wintersemester 2012/13. 
+
+** Fehler und Korrekturen
+   Jeder, dem ein Fehler auffällt, der möge bitte wahlweise eine oder mehrere der folgenden Optionen nutzen:
+
+   1) Forken, Korrigieren und einen Pullrequest stellen,
+   2) Einen [[https://github.com/Tarcvar/Skript-DiffGeom/issues/new][kurzen Fehlerbericht]] verfassen, oder
+   3) Mir oder anderen Mitarbeitern eine E-Mail schicken. (Meine Adresse ist im PDF aufgeführt.)
+      
+   Jede Mithilfe wird selbstverständlich in den Credits erwähnt!
+
+** PDF Release
+   Für gewöhnlich werde ich nach jeder größeren Änderung ein PDF auf dem "pdf-release" Branch veröffentlichen und in der folgenden Liste verlinken.
+
+   | Vorlesungen      | Link |
+   |------------------+------|
+   | <2012-10-16 Tue> | -    |
+
+** Hinweise
+   Im LaTeX Quelltext werden sehr häufig Funktionen aus meinem Paket [[https://github.com/Tarcvar/canonical-math]["Canonical Math"]] verwendet. Dies wird aber in diesem Repository mitgeliefert, stellt also keinen weiteren Einrichtungsaufwand dar. Eine rudimentäre Befehlsdokumentation findet sich [[https://github.com/Tarcvar/canonical-math/blob/master/doc/canonical-math-doc.org?][hier]].
