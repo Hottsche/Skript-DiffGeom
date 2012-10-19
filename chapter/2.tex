@@ -1,0 +1,98 @@
+%%
+%% 2. Vorlesung 19.10.12, Fortsetung
+%% 
+%% Skript Differentialgeometrie im Wintersemester 12/13
+%% Zur Vorlesung von Dr. Grensing am KIT Karlsruhe
+%%
+%% Mitschrieb und Textsatz von Jan-Bernhard Kordaß.
+%%
+
+\section{Tangentialvektoren und Tangentialräume}
+
+% Abb 2/3
+
+Betrachte in der nebenstehenden Abbildung eine differenzierbare Kurve $c \colon (-\varepsilon,\varepsilon) \to S^2$ mit $c(0) = p$. Dann gilt:
+\begin{align*}
+  0 = \difffrac{t} \left<c(t),c(t)\right> = 2\left<c(0),c(0)\right> = 2 \left<c(0),p\right> 
+  \Rightarrow c(0) \in p^{\perp}.
+\end{align*}
+
+% Bemerke $1 = \left<c(t),c(t)\right>$
+
+Es sei $M$ eine glatte Mannigfaltigkeit und es seien glatte Kurven $c_i\colon (-\varepsilon_i,\varepsilon_i) \to M$ mit $c_1(0) = c_2(0) = p \in M$ gegeben.\\
+
+Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\varphi,U)$ von $M$ und $p$ gibt, so dass 
+\begin{align*}
+  \difffrac{t}|_{t=0}(\varphi \circ c_1) = \difffrac{t}|_{t=0}(\varphi \circ c_2)
+\end{align*}
+gilt.
+
+\begin{lemma}
+  Der oben definierte Begriff der Äquivalenz ist unabhängig von der Wahl der Karte.
+\end{lemma}
+
+\begin{proof}
+  Es sei $(\psi,V)$ eine weitere Karte von $M$ um $p$. Dann gilt:
+  \begin{align*}
+    \difffrac{t}|_{t=0}(\psi\circ c_1) & = \difffrac{t}|_{t=0}(\psi\circ\varphi^{-1}\circ\varphi \circ c_1) = \D (\psi \circ \varphi^{-1})|_{\varphi(p)} \cdot \difffrac{t}|_{t=0}(\varphi \circ c_1\\
+    & = \D(\psi \circ \varphi^{-1})|_{\varphi(p)} \cdot \difffrac{t}|_{t=0}(\varphi \circ c_2) ) \ldots = \difffrac{t}|_{t=0}(\psi \circ c_2).
+  \end{align*}
+\end{proof}
+
+\begin{dfn}[Geometrische Definition des Tangentialraums]
+  Es sei $M$ eine glatte Mannigfaltigkeit und $p \in M$. Ein (geometrischer) \CmMark{Tangentialvektor} an $M$ in $p$ ist eine Äquivalenzklasse von Kurven $c$ mit $c(0) = p$. Die Menge
+  \begin{align*}
+    \T_{p}^{\text{geo}}M = \{ [c] \mid c \colon (-\varepsilon,\varepsilon) \to M \text{ glatt}, c(0) = p\}
+  \end{align*}
+  heißt (geometrischer) \CmMark{Tangentialraum} an $M$ in $p$.
+\end{dfn}
+
+\begin{bem}
+  Mit den Bezeichnungen wie oben ist die folgende Abbildung bijektiv:
+  \begin{align*}
+    A \colon \T_p^{\text{geo}}M \to \R^n, [c] \mapsto \difffrac{t}|_{t=0}(\varphi \circ c).
+  \end{align*}
+\end{bem}
+
+\begin{proof}
+  Zu $v \in \R^n$ sei $B(v) = [t \mapsto \varphi^{-1}(\varphi(p) + tv)]$ - die Äquivalenzklasse der abgebildeten Kurve auf der Mannigfaltigkeit.
+
+  % Abb 2/4
+
+  \begin{align*}
+    & A B(v) = \difffrac{t}|_{t=0}(\varphi \circ B(v)) = \difffrac{t}|_{t=0}(\varphi \circ (\varphi^{-1}(\varphi(p) + tv)) = \difffrac{t}|_{t=0}(\varphi(p) + tv) = v.\\
+    & v_c = \difffrac{t}|_{t=0}(\varphi \circ c)\\
+    & B A (\underbrace{[c]}_{\ni c}) = B(v_c) = [t \mapsto \varphi^{-1}(\varphi(p + tv_c)].
+  \end{align*}
+  Die Kurven $c$ und $t \mapsto \varphi^{-1}(\varphi(p) + tv_c)$ sind äquivalent, also ist $B A[c] = [c]$ und somit $A$ bijektiv.
+\end{proof}
+
+Damit erhält $\T_p^{\text{geo}}M$ die Struktur eines reellen Vektorraumes vermöge der folgenden Verknüpfung:
+\begin{align*}
+  \lambda[c_1] + \mu[c_2] = A^{-1}(\lambda A[c_1]+ \mu A[c_2]).
+\end{align*}
+Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + t(\lambda v_1 + \mu v_2))$ mit $v_i = \difffrac{t}|_{t=0}(\varphi \circ c_i)$.
+
+\begin{lemma}
+  Die oben definierte Lineare Struktur ist unabhängig von der Wahl der Karte
+\end{lemma}
+
+\begin{proof}
+  Es sei $(\psi, V)$ eine Karte von $M$ um $p$ und $A'[c] = \difffrac{t}|_t(\psi \circ c)$. Dann gilt:
+  \begin{align*}
+    A A'^{-1}(v) & = \difffrac{t}|_{t=0}(\varphi \circ (\psi^{-1} (\psi(p) + tv)))\\
+    & = \D(\varphi \circ \psi^{-1})|_{\psi(p)} \cdot \difffrac{t}|_{t=0}(\psi \circ \psi^{-1}(\varphi(p) + tv)) = \D (\varphi \circ \varphi^{-1}) \cdot v.
+  \end{align*}
+  Also ist $A A'^{-1}$ linear,
+  \begin{align*}
+    A'^{-1}(\lambda A'[c_1] + \mu A'[c_2]) & = A^{-1}(A A'^{-1}(\lambda A'[c_1] + \mu A'[c_2]))\\
+    & = A^{-1} (\lambda A A'^{-1}[c_1] + \mu A A'^{-1} [c_2])\\
+    & = A^{-1}(\lambda A [c_1] + \mu A [c_2]).
+  \end{align*}
+\end{proof}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../skript-diffgeom"
+%%% End: 
+
