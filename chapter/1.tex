@@ -159,9 +159,9 @@ Da $M$ und $N$ hausdorffsch sind und abzählbare Basen ihrer Topologie besitzen 
 
 Sind $(\varphi, U)$ und $(\psi, V)$ Karten von $M$ bzw. $N$, so ist $\varphi \times \psi$ ein Homöomorphismus von $U \times V$ auf sein offenes Bild in $\R^m \times \R^n \cong \R^{m \times n}$.\\
 
-Seien $\mathcal A = \{(\varphi_{\alpha}, U_{\alpha} \mid \alpha \in J \}$ und $\mathcal A' = \{(\psi_{\beta}, U_{\beta}) \mid \beta \in I\}$ $C^{\infty}$ Atlanten von $M$ und $N$. Dann ist $\mathcal B = \{(\varphi_{\alpha}\times\psi_{\beta},U_{\alpha}\times U_{\beta} \mid (\alpha, \beta) \in I \times J\}$ ein $C^{\infty}$-Atlas von $M\times N$, denn 
+Seien $\mathcal A = \{(\varphi_{\alpha}, U_{\alpha}) \mid \alpha \in I \}$ und $\mathcal A' = \{(\psi_{\beta}, U_{\beta}) \mid \beta \in J\}$ $C^{\infty}$ Atlanten von $M$ und $N$. Dann ist $\mathcal B = \{(\varphi_{\alpha}\times\psi_{\beta},U_{\alpha}\times U_{\beta}) \mid (\alpha, \beta) \in I \times J\}$ ein $C^{\infty}$-Atlas von $M\times N$, denn 
 \begin{align*}
-  (\varphi_{\alpha} \times \psi_{\beta}) \circ (\varphi_{\mu} \times \psi_{\nu})^{-1} = (\varphi_{\alpha} \circ \varphi_{nu}^{-1}) \times (\psi_{\beta} \circ \psi_{nu}^{-1})
+  (\varphi_{\alpha} \times \psi_{\beta}) \circ (\varphi_{\mu} \times \psi_{\nu})^{-1} = (\varphi_{\alpha} \circ \varphi_{\mu}^{-1}) \times (\psi_{\beta} \circ \psi_{\nu}^{-1})
 \end{align*}
 ist ein $C^{\infty}$-Diffeomorphismus.\\
 
@@ -169,6 +169,10 @@ Damit ist $M\times N$ in kanonischer Weise eine glatte $(m+n)$-dimensionale Mann
 Die kanonischen Projektionen $\pi_M\colon M\times N \to M, \ \pi_N\colon M \times N \to N$ und die Abbildung $\tau \colon M \times N \to N \times M, (p,q) \mapsto (q,p)$ sind glatte Abbildungen.
 
 \begin{bsp}
+  Es folgen einige Beispiele für Produkt-Mannigfaltigkeiten:
+
+\CmMarginSvg{1-6-torus-als-produkt}{3cm}
+
   \begin{itemize}
   \item Zylinder $\R \times S^1$
   \item $T^n = \times_{i=1}^nS^1$
@@ -181,7 +185,7 @@ Die kanonischen Projektionen $\pi_M\colon M\times N \to M, \ \pi_N\colon M \time
 \begin{dfn}[Untermannigfaltigkeit]
   Es sei $N$ eine glatte Mannigfaltigkeit. Eine Teilmenge $M \subset N$ heißt \CmMark{Untermannigfaltigkeit} von $N$, wenn für alle $p \in M$ eine Karte $(\varphi, U)$ von $N$ um $p$ existiert, so dass
   \begin{align*}
-    \varphi(U \cap M) = \varphi(U) \cap \underbrace{(\R^m \times \{0\}}_{\mathclap{\{(x^1,\ldots,x^m,0,\ldots,0) \in \R^m\times\R^{n-m} \cong \R^{n} \}}})
+    \varphi(U \cap M) = \varphi(U) \cap \underbrace{(\R^m \times \{0\})}_{\mathclap{\{(x^1,\ldots,x^m,0,\ldots,0) \in \R^m\times\R^{n-m} \cong \R^{n} \}}}
   \end{align*}
 gilt. Eine solche Karte heißt an $N$ \CmMark{adaptierte Karte}. Die Zahl $n-m$ heißt \CmMark{Kodimension} von $M$ in $N$.
 
@@ -190,16 +194,16 @@ gilt. Eine solche Karte heißt an $N$ \CmMark{adaptierte Karte}. Die Zahl $n-m$ 
 \end{dfn}
 
 \begin{lemma}
-  Es seien $N$ eine $n$-dimensionale glatte Mannigfaltigkeit und $M \subset N$ eine $m$-dimensionale Untermannigfaltigkeit von $M$. Bezeichnet $\mathcal A$ einen $C^{\infty}$-Atlas von $N$ und $\pi \colon \R^n \to \R^m, (x^1, \ldots, x^m,\ldots,x^n) \mapsto (x^1, \ldots, x^m)$, so ist
+  Es seien $N$ eine $n$-dimensionale glatte Mannigfaltigkeit und $M \subset N$ eine $m$-dimensionale Untermannigfaltigkeit von $N$. Bezeichnet $\mathcal A$ einen $C^{\infty}$-Atlas von $N$ und $\pi \colon \R^n \to \R^m, (x^1, \ldots, x^m,\ldots,x^n) \mapsto (x^1, \ldots, x^m)$, so ist
   \begin{align*}
-    \mathcal B = \{(\pi \circ \varphi|_{U \cap M},U\cap M) mid (\varphi, U) in \mathcal A \text{ an M adaptierte Karte}\}
+    \mathcal B = \{(\pi \circ \varphi|_{U \cap M},U\cap M) \mid (\varphi, U) \in \mathcal A \text{ an } M \text{ adaptierte Karte}\}
   \end{align*}
   ein $C^{\infty}$-Atlas von $M$.
 \end{lemma}
 
 \begin{proof}
   Hausdorff-Eigenschaft und Abzählbarkeit der Topologie werden von $N$ auf $M$ vererbt.\\
-  Ist $p \in N$, so existiert eine adaptierte Karte $(\varphi,U)$ von $N$ um $p$ und $\pi \circ \varpi|_{U \cap M}$ ist ein Homöomorphismus von $U \cap M$ auf eine offene Teilmenge des $\R^m$.\\
+  Ist $p \in N$, so existiert eine adaptierte Karte $(\varphi,U)$ von $N$ um $p$ und $\pi \circ \varphi|_{U \cap M}$ ist ein Homöomorphismus von $U \cap M$ auf eine offene Teilmenge des $\R^m$.\\
   Jeder Kartenwechsel
   \begin{align*}
     (\pi \circ \varphi|_{U \cap M}) \circ (\pi \circ \psi|_{V \cap M})^{-1} = (\pi \circ \varphi) \circ (\psi^{-1} \circ \imath) = \pi \circ (\varphi \circ \psi^{-1}) \circ \imath
