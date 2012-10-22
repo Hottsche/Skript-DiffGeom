@@ -9,7 +9,8 @@
 
 \section{Tangentialvektoren und Tangentialräume}
 
-% Abb 2/3
+% Abbildung 2-1
+\CmMarginSvg{2-1-tangentialvektoren-motivation}{3.5cm}
 
 Betrachte in der nebenstehenden Abbildung eine differenzierbare Kurve $c \colon (-\varepsilon,\varepsilon) \to S^2$ mit $c(0) = p$. Dann gilt:
 \begin{align*}
@@ -57,7 +58,8 @@ gilt.
 \begin{proof}
   Zu $v \in \R^n$ sei $B(v) = [t \mapsto \varphi^{-1}(\varphi(p) + tv)]$ - die Äquivalenzklasse der abgebildeten Kurve auf der Mannigfaltigkeit.
 
-  % Abb 2/4
+  % Abbildung 2-2
+  \CmPutSvg{2-2-beweis-bijektivitaet-tpm-rn}{10cm}
 
   \begin{align*}
     & A B(v) = \difffrac{t}|_{t=0}(\varphi \circ B(v)) = \difffrac{t}|_{t=0}(\varphi \circ (\varphi^{-1}(\varphi(p) + tv)) = \difffrac{t}|_{t=0}(\varphi(p) + tv) = v.\\
@@ -74,7 +76,7 @@ Damit erhält $\T_p^{\text{geo}}M$ die Struktur eines reellen Vektorraumes verm�
 Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + t(\lambda v_1 + \mu v_2))$ mit $v_i = \difffrac{t}|_{t=0}(\varphi \circ c_i)$.
 
 \begin{lemma}
-  Die oben definierte Lineare Struktur ist unabhängig von der Wahl der Karte
+  Die oben definierte Lineare Struktur ist unabhängig von der Wahl der Karte.
 \end{lemma}
 
 \begin{proof}
