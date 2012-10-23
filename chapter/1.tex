@@ -7,7 +7,7 @@
 %% Mitschrieb und Textsatz von Jan-Bernhard Kordaß.
 %%
 
-\section*{Übersicht}
+\section*{"Ubersicht}
 
 \begin{itemize}
 \item Mannigfaltigkeiten, Tangentialvektoren
@@ -21,18 +21,48 @@
 \section{Differenzierbare Mannigfaltigkeiten}
 
 \begin{dfn*}
-  Eine $n$-dimensionale \CmMark{topologische Mannigfaltigkeit} $M$ ist ein topologischer Hausdorff-Raum mit einer abzählbaren Basis der Topologie in dem zu jedem Punkt $p \in M$ eine offene Menge $U$ mit $p \in U$ existiert und ein Homöomorphismus $\phi \colon U \to V$ auf eine offene Menge $V \subset \R^{n}$.
+  Eine $n$-dimensionale \CmMark{topologische Mannigfaltigkeit} $M$ ist ein topologischer Hausdorff-Raum mit einer abzählbaren Basis der Topologie in dem zu jedem Punkt $p \in M$ eine offene Menge $U$ mit $p \in U$ existiert und ein Hom"oomorphismus $\phi \colon U \to V$ auf eine offene Menge $V \subset \R^{n}$.
 
 % Abbildung 1-1
-\CmPutSvg{1-1-topologische-mf}{8.5cm}
+%\CmPutSvg{1-1-topologische-mf}{8.5cm}
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+	\draw[->] (-1.5,0) to[out=20, in=160]node[above,font=\scriptsize]{$\varphi' \circ \varphi^{-1}$} (1.5,0);
+	
+	\draw[->] (-4,-0.5) -- (-2,-0.5); \draw[->] (-3.75,-0.75) -- (-3.75, 1.25); \node[font=\scriptsize] at (-4, 1.25) {$\R^n$};
+	\draw[->] (2,-0.5) -- (4,-0.5); \draw[->] (2.25,-0.75) -- (2.25, 1.25); \node[font=\scriptsize] at (2, 1.25) {$\R^m$};
+	
+	\node[font=\scriptsize] at (0,2) {$U \cap U' \ne 0$};
+	
+	\draw (-4.25, 1.75) to[out=70,in=180] (-1.75,3) to[out=300,in=90] (-1.25, 1.25) to[out=180,in=340] (-4.25, 1.75); \node at (-1.25,3) {$M$};
+	\filldraw[fill=gray!20] (-2.75,2) circle(0.4); \node[font=\scriptsize] at (-3.25,2.25) {$U$};
+	\filldraw[fill=gray!20] (-3,0.25) circle (0.5); \node at (-2.25, 0.5) {$V$};
+	\draw[->] (-2.75,1.5) to[out=280,in=80] node[right]{$\varphi$} (-2.75,0.75);
+			
+	\draw (1.75, 1.75) to[out=70,in=180] (4.25,3) to[out=300,in=90] (4.75, 1.25) to[out=180,in=340] (1.75, 1.75); \node at (4.75,3) {$M$};
+	\filldraw[fill=gray!20] (3.55,2.25) circle(0.6); \node[font=\scriptsize] at (2.75,2.25) {$U'$};
+		
+	\coordinate (ctrl0up) at ($(2.5,-0.25) + 0.2*(0.5,2)$); \coordinate (ctrl0down) at ($(2.5,-0.25) + 0.2*(0,-1.5)$);
+	\coordinate (ctrl1down) at ($(3,0.25) - 0.1*(0.5,1)$); \coordinate (ctrl1up) at ($(3,0.25) + 0.1*(0.5,1)$);
+	\coordinate (ctrl2down) at ($(3,0.7) - 0.1*(0.5,1)$); \coordinate (ctrl2up) at ($(3,0.7) + 0.1*(0.5,1)$);
+	\coordinate (ctrl3down) at ($(4,0.5) + 0.3*(-0.5,1)$); \coordinate (ctrl3up) at ($(4,0.5) - 0.3*(-0.25,1)$);
+	\coordinate (ctrl4down) at ($(3.75,-0.3) + 0.2*(0.8,1)$); \coordinate (ctrl4up) at ($(3.75,-0.3) - 0.2*(0.7,0.75)$);
+	\begin{scope}
+		\fill[gray!20] (2.5,-0.25) ..controls(ctrl0up) and (ctrl1down).. (3,0.25) ..controls(ctrl1up) and (ctrl2down).. (3,0.7) ..controls(ctrl2up) and (ctrl3down).. (4,0.5) ..controls(ctrl3up) and (ctrl4down).. (3.75,-0.3) ..controls(ctrl4up) and (ctrl0down).. (2.5,-0.25); \node at (4.25, 0.5) {$V'$};
+		\clip(2.5,-0.25) ..controls(ctrl0up) and (ctrl1down).. (3,0.25) ..controls(ctrl1up) and (ctrl2down).. (3,0.7) ..controls(ctrl2up) and (ctrl3down).. (4,0.5) ..controls(ctrl3up) and (ctrl4down).. (3.75,-0.3) ..controls(ctrl4up) and (ctrl0down).. (2.5,-0.25); \node at (4.25, 0.5) {$V'$};
+		\fill[gray] (2,0) circle (1);
+		 (2.5,-0.25) ..controls(ctrl0up) and (ctrl1down).. (3,0.25) ..controls(ctrl1up) and (ctrl2down).. (3,0.7) ..controls(ctrl2up) and (ctrl3down).. (4,0.5) ..controls(ctrl3up) and (ctrl4down).. (3.75,-0.3) ..controls(ctrl4up) and (ctrl0down).. (2.5,-0.25); \node at (4.25, 0.5) {$V'$};
+	\end{scope}
+	\draw  (2.5,-0.25) ..controls(ctrl0up) and (ctrl1down).. (3,0.25) ..controls(ctrl1up) and (ctrl2down).. (3,0.7) ..controls(ctrl2up) and (ctrl3down).. (4,0.5) ..controls(ctrl3up) and (ctrl4down).. (3.75,-0.3) ..controls(ctrl4up) and (ctrl0down).. (2.5,-0.25); \node at (4.25, 0.5) {$V'$};
+	\draw[->] (3.5,1.5) to[out=280,in=80] node[right]{$\varphi'$} (3.5,0.75);
+\end{tikzpicture}\end{center}
 
-  $\varphi' \circ \varphi^{-1}$ ist ein Homöomorphismus offener Mengen des $\R^n$ bzw. $\R^m$. Nach dem Satz von Brouwer (1912) gilt dann $m = n$. Damit ist die Dimension einer zusammenhängenden topologischen Mannigfaltigkeit eindeutig definiert.\\
+  $\varphi' \circ \varphi^{-1}$ ist ein Hom"oomorphismus offener Mengen des $\R^n$ bzw. $\R^m$. Nach dem Satz von Brouwer (1912) gilt dann $m = n$. Damit ist die Dimension einer zusammenh"angenden topologischen Mannigfaltigkeit eindeutig definiert.\\
 
-  Die Abbildung $\varphi \colon U \to V \subset \R^n$ heißt \CmMark{Karte} von $M$ um $p$, die Menge $U$ heißt \CmMark{Kartengebiet}.\\
+  Die Abbildung $\varphi \colon U \to V \subset \R^n$ hei\ss t \CmMark{Karte} von $M$ um $p$, die Menge $U$ hei\ss t \CmMark{Kartengebiet}.\\
 
-  Eine Menge von Karten $\mathcal A = \{(\varphi_{\alpha}, U_{\alpha}) \mid \alpha \in J \}$ heißt \CmMark{Atlas} von $M$, falls $\bigcup_{\alpha \in J}U_{\alpha} = M$.\\
+  Eine Menge von Karten $\mathcal A = \{(\varphi_{\alpha}, U_{\alpha}) \mid \alpha \in J \}$ hei\ss t \CmMark{Atlas} von $M$, falls $\bigcup_{\alpha \in J}U_{\alpha} = M$.\\
 
-  Ein Atlas $\mathcal A$ von $M$ heißt $C^k$-Atlas, wenn für alle $\alpha, \beta \in J$ mit $U_{\alpha} \cap U_{\beta} \neq \emptyset$ der sogenannte \CmMark{Kartenwechsel}:
+  Ein Atlas $\mathcal A$ von $M$ hei\ss t $C^k$-Atlas, wenn für alle $\alpha, \beta \in J$ mit $U_{\alpha} \cap U_{\beta} \neq \emptyset$ der sogenannte \CmMark{Kartenwechsel}:
   \begin{align*}
     \varphi_{\beta} \circ \varphi_{\alpha}^{-1}\colon \varphi_{\alpha}(U_{\alpha} \cap U_{\beta}) \to \varphi_{\beta}(U_{\alpha} \cap U_{\beta})
   \end{align*}
@@ -42,13 +72,13 @@
   \CmPutSvg{1-2-kartenwechsel}{8cm}
 
 
-  Eine Karte $\psi \colon U \to V$ von $M$ heißt \CmMark{verträglich} mit einem $C^k$-Atlas $\mathcal A = \{(\varphi_{\alpha},U_{\alpha}) \mid \alpha \in J\}$ wenn jeder Kartenwechsel
+  Eine Karte $\psi \colon U \to V$ von $M$ hei\ss t \CmMark{verträglich} mit einem $C^k$-Atlas $\mathcal A = \{(\varphi_{\alpha},U_{\alpha}) \mid \alpha \in J\}$ wenn jeder Kartenwechsel
   \begin{align*}
     \varphi_{\alpha} \circ \psi(U \cap U_{\alpha}) \to \varphi_{\alpha}(U \cap U_{\alpha})
   \end{align*}
   ein $C^k$-Diffeomorphismus ist, i.e. $\mathcal A' = \mathcal A \cup \{(\psi, U)\}$ ist ebenfalls ein $C^k$-Atlas.\\
 
-  Die Menge aller mit $\mathcal A$ verträglichen Karten ist ein \CmMark{maxmaler $C^k$-Atlas}. Jeder maximale Atlas enthält alle mit ihm verträglichen Karten. Ein maximaler $C^k$-Atlas heißt auch \CmMark{$C^k$-differenzierbare Struktur}.
+  Die Menge aller mit $\mathcal A$ verträglichen Karten ist ein \CmMark{maxmaler $C^k$-Atlas}. Jeder maximale Atlas enthält alle mit ihm verträglichen Karten. Ein maximaler $C^k$-Atlas hei\ss t auch \CmMark{$C^k$-differenzierbare Struktur}.
 
 \end{dfn*}
 
@@ -73,7 +103,7 @@
     \begin{align*}
       \varphi \colon (\sin t, \cos t) \mapsto t
     \end{align*}
-    ist ein Homöomorphismus
+    ist ein Hom"oomorphismus
     \begin{align*}
       \varphi' \colon U' = \{(\sin t, \cos t) \mid t \in (-\pi,\pi)\} \to (-\pi,\pi)
     \end{align*}
@@ -115,7 +145,7 @@
 % Abbildung 1-5
 \CmPutSvg{1-5-glatte-abb}{9cm}
 
-Eine stetige Abbildung $f \colon M \to N$ zwischen glatten Mannigfaltigkeiten $M$ und $N$ heißt \CmMark{glatt} ($C^{\infty}$-differenzierbar), wenn es zu jedem $p \in M$ Karten $(\varphi, U)$ in $M$ um $p$ und $(\varphi', U')$ in $N$ um $f(p)$ gibt, so dass $\acute{\varphi} \circ f\circ\varphi^{-1}$ glatt ist.\\
+Eine stetige Abbildung $f \colon M \to N$ zwischen glatten Mannigfaltigkeiten $M$ und $N$ hei\ss t \CmMark{glatt} ($C^{\infty}$-differenzierbar), wenn es zu jedem $p \in M$ Karten $(\varphi, U)$ in $M$ um $p$ und $(\varphi', U')$ in $N$ um $f(p)$ gibt, so dass $\acute{\varphi} \circ f\circ\varphi^{-1}$ glatt ist.\\
 
 Die Menge aller glatten Abbildungen von $M$ nach $N$ wird $C^{\infty}(M,N)$ genannt.
 
@@ -142,7 +172,7 @@ Die Menge aller glatten Abbildungen von $M$ nach $N$ wird $C^{\infty}(M,N)$ gena
 \end{bsp}
 
 \begin{dfn}[Diffeomorphismus]
-  Eine Abbildung $f \colon M \to N$ heißt \CmMark{Diffeomorphismus}, wenn $f$ bijektiv ist und $f$, sowie $f^{-1}$ $C^{\infty}$-Abbildungen von $M$ nach $N$ sind. Insbesondere haben $M$ und $N$ in diesem Fall dieselbe Dimension.\\
+  Eine Abbildung $f \colon M \to N$ hei\ss t \CmMark{Diffeomorphismus}, wenn $f$ bijektiv ist und $f$, sowie $f^{-1}$ $C^{\infty}$-Abbildungen von $M$ nach $N$ sind. Insbesondere haben $M$ und $N$ in diesem Fall dieselbe Dimension.\\
 
 Die Menge der Diffeomorphismen von $M$ nach $N$ wird mit $\Diff(M,N)$ bezeichnet. Die Menge der Diffeomorphismen von $M$ nach $M$ wird mit $\Diff(M)$ bezeichnet. $(\Diff(M), \circ)$ ist eine Gruppe.
 
