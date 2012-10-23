@@ -1,5 +1,5 @@
 %%
-%% 2. Vorlesung 19.10.12, Fortsetung
+%% 2. Vorlesung <2012-10-19 Fri>, Fortsetung
 %% 
 %% Skript Differentialgeometrie im Wintersemester 12/13
 %% Zur Vorlesung von Dr. Grensing am KIT Karlsruhe
@@ -35,8 +35,8 @@ gilt.
 \begin{proof}
   Es sei $(\psi,V)$ eine weitere Karte von $M$ um $p$. Dann gilt:
   \begin{align*}
-    \difffrac{t}|_{t=0}(\psi\circ c_1) & = \difffrac{t}|_{t=0}(\psi\circ\varphi^{-1}\circ\varphi \circ c_1) = \D (\psi \circ \varphi^{-1})|_{\varphi(p)} \cdot \difffrac{t}|_{t=0}(\varphi \circ c_1\\
-    & = \D(\psi \circ \varphi^{-1})|_{\varphi(p)} \cdot \difffrac{t}|_{t=0}(\varphi \circ c_2) ) = \ldots = \difffrac{t}|_{t=0}(\psi \circ c_2).
+    \difffrac{t}|_{t=0}(\psi\circ c_1) & = \difffrac{t}|_{t=0}(\psi\circ\varphi^{-1}\circ\varphi \circ c_1) = \D (\psi \circ \varphi^{-1})|_{\varphi(p)} \cdot \difffrac{t}|_{t=0}(\varphi \circ c_1)\\
+    & = \D(\psi \circ \varphi^{-1})|_{\varphi(p)} \cdot \difffrac{t}|_{t=0}(\varphi \circ c_2) = \ldots = \difffrac{t}|_{t=0}(\psi \circ c_2).
   \end{align*}
 \end{proof}
 
@@ -90,6 +90,191 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
     A'^{-1}(\lambda A'[c_1] + \mu A'[c_2]) & = A^{-1}(A A'^{-1}(\lambda A'[c_1] + \mu A'[c_2]))\\
     & = A^{-1} (\lambda A A'^{-1}[c_1] + \mu A A'^{-1} [c_2])\\
     & = A^{-1}(\lambda A [c_1] + \mu A [c_2]).
+  \end{align*}
+\end{proof}
+
+
+% 3. Vorlesung <2012-10-23 Tue>
+
+\begin{bem}
+  \paragraph{Motivation: Richtungsableitungen im $\R^n$}\hfill
+
+  Für $f,g \in C^{\infty}(\R^n), \ x,y \in \R^n$ ist die Richtungsableitung wie folgt definiert:
+  \begin{align*}
+    \partial_vf(x) = \D f|x \cdot v = \difffrac{t}|_{t=0}f(x+tv).
+  \end{align*}
+  Diese erfüllt die Leibniz-Regel:
+  \begin{align*}
+    \partial_v(fg)(x) = \partial_vf(x)\cdot g(x) + f(x) \cdot \partial_v(g)(x).
+  \end{align*}
+\end{bem}
+
+\begin{dfn}[Algebraische Definition des Tangentialraumes]
+  Es sei $M$ eine glatte Mannigfaltigkeit und $p\in M$. Ein (algebraischer) \CmMark{Tangentialvektor} an $M$ in $p$ ist eine Lineare Abbildung $X_p \colon C^{\infty}(M) \to \R$, welche die Leibniz-Regel erfüllt:
+  \begin{align*}
+    X_p(fg) = X_p(f) \cdot g(p) + f(p) \cdot X_p(g).
+  \end{align*}
+
+  Die algebraischen Tangentialvektoren bilden einen reellen Vektorraum $\T_p^{\text{alg}}M$, den Tangentialraum an $M$ in $p$.
+\end{dfn}
+
+\begin{lemma}
+  Es sei U eine Umgebung von $p \in M$. Dann existiert eine Umgebung $V \subset U$ von $p$ und eine glatte reellwertige Funktion $\sigma \in C^{\infty}(M)$ mit den Eigenschaften $\sigma|_V = 1$ und $\supp(\sigma) \subset U$.
+\end{lemma}
+
+% Abbildung 2-3
+
+
+\begin{proof}
+  Man kann o.E. annehmen, dass $U$ Kartengebiet einer Karte $\varphi$ von $M$ um $p$ ist und $\varphi(p) = 0 \in \R^n$.\\
+
+  Es sei $\varepsilon > 0$ so, dass $\overline B_c(0) \subset \varphi(U)$. \\
+
+  % Abbildung 2-4
+
+  Ist dann $\eta$ eine glatte Funktion auf $\R$ mit $\eta \equiv 1$ auf $\left[\frac{-\varepsilon^{2}}{2},\frac{\varepsilon^2}{2}\right]$ und $\eta \equiv 0$ auf $\R \setminus (-\varepsilon^2,\varepsilon^2)$, so hat für $U_1 = \varphi^{-1}(B_{\frac{\varepsilon}{2}}(0)$ die Funktion
+  \begin{align*}
+    \sigma(q) =
+    \begin{cases}
+      \eta(\|\varphi(q)\|^2 & \text{ für } q \in U_1\\
+      0 & \text{ sonst }
+    \end{cases}.
+  \end{align*}
+  die gewünschten Eigenschaften.
+\end{proof}
+
+% Lemma 2.
+\begin{lemma}
+  Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
+  \begin{enumerate}
+  \item $X_p(f) = 0$ falls $f$ in einer Umgebung von $p$ konstant ist.
+  \item $X_p(f) = X_p(g)$ falls $f$ und $g$ auf einer Umgebung übereinstimmen.
+  \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+  ad (ii). Es sei $U$ eine Umgebung von $p$ mit $f|_U = g|_U$. Ist dann $\sigma$ wie im Beweis des vorigen Lemmas, so gilt $\sigma f = \sigma g$ und aus
+  \begin{align*}
+    X_p(\sigma)f(p)+\sigma(p)X_p(f) = X_{p}(\sigma f) = X_p(\sigma g) = X_p(\sigma) g(p) + \sigma(p) X_p(g)
+  \end{align*}
+  folgt $X_p(f) = X_p(g)$.\\
+  ad (i). Wegen der $\R$-Linearität und (ii) genügt es $f \equiv 1$ zu betrachten. Es gilt
+  \begin{align*}
+    X_p(1) = X_p(1 \cdot 1) = X_p(1) \cdot 1 + 1 \cdot X_p(1) = 2 \cdot X_p(1),
+  \end{align*}
+  also $X_p(1) = 0$.
+\end{proof}
+
+\begin{bem}
+  Also gilt für $f \in C^{\infty}(M)$ und $g \in C^{\infty}(U)$ direkt:
+  \begin{align*}
+    & \sigma g =
+    \begin{cases}
+      \sigma g|_U & \\
+      0 & \text{ sonst }
+    \end{cases},\\
+    & \sigma g \in C^{\infty}(M) 
+    \Rightarrow X_p(g) = X_p(\sigma g).
+  \end{align*}
+  Für eine Karte $\varphi \colon U \to V$ von $M$ und $p$ seien algebraische Tangentialvektoren definiert:
+  \begin{align*}
+    \pdifffrac{x^i}|_p \in \T_p^{\text{alg}}M, \pdifffrac{x^i}|_p(f) = \partial_i(f \circ \varphi^{-1})(\varphi(p)) = \D(f \circ \varphi^{-1})|_{\varphi(p)}e_i.
+  \end{align*}
+\end{bem}
+
+% Satz 2.7
+\begin{satz}
+  Die Vektoren $\pdifffrac{x^1}|_p,\ldots,\pdifffrac{x^n}|_p$ bilden eine Basis von $T_p^{\text{alg}}M$.
+\end{satz}
+
+% Lemma 2.8
+\begin{lemma}
+  Es sei $x_0 \in \R^n$ und $g \in C^{\infty}(B_{\rho}(x_0))$.
+  Dann existieren glatte Funktionen $h_i \in C^{\infty}(B_{\rho}(x_0))$ mit $h_i(x_0) = \partial_ig(x_0)$ und 
+  \begin{align*}
+    g(x) = g(x_0) + \sum_{i=1}^n(x^i-x_0^i)h_i(x).
+  \end{align*}
+\end{lemma}
+
+\begin{proof}
+  (Beweis des Satzes).\\
+
+  Die $j$-te Komponente $\varphi^j$ der Karte ist glatt und es gilt:
+  \begin{align*}
+    \pdifffrac{x^i}|_p(\varphi^j) = \partial_i(\varphi^j \circ \varphi^i)(\varphi(p)) = \partial_ix^j(\varphi(p)) = \delta_i^j.
+  \end{align*}
+
+  Damit sind die Vektoren linear unabhängig.\\
+
+  Es sei $X_p\in \T_p^{\text{alg}}M$ und $f \in C^{\infty}(M)$.
+  Für $x_0=\varphi(p) \in \R^n, \ B_{\rho}(x_0) \subset \varphi(U)$ und für $g = f \circ \varphi^{-1}|_{B_{\rho}(x_0)}$ gilt mit den Bezeichnungen wie im letzten Lemma:
+  \begin{align*}
+    X_p(f) & = X_p(g \circ \varphi) = X_p(g(\varphi(p)) + \sum \left(\varphi^i - \varphi(p)^i)(h_i \circ \varphi) \right)\\
+    & = \underbrace{X_p(g(\varphi(p)))}_{\mathclap{=0}} + \sum X_p((\varphi^i-\varphi(p)^i)(h_i \circ \varphi))\\
+    & = \sum X_p(\varphi^i)(h_i\circ\varphi)(p) - X_p(\varphi(p)^i)(h_i\circ \varphi)(p) + \sum (q^i-\varphi(p)^i)(p) X_p(h_i \circ \varphi)\\
+    & = \sum_{i=1}^n X_p(\varphi^i)\underbrace{(h_i \circ \varphi)(p)}_{\mathclap{=h_i(\varphi(p) = h_i(x_0) = \partial_ig(x_0) = \partial_i(f\circ \varphi^{-1})(\varphi(p)) = \pdifffrac{x^i}|_p(f)}}\\
+    & = \sum_{i=1}^nX_p(\varphi^i)\pdifffrac{x^i}|_p(f).
+  \end{align*}
+\end{proof}
+
+\begin{bem}
+  Ist $X_p=\sum \xi^i\pdifffrac{x^i}|_p$, so gilt $\xi^i = X_p(\varphi^i)$.
+\end{bem}
+
+\begin{proof}
+  (Beweis des Lemmas). Es gilt:
+  \begin{align*}
+    g(x) - g(x_0) = \int_0^1\difffrac{t}g(tx + (1-t)x_0)dt = \sum_{i=1}^n(x^i-x_0^i)\underbrace{\int_0^1\partial_ig(tx + (1-t)x_0) dt}_{=: h_i(x)}.
+  \end{align*}
+\end{proof}
+
+% Satz 2.9
+\begin{satz}[Äquivalenz der Tangentialraumbegriffe]
+  Die Abbildung
+  \begin{align*}
+    J_p \colon \T_p^{\text{geo}}M \to \T_p^{\text{alg}}M, \ J_{p}[c](f) = \difffrac{t}|_{t=0}(f\circ c)
+  \end{align*}
+  ist ein linearer Isomorphismus.
+\end{satz}
+
+\begin{proof}
+  Wegen
+  \begin{align*}
+    J_p[c](f)& = \difffrac{t}|_{t=0}(f\circ c) = \difffrac{t}|_{t=0}(f \circ \varphi^{-1} \circ \varphi \circ c)\\
+    &  = \D(f \circ \varphi^{-1})|_{\varphi(p)} \difffrac{t}|_{t=0} (\varphi \circ c) = \D (f\circ \varphi^{-1})|_{\varphi(p)}A[c]
+  \end{align*}
+  ist $J_p = \D(\cdot)\circ A$ linear.\\
+
+  Ist $[c] \in \Kern J_p$, so folgt aus $0 ) J_p[c](\varphi^i) = difffrac{t}|_{t=0}(\varphi^i \circ c)$, dass $\difffrac{t}|_{t=0}(\varphi \circ c) = 0$ gilt, also $[c] = 0$.\\
+
+  Damit ist $J_p$ injektiv, also ein Isomorphismus.
+\end{proof}
+
+\begin{bem}
+  \begin{enumerate}
+  \item Ist $X_p = \sum \xi^i\pdifffrac{x^i}|_p$,so gilt $X_p = c(0)$ für $c(t) = \varphi^{-1}(\varphi(p) + t\xi)$.
+\item Für jede glatte Kurve $c$ durch $p$ ist $\difffrac{t}|_{t=0}(\varphi \circ c)$ der Koeffizientenvektor von $\dot c(0)$ in der Basis $\pdifffrac{x^i}|_p$.
+  \end{enumerate}
+\end{bem}
+
+
+% Satz 2.10
+\begin{satz}[Transformationsverhalten bei Kartenwechsel]
+  Es seien $\varphi$ und $\psi$ Karten in $M$ um $p$ und es bezeichnen $\pdifffrac{x^i}|_p$ und $\pdifffrac{y^i}|_p$ die damit assoziierten Basen von $\T_pM$. Dann gilt
+  \begin{align*}
+    \pdifffrac{x^i}|_p = \sum_j \partial_i(\psi^j \circ \varphi^{-1})(\varphi(p)) \pdifffrac{y^j}|_p.
+  \end{align*}
+Es sei $X_p = \sum \xi^i \pdifffrac{x^i}|_p = \sum \eta^i\pdifffrac{y^i}|_p$. Dann gilt:
+\begin{align*}
+  \eta^j = \sum \partial_i(\psi^j \circ \varphi^{-1})(\varphi(p))\xi^i \text{ bzw. }
+  \eta = \D(\psi \circ \varphi^{-1})(\varphi(p))\xi.
+\end{align*}
+\end{satz}
+
+\begin{proof}
+  Es gelte $\pdifffrac{x^i}|_p = \sum \alpha_i^j\pdifffrac{y^j}|_p$ und nach obiger Bemerkung zum vorletzten Satz gilt:
+  \begin{align*}
+    \alpha_i^j = \pdifffrac{x^i}|_p(\psi^j) = \partial_i(\psi^j \circ \varphi^{-1})(\varphi(p))
   \end{align*}
 \end{proof}
 
