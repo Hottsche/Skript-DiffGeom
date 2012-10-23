@@ -69,7 +69,25 @@
   ein $C^k$-Diffeomorphismus ist.\\
 
   % Abbildung 1-2
-  \CmPutSvg{1-2-kartenwechsel}{8cm}
+  %\CmPutSvg{1-2-kartenwechsel}{8cm}
+  \begin{center}\begin{tikzpicture}[font=\scriptsize]
+  	\draw[->] (-1.5,0) to[out=20, in=160]node[above,font=\scriptsize]{$\varphi_\beta \circ \varphi^{-1}_\alpha$} (1.5,0);
+	
+	\draw[->] (-4,-0.5) -- (-2,-0.5); \draw[->] (-3.75,-0.75) --node[left]{$\R^n$} (-3.75, 1.25);
+	\draw[->] (2,-0.5) -- (4,-0.5); \draw[->] (2.25,-0.75) -- (2.25, 1.25);
+	
+	\draw[thick]  (-0.25, 3) to[out=0,in = 150] (2,2.5) -- (1.75, 1.5) to[out=190,in=350] (-1.75, 1.5) to[out=90,in=180] (-0.25, 3); \node at (2.25,2.75) {$M$};
+	
+	\begin{scope}
+		\clip (0.25,2.25) circle(0.5);
+		\clip (-0.25,2) circle(0.5);
+		\fill[gray!20] (0,2) circle(1);
+	\end{scope}
+	\draw (0.25,2.25) circle(0.5) (-0.25,2) circle(0.5); \node at (-1, 2.25) {$U_\alpha$}; \node at (1,2.5) {$U_\beta$};
+	
+	\draw[->] (-0.5,2) to[out=180,in=75] node[left]{$\varphi_\alpha$} (-3,0.25);
+	\draw[->] (0.5,2.25) to[out=0,in=105] node[right]{$\varphi_\beta$} (3,0.25);
+  \end{tikzpicture}\end{center}
 
 
   Eine Karte $\psi \colon U \to V$ von $M$ hei\ss t \CmMark{verträglich} mit einem $C^k$-Atlas $\mathcal A = \{(\varphi_{\alpha},U_{\alpha}) \mid \alpha \in J\}$ wenn jeder Kartenwechsel
