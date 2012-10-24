@@ -159,12 +159,42 @@
 \end{bsp}
 
 \begin{dfn}[Differenzierbare Abbildungen]
-  
+Eine stetige Abbildung $f \colon M \to N$ zwischen glatten Mannigfaltigkeiten $M$ und $N$ hei\ss t \CmMark{glatt} ($C^{\infty}$-differenzierbar), wenn es zu jedem $p \in M$ Karten $(\varphi, U)$ in $M$ um $p$ und geeignete $(\varphi', U')$ in $N$ um $f(p)$ gibt, so dass $\varphi' \circ f\circ\varphi^{-1}$ glatt ist.
 % Abbildung 1-5
-\CmPutSvg{1-5-glatte-abb}{9cm}
+%\CmPutSvg{1-5-glatte-abb}{9cm}
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+	%\draw[step=0.25,gray!15] (-5,-1) grid (5,5); \draw[step=0.5,gray!30] (-5,-1) grid (5,5); \fill (0,0) circle(0.1); %Hilfsgitter
+	
+	% Die Abbildungspfeile
+	\draw[->] (-1.5,0) to[out=20, in=160]node[above]{$\varphi' \circ f \circ \varphi$} (1.5,0);
+	\draw[->] (-1,2) --node[above]{$f$} (1.5,2);
+	
+	% Die Achsen
+	\draw[->] (-4.5,-0.5) -- (-2,-0.5); \draw[->] (-4.25,-0.75) --node[left]{$\R^n$} (-4.25, 1.25);
+	\draw[->] (2,-0.5) -- (4.5,-0.5); \draw[->] (2.25,-0.75) --node[left]{$\R^m$} (2.25, 1.25);
+	
+	% Die Blasen
+	\draw[thick] (-4.25, 1.75) to[out=70,in=180] (-1.75,3) to[out=300,in=90] (-1.25, 1.25) to[out=180,in=340] (-4.25, 1.75) -- cycle; \node[font=\normalfont] at (-1.25,3) {$M$};
+	\draw[thick] (1.75, 1.75) to[out=70,in=180] (4.25,3) to[out=300,in=90] (4.75, 1.25) to[out=180,in=340] (1.75, 1.75) -- cycle; \node[font=\normalfont] at (4.75,3) {$N$};
+	
+	% Die linke Kartoffel (zuerst werden die Punkte definiert, dann die Richtungsvektoren der Splines, dann die Kartoffel selbst)
+	\coordinate (kartoffel0l) at (-3.25,1.75); \coordinate (kartoffel1l) at (-3.25,2.5); \coordinate (kartoffel2l) at (-2.25,2.25); \coordinate (kartoffel3l) at (-2.5,1.75);
+	\coordinate (ctrlk0l) at (-0.25,0.5); \coordinate (ctrlk1l) at (0.5,0.25); \coordinate (ctrlk2l) at (-0.25,1); \coordinate (ctrlk3l) at (2,0.25);
+	\draw (kartoffel0l) ..controls($(kartoffel0l)+0.5*(ctrlk0l)$) and ($(kartoffel1l)-0.3*(ctrlk1l)$).. (kartoffel1l) ..controls($(kartoffel1l)+0.6*(ctrlk1l)$) and($(kartoffel2l)+0.45*(ctrlk2l)$).. (kartoffel2l) ..controls($(kartoffel2l)-0.25*(ctrlk2l)$) and ($(kartoffel3l)+0.15*(ctrlk3l)$).. (kartoffel3l)  ..controls($(kartoffel3l)-0.1*(ctrlk3l)$) and ($(kartoffel0l)-0.9*(ctrlk0l)$).. (kartoffel0l); \node at (-3.5,2.25) {$U$};
+	% Der Punkt in der Kartoffel, der Pfeils raus und der Kreis
+	\draw[->] (-2.75,2) node[right]{$p$} to[out=280,in=80] node[right]{$\varphi$} (-2.75,0); \fill (-2.75,2) circle (0.05);
+	\draw (-3,0.25) circle(0.5); \node at (-3.5,0.75) {$V$};
+	
+	% Die rechte Kartoffel
+	\coordinate (kartoffel0r) at (3.25,1.75); \coordinate (kartoffel1r) at (3.5,2.5); \coordinate (kartoffel2r) at (4.5,2.25); \coordinate (kartoffel3r) at (4.25,1.5);
+	\coordinate (ctrlk0r) at (-0.25,0.5); \coordinate (ctrlk1r) at (-0.25,0.25); \coordinate (ctrlk2r) at (-0.25,0.5); \coordinate (ctrlk3r) at (0.25,0);
+	\draw (kartoffel0r) ..controls($(kartoffel0r)+0.5*(ctrlk0r)$) and ($(kartoffel1r)-(ctrlk1r)$).. (kartoffel1r) ..controls($(kartoffel1r)+(ctrlk1r)$) and ($(kartoffel2r)+(ctrlk2r)$).. (kartoffel2r) ..controls($(kartoffel2r)-(ctrlk2r)$) and ($(kartoffel3r)+(ctrlk3r)$).. (kartoffel3r) ..controls($(kartoffel3r)-(ctrlk3r)$) and ($(kartoffel0r)-(ctrlk0r)$).. (kartoffel0r); \node at (3.25,2.25) {$U'$};
+	
+	\draw[->] (3.75,2) node[right]{$f(p)$} to[out=280,in=80] node[right]{$\varphi'$} (3.75,0); \fill (3.75,2) circle (0.05);
+	\draw (3.5,0.25) circle(0.5); \node at (3,0.75) {$V'$};
+\end{tikzpicture}
 
-Eine stetige Abbildung $f \colon M \to N$ zwischen glatten Mannigfaltigkeiten $M$ und $N$ hei\ss t \CmMark{glatt} ($C^{\infty}$-differenzierbar), wenn es zu jedem $p \in M$ Karten $(\varphi, U)$ in $M$ um $p$ und $(\varphi', U')$ in $N$ um $f(p)$ gibt, so dass $\acute{\varphi} \circ f\circ\varphi^{-1}$ glatt ist.\\
-
+\textcolor{red}{Sollte das in der Zeichnung beim unteren Pfeil nicht $\varphi'\circ f \circ \varphi^{-1}$ hei\ss en?}\end{center}
 Die Menge aller glatten Abbildungen von $M$ nach $N$ wird $C^{\infty}(M,N)$ genannt.
 
 \end{dfn}
