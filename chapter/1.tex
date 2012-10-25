@@ -33,12 +33,12 @@
 	
 	\node[font=\scriptsize] at (0,2) {$U \cap U' \ne 0$};
 	
-	\draw (-4.25, 1.75) to[out=70,in=180] (-1.75,3) to[out=300,in=90] (-1.25, 1.25) to[out=180,in=340] (-4.25, 1.75); \node at (-1.25,3) {$M$};
+	\draw (-4.25, 1.75) to[out=70,in=180] (-1.75,3) to[out=300,in=90] (-1.25, 1.25) to[out=180,in=340] (-4.25, 1.75) -- cycle; \node at (-1.25,3) {$M$};
 	\filldraw[fill=gray!20] (-2.75,2) circle(0.4); \node[font=\scriptsize] at (-3.25,2.25) {$U$};
 	\filldraw[fill=gray!20] (-3,0.25) circle (0.5); \node at (-2.25, 0.5) {$V$};
 	\draw[->] (-2.75,1.5) to[out=280,in=80] node[right]{$\varphi$} (-2.75,0.75);
 			
-	\draw (1.75, 1.75) to[out=70,in=180] (4.25,3) to[out=300,in=90] (4.75, 1.25) to[out=180,in=340] (1.75, 1.75); \node at (4.75,3) {$M$};
+	\draw (1.75, 1.75) to[out=70,in=180] (4.25,3) to[out=300,in=90] (4.75, 1.25) to[out=180,in=340] (1.75, 1.75) -- cycle; \node at (4.75,3) {$M$};
 	\filldraw[fill=gray!20] (3.55,2.25) circle(0.6); \node[font=\scriptsize] at (2.75,2.25) {$U'$};
 		
 	\coordinate (ctrl0up) at ($(2.5,-0.25) + 0.2*(0.5,2)$); \coordinate (ctrl0down) at ($(2.5,-0.25) + 0.2*(0,-1.5)$);
@@ -52,7 +52,7 @@
 		\fill[gray] (2,0) circle (1);
 		 (2.5,-0.25) ..controls(ctrl0up) and (ctrl1down).. (3,0.25) ..controls(ctrl1up) and (ctrl2down).. (3,0.7) ..controls(ctrl2up) and (ctrl3down).. (4,0.5) ..controls(ctrl3up) and (ctrl4down).. (3.75,-0.3) ..controls(ctrl4up) and (ctrl0down).. (2.5,-0.25); \node at (4.25, 0.5) {$V'$};
 	\end{scope}
-	\draw  (2.5,-0.25) ..controls(ctrl0up) and (ctrl1down).. (3,0.25) ..controls(ctrl1up) and (ctrl2down).. (3,0.7) ..controls(ctrl2up) and (ctrl3down).. (4,0.5) ..controls(ctrl3up) and (ctrl4down).. (3.75,-0.3) ..controls(ctrl4up) and (ctrl0down).. (2.5,-0.25); \node at (4.25, 0.5) {$V'$};
+	\draw  (2.5,-0.25) ..controls(ctrl0up) and (ctrl1down).. (3,0.25) ..controls(ctrl1up) and (ctrl2down).. (3,0.7) ..controls(ctrl2up) and (ctrl3down).. (4,0.5) ..controls(ctrl3up) and (ctrl4down).. (3.75,-0.3) ..controls(ctrl4up) and (ctrl0down).. (2.5,-0.25) -- cycle; \node at (4.25, 0.5) {$V'$};
 	\draw[->] (3.5,1.5) to[out=280,in=80] node[right]{$\varphi'$} (3.5,0.75);
 \end{tikzpicture}\end{center}
 
@@ -76,7 +76,7 @@
 	\draw[->] (-4,-0.5) -- (-2,-0.5); \draw[->] (-3.75,-0.75) --node[left]{$\R^n$} (-3.75, 1.25);
 	\draw[->] (2,-0.5) -- (4,-0.5); \draw[->] (2.25,-0.75) -- (2.25, 1.25);
 	
-	\draw[thick]  (-0.25, 3) to[out=0,in = 150] (2,2.5) -- (1.75, 1.5) to[out=190,in=350] (-1.75, 1.5) to[out=90,in=180] (-0.25, 3); \node at (2.25,2.75) {$M$};
+	\draw[thick]  (-0.25, 3) to[out=0,in = 150] (2,2.5) -- (1.75, 1.5) to[out=190,in=350] (-1.75, 1.5) to[out=90,in=180] (-0.25, 3) -- cycle; \node at (2.25,2.75) {$M$};
 	
 	\begin{scope}
 		\clip (0.25,2.25) circle(0.5);
@@ -105,23 +105,30 @@
 \end{dfn}
 
 \begin{bsp}
-  Einige Beispiele für glatte Mannigfaltigkeiten:
-  \begin{enumerate}
+  Einige Beispiele f"ur glatte Mannigfaltigkeiten:
+  \begin{enumerate}%[1)]
   \item $M = \R^n, \mathcal A = \{(\Id_{\R^n},\R^n)\}$
   \item $M \subset \R^n$ offen, $\mathcal A = \{(\imath_{M},M)\}$
   \item $S^1 \subset \R^2$ ist eine eindimensionale $C^{\infty}$-Mannigfaltigkeit:
     \begin{align*}
-      \mathcal A = \{(sin t, \cos t) \mid t \in (0,2\pi)\}
+      U = \{(\sin t, \cos t) \mid t \in (0,2\pi)\}
     \end{align*}
 
     % Abbildung 1-3
-    \CmMarginSvg[-2cm]{1-3-karten-der-s1}{3cm}
+    \marginnote{\begin{center}\begin{tikzpicture}[font=\footnotesize]
+    		%\draw[step=0.25,gray!15] (-1,-1) grid (1,1); \draw[step=0.5,gray!30] (-1,-1) grid (1,1); \fill (0,0) circle(0.1); %Hilfsgitter
+		\draw (0,0) circle (1); \draw[dashed] (0,0) circle (1.1); \draw[dotted] (0,0) circle (0.9); \node at (1,1) {$S^1$};
+		\filldraw[fill=white] (-1,0) circle (0.1) (1,0) circle (0.1);
+    \end{tikzpicture}\\
+    \textcolor{gray}{$S^1$ Einheitskreis}
+    \end{center}}[-2cm]
+    % \CmMarginSvg[-2cm]{1-3-karten-der-s1}{3cm}
 
-    ist offen in $S^1$ und
+    ist offen in $S^1$ und die Kartenabbildung
     \begin{align*}
       \varphi \colon (\sin t, \cos t) \mapsto t
     \end{align*}
-    ist ein Hom"oomorphismus
+    ist ein Hom"oomorphismus.
     \begin{align*}
       \varphi' \colon U' = \{(\sin t, \cos t) \mid t \in (-\pi,\pi)\} \to (-\pi,\pi)
     \end{align*}
@@ -135,19 +142,30 @@
     \end{align*}
 
   \item Jeder reelle Vektorraum endlicher Dimension ist in kanonischer Weise eine $C^{\infty}$-Mannigfaltigkeit.\\
-    Wähle eine Basis $\{v_1, \ldots, v_n\}$ von $V$. Diese definiert mit
+    W"ahle eine Basis $\{v_1, \ldots, v_n\}$ von $V$. Diese definiert mit
     \begin{align*}
       \varphi\left(\sum\lambda_iv_i\right) = (\lambda_1, \ldots, \lambda_n)
     \end{align*}
     eine Bijektion auf $\R^n$. Damit erhält man eine globale Karte von $V$.
-    Der zugehörige Atlas hängt nicht von der Wahl der Basis ab, denn ist $\{w_1, \ldots, w_n\}$ eine weitere Basis von $V$ und $\psi(\sum \lambda_iw_i) = (\lambda_1, \ldots, \lambda_n)$ eine weitere Karte, so ist $\varphi \circ \psi^{-1}$ als Endomorphismus des $\R^n$ schon $C^{\infty}$.
+    Der zugehörige Atlas h"angt nicht von der Wahl der Basis ab, denn ist $\{w_1, \ldots, w_n\}$ eine weitere Basis von $V$ und $\psi(\sum \lambda_iw_i) = (\lambda_1, \ldots, \lambda_n)$ eine weitere Karte, so ist $\varphi \circ \psi^{-1}$ als Endomorphismus des $\R^n$ schon $C^{\infty}$.
 
   \item $S^n = \{(x^0, x^1, \ldots, x^n) \mid \sum_{i = 0}^n(x^{i})^2 = 1\}$.\\
 
-    %% Abbildung 1.4
-    \CmMarginSvg{1-4-s3-sphaere}{3.5cm}
-
-    Betrachte den Nordpol $N = (1,0,\ldots,0)$ und den Südpol $S = (-1,0,\ldots,0)$ und die Abbildung
+    % Abbildung 1.4
+    %\CmMarginSvg{1-4-s3-sphaere}{3.5cm}
+    \marginnote{\begin{center}\begin{tikzpicture}[font=\scriptsize]
+    		%\draw[step=0.25,gray!15] (-1,-1) grid (1,1); \draw[step=0.5,gray!30] (-1,-1) grid (1,1); \fill (0,0) circle(0.1); %Hilfsgitter
+		% Koordinatenachsen mit Beschriftung
+		\draw[->] (0,-1.25) -- (0,1.5) node[left]{$x^0$}; \draw[->] (-1.25,0) -- (1.5,0) node[below]{$x^1$}; \draw[->] (1,1) -- (-1.25,-1.25) node[right]{$x^2$}; \node at (1.25, 1.5) {$S^2 \subset \R^3$};
+		% Kreis, Ellipse und Gerade (verwende Namen um Schnittpunkt bestimmen zu koennen)
+		\path[draw, thick, name path=kreis] (0,0) circle (1) ellipse(1 and 0.5); \path[draw,name path=gerade] (0,1) -- (1,-1.25);
+		% Punkte N und p
+		\filldraw[fill=white] (0,1) circle (0.05) node[anchor=south west,xshift=-2,yshift=-1.5]{$N$} ($(0,1)+0.35*(1,-1.25)-0.35*(0,1)$) circle (0.05) node[right]{$p$};
+		% Punkt phi(p) bei Schnittpunkt von Gerade und Kreis
+		\path [name intersections={of=kreis and gerade}]; \filldraw[fill=white] (intersection-2) circle(0.05) node[right]{$\varphi(p)$};
+	\end{tikzpicture}\end{center}}%[3.5cm]
+    
+    Betrachte den Nordpol $N = (1,0,\ldots,0)$ und den S"udpol $S = (-1,0,\ldots,0)$ und die Abbildung
     \begin{align*}
       & \varphi \colon U = S^{n}\setminus\{N\} \to \R^n, x \mapsto \left(\frac{x^1}{1-x^0}, \ldots, \frac{x^{n}}{1-x^0}\right),\\
       & \psi \colon U' = S^{n} \setminus \{S\} \to \R^n, x \mapsto \left(\frac{x^1}{1+x^0}, \ldots, \frac{x^n}{1+x^0}\right)
