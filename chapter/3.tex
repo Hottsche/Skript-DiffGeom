@@ -1,0 +1,192 @@
+%% 
+%% 4. Vorlesung <2012-10-26 Fri>
+%% 
+%% Skript Differentialgeometrie im Wintersemester 12/13
+%% Zur Vorlesung von Dr. Grensing am KIT Karlsruhe
+%% 
+%% Mitschrieb und Textsatz von Jan-Bernhard Kordaß.
+%% 
+
+\section{Differentiale}
+
+% Abb 4/1
+
+Es seien $M$ und $N$ Mannigfaltigkeiten und $\Phi \colon M \to N$ eine glatte Abbildung.
+Sind $p \in M$ und $X_p \in \T_pM$ , so ist 
+\begin{align*}
+  \Phi_{*p}X_p \colon C^{\infty}(N) \to \R, f \mapsto X_p(\underbrace{f \circ \Phi}_{\in C^{\infty}(N)}).
+\end{align*}
+ein Tangentialvektor an $N$ in $\Phi(p)$:
+\begin{align*}
+  \Phi_{+p}X_p(fg) & = X_p((f \circ \Phi)(g \circ \Phi)) = X_p(f \circ \Phi)(g \circ \Phi)(p) + (f \circ \Phi)(p)X_p(g \circ \Phi)\\
+  & = \Phi_{*p}X_p(f)q(\Phi(p)) + f(\Phi(p)) \Phi_{*p}X_p(g).
+\end{align*}
+
+% Definition 3.1
+\begin{dfn}
+  Die lineare Abbildung $\Phi_{*p} \colon \T_pM \to \T_{\Phi(p)}N$ heißt das \CmMark{Differential} von $\Phi$ in $p$. Der Rang von $\Phi_{*p}$ bezeichnet man als den Rang von $\Phi$ in $p$.
+\end{dfn}
+
+% Lemma 3.2
+\begin{lemma}[Differentiale in lokalen Koordinaten]
+  Sind $\varphi$ und $\psi$ Karten von $M$ und $N$ um $p$ und $\Phi(p) = q$, sowie $\pdifffrac{x^i}|_p$ und $\pdifffrac{y^i}|_q$ die Standardbasen von $\T_pM$ und $\T_qN$ bezüglich der Karten $\varphi$ und $\psi$, so gilt:
+  \begin{align*}
+    \Phi_{*p}\pdifffrac{x^i}|_p = \sum \partial_i(\psi^j \circ \Phi \circ \varphi^{-1})(\varphi(p))\pdifffrac{y^j}|_q.
+  \end{align*}
+  Die partielle Ableitung $\partial_i(\psi^j \circ \Phi \circ \varphi^{-1})(\varphi(p))$ bezeichnet man auch kurz $\frac{\partial \Phi^j}{\partial x^i}(p)$.
+\end{lemma}
+
+\begin{bem}
+  Aus der Linearität von $\Phi_{*p}$ folgt, dass für $X_p = \sum \xi^i\pdifffrac{x^i}|_p \in \T_pM$ und $\Phi_{*p}X_p = \sum \eta^j\pdifffrac{y^j}|_q$ gilt:
+  \begin{align*}
+    \eta^j = \sum \frac{\partial \Phi^j}{\partial x^i}\xi^i \text{ bzw. } \eta = \D(\psi \circ \Phi \circ \varphi^{-1})\xi.
+  \end{align*}
+\end{bem}
+
+\begin{proof}
+  \begin{align*}
+    \underbrace{\left(\Phi_{*p}\pdifffrac{x^i}|_p\right)}_{\in \T_pM}(\psi^j) = \pdifffrac{x^i}|_p(\psi^j \circ \Phi) = \partial_i (\psi^j \circ \Phi \circ \varphi^{-1})(\varphi(p)) = \frac{\partial \Phi^j}{\partial y^i}(p).
+  \end{align*}
+\end{proof}
+
+\begin{bem}[Charakterisierung durch Kurven]
+  Ist $[c] \in \T_pM$, so gilt für $f \in C^{\infty}(M)$:
+  \begin{align*}
+    \Phi_{*p}[c](f) = [c](f \circ \Phi) = = \difffrac{t}|_{t=0}(\underbrace{f \circ \Phi \circ c)}_{\text{glatte Kurve auf }N} = [\Phi \circ c](f)
+  \end{align*}
+  also $\Phi_{*p}[c] = [\Phi \circ c]$.
+\end{bem}
+
+\begin{bem}[Tangentialräume an Untermannigfaltigkeiten der $\R^n$]
+  Ist $M$ eine Untermannigfaltigkeit in $\R^n$ mit den Eigenschaften
+  \begin{itemize}
+  \item $F \colon U \to M \cap F(U)$ ein Homöomorphismus,
+  \item $\D F|_x\colon \R^m \to \R^{m+k}$ injektiv für alle $x \in U$.
+  \end{itemize}
+  Dann ist $\psi = F^{-1}$ eine Karte von $M$. Es bezeichnen $\pdifffrac{y^i}|_p$ die Standardbasis bezüglich $\psi$ und $\pdifffrac{x^i}|_x$ die Standardbasis bezüglich der kanonischen Karte $\Id_{\R^m}$ des $\R^m$.\\
+  Dann gilt für $g \in C^{\infty}(M)$ beliebig:
+  \begin{align*}
+    & \pdifffrac{y^i}|_p(g) = \partial_i(g \circ \psi^{-1})(\underbrace{\psi(p)}_{=x}) = \partial_i(g \circ F)(x) = F_{*x}\left(\pdifffrac{x_i}|_p\right)(f).\\
+    & F_{*x}\left(\pdifffrac{x^i}|_p\right) = F_{*x}[t \mapsto x + te_i] = [t \mapsto F(x+te_i)] \sim \difffrac{t}|_{t=0}F(x+te_i) = \D F|_x(e_i) = \partial_iF|_x.\\
+    & \T_pM "=" \left<\partial_1F|_x, \ldots, \partial_m F|_x\right).
+\end{align*}
+\end{bem}
+
+% Abb 4/2
+
+\begin{bem*}[Eigenschaften des Differentials]\hfill
+  \begin{itemize}
+  \item (Kettenregel) Sind $\Phi \colon M \to N$ und $\Psi \colon N \to P$ glatt, so gilt:
+    \begin{align*}
+      (\Psi \circ \Phi)_{*p} = \Psi_{*\Phi(p)} \circ \Phi_{*p}.
+    \end{align*}
+  \item Ist $\Psi \colon M \to N$ ein Diffeomorphismus, so ist $\Phi_{*p}$ ein Vektorraumisomorphismus. % Verwendet die Kettenregel
+  \item (Satz von der Umkehrabbildung) Ist $\Phi \colon M \to N$ glatt und $\Phi_{*p}$ bijektiv, so existieren Umgebungen $U$ von $p$ und $V$ von $\Phi(p)$, so dass $\Phi|_{U} \colon U \to V$ ein Diffeomorphismus ist.
+  \end{itemize}
+\end{bem*}
+
+% Definition 2.3
+\begin{dfn}[Reguläre Punkte, Submersion, Immersion]
+  Es sei $\Phi \colon M \to N$ glatt.
+  \begin{itemize}
+  \item Es Punkt $p \in M$ heißt \CmMark{regulärer Punkt} von $\Phi$, wenn $\Phi_{*p}$ surjektiv ist. Ein Punkt $q \in N$ heißt regulärer Wert, wenn jeder Punkt $p \in \Phi^{-1}(q)$ regulär ist.
+  \item Die Abbildung $\Phi$ heißt \CmMark{Submersion}, wenn $\Phi$ surjektiv ist und alle $p \in M$ reguläre Punkte sind.
+  \item Die Abbildung $\Phi$ heißt \CmMark{Immersion}, wenn für alle $p \in M$ $\Phi_{*p}$ injektiv ist.
+  \item Die Abbildung $\Phi$ heißt \CmMark{Einbettung}, wenn $\Phi$ Immersion und Homöomorphismus auf sein Bild ist.
+  \end{itemize}
+\end{dfn}
+
+\begin{bsp}
+  \begin{itemize}
+  \item Betrachte eine Abbildung $\Phi$
+
+    % Abb 4/3
+
+    Immersion: $\difffrac{t}$ Basis von $\T_x\R$, $\Phi_{*x}(\difffrac{t}) "=" \difffrac{t}\Phi$
+  \item $\R \to \R^2 \cong \C, t \mapsto e^{it}$ ist eine Immersion aber ebenfalls nicht injektiv.
+  \item $\R \to S^1 \subset \C, t \mapsto e^{it}$ ist Immersion und Submersion.
+  \item $\R \to S^1 \times \R, t \mapsto (e^{it},t)$ ist eine Einbettung.
+
+    % Abb 4/4
+
+  \item Ist $M \subset N$ Untermannigfaltigkeit, so ist $\imath \colon M \to N$ eine Einbettung.% INKLUSIONSSPFEIL
+  \end{itemize}
+\end{bsp}
+
+% Satz 3.4
+\begin{satz}
+  Es seien $M$ und $N$ glatte Mannigfaltigkeiten, $\Phi \colon M \to N$ eine glatte Abbildung und $p \in M$, sowie $q = \Phi(p)$. Es bezeichnen $m$ und $n$ die Dimensionen von $M$ und $N$ und $r$ den Rang von $\Phi$ in $p$. Dann gelten folgende Aussagen:
+  \begin{itemize}
+  \item Zu jeder Karte $\psi$ von $N$ um $q$ mit $\psi(p) = 0$ existiert eine Karte $\alpha$ von $M$ um $p$ mit $\alpha(p) = 0$ und glatte Funktionen $f^{r+1},\ldots,f^n$ mit
+    \begin{align*}
+      \left(\psi \circ \Phi \circ \alpha^{-1}\right)(x^1, \ldots, x^{r}, f^{r+1}(x), \ldots, f^n(x)).
+    \end{align*}
+  \item Falls der Rang von $\Phi$ auf einer Umgebung von $p$ konstant $r$ ist, so existieren Karten $\alpha$ um $p$ mit $\alpha(p) = 0$ und $\beta$ um $q$ mit $\beta(q) = 0$, so dass
+    \begin{align*}
+      (\beta \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^r, 0, \ldots, 0).
+    \end{align*}
+  \end{itemize}
+\end{satz} 
+
+% Korollar 3.5
+\begin{kor}
+  \begin{enumerate}[label=(\roman*)]
+  \item Falls $\Phi$ auf einer offenen Umgebung von $P = \Phi^{-1}(q)$ konstanten Rang $r$ hat, so ist $P$ eine Untermannigfaltigkeit der Kodimension $r$.
+  \item Ist $q$ ein regulärer Wert von $\Phi$, so ist $P = \Phi^{-1}(q)$ eine Untermannigfaltigkeit von $M$ der Kodimension $n$.\\
+    Beispiel: $\|\cdot\|^{-1}(1) = S^n \supset \R^{n+1} \to \R, x \mapsto \|n\|$.
+  \item Ist $\Phi_{*p}$ injektiv, so existiert eine Umgebung $U$ von $p$, so dass $\Phi(U) = Q \subset N$ eine Untermannigfaltigkeit von $N$ ist.
+  \item Ist $\Phi$ eine Einbettung, so ist $Q = \Phi(M)$ eine $m$-dimensionale Untermannigfaltigkeit von $M$ und $\Phi \colon M \to Q$ ist ein Diffeomorphismus.
+  \end{enumerate}
+\end{kor}
+
+\begin{proof}
+  ad (i): Ist $p \in P = \Phi^{-1}(q)$. Nach der zweiten Aussage des vorrangegangenen Satzes existieren Karten $(\alpha,U), (\beta, V)$ mit 
+  \begin{align*}
+    (\beta \circ \Phi \circ \alpha^{-1})(x^1,\ldots,x^n) = (x^1, \ldots,x^r, 0, \ldots, 0)
+  \end{align*}
+  und es gilt:
+  \begin{align*}
+    \alpha(P \cap U) & = (\alpha \circ \Phi^{-1} \circ \beta^{-1})(0) \\
+    & = \{x \in \alpha (U) \mid x^1 = \ldots = x^r = 0\} = \alpha(U) \cap \{0\} \times \R^{m-r}.
+  \end{align*} 
+  ad (ii): Ist $q$ ein regulärer Wert von $\Phi$, so existieren nach dem ersten Teil des vorigen Satzes Karten $\psi,\alpha$ mit 
+  \begin{align*}
+    (\psi \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^n) \ m \geq n = r \quad \forall x \in \alpha(U).
+  \end{align*}
+  Es gilt also für alle $u \in U$:
+  \begin{align*}
+    \Rang \Phi_{*u} = \Rang \D(\psi \circ \Phi \circ \alpha^{-1})|_x = \Rang
+    \begin{pmatrix}
+      1 &        & 0 &  &   & \\
+      & \ddots &   &  & 0 & \\
+      0 &        & 1 &  &   &
+    \end{pmatrix}
+    = 0
+  \end{align*}
+  Damit folgt die Behauptung aus (i).\\
+  ad (iii): $\Phi_{*p}$ ist injektiv $\Rightarrow r = m \leq n$. Nach Wahl von Karten wie in (ii):
+  \begin{align*}
+    & (\psi \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^m,f^{m+1}(x), \ldots, f^n(x))\\
+    & \Rang \Phi_{*u} = \Rang 
+    \begin{pmatrix}
+      1 &        & 0\\
+        & \ddots &  \\
+      0 &        & 1\\
+        &        &  \\
+        & 0      &  \\
+        &        &  
+    \end{pmatrix}
+    = m % Matrix 4/5
+  \end{align*}
+  Nach der ersten Aussage des letzten Satzes erhalten wir spezielle Karten:
+  \begin{align*}
+    (\beta \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^m, 0, \ldots, 0) \in \R^{m} \times \{0\},
+  \end{align*}
+  wobei $\beta$ eine adaptierte Karte für $\Phi(U) = Q$ ist.\\
+  (iv) folgt aus (iii).
+\end{proof}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../skript-diffgeom"
+%%% End: 
