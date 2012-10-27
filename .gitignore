@@ -4,6 +4,11 @@
 .goutputstream-*
 *\#*\#
 *.\#*
+*.synctex.gz
+.DS_Store
+*.fls
+*.fdb_latexmk
+
 
 # Tex files
 *.aux
@@ -15,6 +20,9 @@
 *.log
 *.bbl
 *.blg
+*.glg
+*.glo
+*.gls
 *_region_.tex
 
 # Editor files
