@@ -73,8 +73,8 @@
   \begin{center}\begin{tikzpicture}[font=\scriptsize]
   	\draw[->] (-1.5,0) to[out=20, in=160]node[above,font=\scriptsize]{$\varphi_\beta \circ \varphi^{-1}_\alpha$} (1.5,0);
 	
-	\draw[->] (-4,-0.5) -- (-2,-0.5); \draw[->] (-3.75,-0.75) --node[left]{$\R^n$} (-3.75, 1.25);
-	\draw[->] (2,-0.5) -- (4,-0.5); \draw[->] (2.25,-0.75) -- (2.25, 1.25);
+	\draw[->,thick] (-4,-0.5) -- (-2,-0.5); \draw[->,thick] (-3.75,-0.75) --node[left]{$\R^n$} (-3.75, 1.25);
+	\draw[->,thick] (2,-0.5) -- (4,-0.5); \draw[->,thick] (2.25,-0.75) -- (2.25, 1.25);
 	
 	\draw[thick]  (-0.25, 3) to[out=0,in = 150] (2,2.5) -- (1.75, 1.5) to[out=190,in=350] (-1.75, 1.5) to[out=90,in=180] (-0.25, 3) -- cycle; \node at (2.25,2.75) {$M$};
 	
@@ -188,8 +188,8 @@ Eine stetige Abbildung $f \colon M \to N$ zwischen glatten Mannigfaltigkeiten $M
 	\draw[->] (-1,2) --node[above]{$f$} (1.5,2);
 	
 	% Die Achsen
-	\draw[->] (-4.5,-0.5) -- (-2,-0.5); \draw[->] (-4.25,-0.75) --node[left]{$\R^n$} (-4.25, 1.25);
-	\draw[->] (2,-0.5) -- (4.5,-0.5); \draw[->] (2.25,-0.75) --node[left]{$\R^m$} (2.25, 1.25);
+	\draw[->,thick] (-4.5,-0.5) -- (-2,-0.5); \draw[->,thick] (-4.25,-0.75) --node[left]{$\R^n$} (-4.25, 1.25);
+	\draw[->,thick] (2,-0.5) -- (4.5,-0.5); \draw[->,thick] (2.25,-0.75) --node[left]{$\R^m$} (2.25, 1.25);
 	
 	% Die Blasen
 	\draw[thick] (-4.25, 1.75) to[out=70,in=180] (-1.75,3) to[out=300,in=90] (-1.25, 1.25) to[out=180,in=340] (-4.25, 1.75) -- cycle; \node[font=\normalfont] at (-1.25,3) {$M$};
