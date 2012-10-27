@@ -54,7 +54,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 	% und das Loch
 	\begin{scope}
 		\clip (3, 2.75) rectangle (5, 4);
-		\path[draw,thick,name path=gkreis] (4,4) ellipse (1.5 and 1);
+		\path[draw,thick,name path=gkreis] (4,3.75) ellipse (1.25 and 1);
 	\end{scope}
 	\path[name path=kkreis] (4,2.5) ellipse (1 and 0.75);
 	\path[name intersections={of=gkreis and kkreis}];
@@ -127,7 +127,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \begin{align*}
     & \pdifffrac{y^i}|_p(g) = \partial_i(g \circ \psi^{-1})(\underbrace{\psi(p)}_{=x}) = \partial_i(g \circ F)(x) = F_{*x}\left(\pdifffrac{x_i}|_p\right)(f).\\
     & F_{*x}\left(\pdifffrac{x^i}|_p\right) = F_{*x}[t \mapsto x + te_i] = [t \mapsto F(x+te_i)] \sim \difffrac{t}|_{t=0}F(x+te_i) = \D F|_x(e_i) = \partial_iF|_x.\\
-    & \T_pM "=" \left<\partial_1F|_x, \ldots, \partial_m F|_x\right).
+    & \T_pM \quot{=} \left<\partial_1F|_x, \ldots, \partial_m F|_x\right).
 \end{align*}
 \end{bem}
 
@@ -139,7 +139,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
     \begin{align*}
       (\Psi \circ \Phi)_{*p} = \Psi_{*\Phi(p)} \circ \Phi_{*p}.
     \end{align*}
-  \item Ist $\Psi \colon M \to N$ ein Diffeomorphismus, so ist $\Phi_{*p}$ ein Vektorraumisomorphismus. % Verwendet die Kettenregel
+  \item Ist $\textcolor{red}{\Phi} \colon M \to N$ ein Diffeomorphismus, so ist $\Phi_{*p}$ ein Vektorraumisomorphismus. % Verwendet die Kettenregel
   \item (Satz von der Umkehrabbildung) Ist $\Phi \colon M \to N$ glatt und $\Phi_{*p}$ bijektiv, so existieren Umgebungen $U$ von $p$ und $V$ von $\Phi(p)$, so dass $\Phi|_{U} \colon U \to V$ ein Diffeomorphismus ist.
   \end{itemize}
 \end{bem*}
@@ -161,14 +161,14 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 
     % Abb 4/3
 
-    Immersion: $\difffrac{t}$ Basis von $\T_x\R$, $\Phi_{*x}(\difffrac{t}) "=" \difffrac{t}\Phi$
+    Immersion: $\difffrac{t}$ Basis von $\T_x\R$, $\Phi_{*x}(\difffrac{t}) \quot{=} \difffrac{t}\Phi$
   \item $\R \to \R^2 \cong \C, t \mapsto e^{it}$ ist eine Immersion aber ebenfalls nicht injektiv.
   \item $\R \to S^1 \subset \C, t \mapsto e^{it}$ ist Immersion und Submersion.
   \item $\R \to S^1 \times \R, t \mapsto (e^{it},t)$ ist eine Einbettung.
 
     % Abb 4/4
 
-  \item Ist $M \subset N$ Untermannigfaltigkeit, so ist $\imath \colon M \to N$ eine Einbettung.% INKLUSIONSSPFEIL
+  \item Ist $M \subset N$ Untermannigfaltigkeit, so ist $\imath \colon M \hookrightarrow N$ eine Einbettung.% INKLUSIONSSPFEIL
   \end{itemize}
 \end{bsp}
 
@@ -176,13 +176,13 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 \begin{satz}
   Es seien $M$ und $N$ glatte Mannigfaltigkeiten, $\Phi \colon M \to N$ eine glatte Abbildung und $p \in M$, sowie $q = \Phi(p)$. Es bezeichnen $m$ und $n$ die Dimensionen von $M$ und $N$ und $r$ den Rang von $\Phi$ in $p$. Dann gelten folgende Aussagen:
   \begin{itemize}
-  \item Zu jeder Karte $\psi$ von $N$ um $q$ mit $\psi(p) = 0$ existiert eine Karte $\alpha$ von $M$ um $p$ mit $\alpha(p) = 0$ und glatte Funktionen $f^{r+1},\ldots,f^n$ mit
+  \item Zu jeder Karte $\psi$ von $N$ um $q$ mit $\psi(q) = 0$ existiert eine Karte $\alpha$ von $M$ um $p$ mit $\alpha(p) = 0$ und glatte Funktionen $f^{r+1},\ldots,f^n$ mit
     \begin{align*}
-      \left(\psi \circ \Phi \circ \alpha^{-1}\right)(x^1, \ldots, x^{r}, f^{r+1}(x), \ldots, f^n(x)).
+      \left(\psi \circ \Phi \circ \alpha^{-1}\right)\left(x^1,\ldots, x^m\right) = \left(x^1, \ldots, x^{r}, f^{r+1}(x), \ldots, f^n(x)\right).
     \end{align*}
   \item Falls der Rang von $\Phi$ auf einer Umgebung von $p$ konstant $r$ ist, so existieren Karten $\alpha$ um $p$ mit $\alpha(p) = 0$ und $\beta$ um $q$ mit $\beta(q) = 0$, so dass
     \begin{align*}
-      (\beta \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^r, 0, \ldots, 0).
+      \left(\beta \circ \Phi \circ \alpha^{-1}\right)\left(x^1, \ldots, x^m\right) = \left(x^1, \ldots, x^r, 0, \ldots, 0\right).
     \end{align*}
   \end{itemize}
 \end{satz} 
@@ -220,7 +220,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
       & \ddots &   &  & 0 & \\
       0 &        & 1 &  &   &
     \end{pmatrix}
-    = 0
+    = \textcolor{red}{n}
   \end{align*}
   Damit folgt die Behauptung aus (i).\\
   ad (iii): $\Phi_{*p}$ ist injektiv $\Rightarrow r = m \leq n$. Nach Wahl von Karten wie in (ii):
