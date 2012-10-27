@@ -215,11 +215,11 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   Es gilt also für alle $u \in U$:
   \begin{align*}
     \Rang \Phi_{*u} = \Rang \D(\psi \circ \Phi \circ \alpha^{-1})|_x = \Rang
-    \begin{pmatrix}
-      1 &        & 0 &  &   & \\
-      & \ddots &   &  & 0 & \\
-      0 &        & 1 &  &   &
-    \end{pmatrix}
+    \left(\begin{array}{ccc|c}
+      1 &  & 0 & \\
+      & \ddots & & 0 \\
+      0 & & 1 & 
+    \end{array}\right)
     = \textcolor{red}{n}
   \end{align*}
   Damit folgt die Behauptung aus (i).\\
@@ -227,14 +227,13 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \begin{align*}
     & (\psi \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^m,f^{m+1}(x), \ldots, f^n(x))\\
     & \Rang \Phi_{*u} = \Rang 
-    \begin{pmatrix}
-      1 &        & 0\\
+    \left( \begin{array}{ccc}
+      1 & & 0 \\
         & \ddots &  \\
-      0 &        & 1\\
-        &        &  \\
-        & 0      &  \\
-        &        &  
-    \end{pmatrix}
+      0 & & 1 \\
+      \hline
+        & 0      & 
+      \end{array} \right)
     = m % Matrix 4/5
   \end{align*}
   Nach der ersten Aussage des letzten Satzes erhalten wir spezielle Karten:
