@@ -88,15 +88,15 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 
 % Lemma 3.2
 \begin{lemma}[Differentiale in lokalen Koordinaten]
-  Sind $\varphi$ und $\psi$ Karten von $M$ und $N$ um $p$ und $\Phi(p) = q$, sowie $\pdifffrac{x^i}|_p$ und $\pdifffrac{y^i}|_q$ die Standardbasen von $\T_pM$ und $\T_qN$ bezüglich der Karten $\varphi$ und $\psi$, so gilt:
+  Sind $\varphi$ und $\psi$ Karten von $M$ und $N$ um $p$ und $\Phi(p) = q$, sowie $\pdifffrac[p]{}{x^i}$ und $\pdifffrac[q]{}{y^i}$ die Standardbasen von $\T_pM$ und $\T_qN$ bezüglich der Karten $\varphi$ und $\psi$, so gilt:
   \begin{align*}
-    \Phi_{*p}\pdifffrac{x^i}|_p = \sum \partial_i(\psi^j \circ \Phi \circ \varphi^{-1})(\varphi(p))\pdifffrac{y^j}|_q.
+    \Phi_{*p}\pdifffrac[p]{}{x^i} = \sum \partial_i(\psi^j \circ \Phi \circ \varphi^{-1})(\varphi(p))\pdifffrac[q]{}{y^j}.
   \end{align*}
   Die partielle Ableitung $\partial_i(\psi^j \circ \Phi \circ \varphi^{-1})(\varphi(p))$ bezeichnet man auch kurz $\frac{\partial \Phi^j}{\partial x^i}(p)$.
 \end{lemma}
 
 \begin{bem}
-  Aus der Linearität von $\Phi_{*p}$ folgt, dass für $X_p = \sum \xi^i\pdifffrac{x^i}|_p \in \T_pM$ und $\Phi_{*p}X_p = \sum \eta^j\pdifffrac{y^j}|_q$ gilt:
+  Aus der Linearität von $\Phi_{*p}$ folgt, dass für $X_p = \sum \xi^i\pdifffrac[p]{}{x^i} \in \T_pM$ und $\Phi_{*p}X_p = \sum \eta^j\pdifffrac[q]{}{y^j}$ gilt:
   \begin{align*}
     \eta^j = \sum \frac{\partial \Phi^j}{\partial x^i}\xi^i \text{, beziehungsweise } \eta = \D(\psi \circ \Phi \circ \varphi^{-1})\xi.
   \end{align*}
@@ -104,14 +104,14 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 
 \begin{proof}
   \begin{align*}
-    \underbrace{\left(\Phi_{*p}\pdifffrac{x^i}|_p\right)}_{\textcolor{red}{\in \T_qN}}(\psi^j) = \pdifffrac{x^i}|_p(\psi^j \circ \Phi) = \partial_i (\psi^j \circ \Phi \circ \varphi^{-1})(\varphi(p)) = \frac{\partial \Phi^j}{\partial y^i}(p).
+    \underbrace{\left(\Phi_{*p}\pdifffrac[p]{}{x^i}\right)}_{\textcolor{red}{\in \T_qN}}(\psi^j) = \pdifffrac[p]{}{x^i}(\psi^j \circ \Phi) = \partial_i (\psi^j \circ \Phi \circ \varphi^{-1})(\varphi(p)) = \frac{\partial \Phi^j}{\partial y^i}(p).
   \end{align*}
 \end{proof}
 
 \begin{bem}[Charakterisierung durch Kurven]
   Ist $[c] \in \T_p\textcolor{red}{M}$, so gilt für $f \in C^{\infty}(M)$:
   \begin{align*}
-    \Phi_{*p}[c](f) = [c](f \circ \Phi) = \difffrac{t}|_{t=0}(\underbrace{f \circ \Phi \circ c)}_{\substack{\text{glatte Kurve}\\ \text{auf }N}} = [\Phi \circ c](f)
+    \Phi_{*p}[c](f) = [c](f \circ \Phi) = \difffrac[t=0]{}{t}(\underbrace{f \circ \Phi \circ c)}_{\substack{\text{glatte Kurve}\\ \text{auf }N}} = [\Phi \circ c](f)
   \end{align*}
   also $\Phi_{*p}[c] = [\Phi \circ c]$.
 \end{bem}
@@ -122,13 +122,14 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \item $F \colon U \to M \cap F(U)$ ein Homöomorphismus,
   \item $\D F|_x\colon \R^m \to \R^{m+k}$ injektiv für alle $x \in U$.
   \end{itemize}
-  Dann ist $\psi = F^{-1}$ eine Karte von $M$. Es bezeichnen $\pdifffrac{y^i}|_p$ die Standardbasis bezüglich $\psi$ und $\pdifffrac{x^i}|_x$ die Standardbasis bezüglich der kanonischen Karte $\Id_{\R^m}$ des $\R^m$.\\
+  Dann ist $\psi = F^{-1}$ eine Karte von $M$. Es bezeichnen $\pdifffrac[p]{}{y^i}$ die Standardbasis bezüglich $\psi$ und $\pdifffrac[x]{}{x^i}$ die Standardbasis bezüglich der kanonischen Karte $\Id_{\R^m}$ des $\R^m$.\\
   Dann gilt für $g \in C^{\infty}(M)$ beliebig:
   \begin{align*}
-    & \pdifffrac{y^i}|_p(g) = \partial_i(g \circ \psi^{-1})(\underbrace{\psi(p)}_{=x}) = \partial_i(g \circ F)(x) = F_{*x}\left(\pdifffrac{x_i}|_p\right)(f).\\
-    & F_{*x}\left(\pdifffrac{x^i}|_p\right) = F_{*x}[t \mapsto x + te_i] = [t \mapsto F(x+te_i)] \sim \difffrac{t}|_{t=0}F(x+te_i) = \D F|_x(e_i) = \partial_iF|_x.\\
+    & \pdifffrac[p]{}{y^i}(g) = \partial_i(g \circ \psi^{-1})(\underbrace{\psi(p)}_{=x}) = \partial_i(g \circ F)(x) = F_{*x}\left(\pdifffrac[p]{}{x_i}\right)(f).\\
+    & F_{*x}\left(\pdifffrac[p]{}{x^i}\right) = F_{*x}[t \mapsto x + te_i] = [t \mapsto F(x+te_i)] \sim \difffrac[t=0]{}{t}F(x+te_i) = \D F|_x(e_i) = \partial_iF|_x.\\
     & \T_pM \quot{=} \left<\partial_1F|_x, \ldots, \partial_m F|_x\right).
 \end{align*}
+%$\pdifffrac[a]{b}{c}, \pdifffrac[a]{b}{}, \pdifffrac[a]{}{c}, \pdifffrac{b}{c}, \pdifffrac{}{c}, \pdifffrac{b}{}$
 \end{bem}
 
 % Abb 4/2
@@ -161,7 +162,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 
     % Abb 4/3
 
-    Immersion: $\difffrac{t}$ Basis von $\T_x\R$, $\Phi_{*x}(\difffrac{t}) \quot{=} \difffrac{t}\Phi$
+    Immersion: $\difffrac{}{t}$ Basis von $\T_x\R$, $\Phi_{*x}(\difffrac{}{t}) \quot{=} \difffrac{}{t}\Phi$
   \item $\R \to \R^2 \cong \C, t \mapsto e^{it}$ ist eine Immersion aber ebenfalls nicht injektiv.
   \item $\R \to S^1 \subset \C, t \mapsto e^{it}$ ist Immersion und Submersion.
   \item $\R \to S^1 \times \R, t \mapsto (e^{it},t)$ ist eine Einbettung.

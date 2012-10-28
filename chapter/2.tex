@@ -14,7 +14,7 @@
 
 Betrachte in der nebenstehenden Abbildung eine differenzierbare Kurve $c \colon (-\varepsilon,\varepsilon) \to S^2$ mit $c(0) = p$. Dann gilt:
 \begin{align*}
-  0 = \difffrac{t} \left<c(t),c(t)\right> = 2\left<c(0),c(0)\right> = 2 \left<c(0),p\right> 
+  0 = \difffrac{}{t} \left<c(t),c(t)\right> = 2\left<c(0),c(0)\right> = 2 \left<c(0),p\right> 
   \Rightarrow c(0) \in p^{\perp}.
 \end{align*}
 
@@ -24,7 +24,7 @@ Es sei $M$ eine glatte Mannigfaltigkeit und es seien glatte Kurven $c_i\colon (-
 
 Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\varphi,U)$ von $M$ und $p$ gibt, so dass 
 \begin{align*}
-  \difffrac{t}|_{t=0}(\varphi \circ c_1) = \difffrac{t}|_{t=0}(\varphi \circ c_2)
+  \difffrac[t=0]{}{t}(\varphi \circ c_1) = \difffrac[t=0]{}{t}(\varphi \circ c_2)
 \end{align*}
 gilt.
 
@@ -35,8 +35,8 @@ gilt.
 \begin{proof}
   Es sei $(\psi,V)$ eine weitere Karte von $M$ um $p$. Dann gilt:
   \begin{align*}
-    \difffrac{t}|_{t=0}(\psi\circ c_1) & = \difffrac{t}|_{t=0}(\psi\circ\varphi^{-1}\circ\varphi \circ c_1) = \D (\psi \circ \varphi^{-1})|_{\varphi(p)} \cdot \difffrac{t}|_{t=0}(\varphi \circ c_1)\\
-    & = \D(\psi \circ \varphi^{-1})|_{\varphi(p)} \cdot \difffrac{t}|_{t=0}(\varphi \circ c_2) = \ldots = \difffrac{t}|_{t=0}(\psi \circ c_2).
+    \difffrac[t=0]{}{t}(\psi\circ c_1) & = \difffrac[t=0]{}{t}(\psi\circ\varphi^{-1}\circ\varphi \circ c_1) = \D (\psi \circ \varphi^{-1})|_{\varphi(p)} \cdot \difffrac[t=0]{}{t}(\varphi \circ c_1)\\
+    & = \D(\psi \circ \varphi^{-1})|_{\varphi(p)} \cdot \difffrac[t=0]{}{t}(\varphi \circ c_2) = \ldots = \difffrac[t=0]{}{t}(\psi \circ c_2).
   \end{align*}
 \end{proof}
 
@@ -51,7 +51,7 @@ gilt.
 \begin{bem}
   Mit den Bezeichnungen wie oben ist die folgende Abbildung bijektiv:
   \begin{align*}
-    A \colon \T_p^{\text{geo}}M \to \R^n, [c] \mapsto \difffrac{t}|_{t=0}(\varphi \circ c).
+    A \colon \T_p^{\text{geo}}M \to \R^n, [c] \mapsto \difffrac[t=0]{}{t}(\varphi \circ c).
   \end{align*}
 \end{bem}
 
@@ -62,8 +62,8 @@ gilt.
   \CmPutSvg{2-2-beweis-bijektivitaet-tpm-rn}{10cm}
 
   \begin{align*}
-    & A B(v) = \difffrac{t}|_{t=0}(\varphi \circ B(v)) = \difffrac{t}|_{t=0}(\varphi \circ (\varphi^{-1}(\varphi(p) + tv)) = \difffrac{t}|_{t=0}(\varphi(p) + tv) = v.\\
-    & v_c = \difffrac{t}|_{t=0}(\varphi \circ c)\\
+    & A B(v) = \difffrac[t=0]{}{t}(\varphi \circ B(v)) = \difffrac[t=0]{}{t}(\varphi \circ (\varphi^{-1}(\varphi(p) + tv)) = \difffrac[t=0]{}{t}(\varphi(p) + tv) = v.\\
+    & v_c = \difffrac[t=0]{}{t}(\varphi \circ c)\\
     & B A (\underbrace{[c]}_{\ni c}) = B(v_c) = [t \mapsto \varphi^{-1}(\varphi(p + tv_c)].
   \end{align*}
   Die Kurven $c$ und $t \mapsto \varphi^{-1}(\varphi(p) + tv_c)$ sind äquivalent, also ist $B A[c] = [c]$ und somit $A$ bijektiv.
@@ -73,17 +73,17 @@ Damit erhält $\T_p^{\text{geo}}M$ die Struktur eines reellen Vektorraumes verm�
 \begin{align*}
   \lambda[c_1] + \mu[c_2] = A^{-1}(\lambda A[c_1]+ \mu A[c_2]).
 \end{align*}
-Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + t(\lambda v_1 + \mu v_2))$ mit $v_i = \difffrac{t}|_{t=0}(\varphi \circ c_i)$.
+Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + t(\lambda v_1 + \mu v_2))$ mit $v_i = \difffrac[t=0]{}{t}(\varphi \circ c_i)$.
 
 \begin{lemma}
   Die oben definierte Lineare Struktur ist unabhängig von der Wahl der Karte.
 \end{lemma}
 
 \begin{proof}
-  Es sei $(\psi, V)$ eine Karte von $M$ um $p$ und $A'[c] = \difffrac{t}|_t(\psi \circ c)$. Dann gilt:
+  Es sei $(\psi, V)$ eine Karte von $M$ um $p$ und $A'[c] = \difffrac[t]{}{t}(\psi \circ c)$. Dann gilt:
   \begin{align*}
-    A A'^{-1}(v) & = \difffrac{t}|_{t=0}(\varphi \circ (\psi^{-1} (\psi(p) + tv)))\\
-    & = \D(\varphi \circ \psi^{-1})|_{\psi(p)} \cdot \difffrac{t}|_{t=0}(\psi \circ \psi^{-1}(\varphi(p) + tv)) = \D (\varphi \circ \varphi^{-1}) \cdot v.
+    A A'^{-1}(v) & = \difffrac[t=0]{}{t}(\varphi \circ (\psi^{-1} (\psi(p) + tv)))\\
+    & = \D(\varphi \circ \psi^{-1})|_{\psi(p)} \cdot \difffrac[t=0]{}{t}(\psi \circ \psi^{-1}(\varphi(p) + tv)) = \D (\varphi \circ \varphi^{-1}) \cdot v.
   \end{align*}
   Also ist $A A'^{-1}$ linear,
   \begin{align*}
@@ -101,7 +101,7 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
   
   Für $f,g \in C^{\infty}(\R^n), \ x,y \in \R^n$ ist die Richtungsableitung wie folgt definiert:
   \begin{align*}
-    \partial_vf(x) = \D f|x \cdot v = \difffrac{t}|_{t=0}f(x+tv).
+    \partial_vf(x) = \D f|x \cdot v = \difffrac[t=0]{}{t}f(x+tv).
   \end{align*}
   Diese erfüllt die Leibniz-Regel:
   \begin{align*}
@@ -178,13 +178,13 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
   \end{align*}
   Für eine Karte $\varphi \colon U \to V$ von $M$ und $p$ seien algebraische Tangentialvektoren definiert:
   \begin{align*}
-    \pdifffrac{x^i}|_p \in \T_p^{\text{alg}}M, \pdifffrac{x^i}|_p(f) = \partial_i(f \circ \varphi^{-1})(\varphi(p)) = \D(f \circ \varphi^{-1})|_{\varphi(p)}e_i.
+    \pdifffrac[p]{}{x^i} \in \T_p^{\text{alg}}M, \pdifffrac[p]{}{x^i}(f) = \partial_i(f \circ \varphi^{-1})(\varphi(p)) = \D(f \circ \varphi^{-1})|_{\varphi(p)}e_i.
   \end{align*}
 \end{bem}
 
 % Satz 2.7
 \begin{satz}
-  Die Vektoren $\pdifffrac{x^1}|_p,\ldots,\pdifffrac{x^n}|_p$ bilden eine Basis von $T_p^{\text{alg}}M$.
+  Die Vektoren $\pdifffrac[p]{}{x^1},\ldots,\pdifffrac[p]{}{x^n}$ bilden eine Basis von $T_p^{\text{alg}}M$.
 \end{satz}
 
 % Lemma 2.8
@@ -201,7 +201,7 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
 
   Die $j$-te Komponente $\varphi^j$ der Karte ist glatt und es gilt:
   \begin{align*}
-    \pdifffrac{x^i}|_p(\varphi^j) = \partial_i(\varphi^j \circ \varphi^i)(\varphi(p)) = \partial_ix^j(\varphi(p)) = \delta_i^j.
+    \pdifffrac[p]{}{x^i}(\varphi^j) = \partial_i(\varphi^j \circ \varphi^i)(\varphi(p)) = \partial_ix^j(\varphi(p)) = \delta_i^j.
   \end{align*}
 
   Damit sind die Vektoren linear unabhängig.\\
@@ -212,19 +212,19 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
     X_p(f) & = X_p(g \circ \varphi) = X_p(g(\varphi(p)) + \sum \left(\varphi^i - \varphi(p)^i)(h_i \circ \varphi) \right)\\
     & = \underbrace{X_p(g(\varphi(p)))}_{\mathclap{=0}} + \sum X_p((\varphi^i-\varphi(p)^i)(h_i \circ \varphi))\\
     & = \sum X_p(\varphi^i)(h_i\circ\varphi)(p) - X_p(\varphi(p)^i)(h_i\circ \varphi)(p) + \sum (q^i-\varphi(p)^i)(p) X_p(h_i \circ \varphi)\\
-    & = \sum_{i=1}^n X_p(\varphi^i)\underbrace{(h_i \circ \varphi)(p)}_{\mathclap{=h_i(\varphi(p) = h_i(x_0) = \partial_ig(x_0) = \partial_i(f\circ \varphi^{-1})(\varphi(p)) = \pdifffrac{x^i}|_p(f)}}\\
-    & = \sum_{i=1}^nX_p(\varphi^i)\pdifffrac{x^i}|_p(f).
+    & = \sum_{i=1}^n X_p(\varphi^i)\underbrace{(h_i \circ \varphi)(p)}_{\mathclap{=h_i(\varphi(p) = h_i(x_0) = \partial_ig(x_0) = \partial_i(f\circ \varphi^{-1})(\varphi(p)) = \pdifffrac[p]{}{x^i}(f)}}\\
+    & = \sum_{i=1}^nX_p(\varphi^i)\pdifffrac[p]{}{x^i}(f).
   \end{align*}
 \end{proof}
 
 \begin{bem}
-  Ist $X_p=\sum \xi^i\pdifffrac{x^i}|_p$, so gilt $\xi^i = X_p(\varphi^i)$.
+  Ist $X_p=\sum \xi^i\pdifffrac[p]{}{x^i}$, so gilt $\xi^i = X_p(\varphi^i)$.
 \end{bem}
 
 \begin{proof}
   (Beweis des Lemmas). Es gilt:
   \begin{align*}
-    g(x) - g(x_0) = \int_0^1\difffrac{t}g(tx + (1-t)x_0)dt = \sum_{i=1}^n(x^i-x_0^i)\underbrace{\int_0^1\partial_ig(tx + (1-t)x_0) dt}_{=: h_i(x)}.
+    g(x) - g(x_0) = \int_0^1\difffrac{}{t}g(tx + (1-t)x_0)dt = \sum_{i=1}^n(x^i-x_0^i)\underbrace{\int_0^1\partial_ig(tx + (1-t)x_0) dt}_{=: h_i(x)}.
   \end{align*}
 \end{proof}
 
@@ -232,7 +232,7 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
 \begin{satz}[Äquivalenz der Tangentialraumbegriffe]
   Die Abbildung
   \begin{align*}
-    J_p \colon \T_p^{\text{geo}}M \to \T_p^{\text{alg}}M, \ J_{p}[c](f) = \difffrac{t}|_{t=0}(f\circ c)
+    J_p \colon \T_p^{\text{geo}}M \to \T_p^{\text{alg}}M, \ J_{p}[c](f) = \difffrac[t=0]{}{t}(f\circ c)
   \end{align*}
   ist ein linearer Isomorphismus.
 \end{satz}
@@ -240,31 +240,31 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
 \begin{proof}
   Wegen
   \begin{align*}
-    J_p[c](f)& = \difffrac{t}|_{t=0}(f\circ c) = \difffrac{t}|_{t=0}(f \circ \varphi^{-1} \circ \varphi \circ c)\\
-    &  = \D(f \circ \varphi^{-1})|_{\varphi(p)} \difffrac{t}|_{t=0} (\varphi \circ c) = \D (f\circ \varphi^{-1})|_{\varphi(p)}A[c]
+    J_p[c](f)& = \difffrac[t=0]{}{t}(f\circ c) = \difffrac[t=0]{}{t}(f \circ \varphi^{-1} \circ \varphi \circ c)\\
+    &  = \D(f \circ \varphi^{-1})|_{\varphi(p)} \difffrac[t=0]{}{t} (\varphi \circ c) = \D (f\circ \varphi^{-1})|_{\varphi(p)}A[c]
   \end{align*}
   ist $J_p = \D(\cdot)\circ A$ linear.\\
 
-  Ist $[c] \in \Kern J_p$, so folgt aus $0 = J_p[c](\varphi^i) = \difffrac{t}|_{t=0}(\varphi^i \circ c)$, dass $\difffrac{t}|_{t=0}(\varphi \circ c) = 0$ gilt, also $[c] = 0$.\\
+  Ist $[c] \in \Kern J_p$, so folgt aus $0 = J_p[c](\varphi^i) = \difffrac[t=0]{}{t}(\varphi^i \circ c)$, dass $\difffrac[t=0]{}{t}(\varphi \circ c) = 0$ gilt, also $[c] = 0$.\\
 
   Damit ist $J_p$ injektiv, also ein Isomorphismus.
 \end{proof}
 
 \begin{bem}
   \begin{enumerate}
-  \item Ist $X_p = \sum \xi^i\pdifffrac{x^i}|_p$,so gilt $X_p = c(0)$ für $c(t) = \varphi^{-1}(\varphi(p) + t\xi)$.
-\item Für jede glatte Kurve $c$ durch $p$ ist $\difffrac{t}|_{t=0}(\varphi \circ c)$ der Koeffizientenvektor von $\dot c(0)$ in der Basis $\pdifffrac{x^i}|_p$.
+  \item Ist $X_p = \sum \xi^i\pdifffrac[p]{}{x^i}$,so gilt $X_p = c(0)$ für $c(t) = \varphi^{-1}(\varphi(p) + t\xi)$.
+\item Für jede glatte Kurve $c$ durch $p$ ist $\difffrac[t=0]{}{t}(\varphi \circ c)$ der Koeffizientenvektor von $\dot c(0)$ in der Basis $\pdifffrac[p]{}{x^i}$.
   \end{enumerate}
 \end{bem}
 
 
 % Satz 2.10
 \begin{satz}[Transformationsverhalten bei Kartenwechsel]
-  Es seien $\varphi$ und $\psi$ Karten in $M$ um $p$ und es bezeichnen $\pdifffrac{x^i}|_p$ und $\pdifffrac{y^i}|_p$ die damit assoziierten Basen von $\T_pM$. Dann gilt
+  Es seien $\varphi$ und $\psi$ Karten in $M$ um $p$ und es bezeichnen $\pdifffrac[p]{}{x^i}$ und $\pdifffrac[p]{}{y^i}$ die damit assoziierten Basen von $\T_pM$. Dann gilt
   \begin{align*}
-    \pdifffrac{x^i}|_p = \sum_j \partial_i(\psi^j \circ \varphi^{-1})(\varphi(p)) \pdifffrac{y^j}|_p.
+    \pdifffrac[p]{}{x^i} = \sum_j \partial_i(\psi^j \circ \varphi^{-1})(\varphi(p)) \pdifffrac[p]{}{y^j}.
   \end{align*}
-Es sei $X_p = \sum \xi^i \pdifffrac{x^i}|_p = \sum \eta^i\pdifffrac{y^i}|_p$. Dann gilt:
+Es sei $X_p = \sum \xi^i \pdifffrac[p]{}{x^i} = \sum \eta^i\pdifffrac[p]{}{y^i}$. Dann gilt:
 \begin{align*}
   \eta^j = \sum \partial_i(\psi^j \circ \varphi^{-1})(\varphi(p))\xi^i \text{ bzw. }
   \eta = \D(\psi \circ \varphi^{-1})(\varphi(p))\xi.
@@ -272,9 +272,9 @@ Es sei $X_p = \sum \xi^i \pdifffrac{x^i}|_p = \sum \eta^i\pdifffrac{y^i}|_p$. Da
 \end{satz}
 
 \begin{proof}
-  Es gelte $\pdifffrac{x^i}|_p = \sum \alpha_i^j\pdifffrac{y^j}|_p$ und nach obiger Bemerkung zum vorletzten Satz gilt:
+  Es gelte $\pdifffrac[p]{}{x^i} = \sum \alpha_i^j\pdifffrac[p]{}{y^j}$ und nach obiger Bemerkung zum vorletzten Satz gilt:
   \begin{align*}
-    \alpha_i^j = \pdifffrac{x^i}|_p(\psi^j) = \partial_i(\psi^j \circ \varphi^{-1})(\varphi(p))
+    \alpha_i^j = \pdifffrac[p]{}{x^i}(\psi^j) = \partial_i(\psi^j \circ \varphi^{-1})(\varphi(p))
   \end{align*}
 \end{proof}
 

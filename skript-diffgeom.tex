@@ -4,7 +4,6 @@
 %%
 %% Mitschrieb und Textsatz von Jan-Bernhard Kordaß.
 %%
-
 \documentclass[a4paper, twoside, 11pt]{scrartcl}
 
 \usepackage[utf8x]{inputenc}
@@ -103,9 +102,15 @@
 \DeclareMathOperator{\T}{T} % tangent bundle
 \DeclareMathOperator{\D}{D} % Jacobi matrix or derivative
 
+% Differentialoperatoren als Brüche
 \newcommand{\dop}{\mathrm{d}}	
-\newcommand{\difffrac}[2][]{\dfrac{\dop #1}{\dop #2}}
-\newcommand{\pdifffrac}[2][]{\dfrac{\partial #1}{\partial #2}}
+%\newcommand{\difffrac}[2][]{\dfrac{\dop #1}{\dop #2}}
+\newcommand{\difffrac}[3][]{\ifthenelse{\isempty{#1}}{\dfrac{\dop #2}{\dop #3}}{\left. \dfrac{\dop #2}{\dop #3} \right|_{#1}}}
+%\newcommand{\pdifffrac}[2][]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\pdifffrac}[3][]{\ifthenelse{\isempty{#1}}{\dfrac{\partial #2}{\partial #3}}{\left. \dfrac{\partial #2}{\partial #3} \right|_{#1}}}
+
+% stellt einen großen vertikalen Strich an einen Term, nuetzlich in Bruechen
+\newcommand{\bigvert}[1]{\left. #1 \right|}
 
 % quotient space or group
 \newcommand{\modulo}[1]{\ensuremath{/_{\displaystyle #1}}}
@@ -284,7 +289,7 @@
 
 % changing enumerations
 \setlist[enumerate]{label=(\arabic*), itemsep=0cm, leftmargin=2cm}
-\setlist[itemize]{itemsep=0cm, leftmargin=2cm}
+\setlist[itemize]{itemsep=0cm} %\setlist[itemize]{itemsep=0cm, leftmargin=2cm}
 
 % replace the slim emptyset symbol
 \let\emptyset\varnothing
