@@ -51,6 +51,8 @@ INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+INPUT preamble.tex
+INPUT preamble.tex
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/marginnote/marginnote.sty
@@ -229,8 +231,6 @@ INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amscls/amsthm.sty
 OUTPUT skript-diffgeom.idx
-INPUT canonicalsync.sty
-INPUT canonicalsync.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/mh/mathtools.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/mh/mathtools.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/mh/mhsetup.sty
