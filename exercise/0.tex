@@ -1,0 +1,56 @@
+\section{24. April 2012}
+\setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
+\setcounter{Loes}{0}
+
+\begin{dfn*}[Gra\ss mann-Manningfaltigkeiten]
+Sei $k \le n$ und $\Gr_k(\R^n) = \{ V \subseteq \R^n | \ddim V = k\}$
+\end{dfn*}
+
+\begin{beh*}
+$\Gr_k(\R^n)$ ist eine glatte Manningfaltigkeit.
+\end{beh*}
+
+\begin{bem*}
+F"ur $k = 1$ ist $\Gr_1(\R^n) = \R \P^n$
+\end{bem*}
+
+$X_0 \in \Gr_k(\R^n) \Rightarrow \R^n = X_0 \oplus X_0^\perp$, $X_0 = \mspan\{e_1,\ldots ,e_k\}$ \marginnote{\begin{tikzpicture}
+\draw[->] (-1.5, 0) -- (1.5,0) node[below]{$X_0$};
+\draw[->] (0,-1.5) -- (0,1.5) node[left]{$X_0^\perp$};
+\draw (-1,-1) --(1,1) node[below]{$Y$};
+\end{tikzpicture}}
+
+Definiere $U_{X_0} := \{Y \in \Gr_k(\R^n) | Y \cap X_0^\perp = \{0\}\}$. F"ur $Y \in U_{X_0}$ gilt dann: $\pr_{X_0}(Y) = X_0 \Rightarrow \pr_{X_0}$ ist ein Isomorphismus
+	\[X_0 \xrightarrow{(\pr_{X_0}|_Y)^{-1}} Y \xrightarrow{\pr_{X_0^\perp}} X_0^\perp \]
+Definiere
+	\[ \varphi_{X_0}: \left\{\begin{array}{ccl} U_{X_0} &\to& \Hom(\underbrace{X_0, X_0^\perp}_{\cong \R^{k \cdot (n-k)}}) \\
+		Y &\mapsto& \pr_{X_0^\perp} \circ (\pr_{X_0}|_Y)^{-1} \end{array}\right.\]
+	\[ \varphi_{X_0}^{-1}: \left\{\begin{array}{ccl} \Hom(X_0, X_0^\perp) &\to& U_{X_0} \\
+		f &\mapsto& \Graph(f) = \{x + xf | x \in X_0\} \end{array}\right.\]
+\emph{Zu zeigen:}\begin{enumerate}
+\item
+	$\varphi_{X-0}, \varphi_{X_0}^{-1}$ sind beide stetig
+\item
+	$\varphi_{X-0} \circ \varphi_{X_0}^{-1}$ ist glatt
+\item
+	$\Gr_k(\R^n)$ ist Hausdorffsch und hat eine abz"ahlbare Basis der Topologie
+\end{enumerate}
+
+\textbf{Welche Topologie eigentlich?} Sei $V = \{ (v_1,\ldots, v_k) \in (\R^n)^k | v_1,\ldots, v_k$ linear unabh"angig$\}$ und $\pi: V \to \Gr_k(\R^n), (v_1,\ldots ,v_k) \mapsto \mspan\{v_1,\ldots ,v_k\}$. Topologie auf $\Gr_k(\R^n)$: induziert von der Quotientopologie auf $V\modulo{\sim\pi}$, also
+	\[U \subset \Gr_k(\R^n) \text{ offen } \Leftrightarrow \pi^{-1}(U) \text{ offen} \]
+$V$ ist offen in $(\R^n)^k$: $V = \widetilde{\ddet}^{-1}(\R^{\left(\begin{smallmatrix}n \\ k\end{smallmatrix}\right)} \setminus \{0\})$ mit $\widetilde{\ddet}(v_1,\ldots,v_k) = (\ddet(k \times k\text{-Untermatrizen}))$
+
+\emph{Zu zeigen:} $\pi^{-1}(U_{X_0})$ offen
+
+$\pi^{-1}(U_{X_0}) = \{(v_1,\ldots ,v_k) \in V |\ \pr_{X_0}|_{\mspan\{v_i\}} \text{ hat vollen Rang}\} = \{(v_1,\ldots ,v_k) \in V|\ \pr_{X_0}(V-i) \text{ sind linear unabh"angig} \} = (\widetilde{\ddet} \circ (\pr_{X_0},\ldots ,\pr_{X_0}))^{-1}(\R^{\left(\begin{smallmatrix}n \\ k\end{smallmatrix}\right)} \textcolor{red}{\setminus \{0\}})$
+
+$\Rightarrow U_{Y_0}$ ist offen.
+\begin{description}
+\item[zu 2):]\begin{description}[font=\normalfont\itshape]
+	\item[Behauptung:] f"ur alle $Y \in U_{X_0}$ gibt es genau eine Basis $(y_1,\ldots ,y_k)$ von $Y$ sodass $\pr_{X_0}(y_i) = x_i$ f"ur eine feste Orthonormalbasis $(x_1,\ldots ,x_k)$ von $X_0$. Bezeichnet $B(Y)$ diese BAsis, so ist $B: U_{X_0} \to V$ stetig
+	\item[Beweis:] doajdoai
+	\end{description}
+\item[zu 3):]
+
+\item[zu 4):]
+\end{description}

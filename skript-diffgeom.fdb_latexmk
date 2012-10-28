@@ -1,17 +1,19 @@
 # Fdb version 3
-["cusdep glo gls skript-diffgeom"] 1351426813 "skript-diffgeom.glo" "skript-diffgeom.gls" "skript-diffgeom" 1351426977
-  "skript-diffgeom.glo" 1351426976 0 d41d8cd98f00b204e9800998ecf8427e ""
+["cusdep glo gls skript-diffgeom"] 1351432056 "skript-diffgeom.glo" "skript-diffgeom.gls" "skript-diffgeom" 1351443942
+  "skript-diffgeom.glo" 1351443940 0 d41d8cd98f00b204e9800998ecf8427e ""
   (generated)
   "skript-diffgeom.gls"
-["makeindex skript-diffgeom.idx"] 1351416058 "skript-diffgeom.idx" "skript-diffgeom.ind" "skript-diffgeom" 1351426977
-  "skript-diffgeom.idx" 1351426977 763 f4cad9b460a5704cc64d0e0cd1d57dc9 ""
+["makeindex skript-diffgeom.idx"] 1351443883 "skript-diffgeom.idx" "skript-diffgeom.ind" "skript-diffgeom" 1351443942
+  "skript-diffgeom.idx" 1351443942 763 f4cad9b460a5704cc64d0e0cd1d57dc9 ""
   (generated)
   "skript-diffgeom.ind"
   "skript-diffgeom.ilg"
-["pdflatex"] 1351426975 "skript-diffgeom.tex" "skript-diffgeom.pdf" "skript-diffgeom" 1351426977
+["pdflatex"] 1351443939 "skript-diffgeom.tex" "skript-diffgeom.pdf" "skript-diffgeom" 1351443942
   "./chapter/1.tex" 1351425240 20165 95c31c0c03327d526bd30e420407f54f ""
   "./chapter/2.tex" 1351425240 11838 93b16adbaebea6a6c93f31de09f5ece6 ""
   "./chapter/3.tex" 1351425240 13367 038c461dc50e10dbe8bd2f40ef789e63 ""
+  "./exercise/0.aux" 1351443942 818 1b4636b4b49ba16f3f1d49ae22178d62 ""
+  "./exercise/0.tex" 1351443939 3014 f4f7ffc03533389bd5618a5c15b5f921 ""
   "./img/1-6-torus-als-produkt.pdf_tex" 1351271310 1906 43c957cf0fc3ab32a2d88b9a2e953048 ""
   "./img/1-7-untermf.pdf_tex" 1351271310 1885 079da7658a6167b73756a8864e688fc9 ""
   "./img/2-1-tangentialvektoren-motivation.pdf_tex" 1351271310 1930 36056438ce18a5c5000835b7e132df81 ""
@@ -41,6 +43,7 @@
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm" 1254269338 17148 9556e1b5f936b77a796f68d2d559ba99 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/ec-lmri7.tfm" 1254269338 17168 78a37e395d0470967cfda94332b0716a ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/ec-lmri8.tfm" 1254269338 17152 c8240fef851c4991afefdae37a539ee1 ""
+  "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/ec-lmro10.tfm" 1254269338 12196 3ef208c5996a6e35328a273ab73fa1e1 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/ec-lmss10.tfm" 1254269338 11176 53ebf7a171df1f9447b387b178768bb5 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm" 1254269338 11168 06d87f5698fd1b642d96449b7c8d90b0 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/lmex10.tfm" 1148093231 992 ce925c9346c7613270a79afbee98c070 ""
@@ -73,6 +76,7 @@
   "/usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmr8.pfb" 1255129361 122174 a7a08406857c9530a0320a2517f60370 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmri10.pfb" 1255129361 112593 fda2373ba4420af33949610de4c28fe8 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmri8.pfb" 1255129361 109952 3dd76c0c5c680d519bb6d59a066c0826 ""
+  "/usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmro10.pfb" 1255129361 131205 e6b9f0f008cce138627a5f401db34a3b ""
   "/usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb" 1255129361 119663 e82fa1a58f98ccd89bdbd77311ac9cf1 ""
   "/usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmsy10.pfb" 1254269338 27863 09ce3735688ffde955e72da27c95b61a ""
   "/usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmsy6.pfb" 1254269338 28109 6d61305ed3d0eb794ebe36f15cf44aa0 ""
@@ -189,8 +193,8 @@
   "/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty" 1156702488 2266 7054435e4584a41cf53b0a7ca624d0cb ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty" 1156702488 3153 c50e6bd54d2dd3933fc52bcf369bec4a ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty" 1278810218 438 4c0f57b7cba6e6ca9226b32da26f82e9 ""
-  "/usr/local/texlive/2012/texmf-dist/tex/latex/koma-script/scrartcl.cls" 1343688052 106474 7f06b40fedbef8c4ed2bde858c785cf3 ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/koma-script/scrbase.sty" 1343688052 27136 ac42cbaa4ede00fc8c2863056f1dcdb4 ""
+  "/usr/local/texlive/2012/texmf-dist/tex/latex/koma-script/scrbook.cls" 1343688052 124581 97205e9fd80d1127972bf6ec1e553f76 ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/koma-script/scrkbase.sty" 1343688052 12006 1c57cd5bc6062f154af1261d4de745ca ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/koma-script/scrlfile.sty" 1343488661 12492 c400f596684b3ca2a983df662121f8a7 ""
   "/usr/local/texlive/2012/texmf-dist/tex/latex/koma-script/scrsize11pt.clo" 1343688052 6103 4e753d96e6e3b720309972c59b8bebc7 ""
@@ -247,6 +251,8 @@
   "chapter/1.tex" 1351425240 20165 95c31c0c03327d526bd30e420407f54f ""
   "chapter/2.tex" 1351425240 11838 93b16adbaebea6a6c93f31de09f5ece6 ""
   "chapter/3.tex" 1351425240 13367 038c461dc50e10dbe8bd2f40ef789e63 ""
+  "exercise/0.aux" 1351443942 818 1b4636b4b49ba16f3f1d49ae22178d62 ""
+  "exercise/0.tex" 1351443939 3014 f4f7ffc03533389bd5618a5c15b5f921 ""
   "img/1-6-torus-als-produkt.pdf" 1351271310 8981 b3870f327a1c56e3ccb1d2547928c115 ""
   "img/1-6-torus-als-produkt.pdf_tex" 1351271310 1906 43c957cf0fc3ab32a2d88b9a2e953048 ""
   "img/1-6-torus-als-produkt.svg" 1351271310 141062 1178994e1866fe567c5ad811a8715fca ""
@@ -259,14 +265,15 @@
   "img/2-2-beweis-bijektivitaet-tpm-rn.pdf" 1351271310 14082 e1a57e17cccf7f27ef8903e774eed25b ""
   "img/2-2-beweis-bijektivitaet-tpm-rn.pdf_tex" 1351271310 1927 63acd867e0151f43d9645618fd5b3ad1 ""
   "img/2-2-beweis-bijektivitaet-tpm-rn.svg" 1351271310 177637 38df084789ac2182d40909ff9637fe34 ""
-  "preamble.tex" 1351426962 14149 ad64d44ca4be98111b40b669c0932bac ""
-  "skript-diffgeom.aux" 1351426977 1104 c391b059b46bfe5451d04bf4623c8206 ""
-  "skript-diffgeom.gls" 1351426813 0 d41d8cd98f00b204e9800998ecf8427e "cusdep glo gls skript-diffgeom"
-  "skript-diffgeom.ind" 1351416058 849 0142197a8f00e86d9773b46964094d53 "makeindex skript-diffgeom.idx"
-  "skript-diffgeom.tex" 1351426975 2796 d0f7a51b925db445c04d2a9f59f68b04 ""
+  "preamble.tex" 1351443618 14445 13421e73ae284440ae42202e7f199fb7 ""
+  "skript-diffgeom.aux" 1351443942 1314 ce561eb86a6ae05ee453256b7c9e587f ""
+  "skript-diffgeom.gls" 1351432056 0 d41d8cd98f00b204e9800998ecf8427e "cusdep glo gls skript-diffgeom"
+  "skript-diffgeom.ind" 1351443883 849 0142197a8f00e86d9773b46964094d53 "makeindex skript-diffgeom.idx"
+  "skript-diffgeom.tex" 1351435798 3272 ecce94da9b196afddd5ceb2851d19bb5 ""
   (generated)
   "skript-diffgeom.aux"
   "skript-diffgeom.glo"
+  "exercise/0.aux"
   "skript-diffgeom.pdf"
   "skript-diffgeom.ist"
   "skript-diffgeom.log"

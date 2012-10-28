@@ -5,6 +5,7 @@
 \usepackage{xifthen} % Erlaubt die Verwendung von if-then-else Befehlen im Code
 \usepackage{makeidx} % Fuer den Index
 \usepackage{xspace} % intelligende Leerzeichen bei Macros
+%\usepackage{expdlist} % Erweiterte description umgebung
 
 \usepackage{tikz} % Fuer Zeichnungen in TikZ
 \usetikzlibrary{matrix,arrows,calc,intersections, positioning, patterns, decorations.text}
@@ -20,8 +21,10 @@
 
 % common mathematical operators and sets
 \DeclareMathOperator{\aff}{aff} % affine Huelle
+\DeclareMathOperator{\ddet}{det} % Determinante
 \DeclareMathOperator{\diam}{diam} % diameter
 \DeclareMathOperator{\dist}{dist} % distance
+\DeclareMathOperator{\ddim}{dim} % dimension
 \DeclareMathOperator{\ggT}{ggT} % goesster gemeinsamer Teiler
 \DeclareMathOperator{\inh}{inh} % Inhalt
 \DeclareMathOperator{\grad}{grad} % Gradient
@@ -29,6 +32,7 @@
 \DeclareMathOperator{\mspan}{span} % Lineare Huelle
 \DeclareMathOperator{\n}{n} % Umlaufzahl
 \DeclareMathOperator{\offen}{offen}
+\DeclareMathOperator{\pr}{pr}
 \DeclareMathOperator{\res}{res} % Residuum
 \DeclareMathOperator{\rg}{rg} % rank (i)
 \DeclareMathOperator{\sgn}{sgn} % Signum
@@ -42,6 +46,7 @@
 \DeclareMathOperator{\Charakt}{char}
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\End}{End} % endomorphisms
+\DeclareMathOperator{\Gr}{Gr}
 \DeclareMathOperator{\Graph}{Graph}
 \DeclareMathOperator{\Hom}{Hom} % homomorphisms
 \DeclareMathOperator{\Id}{Id} % identity
@@ -246,6 +251,9 @@
   \newtheorem{bem}[thmglobal]{\cmLangThmBem}
 }
 
+\newtheorem{Aufg}{Aufgabe}
+\newtheorem{Loes}{L"osung}
+
 % Add unnumbered Theorems, use amsthm style in both style modes
 \theoremstyle{plain}
 \newtheorem*{satz*}{\cmLangThmSatz}
@@ -259,6 +267,7 @@
 
 \theoremstyle{remark}
 \newtheorem*{bem*}{\cmLangThmBem}
+\newtheorem*{beh*}{Behauptung}
 
 
 % 2-level numbering$

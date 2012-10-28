@@ -4,14 +4,14 @@
 %%
 %% Mitschrieb und Textsatz von Jan-Bernhard Kordaß.
 %%
-\documentclass[a4paper, twoside, 11pt]{scrartcl}
+\documentclass[a4paper, twoside, 11pt]{scrbook}
 
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 
 \usepackage[ngerman]{babel}
-\usepackage[a4paper, top=2.5cm, bottom=3cm, left=2.5cm, right=5cm]{geometry}
+\usepackage[a4paper, top=2.5cm, bottom=3cm, left=2.5cm, right=4.5cm]{geometry}
 
 \input{preamble}
 
@@ -53,6 +53,19 @@ Bei Anmerkungen bzw. beim Auffinden von Fehlern schicken Sie bitte eine E-Mail a
 \appendix
 
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Uebungen -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+\chapter{"Ubungen}
+
+% Die Benennung der "section" so aendern, dass "\"Ubung 123 vom " am Anfang steht
+% Der Code ist fast genau der vom Anfang der Praeambel, dort steht die Erklaerung
+\renewcommand*{\othersectionlevelsformat}[3]{\ifstr{#1}{section}{\"Ubung\ #3\ vom\ }{#3\autodot\enskip}}
+
+% Das Format der "section" in Kopfzeile der rechten Seiten
+%\renewcommand*{\sectionmarkformat}{\"Ubung \thesection\autodot\ vom\enskip}
+
+\setcounter{section}{-1}
+
+\include{exercise/0}
 
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Stichwortverzeichnis -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
