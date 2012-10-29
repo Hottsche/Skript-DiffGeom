@@ -29,6 +29,8 @@ Definiere
 		f &\mapsto& \Graph(f) = \{x + xf | x \in X_0\} \end{array}\right.\]
 \emph{Zu zeigen:}\begin{enumerate}
 \item
+	$U_{X_0}$ ist offen
+\item
 	$\varphi_{X-0}, \varphi_{X_0}^{-1}$ sind beide stetig
 \item
 	$\varphi_{X-0} \circ \varphi_{X_0}^{-1}$ ist glatt
@@ -45,12 +47,26 @@ $V$ ist offen in $(\R^n)^k$: $V = \widetilde{\ddet}^{-1}(\R^{\left(\begin{smallm
 $\pi^{-1}(U_{X_0}) = \{(v_1,\ldots ,v_k) \in V |\ \pr_{X_0}|_{\mspan\{v_i\}} \text{ hat vollen Rang}\} = \{(v_1,\ldots ,v_k) \in V|\ \pr_{X_0}(V-i) \text{ sind linear unabh"angig} \} = (\widetilde{\ddet} \circ (\pr_{X_0},\ldots ,\pr_{X_0}))^{-1}(\R^{\left(\begin{smallmatrix}n \\ k\end{smallmatrix}\right)} \textcolor{red}{\setminus \{0\}})$
 
 $\Rightarrow U_{Y_0}$ ist offen.
-\begin{description}
-\item[zu 2):]\begin{description}[font=\normalfont\itshape]
-	\item[Behauptung:] f"ur alle $Y \in U_{X_0}$ gibt es genau eine Basis $(y_1,\ldots ,y_k)$ von $Y$ sodass $\pr_{X_0}(y_i) = x_i$ f"ur eine feste Orthonormalbasis $(x_1,\ldots ,x_k)$ von $X_0$. Bezeichnet $B(Y)$ diese BAsis, so ist $B: U_{X_0} \to V$ stetig
-	\item[Beweis:] doajdoai
+\begin{description}[font=\normalfont\bfseries]
+\item[zu 2)]\begin{description}[font=\normalfont\itshape]
+	\item[Behauptung:] f"ur alle $Y \in U_{X_0}$ gibt es genau eine Basis $(y_1,\ldots ,y_k)$ von $Y$ sodass $\pr_{X_0}(y_i) = x_i$ f"ur eine feste Orthonormalbasis $(x_1,\ldots ,x_k)$ von $X_0$. Bezeichnet $B(Y)$ diese Basis, so ist $B: U_{X_0} \to V$ stetig
+	\item[Beweis:] Existenz und Eindeutigkeit $\checkmark$ ($\pr_{X_0}$ ist Isomorphismus)
+		
+		F"ur $(v_1,\ldots ,v_k) \in \pi^{-1}(U_{X_0})$ ist $B \circ \pi(v_1,\ldots ,v_k) = ((\pr_{X_0}|_{\mspan\{v_1,\ldots ,v_k\}})^{-1} X_i)_{i \le k}$. Die Darstellungsmatrix von $(\pr_{X_0}|_{\mspan\{v_1,\ldots ,v_k\}})^{-1}$ bez"uglich $\{x_i\}, \{y_i\}$ h"angt stetig von den $v_i$ ab. Daraus folgt dass $B \circ \pi|_{\pi^{-1}(U_{X_0}}$ stetig ist, womit auch $B$ stetig ist. Es gilt:
+			\[ B(Y)_i = \underbrace{x_i}_{\in X_0} + \underbrace{\varphi_{X_0}(Y)_{X_i}}_{\in X_0^\perp} \qquad \text{(*)} \]
+		$\Rightarrow \varphi_{X_0}(Y)_{x_i}$ h"angt stetig von $Y$ ab.
+		
+		$\Rightarrow$ Darstellende Matrix von $\varphi_{X_0}(Y)$ h"angt stetig von $Y$ ab $\Rightarrow \varphi_{X_0}$ ist stetig
+		
+		(*) $\Rightarrow B(\varphi_{X_0}^{-1}(A))_i = x_i + Ax_i \Rightarrow B \circ \varphi_{X_0}^{-1}$ ist stetig (sogar glatt)
+			\[ \varphi_{X_0}^{-1} = (\pi \circ B) \circ \varphi_{X_0}^{-1} \text{ ist stetig} \]
 	\end{description}
-\item[zu 3):]
-
-\item[zu 4):]
+\item[zu 3)]
+	$\varphi_{X_0} \circ \varphi_{\tilde X_0}^{-1} = \varphi_{X_0} \circ \pi \circ (\underbrace{B_{\tilde X_0} \circ \varphi_{\tilde X_0}^{-1}}_{\text{ist glatt, s. o.}})$ ist glatt.
+	
+	$\varphi_{X_0} \circ \pi$ ist glatt, da $\varphi_{X_0} \circ \pi(v_1,\ldots ,v_k)(x_i) = (\underbrace{B_{X_0} \circ \pi}_{\substack{\text{glatt (Darst.}\\ \text{aus Beh.)}}})(v_1,\ldots ,v_k) - x_i$
+\item[zu 4)]
+	Abz"ahlbare Basis der Topologie wird von $V$ geerbt. \emph{Hausdorffsch}: Seien $X_0 \ne \tilde X_0 \in \Gr_k(\R^n) \xRightarrow[\text{"Ub. Aufg.}]{\text{L. A.}} \exists Z \subseteq \R^n, \ddim Z = n-k: Z \cap X_0 = \{0\} = Z \cap \tilde X_0, U_{\underbrace{Z^\perp}_{k\text{-dim}}} \ni X_0, \tilde X_0$
+	
+	\emph{Alternativ:} Sei $w \in X_0 \setminus \tilde X_0$ und $d_w^2: \Gr_k(\R^n) \to \R, Y \mapsto (\dist(w, Y))^2 \Rightarrow d_w^2(X_0) = 0, d_w^2(\tilde X_0) > 0$. Falls $d_w^2$ stetig ist, gilt: $(d_w^2)^{-1}((-\infty, \frac{d_w^2(\tilde X_0)}{2}))$ und $(d_w^2)^{-1}((\frac{d_w^2(\tilde X_0)}{2}, \infty))$ trennen und sind offen.
 \end{description}
