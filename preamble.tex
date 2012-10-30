@@ -1,4 +1,11 @@
 \usepackage{fancyhdr} % erlaubt mehr Optionen in Kopf- und Fusszeile
+
+% header configuration
+\pagestyle{fancy}
+\fancyhf{
+\lhead[\thepage]{\rightmark}}
+\rhead[\nouppercase{\leftmark}]{\thepage}
+
 \usepackage{marginnote} % Randnotizen
 \usepackage{enumitem} % Fuer mehr Einstellungmoeglichkeiten bei Aufzaehlungen
 %\usepackage{enumerate} % Fuer mehr Einstellungmoeglichkeiten bei Aufzaehlungen
