@@ -1,0 +1,72 @@
+\section{29. Oktober 2012}
+\setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
+\setcounter{Loes}{0}
+
+\begin{Loes}
+%asdf
+\textcolor{red}{[BILD]}
+\begin{enumerate}[label=\alph*),leftmargin=*,widest=a,font=\normalfont]
+\item
+	$S^n = (S^n \setminus \{N\}) \cup (S^n\setminus \{S\}) \checkmark$
+	
+	$\varphi, \psi$ Hom"oomorphismen, $\Phi: \{(x^0,\ldots ,x^n) \in \R^n | x^0 < 1\} \to \R^n, x \mapsto \frac{1}{1-x^0}(x^1, \ldots ,x^n) \Rightarrow \Phi$ ist stetig $\Rightarrow  \varphi = \Phi|_{S^n \setminus \{N\}}$ ist stetig. Es ist
+		\[ \varphi^{-1}(y) = \frac{1}{1+|y|^2}(\|y\|^2 - 1, 2y)\]
+	also ist $\varphi^{-1}$ stetig. Analog f"ur $\psi$:
+		\[\varphi \circ \psi^{-1}(y) = \frac{y}{\|y\|^2} = \psi \circ \varphi{-1}(y) \]
+	f"ur $y \in \R^n \setminus \{0\}$. Also glatter Kartenwechsel.\marginnote{\textcolor{red}{[BILD]}}
+		\[ \varphi_i^\pm: U_i^\pm \to B_1(0) \subset \R^n, x \mapsto (x^0,\ldots ,x^{i-1}, x^{i+1},\ldots ,x^n) \]
+		\[ (\varphi_i^\pm)^{-1}: B_1(0) \to U_i^\pm, y \mapsto (y^0,\ldots ,y^{i-1}, \pm (1 - \|y\|^2), \textcolor{red}{y^i},\ldots ,y^{n+1}) \]
+	$\varphi_i^\pm \circ (\varphi_j^\pm)^{-1}$ glatt
+	
+	$\psi \circ (\varphi_j^\pm)^{-1}$ glatt
+	
+	$\varphi \circ (\varphi_j^\pm)^{-1}$ glatt
+	
+	$\varphi_i^\pm \circ \varphi$ glatt
+	
+	$\varphi_i^\pm \circ \psi$ glatt
+\item
+	asdf
+\end{enumerate}
+\end{Loes}
+
+\begin{Loes}
+$\varphi: \R \to \R, x \mapsto x^3$
+
+\emph{Behauptung:} $\varphi$ induziert eine $C^\infty$-Struktur auf $\R$, die von der Standardstruktur abweicht.
+
+Dazu müssen wir zeigen:\begin{enumerate}[font=\normalfont,label=(\roman*)]
+\item
+	$\{(\varphi, \R)\}$ ist ein $C^\infty$-Atlas
+\item
+	$\varphi$ ist nicht vertr"aglich mit $(\Id, \R)$
+\end{enumerate}
+\emph{Beweis:}\begin{enumerate}[leftmargin=*,widest=ii,font=\normalfont,label=(\roman*)]
+\item
+	$\varphi$ ist Hom"oomorphismus, da $\varphi$ und $\varphi^{-1}: x \mapsto \sqrt[3]{x}$ stetig sind. Offensichtlich "uberdeckt $\varphi$ ganz $\R$. Der einzige Kartenwechsel $\varphi \circ \varphi^{-1} = \Id_{\R}$ ist glatt.
+\item
+	Betrachte
+		\[ \Id_{\R} \circ \varphi^{-1} = \varphi^{-1}: x \mapsto \sqrt[3]{x} \]
+	$\Id_{\R} \circ \varphi^{-1}$ ist in $0$ nicht differenzierbar $\Rightarrow$ (ii) $\checkmark$
+\end{enumerate}
+\begin{description}[font=\normalfont\itshape]
+\item[Behauptung:]
+	Die beiden $C^\infty$ Strukturen sind diffeomorph
+\item[Beweis:]
+	Sei
+		\[\begin{array}{cccc} f:&  \overset{\text{von } \Id \text{ induziert}}{(\R, \tau_{\text{std}})} &\to& \overset{\text{von } \varphi \text{ induziert}}{(\R, \tau)} \\
+			& x &\mapsto& \sqrt[3]{x} \end{array}\]
+	\marginnote{\textcolor{red}{[BILD]}}
+	Dann ist $f$ bijektiv. Es gilt f"ur $x \in \R$:
+		\[ \varphi \circ f \circ (\Id_{\R})^{-1} (x) = (\sqrt[3]{x})^3 = x \]
+	ist glatt. Betrachte nun $f^{-1}$: $\Id_{\R} \circ f^{-1} \circ \varphi^{-1}(x) = (\sqrt[3]{x})^3 = x$ ist glatt. Damit ist $f$ ein Diffeomorphismus.
+\end{description}
+\end{Loes}
+
+\begin{Loes}
+asdf
+\end{Loes}
+
+\begin{Loes}
+asdf
+\end{Loes}

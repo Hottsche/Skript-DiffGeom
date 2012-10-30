@@ -228,8 +228,8 @@ INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amscls/amsthm.sty
-INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/amscls/amsthm.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/ntheorem/ntheorem.sty
+INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/ntheorem/ntheorem.sty
 OUTPUT skript-diffgeom.idx
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/mh/mathtools.sty
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/mh/mathtools.sty
@@ -247,6 +247,8 @@ INPUT skript-diffgeom.aux
 INPUT skript-diffgeom.aux
 INPUT exercise/0.aux
 INPUT exercise/0.aux
+INPUT exercise/1.aux
+INPUT exercise/1.aux
 OUTPUT skript-diffgeom.aux
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/lm/t1lmr.fd
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/lm/t1lmr.fd
@@ -293,6 +295,7 @@ INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/lm/omslmr.fd
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/lm/omslmsy.fd
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/lm/omslmsy.fd
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
+INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2012/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
@@ -324,7 +327,6 @@ INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/lmmi5.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/lmsy5.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/ec-lmro10.tfm
 OUTPUT skript-diffgeom.pdf
 INPUT /usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 OUTPUT skript-diffgeom.ist
@@ -334,7 +336,6 @@ INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/lmmi9.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/lmsy9.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
 INPUT img/1-6-torus-als-produkt.svg
 INPUT ./img/1-6-torus-als-produkt.svg
@@ -379,14 +380,20 @@ INPUT /usr/local/texlive/2012/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
 OUTPUT exercise/0.aux
 INPUT exercise/0.tex
 INPUT exercise/0.tex
+OUTPUT exercise/1.aux
+INPUT exercise/1.tex
+INPUT exercise/1.tex
 INPUT skript-diffgeom.ind
 INPUT skript-diffgeom.ind
 INPUT skript-diffgeom.gls
 INPUT skript-diffgeom.gls
 INPUT skript-diffgeom.gls
+OUTPUT skript-diffgeom.thm
 INPUT skript-diffgeom.aux
 INPUT exercise/0.aux
 INPUT exercise/0.aux
+INPUT exercise/1.aux
+INPUT exercise/1.aux
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
@@ -405,7 +412,6 @@ INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmr6.pfb
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmr8.pfb
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmri8.pfb
-INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmro10.pfb
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
 INPUT /usr/local/texlive/2012/texmf-dist/fonts/type1/public/lm/lmsy6.pfb

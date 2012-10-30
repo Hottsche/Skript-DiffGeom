@@ -24,7 +24,8 @@
 % Mathe Pakete
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{amsthm}
+%\usepackage{amsthm}
+\usepackage[hyperref,amsmath,thmmarks,thref, amsthm]{ntheorem}
 
 % common mathematical operators and sets
 \DeclareMathOperator{\aff}{aff} % affine Huelle
@@ -118,7 +119,7 @@
 
 % canonic environments
 \newcounter{thmglobal}
-\swapnumbers
+%\swapnumbers
 \theoremstyle{plain}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -192,7 +193,7 @@
 
   \newcommand{\cmLangThmShortBem}{Rem\xspace}
 }
-
+	
 
 \ifthenelse{\boolean{enableMarginThm}}{
 
@@ -252,28 +253,30 @@
 
   \newtheorem{dfn}[thmglobal]{\cmLangThmDfn}
   \newtheorem{bsp}[thmglobal]{\cmLangThmBsp}
+  
+  \newtheorem{Aufg}{Aufgabe}
+  \newtheorem{Loes}{L\"osung}
 
   \theoremstyle{remark}
 
   \newtheorem{bem}[thmglobal]{\cmLangThmBem}
 }
+\theoremstyle{break}
 
-\newtheorem{Aufg}{Aufgabe}
-\newtheorem{Loes}{L"osung}
 
 % Add unnumbered Theorems, use amsthm style in both style modes
 \theoremstyle{plain}
-\newtheorem*{satz*}{\cmLangThmSatz}
-\newtheorem*{lemma*}{\cmLangThmLemma}
-\newtheorem*{kor*}{\cmLangThmKor}
-\newtheorem*{prop*}{\cmLangThmProp}
+%\newtheorem*{satz*}{\cmLangThmSatz}
+%\newtheorem*{lemma*}{\cmLangThmLemma}
+%\newtheorem*{kor*}{\cmLangThmKor}
+%\newtheorem*{prop*}{\cmLangThmProp}
 
 \theoremstyle{definition}
-\newtheorem*{dfn*}{\cmLangThmDfn}
-\newtheorem*{bsp*}{\cmLangThmBsp}
+%\newtheorem*{dfn*}{\cmLangThmDfn}
+%\newtheorem*{bsp*}{\cmLangThmBsp}
 
 \theoremstyle{remark}
-\newtheorem*{bem*}{\cmLangThmBem}
+%\newtheorem*{bem*}{\cmLangThmBem}
 \newtheorem*{beh*}{Behauptung}
 
 
