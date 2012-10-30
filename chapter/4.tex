@@ -1,0 +1,63 @@
+%% 
+%% 5. Vorlesung <2012-10-30 Tue>, Fortsetzung
+%% 
+%% Skript Differentialgeometrie im Wintersemester 12/13
+%% Zur Vorlesung von Dr. Grensing am KIT Karlsruhe
+%% 
+%% Mitschrieb und Textsatz von Jan-Bernhard Kordaß.
+%% 
+
+\section{Tangentialbündel und Vektorfelder}
+
+\begin{dfn}[Tangentialbündel]
+  Es se $M$ eine glatte Mannigfaltigkeit. Die Menge $\T M = \dot \bigcup_{p \in M}\T_pM$ zusammen mit der sogenannten kanonischen Projektion $\pi \colon \T M \to M, \T_pM \ni X_p \mapsto p$ heißt das \CmMark{Tangentialbündel} von $M$.
+\end{dfn}
+
+\subsection{Das Tangentialbündel als glatte Mannigfaltigkeit}
+
+Es sei $(\varphi, U)$ eine Karte von $M$. Setzt man $\T M|_U  \pi^{-1}(U) = \dot \bigcup_{p\in U}\T_pM$, so ist nach \textcolor{red}{Satz 2.8} % REFERENZ!
+die Abbildung
+\begin{align*}
+  & \overline \varphi \colon \T M|_U \to \varphi(U) \times \R^m \subset \R^{2m}\\
+&\T_p M \ni X_p = \sum \xi^i\pdifffrac[p]{}{x^i} \mapsto (\varphi(p),\xi)
+\end{align*}
+bijektiv.
+Es sei eine Topologie auf $\T M$ dadurch erklärt, dass eine Menge $V \subset \T M$ genau dann offen ist, wenn für alle Karten $(\varphi, U)$ die Menge $\overline \varphi(V \cap \T M|_U$ offen in $\R^{2m}$ ist.\\
+Diese Topologie ist hausdorffsch und besitzt eine abzählbare Basis, da dies für $M$ und $\R^m$ gilt.
+Nach Konstruktion sind alle $\overline \varphi$ Homöomorphismen.\\
+Ist $\mathcal A = \{(\varphi, U\}$ ein $C^{\infty}$-Atlas von $M$, so definiert
+\begin{align*}
+  \overline A = \{(\overline \varphi, \T M|_U) \mid (\varphi, U) \in \mathcal A\}
+\end{align*}
+eine glatte Struktur auf $\T M$.\\
+Für Karten $(\varphi, U), (\psi, V)$ von $M$ ist der Kartenwechsel
+\begin{align*}
+  \overline \psi \circ \overline \phi^{-1} \colon \varphi(U \cap V) \times \R^m \to \psi(U \cap V) \times \R^m, \ (x, \xi) \mapsto (\psi \circ \varphi^{-1}(x),\D(\psi \circ \varphi^{-1}|_x\xi),
+\end{align*}
+$\left(X_p = \sum \xi \pdifffrac[p]{}{x^1}\right)$ ist glatt.\\
+Damit trägt $\T M$ in kanonischer Weise eine glatte Struktur.
+Darüber hinaus ist die kanonische Projektion $\pi \colon \T M \to M$ bezüglich dieser glatten Struktur eine Submersion. (Beweis: Übungsaufgabe)\\
+
+Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so ist $\Phi_{*} \colon \T M \to \T N, \ X_p \mapsto \Phi_{*p}X_p$ eine glatte Abbildung (ebensfalls Übungsaufgabe).\\
+
+
+\begin{dfn}
+  Eine stetige Abbildung $X \colon M \to \T M$ mit $\psi \circ X = \Id_M$ heißt \CmMark{Vektorfeld} auf $M$.
+Ist $X$ glatt (als Abbildung zwischen glatten Mannigfaltigkeiten), so heißt $X$ ein \CmMark{glattes Vektorfeld.}
+\end{dfn}
+
+\begin{bem}
+  Ist $(\varphi, U)$ eine Karte von $M$, so sind die Abbildungen $U \colon \T M|_U, \ p \mapsto \pdifffrac[p]{}{x^{i}}$ glatte Vektorfelder (in der Karte $\overline \varphi$ sind diese genau die Abbildungen $(x,e_i)$).\\
+Ist $X$ ein glattes Vektorfeld, so gilt für jedes $u \in U$:
+\begin{align*}
+  X_U = \sum \xi^i(u) \pdifffrac[U]{}{x^i},
+\end{align*}
+wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$ ist.\\
+
+Ein Vektorfeld ist genau dann glatte, wenn für eine Karte $(\varphi, U)$ die Koeffizientenfunktionen $\xi^i(u)$ von $X_U = \sum \xi^i(u) \pdifffrac[U]{}{x^i}$ glatte Funktionen sind.
+\end{bem}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../skript-diffgeom"
+%%% End: 

@@ -9,7 +9,10 @@
 
 \section{Differentiale}
 
-% Abb 4/1
+%%%
+%%% Abb 4/1
+%%%
+\textcolor{red}{Abbildung 4-1}\\
 
 Es seien $M$ und $N$ Mannigfaltigkeiten und $\Phi \colon M \to N$ eine glatte Abbildung.
 Sind $p \in M$ und $X_p \in \T_pM$ , so ist 
@@ -22,64 +25,64 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   & = \Phi_{*p}X_p(f)q(\Phi(p)) + f(\Phi(p)) \Phi_{*p}X_p(g).
 \end{align*}
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
-	%\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
-	
-	% Die Abbildungspfeile
-	\draw[->] (-1.5,0) to[out=20, in=160]node[above]{$\psi' \circ \Phi \circ \varphi^{-1}$}node[below]{diff'bar} (1.5,0);
-	\draw[->] (-1.5,3) to[out=20, in=160]node[above]{$\Phi$} (1.5,3);
-	
-	% Die Achsen
-	\draw[->,thick] (-5.5,-0.5) -- (-2,-0.5); \draw[->,thick] (-5.25,-0.75) -- (-5.25, 1.25); \node[font=\normalfont] at (-2,1.25) {$\R^m$};
-	\draw[->,thick] (2,-0.5) -- (5.5,-0.5); \draw[->,thick] (2.25,-0.75) -- (2.25, 1.25); \node[font=\normalfont] at (5.5,1.25) {$\R^n$};
-	
-	% das linke Ding
-	\coordinate (ding0) at (-3.5,4.5); \coordinate (ding1) at (-4.25,3.5); \coordinate (ding2) at (-4.5,2); \coordinate (ding3) at (-2.75,2.5); \coordinate (ding4) at (-1.5,4);
-	\coordinate (ctrld0) at (0.5,-0.25); \coordinate (ctrld1) at (0.75,0.5); \coordinate (ctrld2) at (-0.5,0.5); \coordinate (ctrld3) at (0.25,0.5); \coordinate (ctrld4) at (-0.75,0); 
-	\draw[thick] (ding0) ..controls($(ding0)+(ctrld0)$) and ($(ding1)+(0.75,0.5)$).. (ding1) ..controls($(ding1)-(ctrld1)$) and($(ding2)+(ctrld2)$).. (ding2) ..controls($(ding2)-(ctrld2)$) and ($(ding3)-2*(ctrld3)$).. (ding3) ..controls($(ding3)+(ctrld3)$) and ($(ding4)+(ctrld4)$).. (ding4);
-	% das Loch in der Mitte nicht vergessen, es besteht aus zwei geclipten Kreisen
-	\begin{scope}
-		\clip (-4.25,2.5) rectangle (-2.75,3);
-		%\draw[thick] (-4.25,3) to[out=330,in=180] (-3.5,2.75) to[out=0,in=210] (-2.75,3);
-		\path[draw,thick,name path=gkreis] (-3.5,4.25) circle (1.5);
-	\end{scope}
-	\path[name path=kkreis] (-3.5,2) circle(1);
-	\path[name intersections={of=gkreis and kkreis}];
-	\begin{scope}
-		\clip (intersection-1) rectangle ($(intersection-2)+(0,0.5)$);
-		\draw[thick]  (-3.5,2) circle(1);
-	\end{scope}
-	
-	% das rechte Ding
-	\draw[thick] (4, 3)  ellipse (2 and 1);
-	% und das Loch
-	\begin{scope}
-		\clip (3, 2.75) rectangle (5, 4);
-		\path[draw,thick,name path=gkreis] (4,3.75) ellipse (1.25 and 1);
-	\end{scope}
-	\path[name path=kkreis] (4,2.5) ellipse (1 and 0.75);
-	\path[name intersections={of=gkreis and kkreis}];
-	\begin{scope}
-		\clip (intersection-1) rectangle ($(intersection-2)+(0,0.5)$);
-		\draw[thick] (4,2.5) ellipse (1 and 0.75);
-	\end{scope}
-	
-	% die linke Kartoffel
-	\coordinate (kartoffel0) at (-4.25,2.5); \coordinate (kartoffel1) at (-4.25,2); \coordinate (kartoffel2) at (-4,2.125); \coordinate (kartoffel3) at (-3.75,2); \coordinate (kartoffel4) at (-3.25,2.5); \coordinate (kartoffel5) at (-3.75,2.5); 
-	\coordinate (ctrlk0) at (0.25,0.25); \coordinate (ctrlk1235) at (0.25,0); \coordinate (ctrlk4) at (0,0.25);
-	\draw (kartoffel0) ..controls($(kartoffel0)-(ctrlk0)$) and ($(kartoffel1)-0.5*(ctrlk1235)$).. (kartoffel1) ..controls($(kartoffel1)+0.5*(ctrlk1235)$) and ($(kartoffel2)-(ctrlk1235)$).. (kartoffel2) ..controls($(kartoffel2)+(ctrlk1235)$) and ($(kartoffel3)-0.5*(ctrlk1235)$).. (kartoffel3) ..controls($(kartoffel3)+2*(ctrlk1235)$) and ($(kartoffel4)-(ctrlk4)$).. (kartoffel4) ..controls($(kartoffel4)+(ctrlk4)$) and ($(kartoffel5)+(ctrlk1235)$).. (kartoffel5) ..controls($(kartoffel5)-0.5*(ctrlk1235)$) and ($(kartoffel0)+(ctrlk0)$).. (kartoffel0) -- cycle;
-	\fill (-3.75,2.25) circle (0.05) node[right]{$p$};
-	
-	% die rechte Kartoffel (Kreis)
-	\draw (4,2.5) ellipse (0.5 and 0.25); \fill (4,2.5) circle (0.05) node[right]{$q$};
-	
-	% die beiden Umgebungen unten
-	\draw (-3.75,0.25) circle (0.5); \fill (-3.75,0.25) circle (0.05) node[right]{$x$};
-	\draw (4,0.25) circle (0.5); \fill (4,0.25) circle (0.05) node[right]{$y$};
-	
-	% Abbildungspfeile
-	\draw[->] (-4, 2.25) to[out=250,in=110] node[left]{$\varphi$} (-4,0.75);
-	\draw[->] (3.75, 2.5) to[out=250,in=110] node[left]{$\psi$} (3.75,0.75);
-\end{tikzpicture}\end{center}
+    % \draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+    
+    % Die Abbildungspfeile
+    \draw[->] (-1.5,0) to[out=20, in=160]node[above]{$\psi' \circ \Phi \circ \varphi^{-1}$}node[below]{diff'bar} (1.5,0);
+    \draw[->] (-1.5,3) to[out=20, in=160]node[above]{$\Phi$} (1.5,3);
+    
+    % Die Achsen
+    \draw[->,thick] (-5.5,-0.5) -- (-2,-0.5); \draw[->,thick] (-5.25,-0.75) -- (-5.25, 1.25); \node[font=\normalfont] at (-2,1.25) {$\R^m$};
+    \draw[->,thick] (2,-0.5) -- (5.5,-0.5); \draw[->,thick] (2.25,-0.75) -- (2.25, 1.25); \node[font=\normalfont] at (5.5,1.25) {$\R^n$};
+    
+    % das linke Ding
+    \coordinate (ding0) at (-3.5,4.5); \coordinate (ding1) at (-4.25,3.5); \coordinate (ding2) at (-4.5,2); \coordinate (ding3) at (-2.75,2.5); \coordinate (ding4) at (-1.5,4);
+    \coordinate (ctrld0) at (0.5,-0.25); \coordinate (ctrld1) at (0.75,0.5); \coordinate (ctrld2) at (-0.5,0.5); \coordinate (ctrld3) at (0.25,0.5); \coordinate (ctrld4) at (-0.75,0); 
+    \draw[thick] (ding0) ..controls($(ding0)+(ctrld0)$) and ($(ding1)+(0.75,0.5)$).. (ding1) ..controls($(ding1)-(ctrld1)$) and($(ding2)+(ctrld2)$).. (ding2) ..controls($(ding2)-(ctrld2)$) and ($(ding3)-2*(ctrld3)$).. (ding3) ..controls($(ding3)+(ctrld3)$) and ($(ding4)+(ctrld4)$).. (ding4);
+    % das Loch in der Mitte nicht vergessen, es besteht aus zwei geclipten Kreisen
+    \begin{scope}
+      \clip (-4.25,2.5) rectangle (-2.75,3);
+      % \draw[thick] (-4.25,3) to[out=330,in=180] (-3.5,2.75) to[out=0,in=210] (-2.75,3);
+      \path[draw,thick,name path=gkreis] (-3.5,4.25) circle (1.5);
+    \end{scope}
+    \path[name path=kkreis] (-3.5,2) circle(1);
+    \path[name intersections={of=gkreis and kkreis}];
+    \begin{scope}
+      \clip (intersection-1) rectangle ($(intersection-2)+(0,0.5)$);
+      \draw[thick]  (-3.5,2) circle(1);
+    \end{scope}
+    
+    % das rechte Ding
+    \draw[thick] (4, 3)  ellipse (2 and 1);
+    % und das Loch
+    \begin{scope}
+      \clip (3, 2.75) rectangle (5, 4);
+      \path[draw,thick,name path=gkreis] (4,3.75) ellipse (1.25 and 1);
+    \end{scope}
+    \path[name path=kkreis] (4,2.5) ellipse (1 and 0.75);
+    \path[name intersections={of=gkreis and kkreis}];
+    \begin{scope}
+      \clip (intersection-1) rectangle ($(intersection-2)+(0,0.5)$);
+      \draw[thick] (4,2.5) ellipse (1 and 0.75);
+    \end{scope}
+    
+    % die linke Kartoffel
+    \coordinate (kartoffel0) at (-4.25,2.5); \coordinate (kartoffel1) at (-4.25,2); \coordinate (kartoffel2) at (-4,2.125); \coordinate (kartoffel3) at (-3.75,2); \coordinate (kartoffel4) at (-3.25,2.5); \coordinate (kartoffel5) at (-3.75,2.5); 
+    \coordinate (ctrlk0) at (0.25,0.25); \coordinate (ctrlk1235) at (0.25,0); \coordinate (ctrlk4) at (0,0.25);
+    \draw (kartoffel0) ..controls($(kartoffel0)-(ctrlk0)$) and ($(kartoffel1)-0.5*(ctrlk1235)$).. (kartoffel1) ..controls($(kartoffel1)+0.5*(ctrlk1235)$) and ($(kartoffel2)-(ctrlk1235)$).. (kartoffel2) ..controls($(kartoffel2)+(ctrlk1235)$) and ($(kartoffel3)-0.5*(ctrlk1235)$).. (kartoffel3) ..controls($(kartoffel3)+2*(ctrlk1235)$) and ($(kartoffel4)-(ctrlk4)$).. (kartoffel4) ..controls($(kartoffel4)+(ctrlk4)$) and ($(kartoffel5)+(ctrlk1235)$).. (kartoffel5) ..controls($(kartoffel5)-0.5*(ctrlk1235)$) and ($(kartoffel0)+(ctrlk0)$).. (kartoffel0) -- cycle;
+    \fill (-3.75,2.25) circle (0.05) node[right]{$p$};
+    
+    % die rechte Kartoffel (Kreis)
+    \draw (4,2.5) ellipse (0.5 and 0.25); \fill (4,2.5) circle (0.05) node[right]{$q$};
+    
+    % die beiden Umgebungen unten
+    \draw (-3.75,0.25) circle (0.5); \fill (-3.75,0.25) circle (0.05) node[right]{$x$};
+    \draw (4,0.25) circle (0.5); \fill (4,0.25) circle (0.05) node[right]{$y$};
+    
+    % Abbildungspfeile
+    \draw[->] (-4, 2.25) to[out=250,in=110] node[left]{$\varphi$} (-4,0.75);
+    \draw[->] (3.75, 2.5) to[out=250,in=110] node[left]{$\psi$} (3.75,0.75);
+  \end{tikzpicture}\end{center}
 
 % Definition 3.1
 \begin{dfn}
@@ -128,11 +131,14 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
     & \pdifffrac[p]{}{y^i}(g) = \partial_i(g \circ \psi^{-1})(\underbrace{\psi(p)}_{=x}) = \partial_i(g \circ F)(x) = F_{*x}\left(\pdifffrac[p]{}{x_i}\right)(f).\\
     & F_{*x}\left(\pdifffrac[p]{}{x^i}\right) = F_{*x}[t \mapsto x + te_i] = [t \mapsto F(x+te_i)] \sim \difffrac[t=0]{}{t}F(x+te_i) = \D F|_x(e_i) = \partial_iF|_x.\\
     & \T_pM \quot{=} \left<\partial_1F|_x, \ldots, \partial_m F|_x\right).
-\end{align*}
-%$\pdifffrac[a]{b}{c}, \pdifffrac[a]{b}{}, \pdifffrac[a]{}{c}, \pdifffrac{b}{c}, \pdifffrac{}{c}, \pdifffrac{b}{}$
+  \end{align*}
+  % $\pdifffrac[a]{b}{c}, \pdifffrac[a]{b}{}, \pdifffrac[a]{}{c}, \pdifffrac{b}{c}, \pdifffrac{}{c}, \pdifffrac{b}{}$
 \end{bem}
 
-% Abb 4/2
+%%%
+%%% Abb 4/2
+%%%
+\textcolor{red}{Abbildung 4-2}\\
 
 \begin{bem*}[Eigenschaften des Differentials]\hfill
   \begin{itemize}
@@ -160,14 +166,20 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \begin{itemize}
   \item Betrachte eine Abbildung $\Phi$
 
-    % Abb 4/3
+    %%% 
+    %%% Abb 4/3
+    %%% 
+    \textcolor{red}{Abbildung 4-3}\\
 
     Immersion: $\difffrac{}{t}$ Basis von $\T_x\R$, $\Phi_{*x}(\difffrac{}{t}) \quot{=} \difffrac{}{t}\Phi$
   \item $\R \to \R^2 \cong \C, t \mapsto e^{it}$ ist eine Immersion aber ebenfalls nicht injektiv.
   \item $\R \to S^1 \subset \C, t \mapsto e^{it}$ ist Immersion und Submersion.
   \item $\R \to S^1 \times \R, t \mapsto (e^{it},t)$ ist eine Einbettung.
 
-    % Abb 4/4
+    %%% 
+    %%% Abb 4/4
+    %%% 
+    \textcolor{red}{Abbildung 4-4}\\
 
   \item Ist $M \subset N$ Untermannigfaltigkeit, so ist $\imath \colon M \hookrightarrow N$ eine Einbettung.% INKLUSIONSSPFEIL
   \end{itemize}
@@ -217,10 +229,10 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \begin{align*}
     \Rang \Phi_{*u} = \Rang \D(\psi \circ \Phi \circ \alpha^{-1})|_x = \Rang
     \left(\begin{array}{ccc|c}
-      1 &  & 0 & \\
-      & \ddots & & 0 \\
-      0 & & 1 & 
-    \end{array}\right)
+        1 &  & 0 & \\
+        & \ddots & & 0 \\
+        0 & & 1 & 
+      \end{array}\right)
     = \textcolor{red}{n}
   \end{align*}
   Damit folgt die Behauptung aus (i).\\
@@ -229,10 +241,10 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
     & (\psi \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^m,f^{m+1}(x), \ldots, f^n(x))\\
     & \Rang \Phi_{*u} = \Rang 
     \left( \begin{array}{ccc}
-      1 & & 0 \\
+        1 & & 0 \\
         & \ddots &  \\
-      0 & & 1 \\
-      \hline
+        0 & & 1 \\
+        \hline
         & 0      & 
       \end{array} \right)
     = m % Matrix 4/5
@@ -244,6 +256,122 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   wobei $\beta$ eine adaptierte Karte für $\Phi(U) = Q$ ist.\\
   (iv) folgt aus (iii).
 \end{proof}
+
+
+% 5. Vorlesung <2012-10-30 Tue>
+
+\begin{proof} (des letzten Satzes) % TODO: Link
+  ad (i):\\
+  Es sei $(\psi, V)$ eine Karte von $N$ um $p$ mit $\psi(q) = 0$.
+  Ist dann $(\varphi, U)$ eine Karte von $M$ um $p$ mit $\varphi(p) = 0$, so kann man o.E. annehmen, dass 
+  \begin{align*}
+    \partial_i(\psi^j \circ \Phi \circ \varphi^{-1}) = \left(\pdifffrac{\Phi^j}{x^i}\right)_{i,j \leq r} 
+  \end{align*}
+  invertierbar ist.
+  Es sei $\alpha \colon U \to \R^m$ gegeben durch
+  \begin{align*}
+    \alpha^j =
+    \begin{cases}
+      \psi^j \circ \Phi & \text{ für } j \leq r\\
+      \varphi^j & \text{ sonst}
+    \end{cases}
+  \end{align*}
+  Betrachte nun den Kartenwechsel
+  \begin{align*}
+    \left(\pdifffrac{x^j}{x^i}\right)_{i,j} = \left(\partial_i(\alpha^j \circ \varphi^{-1})(0)\right)_{i,j} = \left(
+      \begin{array}{c|c}
+        \left(\pdifffrac{\Phi^j}{x^i}\right)_{i,j} & \ast\\
+        \hline
+        0 & 
+        \begin{array}{ccc}
+          1 &&0\\
+          &\ddots&\\
+          0&&1
+        \end{array}
+      \end{array}.\right)
+  \end{align*}
+  Der Rang von $\alpha$ in $p$ ist damit gleich $m$. Nach dem Umkehrsatz ist $\alpha$ ein lokaler Diffeomorphismus, also eine Karte von $M$.\\
+  Ferner gilt für $j \leq r$:
+  \begin{align*}
+    \left((\psi \circ \Phi \circ \alpha^{-1})(x^1,\ldots,x^m)\right)^j = (\psi^j \circ \Phi \circ \alpha^{-1})(\alpha(u)) = \psi^j\circ \Phi(u) = \alpha^j(u) = x^j.
+  \end{align*}
+  Damit hat $\psi \circ \Phi \circ \alpha^{-1}$ die gesuchte Darstellung.\\
+
+  ad (ii):\\
+  Der Rang von $\Phi$ sei auf $U$ konstant gleich $r$. Dann gilt für alle $x \in \alpha(U)$.
+  \begin{align*}
+    r = \Rang \D(\psi \circ \Phi \circ \alpha^{-1})|_x = \left(
+      \begin{array}{c | c}
+        \begin{array}{ccc}
+          1&&0\\&\ddots&\\0&&1
+        \end{array}
+        & 0\\
+        \hline
+        \ast & \underbrace{\left(\pdifffrac{f^{r+j}}{x^{r+i}}\right)}_{\rightsquigarrow \Rang 0}.
+      \end{array}\right)
+  \end{align*}
+  Somit gilt auf einer Umgebung der $0$ für alle $i,j > r$: $\pdifffrac{f^j}{x^i} \equiv 0$.
+  Es gibt also glatte Funktionen $g^{r+1}, \ldots, g^n$ mit $g^{r+j}(x^1, \ldots, x^r) = f^{r+j}(x^1,\ldots,x^n)$.\\
+  Setzt man nun
+  \begin{align*}
+    \beta^j = 
+    \begin{cases}
+      \psi^j & j \leq r\\
+      \psi^j -g^j \circ (\psi^1, \ldots, \psi^r) & \text{ sonst }
+    \end{cases},
+  \end{align*}
+  so gilt:
+  \begin{align*}
+    \left(\pdifffrac{\beta^j}{y^i}(q)\right)_{i,j} = \left(
+      \begin{array}{c | c}
+        \left(\pdifffrac{\psi^j}{y^i}\right)_{i,j} = \delta_{i}^j & 0\\
+        \hline
+        \ast & \underbrace{\left(\pdifffrac{\psi^j}{y^i}\right)}_{= \delta_i^j}-\underbrace{\left(\pdifffrac{g^j}{x^i}\right)}_{= 0}
+      \end{array} \right).
+  \end{align*}
+  Damit gilt $\left(\pdifffrac{\beta^j}{y^i}\right)_{i,j} = \delta_i^j$ und nach dem Umkehrsatz definiert $\beta$ in einer Umgebung von $q$ eine Karte von $N$.
+  Wie oben rechnet man nach:
+  \begin{align*}
+    (\beta \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^n) = (x^1, \ldots, x^r, 0, \ldots, 0).
+  \end{align*}
+\end{proof}
+
+\begin{bem*}
+  Ist $\Phi \colon M \to N$ glatt mit konstantem Rang $r$ auf einer Umgebung von $P = \Phi^{-1}(q)$, so ist $P$ eine $(m-r)$-dimensionale Untermannigfaltigkeit von $M$.\\
+  Der Tangentialraum $\T_pP$ in $p$ an $P$ ist ein Untervektorrraum von $\T_pM$ und es gilt: $\T_pP = \Kern \Phi_{*p}$.\\
+
+  %%% 
+  %%% Abb 5-1
+  %%% 
+  \textcolor{red}{Abbildung 5-1}
+
+  Ist $X_p = c(0) \in \T_pP$, so ist $c$ glatt als Abbildung $J \to M$ und ebenso $\Phi \circ c \equiv q$.
+  Damit gilt:
+  \begin{align*}
+    \Phi_{*p}(\dot c(0) = \dot{\underbrace{\Phi \circ c}_{\equiv q}}(0) = 0. 
+    % Punkt besser erkenntlich machen!
+  \end{align*}
+
+  Es gilt:
+  \begin{align*}
+    \dim T_pP = \dim P = m-r = \dim \T_pM - \Rang \Phi_{*p} = \dim \Kern \Phi_{*p}.
+  \end{align*}
+\end{bem*}
+
+\begin{bsp}
+  Die $n$-dimensionale Sphäre $S^n \subset \R^{n+1}$ ist das reguläre Urbild der glatten Abbildung $\Phi \colon \R^{n+1}\setminus \{0\} \to \R_{> 0}, x \mapsto \|x\|^2; \ S^n = \Phi^{-1}(1)$.\\
+
+Der Tangentialraum $\T_x\R^{n+1}$ ist vermöge der Abbildung
+\begin{align*}
+  \R^{n+1} \ni V \mapsto [t \mapsto x + tv] \in \T_x\R^{n+1}.
+\end{align*}
+gegeben. Damit gilt genau dann $v \in \T_xS^n$, wenn $[x+tv] \in \Kern \Phi_{*x}$.
+\begin{align*}
+  0 = \Phi_{*x}[x+tv] = \difffrac[t=0]{}{t} \Phi(x+tv) = \partial_v \Phi(x) = \D \Phi|_x(v) = \left<\grad\Phi(x),v\right>.
+\end{align*}
+Es gilt $\grad \Phi(x) = (2x^1, \ldots, 2x^{n+1}) = 2x$, also gilt $v \in T_xS^n$, genau dann, wenn $v \perp x$.
+\end{bsp}
+
 
 %%% Local Variables: 
 %%% mode: latex
