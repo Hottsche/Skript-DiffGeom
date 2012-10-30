@@ -81,7 +81,40 @@ $k \in \N \cup \{\infty\}$, $M_1, M_2$ $C^k$-Mannigfaltigkeiten, $N_i \subseteq 
 
 \begin{Loes}\begin{enumerate}[label=\alph*),leftmargin=*,widest=a,font=\normalfont]
 \item
-	asdf
+	$M = S^n$, $N = \{(x^0, x^1, \ldots ,x^n) \in S^n | x^2 = \ldots = x^n = 0\}$; Skizze f"ur $n = 2$:
+	\begin{center}\begin{tikzpicture}
+		\draw (0,0) circle (0.75); \draw[dashed] (-0.75,0) to[out=20,in=160] (0.75,0); \draw (-0.75,0) to[out=340,in=200] (0.75,0);
+		\node at (0.75,0.75) {$S^2$}; \node (N) at (1,-0.5) {$N$};
+		\draw[->] (N) to[out=180,in=270] (0.5,-0.2);
+	\end{tikzpicture}\end{center}
+	\begin{description}[font=\normalfont\itshape]
+	\item[Behauptung:]
+		$N$ ist eine Untermannigfaltigkeit von $M$.\marginnote{\begin{tikzpicture}
+			\draw[->] (-1.25,0) -- (1.25,0); \draw[->] (0,-1.25) -- (0,1.25);
+			\draw (0,0) circle (0.75); \fill (-0.75,0) circle (0.05) (0.75,0) circle (0.05); \node at (0.75,-0.75) {$S^1$};
+		\end{tikzpicture}}
+	\item[Beweis:]
+		Sei $\varphi: \overbrace{S^n \setminus \{(1, 0,\ldots ,0)\}}^{=:U} \to \R^n$, $\varphi(x) = \frac{1}{1-x^0}(x^1,\ldots ,x^n)$
+		
+		\emph{Zu zeigen:} $\varphi(U \cap N) = \varphi(U) \cap (\R \times \{0\}^{n-1})$
+			\[ \varphi(U \cap N) = \varphi(N \setminus \{(1,\ldots ,0)\}) = \R \times \{0\}^{n-1} \]
+		F"ur $p \in N \setminus \{(1,0, \ldots ,0)\}$ ist $\varphi$ also eine adoptierte Karte um $p$. F"ur $p = (1, 0, \ldots, 0)$ ist analog $\psi$ (aus 1 a)) eine adoptierte Karte.
+	\end{description}
 \item
-	asdf
+	$M = \R^2$, $N = \{(x, 0) | x \ge 0\} \cup \{(0,y)|y \ge 0\}$; Skizze:
+	\begin{center}\begin{tikzpicture}
+		\draw (-1.5,0) -- (0,0); \draw[very thick,->] (0,0) -- (1.5,0);
+		\draw (0,-0.5) -- (0,0); \draw[very thick,->] (0,0) -- (0,1.5);
+		\node at (-1,1) {$M$}; \node at (0.75,0.75) {$N$};
+	\end{tikzpicture}\end{center}
+	\begin{description}[font=\normalfont\itshape]
+	\item[Behauptung:]
+		$N$ ist keine glatte Untermannigfaltigkeit von $\R$.
+	\item[Beweis:]
+		Angenommen $N$ w"are Untermannigfaltigkeit von $\R^2$. Da $N$ hom"oomorph zu $\R$ ist, w"are es eine eindimensionale Untermannigfaltigkeit. Damit existiert eine Karte $(\varphi, U)$ von $\R^2$ um $(0,0)$ mit $\varphi(U\cap N) = \varphi(U) \cap (\R \times \{0\})$. Betrachte $\varphi^{-1}$, beziehungsweise $f(t) = \varphi^{-1}(t,0)$. Es sei $t_0 \in \R$ mit $f(t_0) = (0,0)$. Da $f(t) = N \cap U$ ist entweder $f(t) \in \{(0, y) | y \ge 0\}$ f"ur $t > t_0$ und $f(t) \in \{(x, 0) | x \ge 0\}$ f"ur $t < t_0$ oder umgekehrt. Dann ist $f'(t) \in \R e_2$ f"ur $ t > t_0$ und $f'(t) \in \R e_1$ f"ur $t < t_0$ oder umgekehrt.
+		
+		$\Rightarrow f'(0) \in \R e_1 \cap \R e_2 = \{(0,0)\}$
+		
+		\emph{Andererseits:} $f'(0) = \underbrace{(D \varphi^{-1}|_{\varphi(0,0)})}_{\text{Isom., da } \varphi^{-1} \text{ Diffeom.}}(\left(\begin{smallmatrix}1\\0\end{smallmatrix}\right)) \ne \left(\begin{smallmatrix}1\\0\end{smallmatrix}\right)$
+	\end{description}
 \end{enumerate}\end{Loes}
