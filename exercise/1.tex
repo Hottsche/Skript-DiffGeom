@@ -56,7 +56,12 @@ Dazu müssen wir zeigen:\begin{enumerate}[font=\normalfont,label=(\roman*)]
 	Sei
 		\[\begin{array}{cccc} f:&  \overset{\text{von } \Id \text{ induziert}}{(\R, \tau_{\text{std}})} &\to& \overset{\text{von } \varphi \text{ induziert}}{(\R, \tau)} \\
 			& x &\mapsto& \sqrt[3]{x} \end{array}\]
-	\marginnote{\textcolor{red}{[BILD]}}
+	\marginnote{\begin{tikzpicture}[font=\tiny]
+	\draw[->] (-1.5,0.5) -- node[above]{$(\R,\tau_{\text{std}})$} (-0.5,0.5); \draw[->] (0.5,0.5) -- node[above]{$(\R,\tau)$} (1.5,0.5);
+	\draw[->] (-1.5,-0.5) -- node[below]{$\R$} (-0.5,-0.5); \draw[->] (0.5,-0.5) -- node[below]{$\R$} (1.5,-0.5);
+	\draw[->] (-1.3,0.4) --node[left,yshift=3]{$\Id$} (-1.3,-0.4); \draw[->] (1.3,0.4) --node[right,yshift=3]{$\varphi$} (1.3,-0.4);
+	\draw[->] (-0.4, 0.5) to[out=340,in=200]node[above]{$f$} (0.4,0.5); \draw[->] (-0.4, -0.5) to[out=20,in=160]node[above]{$\varphi \circ f \circ (\Id_{\R})^{-1}$} (0.4,-0.5);
+	\end{tikzpicture}}
 	Dann ist $f$ bijektiv. Es gilt f"ur $x \in \R$:
 		\[ \varphi \circ f \circ (\Id_{\R})^{-1} (x) = (\sqrt[3]{x})^3 = x \]
 	ist glatt. Betrachte nun $f^{-1}$: $\Id_{\R} \circ f^{-1} \circ \varphi^{-1}(x) = (\sqrt[3]{x})^3 = x$ ist glatt. Damit ist $f$ ein Diffeomorphismus.

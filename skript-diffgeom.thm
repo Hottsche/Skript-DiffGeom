@@ -28,7 +28,7 @@
 \contentsline {proof}{{\proofname }{7}{}}{9}
 \contentsline {bem}{{\cmLangThmBem }{0.2.12}{}}{9}
 \contentsline {proof}{{\proofname }{8}{}}{9}
-\contentsline {satz}{{\cmLangThmSatz }{0.2.13}{Äquivalenz der Tangentialraumbegriffe}}{9}
+\contentsline {satz}{{\cmLangThmSatz }{0.2.13}{Äquivalenz der Tangentialraumbegriffe}}{10}
 \contentsline {proof}{{\proofname }{9}{}}{10}
 \contentsline {bem}{{\cmLangThmBem }{0.2.14}{}}{10}
 \contentsline {satz}{{\cmLangThmSatz }{0.2.15}{Transformationsverhalten bei Kartenwechsel}}{10}
@@ -37,15 +37,20 @@
 \contentsline {lemma}{{\cmLangThmLemma }{0.3.2}{Differentiale in lokalen Koordinaten}}{11}
 \contentsline {bem}{{\cmLangThmBem }{0.3.3}{}}{11}
 \contentsline {proof}{{\proofname }{11}{}}{11}
-\contentsline {bem}{{\cmLangThmBem }{0.3.4}{Charakterisierung durch Kurven}}{11}
-\contentsline {bem}{{\cmLangThmBem }{0.3.5}{Tangentialräume an Untermannigfaltigkeiten der $\R ^n$}}{11}
+\contentsline {bem}{{\cmLangThmBem }{0.3.4}{Charakterisierung durch Kurven}}{12}
+\contentsline {bem}{{\cmLangThmBem }{0.3.5}{Tangentialräume an Untermannigfaltigkeiten der $\R ^n$}}{12}
 \contentsline {dfn}{{\cmLangThmDfn }{0.3.7}{Reguläre Punkte, Submersion, Immersion}}{12}
-\contentsline {bsp}{{\cmLangThmBsp }{0.3.8}{}}{12}
-\contentsline {satz}{{\cmLangThmSatz }{0.3.9}{}}{12}
+\contentsline {bsp}{{\cmLangThmBsp }{0.3.8}{}}{13}
+\contentsline {satz}{{\cmLangThmSatz }{0.3.9}{}}{13}
 \contentsline {kor}{{\cmLangThmKor }{0.3.10}{}}{13}
 \contentsline {proof}{{\proofname }{12}{}}{13}
-\contentsline {beh*}{{Behauptung}{1}{}}{16}
-\contentsline {Loes}{{L\"osung}{1}{}}{18}
-\contentsline {Loes}{{L\"osung}{2}{}}{18}
-\contentsline {Loes}{{L\"osung}{3}{}}{19}
-\contentsline {Loes}{{L\"osung}{4}{}}{19}
+\contentsline {proof}{{\proofname }{13}{}}{14}
+\contentsline {bsp}{{\cmLangThmBsp }{0.3.12}{}}{16}
+\contentsline {dfn}{{\cmLangThmDfn }{0.4.1}{Tangentialbündel}}{16}
+\contentsline {dfn}{{\cmLangThmDfn }{0.4.2}{}}{17}
+\contentsline {bem}{{\cmLangThmBem }{0.4.3}{}}{17}
+\contentsline {beh*}{{Behauptung}{1}{}}{20}
+\contentsline {Loes}{{L\"osung}{1}{}}{22}
+\contentsline {Loes}{{L\"osung}{2}{}}{22}
+\contentsline {Loes}{{L\"osung}{3}{}}{23}
+\contentsline {Loes}{{L\"osung}{4}{}}{23}
