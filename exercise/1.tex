@@ -2,9 +2,30 @@
 \setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
 \setcounter{Loes}{0}
 
-\begin{Loes}
-%asdf
-\textcolor{red}{[BILD]}
+\begin{Loes}\ \\
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+	%\draw[step=0.25,gray!15] (-3,-3) grid (3,3); \draw[step=0.5,gray!30] (-3,-3) grid (3,3); %\fill (0,0) circle(0.1); %Hilfsgitter
+	\def\radius{1.5}
+	\def\smallLength{2.75}
+	\def\biglength{3.75}
+	\def\height{0.75}
+	\def\angle{25}
+	
+	\path[name path=circle,draw] (0,0) circle (\radius); \draw[dashed] (-\radius,0) to[out=\angle,in=180-\angle] (\radius,0); \draw (-\radius,0) to[out=360-\angle,in=180+\angle] (\radius,0);
+	\path[name path=vert] (\smallLength,\height) -- (-\smallLength,\height);
+	\path[name intersections={of=circle and vert}];
+	\draw (\biglength,-\height) -- (\smallLength,\height) -- (intersection-1) (intersection-2) -- (-\smallLength,\height) -- (-\biglength,-\height) -- (\biglength,-\height);
+	\draw[dashed] (intersection-1) -- (intersection-2);
+	
+	\coordinate (N) at (0,\radius); \coordinate (S) at (0,-\radius); \coordinate (Pkt1) at (-2,-0.25); \coordinate (direction) at (-0.6,1.25); \coordinate (direction2) at (0.6,1.25);
+	
+	\path[name path=upper,draw] (N) node[above]{$N$} -- (Pkt1)node[left]{$(0,\varphi(p))$}; \fill (N) circle (0.05) (Pkt1) circle (0.05);
+	
+	\path[name path=left] (S) node[below]{$S$} -- ($(S)+2*(direction)$); \fill (S) circle (0.05); \path[name intersections={of=upper and left}];
+	\draw (intersection-1) node[right]{$p$} -- (S); \fill (intersection-1) circle (0.05); \fill ($(S)+1.1*(direction)$) circle(0.05) node[right]{$(0,\psi(p))$};
+	
+	\draw (S) -- ($(S)+2.5*(direction2)$); \fill ($(S)+1.25*(direction2)$) circle(0.05) node[right]{$(0, \varphi(p))$};
+\end{tikzpicture}\end{center}
 \begin{enumerate}[label=\alph*),leftmargin=*,widest=a,font=\normalfont]
 \item
 	$S^n = (S^n \setminus \{N\}) \cup (S^n\setminus \{S\}) \checkmark$
