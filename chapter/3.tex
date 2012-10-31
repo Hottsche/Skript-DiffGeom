@@ -8,12 +8,6 @@
 %% 
 
 \section{Differentiale}
-
-%%%
-%%% Abb 4/1
-%%%
-\textcolor{red}{Abbildung 4-1}\\
-
 Es seien $M$ und $N$ Mannigfaltigkeiten und $\Phi \colon M \to N$ eine glatte Abbildung.
 Sind $p \in M$ und $X_p \in \T_pM$ , so ist 
 \begin{align*}
@@ -120,7 +114,18 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 \end{bem}
 
 \begin{bem}[Tangentialräume an Untermannigfaltigkeiten der $\R^n$]
-  Ist $U$ eine Untermannigfaltigkeit in $\R^n$ mit den Eigenschaften
+  Ist $U$ eine Untermannigfaltigkeit in $\R^n$ mit den Eigenschaften\marginnote{\begin{tikzpicture}
+%\draw[step=0.25,gray!15] (-6,-5) grid (6,3); \draw[step=0.5,gray!30] (-6,-5) grid (6,3); \fill (0,0) circle(0.1); %Hilfsgitter
+\draw[->] (-0.5,0) -- (2.75,0); \draw[->] (0,-0.5) -- (0,2); \draw[->] (-0.5,-0.25) -- (2,1);
+\draw[->] (-0.5,-3) -- (2.75,-3) node[above]{$\R^m$}; \draw[->] (0,-3.5) -- (0,-1);
+\draw (1.75,-2) circle (0.5); \node at (1,-1.5) {$U$};
+%Segel
+\coordinate (segel1) at (0.25,1.25); \coordinate (segel2) at (3,2.25); \coordinate (segel3) at (2.25,1);
+\coordinate (ctrl1) at (0.5,0.75); \coordinate (ctrl2) at (-1,0.25); \coordinate (ctrl3) at (-0.5,-0.5); \coordinate (ctrl4) at (0.25,0.5); \coordinate (ctrl5) at (-0.5,0.25); \coordinate (ctrl6) at (0.75,0.25); 
+\draw (segel1) ..controls($(segel1)+(ctrl1)$) and ($(segel2)+(ctrl2)$).. (segel2) ..controls($(segel2)+(ctrl3)$) and ($(segel3)+(ctrl4)$).. (segel3) ..controls($(segel3)+(ctrl5)$) and ($(segel1)+(ctrl6)$).. (segel1) -- cycle;
+\draw (1.75,1.75) circle(0.25); \fill (1.75,1.75) circle(0.05) node[anchor=south west]{$p$};
+\draw[->] (2,-1.25) node[anchor=south west]{$F$} to[out=75,in=285] (2,1.5); \node at (2.75,1.5) {$M$};
+\end{tikzpicture}}
   \begin{itemize}
   \item $F \colon U \to M \cap F(U)$ ein Homöomorphismus,
   \item $\D F|_x\colon \R^m \to \R^{m+k}$ injektiv für alle $x \in U$.
@@ -134,11 +139,6 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \end{align*}
   % $\pdifffrac[a]{b}{c}, \pdifffrac[a]{b}{}, \pdifffrac[a]{}{c}, \pdifffrac{b}{c}, \pdifffrac{}{c}, \pdifffrac{b}{}$
 \end{bem}
-
-%%%
-%%% Abb 4/2
-%%%
-\textcolor{red}{Abbildung 4-2}\\
 
 \begin{bem*}[Eigenschaften des Differentials]\hfill
   \begin{itemize}
