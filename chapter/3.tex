@@ -355,6 +355,12 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   %%% Abb 5-1
   %%% 
   \textcolor{red}{Abbildung 5-1}
+  \begin{center}\begin{tikzpicture}
+  	\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+	
+    \tikzschnuller[1]{(-2,3)};
+    \tikzsegel{(1,1)};
+  \end{tikzpicture}\end{center}
 
   Ist $X_p = c(0) \in \T_pP$, so ist $c$ glatt als Abbildung $J \to M$ und ebenso $\Phi \circ c \equiv q$.
   Damit gilt:
