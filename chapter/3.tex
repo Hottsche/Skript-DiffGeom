@@ -165,21 +165,32 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 \begin{bsp}
   \begin{itemize}
   \item Betrachte eine Abbildung $\Phi$
-
-    %%% 
-    %%% Abb 4/3
-    %%% 
-    \textcolor{red}{Abbildung 4-3}\\
+    \begin{center}\begin{tikzpicture}%\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+    		\draw[->] (-0.75,0) to[out=20,in=160] node[above]{$\Phi$} (0.75,0);
+		\draw(-3,0)node{$($} -- (-1,0)node{$)$}; \fill (-2.75,0) circle (0.05); \draw[thick,->] (-2.75,0) -- (-1.5,0);
+		\draw[->] (1,0) -- (3,0); \draw[->] (1.25,-0.25) -- (1.25,1);
+		
+		\coordinate (e1) at (1.5,0.25); \coordinate (e2) at (2.25,0.75); \coordinate (e3) at (2,0.75); \coordinate (e4) at (2.25,0.25); \coordinate (e5) at (2.75,0.5);
+		\coordinate (ctrl1) at (0.25,-0.25); \coordinate (ctrl2) at ($-0.5*(ctrl1)$); \coordinate (ctrl4) at (-0.25,-0.25); \coordinate (ctrl3) at ($-0.5*(ctrl4)$); \coordinate (ctrl5) at (-0.25,0); \coordinate (ctrl6) at ($-1*(ctrl5)$);
+		\draw (e1) ..controls(e1) and ($(e2)+(ctrl1)$).. (e2) ..controls($(e2)+(ctrl2)$) and (e3).. (e3) ..controls($(e3)+(ctrl4)$) and ($(e4)+(ctrl5)$).. (e4) ..controls($(e4)+(ctrl6)$) and (e5).. (e5);
+		\fill (e2) circle (0.05); \draw[->] (e2) -- ($(e2) + 2*(ctrl2)$);
+    \end{tikzpicture}\end{center}
 
     Immersion: $\difffrac{}{t}$ Basis von $\T_x\R$, $\Phi_{*x}(\difffrac{}{t}) \quot{=} \difffrac{}{t}\Phi$
   \item $\R \to \R^2 \cong \C, t \mapsto e^{it}$ ist eine Immersion aber ebenfalls nicht injektiv.
   \item $\R \to S^1 \subset \C, t \mapsto e^{it}$ ist Immersion und Submersion.
   \item $\R \to S^1 \times \R, t \mapsto (e^{it},t)$ ist eine Einbettung.
-
-    %%% 
-    %%% Abb 4/4
-    %%% 
-    \textcolor{red}{Abbildung 4-4}\\
+    \begin{center}\begin{tikzpicture}%\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+    		\draw[->](-1,0) -- (3.5,0); \draw[->] (0,-1) -- (0,2.5); \draw[->] (-0.5,-0.25) -- (3,1.5);
+		\begin{scope}
+			\clip (-1,0) rectangle (2,1.9);
+			\path[draw,decorate,decoration={coil,segment length=0.5cm, amplitude=0.5cm},name path=helix] (0,2.25) -- (0,0);
+			\path[name path=stab] (0.45,0) -- (0.45,2);
+			\path[name intersections={of=helix and stab}];
+			\fill (intersection-3) circle (0.05); \draw[->] (intersection-3) -- ($(intersection-3) + (50:0.75)$);
+		\end{scope}
+		\coordinate (c) at (1,1.25);
+    \end{tikzpicture}\end{center}
 
   \item Ist $M \subset N$ Untermannigfaltigkeit, so ist $\imath \colon M \hookrightarrow N$ eine Einbettung.% INKLUSIONSSPFEIL
   \end{itemize}
