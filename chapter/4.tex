@@ -129,7 +129,14 @@ Der Beweis ist als Übungs überlassen.
 
 \subsection{Flüsse}
 
-\marginnote{\textcolor{red}{[BILD]}}Was haben Vektorfelder mit Differentialgleichungen zu tun? Jedes glatte Vektorfeld $X$ definiert ein Anfangswertproblem
+\marginnote{\begin{tikzpicture}[scale=0.75]
+%\draw[step=0.25,gray!15] (-3,-1) grid (2,5); \draw[step=0.5,gray!30] (-3,-1) grid (2,5); \fill (0,0) circle(0.1); %Hilfsgitter
+\tikzschnuller{(0,3)}
+\draw[->] (0.25,2.25) -- (-0.5,2.25); \draw[->] (-1.5,2.25) -- (-2,1.75); \draw[->] (-2.5,1) -- (-1.75,1.5); \draw[->] (-1.5,0.75) -- (-0.25,1.5);
+\draw (-2,0.75) ..controls(-2,0.75) and ($(-1,0.75) - 0.5*(0.75,0.25)$).. (-1,0.75) ..controls($(-1,0.75) + (0.75,0.25)$) and (0,1.75).. (0,1.75);
+\draw[->] (-1,0.75) -- ($(-1,0.75) + (0.75,0.25)$); \draw[->] (-2,0.75) -- (-1.75,1);
+\end{tikzpicture}}
+Was haben Vektorfelder mit Differentialgleichungen zu tun? Jedes glatte Vektorfeld $X$ definiert ein Anfangswertproblem
 \begin{align*}
   \begin{cases}
     \dot \gamma(t) = X_{\gamma(t)}\\
