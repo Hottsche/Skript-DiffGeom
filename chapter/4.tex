@@ -10,51 +10,44 @@
 \section{Tangentialbündel und Vektorfelder}
 
 \begin{dfn}[Tangentialbündel]
-  Es se $M$ eine glatte Mannigfaltigkeit. Die Menge $\T M = \dot \bigcup_{p \in M}\T_pM$ zusammen mit der sogenannten kanonischen Projektion $\pi \colon \T M \to M, \T_pM \ni X_p \mapsto p$ heißt das \CmMark{Tangentialbündel} von $M$.
+  Es sei $M$ eine glatte Mannigfaltigkeit. Die Menge $\T M = \dot \bigcup_{p \in M}\T_pM$ zusammen mit der sogenannten kanonischen Projektion $\pi \colon \T M \to M, \T_pM \ni X_p \mapsto p$ heißt das \CmMark{Tangentialbündel} von $M$.
 \end{dfn}
 
 \subsection{Das Tangentialbündel als glatte Mannigfaltigkeit}
 
-Es sei $(\varphi, U)$ eine Karte von $M$. Setzt man $\T M|_U  \pi^{-1}(U) = \dot \bigcup_{p\in U}\T_pM$, so ist nach \textcolor{red}{Satz 2.8} % REFERENZ!
+Es sei $(\varphi, U)$ eine Karte von $M$. Setzt man $\T M|_U = \pi^{-1}(U) = \dot \bigcup_{p\in U}\T_pM$, so ist nach \textcolor{red}{Satz 2.8} % REFERENZ!
 die Abbildung
 \begin{align*}
   & \overline \varphi \colon \T M|_U \to \varphi(U) \times \R^m \subset \R^{2m}\\
   &\T_p M \ni X_p = \sum \xi^i\pdifffrac[p]{}{x^i} \mapsto (\varphi(p),\xi)
 \end{align*}
 bijektiv.
-Es sei eine Topologie auf $\T M$ dadurch erklärt, dass eine Menge $V \subset \T M$ genau dann offen ist, wenn für alle Karten $(\varphi, U)$ die Menge $\overline \varphi(V \cap \T M|_U$ offen in $\R^{2m}$ ist.\\
-Diese Topologie ist hausdorffsch und besitzt eine abzählbare Basis, da dies für $M$ und $\R^m$ gilt.
-Nach Konstruktion sind alle $\overline \varphi$ Homöomorphismen.\\
-Ist $\mathcal A = \{(\varphi, U\}$ ein $C^{\infty}$-Atlas von $M$, so definiert
+Es sei eine Topologie auf $\T M$ dadurch erklärt, dass eine Menge $V \subset \T M$ genau dann offen ist, wenn für alle Karten $(\varphi, U)$ die Menge $\overline \varphi(V \cap \T M|_U)$ offen in $\R^{2m}$ ist. Diese Topologie ist hausdorffsch und besitzt eine abzählbare Basis, da dies für $M$ und $\R^m$ gilt. Nach Konstruktion sind alle $\overline \varphi$ Homöomorphismen. Ist $\mathcal A = \{(\varphi, U\}$ ein $C^{\infty}$-Atlas von $M$, so definiert
 \begin{align*}
   \overline A = \{(\overline \varphi, \T M|_U) \mid (\varphi, U) \in \mathcal A\}
 \end{align*}
-eine glatte Struktur auf $\T M$.\\
-Für Karten $(\varphi, U), (\psi, V)$ von $M$ ist der Kartenwechsel
+eine glatte Struktur auf $\T M$. Für Karten $(\varphi, U), (\psi, V)$ von $M$ ist der Kartenwechsel
 \begin{align*}
-  \overline \psi \circ \overline \phi^{-1} \colon \varphi(U \cap V) \times \R^m \to \psi(U \cap V) \times \R^m, \ (x, \xi) \mapsto (\psi \circ \varphi^{-1}(x),\D(\psi \circ \varphi^{-1}|_x\xi),
+  \overline \psi \circ \overline \varphi^{-1} \colon \varphi(U \cap V) \times \R^m &\to \psi(U \cap V) \times \R^m \\ \ (x, \xi) &\mapsto (\psi \circ \varphi^{-1}(x),\D(\psi \circ \varphi^{-1}|_x\xi),
 \end{align*}
-$\left(X_p = \sum \xi \pdifffrac[p]{}{x^1}\right)$ ist glatt.\\
-Damit trägt $\T M$ in kanonischer Weise eine glatte Struktur.
-Darüber hinaus ist die kanonische Projektion $\pi \colon \T M \to M$ bezüglich dieser glatten Struktur eine Submersion. (Beweis: Übungsaufgabe)\\
+$\left(X_p = \sum \xi^i \pdifffrac[p]{}{x^i}\right)$ ist glatt. Damit trägt $\T M$ in kanonischer Weise eine glatte Struktur.
+Darüber hinaus ist die kanonische Projektion $\pi \colon \T M \to M$ bezüglich dieser glatten Struktur eine Submersion. (Beweis: Übungsaufgabe)
 
-Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so ist $\Phi_{*} \colon \T M \to \T N, \ X_p \mapsto \Phi_{*p}X_p$ eine glatte Abbildung (ebensfalls Übungsaufgabe).\\
-
+Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so ist $\Phi_{*} \colon \T M \to \T N, \ X_p \mapsto \Phi_{*p}X_p$ eine glatte Abbildung (ebensfalls Übungsaufgabe).
 
 \begin{dfn}
-  Eine stetige Abbildung $X \colon M \to \T M$ mit $\psi \circ X = \Id_M$ heißt \CmMark{Vektorfeld} auf $M$.
+  Eine stetige Abbildung $X \colon M \to \T M$ mit $\pi \circ X = \Id_M$ heißt \CmMark{Vektorfeld} auf $M$.
   Ist $X$ glatt (als Abbildung zwischen glatten Mannigfaltigkeiten), so heißt $X$ ein \CmMark{glattes Vektorfeld.}
 \end{dfn}
 
 \begin{bem}
-  Ist $(\varphi, U)$ eine Karte von $M$, so sind die Abbildungen $U \colon \T M|_U, \ p \mapsto \pdifffrac[p]{}{x^{i}}$ glatte Vektorfelder (in der Karte $\overline \varphi$ sind diese genau die Abbildungen $(x,e_i)$).\\
+  Ist $(\varphi, U)$ eine Karte von $M$, so sind die Abbildungen $U \to \T M|_U, \ p \mapsto \pdifffrac[p]{}{x^{i}}$ glatte Vektorfelder (in der Karte $\overline \varphi$ sind diese genau die Abbildungen $(x,e_i)$).
+  
   Ist $X$ ein glattes Vektorfeld, so gilt für jedes $u \in U$:
   \begin{align*}
     X_U = \sum \xi^i(u) \pdifffrac[U]{}{x^i},
   \end{align*}
-  wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$ ist.\\
-
-  Ein Vektorfeld ist genau dann glatte, wenn für eine Karte $(\varphi, U)$ die Koeffizientenfunktionen $\xi^i(u)$ von $X_U = \sum \xi^i(u) \pdifffrac[U]{}{x^i}$ glatte Funktionen sind.
+  wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$ ist. Ein Vektorfeld ist genau dann glatte, wenn für jede Karte $(\varphi, U)$ die Koeffizientenfunktionen $\xi^i(u)$ von $X_U = \sum \xi^i(u) \pdifffrac[U]{}{x^i}$ glatte Funktionen sind.
 \end{bem}
 
 
@@ -64,12 +57,13 @@ Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so
 
 \begin{bsp*}
   Betrachte die $n$-Sphäre $S^n \subset \R^{n+1}$ und deren Tangentialraum $\T_pS^n = p^{\perp}$.
-  Ein glattes Vektorfeld auf $S^n$ ist also eine glatte Abbildung $X \colon S^n \to \R^{nü1}$ mit $X_p \perp p$.\\
+  Ein glattes Vektorfeld auf $S^n$ ist also eine glatte Abbildung $X \colon S^n \to \R^{n+1}$ mit $X_p \perp p$.
+  
   Es sei $n=2k-1$, dann ist
   \begin{align*}
-    X \colon S^n \to \R^{n+1}, (x^1,y^1, \ldots, x^k,y^k) \mapsto (-y^1,x^1, \ldots, -y^k,y^k)
+    X \colon S^n \to \R^{n+1}, (x^1,y^1, \ldots, x^k,y^k) \mapsto (-y^1,x^1, \ldots, -y^k,x^k)
   \end{align*}
-  ein glattes Vektorfeld auf $S^n$ ohne eine Nullstelle.\\
+  ein glattes Vektorfeld auf $S^n$ ohne eine Nullstelle.
 \end{bsp*}
 
 \begin{bem*}
@@ -79,18 +73,17 @@ Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so
 \begin{bem*}
   Es bezeichne $\mathcal V(M)$ die Menge aller glatten Vektorfelder auf der Mannigfaltigkeit $M$. Der sogenannte \CmMark{Nullschnitt}:
   \begin{align*}
-    - \colon M \to \T M, p \mapsto 0_p \in \T_pM
+    \sigma \colon M \to \T M, p \mapsto 0_p \in \T_pM
   \end{align*}
-  ist ein glattes Vektorfeld auf $M$.\\
-
-  Übungsaufgabe: Zeige: Der Nullschnitt ist eine Einbettung.
+  ist ein glattes Vektorfeld auf $M$.
+  
+  \emph{"Ubungsaufgabe:} Zeige dass der Nullschnitt eine Einbettung ist.
 \end{bem*}
 
 \begin{bem*}
-  Sind $X,Y \in \mathcal V(M)$ und ist $g \in \C^{\infty}$, so sind die punktweise Summe $X+Y$ und das Produkt $gX$ wieder ein glattes Vektorfeld auf $M$.
-  Damit ist $\mathcal V(M)$ ein $\R$-Vektorraum bzw. $C^{\infty}(M)$-Modul.\\
-
-  Jedes Vektorfeld $X$ ist eine Derivation von $C^{\infty}$:
+  Sind $X,Y \in \mathcal V(M)$ und ist $g \in \C^{\infty}(M)$, so sind die punktweise Summe $X+Y$ und das Produkt $gX$ wieder ein glatte Vektorfelder auf $M$. Damit ist $\mathcal V(M)$ ein $\R$-Vektorraum beziehungsweise $C^{\infty}(M)$-Modul.
+  
+  Jedes Vektorfeld $X$ ist eine Derivation von $C^{\infty}(M)$:
   \begin{align*}
     X(fg)(p) = X(f)(p)g(p) + f(p) X(g)(p) = \left(gX(f) + fX(g)\right)(p).
   \end{align*}
@@ -102,48 +95,41 @@ Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so
 
 % Lemma 4.3
 \begin{lemma}
-  Die Lieklammer ist eine schiefsymmetrische $\R$-bilineare Abbildung $\mathcal V \times \mathcal V(M) \to \mathcal V(M)$.\\
-  Es gitl die sogenannte \CmMark{Jacobiidentität}:
+  Die Lieklammer ist eine schiefsymmetrische $\R$-bilineare Abbildung $\mathcal V(M) \times \mathcal V(M) \to \mathcal V(M)$. Es gilt die sogenannte \CmMark{Jacobiidentität}:
   \begin{align*}
-    [X,[Y,z]] + [Y,[Z,X]] + [Z,[X,Y]] = 0.
+    [X,[Y,Z]] + [Y,[Z,X]] + [Z,[X,Y]] = 0.
   \end{align*}
 \end{lemma}
 
 \begin{proof}
-  Es seien $X,Y \in \mathcal V(M)$, $f,g \in \C^{\infty}$ und $p \in M$. Dann gilt:
+  Es seien $X,Y \in \mathcal V(M)$, $f,g \in \C^{\infty}(M)$ und $p \in M$. Dann gilt:
   \begin{align*}
     [X,Y](fg)  = & X_p(Y(f)g + fY(g)) - Y_p(X(f)g+fX(g))\\
-    = & X_p(Y(f))g(p) + Y_p(f)X_p(g) + X_p(f)Y(g)(p) + f(p)X_p(Y(g))\\
-    & - Y_p(X(f))g(p) - X_p(f)Y_p(g) - Y_p(f)X(g)(p)-f(p)Y_p(X(g))\\
+    = & X_p(Y(f))g(p) + \cancel{Y_p(f)X_p(g)} + \bcancel{X_p(f)Y(g)(p)} + f(p)X_p(Y(g))\\
+    & - Y_p(X(f))g(p) - \bcancel{X_p(f)Y_p(g)} - \cancel{Y_p(f)X(g)(p)} - f(p)Y_p(X(g))\\
     = & (X_p(Y(f))-Y_p(X(f))g(p) + f(p)(X_p(Y(g))-Y_p(X(g))\\
     = & [X,Y]_p (f)g(p) + f(p)[X,Y]_p(g).
   \end{align*}
-  Damit gilt $[X,Y] \in \mathcal V(M)$. Schiefsymmetrie und $\R$-Linearität gelten offensichtlich. Die Jacobiidentität sie als Übungsaufgabe überlassen (Rechnen!).
+  \textcolor{red}{(nicht sicher ob ich die Durchstreichungen lassen oder rausnehmen soll)}
+  Damit gilt $[X,Y] \in \mathcal V(M)$. Schiefsymmetrie und $\R$-Linearität gelten offensichtlich. Die Jacobiidentität sie als Übungsaufgabe überlassen (Nachrechnen!).
 \end{proof}
 
 
 % Lemma 4.4
 \begin{lemma}
   Es seien $X,Y \in \mathcal V(M)$ glatte Vektorfelder und $(\varphi,U)$ eine Karte von $M$.
-  Sind dann $X|_U = \sum \xi^i\pdifffrac{}{x^i}, \ Y|_U = \sum \eta^ipdifffrac{}{x^i}$ und $[X,Y]|_U = \sum \zeta^i \pdifffrac{}{x^i}$ die ensprechenden lokalen Darstellungen, so gilt:
+  Sind dann $X|_U = \sum \xi^i\pdifffrac{}{x^i}, \ Y|_U = \sum \eta^i \pdifffrac{}{x^i}$ und $[X,Y]|_U = \sum \zeta^i \pdifffrac{}{x^i}$ die ensprechenden lokalen Darstellungen, so gilt:
   \begin{align*}
-    \zeta^j = \sum (\xi^i\pdifffrac{\eta^j}{x^i} - \eta^i \pdifffrac{\xi^j}{x^i}.
+    \zeta^j = \sum \left(\xi^i\pdifffrac{\eta^j}{x^i} - \eta^i \pdifffrac{\xi^j}{x^i} \right).
   \end{align*}
 \end{lemma} 
 
-Der Beweis als Übungs überlassen.
+Der Beweis ist als Übungs überlassen.
 
 
 \subsection{Flüsse}
 
-Was haben Vektorfelder mit Differentialgleichungen zu tun?\\
-
-%%% 
-%%% Abbildung 6-1
-%%% 
-\textcolor{red}{Abbildung 6-1}\\
-
-Jedes glatte Vektorfeld $X$ definiert ein Anfangswertproblem
+\marginnote{\textcolor{red}{[BILD]}}Was haben Vektorfelder mit Differentialgleichungen zu tun? Jedes glatte Vektorfeld $X$ definiert ein Anfangswertproblem
 \begin{align*}
   \begin{cases}
     \dot \gamma(t) = X_{\gamma(t)}\\
@@ -157,11 +143,11 @@ oder in lokalen Koordinaten:
   \tilde \gamma(0) = 0, \text{ falls } \varphi(p) = 0,
 \end{cases}
 \end{align*}
-mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ und $X|_U = \sum \xi^i \pdifffrac{}{x^i}$.
+mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ und $X|_{\textcolor{red}{U}} = \sum \xi^i \pdifffrac{}{x^i}$.
 
 % Definition 4.5
 \begin{dfn}
-  Es sei $X \in \mathcal V(M)$ ein glattes Vektorfeld und $p \in M$, sowie $J \subset \R$ ein offenes, zusammenhängendes Intervall um $0$. Eine glatte Kurve $\gamma \colon J \to M$ mit
+  Es sei $X \in \mathcal V(M)$ ein glattes Vektorfeld und $p \in M$, sowie $\calI \subset \R$ ein offenes, zusammenhängendes Intervall um $0$. Eine glatte Kurve $\gamma \colon \calI \to M$ mit
   \begin{align*}
     \dot \gamma(t) = X_{\gamma(t)}, \ \gamma(0) = p
   \end{align*}
@@ -173,9 +159,9 @@ heißt \CmMark{Integralkurve} oder \CmMark{Trajektorie} von $X$ durch $p$.
   \begin{align*}
     \dot{\tilde \gamma} = \xi(\gamma(t)),  \ \tilde \gamma(0) = \varphi(p)
   \end{align*}
-  ist, wobei $X_U = \sum \xi^i \pdifffrac{}{x^i}$ gelte.\\
+  ist, wobei $X_U = \sum \xi^i \pdifffrac{}{x^i}$ gelte.
 
-  Für jedes $p \in M$ ist somit (lokal) ein Anfangswertproblem gestellt. Gesucht ist eine "`simultane"' Lösung all dieser Anfangswertprobleme, also eine Abbildung $(t,p) \mapsto \gamma(t,p) = \gamma^i(p)$ mit 
+  Für jedes $p \in M$ ist somit (lokal) ein Anfangswertproblem gestellt. Gesucht ist eine \quot{simultane} Lösung all dieser Anfangswertprobleme, also eine Abbildung $(t,p) \mapsto \gamma(t,p) = \gamma^t(p)$ mit 
   \begin{align*}
     \begin{cases}
       \dot \gamma^t(p) = X_{\gamma^t(p)}\\
@@ -186,75 +172,71 @@ heißt \CmMark{Integralkurve} oder \CmMark{Trajektorie} von $X$ durch $p$.
 
 % Satz 4.6
 \begin{satz}[Lokale Existenz und Eindeutigkeit]
-  Es sei $U \subset \R^n$ offen und $J_{\varepsilon}=(-\varepsilon,\varepsilon)$ und $F \colon J_{\varepsilon} \times \R^n \to \R^n$ $C^k$-differenzierbar.
+  Es sei $U \subseteq \R^n$ offen und $\calI_{\varepsilon}=(-\varepsilon,\varepsilon)$ und $F \colon \calI_{\varepsilon} \times \R^n \to \R^n$ $C^k$-differenzierbar.
   Dann existiert für alle $x \in U$ eine Umgebung $V$ von $x$ in $U$ und ein $\delta > 0$, so dass
-  \begin{enumerate}
-  \item Für alle $x \in V$ existiert eine $C^{k+1}$-Lösung $y_x\colon I_{\varepsilon} \to V$, von $y_x'(t)=F(t,y(t))$ und $y_x(0) = x$.
-  \item Diese Lösung ist lokal eindeutig, d.h. falls $\tilde y_x$ eine weitere Lösung auf $I_{\tilde\delta}$ ist, so gilt
+  \begin{enumerate}[label=(\roman*),leftmargin=*,widest=iii]
+  \item Für alle $x \in V$ existiert eine $C^{k+1}$-Lösung $y_x\colon \calI_{\delta} \to V$, von $y_x'(t)=F(t,y(t))$ und $y_x(0) = x$.
+  \item Diese Lösung ist lokal eindeutig, das hei\ss t falls $\tilde y_x$ eine weitere Lösung auf $\calI_{\tilde\delta}$ ist, so gilt
     \begin{align*}
       y_x(t) = \tilde y_x(t) \text{ für alle } |t| \leq \min\{\delta, \tilde\delta\}.
     \end{align*}
-    :\item Die Abbildung 
+  \item Die Abbildung 
     \begin{align*}
-      y\colon J_{\delta} \times V \to U, \ (t,x) \mapsto y_x(t)
+      y\colon \calI_{\delta} \times V \to U, \ (t,x) \mapsto y_x(t)
     \end{align*}
     ist $C^k$-differenzierbar.
   \end{enumerate}
 \end{satz}
 
 \begin{proof}
-  Siehe Lang: "`Differential and Riemanian Manifolds"', 3. Auflage, 1995, Chapter IV.1, P.65 
+  Siehe Lang: "`Differential and Riemannian Manifolds"', 3. Auflage, 1995, Chapter IV.1, P.65 \textcolor{red}{Buchverweis}
 \end{proof}
 
 % Korollar 4.7
 \begin{kor}
-  Es sei $X \in \mathcal V(M)$ und $p \in M$. Dann existiert eine offene Umgebung $U$ von $p$ und ein $\varepsilon > 0$ und eine glatte Abbildung:
+  Es sei $X \in \mathcal V(M)$ und $p \in M$. Dann existiert eine offene Umgebung $U$ von $p$, ein $\varepsilon > 0$ und eine glatte Abbildung:
   \begin{align*}
     \gamma\colon(-\varepsilon,\varepsilon) \times U \to M
   \end{align*}
-so dass $t \mapsto \gamma^t(p)$ eine Integralkurve von $X$ durch $p$ ist.\\
-(Setze dann $F(t,x) = \xi(\varphi^{-1}(x))$.)
+so dass $t \mapsto \gamma^t(p)$ eine Integralkurve von $X$ durch $p$ ist. (Setze dann $F(t,x) = \xi(\varphi^{-1}(x))$.)
 \end{kor}
 
 % Korollar 4.8
 \begin{kor}
-Sind $\gamma_1 \colon J_1 \to M, \ \gamma_2 \colon J_2 \to M$ Integralkurven eines Vektorfeldes $X \in \mathcal V(M)$ durch $p$, dann gilt $0 \in J_1 \cap J_2$ und $\gamma_1(0)= p = \gamma_2(0)$.
+Sind $\gamma_1 \colon \calJ_1 \to M, \ \gamma_2 \colon \calJ_2 \to M$ Integralkurven eines Vektorfeldes $X \in \mathcal V(M)$ durch $p$, dann gilt $0 \in \calJ_1 \cap \calJ_2$ und $\gamma_1(0)= p = \gamma_2(0)$.
 Nach \textcolor{red}{Satz 4.6 (ii)} % TODO: Referenz setzen
-gilt dann $\gamma_1(t) = \gamma_2(t)$ für alle $t \in J_1 \cap J_2$. Damit ist
+gilt dann $\gamma_1(t) = \gamma_2(t)$ für alle $t \in \calJ_1 \cap \calJ_2$. Damit ist
 \begin{align*}
-  \gamma \colon J_1 \cap J_2, \ t \mapsto 
+  \gamma \colon \calJ_1 \cap \calJ_2, \ t \mapsto 
   \begin{cases}
-    \gamma_1(t) & t \in J_1\\
-\gamma_2(t) & t \in J_2
+    \gamma_1(t) & t \in \calJ_1\\
+\gamma_2(t) & t \in \calJ_2
   \end{cases}
 \end{align*}
 eine Integralkurve von $X$ durch $p$.
-Damit existiert für jedes $p \in M$ ein maximaler Definitionsbereich $I_p$ für Integralkurven von $X$ durch $p$; dieser ist offen.
+Damit existiert für jedes $p \in M$ ein maximaler Definitionsbereich $\calI_p$ für Integralkurven von $X$ durch $p$; dieser ist offen.
 \end{kor}
 
 \begin{dfn*}
   Für $X \in \mathcal V(M)$ heißt die, wie im vorigen Korollar definierte, Familie maximaler Integralkurven
   \begin{align*}
-    \gamma(t,p) = \gamma^t(p),\ t \in I_p
+    \gamma(t,p) = \gamma^t(p),\ t \in \calI_p
   \end{align*}
 der \CmMark{Fluss} des Vektorfeldes $X$.
 Seinen Definitionsbereich notiert man mit:
 \begin{align*}
-  \mathcal D_X = \{(t,p) \in \R \times M \mid t \in I_p\}.
+  \mathcal D_X = \{(t,p) \in \R \times M \mid t \in \calI_p\}.
 \end{align*}
 \end{dfn*}
 
 \begin{bem*}
-  Es gilt: $\gamma^0(\cdot) = \Id_M$.\\
-Ist $(s,p) \in \mathcal D_{X}$ gilt $\difffrac[t=0]{}{t}(t \mapsto \gamma^{t+s}(p)) = X_{\gamma^s(p)}$, also ist $t \mapsto \gamma^{t+s}(p)$ eine Integralkurve von $X$ durch $q = \gamma^s(p)$.\\
-Aus der Eindeutigkeit folgt damit:
+Es gilt: $\gamma^0(\cdot) = \Id_M$. Ist $(s,p) \in \mathcal D_{X}$, so gilt
+	\[ \difffrac[t=0]{}{t}(t \mapsto \gamma^{t+s}(p)) = X_{\gamma^s(p)}, \]
+also ist $t \mapsto \gamma^{t+s}(p)$ eine Integralkurve von $X$ durch $q = \gamma^s(p)$. Aus der Eindeutigkeit folgt damit:
 \begin{align*}
-  \gamma^{t+s}(p) = \gamma^t(\gamma^s(p)) \text{ für alle } s,t s+t \in I_p.
+  \gamma^{t+s}(p) = \gamma^t(\gamma^s(p))
 \end{align*}
-Ferner gilt $I_q = I_p - s$.\\
-
-Kurz: $\gamma(t+s) = \gamma^t \circ \gamma^s$.\\
-Also definiert $\gamma$ einen "`lokalen Gruppenhomomorphismus"' von $\R$ in $M^M$.
+f"ur alle $s, t$, $s+t \in \calI_p$, ferner gilt $\calI_q = \calI_p - s$. Kurz geschrieben: $\gamma(t+s) = \gamma^t \circ \gamma^s$. Also definiert $\gamma$ einen \quot{lokalen Gruppenhomomorphismus} von $\R$ in $M^M$.
 \end{bem*}
 
 

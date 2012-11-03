@@ -6,13 +6,18 @@
 \lhead[\thepage]{\rightmark}}
 \rhead[\nouppercase{\leftmark}]{\thepage}		
 
+%\usepackage{color}
+\usepackage{xcolor} % Farben
+%\newcommand{\grey}{\gray} % alternative Schreibweise fuer grau
 \usepackage{marginnote} % Randnotizen
 \usepackage{enumitem} % Fuer mehr Einstellungmoeglichkeiten bei Aufzaehlungen
 %\usepackage{enumerate} % Fuer mehr Einstellungmoeglichkeiten bei Aufzaehlungen
 \usepackage{xifthen} % Erlaubt die Verwendung von if-then-else Befehlen im Code
 \usepackage{makeidx} % Fuer den Index
 \usepackage{xspace} % intelligende Leerzeichen bei Macros
-%\usepackage{expdlist} % Erweiterte description umgebung
+\usepackage[normalem]{ulem} % unterstreichen von Text
+\usepackage{cancel} % schraeg durchstreichen von Text
+\renewcommand{\CancelColor}{\color{gray}} % Farbe zum schraegen Druchstreichen in grau
 
 \usepackage{tikz} % Fuer Zeichnungen in TikZ
 \usetikzlibrary{matrix,arrows,calc,intersections, positioning, patterns, decorations.text, decorations.pathmorphing}
@@ -137,6 +142,12 @@
 \DeclareMathOperator{\RP}{\mathbb{RP}} % real projection plane
 \DeclareMathOperator{\Tor}{\mathbb{T}} % torus
 \DeclareMathOperator{\Z}{\mathbb{Z}}
+
+%  geschwungene Buchstaben
+\DeclareMathOperator{\calD}{\mathcal{D}}
+\DeclareMathOperator{\calI}{\mathcal{I}}
+\DeclareMathOperator{\calJ}{\mathcal{J}}
+\DeclareMathOperator{\calV}{\mathcal{V}}
 
 % Redeclare \P (Prim or Propability) and put the old, reversed "breakline P" in \BreakLineP
 \let\BreakLineP\P
@@ -496,7 +507,6 @@
 
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{xcolor}
 \usepackage{transparent}
 \usepackage{wrapfig}
 
