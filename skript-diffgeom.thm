@@ -1,63 +1,63 @@
-\contentsline {dfn}{{\cmLangThmDfn }{0.1.2}{differenzierbare Mannigfaltigkeit}}{2}
-\contentsline {bsp}{{\cmLangThmBsp }{0.1.3}{}}{2}
-\contentsline {dfn}{{\cmLangThmDfn }{0.1.4}{Differenzierbare Abbildungen}}{3}
-\contentsline {bem}{{\cmLangThmBem }{0.1.5}{}}{4}
-\contentsline {bsp}{{\cmLangThmBsp }{0.1.6}{}}{4}
-\contentsline {dfn}{{\cmLangThmDfn }{0.1.7}{Diffeomorphismus}}{4}
-\contentsline {bsp}{{\cmLangThmBsp }{0.1.8}{}}{4}
-\contentsline {dfn}{{\cmLangThmDfn }{0.1.9}{Untermannigfaltigkeit}}{5}
-\contentsline {lemma}{{\cmLangThmLemma }{0.1.10}{}}{5}
+\contentsline {dfn}{{\cmLangThmDfn }{1.2}{differenzierbare Mannigfaltigkeit}}{2}
+\contentsline {bsp}{{\cmLangThmBsp }{1.3}{}}{2}
+\contentsline {dfn}{{\cmLangThmDfn }{1.4}{Differenzierbare Abbildungen}}{3}
+\contentsline {bem}{{\cmLangThmBem }{1.5}{}}{4}
+\contentsline {bsp}{{\cmLangThmBsp }{1.6}{}}{4}
+\contentsline {dfn}{{\cmLangThmDfn }{1.7}{Diffeomorphismus}}{4}
+\contentsline {bsp}{{\cmLangThmBsp }{1.8}{}}{4}
+\contentsline {dfn}{{\cmLangThmDfn }{1.9}{Untermannigfaltigkeit}}{5}
+\contentsline {lemma}{{\cmLangThmLemma }{1.10}{}}{5}
 \contentsline {proof}{{\proofname }{1}{}}{5}
-\contentsline {bem}{{\cmLangThmBem }{0.1.11}{}}{5}
-\contentsline {lemma}{{\cmLangThmLemma }{0.2.1}{}}{6}
+\contentsline {bem}{{\cmLangThmBem }{1.11}{}}{5}
+\contentsline {lemma}{{\cmLangThmLemma }{2.1}{}}{6}
 \contentsline {proof}{{\proofname }{2}{}}{6}
-\contentsline {dfn}{{\cmLangThmDfn }{0.2.2}{Geometrische Definition des Tangentialraums}}{6}
-\contentsline {bem}{{\cmLangThmBem }{0.2.3}{}}{6}
+\contentsline {dfn}{{\cmLangThmDfn }{2.2}{Geometrische Definition des Tangentialraums}}{6}
+\contentsline {bem}{{\cmLangThmBem }{2.3}{}}{6}
 \contentsline {proof}{{\proofname }{3}{}}{6}
-\contentsline {lemma}{{\cmLangThmLemma }{0.2.4}{}}{7}
+\contentsline {lemma}{{\cmLangThmLemma }{2.4}{}}{7}
 \contentsline {proof}{{\proofname }{4}{}}{7}
-\contentsline {bem}{{\cmLangThmBem }{0.2.5}{}}{7}
-\contentsline {dfn}{{\cmLangThmDfn }{0.2.6}{Algebraische Definition des Tangentialraumes}}{7}
-\contentsline {lemma}{{\cmLangThmLemma }{0.2.7}{}}{8}
+\contentsline {bem}{{\cmLangThmBem }{2.5}{}}{7}
+\contentsline {dfn}{{\cmLangThmDfn }{2.6}{Algebraische Definition des Tangentialraumes}}{7}
+\contentsline {lemma}{{\cmLangThmLemma }{2.7}{}}{8}
 \contentsline {proof}{{\proofname }{5}{}}{8}
-\contentsline {lemma}{{\cmLangThmLemma }{0.2.8}{}}{8}
+\contentsline {lemma}{{\cmLangThmLemma }{2.8}{}}{8}
 \contentsline {proof}{{\proofname }{6}{}}{8}
-\contentsline {bem}{{\cmLangThmBem }{0.2.9}{}}{8}
-\contentsline {satz}{{\cmLangThmSatz }{0.2.10}{}}{9}
-\contentsline {lemma}{{\cmLangThmLemma }{0.2.11}{}}{9}
+\contentsline {bem}{{\cmLangThmBem }{2.9}{}}{8}
+\contentsline {satz}{{\cmLangThmSatz }{2.10}{}}{8}
+\contentsline {lemma}{{\cmLangThmLemma }{2.11}{}}{9}
 \contentsline {proof}{{\proofname }{7}{}}{9}
-\contentsline {bem}{{\cmLangThmBem }{0.2.12}{}}{9}
+\contentsline {bem}{{\cmLangThmBem }{2.12}{}}{9}
 \contentsline {proof}{{\proofname }{8}{}}{9}
-\contentsline {satz}{{\cmLangThmSatz }{0.2.13}{Äquivalenz der Tangentialraumbegriffe}}{10}
-\contentsline {proof}{{\proofname }{9}{}}{10}
-\contentsline {bem}{{\cmLangThmBem }{0.2.14}{}}{10}
-\contentsline {satz}{{\cmLangThmSatz }{0.2.15}{Transformationsverhalten bei Kartenwechsel}}{10}
+\contentsline {satz}{{\cmLangThmSatz }{2.13}{Äquivalenz der Tangentialraumbegriffe}}{9}
+\contentsline {proof}{{\proofname }{9}{}}{9}
+\contentsline {bem}{{\cmLangThmBem }{2.14}{}}{10}
+\contentsline {satz}{{\cmLangThmSatz }{2.15}{Transformationsverhalten bei Kartenwechsel}}{10}
 \contentsline {proof}{{\proofname }{10}{}}{10}
-\contentsline {dfn}{{\cmLangThmDfn }{0.3.1}{}}{11}
-\contentsline {lemma}{{\cmLangThmLemma }{0.3.2}{Differentiale in lokalen Koordinaten}}{11}
-\contentsline {bem}{{\cmLangThmBem }{0.3.3}{}}{11}
+\contentsline {dfn}{{\cmLangThmDfn }{3.1}{}}{11}
+\contentsline {lemma}{{\cmLangThmLemma }{3.2}{Differentiale in lokalen Koordinaten}}{11}
+\contentsline {bem}{{\cmLangThmBem }{3.3}{}}{11}
 \contentsline {proof}{{\proofname }{11}{}}{11}
-\contentsline {bem}{{\cmLangThmBem }{0.3.4}{Charakterisierung durch Kurven}}{12}
-\contentsline {bem}{{\cmLangThmBem }{0.3.5}{Tangentialräume an Untermannigfaltigkeiten des $\R ^n$}}{12}
-\contentsline {dfn}{{\cmLangThmDfn }{0.3.7}{Reguläre Punkte, Submersion, Immersion}}{12}
-\contentsline {bsp}{{\cmLangThmBsp }{0.3.8}{}}{13}
-\contentsline {satz}{{\cmLangThmSatz }{0.3.9}{}}{13}
-\contentsline {kor}{{\cmLangThmKor }{0.3.10}{}}{13}
-\contentsline {proof}{{\proofname }{12}{}}{14}
+\contentsline {bem}{{\cmLangThmBem }{3.4}{Charakterisierung durch Kurven}}{11}
+\contentsline {bem}{{\cmLangThmBem }{3.5}{Tangentialräume an Untermannigfaltigkeiten des $\R ^n$}}{11}
+\contentsline {dfn}{{\cmLangThmDfn }{3.7}{Reguläre Punkte, Submersion, Immersion}}{12}
+\contentsline {bsp}{{\cmLangThmBsp }{3.8}{}}{12}
+\contentsline {satz}{{\cmLangThmSatz }{3.9}{}}{13}
+\contentsline {kor}{{\cmLangThmKor }{3.10}{}}{13}
+\contentsline {proof}{{\proofname }{12}{}}{13}
 \contentsline {proof}{{\proofname }{13}{}}{14}
-\contentsline {bsp}{{\cmLangThmBsp }{0.3.12}{}}{16}
-\contentsline {dfn}{{\cmLangThmDfn }{0.4.1}{Tangentialbündel}}{16}
-\contentsline {dfn}{{\cmLangThmDfn }{0.4.2}{}}{17}
-\contentsline {bem}{{\cmLangThmBem }{0.4.3}{}}{17}
-\contentsline {lemma}{{\cmLangThmLemma }{0.4.8}{}}{18}
+\contentsline {bsp}{{\cmLangThmBsp }{3.12}{}}{16}
+\contentsline {dfn}{{\cmLangThmDfn }{4.1}{Tangentialbündel}}{16}
+\contentsline {dfn}{{\cmLangThmDfn }{4.2}{}}{17}
+\contentsline {bem}{{\cmLangThmBem }{4.3}{}}{17}
+\contentsline {lemma}{{\cmLangThmLemma }{4.8}{}}{18}
 \contentsline {proof}{{\proofname }{14}{}}{18}
-\contentsline {lemma}{{\cmLangThmLemma }{0.4.9}{}}{18}
-\contentsline {dfn}{{\cmLangThmDfn }{0.4.10}{}}{19}
-\contentsline {satz}{{\cmLangThmSatz }{0.4.12}{Lokale Existenz und Eindeutigkeit}}{19}
+\contentsline {lemma}{{\cmLangThmLemma }{4.9}{}}{18}
+\contentsline {dfn}{{\cmLangThmDfn }{4.10}{}}{18}
+\contentsline {satz}{{\cmLangThmSatz }{4.12}{Lokale Existenz und Eindeutigkeit}}{19}
 \contentsline {proof}{{\proofname }{15}{}}{19}
-\contentsline {kor}{{\cmLangThmKor }{0.4.13}{}}{19}
-\contentsline {kor}{{\cmLangThmKor }{0.4.14}{}}{20}
-\contentsline {satz}{{\cmLangThmSatz }{0.4.17}{}}{20}
+\contentsline {kor}{{\cmLangThmKor }{4.13}{}}{19}
+\contentsline {kor}{{\cmLangThmKor }{4.14}{}}{19}
+\contentsline {satz}{{\cmLangThmSatz }{4.17}{}}{20}
 \contentsline {beh*}{{Behauptung}{1}{}}{22}
 \contentsline {Loes}{{L\"osung}{1}{}}{24}
 \contentsline {Loes}{{L\"osung}{2}{}}{24}

@@ -5,14 +5,29 @@
 %% Mitschrieb und Textsatz von Jan-Bernhard Kordaß.
 %%
 
-\documentclass[a4paper, twoside, 11pt]{scrbook}
+\documentclass[paper=A4, twoside, chapterprefix=true, bibliography=totoc, headsepline]{scrbook}
+
+% Nummerierung der Paragraphen anpassen (sonst kommt etwas wie "Definition 2.9.1" heraus)
+\renewcommand{\thesection}{\arabic{section}}
+
+%Aendert die Kapitelbeschriftung in der Kopfzeile der linken Seiten
+\renewcommand*{\chaptermarkformat}{\chapappifchapterprefix{\ }\thechapter:\enskip}
+\renewcommand*{\sectionmarkformat}{\thesection\autodot\enskip}
+
+% Einheitliche Schriftart (KOMA Script verwendet fuer einige Ueberschriften eine serifenlose Schrift, mischt also
+% Schriftarten. Ich habe mir die Argumente dafuer durchgelsen und war nicht ueberzeugt. Wenn jemand, der mehr als
+% ich von der Materie versteht, anderer Meinung ist kann er diese Zeilen hier einfach auskommentieren)
+\setkomafont{chapter}{\Huge\bfseries\rmfamily}
+\setkomafont{chapterentry}{\bfseries\rmfamily}
+\setkomafont{disposition}{\bfseries\rmfamily}
+\setkomafont{descriptionlabel}{\bfseries\rmfamily}
 
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 
 \usepackage[ngerman]{babel}
-\usepackage[a4paper, top=2.5cm, bottom=3cm, left=2.5cm, right=4.5cm]{geometry}
+\usepackage[top=2.5cm, bottom=3cm, left=2.5cm, right=4.5cm]{geometry}
 
 \input{preamble}
 

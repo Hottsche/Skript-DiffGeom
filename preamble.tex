@@ -1,19 +1,17 @@
 \usepackage{fancyhdr} % erlaubt mehr Optionen in Kopf- und Fusszeile
 
 % header configuration
-\pagestyle{fancy}
-\fancyhf{
-\lhead[\thepage]{\rightmark}}
-\rhead[\nouppercase{\leftmark}]{\thepage}		
+%\pagestyle{fancy}
+%\fancyhf{
+%\lhead[\thepage]{\rightmark}}
+%\rhead[\nouppercase{\leftmark}]{\thepage}		
 
-%\usepackage{color}
 \usepackage{xcolor} % Farben
-%\newcommand{\grey}{\gray} % alternative Schreibweise fuer grau
 \usepackage{marginnote} % Randnotizen
 \usepackage{enumitem} % Fuer mehr Einstellungmoeglichkeiten bei Aufzaehlungen
-%\usepackage{enumerate} % Fuer mehr Einstellungmoeglichkeiten bei Aufzaehlungen
 \usepackage{xifthen} % Erlaubt die Verwendung von if-then-else Befehlen im Code
-\usepackage{makeidx} % Fuer den Index
+\usepackage{index} % Index erzeugen
+\newindex{default}{idx}{ind}{Stichwortverzeichnis}
 \usepackage{xspace} % intelligende Leerzeichen bei Macros
 \usepackage[normalem]{ulem} % unterstreichen von Text
 \usepackage{cancel} % schraeg durchstreichen von Text
@@ -201,56 +199,31 @@
 \ProcessOptions\relax
 
 % call makeindex for an index register
-\makeindex
+%\makeindex
 
 % Name language settings
 
-\iflanguage{ngerman}{
-  % theorem names, ngerman
-  \newcommand{\cmLangThmSatz}{Satz\xspace}
-  \newcommand{\cmLangThmLemma}{Lemma\xspace}
-  \newcommand{\cmLangThmKor}{Korollar\xspace}
-  \newcommand{\cmLangThmProp}{Proposition\xspace}
+% theorem names, ngerman
+\newcommand{\cmLangThmSatz}{Satz\xspace}
+\newcommand{\cmLangThmLemma}{Lemma\xspace}
+\newcommand{\cmLangThmKor}{Korollar\xspace}
+\newcommand{\cmLangThmProp}{Proposition\xspace}
 
-  \newcommand{\cmLangThmDfn}{Definition\xspace}
-  \newcommand{\cmLangThmBsp}{Beispiel\xspace}
+\newcommand{\cmLangThmDfn}{Definition\xspace}
+\newcommand{\cmLangThmBsp}{Beispiel\xspace}
 
-  \newcommand{\cmLangThmBem}{Bemerkung\xspace}
+\newcommand{\cmLangThmBem}{Bemerkung\xspace}
 
-  % short forms, ngerman
-  \newcommand{\cmLangThmShortSatz}{Satz\xspace}
-  \newcommand{\cmLangThmShortLemma}{Lemma\xspace}
-  \newcommand{\cmLangThmShortKor}{Kor\xspace}
-  \newcommand{\cmLangThmShortProp}{Prop\xspace}
+% short forms, ngerman
+\newcommand{\cmLangThmShortSatz}{Satz\xspace}
+\newcommand{\cmLangThmShortLemma}{Lemma\xspace}
+\newcommand{\cmLangThmShortKor}{Kor\xspace}
+\newcommand{\cmLangThmShortProp}{Prop\xspace}
 
-  \newcommand{\cmLangThmShortDfn}{Def\xspace}
-  \newcommand{\cmLangThmShortBsp}{Bsp\xspace}
+\newcommand{\cmLangThmShortDfn}{Def\xspace}
+\newcommand{\cmLangThmShortBsp}{Bsp\xspace}
 
-  \newcommand{\cmLangThmShortBem}{Bem\xspace}
-}{
-  % theorem names, english
-  \newcommand{\cmLangThmSatz}{Theorem\xspace}
-  \newcommand{\cmLangThmLemma}{Lemma\xspace}
-  \newcommand{\cmLangThmKor}{Corollary\xspace}
-  \newcommand{\cmLangThmProp}{Proposition\xspace}
-
-  \newcommand{\cmLangThmDfn}{Definition\xspace}
-  \newcommand{\cmLangThmBsp}{Example\xspace}
-
-  \newcommand{\cmLangThmBem}{Remark\xspace}
-
-  % short forms, ngerman
-  \newcommand{\cmLangThmShortSatz}{Thm\xspace}
-  \newcommand{\cmLangThmShortLemma}{Lemma\xspace}
-  \newcommand{\cmLangThmShortKor}{Cor\xspace}
-  \newcommand{\cmLangThmShortProp}{Prop\xspace}
-
-  \newcommand{\cmLangThmShortDfn}{Def\xspace}
-  \newcommand{\cmLangThmShortBsp}{Exp\xspace}
-
-  \newcommand{\cmLangThmShortBem}{Rem\xspace}
-}
-	
+\newcommand{\cmLangThmShortBem}{Bem\xspace}
 
 \ifthenelse{\boolean{enableMarginThm}}{
 
