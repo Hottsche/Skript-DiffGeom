@@ -240,7 +240,7 @@ Die Menge aller glatten Abbildungen von $M$ nach $N$ wird $C^{\infty}(M,N)$ gena
 \begin{dfn}[Diffeomorphismus]
   Eine Abbildung $f \colon M \to N$ hei\ss t \CmMark{Diffeomorphismus}, wenn $f$ bijektiv ist und $f$, sowie $f^{-1}$ $C^{\infty}$-Abbildungen von $M$ nach $N$ sind. Insbesondere haben $M$ und $N$ in diesem Fall dieselbe Dimension.\\
 
-Die Menge der Diffeomorphismen von $M$ nach $N$ wird mit $\Diff(M,N)$ bezeichnet. Die Menge der Diffeomorphismen von $M$ nach $M$ wird mit $\Diff(M)$ bezeichnet. $(\Diff(M), \circ)$ ist eine Gruppe.
+Die Menge der Diffeomorphismen von $M$ nach $N$ wird mit $\Diff(M,N)$ bezeichnet. Die Menge der Diffeomorphismen von $M$ nach $M$ wird mit $\Diff(M)$ bezeichnet. $(\Diff(M), \circ)$ ist bez"uglich der Hintereinanderausf"uhrung eine Gruppe.
 
 \end{dfn}
 
@@ -249,20 +249,15 @@ Die Menge der Diffeomorphismen von $M$ nach $N$ wird mit $\Diff(M,N)$ bezeichnet
 
 \subsection{Produkte von Mannigfaltigkeiten}
 
-Es seien $M$ und $N$ glatte Mannigfaltigkeiten der Dimensionen $m$ und $n$.
-Dann hat $M \times N$ versehen mit der Produkttopologie die Struktur einer Mannigfaltigkeit.\\
-Da $M$ und $N$ hausdorffsch sind und abzählbare Basen ihrer Topologie besitzen gilt dies auch für $M \times N$.\\
+Es seien $M$ und $N$ glatte Mannigfaltigkeiten der Dimensionen $m$ und $n$. Dann hat $M \times N$ versehen mit der Produkttopologie, die Struktur einer Mannigfaltigkeit. Da $M$ und $N$ hausdorffsch sind und abzählbare Basen ihrer Topologie besitzen gilt dies auch für $M \times N$.
 
-Sind $(\varphi, U)$ und $(\psi, V)$ Karten von $M$ bzw. $N$, so ist $\varphi \times \psi$ ein Homöomorphismus von $U \times V$ auf sein offenes Bild in $\R^m \times \R^n \cong \R^{m \times n}$.\\
+Sind $(\varphi, U)$ und $(\psi, V)$ Karten von $M$ bzw. $N$, so ist $\varphi \times \psi$ ein Homöomorphismus von $U \times V$ auf sein offenes Bild in $\R^m \times \R^n \cong \R^{m \times n}$.
 
-Seien $\mathcal A = \{(\varphi_{\alpha}, U_{\alpha}) \mid \alpha \in I \}$ und $\mathcal A' = \{(\psi_{\beta}, U_{\beta}) \mid \beta \in J\}$ $C^{\infty}$ Atlanten von $M$ und $N$. Dann ist $\mathcal B = \{(\varphi_{\alpha}\times\psi_{\beta},U_{\alpha}\times U_{\beta}) \mid (\alpha, \beta) \in I \times J\}$ ein $C^{\infty}$-Atlas von $M\times N$, denn 
+Seien $\mathcal A = \{(\varphi_{\alpha}, U_{\alpha}) \mid \alpha \in \calI \}$ und $\mathcal A' = \{(\psi_{\beta}, U_{\beta}) \mid \beta \in \calJ\}$ $C^{\infty}$-Atlanten von $M$ und $N$. Dann ist $\mathcal B = \{(\varphi_{\alpha}\times\psi_{\beta},U_{\alpha}\times U_{\beta}) \mid (\alpha, \beta) \in \calI \times \calJ\}$ ein $C^{\infty}$-Atlas von $M\times N$, denn 
 \begin{align*}
   (\varphi_{\alpha} \times \psi_{\beta}) \circ (\varphi_{\mu} \times \psi_{\nu})^{-1} = (\varphi_{\alpha} \circ \varphi_{\mu}^{-1}) \times (\psi_{\beta} \circ \psi_{\nu}^{-1})
 \end{align*}
-ist ein $C^{\infty}$-Diffeomorphismus.\\
-
-Damit ist $M\times N$ in kanonischer Weise eine glatte $(m+n)$-dimensionale Mannigfaltigkeit.\\
-Die kanonischen Projektionen $\pi_M\colon M\times N \to M, \ \pi_N\colon M \times N \to N$ und die Abbildung $\tau \colon M \times N \to N \times M, (p,q) \mapsto (q,p)$ sind glatte Abbildungen.
+ist ein $C^{\infty}$-Diffeomorphismus. Damit ist $M\times N$ in kanonischer Weise eine glatte $(m+n)$-dimensionale Mannigfaltigkeit. Die kanonischen Projektionen $\pi_M\colon M\times N \to M, \ \pi_N\colon M \times N \to N$ und die Abbildung $\tau \colon M \times N \to N \times M, (p,q) \mapsto (q,p)$ sind glatte Abbildungen.
 
 \begin{bsp}
   Es folgen einige Beispiele für Produkt-Mannigfaltigkeiten:
@@ -270,21 +265,21 @@ Die kanonischen Projektionen $\pi_M\colon M\times N \to M, \ \pi_N\colon M \time
 % Abbildung 1-6
 \CmMarginSvg{1-6-torus-als-produkt}{3cm}
 
-  \begin{itemize}
+  \begin{enumerate}[label=\arabic*)]
   \item Zylinder $\R \times S^1$
   \item $T^n = \times_{i=1}^nS^1$
-  \end{itemize}
+  \end{enumerate}
 \end{bsp}
 
 
 \subsection{Untermannigfaltigkeiten}
 
 \begin{dfn}[Untermannigfaltigkeit]
-  Es sei $N$ eine glatte Mannigfaltigkeit. Eine Teilmenge $M \subset N$ heißt \CmMark{Untermannigfaltigkeit} von $N$, wenn für alle $p \in M$ eine Karte $(\varphi, U)$ von $N$ um $p$ existiert, so dass
+  Es sei $N$ eine glatte Mannigfaltigkeit. Eine Teilmenge $M \subseteq N$ heißt \CmMark{Untermannigfaltigkeit} von $N$, wenn für alle $p \in M$ eine Karte $(\varphi, U)$ von $N$ um $p$ existiert, so dass
   \begin{align*}
     \varphi(U \cap M) = \varphi(U) \cap \underbrace{(\R^m \times \{0\})}_{\mathclap{\{(x^1,\ldots,x^m,0,\ldots,0) \in \R^m\times\R^{n-m} \cong \R^{n} \}}}
   \end{align*}
-gilt. Eine solche Karte heißt an $N$ \CmMark{adaptierte Karte}. Die Zahl $n-m$ heißt \CmMark{Kodimension} von $M$ in $N$.
+gilt. Eine solche Karte heißt an $\textcolor{red}{M}$ \CmMark{adaptierte Karte}. Die Zahl $n-m$ heißt \CmMark{Kodimension} von $M$ in $N$.
 
 % Abbildung 1-7
 \CmPutSvg{1-7-untermf}{8cm}

@@ -64,7 +64,23 @@
 	
 	\draw (segel1) ..controls(tang1) and (tang2).. (segel2) ..controls(tang3) and (tang4).. (segel3) ..controls(tang5) and (tang6).. (segel1) --cycle;
 }
-%\newcommand{\tikztorus}[2][1]{}
+\newcommand{\tikztorus}[2][1]{
+	% \draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+	% zuerst die aeussere Ellips
+	\draw[] #2  ellipse (#1*2 and #1*1);
+	
+	% dann das Loch
+	\begin{scope}
+      \clip ($#2 - #1*(1, 0.5)$) rectangle ($#2 + #1*(1, 1)$);
+      \path[draw,name path=gkreis] ($#2 + #1*(0,0.75)$) ellipse (#1*1.25 and #1*1);
+    \end{scope}
+    \path[name path=kkreis] ($#2 - #1*(0,0.5)$) ellipse (#1*1 and #1*0.75);
+    \path[name intersections={of=gkreis and kkreis}];
+    \begin{scope}
+      \clip (intersection-1) rectangle ($(intersection-2)+(0,0.5)$);
+      \draw ($#2 - #1*(0,0.5)$) ellipse (#1*1 and #1*0.75);
+    \end{scope}
+}
 
 \usepackage[toc]{glossaries} % Symbolverzeichnis
 \glossarystyle{treehypergroup}

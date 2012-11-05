@@ -20,7 +20,7 @@ Betrachte in der nebenstehenden Abbildung eine differenzierbare Kurve $c \colon 
 
 % Bemerke $1 = \left<c(t),c(t)\right>$
 
-Es sei $M$ eine glatte Mannigfaltigkeit und es seien glatte Kurven $c_i\colon (-\varepsilon_i,\varepsilon_i) \to M$ mit $c_1(0) = c_2(0) = p \in M$ gegeben.\\
+Es sei $M$ eine glatte Mannigfaltigkeit und es seien glatte Kurven $c_i\colon (-\varepsilon_i,\varepsilon_i) \to M$ mit $c_1(0) = c_2(0) = p \in M$ gegeben.
 
 Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\varphi,U)$ von $M$ und $p$ gibt, so dass 
 \begin{align*}
@@ -56,16 +56,13 @@ gilt.
 \end{bem}
 
 \begin{proof}
-  Zu $v \in \R^n$ sei $B(v) = [t \mapsto \varphi^{-1}(\varphi(p) + tv)]$ - die Äquivalenzklasse der abgebildeten Kurve auf der Mannigfaltigkeit.
+  Zu jedem Vektor $v \in \R^n$ sei $B(v) = [t \mapsto \varphi^{-1}(\varphi(p) + tv)]$ die Äquivalenzklasse der abgebildeten Kurve auf der Mannigfaltigkeit.
 
   % Abbildung 2-2
   \CmPutSvg{2-2-beweis-bijektivitaet-tpm-rn}{10cm}
 
-  \begin{align*}
-    & A B(v) = \difffrac[t=0]{}{t}(\varphi \circ B(v)) = \difffrac[t=0]{}{t}(\varphi \circ (\varphi^{-1}(\varphi(p) + tv)) = \difffrac[t=0]{}{t}(\varphi(p) + tv) = v.\\
-    & v_c = \difffrac[t=0]{}{t}(\varphi \circ c)\\
-    & B A (\underbrace{[c]}_{\ni c}) = B(v_c) = [t \mapsto \varphi^{-1}(\varphi(p + tv_c)].
-  \end{align*}
+  \[ A B(v) = \difffrac[t=0]{}{t}(\varphi \circ B(v)) = \difffrac[t=0]{}{t}(\varphi \circ (\varphi^{-1}(\varphi(p) + tv)) = \difffrac[t=0]{}{t}(\varphi(p) + tv) = v. \]
+  \[ B A (\underbrace{[c]}_{\ni c}) = B(v_c) = [t \mapsto \varphi^{-1}(\varphi(p) + tv_c)] \text{ wobei } v_c = \difffrac[t=0]{}{t}(\varphi \circ c). \]
   Die Kurven $c$ und $t \mapsto \varphi^{-1}(\varphi(p) + tv_c)$ sind äquivalent, also ist $B A[c] = [c]$ und somit $A$ bijektiv.
 \end{proof}
 
