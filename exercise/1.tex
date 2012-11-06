@@ -11,7 +11,14 @@
 	\def\height{0.75}
 	\def\angle{25}
 	
-	\path[name path=circle,draw] (0,0) circle (\radius); \draw[dashed] (-\radius,0) to[out=\angle,in=180-\angle] (\radius,0); \draw (-\radius,0) to[out=360-\angle,in=180+\angle] (\radius,0);
+	\path[name path=circle,draw] (0,0) circle (\radius);
+	\begin{scope}
+			\clip (-\radius - 0.25,0) rectangle (\radius + 0.25,-\radius - 0.25);
+			\draw (0,0) ellipse (1.5 and 0.5);
+		\end{scope}\begin{scope}
+			\clip (-\radius - 0.25,0) rectangle (\radius + 0.25,\radius + 0.25);
+			\draw[dashed] (0,0) ellipse (1.5 and 0.5);
+		\end{scope}
 	\path[name path=vert] (\smallLength,\height) -- (-\smallLength,\height);
 	\path[name intersections={of=circle and vert}];
 	\draw (\biglength,-\height) -- (\smallLength,\height) -- (intersection-1) (intersection-2) -- (-\smallLength,\height) -- (-\biglength,-\height) -- (\biglength,-\height);
@@ -38,7 +45,14 @@
 		\def\radius{1.25}
 		\def\angle{22}
 		\def\anglePoint{65}	
-		\path[name path=circle,draw] (0,0) circle (\radius); \draw[dashed] (-\radius,0) to[out=\angle,in=180-\angle] (\radius,0); \draw (-\radius,0) to[out=360-\angle,in=180+\angle] (\radius,0);
+		\path[name path=circle,draw] (0,0) circle (\radius);
+		\begin{scope}
+			\clip (-\radius - 0.25,0) rectangle (\radius + 0.25,-\radius - 0.25);
+			\draw (0,0) ellipse (1.25 and 0.25);
+		\end{scope}\begin{scope}
+			\clip (-\radius - 0.25,0) rectangle (\radius + 0.25,\radius + 0.25);
+			\draw[dashed] (0,0) ellipse (1.25 and 0.25);
+		\end{scope}
 		\draw[->] (\anglePoint:\radius) node[anchor=south west]{$p$} -- ($(\anglePoint:\radius)+(270:1.2)$); \fill (\anglePoint:\radius) circle(0.05) ($(\anglePoint:\radius)+(270:1.25)$) circle(0.05) node[anchor=north]{$\varphi_i^+(p)$};
 	\end{tikzpicture}}
 		\[ \varphi_i^\pm: U_i^\pm \to B_1(0) \subset \R^n, x \mapsto (x^0,\ldots ,x^{i-1}, x^{i+1},\ldots ,x^n) \]
@@ -115,7 +129,14 @@ $k \in \N \cup \{\infty\}$, $M_1, M_2$ $C^k$-Mannigfaltigkeiten, $N_i \subseteq 
 \item
 	$M = S^n$, $N = \{(x^0, x^1, \ldots ,x^n) \in S^n | x^2 = \ldots = x^n = 0\}$; Skizze f"ur $n = 2$:
 	\begin{center}\begin{tikzpicture}
-		\draw (0,0) circle (0.75); \draw[dashed] (-0.75,0) to[out=20,in=160] (0.75,0); \draw (-0.75,0) to[out=340,in=200] (0.75,0);
+		\draw (0,0) circle (0.75);
+		\begin{scope}
+			\clip (-1,0) rectangle (1,-1);
+			\draw (0,0) ellipse (0.75 and 0.25);
+		\end{scope}\begin{scope}
+			\clip (-1,0) rectangle (1,1);
+			\draw[dashed] (0,0) ellipse (0.75 and 0.25);
+		\end{scope}
 		\node at (0.75,0.75) {$S^2$}; \node (N) at (1,-0.5) {$N$};
 		\draw[->] (N) to[out=180,in=270] (0.5,-0.2);
 	\end{tikzpicture}\end{center}

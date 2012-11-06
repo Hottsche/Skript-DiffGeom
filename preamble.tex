@@ -125,8 +125,10 @@
 \DeclareMathOperator{\Id}{Id} % identity
 \DeclareMathOperator{\Inn}{Inn} % Untergruppe der inneren Automorphismen
 \DeclareMathOperator{\Kern}{Kern}
+\DeclareMathOperator{\Oo}{O} % Matrizen sie mit ihrer Transponierten multipiziert die Einheitsmatrix ergeben
 \DeclareMathOperator{\Relation}{\scriptstyle\mathrm{R}} % custom Relation
 \DeclareMathOperator{\Rang}{Rang} % rank (ii)
+\DeclareMathOperator{\SL}{SL} % Matrizen mit Deteminante 1
 \DeclareMathOperator{\Stab}{Stab} % Stabilisator
 \DeclareMathOperator{\Sym}{Sym} % symmetric group
 
@@ -138,6 +140,7 @@
     \left|#1\right|
   }
 }
+\newcommand{\X}{\times}
 
 %Realteil und Imaginaerteil
 \renewcommand{\Re}{\ensuremath{\operatorname{Re}}} % <-- sollte man da nicht besser \DeclareMathOperator verwenden?
@@ -173,10 +176,10 @@
 
 % Differentialoperatoren als Brüche
 \newcommand{\dop}{\mathrm{d}}	
-%\newcommand{\difffrac}[2][]{\dfrac{\dop #1}{\dop #2}}
-\newcommand{\difffrac}[3][]{\ifthenelse{\isempty{#1}}{\dfrac{\dop #2}{\dop #3}}{\left. \dfrac{\dop #2}{\dop #3} \right|_{#1}}}
-%\newcommand{\pdifffrac}[2][]{\dfrac{\partial #1}{\partial #2}}
-\newcommand{\pdifffrac}[3][]{\ifthenelse{\isempty{#1}}{\dfrac{\partial #2}{\partial #3}}{\left. \dfrac{\partial #2}{\partial #3} \right|_{#1}}}
+%\newcommand{\difffrac}[3][]{\ifthenelse{\isempty{#1}}{\dfrac{\dop #2}{\dop #3}}{\left. \dfrac{\dop #2}{\dop #3} \right|_{#1}}}
+\newcommand{\difffrac}[3][]{\ifthenelse{\isempty{#1}}{\frac{\dop #2}{\dop #3}}{\left. \frac{\dop #2}{\dop #3} \right|_{#1}}}
+%\newcommand{\pdifffrac}[3][]{\ifthenelse{\isempty{#1}}{\dfrac{\partial #2}{\partial #3}}{\left. \dfrac{\partial #2}{\partial #3} \right|_{#1}}}
+\newcommand{\pdifffrac}[3][]{\ifthenelse{\isempty{#1}}{\frac{\partial #2}{\partial #3}}{\left. \frac{\partial #2}{\partial #3} \right|_{#1}}}
 
 % stellt einen großen vertikalen Strich an einen Term, nuetzlich in Bruechen
 \newcommand{\bigvert}[1]{\left. #1 \right|}

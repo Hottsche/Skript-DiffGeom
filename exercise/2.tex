@@ -84,7 +84,7 @@ Also:
 		Es reicht zu zeigen, dass $f_{*t} = 0$ f"ur alle $t$ gilt. Es gilt $\D f(t) = (\cos(t), 2 \cos(2t))$, also
 		\begin{align*}
 			\D f(t) = 0 & \Leftrightarrow \cos(t) = 0 \text{ und } \cos(2t)=0\\
-			& \Leftrightarrow \left(t = \frac{\pi}{2} \vee t = \frac{3\pi}{2} \right) \bigvee \left( 2t = \frac{\pi}{2} \vee 2t = \frac{3\pi}{2} \vee 2t = \frac{5\pi}{2} \vee 2t = \frac{7\pi}{2}\right)
+			& \Leftrightarrow \left(t = \frac{\pi}{2} \vee t = \frac{3\pi}{2} \right) \bigwedge \left( 2t = \frac{\pi}{2} \vee 2t = \frac{3\pi}{2} \vee 2t = \frac{5\pi}{2} \vee 2t = \frac{7\pi}{2}\right)
 		\end{align*}
 		Das ist aber nicht m"oglich, also ist $\D f(t) \ne 0$. $\D f(t)$ ist die Darstellungsmatrix, also ist auch $f_{*_t} \ne 0$.
 	\item[$f$ ist keine Einbettung:]
@@ -101,5 +101,18 @@ Also:
 
 \setcounter{Loes}{3}
 \begin{Loes}
-asdf
+Zeige dass die Gruppen $\SL(n,\R) = \{A \in \R^{n\times n} | \ddet A = 1\}$ und $\Oo(n,\R) = \{A \in \R^{n \times n} | AA^T = I_n\}$ glatte Untermannigfaltigkeiten des $R^{n \times n}$ sind.
+
+Definiere $f = \det$, dann ist $\SL(n, \R) = f^{-1}(1)$. Dann gilt\marginnote{\scriptsize{\textcolor{gray}{$A[k,j]$ bezeichnet die Matrix $A$ bei der die $k$-te Zeile und die $i$-te Spalte weggelassen wurden}}}
+	\[\pdifffrac{(f)}{a_{ij}} = \pdifffrac{}{a_{ij}} \left( \sum_{k=1}^n(-1)^{k+j} \ddet A[k,j]a_{jk} \right) = (-1)^{i+j} \ddet A[i,j]\]
+Es ist $\D f(A) = 0 \Leftrightarrow \forall i,j \ddet A[i,j] = 0 \Rightarrow \ddet A = 0$, damit ist $1$ regul"arer Wert. Also ist $\ddim \SL(n,\R) = \ddim \R^{n\times n} - \ddim \R = n^2 -1$.
+
+Definiere nun $g: \R^{n \times n} \to \R^{n \X n}$, $A \mapsto AA^T$. Dann ist $\Oo(n) = g^{-1}(I_n)$ und es gilt
+	\begin{align*}
+		\D g(A)(B) &= \difffrac[t=0]{}{t} g(A + tB)\\
+		&= \difffrac[t=0]{}{t} (AA^T + tAB^T + tBA + t^2BB^T) = AB^T + BA^T
+	\end{align*}
+	Seien nun $A \in \Oo(n,\R)$ und $C \in \R_{\text{sym}}^{n \X n}$. Es bleibt zu zeigen dass ein $B \in \R^{n \X n}$ existiert sodass $\D g(A)(B) = C$. Es gilt:
+		\[ \D g\left(A\right)\left(\frac{1}{2}CA\right) = \frac{1}{2} \left( \underbrace{AA^T}_{=I}C^T + C\underbrace{AA^T}_{=I} \right) = C \]
+	Daraus folgt dass $I$ ein regul"arer Wert von $g$ ist und $\Oo(n,\R)$ eine Untermannigfaltigkeit von $\R^{n \X n}$ der Dimension $n^2-\ddim \R_{\text{sym}}^{n \X n} = n^2 - \frac{n(n+1)}{2} = \frac{n(n-1)}{2}$.
 \end{Loes}
