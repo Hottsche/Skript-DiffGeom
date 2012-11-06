@@ -23,13 +23,13 @@
 \contentsline {lemma}{{\cmLangThmLemma }{2.8}{}}{9}
 \contentsline {proof}{{\proofname }{6}{}}{9}
 \contentsline {bem}{{\cmLangThmBem }{2.9}{}}{9}
-\contentsline {satz}{{\cmLangThmSatz }{2.10}{}}{10}
+\contentsline {satz}{{\cmLangThmSatz }{2.10}{}}{9}
 \contentsline {lemma}{{\cmLangThmLemma }{2.11}{}}{10}
 \contentsline {proof}{{\proofname }{7}{}}{10}
 \contentsline {bem}{{\cmLangThmBem }{2.12}{}}{10}
 \contentsline {proof}{{\proofname }{8}{}}{10}
-\contentsline {satz}{{\cmLangThmSatz }{2.13}{Äquivalenz der Tangentialraumbegriffe}}{11}
-\contentsline {proof}{{\proofname }{9}{}}{11}
+\contentsline {satz}{{\cmLangThmSatz }{2.13}{Äquivalenz der Tangentialraumbegriffe}}{10}
+\contentsline {proof}{{\proofname }{9}{}}{10}
 \contentsline {bem}{{\cmLangThmBem }{2.14}{}}{11}
 \contentsline {satz}{{\cmLangThmSatz }{2.15}{Transformationsverhalten bei Kartenwechsel}}{11}
 \contentsline {proof}{{\proofname }{10}{}}{11}
@@ -37,13 +37,13 @@
 \contentsline {lemma}{{\cmLangThmLemma }{3.2}{Differentiale in lokalen Koordinaten}}{12}
 \contentsline {bem}{{\cmLangThmBem }{3.3}{}}{12}
 \contentsline {proof}{{\proofname }{11}{}}{12}
-\contentsline {bem}{{\cmLangThmBem }{3.4}{Charakterisierung durch Kurven}}{13}
-\contentsline {bem}{{\cmLangThmBem }{3.5}{Tangentialräume an Untermannigfaltigkeiten des $\R ^n$}}{13}
+\contentsline {bem}{{\cmLangThmBem }{3.4}{Charakterisierung durch Kurven}}{12}
+\contentsline {bem}{{\cmLangThmBem }{3.5}{Tangentialräume an Untermannigfaltigkeiten des $\R ^n$}}{12}
 \contentsline {dfn}{{\cmLangThmDfn }{3.7}{Reguläre Punkte, Submersion, Immersion}}{13}
-\contentsline {bsp}{{\cmLangThmBsp }{3.8}{}}{14}
+\contentsline {bsp}{{\cmLangThmBsp }{3.8}{}}{13}
 \contentsline {satz}{{\cmLangThmSatz }{3.9}{}}{14}
 \contentsline {kor}{{\cmLangThmKor }{3.10}{}}{14}
-\contentsline {proof}{{\proofname }{12}{}}{15}
+\contentsline {proof}{{\proofname }{12}{}}{14}
 \contentsline {proof}{{\proofname }{13}{}}{15}
 \contentsline {bsp}{{\cmLangThmBsp }{3.12}{}}{17}
 \contentsline {dfn}{{\cmLangThmDfn }{4.1}{Tangentialbündel}}{17}
@@ -52,14 +52,14 @@
 \contentsline {lemma}{{\cmLangThmLemma }{4.8}{}}{19}
 \contentsline {proof}{{\proofname }{14}{}}{19}
 \contentsline {lemma}{{\cmLangThmLemma }{4.9}{}}{19}
-\contentsline {dfn}{{\cmLangThmDfn }{4.10}{}}{20}
+\contentsline {dfn}{{\cmLangThmDfn }{4.10}{}}{19}
 \contentsline {satz}{{\cmLangThmSatz }{4.12}{Lokale Existenz und Eindeutigkeit}}{20}
 \contentsline {proof}{{\proofname }{15}{}}{20}
 \contentsline {kor}{{\cmLangThmKor }{4.13}{}}{20}
-\contentsline {kor}{{\cmLangThmKor }{4.14}{}}{21}
+\contentsline {kor}{{\cmLangThmKor }{4.14}{}}{20}
 \contentsline {satz}{{\cmLangThmSatz }{4.17}{}}{21}
 \contentsline {bem}{{\cmLangThmBem }{4.18}{Erinnerung}}{21}
-\contentsline {proof}{{\proofname }{16}{}}{22}
+\contentsline {proof}{{\proofname }{16}{}}{21}
 \contentsline {dfn}{{\cmLangThmDfn }{4.19}{vollständiges Vektorfeld}}{22}
 \contentsline {lemma}{{\cmLangThmLemma }{4.21}{}}{22}
 \contentsline {proof}{{\proofname }{17}{}}{22}
@@ -79,3 +79,5 @@
 \contentsline {Loes}{{L\"osung}{3}{}}{29}
 \contentsline {Loes}{{L\"osung}{4}{}}{29}
 \contentsline {Loes}{{L\"osung}{1}{}}{31}
+\contentsline {Loes}{{L\"osung}{2}{}}{31}
+\contentsline {Loes}{{L\"osung}{4}{}}{33}
