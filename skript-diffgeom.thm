@@ -1,66 +1,81 @@
-\contentsline {dfn}{{\cmLangThmDfn }{1.2}{differenzierbare Mannigfaltigkeit}}{2}
-\contentsline {bsp}{{\cmLangThmBsp }{1.3}{}}{2}
-\contentsline {dfn}{{\cmLangThmDfn }{1.4}{Differenzierbare Abbildungen}}{3}
-\contentsline {bem}{{\cmLangThmBem }{1.5}{}}{4}
-\contentsline {bsp}{{\cmLangThmBsp }{1.6}{}}{4}
-\contentsline {dfn}{{\cmLangThmDfn }{1.7}{Diffeomorphismus}}{4}
-\contentsline {bsp}{{\cmLangThmBsp }{1.8}{}}{4}
-\contentsline {dfn}{{\cmLangThmDfn }{1.9}{Untermannigfaltigkeit}}{5}
-\contentsline {lemma}{{\cmLangThmLemma }{1.10}{}}{5}
-\contentsline {proof}{{\proofname }{1}{}}{5}
-\contentsline {bem}{{\cmLangThmBem }{1.11}{}}{5}
-\contentsline {lemma}{{\cmLangThmLemma }{2.1}{}}{6}
-\contentsline {proof}{{\proofname }{2}{}}{6}
-\contentsline {dfn}{{\cmLangThmDfn }{2.2}{Geometrische Definition des Tangentialraums}}{6}
-\contentsline {bem}{{\cmLangThmBem }{2.3}{}}{6}
-\contentsline {proof}{{\proofname }{3}{}}{6}
-\contentsline {lemma}{{\cmLangThmLemma }{2.4}{}}{7}
-\contentsline {proof}{{\proofname }{4}{}}{7}
-\contentsline {bem}{{\cmLangThmBem }{2.5}{}}{7}
-\contentsline {dfn}{{\cmLangThmDfn }{2.6}{Algebraische Definition des Tangentialraumes}}{7}
-\contentsline {lemma}{{\cmLangThmLemma }{2.7}{}}{8}
-\contentsline {proof}{{\proofname }{5}{}}{8}
-\contentsline {lemma}{{\cmLangThmLemma }{2.8}{}}{8}
-\contentsline {proof}{{\proofname }{6}{}}{8}
-\contentsline {bem}{{\cmLangThmBem }{2.9}{}}{8}
-\contentsline {satz}{{\cmLangThmSatz }{2.10}{}}{8}
-\contentsline {lemma}{{\cmLangThmLemma }{2.11}{}}{9}
-\contentsline {proof}{{\proofname }{7}{}}{9}
-\contentsline {bem}{{\cmLangThmBem }{2.12}{}}{9}
-\contentsline {proof}{{\proofname }{8}{}}{9}
-\contentsline {satz}{{\cmLangThmSatz }{2.13}{Äquivalenz der Tangentialraumbegriffe}}{9}
-\contentsline {proof}{{\proofname }{9}{}}{9}
-\contentsline {bem}{{\cmLangThmBem }{2.14}{}}{10}
-\contentsline {satz}{{\cmLangThmSatz }{2.15}{Transformationsverhalten bei Kartenwechsel}}{10}
-\contentsline {proof}{{\proofname }{10}{}}{10}
-\contentsline {dfn}{{\cmLangThmDfn }{3.1}{}}{11}
-\contentsline {lemma}{{\cmLangThmLemma }{3.2}{Differentiale in lokalen Koordinaten}}{11}
-\contentsline {bem}{{\cmLangThmBem }{3.3}{}}{11}
-\contentsline {proof}{{\proofname }{11}{}}{11}
-\contentsline {bem}{{\cmLangThmBem }{3.4}{Charakterisierung durch Kurven}}{11}
-\contentsline {bem}{{\cmLangThmBem }{3.5}{Tangentialräume an Untermannigfaltigkeiten des $\R ^n$}}{11}
-\contentsline {dfn}{{\cmLangThmDfn }{3.7}{Reguläre Punkte, Submersion, Immersion}}{12}
-\contentsline {bsp}{{\cmLangThmBsp }{3.8}{}}{12}
-\contentsline {satz}{{\cmLangThmSatz }{3.9}{}}{13}
-\contentsline {kor}{{\cmLangThmKor }{3.10}{}}{13}
-\contentsline {proof}{{\proofname }{12}{}}{13}
-\contentsline {proof}{{\proofname }{13}{}}{14}
-\contentsline {bsp}{{\cmLangThmBsp }{3.12}{}}{16}
-\contentsline {dfn}{{\cmLangThmDfn }{4.1}{Tangentialbündel}}{16}
-\contentsline {dfn}{{\cmLangThmDfn }{4.2}{}}{17}
-\contentsline {bem}{{\cmLangThmBem }{4.3}{}}{17}
-\contentsline {lemma}{{\cmLangThmLemma }{4.8}{}}{18}
-\contentsline {proof}{{\proofname }{14}{}}{18}
-\contentsline {lemma}{{\cmLangThmLemma }{4.9}{}}{18}
-\contentsline {dfn}{{\cmLangThmDfn }{4.10}{}}{18}
-\contentsline {satz}{{\cmLangThmSatz }{4.12}{Lokale Existenz und Eindeutigkeit}}{19}
-\contentsline {proof}{{\proofname }{15}{}}{19}
-\contentsline {kor}{{\cmLangThmKor }{4.13}{}}{19}
-\contentsline {kor}{{\cmLangThmKor }{4.14}{}}{19}
-\contentsline {satz}{{\cmLangThmSatz }{4.17}{}}{20}
-\contentsline {beh*}{{Behauptung}{1}{}}{22}
-\contentsline {Loes}{{L\"osung}{1}{}}{24}
-\contentsline {Loes}{{L\"osung}{2}{}}{24}
-\contentsline {Loes}{{L\"osung}{3}{}}{25}
-\contentsline {Loes}{{L\"osung}{4}{}}{25}
-\contentsline {Loes}{{L\"osung}{1}{}}{27}
+\contentsline {dfn}{{\cmLangThmDfn }{1.2}{differenzierbare Mannigfaltigkeit}}{3}
+\contentsline {bsp}{{\cmLangThmBsp }{1.3}{}}{3}
+\contentsline {dfn}{{\cmLangThmDfn }{1.4}{Differenzierbare Abbildungen}}{4}
+\contentsline {bem}{{\cmLangThmBem }{1.5}{}}{5}
+\contentsline {bsp}{{\cmLangThmBsp }{1.6}{}}{5}
+\contentsline {dfn}{{\cmLangThmDfn }{1.7}{Diffeomorphismus}}{5}
+\contentsline {bsp}{{\cmLangThmBsp }{1.8}{}}{5}
+\contentsline {dfn}{{\cmLangThmDfn }{1.9}{Untermannigfaltigkeit}}{6}
+\contentsline {lemma}{{\cmLangThmLemma }{1.10}{}}{6}
+\contentsline {proof}{{\proofname }{1}{}}{6}
+\contentsline {bem}{{\cmLangThmBem }{1.11}{}}{6}
+\contentsline {lemma}{{\cmLangThmLemma }{2.1}{}}{7}
+\contentsline {proof}{{\proofname }{2}{}}{7}
+\contentsline {dfn}{{\cmLangThmDfn }{2.2}{Geometrische Definition des Tangentialraums}}{7}
+\contentsline {bem}{{\cmLangThmBem }{2.3}{}}{7}
+\contentsline {proof}{{\proofname }{3}{}}{7}
+\contentsline {lemma}{{\cmLangThmLemma }{2.4}{}}{8}
+\contentsline {proof}{{\proofname }{4}{}}{8}
+\contentsline {bem}{{\cmLangThmBem }{2.5}{}}{8}
+\contentsline {dfn}{{\cmLangThmDfn }{2.6}{Algebraische Definition des Tangentialraumes}}{8}
+\contentsline {lemma}{{\cmLangThmLemma }{2.7}{}}{9}
+\contentsline {proof}{{\proofname }{5}{}}{9}
+\contentsline {lemma}{{\cmLangThmLemma }{2.8}{}}{9}
+\contentsline {proof}{{\proofname }{6}{}}{9}
+\contentsline {bem}{{\cmLangThmBem }{2.9}{}}{9}
+\contentsline {satz}{{\cmLangThmSatz }{2.10}{}}{10}
+\contentsline {lemma}{{\cmLangThmLemma }{2.11}{}}{10}
+\contentsline {proof}{{\proofname }{7}{}}{10}
+\contentsline {bem}{{\cmLangThmBem }{2.12}{}}{10}
+\contentsline {proof}{{\proofname }{8}{}}{10}
+\contentsline {satz}{{\cmLangThmSatz }{2.13}{Äquivalenz der Tangentialraumbegriffe}}{11}
+\contentsline {proof}{{\proofname }{9}{}}{11}
+\contentsline {bem}{{\cmLangThmBem }{2.14}{}}{11}
+\contentsline {satz}{{\cmLangThmSatz }{2.15}{Transformationsverhalten bei Kartenwechsel}}{11}
+\contentsline {proof}{{\proofname }{10}{}}{11}
+\contentsline {dfn}{{\cmLangThmDfn }{3.1}{}}{12}
+\contentsline {lemma}{{\cmLangThmLemma }{3.2}{Differentiale in lokalen Koordinaten}}{12}
+\contentsline {bem}{{\cmLangThmBem }{3.3}{}}{12}
+\contentsline {proof}{{\proofname }{11}{}}{12}
+\contentsline {bem}{{\cmLangThmBem }{3.4}{Charakterisierung durch Kurven}}{13}
+\contentsline {bem}{{\cmLangThmBem }{3.5}{Tangentialräume an Untermannigfaltigkeiten des $\R ^n$}}{13}
+\contentsline {dfn}{{\cmLangThmDfn }{3.7}{Reguläre Punkte, Submersion, Immersion}}{13}
+\contentsline {bsp}{{\cmLangThmBsp }{3.8}{}}{14}
+\contentsline {satz}{{\cmLangThmSatz }{3.9}{}}{14}
+\contentsline {kor}{{\cmLangThmKor }{3.10}{}}{14}
+\contentsline {proof}{{\proofname }{12}{}}{15}
+\contentsline {proof}{{\proofname }{13}{}}{15}
+\contentsline {bsp}{{\cmLangThmBsp }{3.12}{}}{17}
+\contentsline {dfn}{{\cmLangThmDfn }{4.1}{Tangentialbündel}}{17}
+\contentsline {dfn}{{\cmLangThmDfn }{4.2}{}}{18}
+\contentsline {bem}{{\cmLangThmBem }{4.3}{}}{18}
+\contentsline {lemma}{{\cmLangThmLemma }{4.8}{}}{19}
+\contentsline {proof}{{\proofname }{14}{}}{19}
+\contentsline {lemma}{{\cmLangThmLemma }{4.9}{}}{19}
+\contentsline {dfn}{{\cmLangThmDfn }{4.10}{}}{20}
+\contentsline {satz}{{\cmLangThmSatz }{4.12}{Lokale Existenz und Eindeutigkeit}}{20}
+\contentsline {proof}{{\proofname }{15}{}}{20}
+\contentsline {kor}{{\cmLangThmKor }{4.13}{}}{20}
+\contentsline {kor}{{\cmLangThmKor }{4.14}{}}{21}
+\contentsline {satz}{{\cmLangThmSatz }{4.17}{}}{21}
+\contentsline {bem}{{\cmLangThmBem }{4.18}{Erinnerung}}{21}
+\contentsline {proof}{{\proofname }{16}{}}{22}
+\contentsline {dfn}{{\cmLangThmDfn }{4.19}{vollständiges Vektorfeld}}{22}
+\contentsline {lemma}{{\cmLangThmLemma }{4.21}{}}{22}
+\contentsline {proof}{{\proofname }{17}{}}{22}
+\contentsline {bem}{{\cmLangThmBem }{4.22}{Moral des obigen Lemmas}}{23}
+\contentsline {kor}{{\cmLangThmKor }{4.23}{}}{23}
+\contentsline {bsp}{{\cmLangThmBsp }{4.24}{}}{23}
+\contentsline {lemma}{{\cmLangThmLemma }{4.26}{}}{23}
+\contentsline {proof}{{\proofname }{18}{}}{23}
+\contentsline {bem}{{\cmLangThmBem }{4.27}{}}{23}
+\contentsline {dfn}{{\cmLangThmDfn }{4.28}{}}{24}
+\contentsline {bem}{{\cmLangThmBem }{4.29}{}}{24}
+\contentsline {satz}{{\cmLangThmSatz }{4.30}{}}{24}
+\contentsline {proof}{{\proofname }{19}{}}{24}
+\contentsline {beh*}{{Behauptung}{1}{}}{26}
+\contentsline {Loes}{{L\"osung}{1}{}}{28}
+\contentsline {Loes}{{L\"osung}{2}{}}{28}
+\contentsline {Loes}{{L\"osung}{3}{}}{29}
+\contentsline {Loes}{{L\"osung}{4}{}}{29}
+\contentsline {Loes}{{L\"osung}{1}{}}{31}
