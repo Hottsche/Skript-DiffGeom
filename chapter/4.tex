@@ -258,7 +258,7 @@ mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ 
 %%% 
 
 \begin{bem}[Erinnerung]
-  \textcolor{red}{TODO: Diesen Absatz aufräumen. (ich würde das komplett weglassen weil es bloß eine Wiederholung von der Woche davor ist - Aleks)}
+  \textcolor{red}{TODO: Diesen Absatz aufräumen. (ich würde das komplett weglassen weil es bloß eine Wiederholung von der Woche davor ist -Aleks)}
   Ist $X \in \mathcal V(M)$, $c$ Integralkurve von $X$ durch $p$, wenn $c(t) = X_{c(t)}$ maximales Existenzintervall $I_p$\\
 
   %%% 
@@ -401,16 +401,27 @@ der Fluss von $\Phi_{*}X$.
 \end{proof}
 
 %\begin{bem}
-  \emph{Erinnerung:} $\frac{1}t(F(x+tv)-F(x))$ oder für $c$ mit $c(0) = x, \dot c(0) = v$: $\frac{1}t(F(c(t))-F(x))$.
+\emph{Erinnerung:} $\frac{1}t(F(x+tv)-F(x))$ oder für $c$ mit $c(0) = x, \dot c(0) = v$: $\frac{1}t(F(c(t))-F(x))$.
 
-  Nun seien $X,Y \in \mathcal V(M)$.
-	\begin{center}\textcolor{red}{[BILD]}\end{center}
+Nun seien $X,Y \in \mathcal V(M)$.
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+	%\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+	\draw[name path=kurve] (-3,0) ..controls(-3,0) and (-2.75,1).. (0,1.5) node[below] {$\gamma^{t}(p)$} ..controls(1.5,1.75) and (2.5,2.5).. (2.5,2.5) node[anchor=north west] {$\gamma^{(\cdot)}(p)$};
+	
+	\fill (0,1.5) circle(0.05); \draw[->] (0,1.5) --node[left]{$y_{\gamma^t(p)}$} (1,2.5);
+	
+	\path[name path=senkrecht] (-2,0) -- (-2,3);
+	\path[name intersections={of=kurve and senkrecht}];
+	\fill (intersection-1) circle(0.05); \draw[->] (intersection-1) node[below] {$p$} --node[left]{$y_p$} (-2.5,2.5);
+	
+	\node[font=\normalsize] at (0,0) {$\gamma^t$};
+\end{tikzpicture}\end{center}
 Im Allgemeinen liegen $y_{\gamma^t(p)}$ und $y_p$ in unterschiedlichen Tangentialräumen.
 Da aber $\gamma^t$ (für kleine Zeiten) ein (lokaler) Diffeomorphismus ist, gilt
 \begin{align*}
   \gamma_{*}^{-t}(y_{\gamma^t(p)})-(\gamma_{*}^{-t}y)_p \in \T_pM.
 \end{align*}
-Die Differenz $(\gamma_{*}^{-t}y)_p - y_p$ ist also wohldefiniert. \textcolor{red}{(Ich bin mir nicht sicher ob die $y$ gro\ss  oder klein geschrieben sein sollen - Aleks)}
+Die Differenz $(\gamma_{*}^{-t}y)_p - y_p$ ist also wohldefiniert. \textcolor{red}{(Ich bin mir nicht sicher ob die $y$ gro\ss  oder klein geschrieben sein sollen -Aleks)}
 %\end{bem}
 
 \begin{dfn}
@@ -444,7 +455,7 @@ Dazu sei (um $(0,p)$)
 \end{align*}
 Dann gilt:
 \begin{align*}
-  tg_t(q) = \int_0^1h'(ts,q)(t)ds = \int_0^th' - h(t,q)' - h(0,q) - f(\textcolor{red}{hier fehlt was!}
+  tg_t(q) = \int_0^1h'(ts,q)(t)ds = \int_0^th' - h(t,q)' - h(0,q) - f(\textcolor{red}{\text{hier fehlt etwas!}}
 \end{align*}
 also $f \circ \gamma^t = f + tg_t$ und 
 \begin{align*}
