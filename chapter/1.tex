@@ -251,24 +251,37 @@ Die Menge der Diffeomorphismen von $M$ nach $N$ wird mit $\Diff(M,N)$ bezeichnet
 
 Es seien $M$ und $N$ glatte Mannigfaltigkeiten der Dimensionen $m$ und $n$. Dann hat $M \times N$ versehen mit der Produkttopologie, die Struktur einer Mannigfaltigkeit. Da $M$ und $N$ hausdorffsch sind und abzählbare Basen ihrer Topologie besitzen gilt dies auch für $M \times N$.
 
-Sind $(\varphi, U)$ und $(\psi, V)$ Karten von $M$ bzw. $N$, so ist $\varphi \times \psi$ ein Homöomorphismus von $U \times V$ auf sein offenes Bild in $\R^m \times \R^n \cong \R^{m \times n}$.
+Sind $(\varphi, U)$ und $(\psi, V)$ Karten von $M$ bzw. $N$, so ist $\varphi \times \psi$ ein Homöomorphismus von $U \times V$ auf sein offenes Bild in $\R^m \times \R^n \cong \R^{m \textcolor{red}{+} n}$.
 
-Seien $\mathcal A = \{(\varphi_{\alpha}, U_{\alpha}) \mid \alpha \in \calI \}$ und $\mathcal A' = \{(\psi_{\beta}, U_{\beta}) \mid \beta \in \calJ\}$ $C^{\infty}$-Atlanten von $M$ und $N$. Dann ist $\mathcal B = \{(\varphi_{\alpha}\times\psi_{\beta},U_{\alpha}\times U_{\beta}) \mid (\alpha, \beta) \in \calI \times \calJ\}$ ein $C^{\infty}$-Atlas von $M\times N$, denn 
+Seien $\mathcal A = \{(\varphi_{\alpha}, U_{\alpha}) \mid \alpha \in \calI \}$ und $\mathcal A' = \{(\psi_{\beta}, V_{\beta}) \mid \beta \in \calJ\}$ $C^{\infty}$-Atlanten von $M$ und $N$. Dann ist $\mathcal B = \{(\varphi_{\alpha}\times\psi_{\beta},U_{\alpha}\times V_{\beta}) \mid (\alpha, \beta) \in \calI \times \calJ\}$ ein $C^{\infty}$-Atlas von $M\times N$, denn 
 \begin{align*}
   (\varphi_{\alpha} \times \psi_{\beta}) \circ (\varphi_{\mu} \times \psi_{\nu})^{-1} = (\varphi_{\alpha} \circ \varphi_{\mu}^{-1}) \times (\psi_{\beta} \circ \psi_{\nu}^{-1})
 \end{align*}
 ist ein $C^{\infty}$-Diffeomorphismus. Damit ist $M\times N$ in kanonischer Weise eine glatte $(m+n)$-dimensionale Mannigfaltigkeit. Die kanonischen Projektionen $\pi_M\colon M\times N \to M, \ \pi_N\colon M \times N \to N$ und die Abbildung $\tau \colon M \times N \to N \times M, (p,q) \mapsto (q,p)$ sind glatte Abbildungen.
 
-\begin{bsp}
-  Es folgen einige Beispiele für Produkt-Mannigfaltigkeiten:
-
-% Abbildung 1-6
-\CmMarginSvg{1-6-torus-als-produkt}{3cm}
-
-  \begin{enumerate}[label=\arabic*)]
-  \item Zylinder $\R \times S^1$
-  \item $T^n = \times_{i=1}^nS^1$
-  \end{enumerate}
+\begin{bsp}\marginnote{\begin{tikzpicture}[scale=0.9,font=\scriptsize]
+	%\draw[step=0.25,gray!15] (0,-2) grid (3,2); \draw[step=0.5,gray!30] (0,-2) grid (3,2); \fill (0,0) circle(0.1); %Hilfsgitter
+	\tikztorus{(0,0)};
+	\draw (0,0) ellipse (1.5 and 0.7*\torushoehe);
+	\begin{scope}
+		\clip (torusUntenLoch) rectangle ($(torusUnten)-(0.25,0)$);
+		\draw ($0.5*(torusUntenLoch) + 0.5*(torusUnten)$) ellipse (0.2 and 0.5*\torusdicke);
+	\end{scope}\begin{scope}
+		\clip (torusUntenLoch) rectangle ($(torusUnten)+(0.25,0)$);
+		\draw[dashed] ($0.5*(torusUntenLoch) + 0.5*(torusUnten)$) ellipse (0.2 and 0.5*\torusdicke);
+	\end{scope}
+	\node[below,font=\scriptsize] at (torusUnten) {$S^1$};
+	\draw[->] (1.75,1) node[right]{$S^1$} to[out=180,in=450] (1.25,0.5);
+\end{tikzpicture}}
+Es folgen einige Beispiele für Produkt-Mannigfaltigkeiten:
+\begin{enumerate}[label=\arabic*)]
+\item
+	Zylinder $\R \times S^1$
+\item
+	$T^n = \bigtimes_{i=1}^nS^1$
+  
+    $\iota: \R^m \hookrightarrow \R^n$, $(x^1,\ldots ,x^m) \mapsto (x^1,\ldots ,x^m,0, 0,\ldots)$
+\end{enumerate}
 \end{bsp}
 
 

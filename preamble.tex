@@ -80,6 +80,13 @@
       \clip (intersection-1) rectangle ($(intersection-2)+(0,0.5)$);
       \draw ($#2 - #1*(0,0.5)$) ellipse (#1*1 and #1*0.75);
     \end{scope}
+    
+    % definiere Werte auf die wir in der restlichen Zeichnung zurueckgreifen koennen
+	\def\torusbreite{#1*2}
+	\def\torushoehe{#1*1}
+	\def\torusdicke{#1*0.75}
+	\coordinate (torusUntenLoch) at ($#2 - #1*(0,0.25)$);
+	\coordinate (torusUnten) at ($#2 - #1*(0,1)$);
 }
 
 \usepackage[toc]{glossaries} % Symbolverzeichnis
