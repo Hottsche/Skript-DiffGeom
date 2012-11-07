@@ -238,7 +238,7 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
   \begin{align*}
     J_p \colon \T_p^{\text{geo}}M \to \T_p^{\text{alg}}M, \ J_{p}[c](f) = \difffrac[t=0]{}{t}(f\circ c)
   \end{align*}
-  ist ein linearer Isomorphismus.
+  ist ein linearer Isomorphismus \quot{$c(0)(f)$}.
 \end{satz}
 
 \begin{proof}
@@ -249,14 +249,12 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
   \end{align*}
   ist $J_p = \D(\cdot)\circ A$ linear.\\
 
-  Ist $[c] \in \Kern J_p$, so folgt aus $0 = J_p[c](\varphi^i) = \difffrac[t=0]{}{t}(\varphi^i \circ c)$, dass $\difffrac[t=0]{}{t}(\varphi \circ c) = 0$ gilt, also $[c] = 0$.\\
-
-  Damit ist $J_p$ injektiv, also ein Isomorphismus.
+  Ist $[c] \in \Kern J_p$, so folgt aus $0 = J_p[c](\varphi^i) = \difffrac[t=0]{}{t}(\varphi^i \circ c)$, dass $\difffrac[t=0]{}{t}(\varphi \circ c) = 0$ gilt, also $[c] = 0$. Damit ist $J_p$ injektiv, also ein Isomorphismus.
 \end{proof}
 
 \begin{bem}
-  \begin{enumerate}
-  \item Ist $X_p = \sum \xi^i\pdifffrac[p]{}{x^i}$,so gilt $X_p = c(0)$ für $c(t) = \varphi^{-1}(\varphi(p) + t\xi)$.
+  \begin{enumerate}[label=\arabic*)]
+  \item Ist $X_p = \sum \xi^i\pdifffrac[p]{}{x^i}$, so gilt $X_p = \dot c(0)$ für $c(t) = \varphi^{-1}(\varphi(p) + t\xi)$.
 \item Für jede glatte Kurve $c$ durch $p$ ist $\difffrac[t=0]{}{t}(\varphi \circ c)$ der Koeffizientenvektor von $\dot c(0)$ in der Basis $\pdifffrac[p]{}{x^i}$.
   \end{enumerate}
 \end{bem}

@@ -29,7 +29,7 @@
 \contentsline {bem}{{\cmLangThmBem }{2.12}{}}{10}
 \contentsline {proof}{{\proofname }{8}{}}{10}
 \contentsline {satz}{{\cmLangThmSatz }{2.13}{Äquivalenz der Tangentialraumbegriffe}}{10}
-\contentsline {proof}{{\proofname }{9}{}}{10}
+\contentsline {proof}{{\proofname }{9}{}}{11}
 \contentsline {bem}{{\cmLangThmBem }{2.14}{}}{11}
 \contentsline {satz}{{\cmLangThmSatz }{2.15}{Transformationsverhalten bei Kartenwechsel}}{11}
 \contentsline {proof}{{\proofname }{10}{}}{11}
@@ -47,7 +47,7 @@
 \contentsline {proof}{{\proofname }{13}{}}{15}
 \contentsline {bsp}{{\cmLangThmBsp }{3.12}{}}{17}
 \contentsline {dfn}{{\cmLangThmDfn }{4.1}{Tangentialbündel}}{17}
-\contentsline {dfn}{{\cmLangThmDfn }{4.2}{}}{17}
+\contentsline {dfn}{{\cmLangThmDfn }{4.2}{}}{18}
 \contentsline {bem}{{\cmLangThmBem }{4.3}{}}{18}
 \contentsline {lemma}{{\cmLangThmLemma }{4.8}{}}{18}
 \contentsline {proof}{{\proofname }{14}{}}{19}
@@ -65,13 +65,10 @@
 \contentsline {proof}{{\proofname }{17}{}}{22}
 \contentsline {bem}{{\cmLangThmBem }{4.22}{Moral des obigen Lemmas}}{22}
 \contentsline {kor}{{\cmLangThmKor }{4.23}{}}{22}
-\contentsline {bsp}{{\cmLangThmBsp }{4.24}{}}{23}
-\contentsline {lemma}{{\cmLangThmLemma }{4.26}{}}{23}
+\contentsline {lemma}{{\cmLangThmLemma }{4.25}{}}{23}
 \contentsline {proof}{{\proofname }{18}{}}{23}
-\contentsline {bem}{{\cmLangThmBem }{4.27}{}}{23}
-\contentsline {dfn}{{\cmLangThmDfn }{4.28}{}}{23}
-\contentsline {bem}{{\cmLangThmBem }{4.29}{}}{24}
-\contentsline {satz}{{\cmLangThmSatz }{4.30}{}}{24}
+\contentsline {dfn}{{\cmLangThmDfn }{4.26}{}}{23}
+\contentsline {satz}{{\cmLangThmSatz }{4.27}{}}{23}
 \contentsline {proof}{{\proofname }{19}{}}{24}
 \contentsline {beh*}{{Behauptung}{1}{}}{26}
 \contentsline {Loes}{{L\"osung}{1}{}}{28}
