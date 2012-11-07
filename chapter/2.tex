@@ -14,19 +14,18 @@
 
 Betrachte in der nebenstehenden Abbildung eine differenzierbare Kurve $c \colon (-\varepsilon,\varepsilon) \to S^2$ mit $c(0) = p$. Dann gilt:
 \begin{align*}
-  0 = \difffrac{}{t} \left<c(t),c(t)\right> = 2\left<c(0),c(0)\right> = 2 \left<c(0),p\right> 
-  \Rightarrow c(0) \in p^{\perp}.
+  0 = \difffrac[t=0]{}{t} \left<c(t),c(t)\right> = 2\left<\dot c(0),c(0)\right> = 2 \left<\dot c(0),p\right> 
+  \Rightarrow \dot c(0) \in p^{\perp}.
 \end{align*}
 
 % Bemerke $1 = \left<c(t),c(t)\right>$
 
-Es sei $M$ eine glatte Mannigfaltigkeit und es seien glatte Kurven $c_i\colon (-\varepsilon_i,\varepsilon_i) \to M$ mit $c_1(0) = c_2(0) = p \in M$ gegeben.
+\textcolor{red}{(Ich habe Punkte "uber einige der $c$ gesetzt, bitte "uberpr"ufen)}Es sei $M$ eine glatte Mannigfaltigkeit und es seien glatte Kurven $c_i\colon (-\varepsilon_i,\varepsilon_i) \to M$ mit $c_1(0) = c_2(0) = p \in M$ gegeben.
 
-Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\varphi,U)$ von $M$ und $p$ gibt, so dass 
+Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\varphi,U)$ von $M$ und $p$ gibt, so dass gilt
 \begin{align*}
   \difffrac[t=0]{}{t}(\varphi \circ c_1) = \difffrac[t=0]{}{t}(\varphi \circ c_2)
 \end{align*}
-gilt.
 
 \begin{lemma}
   Der oben definierte Begriff der Äquivalenz ist unabhängig von der Wahl der Karte.
@@ -135,11 +134,11 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
   %%% 
   \textcolor{red}{Abbildung 2-4}
 
-  Ist dann $\eta$ eine glatte Funktion auf $\R$ mit $\eta \equiv 1$ auf $\left[\frac{-\varepsilon^{2}}{2},\frac{\varepsilon^2}{2}\right]$ und $\eta \equiv 0$ auf $\R \setminus (-\varepsilon^2,\varepsilon^2)$, so hat für $U_1 = \varphi^{-1}(B_{\frac{\varepsilon}{2}}(0)$ die Funktion
+  Ist dann $\eta$ eine glatte Funktion auf $\R$ mit $\eta \equiv 1$ auf $\left[\frac{-\varepsilon^{2}}{2},\frac{\varepsilon^2}{2}\right]$ und $\eta \equiv 0$ auf $\R \setminus (-\varepsilon^2,\varepsilon^2)$, so hat für $U_1 = \varphi^{-1}(B_{\frac{\varepsilon}{2}}(0))$ die Funktion
   \begin{align*}
     \sigma(q) =
     \begin{cases}
-      \eta(\|\varphi(q)\|^2 & \text{ für } q \in U_1\\
+      \eta(\|\varphi(q)\|^2) & \text{ für } q \in U_1\\
       0 & \text{ sonst }
     \end{cases}.
   \end{align*}
@@ -148,32 +147,34 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
 
 % Lemma 2.
 \begin{lemma}
-  Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
-  \begin{enumerate}
-  \item $X_p(f) = 0$ falls $f$ in einer Umgebung von $p$ konstant ist.
-  \item $X_p(f) = X_p(g)$ falls $f$ und $g$ auf einer Umgebung übereinstimmen.
-  \end{enumerate}
+Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
+\begin{enumerate}[label=(\roman*),widest=ii]
+\item $X_p(f) = 0$ falls $f$ in einer Umgebung von $p$ konstant ist.
+\item $X_p(f) = X_p(g)$ falls $f$ und $g$ auf einer Umgebung übereinstimmen.
+\end{enumerate}
 \end{lemma}
 
-\begin{proof}
-  ad (ii). Es sei $U$ eine Umgebung von $p$ mit $f|_U = g|_U$. Ist dann $\sigma$ wie im Beweis des vorigen Lemmas, so gilt $\sigma f = \sigma g$ und aus
-  \begin{align*}
-    X_p(\sigma)f(p)+\sigma(p)X_p(f) = X_{p}(\sigma f) = X_p(\sigma g) = X_p(\sigma) g(p) + \sigma(p) X_p(g)
-  \end{align*}
-  folgt $X_p(f) = X_p(g)$.\\
-  ad (i). Wegen der $\R$-Linearität und (ii) genügt es $f \equiv 1$ zu betrachten. Es gilt
-  \begin{align*}
-    X_p(1) = X_p(1 \cdot 1) = X_p(1) \cdot 1 + 1 \cdot X_p(1) = 2 \cdot X_p(1),
-  \end{align*}
-  also $X_p(1) = 0$.
-\end{proof}
+\begin{proof}\begin{enumerate}[label=(\roman*),widest=ii,leftmargin=*]
+\item[(ii)]
+	Es sei $U$ eine Umgebung von $p$ mit $f|_U = g|_U$. Ist dann $\sigma$ wie in \textcolor{red}{Lemma 2.5}, so gilt $\sigma f = \sigma g$ und aus
+	\begin{align*}
+		X_p(\sigma)f(p)+\sigma(p)X_p(f) = X_{p}(\sigma f) = X_p(\sigma g) = X_p(\sigma) g(p) + \sigma(p) X_p(g)
+	\end{align*}
+	folgt $X_p(f) = X_p(g)$.\\
+\item[(i)]
+	Wegen der $\R$-Linearität und (ii) genügt es $f \equiv 1$ zu betrachten. Es gilt
+	\begin{align*}
+		X_p(1) = X_p(1 \cdot 1) = X_p(1) \cdot 1 + 1 \cdot X_p(1) = 2 \cdot X_p(1),
+	\end{align*}
+	also $X_p(1) = 0$.
+\end{enumerate}\end{proof}
 
 \begin{bem}
   Also gilt für $f \in C^{\infty}(M)$ und $g \in C^{\infty}(U)$ direkt:
   \begin{align*}
     & \sigma g =
     \begin{cases}
-      \sigma g|_U & \\
+      \sigma g|_U & \textcolor{red}{\sigma g \in C^{\infty}(M)}\\
       0 & \text{ sonst }
     \end{cases},\\
     & \sigma g \in C^{\infty}(M) 
