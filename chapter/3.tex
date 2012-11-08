@@ -92,12 +92,12 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   Die partielle Ableitung $\partial_i(\psi^j \circ \Phi \circ \varphi^{-1})(\varphi(p))$ bezeichnet man auch kurz $\frac{\partial \Phi^j}{\partial x^i}(p)$.
 \end{Lemma}
 
-\begin{Bem}
+\begin{bem}
   Aus der Linearität von $\Phi_{*p}$ folgt, dass für $X_p = \sum \xi^i\pdifffrac[p]{}{x^i} \in \T_pM$ und $\Phi_{*p}X_p = \sum \eta^j\pdifffrac[q]{}{y^j}$ gilt:
   \begin{align*}
     \eta^j = \sum \frac{\partial \Phi^j}{\partial x^i}\xi^i \text{, beziehungsweise } \eta = \D(\psi \circ \Phi \circ \varphi^{-1})\xi.
   \end{align*}
-\end{Bem}
+\end{bem}
 
 \begin{proof}
   \begin{align*}
@@ -105,15 +105,15 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \end{align*}
 \end{proof}
 
-\begin{Bem}[Charakterisierung durch Kurven]
+\begin{bem}[Charakterisierung durch Kurven]
   Ist $[c] \in \T_p\textcolor{red}{M}$, so gilt für $f \in C^{\infty}(\textcolor{red}{N})$:
   \begin{align*}
     \Phi_{*p}[c](f) = [c](f \circ \Phi) = \difffrac[t=0]{}{t}(\underbrace{f \circ \Phi \circ c)}_{\substack{\text{glatte Kurve}\\ \text{auf }N}} = [\Phi \circ c](f)
   \end{align*}
   also $\Phi_{*p}[c] = [\Phi \circ c]$.
-\end{Bem}
+\end{bem}
 
-\begin{Bem}[Tangentialräume an Untermannigfaltigkeiten des $\R^n$]
+\begin{bem}[Tangentialräume an Untermannigfaltigkeiten des $\R^n$]
   \marginnote{\begin{tikzpicture}
 	%\draw[step=0.25,gray!15] (-6,-5) grid (6,3); \draw[step=0.5,gray!30] (-6,-5) grid (6,3); \fill (0,0) circle(0.1); %Hilfsgitter
 	\draw[->] (-0.5,0) -- (2.75,0); \draw[->] (0,-0.5) -- (0,2); \draw[->] (-0.5,-0.25) -- (2,1);
@@ -142,10 +142,10 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
        &\sim \difffrac[t=0]{}{t}F(x+te_i) = \D F|_x(e_i) = \partial_iF|_x
   \end{align*}
   $\T_pM \quot{=} \langle \partial_1F|_x,\ldots ,\partial_m F|_x \rangle$
-\end{Bem}
+\end{bem}
 
-\begin{Bem*}[Eigenschaften des Differentials]\hfill
-  \begin{enumerate}[label=(\roman*)]
+\begin{bem}[Eigenschaften des Differentials]\hfill
+  \begin{enumerate}[label=(\roman*),widest=iii]
   \item (\emph{Kettenregel}) Sind $\Phi \colon M \to N$ und $\Psi \colon N \to P$ glatt, so gilt:
     \begin{align*}
       (\Psi \circ \Phi)_{*p} = \Psi_{*\Phi(p)} \circ \Phi_{*p}.
@@ -153,7 +153,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \item Ist $\textcolor{red}{\Phi} \colon M \to N$ ein Diffeomorphismus, so ist $\Phi_{*p}$ ein Vektorraumisomorphismus. % Verwendet die Kettenregel
   \item (\emph{Satz von der Umkehrabbildung}) Ist $\Phi \colon M \to N$ glatt und $\Phi_{*p}$ bijektiv, so existieren Umgebungen $U$ von $p$ und $V$ von $\Phi(p)$, so dass $\Phi|_{U} \colon U \to V$ ein Diffeomorphismus ist.
   \end{enumerate}
-\end{Bem*}
+\end{bem}
 
 % Definition 2.3
 \begin{Dfn}[Reguläre Punkte, Submersion, Immersion]
@@ -166,7 +166,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \end{enumerate}
 \end{Dfn}
 
-\begin{Bsp}
+\begin{bsp}
   \begin{enumerate}[label=\arabic*),leftmargin=*]
   \item Betrachte eine Abbildung $\Phi$
     \begin{center}\begin{tikzpicture}%\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
@@ -198,10 +198,10 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 
   \item Ist $M \subset N$ Untermannigfaltigkeit, so ist $\imath \colon M \hookrightarrow N$ eine Einbettung.% INKLUSIONSSPFEIL
   \end{enumerate}
-\end{Bsp}
+\end{bsp}
 
 % Satz 3.4
-\begin{Satz}
+\begin{Satz}\label{satz-3-4}
   Es seien $M$ und $N$ glatte Mannigfaltigkeiten, $\Phi \colon M \to N$ eine glatte Abbildung und $p \in M$, sowie $q = \Phi(p)$. Es bezeichnen $m$ und $n$ die Dimensionen von $M$ und $N$ und $r$ den Rang von $\Phi$ in $p$. Dann gelten folgende Aussagen:
   \begin{enumerate}[label=(\roman*),leftmargin=*,widest=ii]
   \item Zu jeder Karte $\psi$ von $N$ um $q$ mit $\psi(q) = 0$ existiert eine Karte $\alpha$ von $M$ um $p$ mit $\alpha(p) = 0$ und glatte Funktionen $f^{r+1},\ldots,f^n$ mit
@@ -270,7 +270,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 
 % 5. Vorlesung <2012-10-30 Tue>
 
-\begin{proof} (des letzten Satzes) % TODO: Link\
+\begin{bew}[von Satz \ref{satz-3-4}] % TODO: Link\
 \begin{enumerate}[label=(\roman*),widest=ii,leftmargin=*]
   \item
   Es sei $(\psi, V)$ eine Karte von $N$ um $q$ mit $\psi(q) = 0$.
@@ -344,9 +344,9 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \begin{align*}
     (\beta \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^n) = (x^1, \ldots, x^r, 0, \ldots, 0).
   \end{align*}
-\end{enumerate}\end{proof}
+\end{enumerate}\end{bew}
 
-\begin{Bem*}
+\begin{bem}
   Ist $\Phi \colon M \to N$ glatt mit konstantem Rang $r$ auf einer Umgebung von $P = \Phi^{-1}(q)$, so ist $P$ eine $(m-r)$-dimensionale Untermannigfaltigkeit von $M$.
   
   Der Tangentialraum $\T_pP$ in $p$ an $P$ ist ein Untervektorrraum von $\T_pM$ und es gilt:
@@ -372,7 +372,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
     % Punkt besser erkenntlich machen!
   also $T_pP \subseteq \Kern \Phi_{*p}$. Es gilt:
    \[ \dim T_pP = \dim P = m-r = \dim \T_pM - \Rang \Phi_{*p} = \dim \Kern \Phi_{*p}. \]
-\end{Bem*}
+\end{bem}
 
 \begin{Bsp}
   Die $n$-dimensionale Sphäre $S^n \subset \R^{n+1}$ ist das reguläre Urbild der glatten Abbildung $\Phi \colon \R^{n+1}\setminus \{0\} \to \R_{> 0}, x \mapsto \|x\|^2; \ S^n = \Phi^{-1}(1)$. Der Tangentialraum $\T_x\R^{n+1}$ ist vermöge der Abbildung

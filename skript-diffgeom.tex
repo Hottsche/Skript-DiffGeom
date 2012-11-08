@@ -77,10 +77,33 @@ Version \textbf{0.01} \quad Build: \today
 \paragraph{Wichtiger Hinweis:}
 Dies ist eine Zusammenfassung der Vorlesung "`Differentialgeometrie"' von Dr. Grensing im Wintersemester 2012/13 am KIT und dient lediglich dazu die Inhalte für meine eigene Verwendung besser zusammenzufassen und aufzubereiten. Es besteht weder eine Garantie über Vollständigkeit, noch Korrektheit der enthaltenen Aussagen.\\
 
-Bei Anmerkungen bzw. beim Auffinden von Fehlern schicken Sie bitte eine E-Mail an
+Bei Anmerkungen bzw. beim Auffinden von Fehlern schickt Sie bitte eine E-Mail an
 \begin{center}
-  jan-bernhard.kordass@student.kit.edu
+  jan-bernhard.kordass@student.kit.edu\\
+  aleksandar.sandic@student.kit.edu
 \end{center}
+
+\paragraph{\textcolor{red}{Hinweise f"ur Autoren (dieser Teil wird nach der Fertigstellung entfernt)}}
+Hier ist eine Liste an Konventionen f"ur das Skript. Diese Regeln sind nicht in Stein gemei\ss elt und wenn jemand anderer Meinung ist können wir uns absprechen und die Regeln "andern, aber ansonsten sollte jeder der am Skript mitarbeitet sich nach M"oglichkeit an sie halten. Selbst wenn wir unsere Meinung anschließend "andern ist es viel leichter die "Anderungen vorzunehmen wenn alles einheitlich ist.
+
+\begin{description}[font=\normalfont\itshape]
+\item[Anf"uhrungszeichen:]
+	sie können nicht direkt im Code gesetzt werden, man muss entweder den genauen Befehl kennen oder man nimmt einfach unseren eigenen \verb|\quot{}| Befehl.
+\item[Abs"atze:]
+	benutzt nicht \verb|\\| f"ur neue Abs"atze, dieser Befehl ist dazu da um einen Zeilenumbruch zu erzwingen. F"ur einen neuen Absatz fügt eine leere Zeile ein (also zweimal die Enter Taste dr"ucken), der Unterschied ist dass dadurch ein etwas gr"o\ss erer Abstand zwischen Abs"atzen eingef"ugt wird der die Unterscheidung leichter macht (der Abstand wird durch \verb|parskip| bestimmt). Es ist in der Literatur "ublich die erste Zeile eines Absatzes einzur"ucken (\verb|parindent|), allerdings sind unsere Abs"atze dafür zu kurz, es w"urde h"asslich aussehen alle paar Zeilen eine Einr"uckung zu haben. Nach einem Theorem wird automatisch ein noch gr"o"serer Abstand eingef"ugt, es gibt also keinen Grund an der Stelle etwas zu "andern.
+\item[Theoreme:]
+	das \verb|ntheorem| Paket stellt theoremartige Umgebungen zur Verf"ugung. Unsere Konvention besagt dass die Befehle aller nummerierten Theoreme mit Gro"sbuchstaben anfangen sollen (zum Beispiel \verb|Dfn| f"ur Definitionen). F"ur alle nummerierten Theoreme gibt es auch eine nicht nummerierte Version mit Kleinbuchstaben (also \verb|dfn|). F"ur Beweise sollte \verb|bew| anstelle von \verb|proof| verwendet werden. Bei jedem Theorem kann man als optionalen Parameter einen speziellen Namen vergeben, wie \verb|\begin{Satz}[Satz des Pythagoras]|. Wenn in der Vorlesung keine Umgebung verwendet wurde dann benutzt auch keine im Skript, wenn wir "uberall Bemerkung auf Bemerkung haben bläht es das Skript auf und st"ort den Lesefluss. Bitte nummeriert nur Theoreme die auch in der Vorlesung nummeriert wurden.
+\item[Listen und Aufz"ahlungen:]
+	die Umgebungen \verb|itemize|, \verb|enumerate| und \verb|description| k"onnen dank des \verb|enumitem| Pakets stark beeinflusst werden. Im Allgemeinen sind die Standardeinstellungen in Ordnung, allerdings m"u"sen wir manchmal ein Ausnahme machen und Listen "andern. Die h"aufigste Option wird \verb|label=| sein um die Nummerierung zu "andern. Haltet euch an den Standard der Vorlesung. Eintr"age sind standardm"a\ss ig leicht einger"uckt, das ist gut f"ur die Lesbarkeit, aber bei mehr als einer oder zwei Zeilen pro Eintrag wird es h"asslich. Mit der Option \verb|leftmargin=*| wird der Listeineintrag ganz an den Rand geschoben (beziehungsweise soweit es geht bei Unterlisten), das spart Platz und sieht besser aus. Die Schriftart von Labels bei der \verb|description| Umgebung kann mit der Option \verb|font=| eingestellt werden.
+\item[Zeichungen:]
+	sollten vorzugsweise in TikZ gschrieben werden anstatt ein externes Programm zu verwenden. TikZ liefert saubere Ergebnisse, passt nahtlos in das Design, erzeugt keine weiteren Abh"angigkeiten und die Zeichnungen können jederzeit von jedem ge"andert oder korrigiert werden. F"ur h"aufig verwendete Formen wurden eigene Befehle geschrieben, mehr dazu findet man im Quellcode.
+\item[Umlaute und "s:]
+	je nach Kodierung kann man diese Zeichen entweder direkt im Code benutzen oder man schreibt \verb|"a|, \verb|"o|, \verb|"u| und \verb|"s|. Wir k"onnen f"ur's Erste bei normalen Umlauten bleiben, ich würde aber trotzdem am Ende einmal Suchen\&Ersetzen durchlaufen lassen.
+\item[Farben:]
+	Blau ist f"ur Hyperlinks reserviert, rot f"ur Fehler und Unsicherheiten, grau f"ur Anmerkungen und Notizen f"ur den Leser. Der Vorteil von blau ist dass es bei einem Schwarz-Wei"s Ausdruck nicht von schwarz unterscheidbar ist.
+\item[Randnotizen:]
+	können mit \verb|\marginnote{}| gesetzt werden (beachtet dass keine Leerzeilen im Befehl erlaubt sind). Randnotizen sind gut f"ur Anmerkungen oder kleine Zeichnungen. Wir k"onnen bei Bedarf auch einstellen dass bei Definitionen der definierte Begriff im Rand daneben steht. Das \verb|ntheorem| Paket erlaubt es auch die Nummer von Theormen in den Rand zu stellen, das w"are auch eine "Uberlegung wert.
+\end{description}
 
 \input{chapter/1}
 \input{chapter/2}
