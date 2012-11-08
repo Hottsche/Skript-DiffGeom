@@ -7,6 +7,7 @@
 %\rhead[\nouppercase{\leftmark}]{\thepage}		
 
 \usepackage{xcolor} % Farben
+\usepackage{hyperref} % Verweise als Hyperlinks
 \usepackage{marginnote} % Randnotizen
 \usepackage{enumitem} % Fuer mehr Einstellungmoeglichkeiten bei Aufzaehlungen
 \usepackage{xifthen} % Erlaubt die Verwendung von if-then-else Befehlen im Code
@@ -15,7 +16,34 @@
 \usepackage{xspace} % intelligende Leerzeichen bei Macros
 \usepackage[normalem]{ulem} % unterstreichen von Text
 \usepackage{cancel} % schraeg durchstreichen von Text
+
 \renewcommand{\CancelColor}{\color{gray}} % Farbe zum schraegen Druchstreichen in grau
+
+\definecolor{rltred}{rgb}{0.75,0,0}
+\definecolor{rltgreen}{rgb}{0,0.5,0}
+\definecolor{rltblue}{rgb}{0,0,0.75}
+
+%sichere Fraben, die sich auch bei einem SW-Druck unterscheiden lassen (Platzhalter momentan)
+\definecolor{color1}{cmyk}{1,0,0,0} %cyan
+\definecolor{color2}{rgb}{0,1,0} %green
+
+\hypersetup{
+  pdftitle={Differentialgeometrie Dr. Grensing},
+  pdfsubject={Differentialgeometrie Geometrie},
+  pdfkeywords={Differentialgeometrie Grensing},
+  pdfproducer={pdfLaTeX},
+  pdfpagemode={UseOutlines},
+  colorlinks=true,
+  bookmarksopen=true,
+  bookmarksnumbered=true,
+  urlcolor=rltblue,
+  filecolor=rltgreen,
+  linkcolor=rltblue,
+  backref=true,
+  pagebackref=true,
+  pdfpagemode=None,
+  citecolor=rltblue
+}
 
 \usepackage{tikz} % Fuer Zeichnungen in TikZ
 \usetikzlibrary{matrix,arrows,calc,intersections, positioning, patterns, decorations.text, decorations.pathmorphing}
@@ -251,84 +279,54 @@
 
 \newcommand{\cmLangThmShortBem}{Bem\xspace}
 
-\ifthenelse{\boolean{enableMarginThm}}{
+% use classic amsthm theorems
 
-  % use the especially for lecture scripts and summeries designed margin theorem style
-  \RequirePackage{marginnote}
-
-  \newcommand{\CmMarginThmHead}[1]{\textsf{\textbf{#1}}}
-  \newcommand{\CmMarginThmNum}{\arabic{section}.\ifthenelse{\boolean{enableDeepNumbering}}{\arabic{subsection}.}{}\arabic{thmglobal}\xspace}
-  \newcommand{\CmMarginThmDescription}[1][]{\ifthenelse{\isempty{#1}}{}{ \textit{#1}}}
-  \newlength{\cmMarginThmSpaceBottom}
-  \setlength{\cmMarginThmSpaceBottom}{0.3cm}
-  \newlength{\cmMarginThmSpaceTop}
-  \setlength{\cmMarginThmSpaceTop}{0.1cm}
-  \newcommand{\CmMarginThmStandardLayoutBegin}[2]{
-    \refstepcounter{thmglobal}
-    \vspace{\cmMarginThmSpaceTop}
-    \marginnote{\CmMarginThmHead{\CmMarginThmNum #2} \CmMarginThmDescription[#1]}
-  }
-  \newcommand{\CmMarginThmStandardLayoutEnd}{\vspace{\cmMarginThmSpaceBottom}}
-
-  \newenvironment{satz}[1][]{
-    \CmMarginThmStandardLayoutBegin{#1}{\cmLangThmShortSatz}
-    \begin{itshape}
-    }{\end{itshape}\CmMarginThmStandardLayoutEnd}
-  \newenvironment{lemma}[1][]{
-    \CmMarginThmStandardLayoutBegin{#1}{\cmLangThmShortLemma}
-    \begin{itshape}
-    }{\end{itshape}\CmMarginThmStandardLayoutEnd}
-  \newenvironment{kor}[1][]{
-    \CmMarginThmStandardLayoutBegin{#1}{\cmLangThmShortKor}
-    \begin{itshape}
-    }{\end{itshape}\CmMarginThmStandardLayoutEnd}
-  \newenvironment{prop}[1][]{
-    \CmMarginThmStandardLayoutBegin{#1}{\cmLangThmShortProp}
-    \begin{itshape}
-    }{\end{itshape}\CmMarginThmStandardLayoutEnd}
-
-  \newenvironment{dfn}[1][]{
-    \CmMarginThmStandardLayoutBegin{#1}{\cmLangThmShortDfn}
-  }{\CmMarginThmStandardLayoutEnd}
-  \newenvironment{bsp}[1][]{
-    \CmMarginThmStandardLayoutBegin{#1}{\cmLangThmShortBsp}
-  }{\CmMarginThmStandardLayoutEnd}
-
-  \newenvironment{bem}[1][]{
-    \CmMarginThmStandardLayoutBegin{#1}{\cmLangThmShortBem}
-  }{\CmMarginThmStandardLayoutEnd}
-
-}{% use classic amsthm theorems
-
-  \newtheorem{satz}[thmglobal]{\cmLangThmSatz}
-  \newtheorem{lemma}[thmglobal]{\cmLangThmLemma}
-  \newtheorem{kor}[thmglobal]{\cmLangThmKor}
-  \newtheorem{prop}[thmglobal]{\cmLangThmProp}
+%  \newtheorem{satz}[thmglobal]{\cmLangThmSatz}
+%  \newtheorem{lemma}[thmglobal]{\cmLangThmLemma}
+%  \newtheorem{kor}[thmglobal]{\cmLangThmKor}
+%  \newtheorem{prop}[thmglobal]{\cmLangThmProp}
 
   \theoremstyle{definition}
 
-  \newtheorem{dfn}[thmglobal]{\cmLangThmDfn}
-  \newtheorem{bsp}[thmglobal]{\cmLangThmBsp}
+%  \newtheorem{dfn}[thmglobal]{\cmLangThmDfn}
+%  \newtheorem{bsp}[thmglobal]{\cmLangThmBsp}
   
   \newtheorem{Aufg}{Aufgabe}
   \newtheorem{Loes}{L\"osung}
 
   \theoremstyle{remark}
 
-  \newtheorem{bem}[thmglobal]{\cmLangThmBem}
-}
-\theoremstyle{break}
+%  \newtheorem{bem}[thmglobal]{\cmLangThmBem}
 
+\theoremstyle{plain}
+\newtheorem{Dfn}{\cmLangThmDfn}[chapter]
+\newtheorem{Satz}[Dfn]{Satz}
+\newtheorem{Lemma}[Dfn]{\cmLangThmLemma}
+\newtheorem{Kor}[Dfn]{\cmLangThmKor}
+\newtheorem{Prop}[Dfn]{\cmLangThmProp}
+\newtheorem{Bsp}[Dfn]{\cmLangThmBsp}
+\newtheorem{Bem}[Dfn]{\cmLangThmBem}
+
+\theoremstyle{nonumberplain}
+\newtheorem{dfn}{\cmLangThmDfn}
+\newtheorem{satz}{Satz}
+\newtheorem{lemma}{\cmLangThmLemma}
+\newtheorem{kor}{\cmLangThmKor}
+\newtheorem{prop}{\cmLangThmProp}
+\newtheorem{bsp}{\cmLangThmBsp}
+\newtheorem{bem}{\cmLangThmBem}
+
+\theoremstyle{break}
 
 % Add unnumbered Theorems, use amsthm style in both style modes
 \theoremstyle{plain}
 %\newtheorem*{satz*}{\cmLangThmSatz}
-%\newtheorem*{lemma*}{\cmLangThmLemma}
+%\newtheorem*{lemma}{\cmLangThmLemma}
 %\newtheorem*{kor*}{\cmLangThmKor}
 %\newtheorem*{prop*}{\cmLangThmProp}
 
 \theoremstyle{definition}
-%\newtheorem*{dfn*}{\cmLangThmDfn}
+%\newtheorem*{dfn}{\cmLangThmDfn}
 %\newtheorem*{bsp*}{\cmLangThmBsp}
 
 \theoremstyle{remark}

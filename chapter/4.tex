@@ -7,13 +7,13 @@
 %% Mitschrieb und Textsatz von Jan-Bernhard Kordaß.
 %% 
 
-\section{Tangentialbündel und Vektorfelder}
+\chapter{Tangentialbündel und Vektorfelder}
 
-\begin{dfn}[Tangentialbündel]
+\begin{Dfn}[Tangentialbündel]
   Es sei $M$ eine glatte Mannigfaltigkeit. Die Menge $\T M = \dot \bigcup_{p \in M}\T_pM$ zusammen mit der sogenannten kanonischen Projektion $\pi \colon \T M \to M, \T_pM \ni X_p \mapsto p$ heißt das \CmMark{Tangentialbündel} von $M$.
-\end{dfn}
+\end{Dfn}
 
-\subsection{Das Tangentialbündel als glatte Mannigfaltigkeit}
+\section{Das Tangentialbündel als glatte Mannigfaltigkeit}
 
 Es sei $(\varphi, U)$ eine Karte von $M$. Setzt man $\T M|_U = \pi^{-1}(U) = \dot \bigcup_{p\in U}\T_pM$, so ist nach \textcolor{red}{Satz 2.8} % REFERENZ!
 die Abbildung
@@ -36,10 +36,10 @@ Darüber hinaus ist die kanonische Projektion $\pi \colon \T M \to M$ bezüglich
 
 Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so ist $\Phi_{*} \colon \T M \to \T N, \ X_p \mapsto \Phi_{*p}X_p$ eine glatte Abbildung (ebensfalls Übungsaufgabe).
 
-\begin{dfn}
+\begin{Dfn}
   Eine stetige Abbildung $X \colon M \to \T M$ mit $\pi \circ X = \Id_M$ heißt \CmMark{Vektorfeld} auf $M$.
   Ist $X$ glatt (als Abbildung zwischen glatten Mannigfaltigkeiten), so heißt $X$ ein \CmMark{glattes Vektorfeld.}
-\end{dfn}
+\end{Dfn}
 
 \begin{bem}
   Ist $(\varphi, U)$ eine Karte von $M$, so sind die Abbildungen $U \to \T M|_U, \ p \mapsto \pdifffrac[p]{}{x^{i}}$ glatte Vektorfelder (in der Karte $\overline \varphi$ sind diese genau die Abbildungen $(x,e_i)$).
@@ -56,7 +56,7 @@ Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so
 %%% 6. Vorlesung <2012-11-2 Fri>
 %%% 
 
-\begin{bsp*}
+\begin{bsp}
   Betrachte die $n$-Sphäre $S^n \subset \R^{n+1}$ und deren Tangentialraum $\T_pS^n = p^{\perp}$.
   Ein glattes Vektorfeld auf $S^n$ ist also eine glatte Abbildung $X \colon S^n \to \R^{n+1}$ mit $X_p \perp p$.
   
@@ -65,13 +65,13 @@ Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so
     X \colon S^n \to \R^{n+1}, (x^1,y^1, \ldots, x^k,y^k) \mapsto (-y^1,x^1, \ldots, -y^k,x^k)
   \end{align*}
   ein glattes Vektorfeld auf $S^n$ ohne eine Nullstelle.
-\end{bsp*}
+\end{bsp}
 
-\begin{bem*}
+\begin{bem}
   Der \CmMark{Satz vom Igel} besagt gerade: Jedes glatte Vektorfeld auf einer Sphäre gerader Dimension hat eine Nullstelle.
-\end{bem*}
+\end{bem}
 
-\begin{bem*}
+\begin{bem}
   Es bezeichne $\mathcal V(M)$ die Menge aller glatten Vektorfelder auf der Mannigfaltigkeit $M$. Der sogenannte \CmMark{Nullschnitt}:
   \begin{align*}
     \sigma \colon M \to \T M, p \mapsto 0_p \in \T_pM
@@ -79,9 +79,9 @@ Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so
   ist ein glattes Vektorfeld auf $M$.
   
   \emph{"Ubungsaufgabe:} Zeige dass der Nullschnitt eine Einbettung ist.
-\end{bem*}
+\end{bem}
 
-\begin{bem*}
+\begin{bem}
   Sind $X,Y \in \mathcal V(M)$ und ist $g \in \C^{\infty}(M)$, so sind die punktweise Summe $X+Y$ und das Produkt $gX$ wieder ein glatte Vektorfelder auf $M$. Damit ist $\mathcal V(M)$ ein $\R$-Vektorraum beziehungsweise $C^{\infty}(M)$-Modul.
   
   Jedes Vektorfeld $X$ ist eine Derivation von $C^{\infty}(M)$:
@@ -92,15 +92,15 @@ Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so
   \begin{align*}
     [X,Y](f)(p) = X_p(Yf)-Y_p(Xf).
   \end{align*}
-\end{bem*}
+\end{bem}
 
 % Lemma 4.3
-\begin{lemma}
+\begin{Lemma}
   Die Lieklammer ist eine schiefsymmetrische $\R$-bilineare Abbildung $\mathcal V(M) \times \mathcal V(M) \to \mathcal V(M)$. Es gilt die sogenannte \CmMark{Jacobiidentität}:
   \begin{align*}
     [X,[Y,Z]] + [Y,[Z,X]] + [Z,[X,Y]] = 0.
   \end{align*}
-\end{lemma}
+\end{Lemma}
 
 \begin{proof}
   Es seien $X,Y \in \mathcal V(M)$, $f,g \in \C^{\infty}(M)$ und $p \in M$. Dann gilt:
@@ -117,18 +117,18 @@ Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so
 
 
 % Lemma 4.4
-\begin{lemma}
+\begin{Lemma}
   Es seien $X,Y \in \mathcal V(M)$ glatte Vektorfelder und $(\varphi,U)$ eine Karte von $M$.
   Sind dann $X|_U = \sum \xi^i\pdifffrac{}{x^i}, \ Y|_U = \sum \eta^i \pdifffrac{}{x^i}$ und $[X,Y]|_U = \sum \zeta^i \pdifffrac{}{x^i}$ die ensprechenden lokalen Darstellungen, so gilt:
   \begin{align*}
     \zeta^j = \sum \left(\xi^i\pdifffrac{\eta^j}{x^i} - \eta^i \pdifffrac{\xi^j}{x^i} \right).
   \end{align*}
-\end{lemma} 
+\end{Lemma} 
 
 Der Beweis ist als Übungs überlassen.
 
 
-\subsection{Flüsse}
+\section{Flüsse}
 
 \marginnote{\begin{tikzpicture}[scale=0.75]
     % \draw[step=0.25,gray!15] (-3,-1) grid (2,5); \draw[step=0.5,gray!30] (-3,-1) grid (2,5); \fill (0,0) circle(0.1); %Hilfsgitter
@@ -154,15 +154,15 @@ oder in lokalen Koordinaten:
 mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ und $X|_{\textcolor{red}{U}} = \sum \xi^i \pdifffrac{}{x^i}$.
 
 % Definition 4.5
-\begin{dfn}
+\begin{Dfn}
   Es sei $X \in \mathcal V(M)$ ein glattes Vektorfeld und $p \in M$, sowie $\calI \subset \R$ ein offenes, zusammenhängendes Intervall um $0$. Eine glatte Kurve $\gamma \colon \calI \to M$ mit
   \begin{align*}
     \dot \gamma(t) = X_{\gamma(t)}, \ \gamma(0) = p
   \end{align*}
   heißt \CmMark{Integralkurve} oder \CmMark{Trajektorie} von $X$ durch $p$.
-\end{dfn}
+\end{Dfn}
 
-\begin{bem*}
+\begin{bem}
   Eine Kurve $\gamma$ ist genau dann Integralkurve von $X$ durch $p$, wenn für jede Karte $(\varphi,U)$ die Kurve $\tilde \gamma = \varphi \circ \gamma$ eine Lösung des (autonomen) Anfangswertproblems
   \begin{align*}
     \dot{\tilde \gamma} = \xi(\gamma(t)),  \ \tilde \gamma(0) = \varphi(p)
@@ -176,10 +176,10 @@ mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ 
       \gamma^0(p) = p
     \end{cases}.
   \end{align*}
-\end{bem*}
+\end{bem}
 
 % Satz 4.6
-\begin{satz}[Lokale Existenz und Eindeutigkeit]
+\begin{Satz}[Lokale Existenz und Eindeutigkeit]
   Es sei $U \subseteq \R^n$ offen und $\calI_{\varepsilon}=(-\varepsilon,\varepsilon)$ und $F \colon \calI_{\varepsilon} \times \R^n \to \R^n$ $C^k$-differenzierbar.
   Dann existiert für alle $x \in U$ eine Umgebung $V$ von $x$ in $U$ und ein $\delta > 0$, so dass
   \begin{enumerate}[label=(\roman*),leftmargin=*,widest=iii]
@@ -194,23 +194,23 @@ mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ 
     \end{align*}
     ist $C^k$-differenzierbar.
   \end{enumerate}
-\end{satz}
+\end{Satz}
 
 \begin{proof}
   Siehe Lang: "`Differential and Riemannian Manifolds"', 3. Auflage, 1995, Chapter IV.1, P.65 \textcolor{red}{Buchverweis}
 \end{proof}
 
 % Korollar 4.7
-\begin{kor}\label{korollar-4-7}
+\begin{Kor}\label{korollar-4-7}
   Es sei $X \in \mathcal V(M)$ und $p \in M$. Dann existiert eine offene Umgebung $U$ von $p$, ein $\varepsilon > 0$ und eine glatte Abbildung:
   \begin{align*}
     \gamma\colon(-\varepsilon,\varepsilon) \times U \to M
   \end{align*}
   so dass $t \mapsto \gamma^t(p)$ eine Integralkurve von $X$ durch $p$ ist. (Setze dann $F(t,x) = \xi(\varphi^{-1}(x))$.)
-\end{kor}
+\end{Kor}
 
 % Korollar 4.8
-\begin{kor}\label{korollar-4-8}
+\begin{Kor}\label{korollar-4-8}
   Sind $\gamma_1 \colon \calJ_1 \to M, \ \gamma_2 \colon \calJ_2 \to M$ Integralkurven eines Vektorfeldes $X \in \mathcal V(M)$ durch $p$, dann gilt $0 \in \calJ_1 \cap \calJ_2$ und $\gamma_1(0)= p = \gamma_2(0)$.
   Nach \textcolor{red}{Satz 4.6 (ii)} % TODO: Referenz setzen
   gilt dann $\gamma_1(t) = \gamma_2(t)$ für alle $t \in \calJ_1 \cap \calJ_2$. Damit ist
@@ -223,9 +223,9 @@ mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ 
   \end{align*}
   eine Integralkurve von $X$ durch $p$.
   Damit existiert für jedes $p \in M$ ein maximaler Definitionsbereich $\calI_p$ für Integralkurven von $X$ durch $p$; dieser ist offen.
-\end{kor}
+\end{Kor}
 
-\begin{dfn*}
+\begin{dfn}
   Für $X \in \mathcal V(M)$ heißt die, wie im vorigen Korollar definierte, Familie maximaler Integralkurven
   \begin{align*}
     \gamma(t,p) = \gamma^t(p),\ t \in \calI_p
@@ -235,9 +235,9 @@ mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ 
   \begin{align*}
     \mathcal D_X = \{(t,p) \in \R \times M \mid t \in \calI_p\}.
   \end{align*}
-\end{dfn*}
+\end{dfn}
 
-\begin{bem*}
+\begin{bem}
   Es gilt: $\gamma^0(\cdot) = \Id_M$. Ist $(s,p) \in \mathcal D_{X}$, so gilt
   \[ \difffrac[t=0]{}{t}(t \mapsto \gamma^{t+s}(p)) = X_{\gamma^s(p)}, \]
   also ist $t \mapsto \gamma^{t+s}(p)$ eine Integralkurve von $X$ durch $q = \gamma^s(p)$. Aus der Eindeutigkeit folgt damit:
@@ -245,12 +245,12 @@ mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ 
     \gamma^{t+s}(p) = \gamma^t(\gamma^s(p))
   \end{align*}
   f"ur alle $s, t$, $s+t \in \calI_p$, ferner gilt $\calI_q = \calI_p - s$. Kurz geschrieben: $\gamma^{t+s} = \gamma^t \circ \gamma^s$. Also definiert $\gamma$ einen \quot{lokalen Gruppenhomomorphismus} von $\R$ in $M^M$.
-\end{bem*}
+\end{bem}
 
 % Satz 4.9
-\begin{satz}
+\begin{Satz}
   Ist $X \in \mathcal V(M)$ ein glattes Vektorfeld mit Fluss $\gamma$, so ist $\mathcal D_X$ eine offene Menge und sein Fluss $\gamma \colon \mathcal D_X \to M$ glatt.
-\end{satz}
+\end{Satz}
 
 
 %%% 
@@ -319,20 +319,20 @@ mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ 
 \end{proof}
 
 % Definition 4.10
-\begin{dfn}[vollständiges Vektorfeld]
+\begin{Dfn}[vollständiges Vektorfeld]
   Ein Vektorfeld auf $M$ heißt \CmMark{vollständig}, wenn der Definitionsbereich seines Flusses gleich $\R \times M$ ist.
-\end{dfn}
+\end{Dfn}
 
-\begin{bem*}
+\begin{bem}
   Dies ist genau dann der Fall, wenn alle Integralkurven für alle Zeiten existieren. Ist $X \in \mathcal V(M)$ vollständig und bezeichnet $\gamma$ seinen Fluss, so ist jede $\gamma^t$ ein Diffeomorphismus von $M$ mit Inversen $\gamma^{-t}$.
-\end{bem*}
+\end{bem}
 
 % Lemma 4.11
-\begin{lemma}
+\begin{Lemma}
   Es sei $c \colon \calI \to M$ eine Integralkurve von $X \in \mathcal V(M)$ durch $p$ und $t_n \in \calI$ eine Folge, so dass die Grenzwerte $t_n \xrightarrow{n\to\infty} t_{\infty} \in \R$ und $c(t_n) \to q \in M$ existieren.
   
   Dann gilt $t_{\infty} \in \calI_{p}$ und $\gamma^{t_{\infty}}(p) = q$.
-\end{lemma}
+\end{Lemma}
 
 \begin{proof}
   Nach Korollar \ref{korollar-4-7} existiert eine Umgebung $U$ von $q$ und $\varepsilon > 0$, so dass auf $(-\varepsilon,\varepsilon) \times U$ ein lokaler Fluss von $X$ definiert ist.
@@ -353,20 +353,20 @@ mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ 
   \end{align*}
 \end{proof}
 
-\begin{bem}[Moral des obigen Lemmas]
+\begin{Bem}[Moral des obigen Lemmas]
   Integralkurven existieren für alle Zeiten oder aber sie verlassen jedes Kompaktum.
-\end{bem}
+\end{Bem}
 
-\begin{kor}
+\begin{Kor}
 Hat $X \in \mathcal V(M)$ kompakten Träger, so ist $X$ vollständig. Ist $M$ kompakt, os ist jedes glatte Vektorfeld vollständig.
-\end{kor}
+\end{Kor}
 
-\begin{bsp*}
+\begin{bsp}
   Das Vektorfeld $X \colon \R \to \T\R, t \mapsto t^2\pdifffrac{}{t}$ ist nicht vollständig, denn $c(t) = (1-t)^{-1}$ ist die Integralkurve von $X$ durch $1$.
-\end{bsp*}
+\end{bsp}
 
 
-%\begin{bem*}
+%\begin{bem}
 Ist $\Phi \colon M \to N$ glatt, so ist $\Phi_{\ast} \colon \T M \to \T N$ glatt.\marginnote{\begin{tikzpicture}[scale=1]
 	%\draw[step=0.25,gray!15] (-3,-1) grid (3,1); \draw[step=0.5,gray!30] (-3,-1) grid (3,1); \fill (0,0) circle(0.1); %Hilfsgitter
 	\def\hor{1}
@@ -378,18 +378,18 @@ Ist $\Phi$ ein Diffeomorphismus, so ist $\Phi^{-1}$ glatt und $q \mapsto (\Phi_{
 \begin{align*}
   (\Phi_{\ast}X)(f)(q) = X_{\Phi^{-1}(q)}(f \circ \Phi).
 \end{align*}
-%\end{bem*}
+%\end{bem}
 
 
 % Lemma 4.13
-\begin{lemma}
+\begin{Lemma}
   Es sei $X \in \mathcal V(M)$, $\Phi \colon M \to N$ ein Diffeomorphismus und es bezeichne $\gamma$ den Fluss von $X$ und $\mathcal D_X$ seinen (maximalen) Definitionsbereich.
 Dann ist
 \begin{align*}
   \{(t,q) \mid (t,\Phi^{-1}(q)) \in \mathcal D_X\} \to N \colon (t,q) \mapsto \Phi \circ \gamma^t \circ \Phi^{-1}(q)
 \end{align*} 
 der Fluss von $\Phi_{*}X$.
-\end{lemma}
+\end{Lemma}
 
 \begin{proof}
  Für $f \in \C^{\infty}(N)$ und $q \in N$ gilt
@@ -400,7 +400,7 @@ der Fluss von $\Phi_{*}X$.
  \end{align*}
 \end{proof}
 
-%\begin{bem}
+%\begin{Bem}
 \emph{Erinnerung:} $\frac{1}t(F(x+tv)-F(x))$ oder für $c$ mit $c(0) = x, \dot c(0) = v$: $\frac{1}t(F(c(t))-F(x))$.
 
 Nun seien $X,Y \in \mathcal V(M)$.
@@ -422,28 +422,28 @@ Da aber $\gamma^t$ (für kleine Zeiten) ein (lokaler) Diffeomorphismus ist, gilt
   \gamma_{*}^{-t}(y_{\gamma^t(p)})-(\gamma_{*}^{-t}y)_p \in \T_pM.
 \end{align*}
 Die Differenz $(\gamma_{*}^{-t}y)_p - y_p$ ist also wohldefiniert. \textcolor{red}{(Ich bin mir nicht sicher ob die $y$ gro\ss  oder klein geschrieben sein sollen -Aleks)}
-%\end{bem}
+%\end{Bem}
 
-\begin{dfn}
+\begin{Dfn}
   Es seien $X,Y \in \mathcal V(M)$ und $\gamma$ der Fluss von $X$.
 Das durch 
 \begin{align*}
   p \mapsto \lim_{t\to 0}\frac{1}t\left(\left(\gamma_{*}^{-t}y\right)_p-y_p\right)
 \end{align*}
 definierte glatte Vektorfeld heißt \CmMark{Lieableitung} von $Y$ längs $X$. Man schreibt $\mathcal L_XY$.
-\end{dfn}
+\end{Dfn}
 
-%\begin{bem}
+%\begin{Bem}
 Die Kurve $(\gamma_{*}^{-t}y)_p$ in $\T_pM$ ist glatt und $(\mathcal L_XY)_p = \difffrac[t=0]{}{t}(\gamma_{*}^{-t}Y)_p$. Dass $\mathcal L_XY$ glatt ist, rechnet man entweder in lokalen Koordinaten nach oder benutzt den folgenden Satz.
-%\end{bem}
+%\end{Bem}
 
 % Satz 4.15
-\begin{satz}
+\begin{Satz}
   Für $X,Y \in \mathcal V(M)$ gilt:
   \begin{align*}
     \mathcal L_XY = [X,Y].
   \end{align*}
-\end{satz}
+\end{Satz}
 
 \begin{proof}
 Es seinen $X,Y \in \mathcal V(M)$, $f \in \C^{\infty}(M)$ und $\gamma$ der Fluss von $X$.

@@ -7,7 +7,7 @@
 %% Mitschrieb und Textsatz von Jan-Bernhard Kordaß.
 %% 
 
-\section{Differentiale}
+\chapter{Differentiale}
 Es seien $M$ und $N$ glatte Mannigfaltigkeiten und $\Phi \colon M \to N$ eine glatte Abbildung.
 Sind $p \in M$ und $X_p \in \T_pM$ , so ist 
 \begin{align*}
@@ -79,25 +79,25 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \end{tikzpicture}\end{center}
 
 % Definition 3.1
-\begin{dfn}
+\begin{Dfn}
   Die lineare Abbildung $\Phi_{*p} \colon \T_pM \to \T_{\Phi(p)}N$ heißt das \CmMark{Differential} von $\Phi$ in $p$. Der Rang von $\Phi_{*p}$ bezeichnet man als den Rang von $\Phi$ in $p$.
-\end{dfn}
+\end{Dfn}
 
 % Lemma 3.2
-\begin{lemma}[Differentiale in lokalen Koordinaten]
+\begin{Lemma}[Differentiale in lokalen Koordinaten]
   Sind $\varphi$ und $\psi$ Karten von $M$ und $N$ um $p$ und $\Phi(p) = q$, sowie $\pdifffrac[p]{}{x^i}$ und $\pdifffrac[q]{}{y^i}$ die Standardbasen von $\T_pM$ und $\T_qN$ bezüglich der Karten $\varphi$ und $\psi$, so gilt:
   \begin{align*}
     \Phi_{*p}\pdifffrac[p]{}{x^i} = \sum \partial_i\left(\psi^j \circ \Phi \circ \varphi^{-1}\right)\big(\varphi(p)\big)\pdifffrac[q]{}{y^j}.
   \end{align*}
   Die partielle Ableitung $\partial_i(\psi^j \circ \Phi \circ \varphi^{-1})(\varphi(p))$ bezeichnet man auch kurz $\frac{\partial \Phi^j}{\partial x^i}(p)$.
-\end{lemma}
+\end{Lemma}
 
-\begin{bem}
+\begin{Bem}
   Aus der Linearität von $\Phi_{*p}$ folgt, dass für $X_p = \sum \xi^i\pdifffrac[p]{}{x^i} \in \T_pM$ und $\Phi_{*p}X_p = \sum \eta^j\pdifffrac[q]{}{y^j}$ gilt:
   \begin{align*}
     \eta^j = \sum \frac{\partial \Phi^j}{\partial x^i}\xi^i \text{, beziehungsweise } \eta = \D(\psi \circ \Phi \circ \varphi^{-1})\xi.
   \end{align*}
-\end{bem}
+\end{Bem}
 
 \begin{proof}
   \begin{align*}
@@ -105,15 +105,15 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \end{align*}
 \end{proof}
 
-\begin{bem}[Charakterisierung durch Kurven]
+\begin{Bem}[Charakterisierung durch Kurven]
   Ist $[c] \in \T_p\textcolor{red}{M}$, so gilt für $f \in C^{\infty}(\textcolor{red}{N})$:
   \begin{align*}
     \Phi_{*p}[c](f) = [c](f \circ \Phi) = \difffrac[t=0]{}{t}(\underbrace{f \circ \Phi \circ c)}_{\substack{\text{glatte Kurve}\\ \text{auf }N}} = [\Phi \circ c](f)
   \end{align*}
   also $\Phi_{*p}[c] = [\Phi \circ c]$.
-\end{bem}
+\end{Bem}
 
-\begin{bem}[Tangentialräume an Untermannigfaltigkeiten des $\R^n$]
+\begin{Bem}[Tangentialräume an Untermannigfaltigkeiten des $\R^n$]
   \marginnote{\begin{tikzpicture}
 	%\draw[step=0.25,gray!15] (-6,-5) grid (6,3); \draw[step=0.5,gray!30] (-6,-5) grid (6,3); \fill (0,0) circle(0.1); %Hilfsgitter
 	\draw[->] (-0.5,0) -- (2.75,0); \draw[->] (0,-0.5) -- (0,2); \draw[->] (-0.5,-0.25) -- (2,1);
@@ -142,9 +142,9 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
        &\sim \difffrac[t=0]{}{t}F(x+te_i) = \D F|_x(e_i) = \partial_iF|_x
   \end{align*}
   $\T_pM \quot{=} \langle \partial_1F|_x,\ldots ,\partial_m F|_x \rangle$
-\end{bem}
+\end{Bem}
 
-\begin{bem*}[Eigenschaften des Differentials]\hfill
+\begin{Bem*}[Eigenschaften des Differentials]\hfill
   \begin{enumerate}[label=(\roman*)]
   \item (\emph{Kettenregel}) Sind $\Phi \colon M \to N$ und $\Psi \colon N \to P$ glatt, so gilt:
     \begin{align*}
@@ -153,10 +153,10 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \item Ist $\textcolor{red}{\Phi} \colon M \to N$ ein Diffeomorphismus, so ist $\Phi_{*p}$ ein Vektorraumisomorphismus. % Verwendet die Kettenregel
   \item (\emph{Satz von der Umkehrabbildung}) Ist $\Phi \colon M \to N$ glatt und $\Phi_{*p}$ bijektiv, so existieren Umgebungen $U$ von $p$ und $V$ von $\Phi(p)$, so dass $\Phi|_{U} \colon U \to V$ ein Diffeomorphismus ist.
   \end{enumerate}
-\end{bem*}
+\end{Bem*}
 
 % Definition 2.3
-\begin{dfn}[Reguläre Punkte, Submersion, Immersion]
+\begin{Dfn}[Reguläre Punkte, Submersion, Immersion]
   Es sei $\Phi \colon M \to N$ glatt.
   \begin{enumerate}[label=(\roman*),leftmargin=*,widest=iii]
   \item Es Punkt $p \in M$ heißt \CmMark{regulärer Punkt} von $\Phi$, wenn $\Phi_{*p}$ surjektiv ist. Ein Punkt $q \in N$ heißt \CmMark{regulärer Wert}, wenn jeder Punkt $p \in \Phi^{-1}(q)$ regulär ist.
@@ -164,9 +164,9 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \item Die Abbildung $\Phi$ heißt \CmMark{Immersion}, wenn für alle $p \in M$ $\Phi_{*p}$ injektiv ist.
   \item Die Abbildung $\Phi$ heißt \CmMark{Einbettung}, wenn $\Phi$ Immersion und Homöomorphismus auf sein Bild ist.
   \end{enumerate}
-\end{dfn}
+\end{Dfn}
 
-\begin{bsp}
+\begin{Bsp}
   \begin{enumerate}[label=\arabic*),leftmargin=*]
   \item Betrachte eine Abbildung $\Phi$
     \begin{center}\begin{tikzpicture}%\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
@@ -198,10 +198,10 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 
   \item Ist $M \subset N$ Untermannigfaltigkeit, so ist $\imath \colon M \hookrightarrow N$ eine Einbettung.% INKLUSIONSSPFEIL
   \end{enumerate}
-\end{bsp}
+\end{Bsp}
 
 % Satz 3.4
-\begin{satz}
+\begin{Satz}
   Es seien $M$ und $N$ glatte Mannigfaltigkeiten, $\Phi \colon M \to N$ eine glatte Abbildung und $p \in M$, sowie $q = \Phi(p)$. Es bezeichnen $m$ und $n$ die Dimensionen von $M$ und $N$ und $r$ den Rang von $\Phi$ in $p$. Dann gelten folgende Aussagen:
   \begin{enumerate}[label=(\roman*),leftmargin=*,widest=ii]
   \item Zu jeder Karte $\psi$ von $N$ um $q$ mit $\psi(q) = 0$ existiert eine Karte $\alpha$ von $M$ um $p$ mit $\alpha(p) = 0$ und glatte Funktionen $f^{r+1},\ldots,f^n$ mit
@@ -213,10 +213,10 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
       \left(\beta \circ \Phi \circ \alpha^{-1}\right)\left(x^1, \ldots, x^m\right) = \left(x^1, \ldots, x^r, 0, \ldots, 0\right).
     \end{align*}
   \end{enumerate}
-\end{satz} 
+\end{Satz} 
 
 % Korollar 3.5
-\begin{kor}
+\begin{Kor}
   \begin{enumerate}[label=(\roman*),widest=iii,leftmargin=*]
   \item Falls $\Phi$ auf einer offenen Umgebung von $P = \Phi^{-1}(q)$ konstanten Rang $r$ hat, so ist $P$ eine Untermannigfaltigkeit der Kodimension $r$.
   \item Ist $q$ ein regulärer Wert von $\Phi$, so ist $P = \Phi^{-1}(q)$ eine Untermannigfaltigkeit von $M$ der Kodimension $\textcolor{red}{n}$. \textcolor{red}{$n$ oder $r$?}
@@ -225,7 +225,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \item Ist $\Phi_{*p}$ injektiv, so existiert eine Umgebung $U$ von $p$, so dass $\Phi(U) = Q \subset N$ eine Untermannigfaltigkeit von $N$ ist.
   \item Ist $\Phi$ eine Einbettung, so ist $Q = \Phi(M)$ eine $m$-dimensionale Untermannigfaltigkeit von $M$ und $\Phi \colon M \to Q$ ist ein Diffeomorphismus.
   \end{enumerate}
-\end{kor}
+\end{Kor}
 
 \begin{proof}\begin{enumerate}[label=(\roman*),widest=iii,leftmargin=*]
   \item Sei $p \in P = \Phi^{-1}(q)$. Nach der zweiten Aussage des vorrangegangenen Satzes existieren Karten $(\alpha,U), (\beta, V)$ mit 
@@ -346,7 +346,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \end{align*}
 \end{enumerate}\end{proof}
 
-\begin{bem*}
+\begin{Bem*}
   Ist $\Phi \colon M \to N$ glatt mit konstantem Rang $r$ auf einer Umgebung von $P = \Phi^{-1}(q)$, so ist $P$ eine $(m-r)$-dimensionale Untermannigfaltigkeit von $M$.
   
   Der Tangentialraum $\T_pP$ in $p$ an $P$ ist ein Untervektorrraum von $\T_pM$ und es gilt:
@@ -372,9 +372,9 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
     % Punkt besser erkenntlich machen!
   also $T_pP \subseteq \Kern \Phi_{*p}$. Es gilt:
    \[ \dim T_pP = \dim P = m-r = \dim \T_pM - \Rang \Phi_{*p} = \dim \Kern \Phi_{*p}. \]
-\end{bem*}
+\end{Bem*}
 
-\begin{bsp}
+\begin{Bsp}
   Die $n$-dimensionale Sphäre $S^n \subset \R^{n+1}$ ist das reguläre Urbild der glatten Abbildung $\Phi \colon \R^{n+1}\setminus \{0\} \to \R_{> 0}, x \mapsto \|x\|^2; \ S^n = \Phi^{-1}(1)$. Der Tangentialraum $\T_x\R^{n+1}$ ist vermöge der Abbildung
 \begin{align*}
   \R^{n+1} \ni V \mapsto [t \mapsto x + tv] \in \T_x\R^{n+1}.
@@ -384,7 +384,7 @@ gegeben. Damit gilt genau dann $v \in \T_xS^n$, wenn $[x+tv] \in \Kern \Phi_{*x}
   0 = \Phi_{*x}[x+tv] = \difffrac[t=0]{}{t} \Phi(x+tv) = \partial_v \Phi(x) = \D \Phi|_x(v) = \left<\grad\Phi(x),v\right>.
 \end{align*}
 Es gilt $\grad \Phi(x) = (2x^1, \ldots, 2x^{n+1}) = 2x$, also gilt $v \in T_xS^n$, genau dann, wenn $v \perp x$.
-\end{bsp}
+\end{Bsp}
 
 
 %%% Local Variables: 

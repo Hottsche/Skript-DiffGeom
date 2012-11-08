@@ -7,7 +7,7 @@
 %% Mitschrieb und Textsatz von Jan-Bernhard Kordaß.
 %% 
 
-\section{Tangentialvektoren und Tangentialräume}
+\chapter{Tangentialvektoren und Tangentialräume}
 
 % Abbildung 2-1
 \CmMarginSvg{2-1-tangentialvektoren-motivation}{3.5cm}
@@ -27,9 +27,9 @@ Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\varphi,U)$ von $M
   \difffrac[t=0]{}{t}(\varphi \circ c_1) = \difffrac[t=0]{}{t}(\varphi \circ c_2)
 \end{align*}
 
-\begin{lemma}
+\begin{Lemma}
   Der oben definierte Begriff der Äquivalenz ist unabhängig von der Wahl der Karte.
-\end{lemma}
+\end{Lemma}
 
 \begin{proof}
   Es sei $(\psi,V)$ eine weitere Karte von $M$ um $p$. Dann gilt:
@@ -39,20 +39,20 @@ Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\varphi,U)$ von $M
   \end{align*}
 \end{proof}
 
-\begin{dfn}[Geometrische Definition des Tangentialraums]
+\begin{Dfn}[Geometrische Definition des Tangentialraums]
   Es sei $M$ eine glatte Mannigfaltigkeit und $p \in M$. Ein (geometrischer) \CmMark{Tangentialvektor} an $M$ in $p$ ist eine Äquivalenzklasse von Kurven $c$ mit $c(0) = p$. Die Menge
   \begin{align*}
     \T_{p}^{\text{geo}}M = \{ [c] \mid c \colon (-\varepsilon,\varepsilon) \to M \text{ glatt}, c(0) = p\}
   \end{align*}
   heißt (geometrischer) \CmMark{Tangentialraum} an $M$ in $p$.
-\end{dfn}
+\end{Dfn}
 
-\begin{bem}
+\begin{Bem}
   Mit den Bezeichnungen wie oben ist die folgende Abbildung bijektiv:
   \begin{align*}
     A \colon \T_p^{\text{geo}}M \to \R^n, [c] \mapsto \difffrac[t=0]{}{t}(\varphi \circ c).
   \end{align*}
-\end{bem}
+\end{Bem}
 
 \begin{proof}
   Zu jedem Vektor $v \in \R^n$ sei $B(v) = [t \mapsto \varphi^{-1}(\varphi(p) + tv)]$ die Äquivalenzklasse der abgebildeten Kurve auf der Mannigfaltigkeit.
@@ -71,9 +71,9 @@ Damit erhält $\T_p^{\text{geo}}M$ die Struktur eines reellen Vektorraumes verm�
 \end{align*}
 Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + t(\lambda v_1 + \mu v_2))$ mit $v_i = \difffrac[t=0]{}{t}(\varphi \circ c_i)$.
 
-\begin{lemma}
+\begin{Lemma}
   Die oben definierte Lineare Struktur ist unabhängig von der Wahl der Karte.
-\end{lemma}
+\end{Lemma}
 
 \begin{proof}
   Es sei $(\psi, V)$ eine Karte von $M$ um $p$ und $A'[c] = \difffrac[t]{}{t}(\psi \circ c)$. Dann gilt:
@@ -93,7 +93,7 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
 % 3. Vorlesung <2012-10-23 Tue>
 
 \paragraph{Motivation: Richtungsableitungen im $\R^n$}\hfill
-\begin{bem}
+\begin{Bem}
   
   Für $f,g \in C^{\infty}(\R^n), \ x,y \in \R^n$ ist die Richtungsableitung wie folgt definiert:
   \begin{align*}
@@ -103,20 +103,20 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
   \begin{align*}
     \partial_v(fg)(x) = \partial_vf(x)\cdot g(x) + f(x) \cdot \partial_v(g)(x).
   \end{align*}
-\end{bem}
+\end{Bem}
 
-\begin{dfn}[Algebraische Definition des Tangentialraumes]
+\begin{Dfn}[Algebraische Definition des Tangentialraumes]
   Es sei $M$ eine glatte Mannigfaltigkeit und $p\in M$. Ein (algebraischer) \CmMark{Tangentialvektor} an $M$ in $p$ ist eine Lineare Abbildung $X_p \colon C^{\infty}(M) \to \R$, welche die Leibniz-Regel erfüllt:
   \begin{align*}
     X_p(fg) = X_p(f) \cdot g(p) + f(p) \cdot X_p(g).
   \end{align*}
 
   Die algebraischen Tangentialvektoren bilden einen reellen Vektorraum $\T_p^{\text{alg}}M$, den Tangentialraum an $M$ in $p$.
-\end{dfn}
+\end{Dfn}
 
-\begin{lemma}
+\begin{Lemma}
   Es sei U eine Umgebung von $p \in M$. Dann existiert eine Umgebung $V \subset U$ von $p$ und eine glatte reellwertige Funktion $\sigma \in C^{\infty}(M)$ mit den Eigenschaften $\sigma|_V = 1$ und $\supp(\sigma) \subset U$.
-\end{lemma}
+\end{Lemma}
 
 %%%
 %%% Abbildung 2-3
@@ -146,13 +146,13 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
 \end{proof}
 
 % Lemma 2.
-\begin{lemma}
+\begin{Lemma}
 Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
 \begin{enumerate}[label=(\roman*),widest=ii]
 \item $X_p(f) = 0$ falls $f$ in einer Umgebung von $p$ konstant ist.
 \item $X_p(f) = X_p(g)$ falls $f$ und $g$ auf einer Umgebung übereinstimmen.
 \end{enumerate}
-\end{lemma}
+\end{Lemma}
 
 \begin{proof}\begin{enumerate}[label=(\roman*),widest=ii,leftmargin=*]
 \item[(ii)]
@@ -169,7 +169,7 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
 	also $X_p(1) = 0$.
 \end{enumerate}\end{proof}
 
-\begin{bem}
+\begin{Bem}
   Also gilt für $f \in C^{\infty}(M)$ und $g \in C^{\infty}(U)$ direkt:
   \begin{align*}
     & \sigma g =
@@ -184,21 +184,21 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
   \begin{align*}
     \pdifffrac[p]{}{x^i} \in \T_p^{\text{alg}}M, \pdifffrac[p]{}{x^i}(f) = \partial_i(f \circ \varphi^{-1})(\varphi(p)) = \D(f \circ \varphi^{-1})|_{\varphi(p)}e_i.
   \end{align*}
-\end{bem}
+\end{Bem}
 
 % Satz 2.7
-\begin{satz}
+\begin{Satz}
   Die Vektoren $\pdifffrac[p]{}{x^1},\ldots,\pdifffrac[p]{}{x^n}$ bilden eine Basis von $T_p^{\text{alg}}M$.
-\end{satz}
+\end{Satz}
 
 % Lemma 2.8
-\begin{lemma}
+\begin{Lemma}
   Es sei $x_0 \in \R^n$ und $g \in C^{\infty}(B_{\rho}(x_0))$.
   Dann existieren glatte Funktionen $h_i \in C^{\infty}(B_{\rho}(x_0))$ mit $h_i(x_0) = \partial_ig(x_0)$ und 
   \begin{align*}
     g(x) = g(x_0) + \sum_{i=1}^n(x^i-x_0^i)h_i(x).
   \end{align*}
-\end{lemma}
+\end{Lemma}
 
 \begin{proof}
   (Beweis des Satzes).\\
@@ -221,9 +221,9 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
   \end{align*}
 \end{proof}
 
-\begin{bem}
+\begin{Bem}
   Ist $X_p=\sum \xi^i\pdifffrac[p]{}{x^i}$, so gilt $\xi^i = X_p(\varphi^i)$.
-\end{bem}
+\end{Bem}
 
 \begin{proof}
   (Beweis des Lemmas). Es gilt:
@@ -233,13 +233,13 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
 \end{proof}
 
 % Satz 2.9
-\begin{satz}[Äquivalenz der Tangentialraumbegriffe]
+\begin{Satz}[Äquivalenz der Tangentialraumbegriffe]
   Die Abbildung
   \begin{align*}
     J_p \colon \T_p^{\text{geo}}M \to \T_p^{\text{alg}}M, \ J_{p}[c](f) = \difffrac[t=0]{}{t}(f\circ c)
   \end{align*}
   ist ein linearer Isomorphismus \quot{$c(0)(f)$}.
-\end{satz}
+\end{Satz}
 
 \begin{proof}
   Wegen
@@ -252,16 +252,16 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
   Ist $[c] \in \Kern J_p$, so folgt aus $0 = J_p[c](\varphi^i) = \difffrac[t=0]{}{t}(\varphi^i \circ c)$, dass $\difffrac[t=0]{}{t}(\varphi \circ c) = 0$ gilt, also $[c] = 0$. Damit ist $J_p$ injektiv, also ein Isomorphismus.
 \end{proof}
 
-\begin{bem}
+\begin{Bem}
   \begin{enumerate}[label=\arabic*)]
   \item Ist $X_p = \sum \xi^i\pdifffrac[p]{}{x^i}$, so gilt $X_p = \dot c(0)$ für $c(t) = \varphi^{-1}(\varphi(p) + t\xi)$.
 \item Für jede glatte Kurve $c$ durch $p$ ist $\difffrac[t=0]{}{t}(\varphi \circ c)$ der Koeffizientenvektor von $\dot c(0)$ in der Basis $\pdifffrac[p]{}{x^i}$.
   \end{enumerate}
-\end{bem}
+\end{Bem}
 
 
 % Satz 2.10
-\begin{satz}[Transformationsverhalten bei Kartenwechsel]
+\begin{Satz}[Transformationsverhalten bei Kartenwechsel]
   Es seien $\varphi$ und $\psi$ Karten in $M$ um $p$ und es bezeichnen $\pdifffrac[p]{}{x^i}$ und $\pdifffrac[p]{}{y^i}$ die damit assoziierten Basen von $\T_pM$. Dann gilt
   \begin{align*}
     \pdifffrac[p]{}{x^i} = \sum_j \partial_i(\psi^j \circ \varphi^{-1})(\varphi(p)) \pdifffrac[p]{}{y^j}.
@@ -271,7 +271,7 @@ Es sei $X_p = \sum \xi^i \pdifffrac[p]{}{x^i} = \sum \eta^i\pdifffrac[p]{}{y^i}$
   \eta^j = \sum \partial_i(\psi^j \circ \varphi^{-1})(\varphi(p))\xi^i \text{ bzw. }
   \eta = \D(\psi \circ \varphi^{-1})(\varphi(p))\xi.
 \end{align*}
-\end{satz}
+\end{Satz}
 
 \begin{proof}
   Es gelte $\pdifffrac[p]{}{x^i} = \sum \alpha_i^j\pdifffrac[p]{}{y^j}$ und nach obiger Bemerkung zum vorletzten Satz gilt:
