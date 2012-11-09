@@ -21,7 +21,7 @@
 \chapter{Differenzierbare Mannigfaltigkeiten}
 
 \begin{dfn}
-  Eine $n$-dimensionale \CmMark{topologische Mannigfaltigkeit} $M$ ist ein topologischer Hausdorff-Raum mit einer abzählbaren Basis der Topologie in dem zu jedem Punkt $p \in M$ eine offene Menge $U$ mit $p \in U$ existiert und ein Hom"oomorphismus $\phi \colon U \to V$ auf eine offene Menge $V \subset \R^{n}$.
+  Eine $n$-dimensionale \CmMark{topologische Mannigfaltigkeit} $M$ ist ein topologischer \gls{Hausdorff-Raum} mit einer abzählbaren Basis der Topologie in dem zu jedem Punkt $p \in M$ eine offene Menge $U$ mit $p \in U$ existiert und ein Hom"oomorphismus $\phi \colon U \to V$ auf eine offene Menge $V \subset \R^{n}$.
 
 % Abbildung 1-1
 %\CmPutSvg{1-1-topologische-mf}{8.5cm}
@@ -104,9 +104,9 @@
   Eine \CmMark{differenzierbare Mannigfaltigkeit} der Klasse $C^k$ ist eine topologische Mannigfaltigkeit zusammen mit einer $C^{k}$-differenzierbaren Struktur.\\
 \end{Dfn}
 
-\begin{Bsp}
+\begin{bsp}
   Einige Beispiele f"ur glatte Mannigfaltigkeiten:
-  \begin{enumerate}%[leftmargin=*,label=\arabic*)]
+  \begin{enumerate}[leftmargin=*,label=\arabic*)]
   \item $M = \R^n, \mathcal A = \{(\Id_{\R^n},\R^n)\}$
   \item $M \subset \R^n$ offen, $\mathcal A = \{(\imath_{M},M)\}$
   \item $S^1 \subset \R^2$ ist eine eindimensionale $C^{\infty}$-Mannigfaltigkeit:
@@ -174,7 +174,7 @@
     Aufgabe: Zeige, dass $(\varphi, U), (\psi, U')$ einen $C^{\infty}$-Atlas auf $S^n$ definiert.
 
   \end{enumerate}
-\end{Bsp}
+\end{bsp}
 
 \begin{Dfn}[Differenzierbare Abbildungen]
 Eine stetige Abbildung $f \colon M \to N$ zwischen glatten Mannigfaltigkeiten $M$ und $N$ hei\ss t \CmMark{glatt} ($C^{\infty}$-differenzierbar), wenn es zu jedem $p \in M$ Karten $(\varphi, U)$ in $M$ um $p$ und geeignete $(\varphi', U')$ in $N$ um $f(p)$ gibt, so dass $\varphi' \circ f\circ\varphi^{-1}$ glatt ist.
@@ -287,7 +287,7 @@ Es folgen einige Beispiele für Produkt-Mannigfaltigkeiten:
 
 \section{Untermannigfaltigkeiten}
 
-\begin{Dfn}[Untermannigfaltigkeit]
+\begin{Dfn}[Untermannigfaltigkeit]\label{def-1-3}
   Es sei $N$ eine glatte Mannigfaltigkeit. Eine Teilmenge $M \subseteq N$ heißt \CmMark{Untermannigfaltigkeit} von $N$, wenn für alle $p \in M$ eine Karte $(\varphi, U)$ von $N$ um $p$ existiert, so dass
   \begin{align*}
     \varphi(U \cap M) = \varphi(U) \cap \underbrace{(\R^m \times \{0\})}_{\mathclap{\{(x^1,\ldots,x^m,0,\ldots,0) \in \R^m\times\R^{n-m} \cong \R^{n} \}}}
@@ -322,7 +322,7 @@ gilt. Eine solche Karte heißt an $\textcolor{red}{M}$ \CmMark{adaptierte Karte}
   \item $\varphi \colon U \to \varphi(U)$ ist ein Diffeomorphismus auf sein offenes Bild im $\R^{n}$.
   \item $\varphi(U \cap M) = \varphi(U) \cap (\R^{m} \times \{0\})$.
   \end{enumerate}
-Jedes solche $M$ ist eine Untermannigfaltigkeit im Sinne von \textcolor{red}{Definition 1.3}, denn jedes $\varphi$ wie oben ist wegen (i) eine Karte von $\R^n$ (im Sinne glatter Mannigfaltigkeiten) und wegen (ii) eine an $M$ adaptierte Karte. Also sind mit \textcolor{red}{Lemma 1.4} glatte Untermannigfaltigkeiten des $\R^n$ glatte Mannigfaltigkeiten (im allgemeineren Sinne).
+Jedes solche $M$ ist eine Untermannigfaltigkeit im Sinne von Definition \ref{def-1-3}, denn jedes $\varphi$ wie oben ist wegen (i) eine Karte von $\R^n$ (im Sinne glatter Mannigfaltigkeiten) und wegen (ii) eine an $M$ adaptierte Karte. Also sind mit \textcolor{red}{Lemma 1.4} glatte Untermannigfaltigkeiten des $\R^n$ glatte Mannigfaltigkeiten (im allgemeineren Sinne).
 \end{Bem}
 
 \textcolor{red}{Bitte die nummerierung dieses Kapitels nocheinmal "uberpr"ufen}

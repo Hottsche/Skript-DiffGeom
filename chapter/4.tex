@@ -179,12 +179,12 @@ mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ 
 \end{bem}
 
 % Satz 4.6
-\begin{Satz}[Lokale Existenz und Eindeutigkeit]
+\begin{Satz}[Lokale Existenz und Eindeutigkeit]\label{satz-4-6}
   Es sei $U \subseteq \R^n$ offen und $\calI_{\varepsilon}=(-\varepsilon,\varepsilon)$ und $F \colon \calI_{\varepsilon} \times \R^n \to \R^n$ $C^k$-differenzierbar.
   Dann existiert für alle $x \in U$ eine Umgebung $V$ von $x$ in $U$ und ein $\delta > 0$, so dass
   \begin{enumerate}[label=(\roman*),leftmargin=*,widest=iii]
   \item Für alle $x \in V$ existiert eine $C^{k+1}$-Lösung $y_x\colon \calI_{\delta} \to V$, von $y_x'(t)=F(t,y(t))$ und $y_x(0) = x$.
-  \item Diese Lösung ist lokal eindeutig, das hei\ss t falls $\tilde y_x$ eine weitere Lösung auf $\calI_{\tilde\delta}$ ist, so gilt
+  \item\label{satz-4-6-ii} Diese Lösung ist lokal eindeutig, das hei\ss t falls $\tilde y_x$ eine weitere Lösung auf $\calI_{\tilde\delta}$ ist, so gilt
     \begin{align*}
       y_x(t) = \tilde y_x(t) \text{ für alle } |t| \leq \min\{\delta, \tilde\delta\}.
     \end{align*}
@@ -212,8 +212,7 @@ mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ 
 % Korollar 4.8
 \begin{Kor}\label{korollar-4-8}
   Sind $\gamma_1 \colon \calJ_1 \to M, \ \gamma_2 \colon \calJ_2 \to M$ Integralkurven eines Vektorfeldes $X \in \mathcal V(M)$ durch $p$, dann gilt $0 \in \calJ_1 \cap \calJ_2$ und $\gamma_1(0)= p = \gamma_2(0)$.
-  Nach \textcolor{red}{Satz 4.6 (ii)} % TODO: Referenz setzen
-  gilt dann $\gamma_1(t) = \gamma_2(t)$ für alle $t \in \calJ_1 \cap \calJ_2$. Damit ist
+  Nach Satz \ref{satz-4-6} \ref{satz-4-6-ii} gilt dann $\gamma_1(t) = \gamma_2(t)$ für alle $t \in \calJ_1 \cap \calJ_2$. Damit ist
   \begin{align*}
     \gamma \colon \calJ_1 \cap \calJ_2, \ t \mapsto 
     \begin{cases}

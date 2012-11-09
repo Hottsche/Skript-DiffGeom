@@ -33,21 +33,31 @@ Fasern : $\T_pM = \pi^{-1}(p)$ $m$-dimensionaler Vektorraum und $X_p = \sum \xi^
 
 Ein \CmMark{Vektorbündelmorphismus} zwischen zwei Vektorbündeln $E \xrightarrow{\pi} M$ und $E' \xrightarrow{\pi'} N$ ist eine glatte Abbildung $F \colon E \to E'$, so dass eine glatte Abbildung $f$ existiert für die das folgende Diagram kommutiert
 
-%%%
-%%% TODO: Abbildung 5-1
-\textcolor{red}{Abbildung 5-1: kommutierendes Diagram eines Vektorbündelmorphismus}
-%%%
+\begin{center}\begin{tikzpicture}
+	%\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+	\node (E) at (-1.5,0.75) {$E$}; \node (E') at (1.5,0.75) {$E'$}; \node (M) at (-1.5,-0.75) {$M$}; \node (N) at (1.5,-0.75) {$N$};
+	
+	\draw[->] (E) --node[above,font=\scriptsize]{$F$} (E'); \draw[->] (M) --node[above,font=\scriptsize]{$f$} (N);
+	\draw[->] (E) --node[left,font=\scriptsize]{$\pi$} (M); \draw[->] (E') --node[right,font=\scriptsize]{$\pi'$} (N);
+	
+	\node at (0,0) {$\#$};
+\end{tikzpicture}\end{center}
 
 und ferner für $p \in M$ die Abbildung $E_p \xrightarrow{F} E'_{f(p)}$ linear ist.
 
 Gilt $M = N$ so ist ein $M$-Vektorbündelmorphismus $F$ von $E$ nach $E'$ eine glatte Abbbildung $F \colon E \to E'$, so dass das folgende Diagram kommutiert und $F$ faserweise linear ist.
 
-%%%
-%%% TODO: Abbildung 5-2
-\textcolor{red}{Abbildung 5-2: kommutierendes Diagram eines $M$-Vektorbündelmorphismus}
-%%%
+\begin{center}\begin{tikzpicture}
+	%\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+	\node (E) at (-1.5,0.75) {$E$}; \node (E') at (1.5,0.75) {$E'$}; \node (M) at (0,-0.75) {$M$};
+	
+	\draw[->] (E) --node[above,font=\scriptsize]{$F$} (E');
+	\draw[->] (E) --node[left,font=\scriptsize]{$\pi$} (M); \draw[->] (E') --node[right,font=\scriptsize]{$\pi'$} (M);
+	
+	\node at (0,0) {$\#$};
+\end{tikzpicture}\end{center}
 
-Die Vektorbündel $E,E'$ über $M$ heißen \CmMark{isomorph}, wenn ein $M$-Vektorbündelmorphismus
+Die Vektorbündel $E,E'$ über $M$ heißen \CmMark{isomorph}, wenn ein $M$-Vektor"-bündel"-morphismus
 $G$ existiert mit $G F = \Id_E$ und $FG = \Id_{E'}$.
 Dies ist genau dann der Fall, wenn $F$ faserweise ein Inverses besitzt.
 (Der Beweis dieser Aussage sei als Übungsaufgabe überlassen.)
@@ -129,9 +139,13 @@ Sind $E \xrightarrow{\pi} M, E' \xrightarrow{\pi'} N$ Vektorbündel, dann ist $E
 Insbesondere ist im Falle $M = N$ $E \times E'$ ein Bündel über $M \X M$.
 Es sei $\Delta \colon M \to M \times M$, $p \mapsto (p,p)$.
 
-%%%
-%%% TODO
-\textcolor{red}{Abbildung 5-3: Diagram}
+\begin{center}\begin{tikzpicture}
+	%\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+	\node (1) at (-2,0.75) {$E \oplus E' = \Delta^*(E \X E')$}; \node (2) at (2,0.75) {$E \X E'$}; \node (3) at (-2,-0.75) {$M$}; \node (4) at (2,-0.75) {$M \X M$};
+	
+	\draw[->] (1) -- (2); \draw[->] (3) --node[above,font=\scriptsize]{$\Delta$} (4);
+	\draw[->] (1) -- (3); \draw[->] (2) -- (4);
+\end{tikzpicture}\end{center}
 
 Das längs $\Delta$ zurückgezogene Bündel $E \oplus E' = \Delta^{\ast}(E \times E')$ heißt die \CmMark{Whitneysumme} von $E$ und $E'$.
 Faserweise gilt
