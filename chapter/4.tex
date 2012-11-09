@@ -475,6 +475,45 @@ Es folgt:
 \end{proof}
 
 
+%%%
+%%% 8. Vorlesung <2012-11-9 Fri>
+%%% 
+
+% Satz 4.16
+\begin{Satz}
+  Die Lieklammer $[X,Y]$ zweier Vektorfelder $X,Y \in \mathcal V(M)$ verschwindet genau dann, wenn ihre Flüsse (lokal) kommutieren, i.e.
+  \begin{align*}
+    \gamma_X^s \circ \gamma_Y^t = \gamma_Y^t \circ \gamma_X^s.
+  \end{align*}
+\end{Satz}
+
+Der Beweis sei als Übungsaufgabe überlassen.
+
+Es seien $X,Y \in \mathcal V(M)$ und $\Phi \colon M \to N$.
+Bezeichnet $\gamma$ den Fluss von $X$, so gilt
+\begin{align*}
+  [\Phi_{\ast}X,\Phi_{\ast}Y] & = \mathcal L_{\Phi_{\ast}X} \Phi_{\ast}Y\\
+  & = \difffrac[t=0]{}{t}\left(\Phi_{\ast} \circ \gamma_{\ast}^{-t} \circ \Phi_{\ast}^{-1}(\Phi_{\ast}Y)\right)\\
+  & = \difffrac[t=0]{}{t} \left(\Phi_{\ast} \circ \gamma_{\ast}^{-t}Y\right) 
+  = \Phi_{\ast}\left(\difffrac[t=0]{}{t}\gamma_{\ast}^{-t}Y\right)\\
+  & = \Phi_{\ast}(\mathcal L_XY) = \Phi_{\ast}[X,Y].
+\end{align*}
+Man erhält einen alternativen Beweis der Jacobiidentität.
+
+\begin{proof}
+  Es seien $X,Y, Z \in \mahtcal V(M)$ und $\gamma$ der Fluss von $X$.
+  Dann gilt:
+  \begin{align*}
+    [X,[Y,Z]] & = \mathcal L_X[Y,Z] 
+    = \difffrac[t=0]{}{t}\left(\gamma_{\ast}^{-1}[Y,Z]\right)\\
+    & = \difffrac[t=0]{}{t}[\gamma_{\ast}^{-t}Y,\gamma_{\ast}^{-t}Z]\\
+    & = [\difffrac[t=0]{}{t} \gamma_{\ast}^{-t}Y,Z] + [Y, \difffrac[t=0]{}{t}\gamma_{\ast}^{-t}Z]\\
+    & = [\mathcal L_XY,Z] + [Y,\mathcal L_XZ]\\
+    & = [[X,Y],Z] + [Y,[X,Z]]\\
+    & = -[Z,[X,Y]] - [Y,[Z,X]].
+  \end{align*}
+\end{proof}
+
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "../skript-diffgeom"
