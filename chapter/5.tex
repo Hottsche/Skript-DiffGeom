@@ -1,17 +1,15 @@
 \chapter{Vektorbündel}
 
 Betrachte $\T M$ als glatte Mannigfaltigkeit durch
-\begin{align*}
-  & \T M|_U = \pi(U) \to \varphi(U) \times \R^m \cong U \times \R^m\\
-  & X_p = \sum \xi^i\pdifffrac[p]{}{x^i} \mapsto (\varphi(p),\xi).
-\end{align*}
-Fasern : $\T_pM = \pi^{-1}(p)$ $m$-dimensionaler Vektorraum und $X_p = \sum \xi^i \pdifffrac[p]{}{x^i} \mapsto \xi$ ist Isomorphismus.
+	\[ \T M|_U = \pi^{-1}(U) \to \varphi(U) \times \R^m \cong U \times \R^m \]
+	\[ X_p = \sum \xi^i\pdifffrac[p]{}{x^i} \mapsto \left(\varphi(p),\xi\right). \]
+Fasern : $\T_pM = \pi^{-1}(p)$ $m$-dimensionaler Vektorraum und $X_p = \sum \xi^i \pdifffrac[p]{}{x^i} \mapsto \xi$ ist ein linearer Isomorphismus.
 
 % Definition 5.1
 \begin{Dfn}
   Ein \CmMark{glattes reelles Vektorbündel} vom Rang $k$ über einer glatten Mannigfaltigkeit $M$ ist eine glatte Mannigfaltigkeit $E$, der sogenannte \CmMark{Totalraum} des Bündels, zusammen mit einer glatten Abbildung $\pi \colon E \to M$, der Projektion, sodass für jedes $p \in M$ gilt:
   \begin{enumerate}[label=(\roman*)]
-  \item Die Faster $E_p = \pi^{-1}(p)$ trägt die Struktur eines $k$-dimensionalen reellen Vektorraums.
+  \item Die Faster $E_p = \pi^{-1}(p)$ trägt die Struktur eines $k$-dimensionalen reellen Vektorraumes.
   \item Es existiert eine Umgebung $U$ von $p$ in $M$ und ein Diffeomorphismus
     \begin{align*}
       \tau \colon E|_U = \pi^{-1}(U) \to U \times \R^k,
@@ -21,7 +19,7 @@ Fasern : $\T_pM = \pi^{-1}(p)$ $m$-dimensionaler Vektorraum und $X_p = \sum \xi^
       \tau_p \colon E_p \to \R^k \quad ( \cong \{p\} \times \R^k)
     \end{align*}
     ein linearer Isomorphismus ist.
-    Ein solches $z$ heißt Bündelkarte.
+    Ein solches $\tau$ heißt \CmMark{B"undelkarte}.
   \end{enumerate}
 \end{Dfn}
 
@@ -40,11 +38,7 @@ Ein \CmMark{Vektorbündelmorphismus} zwischen zwei Vektorbündeln $E \xrightarro
 \textcolor{red}{Abbildung 5-1: kommutierendes Diagram eines Vektorbündelmorphismus}
 %%%
 
-und ferner für $p \in M$ die Abbildung
-\begin{align*}
-  E_p \xrightarrow{F} E'_{f(p)}
-\end{align*}
-linear ist.
+und ferner für $p \in M$ die Abbildung $E_p \xrightarrow{F} E'_{f(p)}$ linear ist.
 
 Gilt $M = N$ so ist ein $M$-Vektorbündelmorphismus $F$ von $E$ nach $E'$ eine glatte Abbbildung $F \colon E \to E'$, so dass das folgende Diagram kommutiert und $F$ faserweise linear ist.
 
@@ -58,37 +52,36 @@ $G$ existiert mit $G F = \Id_E$ und $FG = \Id_{E'}$.
 Dies ist genau dann der Fall, wenn $F$ faserweise ein Inverses besitzt.
 (Der Beweis dieser Aussage sei als Übungsaufgabe überlassen.)
 
-Ein Vektorbündel $E \xrightarrow{\pi} M$ heißt \CmMark{trivial}, wenn es einen Vektorbündelisomorphismus von $E$ auf $M \times \R^k$ gibt.
-
-Jedes
+Ein Vektorbündel $E \xrightarrow{\pi} M$ heißt \CmMark{trivial}, wenn es einen Vektorbündelisomorphismus von $E$ auf $M \times \R^k$ gibt. Jedes
 \begin{align*}
   \tau \colon E|_U \to U \times \R^k
 \end{align*}
 ist ein Vektorbündelisomorphismus.
 Die Bündelkarten werden daher auch \CmMark{lokale Trivialisierungen} genannt.
 
-Es sei $(\tau_\alpha,U_{\alpha})_{\alpha \in J}$ eine Familie lokaler Trivialisierungen von $E$ mit $M = \bigcup_{\alpha \in J}U_{\alpha}$.
+Es sei $(\tau_\alpha,U_{\alpha})_{\alpha \in \calI}$ eine Familie lokaler Trivialisierungen von $E$ mit $M = \bigcup_{\alpha \in J}U_{\alpha}$.
 Der Diffeomorphismus
 \begin{align*}
   \tau_{\alpha} \circ \tau_{\beta}^{-1}\colon (U_{\alpha} \cap U_{\beta}) \times \R^k \to (U_{\alpha} \cap U_{\beta}) \times \R^k
 \end{align*}
 definiert die sogenannten \CmMark{Übergangsfunktionen}
 \begin{align*}
-  g_{\alpha\beta} \colon U_{\alpha} \cap U_{\beta} \to \Gl_k(\R)
+  g_{\alpha\beta} \colon U_{\alpha} \cap U_{\beta} \to \gls{GL}_k(\R)
 \end{align*}
 durch 
 \begin{align*}
-  \tau_{\alpha} \circ \tau_{\beta}^{-1} = (p,g_{\alpha\beta}(p) x).
+  \tau_{\alpha} \circ \tau_{\beta}^{-1}(p,x) = (p,g_{\alpha\beta}(p) x).
 \end{align*}
 Die Übergangsfunktionen sind glatt und für alle $p \in U_{\alpha} \cap U_{\beta} \cap U_{\gamma}$ gilt:
 \begin{align*}
-  g_{\alpha\gamma}(p) = g_{\alpha\beta}(p) = g_{\beta\gamma}(p),
+  g_{\alpha\gamma}(p) = g_{\alpha\beta}(p) \cdot g_{\beta\gamma}(p),
 \end{align*}
 denn
 \begin{align*}
-  (p,g_{\alpha\gamma}(p)x) - \tau_{\alpha} \circ \tau_{\gamma}^{-1}(p,x) & = \tau_{\alpha} \circ \tau_{\beta}^{-1} \circ \tau_{\beta} \circ \tau_{\gamma}^{-1}(p,x)\\
-& = (\tau_{\alpha} \circ \tau_{\beta}^{-1})(p,g_{\beta\gamma}(p)x)\\
-& = (p,g_{\alpha\beta}(p)\cdot g_{\beta\gamma}(p)x).
+	(p,g_{\alpha\gamma}(p)x) & = \tau_{\alpha} \circ \tau_{\gamma}^{-1}(p,x)\\
+	& = \tau_{\alpha} \circ \tau_{\beta}^{-1} \circ \tau_{\beta} \circ \tau_{\gamma}^{-1}(p,x)\\
+	& = (\tau_{\alpha} \circ \tau_{\beta}^{-1})(p,g_{\beta\gamma}(p)x)\\
+	& = (p,g_{\alpha\beta}(p)\cdot g_{\beta\gamma}(p)x).
 \end{align*}
 
 \begin{bsp}
@@ -100,19 +93,17 @@ denn
 
 % Satz 5.2
 \begin{Satz}
-  Es sei $M$ eine glatte Mannigfaltigkeit mit einer offenen Überdeckung $\{U_{\alpha}\}_{\alpha \in J}$ und einer glatten Abbildung
+  Es sei $M$ eine glatte Mannigfaltigkeit mit einer offenen Überdeckung $\{U_{\alpha}\}_{\alpha \in \calI}$ und einer glatten Abbildung
   \begin{align*}
     g_{\alpha\beta} \colon U_{\alpha} \cap U_{\beta} \to \Gl_k(\R)
   \end{align*}
-so dass für alle $\alpha,\beta,\gamma \in J$ und $p \in U_{\alpha} \cap U_{\beta} \cap U_{\gamme}$ gilt:
+so dass für alle $\alpha,\beta,\gamma \in \calI$ und $p \in U_{\alpha} \cap U_{\beta} \cap U_{\gamma}$ gilt:
 \begin{align*}
   g_{\alpha\gamma} (p) = g_{\alpha\beta}(p)g_{\beta\gamma}(p).
 \end{align*}
 Dann ist
-\begin{align*}
-  E = \dot\bigcup_{\alpha \in J} U_{\alpha} \times \R^t/_{\sim},
-\end{align*}
-(wobei $(p,x)_{\alpha} \sim (q,y)_{\beta}$ genau dann gilt, wenn $p = q$ und $x = g_{\alpha\beta}(p)y$) ein glattes Vektorbündel.
+	\[ E = \bigcup_{\alpha \in \calI}^{\cdot} \FakRaum{U_{\alpha} \times \R^k}{\sim}, \]
+wobei $(p,x)_{\alpha} \sim (q,y)_{\beta}$ genau dann gilt, wenn $p = q$ und $x = g_{\alpha\beta}(p)y$, ein glattes Vektorbündel.
 \end{Satz}
 
 Der Beweis sei erneut als Aufgabe überlassen.
@@ -135,8 +126,8 @@ Dann definiert
 eine Bündelkarte.
 
 Sind $E \xrightarrow{\pi} M, E' \xrightarrow{\pi'} N$ Vektorbündel, dann ist $E \times E' \xrightarrow{\pi \times \pi'} M \times N$ mit lokalen Trivialisierungen $\tau \times \tau'$ ebenfalls ein Vektorbündel.
-Insbesondere ist im Falle $M = N$ $E \times E'$ ein Bündel über $M$.
-Es sei $\Delta \colon M \to M \times M$, p \mapsto (p,p).
+Insbesondere ist im Falle $M = N$ $E \times E'$ ein Bündel über $M \X M$.
+Es sei $\Delta \colon M \to M \times M$, $p \mapsto (p,p)$.
 
 %%%
 %%% TODO
@@ -148,7 +139,7 @@ Faserweise gilt
   (E \oplus E')_p = E_p \oplus E'_p.
 \end{align*}
  
-Überlege: $\Hom(E,E')$, sowie $E \otimes E', \bigotimes E$ und $\Lambda^pE, \Lambda E$ sind "`vernünftige"' Bündel.
+\emph{Überlege:} $\Hom(E,E')$, sowie $E \otimes E', \bigotimes E$ und $\Lambda^pE, \Lambda E$ sind "`vernünftige"' Bündel.
 
 
 %%% Local Variables: 

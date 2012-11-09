@@ -134,6 +134,7 @@
 \DeclareMathOperator{\dist}{dist} % distance
 \DeclareMathOperator{\ddim}{dim} % dimension
 \DeclareMathOperator{\ggT}{ggT} % goesster gemeinsamer Teiler
+\DeclareMathOperator{\id}{id} % identity
 \DeclareMathOperator{\inh}{inh} % Inhalt
 \DeclareMathOperator{\grad}{grad} % Gradient
 \DeclareMathOperator{\kgV}{kgV} % kleinstes gemeinsames Vielfaches
@@ -157,7 +158,7 @@
 \DeclareMathOperator{\Gr}{Gr}
 \DeclareMathOperator{\Graph}{Graph}
 \DeclareMathOperator{\Hom}{Hom} % homomorphisms
-\DeclareMathOperator{\Id}{Id} % identity
+\DeclareMathOperator{\Id}{id} % identity
 \DeclareMathOperator{\Inn}{Inn} % Untergruppe der inneren Automorphismen
 \DeclareMathOperator{\Kern}{Kern}
 \DeclareMathOperator{\Oo}{O} % Matrizen sie mit ihrer Transponierten multipiziert die Einheitsmatrix ergeben
@@ -175,7 +176,19 @@
     \left|#1\right|
   }
 }
+
+% X als Malzeichen
 \newcommand{\X}{\times}
+
+% ein schoener aussehender Faktorraum anstatt einfach nur A/B
+\newcommand{\FakRaum}[2]{
+	\raisebox{0.7ex}{\ensuremath{#1}}
+	\ensuremath{\mkern-3mu}\big/\ensuremath{\mkern-3mu}
+	\raisebox{-0.6ex}{\ensuremath{#2}}}
+\newcommand{\smallFakRaum}[2]{
+	\scriptsize{\raisebox{0.7ex}{\ensuremath{#1}}
+	\ensuremath{\mkern-3mu}\ / \ensuremath{\mkern-3mu}
+	\raisebox{-0.6ex}{\ensuremath{#2}}}}
 
 %Realteil und Imaginaerteil
 \renewcommand{\Re}{\ensuremath{\operatorname{Re}}} % <-- sollte man da nicht besser \DeclareMathOperator verwenden?
@@ -196,7 +209,7 @@
 \DeclareMathOperator{\Z}{\mathbb{Z}}
 
 % general linear group
-\DeclareMathOperator{\Gl}{Gl}
+\DeclareMathOperator{\Gl}{GL}
 
 %  geschwungene Buchstaben
 \DeclareMathOperator{\calD}{\mathcal{D}}

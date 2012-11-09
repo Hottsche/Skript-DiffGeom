@@ -455,7 +455,7 @@ Dazu sei (um $(0,p)$)
 \end{align*}
 Dann gilt:
 \begin{align*}
-  tg_t(q) = \int_0^1h'(ts,q)(t)ds = \int_0^th' - h(t,q)' - h(0,q) - f(\textcolor{red}{\text{hier fehlt etwas!}}
+  tg_t(q) = \int_0^1h'(ts,q)(t)ds = \int_0^th' = h(t,q) - h(0,q) = f(\gamma^{-t}(q)) - f(q)
 \end{align*}
 also $f \circ \gamma^t = f + tg_t$ und 
 \begin{align*}
@@ -500,19 +500,19 @@ Bezeichnet $\gamma$ den Fluss von $X$, so gilt
 \end{align*}
 Man erhält einen alternativen Beweis der Jacobiidentität.
 
-\begin{proof}
-  Es seien $X,Y, Z \in \mahtcal V(M)$ und $\gamma$ der Fluss von $X$.
+\begin{bew}
+  Es seien $X,Y, Z \in \mathcal V(M)$ und $\gamma$ der Fluss von $X$.
   Dann gilt:
   \begin{align*}
     [X,[Y,Z]] & = \mathcal L_X[Y,Z] 
-    = \difffrac[t=0]{}{t}\left(\gamma_{\ast}^{-1}[Y,Z]\right)\\
-    & = \difffrac[t=0]{}{t}[\gamma_{\ast}^{-t}Y,\gamma_{\ast}^{-t}Z]\\
-    & = [\difffrac[t=0]{}{t} \gamma_{\ast}^{-t}Y,Z] + [Y, \difffrac[t=0]{}{t}\gamma_{\ast}^{-t}Z]\\
+    = \difffrac[t=0]{}{t}\left(\gamma_{\ast}^{-t}[Y,Z]\right)\\
+    & = \difffrac[t=0]{}{t}\left[\gamma_{\ast}^{-t}Y,\gamma_{\ast}^{-t}Z\right]\\
+    & = \left[\difffrac[t=0]{}{t} \gamma_{\ast}^{-t}Y,Z\right] + \left[Y, \difffrac[t=0]{}{t}\gamma_{\ast}^{-t}Z\right]\\
     & = [\mathcal L_XY,Z] + [Y,\mathcal L_XZ]\\
     & = [[X,Y],Z] + [Y,[X,Z]]\\
     & = -[Z,[X,Y]] - [Y,[Z,X]].
   \end{align*}
-\end{proof}
+\end{bew}
 
 %%% Local Variables: 
 %%% mode: latex
