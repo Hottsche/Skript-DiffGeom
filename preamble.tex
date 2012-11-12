@@ -153,8 +153,10 @@
 \DeclareMathOperator{\Bild}{Bild}
 \DeclareMathOperator{\Charakteristik}{char}
 \DeclareMathOperator{\Charakt}{char}
+\DeclareMathOperator{\D}{D} % Jacobi matrix or derivative
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\End}{End} % endomorphisms
+\DeclareMathOperator{\Gl}{GL} % general linear group
 \DeclareMathOperator{\Gr}{Gr}
 \DeclareMathOperator{\Graph}{Graph}
 \DeclareMathOperator{\Hom}{Hom} % homomorphisms
@@ -167,6 +169,7 @@
 \DeclareMathOperator{\SL}{SL} % Matrizen mit Deteminante 1
 \DeclareMathOperator{\Stab}{Stab} % Stabilisator
 \DeclareMathOperator{\Sym}{Sym} % symmetric group
+\DeclareMathOperator{\T}{T} % tangent bundle
 
 \newcommand{\Zentrum}[1]{\ensuremath{\mathrm Z(#1)}} % Zentrum einer Gruppe
 \newcommand{\Ordnung}[1][]{ % Ordnung einer Gruppe
@@ -208,9 +211,6 @@
 \DeclareMathOperator{\Tor}{\mathbb{T}} % torus
 \DeclareMathOperator{\Z}{\mathbb{Z}}
 
-% general linear group
-\DeclareMathOperator{\Gl}{GL}
-
 %  geschwungene Buchstaben
 \DeclareMathOperator{\calD}{\mathcal{D}}
 \DeclareMathOperator{\calI}{\mathcal{I}}
@@ -221,15 +221,9 @@
 \let\BreakLineP\P
 \renewcommand{\P}{\ensuremath{\mathbb{P}}}
 
-% canonic differentiation, 
-\DeclareMathOperator{\T}{T} % tangent bundle
-\DeclareMathOperator{\D}{D} % Jacobi matrix or derivative
-
 % Differentialoperatoren als Brüche
 \newcommand{\dop}{\mathrm{d}}	
-%\newcommand{\difffrac}[3][]{\ifthenelse{\isempty{#1}}{\dfrac{\dop #2}{\dop #3}}{\left. \dfrac{\dop #2}{\dop #3} \right|_{#1}}}
 \newcommand{\difffrac}[3][]{\ifthenelse{\isempty{#1}}{\frac{\dop #2}{\dop #3}}{\left. \frac{\dop #2}{\dop #3} \right|_{#1}}}
-%\newcommand{\pdifffrac}[3][]{\ifthenelse{\isempty{#1}}{\dfrac{\partial #2}{\partial #3}}{\left. \dfrac{\partial #2}{\partial #3} \right|_{#1}}}
 \newcommand{\pdifffrac}[3][]{\ifthenelse{\isempty{#1}}{\frac{\partial #2}{\partial #3}}{\left. \frac{\partial #2}{\partial #3} \right|_{#1}}}
 
 % stellt einen großen vertikalen Strich an einen Term, nuetzlich in Bruechen

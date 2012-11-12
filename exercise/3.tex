@@ -1,0 +1,37 @@
+\section{12. November 2012}
+\setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
+\setcounter{Loes}{0}
+
+\begin{Loes}
+Sei $M$ eine glatte Mannigfaltigkeit. Sei desweiteren f"ur alle drei Teilaufgaben $p \in M$, $\varphi$ eine Karte um $p$ mit Kartengebiet $U$ und
+	\[ \overline \varphi: \left\{ \begin{array}{ccc}  \T M|_U &\to& \R^{2n} \\
+		\sum_i \xi^i\pdifffrac[q]{}{x^i} &\mapsto& (\varphi(q), \xi) \end{array} \right.\]
+eine Karte von $\T M$. Alle diese Karten bilden dann einen Atlas von $\T M$.
+\begin{enumerate}[label=\alph*),widest=a,leftmargin=*]
+\item
+	\emph{Zeige:} $\pi: \T M \to M$, $\T_p M \ni x \mapsto p$ ist eine Submersion.
+	
+	Es ist
+	\begin{align*} \varphi \circ \pi \circ \overline \varphi^{-1} \underbrace{(y, \xi)}_{\mathclap{\in \varphi(U) \X \R^n}} &= \varphi\left(\pi\left(\sum_i \xi^i \pdifffrac[\varphi^{-1}(y)]{}{x^i}\right)\right)\\
+		&= \varphi(\varphi^{-1}(y)) = y
+	\end{align*}
+	also ist $\pi$ glatt. Desweiteren ist
+		\[ \D(\varphi \circ \pi \circ \overline \varphi^{-1})|_{(y, \xi)} = \left(\begin{smallmatrix}
+        1 &  & \\
+        & \ddots & & \\
+         & & 1
+      \end{smallmatrix} 0\right) \]
+     surjektiv und damit auch $\pi_{*\overline\varphi^{-1}(y, \xi)}$. Offensichtlich ist $\pi$ surjektiv und damit eine Submersion.
+\item
+	\emph{Zeige:} $\sigma: M \to \T M$, $p \mapsto 0_{\T_pM}$ ist eine Einbettung.
+\item
+	\emph{Zeige:} Ist $\Phi: M \to N$ eine glatte Abbildung, so auch $\Phi_*: \T M \to \T N$.
+\end{enumerate}\end{Loes}
+
+\begin{Loes}
+asdf
+\end{Loes}
+
+\begin{Loes}
+asdf
+\end{Loes}
