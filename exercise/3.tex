@@ -24,13 +24,53 @@ eine Karte von $\T M$. Alle diese Karten bilden dann einen Atlas von $\T M$.
      surjektiv und damit auch $\pi_{*\overline\varphi^{-1}(y, \xi)}$. Offensichtlich ist $\pi$ surjektiv und damit eine Submersion.
 \item
 	\emph{Zeige:} $\sigma: M \to \T M$, $p \mapsto 0_{\T_pM}$ ist eine Einbettung.
+	
+	Es gilt
+		\[\overline \varphi \circ \sigma \circ \varphi^{-1} (y) = \overline \varphi(0_{\T_{\varphi^{-1}(y)}M}) = (\varphi(\varphi^{-1}(y)),0) = (y,0) \]
+	Daraus folgt folgt dass $D(\overline \varphi \circ \sigma \circ \varphi^{-1})|_y = \left( \begin{smallmatrix} 1 & &  \\ & \ddots & \\ & & 1 \\ & 0 & \end{smallmatrix} \right)$ injektiv ist und damit auch $\sigma_{* \varphi^{-1}(y)}$. $\sigma$ ist injektiv und stetig, $\pi \circ \sigma = \Id_m$, also ist $\sigma^{-1} = \pi|_{\Bild(\sigma)}$ stetig.
 \item
 	\emph{Zeige:} Ist $\Phi: M \to N$ eine glatte Abbildung, so auch $\Phi_*: \T M \to \T N$.
+	
+	Sei $\psi$ eine Karte um $\Phi(p)$ und $\overline \psi$ die zugeh"orige Karte von $\T N$.
+	\begin{align*}
+		(\overline \psi \circ \Phi_* \circ \overline \varphi^{-1})\underbrace{(y, \xi)}_{\mathclap{\in \varphi(U) \X \R^n}} &= (\overline \psi \circ \Phi_*)\left(\sum \xi^{i} \pdifffrac[\varphi^{-1}(y)]{}{x^{i}}\right)\\
+		&= \overline \psi\left(\sum_i\left(\sum_j \pdifffrac[\varphi^{-1}(y)]{\Phi^{i}}{x^j} \xi^j\right) \pdifffrac[\Phi(\varphi^{-1}(y))]{}{\psi^{i}}\right)\\
+		&= \left( \underbrace{(\psi \circ \Phi \circ \varphi^{-1})}_{\text{glatt}}(y), \underbrace{\left( \sum_j \underbrace{\pdifffrac[_\varphi^{-1}(y)]{\Phi^{i}}{x^j}}_{\text{glatt in }y} \overbrace{\xi^j}^{\substack{\text{glatt}\\ \text{in }\xi}} \right)_{i = 1,\ldots ,n}}_{\text{glatt}} \right)
+	\end{align*}
+	Daraus folgt dass $\Phi_*$ glatt ist.
 \end{enumerate}\end{Loes}
 
-\begin{Loes}
-asdf
-\end{Loes}
+\begin{Loes}\begin{enumerate}[label=\alph*),leftmargin=*,widest=a]
+\item
+	\emph{Zu zeigen:} $[\cdot,\cdot]$ ist im Allgemeinen nicht $C^{\infty}(M)$-bilinear.
+	
+	$M = \R$, $\pdifffrac{}{x} = X = Y$, $f = \Id \quot{= x}$
+		\[\begin{array}{rcl} [X,\underbrace{fY}_{=x \pdifffrac{}{x}}] &\overset{\text{c)}}{=}& \left( 1 \underbrace{\pdifffrac{x}{x}}_{=1} - x \underbrace{\pdifffrac{1}{x}}_{=0} \right) \pdifffrac{}{x} = \pdifffrac{}{x} \\
+			f[X,Y] &\overset{\text{c)}}{=}& f \left( 1 \underbrace{\pdifffrac{1}{x}}_{=0} - 1 \underbrace{\pdifffrac{1}{x}}_{=0} \right) \pdifffrac{}{x} = 0 \end{array}\]
+\item
+	\emph{Zu zeigen:} f"ur $X, Y \in \calV(M)$ ist $XY$ mit $(XY)|_p(f) = X_p(Y(f))$ im Allgemeinen keine Derivation.
+	\begin{align*}
+		(XY)_p(fg) &= X_p(Y(fg))\\
+		&= X_p(q \mapsto Y_q(fg))\\
+		&= X_p(q \mapsto f(q) Y_q(g) + g(q) Y_q(f))\\
+		&= X_p(fY(g) + gY(f))\\
+		&= X_p(fY(g)) + X_p(gY(f))\\
+		&= f(p) \cdot X_p(Y(g)) + Y_p(g) \cdot X_p(f) + g(p) \cdot X_p(Y(f)) + Y_p(f)X_p(g)\\
+		&= f(p) \cdot (XY)|_p(g) + g(p)(XY)|_p(f) + \underbrace{Y_p(g)X_p(f) + Y_p(f)X_p(g)}_{\ne 0}
+	\end{align*}
+	$M = \R$, $X = Y = \pdifffrac{}{x}$, $f = g = \Id$ $\Rightarrow $ Leibnitz-Regel gilt nicht.
+\item
+	\emph{Bemerkung:} Ist $X|_U = \sum_{i=1}^{n}\xi^{i}\pdifffrac{}{x^{i}}$ lokale Darstellung bez"uglich $\varphi$ von $X \in \calV(M)$, so ist
+		\[ \xi^{i} = X(\varphi^{i}) \]
+	Seien $X|_U = \sum_i \xi^i \pdifffrac{}{x^{i}}$, $Y|_U = \sum_i \eta^{i} \pdifffrac{}{x^{i}}$. Damit gilt dann
+	\begin{align*}
+		[X,Y](x^j) &= (XY - YX)(x^j)\\
+		&= X(Y(x^j)) - Y(X(x^j))\\
+		&= X\left(\sum_i \eta^{i}\underbrace{\pdifffrac{}{x^{i}}(x^j)}_{\delta_{ij}}\right) - Y\left(\sum_i \xi^{i}\underbrace{\pdifffrac{}{x^{i}}(x^j)}_{\delta_{ij}}\right)\\
+		&= X(\eta^j) - Y(\xi^j)\\
+		&= \sum_i \left( \xi^{i} \pdifffrac{}{x^{i}}(\eta^j) - \eta^{i} \pdifffrac{}{x^{i}}(\xi^j) \right)
+	\end{align*}
+\end{enumerate}\end{Loes}
 
 \begin{Loes}
 asdf
