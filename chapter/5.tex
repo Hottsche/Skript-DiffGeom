@@ -182,7 +182,12 @@ Es seien $V$ und $W$ $k$-Vektorr"aume. Das \CmMark{Tensorprodukt} $V \otimes W$ 
 
 \begin{emptythm}[Universelle Eigenschaft:]
 Ist $U$ ein Vektorraum und $\beta$ eine bilineare Abbildung von $V \X W$ in $U$. Dann existiert genau eine lineare Abbildung $\varphi: V \otimes W \to U$ mit $\beta = \varphi \circ b$.
-\begin{center}\textcolor{red}{[BILD]}\end{center}
+\begin{center}\begin{tikzpicture}
+	\node (1) at (-2,0) {$V \X W$}; \node (2) at (1,0) {$U$}; \node (3) at (-2,-1.5) {$V \otimes W$};
+	\draw[->] (1) --node[above,font=\scriptsize]{$\beta$} (2);
+	\draw[->] (1) --node[left,font=\scriptsize] {$b$} (3);
+	\draw[->,dashed] (3) --node[below,font=\scriptsize] {$\varphi$} (2);
+\end{tikzpicture}\end{center}
 Diese Eigenschaft bestimmt $(V \otimes W, b)$ eindeutig bis auf Isomorphie.
 \end{emptythm}
 
@@ -192,7 +197,7 @@ Setzt man $\bigotimes^0 V = k$, so wird $\bigotimes V = \bigoplus_{p=0}^{\infty}
 	\[ (v_1 \otimes \ldots \otimes v_{p+1} \otimes \ldots \otimes v_{p+q}) \mapsto v_1 \otimes \ldots \otimes v_{p+q} \in \bigotimes^{p+q} V \]
 induzierten produkt zu einer graduierten Algebra.
 
-Das $p$-fach "au"sere Produkt $\Lambda^pV$ ist der von den Elementen $v_1 \wedge \ldots \wedge v_p$, $v_i \in V$ und den Relationen \begin{enumerate}[label=(\roman*),widest=iii]
+Das $p$-fach \CmMark[Produkt!"au"seres]{"au"sere Produkt} $\Lambda^pV$ ist der von den Elementen $v_1 \wedge \ldots \wedge v_p$, $v_i \in V$ und den Relationen \begin{enumerate}[label=(\roman*),widest=iii]
 \item
 	$v_1 \wedge \ldots \wedge v_i \wedge v_{i+1} \wedge \ldots \wedge v_p = - v_1 \wedge \ldots \wedge v_{i+1} \wedge v_i \wedge \ldots \wedge v_p$ (Schiefsymmetrie)
 \item
@@ -214,7 +219,12 @@ erzeugte Vektorraum.
 
 \begin{emptythm}[Universelle Eigenschaft:]
 Ist $U$ ein Vektorraum un $\sigma$ eine schiefsymmetrische multilineare Abbildung $\underbrace{V \X \ldots  \X V}_{p\text{-mal}} \to U$, so existiert genau eine lineare Abbildung $\varphi: \Lambda^pV \to U$ mit $\sigma = \varphi \circ s$.
-\begin{center}\textcolor{red}{[BILD]}\end{center}
+\begin{center}\begin{tikzpicture}
+	\node (1) at (-2,0) {$\bigotimes^pV$}; \node (2) at (1,0) {$U$}; \node (3) at (-2,-1.5) {$\Lambda^pV$};
+	\draw[->] (1) --node[above,font=\scriptsize]{$\sigma$} (2);
+	\draw[->] (1) --node[left,font=\scriptsize] {$s$} (3);
+	\draw[->,dashed] (3) --node[below,font=\scriptsize] {$\varphi$} (2);
+\end{tikzpicture}\end{center}
 Die Isomorphieklasse von $(\Lambda^pV, s)$ ist durch diese Eigenschaft eindeutig bestimmt.
 \end{emptythm}
 
@@ -248,7 +258,13 @@ hei"st das $(r,s)$-\CmMark{Tensorb"undel} von $E$. Das Homomorphismenb"undel $\H
 	\[ \sigma: \left\{ \begin{array}{ccc} \Hom(E,E')|_U = \bigcup\limits_{p \in U}^{\cdot} \Hom(E_p, E_p') &\to& U \X \Hom(\R^k, \R^l)\\
 		\varphi \in \Hom(E_p, E'_p) &\mapsto& (p, \tau'_p \circ \varphi \circ \tau_p^{-1}) \end{array} \right. \]
 Zur Definition der "Ubergangsfunktionen schreibt man $\Hom(E, E') \cong E^* \otimes E'$ und definiert $h_{\alpha\beta} = (g_{\alpha\beta}^{-1})^* \otimes g'_{\alpha\beta}$.
-\begin{center}\textcolor{red}{[BILD]}\end{center}
+\begin{center}\begin{tikzpicture}
+	\node (1) at (-1.5,1) {$V^*$}; \node (2) at (1.5,1) {$V$}; \node (3) at (-1.5,-1) {$W^*$}; \node (4) at (1.5,-1) {$W$};
+	\draw[->] (2) --node[right,font=\scriptsize] {$g_{\alpha\beta}$} (4);
+	\draw[->,transform canvas={xshift=1mm}] (1) --node[anchor=north west,font=\scriptsize] {$(g^*_{\alpha\beta})^{-1}$} (3);
+	\draw[->,transform canvas={xshift=-1mm}] (3) --node[anchor=south east,font=\scriptsize] {$g_{\alpha\beta}^*$} (1);
+	\draw[->,transform canvas={yshift=1mm},decorate,decoration={snake,segment length=6mm}] (1,0) -- (-1,0);
+\end{tikzpicture}\end{center}
 
 \begin{Dfn}
 Es sei $E \xrightarrow{\pi} M$ ein Vektorb"undel "uber M. Ein \CmMark{Schnitt} in $E$ ist eine glatte Abbildung $S: M \to E$ mit $\pi \circ S = \Id_M$. Der Raum der Schnitte wird mit $\Gamma(E)$ bezeichnet.
