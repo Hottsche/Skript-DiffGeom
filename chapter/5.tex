@@ -74,7 +74,7 @@ Der Diffeomorphismus
 \begin{align*}
   \tau_{\alpha} \circ \tau_{\beta}^{-1}\colon (U_{\alpha} \cap U_{\beta}) \times \R^k \to (U_{\alpha} \cap U_{\beta}) \times \R^k
 \end{align*}
-definiert die sogenannten \CmMark{"ubergangsfunktionen}
+definiert die sogenannten \CmMark{"Ubergangsfunktionen}
 \begin{align*}
   g_{\alpha\beta} \colon U_{\alpha} \cap U_{\beta} \to \gls{GL}_k(\R)
 \end{align*}
@@ -156,7 +156,7 @@ Faserweise gilt
 \emph{"uberlege:} $\Hom(E,E')$, sowie $E \otimes E', \bigotimes E$ und $\Lambda^pE, \Lambda E$ sind "`vern"unftige"' B"undel.
 
 \section{Intermezzo: Multilineare Algebra}
-Es seien $V$ und $W$ $k$-Vektorr"aume. Das Tensorprodukt $V \otimes W$ ist der von den Elementen $v \otimes w$ mit $v \in V$, $w \in W$ und den Relationen \begin{enumerate}[label=(\roman*),widest=iii]
+Es seien $V$ und $W$ $k$-Vektorr"aume. Das \CmMark{Tensorprodukt} $V \otimes W$ ist der von den Elementen $v \otimes w$ mit $v \in V$, $w \in W$ und den Relationen \begin{enumerate}[label=(\roman*),widest=iii]
 \item
 	$(v + v') \otimes w = v \otimes w + v' \otimes w$
 \item
@@ -202,7 +202,7 @@ Das $p$-fach "au"sere Produkt $\Lambda^pV$ ist der von den Elementen $v_1 \wedge
 \end{enumerate}
 erzeugte Vektorraum.
 
-\begin{emptythm}[Eigenschaften]\begin{enumerate}[label=\arabic*),leftmargin=*]
+\begin{emptythm}[Eigenschaften:]\begin{enumerate}[label=\arabic*),leftmargin=*]
 \item
 	Die Abbildung $s: V \X \ldots \X V \to \Lambda^p V$, $(v_1,\ldots ,v_p) \mapsto v_1 \wedge \ldots \wedge v_p$ ist multilinear und schief
 \item
@@ -212,7 +212,7 @@ erzeugte Vektorraum.
 		\[ v_1 \wedge \ldots \wedge v_p = \ddet (\alpha_i^j) \cdot e_1 \wedge \ldots \wedge e_n \]
 \end{enumerate}\end{emptythm}
 
-\begin{emptythm}[Universelle Eigenschaft]
+\begin{emptythm}[Universelle Eigenschaft:]
 Ist $U$ ein Vektorraum un $\sigma$ eine schiefsymmetrische multilineare Abbildung $\underbrace{V \X \ldots  \X V}_{p\text{-mal}} \to U$, so existiert genau eine lineare Abbildung $\varphi: \Lambda^pV \to U$ mit $\sigma = \varphi \circ s$.
 \begin{center}\textcolor{red}{[BILD]}\end{center}
 Die Isomorphieklasse von $(\Lambda^pV, s)$ ist durch diese Eigenschaft eindeutig bestimmt.
@@ -228,8 +228,31 @@ und
 	\[ \varphi_1 \wedge \ldots  \wedge \varphi_p : \Lambda^pV \to \Lambda^pW \]
 
 \section{B"undelkonstruktion}
-Es seien
+Es seien $E$ und $E'$ Vektorb"undel vom Rang $k$ und $l$. Es bezeichnen stets $\tau$ und $\tau'$ lokale Trivialisierungen mit dem gleichen Trivialisierungsgebiet $U$ sowie $g_{\alpha\beta}$ und $g'_{\alpha\beta}$ die "Ubergangsfunktionen von $E$ beziehungsweise $E'$. Das \CmMark{Tensorprodukt} $E \otimes E'$ von $E$ und $E'$ ist das Vektorb"undel mit den Fasern $(E \otimes E')_p = E_p \otimes E'_p$, also $E \otimes E' = \bigcup_{p \in M} E_p \otimes E'_p \to M$ mit lokalen Trivialisierungen
+	\[ \sigma: \left\{\begin{array}{ccc} (E \otimes E')|_U = \bigcup\limits_{p \in M} E_p \otimes E'_p &\to& U \X (\R^k \otimes \R^l) \cong U \X \R^{kl} \\
+		E_p \otimes E'_p \ni w = \sum v_i \otimes u_i &\mapsto& (p, \sum \tau_p(v_i) \otimes \tau'_p(u_i)) \end{array}\right. \]
+das hei"s dass $\sigma = (\pi, \tau_p \otimes \tau'_p)$ ist. Wie in Kapitel 4 zeigt man dass $E \otimes E'$ ein B"undel ist. Alternativ l"asst sich $E \otimes E'$ mit Satz \ref{satz-5-2} durch die "Ubergangsfunktion definieren:
+	\[\begin{array}{ccc} E \otimes E' &=& \FakRaum{\dot \bigcup U_{\alpha} \X (\R^k \otimes \R^l)}{\sim} \\
+		h_{\alpha\beta} &=& g_{\alpha\beta} \otimes g'_{\alpha\beta} \end{array}\]
+Die Relation $\sim$ ist durch $h_{\alpha\beta}$ wie in Satz \ref{satz-5-2} definiert. Analog definiert man h"ohere Tensorprodukte $\bigotimes^pE$, die Tensoralgebra $\bigotimes E$ und "au"sere Produkte $\Lambda^pE$ und $\Lambda E$.
 
+Das duale B"undel $E^*$ hat die Fasern $E_p^* = \Hom(E_p, \R)$ und lokale Trivialisierungen:
+	\[ \begin{array}{rcl} \sigma: E^*|_U &\to& U \X \R^k\\
+	v^* \in E^*_p, \sigma(v^*) &=& (p, v^* \circ \tau_p^{-1}) \\
+	&=& (p, (\tau_p^{-1})^*(v^*)) \end{array}\]
+Die "Ubergangsfunktionen von $E^*$ sind die transponierten Inversen der "Ubergangsfunktionen von $E$:
+	\[ h_{\alpha\beta} = (g_{\alpha\beta}^{-1})^* \]
+Das B"undel
+	\[ \T_s^r E = \underbrace{E \otimes \ldots \otimes E}_{r} \otimes \underbrace{E^* \otimes \ldots \otimes E^*}_{s} \]
+hei"st das $(r,s)$-\CmMark{Tensorb"undel} von $E$. Das Homomorphismenb"undel $\Hom(E,E^*)$ ist definiert durch
+	\[ \sigma: \left\{ \begin{array}{ccc} \Hom(E,E')|_U = \bigcup\limits_{p \in U}^{\cdot} \Hom(E_p, E_p') &\to& U \X \Hom(\R^k, \R^l)\\
+		\varphi \in \Hom(E_p, E'_p) &\mapsto& (p, \tau'_p \circ \varphi \circ \tau_p^{-1}) \end{array} \right. \]
+Zur Definition der "Ubergangsfunktionen schreibt man $\Hom(E, E') \cong E^* \otimes E'$ und definiert $h_{\alpha\beta} = (g_{\alpha\beta}^{-1})^* \otimes g'_{\alpha\beta}$.
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+
+\begin{Dfn}
+Es sei $E \xrightarrow{\pi} M$ ein Vektorb"undel "uber M. Ein \CmMark{Schnitt} in $E$ ist eine glatte Abbildung $S: M \to E$ mit $\pi \circ S = \Id_M$. Der Raum der Schnitte wird mit $\Gamma(E)$ bezeichnet.
+\end{Dfn}
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "../skript-diffgeom"
