@@ -1,4 +1,4 @@
-\chapter{Vektorbündel}
+\chapter{Vektorb"undel}
 
 Betrachte $\T M$ als glatte Mannigfaltigkeit durch
 	\[ \T M|_U = \pi^{-1}(U) \to \varphi(U) \times \R^m \cong U \times \R^m \]
@@ -7,7 +7,7 @@ Fasern : $\T_pM = \pi^{-1}(p)$ $m$-dimensionaler Vektorraum und $X_p = \sum \xi^
 
 % Definition 5.1
 \begin{Dfn}
-  Ein \CmMark{glattes reelles Vektorbündel} vom Rang $k$ über einer glatten Mannigfaltigkeit $M$ ist eine glatte Mannigfaltigkeit $E$, der sogenannte \CmMark{Totalraum} des Bündels, zusammen mit einer glatten Abbildung $\pi \colon E \to M$, der Projektion, sodass für jedes $p \in M$ gilt:
+  Ein \CmMark{glattes reelles Vektorb"undel} vom Rang $k$ "uber einer glatten Mannigfaltigkeit $M$ ist eine glatte Mannigfaltigkeit $E$, der sogenannte \CmMark{Totalraum} des B"undels, zusammen mit einer glatten Abbildung $\pi \colon E \to M$, der Projektion, sodass f"ur jedes $p \in M$ gilt:
   \begin{enumerate}[label=(\roman*)]
   \item Die Faster $E_p = \pi^{-1}(p)$ trägt die Struktur eines $k$-dimensionalen reellen Vektorraumes.
   \item Es existiert eine Umgebung $U$ von $p$ in $M$ und ein Diffeomorphismus
@@ -26,12 +26,12 @@ Fasern : $\T_pM = \pi^{-1}(p)$ $m$-dimensionaler Vektorraum und $X_p = \sum \xi^
 \begin{bsp}
   \begin{enumerate}[label=(\arabic*)]
   \item $E = M \times \R^k$ mit $\pi \colon E \to M, (p,x) \mapsto p$.
-  \item Das Tangentialbündel $\T M$ auf $M$.
-  \item Ist $E \xrightarrow{\pi} M$ ein Vektorbündel über $M$ und $U \subseteq M$ offen (oder eine Untermannigfaltigkeit), so ist $E|_U = \pi^{-1}(U)$ ein Vektorbündel über $U$.
+  \item Das Tangentialb"undel $\T M$ auf $M$.
+  \item Ist $E \xrightarrow{\pi} M$ ein Vektorb"undel "uber $M$ und $U \subseteq M$ offen (oder eine Untermannigfaltigkeit), so ist $E|_U = \pi^{-1}(U)$ ein Vektorb"undel "uber $U$.
   \end{enumerate}
 \end{bsp}
 
-Ein \CmMark{Vektorbündelmorphismus} zwischen zwei Vektorbündeln $E \xrightarrow{\pi} M$ und $E' \xrightarrow{\pi'} N$ ist eine glatte Abbildung $F \colon E \to E'$, so dass eine glatte Abbildung $f$ existiert für die das folgende Diagram kommutiert
+Ein \CmMark{Vektorb"undelmorphismus} zwischen zwei Vektorb"undeln $E \xrightarrow{\pi} M$ und $E' \xrightarrow{\pi'} N$ ist eine glatte Abbildung $F \colon E \to E'$, so dass eine glatte Abbildung $f$ existiert f"ur die das folgende Diagram kommutiert
 
 \begin{center}\begin{tikzpicture}
 	%\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
@@ -43,9 +43,9 @@ Ein \CmMark{Vektorbündelmorphismus} zwischen zwei Vektorbündeln $E \xrightarro
 	\node at (0,0) {$\#$};
 \end{tikzpicture}\end{center}
 
-und ferner für $p \in M$ die Abbildung $E_p \xrightarrow{F} E'_{f(p)}$ linear ist.
+und ferner f"ur $p \in M$ die Abbildung $E_p \xrightarrow{F} E'_{f(p)}$ linear ist.
 
-Gilt $M = N$ so ist ein $M$-Vektorbündelmorphismus $F$ von $E$ nach $E'$ eine glatte Abbbildung $F \colon E \to E'$, so dass das folgende Diagram kommutiert und $F$ faserweise linear ist.
+Gilt $M = N$ so ist ein $M$-Vektorb"undelmorphismus $F$ von $E$ nach $E'$ eine glatte Abbbildung $F \colon E \to E'$, so dass das folgende Diagram kommutiert und $F$ faserweise linear ist.
 
 \begin{center}\begin{tikzpicture}
 	%\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
@@ -57,24 +57,24 @@ Gilt $M = N$ so ist ein $M$-Vektorbündelmorphismus $F$ von $E$ nach $E'$ eine g
 	\node at (0,0) {$\#$};
 \end{tikzpicture}\end{center}
 
-Die Vektorbündel $E,E'$ über $M$ heißen \CmMark{isomorph}, wenn ein $M$-Vektor"-bündel"-morphismus
+Die Vektorb"undel $E,E'$ "uber $M$ heißen \CmMark{isomorph}, wenn ein $M$-Vektor"-b"undel"-morphismus
 $G$ existiert mit $G F = \Id_E$ und $FG = \Id_{E'}$.
 Dies ist genau dann der Fall, wenn $F$ faserweise ein Inverses besitzt.
-(Der Beweis dieser Aussage sei als Übungsaufgabe überlassen.)
+(Der Beweis dieser Aussage sei als "ubungsaufgabe "uberlassen.)
 
-Ein Vektorbündel $E \xrightarrow{\pi} M$ heißt \CmMark{trivial}, wenn es einen Vektorbündelisomorphismus von $E$ auf $M \times \R^k$ gibt. Jedes
+Ein Vektorb"undel $E \xrightarrow{\pi} M$ heißt \CmMark{trivial}, wenn es einen Vektorb"undelisomorphismus von $E$ auf $M \times \R^k$ gibt. Jedes
 \begin{align*}
   \tau \colon E|_U \to U \times \R^k
 \end{align*}
-ist ein Vektorbündelisomorphismus.
-Die Bündelkarten werden daher auch \CmMark{lokale Trivialisierungen} genannt.
+ist ein Vektorb"undelisomorphismus.
+Die B"undelkarten werden daher auch \CmMark{lokale Trivialisierungen} genannt.
 
 Es sei $(\tau_\alpha,U_{\alpha})_{\alpha \in \calI}$ eine Familie lokaler Trivialisierungen von $E$ mit $M = \bigcup_{\alpha \in J}U_{\alpha}$.
 Der Diffeomorphismus
 \begin{align*}
   \tau_{\alpha} \circ \tau_{\beta}^{-1}\colon (U_{\alpha} \cap U_{\beta}) \times \R^k \to (U_{\alpha} \cap U_{\beta}) \times \R^k
 \end{align*}
-definiert die sogenannten \CmMark{Übergangsfunktionen}
+definiert die sogenannten \CmMark{"ubergangsfunktionen}
 \begin{align*}
   g_{\alpha\beta} \colon U_{\alpha} \cap U_{\beta} \to \gls{GL}_k(\R)
 \end{align*}
@@ -82,7 +82,7 @@ durch
 \begin{align*}
   \tau_{\alpha} \circ \tau_{\beta}^{-1}(p,x) = (p,g_{\alpha\beta}(p) x).
 \end{align*}
-Die Übergangsfunktionen sind glatt und für alle $p \in U_{\alpha} \cap U_{\beta} \cap U_{\gamma}$ gilt:
+Die "ubergangsfunktionen sind glatt und f"ur alle $p \in U_{\alpha} \cap U_{\beta} \cap U_{\gamma}$ gilt:
 \begin{align*}
   g_{\alpha\gamma}(p) = g_{\alpha\beta}(p) \cdot g_{\beta\gamma}(p),
 \end{align*}
@@ -95,48 +95,48 @@ denn
 \end{align*}
 
 \begin{bsp}
-  Die Übergangsfunktionen von $\T M$ sind gegeben durch
+  Die "ubergangsfunktionen von $\T M$ sind gegeben durch
   \begin{align*}
     \D(\psi \circ \varphi^{-1}) = \left(\partial_i(\psi^j \circ \varphi^{-1})\right)_{i,j \leq m}.
   \end{align*}
 \end{bsp}
 
 % Satz 5.2
-\begin{Satz}
-  Es sei $M$ eine glatte Mannigfaltigkeit mit einer offenen Überdeckung $\{U_{\alpha}\}_{\alpha \in \calI}$ und einer glatten Abbildung
+\begin{Satz}\label{satz-5-2}
+  Es sei $M$ eine glatte Mannigfaltigkeit mit einer offenen "uberdeckung $\{U_{\alpha}\}_{\alpha \in \calI}$ und einer glatten Abbildung
   \begin{align*}
     g_{\alpha\beta} \colon U_{\alpha} \cap U_{\beta} \to \Gl_k(\R)
   \end{align*}
-so dass für alle $\alpha,\beta,\gamma \in \calI$ und $p \in U_{\alpha} \cap U_{\beta} \cap U_{\gamma}$ gilt:
+so dass f"ur alle $\alpha,\beta,\gamma \in \calI$ und $p \in U_{\alpha} \cap U_{\beta} \cap U_{\gamma}$ gilt:
 \begin{align*}
   g_{\alpha\gamma} (p) = g_{\alpha\beta}(p)g_{\beta\gamma}(p).
 \end{align*}
 Dann ist
 	\[ E = \bigcup_{\alpha \in \calI}^{\cdot} \FakRaum{U_{\alpha} \times \R^k}{\sim}, \]
-wobei $(p,x)_{\alpha} \sim (q,y)_{\beta}$ genau dann gilt, wenn $p = q$ und $x = g_{\alpha\beta}(p)y$, ein glattes Vektorbündel.
+wobei $(p,x)_{\alpha} \sim (q,y)_{\beta}$ genau dann gilt, wenn $p = q$ und $x = g_{\alpha\beta}(p)y$, ein glattes Vektorb"undel.
 \end{Satz}
 
-Der Beweis sei erneut als Aufgabe überlassen.
+Der Beweis sei erneut als Aufgabe "uberlassen.
 
 \begin{kor}
-  Ist $E$ ein glattes Vektorbündel über $M$ mit Übergangsfunktionen $\{g_{\alpha\beta}\}$, so ist das oben konstruierte Vektorbündel isomorph zu $E$.
+  Ist $E$ ein glattes Vektorb"undel "uber $M$ mit "ubergangsfunktionen $\{g_{\alpha\beta}\}$, so ist das oben konstruierte Vektorb"undel isomorph zu $E$.
 \end{kor}
 
-Es sei $E \xrightarrow{\pi} N$ ein Vektorbündel und $\Phi \colon M \to N$ glatt.
-Das längs $\Phi$ zurückgezogene Bündel ("`\CmMark{pullback}"') ist definiert durch den Totalraum
+Es sei $E \xrightarrow{\pi} N$ ein Vektorb"undel und $\Phi \colon M \to N$ glatt.
+Das längs $\Phi$ zur"uckgezogene B"undel ("`\CmMark{pullback}"') ist definiert durch den Totalraum
 \begin{align*}
   E' = \Phi^{\ast}E = \{(p,x) \mid x \in E_{\Phi(p)}\} \subseteq M \times E,
 \end{align*}
-die Projektion $\pi' \colon \Phi^{\ast}E \to M, (p,x) \mapsto p$ und die folgenden Bündelkarten:
-Es sei $p \in M$ und $(\tau, U)$ eine Bündelkarte von $E$ um $\Phi(p)$, sowie $(\varphi,V)$ eine Karte von $M$ um $p$ mit $\Phi(V) \subseteq U$.
+die Projektion $\pi' \colon \Phi^{\ast}E \to M, (p,x) \mapsto p$ und die folgenden B"undelkarten:
+Es sei $p \in M$ und $(\tau, U)$ eine B"undelkarte von $E$ um $\Phi(p)$, sowie $(\varphi,V)$ eine Karte von $M$ um $p$ mit $\Phi(V) \subseteq U$.
 Dann definiert 
 \begin{align*}
   \Phi^{\ast}E|_V \to V \times \R^k, (p,x) \mapsto \left(p, \tau_{\Phi(p)}(x)\right)
 \end{align*}
-eine Bündelkarte.
+eine B"undelkarte.
 
-Sind $E \xrightarrow{\pi} M, E' \xrightarrow{\pi'} N$ Vektorbündel, dann ist $E \times E' \xrightarrow{\pi \times \pi'} M \times N$ mit lokalen Trivialisierungen $\tau \times \tau'$ ebenfalls ein Vektorbündel.
-Insbesondere ist im Falle $M = N$ $E \times E'$ ein Bündel über $M \X M$.
+Sind $E \xrightarrow{\pi} M, E' \xrightarrow{\pi'} N$ Vektorb"undel, dann ist $E \times E' \xrightarrow{\pi \times \pi'} M \times N$ mit lokalen Trivialisierungen $\tau \times \tau'$ ebenfalls ein Vektorb"undel.
+Insbesondere ist im Falle $M = N$ $E \times E'$ ein B"undel "uber $M \X M$.
 Es sei $\Delta \colon M \to M \times M$, $p \mapsto (p,p)$.
 
 \begin{center}\begin{tikzpicture}
@@ -147,14 +147,88 @@ Es sei $\Delta \colon M \to M \times M$, $p \mapsto (p,p)$.
 	\draw[->] (1) -- (3); \draw[->] (2) -- (4);
 \end{tikzpicture}\end{center}
 
-Das längs $\Delta$ zurückgezogene Bündel $E \oplus E' = \Delta^{\ast}(E \times E')$ heißt die \CmMark{Whitneysumme} von $E$ und $E'$.
+Das längs $\Delta$ zur"uckgezogene B"undel $E \oplus E' = \Delta^{\ast}(E \times E')$ heißt die \CmMark{Whitneysumme} von $E$ und $E'$.
 Faserweise gilt
 \begin{align*}
   (E \oplus E')_p = E_p \oplus E'_p.
 \end{align*}
  
-\emph{Überlege:} $\Hom(E,E')$, sowie $E \otimes E', \bigotimes E$ und $\Lambda^pE, \Lambda E$ sind "`vernünftige"' Bündel.
+\emph{"uberlege:} $\Hom(E,E')$, sowie $E \otimes E', \bigotimes E$ und $\Lambda^pE, \Lambda E$ sind "`vern"unftige"' B"undel.
 
+\section{Intermezzo: Multilineare Algebra}
+Es seien $V$ und $W$ $k$-Vektorr"aume. Das Tensorprodukt $V \otimes W$ ist der von den Elementen $v \otimes w$ mit $v \in V$, $w \in W$ und den Relationen \begin{enumerate}[label=(\roman*),widest=iii]
+\item
+	$(v + v') \otimes w = v \otimes w + v' \otimes w$
+\item
+	$v \otimes (w + w') = v \otimes w + v' \times w'$
+\item
+	$(\lambda v) \otimes w = \lambda (v \otimes w) = v \otimes (\lambda w)$
+\end{enumerate} erzeugte Vektorraum.
+
+\begin{emptythm}[Eigenschaften:]\begin{enumerate}[label=\arabic*),leftmargin=*]
+\item
+	Die Abbildung $b: V \X W \to V \otimes W$, $(v, w) \mapsto v \otimes w$ ist bilinear.
+\item
+	$v \otimes w = 0 \Leftrightarrow v = 0$ oder $w = 0$
+\item
+	$V \otimes k \cong V$
+\item
+	$V \otimes W \cong W \otimes V$
+\item
+	$V^* \otimes W \cong \Hom(V, W)$ verm"oge $(\varphi \otimes w)(v) = \varphi(v) \cdot w$ wobei $V^*$ der \gls{Dualraum} zu $V$ ist
+\item
+	Sind $\{v_i\}_{i \in \calI}$ und $\{w_j\}_{j \in \calJ}$ Basen von $V$ und $W$, so ist $\{v_i \otimes w_j\}_{(i,j) \in \calI \X \calJ}$ eine Basis von $V \otimes W$. Insbesondere gilt f"ur Vektorr"aume endlicher Dimension dass $\ddim (V \otimes W) = \ddim V \cdot \ddim W$
+\end{enumerate}\end{emptythm}
+
+\begin{emptythm}[Universelle Eigenschaft:]
+Ist $U$ ein Vektorraum und $\beta$ eine bilineare Abbildung von $V \X W$ in $U$. Dann existiert genau eine lineare Abbildung $\varphi: V \otimes W \to U$ mit $\beta = \varphi \circ b$.
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+Diese Eigenschaft bestimmt $(V \otimes W, b)$ eindeutig bis auf Isomorphie.
+\end{emptythm}
+
+Das Bilden von Tensorprodukten ist bis auf Isomorphie assoziativ. Man schreibt daher
+	\[ \bigotimes^p V = \underbrace{V \otimes \ldots \otimes V}_{p\text{-mal}} \]
+Setzt man $\bigotimes^0 V = k$, so wird $\bigotimes V = \bigoplus_{p=0}^{\infty} \bigotimes^p V$ mit dem durch die Zuordnungen
+	\[ (v_1 \otimes \ldots \otimes v_{p+1} \otimes \ldots \otimes v_{p+q}) \mapsto v_1 \otimes \ldots \otimes v_{p+q} \in \bigotimes^{p+q} V \]
+induzierten produkt zu einer graduierten Algebra.
+
+Das $p$-fach "au"sere Produkt $\Lambda^pV$ ist der von den Elementen $v_1 \wedge \ldots \wedge v_p$, $v_i \in V$ und den Relationen \begin{enumerate}[label=(\roman*),widest=iii]
+\item
+	$v_1 \wedge \ldots \wedge v_i \wedge v_{i+1} \wedge \ldots \wedge v_p = - v_1 \wedge \ldots \wedge v_{i+1} \wedge v_i \wedge \ldots \wedge v_p$ (Schiefsymmetrie)
+\item
+	$(v_1 + w_1) \wedge \ldots \wedge v_p = v_1 \wedge \ldots \wedge v_p + w_1 \wedge v_2 \wedge \ldots \wedge v_p$
+\item
+	$(\lambda v_1) \wedge \ldots \wedge v_p = \lambda (v_1 \wedge \ldots \wedge v_p)$
+\end{enumerate}
+erzeugte Vektorraum.
+
+\begin{emptythm}[Eigenschaften]\begin{enumerate}[label=\arabic*),leftmargin=*]
+\item
+	Die Abbildung $s: V \X \ldots \X V \to \Lambda^p V$, $(v_1,\ldots ,v_p) \mapsto v_1 \wedge \ldots \wedge v_p$ ist multilinear und schief
+\item
+	Es gilt $v_1 \wedge \ldots \wedge v_p = 0$ genau dann wenn $v_1, \ldots , v_p$ linear abh"angig sind
+\item
+	Ist $\{e_i\}_{i \le n}$ eine Basis von $V$, so ist $\{e_{i_1} \wedge \ldots \wedge e_{i_p} | i_1 < i_2 < \ldots < i_p\}$ eine Basis von $\Lambda^pV$, es gilt also $\ddim \Lambda^pV = \left( \begin{smallmatrix} n \\ p \end{smallmatrix} \right)$. Insbesondere ist $\Lambda^pV = 0$ falls $p > n$ und $\ddim \Lambda^nV = 1$ und f"ur $v_i = \sum \alpha_i^j e_j$ gilt:
+		\[ v_1 \wedge \ldots \wedge v_p = \ddet (\alpha_i^j) \cdot e_1 \wedge \ldots \wedge e_n \]
+\end{enumerate}\end{emptythm}
+
+\begin{emptythm}[Universelle Eigenschaft]
+Ist $U$ ein Vektorraum un $\sigma$ eine schiefsymmetrische multilineare Abbildung $\underbrace{V \X \ldots  \X V}_{p\text{-mal}} \to U$, so existiert genau eine lineare Abbildung $\varphi: \Lambda^pV \to U$ mit $\sigma = \varphi \circ s$.
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+Die Isomorphieklasse von $(\Lambda^pV, s)$ ist durch diese Eigenschaft eindeutig bestimmt.
+\end{emptythm}
+
+Setzt man $\Lambda^0V = k$, so wird $\Lambda V = \bigoplus_{p=0}^{\infty}\Lambda^pV$ mit dem durch
+	\[ (v_1 \wedge \ldots \wedge v_p, v_{p+1} \wedge \ldots \wedge v_{p+q}) \mapsto v_1 \wedge \ldots \wedge v_{p+q} \]
+induzierten Produkt zu einer assoziativen, graduiert kommutativen Algebra: $v \in \Lambda^pV$, $w \in \Lambda^qV$, $v \wedge w = (-1)^{p \cdot q} w \wedge v$. Sind $V_1$, $V_2$, $W_1$, $W_2$ Vektorr"aume und $\varphi \in \Hom(V_1, W_1)$, $\psi \in \Hom(V_2, W_2)$, so definiert die Fortsetzung von 
+	\[ \varphi \otimes \psi (v_1 \otimes v_2) = (\varphi(v_1)) \otimes (\psi(v_2)) \]
+ein Element $\varphi \otimes \psi \in \Hom(V_1 \otimes V_2, W_1 \otimes W_2)$. Sind $V$, $W$ Vektorr"aume und $\varphi_1,\ldots ,\varphi_p \in \Hom(V, W)$, so induzieren diese eine lineare Abbildung
+	\[ \varphi_1 \otimes \ldots \otimes \varphi_p : \bigoplus^p V \to \bigoplus^p W \]
+und
+	\[ \varphi_1 \wedge \ldots  \wedge \varphi_p : \Lambda^pV \to \Lambda^pW \]
+
+\section{B"undelkonstruktion}
+Es seien
 
 %%% Local Variables: 
 %%% mode: latex
