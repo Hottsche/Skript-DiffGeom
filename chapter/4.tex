@@ -31,7 +31,7 @@ eine glatte Struktur auf $\T M$. Für Karten $(\varphi, U), (\psi, V)$ von $M$ i
   \overline \psi \circ \overline \varphi^{-1} \colon \varphi(U \cap V) \times \R^m &\to& \psi(U \cap V) \times \R^m \\
   (x, \xi) &\mapsto& (\psi \circ \varphi^{-1}(x),\D(\psi \circ \varphi^{-1}|_x\xi),
 \end{array}\]
-$\left(X_p = \sum \xi^i \pdifffrac[p]{}{x^i}\right)$ ist glatt. Damit trägt $\T M$ in kanonischer Weise eine glatte Struktur.
+$(X_p = \sum \xi^i \pdifffrac[p]{}{x^i})$ ist glatt. Damit trägt $\T M$ in kanonischer Weise eine glatte Struktur.
 Darüber hinaus ist die kanonische Projektion $\pi \colon \T M \to M$ bezüglich dieser glatten Struktur eine Submersion. (Beweis: Übungsaufgabe)
 
 Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so ist $\Phi_{*} \colon \T M \to \T N, \ X_p \mapsto \Phi_{*p}X_p$ eine glatte Abbildung (ebensfalls Übungsaufgabe).
@@ -42,13 +42,13 @@ Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so
 \end{Dfn}
 
 \begin{bem}
-  Ist $(\varphi, U)$ eine Karte von $M$, so sind die Abbildungen $U \to \T M|_U, \ p \mapsto \pdifffrac[p]{}{x^{i}}$ glatte Vektorfelder (in der Karte $\overline \varphi$ sind diese genau die Abbildungen $(x,e_i)$).
-  
-  Ist $X$ ein glattes Vektorfeld, so gilt für jedes $u \in U$:
-  \begin{align*}
-    X_U = \sum \xi^i(u) \pdifffrac[U]{}{x^i},
-  \end{align*}
-  wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$ ist. Ein Vektorfeld ist genau dann glatte, wenn für jede Karte $(\varphi, U)$ die Koeffizientenfunktionen $\xi^i(u)$ von $X_U = \sum \xi^i(u) \pdifffrac[U]{}{x^i}$ glatte Funktionen sind.
+Ist $(\varphi, U)$ eine Karte von $M$, so sind die Abbildungen $U \to \T M|_U, \ p \mapsto \pdifffrac[p]{}{x^{i}}$ glatte Vektorfelder (in der Karte $\overline \varphi$ sind diese genau die Abbildungen $(x,e_i)$).
+
+Ist $X$ ein glattes Vektorfeld, so gilt für jedes $u \in U$:
+\begin{align*}
+	X_U = \sum \xi^i(u) \pdifffrac[U]{}{x^i},
+\end{align*}
+wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$ ist. Ein Vektorfeld ist genau dann glatte, wenn für jede Karte $(\varphi, U)$ die Koeffizientenfunktionen $\xi^i(u)$ von $X_U = \sum \xi^i(u) \pdifffrac[U]{}{x^i}$ glatte Funktionen sind.
 \end{bem}
 
 
@@ -257,65 +257,66 @@ mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ 
 %%% 
 
 \begin{bem}[Erinnerung]
-  \textcolor{red}{TODO: Diesen Absatz aufräumen. (ich würde das komplett weglassen weil es bloß eine Wiederholung von der Woche davor ist -Aleks)}
-  Ist $X \in \mathcal V(M)$, $c$ Integralkurve von $X$ durch $p$, wenn $c(t) = X_{c(t)}$ maximales Existenzintervall $I_p$\\
+\textcolor{red}{TODO: Diesen Absatz aufräumen. (ich würde das komplett weglassen weil es bloß eine Wiederholung von der Woche davor ist -Aleks)}
+Ist $X \in \mathcal V(M)$, $c$ Integralkurve von $X$ durch $p$, wenn $c(t) = X_{c(t)}$ maximales Existenzintervall $I_p$\\
 
-  %%% 
-  %%% TODO Abbildung 7-1
-  \textcolor{red}{Abbildung 7-1}\\
-  %%% 
+%%% 
+%%% TODO Abbildung 7-1
+\textcolor{red}{Abbildung 7-1}
+%%% 
 
-  \begin{align*}
-    \gamma \colon \mathcal D_X = \{(t,p) \mid p \in M, t \in I_p\} \to M
-  \end{align*}
-  Fluß von $X$, wobei
-  \begin{align*}
-    \dot \gamma^t = X_{\gamma^t(p)}, \gamma^0 = \Id_M.
-  \end{align*}
-  Für $f \in C^{\infty}$ gilt
-  \begin{align*}
-    X_p(t) = \dot \gamma^t(pXf) = \difffrac[t=0]{}{t}(f \circ \gamma^t)(p).
-  \end{align*}
-  Aus der lokalen Eindeutigkeit folgt (für kleine Zeiten)
-  \begin{align*}
-    \gamma^{s-t} = \gamma^s \circ \gamma^t.
-  \end{align*}
-  Für alle $t$ ist $\gamma^t$ (lokalaer) Diffeomorphismus mit Inversen $\gamma^{-t}$.
+\begin{align*}
+	\gamma \colon \mathcal D_X = \{(t,p) \mid p \in M, t \in I_p\} \to M
+\end{align*}
+Fluß von $X$, wobei
+\begin{align*}
+	\dot \gamma^t = X_{\gamma^t(p)}, \gamma^0 = \Id_M.
+\end{align*}
+Für $f \in C^{\infty}$ gilt
+\begin{align*}
+	X_p(t) = \dot \gamma^t(pXf) = \difffrac[t=0]{}{t}(f \circ \gamma^t)(p).
+\end{align*}
+Aus der lokalen Eindeutigkeit folgt (für kleine Zeiten)
+\begin{align*}
+	\gamma^{s-t} = \gamma^s \circ \gamma^t.
+\end{align*}
+Für alle $t$ ist $\gamma^t$ (lokalaer) Diffeomorphismus mit Inversen $\gamma^{-t}$.
 \end{bem}
 
-\begin{proof}
-  Es sei $p \in M$ und $\calJ_p^{+}$ die Menge aller $t \geq 0$, für welche eine offene Umgebung $U$ von $[0,t] \times \{p\}$ in $\R \times M$ existiert, so dass $\gamma$ auf $U$ glatt ist.
-  \begin{itemize}
-  \item $\calJ_p^{+}$ ist ein Intervall,
-  \item $\calJ_p^{+} \subseteq \calJ_p \cap \R_{\geq 0}$
-  \item $0 \in \calJ_p^{+}$
-  \item $\calJ_p^{+}$ ist offen in $\R_{\geq 0}$.
-  \end{itemize}
-  Es bleibt zu zeigen, dass $\calJ_p^{+}$ abgeschlossen ist.
+\begin{bew}
+Es sei $p \in M$ und $\calJ_p^{+}$ die Menge aller $t \geq 0$, für welche eine offene Umgebung $U$ von $[0,t] \times \{p\}$ in $\R \times M$ existiert, so dass $\gamma$ auf $U$ glatt ist.
+\begin{itemize}
+\item $\calJ_p^{+}$ ist ein Intervall,
+\item $\calJ_p^{+} \subseteq \calJ_p \cap \R_{\geq 0}$
+\item $0 \in \calJ_p^{+}$
+\item $\calJ_p^{+}$ ist offen in $\R_{\geq 0}$.
+\end{itemize}
+Es bleibt zu zeigen, dass $\calJ_p^{+}$ abgeschlossen ist.
 
-  Es sei $s \in \overline \calJ_p^{+} \cap (\calJ_p \cap \R_{\geq 0}$ und $q = \gamma^s(p)$.\marginnote{\begin{tikzpicture}[scale=0.75,font=\tiny]
-  	%\draw[step=0.25,gray!15] (-3,-3) grid (3,3); \draw[step=0.5,gray!30] (-3,-3) grid (3,3); \fill (0,0) circle(0.1); %Hilfsgitter
+Es sei $s \in \overline \calJ_p^{+} \cap (\calJ_p \cap \R_{\geq 0}$ und $q = \gamma^s(p)$.\marginnote{\begin{tikzpicture}[scale=0.75,font=\tiny]
+	%\draw[step=0.25,gray!15] (-3,-3) grid (3,3); \draw[step=0.5,gray!30] (-3,-3) grid (3,3); \fill (0,0) circle(0.1); %Hilfsgitter
 	\draw[name path=kurve] (0,0) node[anchor=north west]{$\gamma^0(p) = p$} to[out=65,in=185] (2.75,2) node[anchor=north west]{$\gamma^s(p) = q$};
 	\path[name path=senkrecht] (2.5,0) -- (2.5,3);
 	\path[name intersections={of=kurve and senkrecht}];
 	\fill (intersection-1) circle (0.05) node[anchor=south east] {$\gamma^t(p)$} (0,0) circle(0.05) (2.75,2) circle(0.05);
-  \end{tikzpicture}}
-  Dann existieren $\varepsilon > 0$ und eine Umgebung $U$ von $q$, so dass $\gamma$ auf $(-\varepsilon,\varepsilon) \times U$ glatt ist.
-  Es sei $t \in \calJ_p^{+}$ mit $s-t < \varepsilon$ und $\gamma^t(p) \in U$.
-  Nach Definition von $\calJ_p^{+}$ existiert eine offene Umgebung $V$ von $p$ in $M$ und $\delta > 0$, so dass $(-\delta,t+\delta)\times V \subseteq \mathcal D_X$ gilt und darauf $\gamma$ glatt ist.
-  Dann ist $V' = \left(\left.\gamma^t\right|_V\right)^{-1}(U) = \{p' \in V \mid \gamma^t(p') \in U\}$ eine offene Umgebung von $p$.
-  Für alle $p' \in V'$ gilt:
-  \begin{align*}
-    r \mapsto
-    \begin{cases}
-      \gamma^r(p') & \text{ falls } r < t+\delta\\
-      \gamma^{r-t}(\gamma^t(p')) & \text{ falls } r \in \textcolor{red}{(t-s,t+\varepsilon)}
-    \end{cases}.
-  \end{align*}
-  ist eine Integralkurve von $X$ durch $p'$.\\
-  Es gilt also $(-\delta,t+\varepsilon) \subseteq \calJ_{p'}$ für alle $p' \in V'$ und somit $(-\delta,t+\varepsilon) \times V' \subset \mathcal D_X$. An der obigen Darstellung sieht man, dass $\gamma$ darauf glatt ist.
-  Also gilt $s \in \calJ_p^{+}$. Analog argumentiert man für $\calJ_p^{-}$.
-\end{proof}
+\end{tikzpicture}}
+Dann existieren $\varepsilon > 0$ und eine Umgebung $U$ von $q$, so dass $\gamma$ auf $(-\varepsilon,\varepsilon) \times U$ glatt ist.
+Es sei $t \in \calJ_p^{+}$ mit $s-t < \varepsilon$ und $\gamma^t(p) \in U$.
+Nach Definition von $\calJ_p^{+}$ existiert eine offene Umgebung $V$ von $p$ in $M$ und $\delta > 0$, so dass $(-\delta,t+\delta)\times V \subseteq \mathcal D_X$ gilt und darauf $\gamma$ glatt ist.
+Dann ist $V' = \left(\left.\gamma^t\right|_V\right)^{-1}(U) = \{p' \in V \mid \gamma^t(p') \in U\}$ eine offene Umgebung von $p$.
+Für alle $p' \in V'$ gilt:
+\begin{align*}
+	r \mapsto
+	\begin{cases}
+		\gamma^r(p') & \text{ falls } r < t+\delta\\
+		\gamma^{r-t}(\gamma^t(p')) & \text{ falls } r \in \textcolor{red}{(t-s,t+\varepsilon)}
+	\end{cases}.
+\end{align*}
+ist eine Integralkurve von $X$ durch $p'$.
+
+Es gilt also $(-\delta,t+\varepsilon) \subseteq \calJ_{p'}$ für alle $p' \in V'$ und somit $(-\delta,t+\varepsilon) \times V' \subset \mathcal D_X$. An der obigen Darstellung sieht man, dass $\gamma$ darauf glatt ist.
+Also gilt $s \in \calJ_p^{+}$. Analog argumentiert man für $\calJ_p^{-}$.
+\end{bew}
 
 % Definition 4.10
 \begin{Dfn}[vollständiges Vektorfeld]
@@ -333,7 +334,7 @@ mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ 
   Dann gilt $t_{\infty} \in \calI_{p}$ und $\gamma^{t_{\infty}}(p) = q$.
 \end{Lemma}
 
-\begin{proof}
+\begin{bew}
   Nach Korollar \ref{korollar-4-7} existiert eine Umgebung $U$ von $q$ und $\varepsilon > 0$, so dass auf $(-\varepsilon,\varepsilon) \times U$ ein lokaler Fluss von $X$ definiert ist.
   
   Wählt man $k$ so groß, dass $t_{\infty} - t_k < \varepsilon$ gilt, so ist für $\overline q = c(t_k)$ und $t$ mit $|t-t_k| < \varepsilon$ der Fluss $t \mapsto \gamma^{t-t_k}(\overline q)$ erklärt. Aus Korollar \ref{korollar-4-8} folgt, dass $\gamma^{t_k}(p) = c(t_k) = \overline q$ gilt.
@@ -350,7 +351,7 @@ mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ 
   \begin{align*}
     \gamma^{t_{\infty}}(p)= \gamma^{t_{\infty}-t_k}(\gamma^{t_k}(p)) = \overline c(t_{\infty}) = \lim_{t\to t_{\infty}}c(t) = q.
   \end{align*}
-\end{proof}
+\end{bew}
 
 \begin{Bem}[Moral des obigen Lemmas]
   Integralkurven existieren für alle Zeiten oder aber sie verlassen jedes Kompaktum.
@@ -390,14 +391,14 @@ Dann ist
 der Fluss von $\Phi_{*}X$.
 \end{Lemma}
 
-\begin{proof}
- Für $f \in \C^{\infty}(N)$ und $q \in N$ gilt
- \begin{align*}
-   (\Phi_{\ast}X)(f)(q) & = X_{\Phi^{-1}(q)}(f \circ \Phi)\\
-   & = \difffrac[t=0]{}{t} (f \circ \Phi)(\gamma^t(\Phi^{-1}(q)))\\
-   & = \difffrac[t=0]{}{t}f(\underbrace{\Phi \circ \gamma^t \circ \Phi^{-1}}_{\text{Fluss von }\Phi_{*}X}(q)).
- \end{align*}
-\end{proof}
+\begin{bew}
+Für $f \in \C^{\infty}(N)$ und $q \in N$ gilt
+\begin{align*}
+	(\Phi_{\ast}X)(f)(q) & = X_{\Phi^{-1}(q)}(f \circ \Phi)\\
+	& = \difffrac[t=0]{}{t} (f \circ \Phi)(\gamma^t(\Phi^{-1}(q)))\\
+	& = \difffrac[t=0]{}{t}f(\underbrace{\Phi \circ \gamma^t \circ \Phi^{-1}}_{\text{Fluss von }\Phi_{*}X}(q)).
+\end{align*}
+\end{bew}
 
 %\begin{Bem}
 \emph{Erinnerung:} $\frac{1}t(F(x+tv)-F(x))$ oder für $c$ mit $c(0) = x, \dot c(0) = v$: $\frac{1}t(F(c(t))-F(x))$.
@@ -444,7 +445,7 @@ Die Kurve $(\gamma_{*}^{-t}y)_p$ in $\T_pM$ ist glatt und $(\mathcal L_XY)_p = \
   \end{align*}
 \end{Satz}
 
-\begin{proof}
+\begin{bew}
 Es seinen $X,Y \in \mathcal V(M)$, $f \in \C^{\infty}(M)$ und $\gamma$ der Fluss von $X$.
 
 Es ist zu zeigen: $[X,Y]_p(f) = \lim_{t \to \infty} \frac{1}{t}\left((\gamma_{*}^{-t}y)_p(f)-y_p(f)\right)$.
@@ -471,7 +472,7 @@ Es folgt:
 & = \difffrac[t=0]{}{t}\left(yf \circ \gamma^t\right)(p) + yg_0(p)\\
 & = X_p(yf) - y_p(Xf) = [X,Y]_p(f).
 \end{align*} 
-\end{proof}
+\end{bew}
 
 
 %%%

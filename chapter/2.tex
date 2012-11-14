@@ -12,7 +12,7 @@
 % Abbildung 2-1
 \CmMarginSvg{2-1-tangentialvektoren-motivation}{3.5cm}
 
-Betrachte in der nebenstehenden Abbildung eine differenzierbare Kurve $c \colon (-\varepsilon,\varepsilon) \to S^2$ mit $c(0) = p$. Dann gilt:
+Betrachte in der nebenstehenden Abbildung eine differenzierbare \gls{Kurve} $c \colon (-\varepsilon,\varepsilon) \to S^2$ mit $c(0) = p$. Dann gilt:
 \begin{align*}
   0 = \difffrac[t=0]{}{t} \left<c(t),c(t)\right> = 2\left<\dot c(0),c(0)\right> = 2 \left<\dot c(0),p\right> 
   \Rightarrow \dot c(0) \in p^{\perp}.
@@ -95,7 +95,7 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
 \paragraph{Motivation: Richtungsableitungen im $\R^n$}\hfill
 \begin{Bem}
   
-  Für $f,g \in C^{\infty}(\R^n), \ x,y \in \R^n$ ist die Richtungsableitung wie folgt definiert:
+  Für $f,g \in C^{\infty}(\R^n), \ x,y \in \R^n$ ist die \CmMark{Richtungsableitung} wie folgt definiert:
   \begin{align*}
     \partial_vf(x) = \D f|x \cdot v = \difffrac[t=0]{}{t}f(x+tv).
   \end{align*}
@@ -200,37 +200,34 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
   \end{align*}
 \end{Lemma}
 
-\begin{proof}
-  (Beweis des Satzes).\\
+\begin{bew}[Beweis des Satzes]
+Die $j$-te Komponente $\varphi^j$ der Karte ist glatt und es gilt:
+\begin{align*}
+	\pdifffrac[p]{}{x^i}(\varphi^j) = \partial_i(\varphi^j \circ \varphi^i)(\varphi(p)) = \partial_ix^j(\varphi(p)) = \delta_i^j.
+\end{align*}
+Damit sind die Vektoren linear unabhängig.
 
-  Die $j$-te Komponente $\varphi^j$ der Karte ist glatt und es gilt:
-  \begin{align*}
-    \pdifffrac[p]{}{x^i}(\varphi^j) = \partial_i(\varphi^j \circ \varphi^i)(\varphi(p)) = \partial_ix^j(\varphi(p)) = \delta_i^j.
-  \end{align*}
-
-  Damit sind die Vektoren linear unabhängig.\\
-
-  Es sei $X_p\in \T_p^{\text{alg}}M$ und $f \in C^{\infty}(M)$.
-  Für $x_0=\varphi(p) \in \R^n, \ B_{\rho}(x_0) \subset \varphi(U)$ und für $g = f \circ \varphi^{-1}|_{B_{\rho}(x_0)}$ gilt mit den Bezeichnungen wie im letzten Lemma:
-  \begin{align*}
-    X_p(f) & = X_p(g \circ \varphi) = X_p(g(\varphi(p)) + \sum \left(\varphi^i - \varphi(p)^i)(h_i \circ \varphi) \right)\\
-    & = \underbrace{X_p(g(\varphi(p)))}_{\mathclap{=0}} + \sum X_p((\varphi^i-\varphi(p)^i)(h_i \circ \varphi))\\
-    & = \sum X_p(\varphi^i)(h_i\circ\varphi)(p) - X_p(\varphi(p)^i)(h_i\circ \varphi)(p) + \sum (q^i-\varphi(p)^i)(p) X_p(h_i \circ \varphi)\\
-    & = \sum_{i=1}^n X_p(\varphi^i)\underbrace{(h_i \circ \varphi)(p)}_{\mathclap{=h_i(\varphi(p) = h_i(x_0) = \partial_ig(x_0) = \partial_i(f\circ \varphi^{-1})(\varphi(p)) = \pdifffrac[p]{}{x^i}(f)}}\\
-    & = \sum_{i=1}^nX_p(\varphi^i)\pdifffrac[p]{}{x^i}(f).
-  \end{align*}
-\end{proof}
+Es sei $X_p\in \T_p^{\text{alg}}M$ und $f \in C^{\infty}(M)$.
+Für $x_0=\varphi(p) \in \R^n, \ B_{\rho}(x_0) \subset \varphi(U)$ und für $g = f \circ \varphi^{-1}|_{B_{\rho}(x_0)}$ gilt mit den Bezeichnungen wie im letzten Lemma:
+\begin{align*}
+	X_p(f) & = X_p(g \circ \varphi) = X_p(g(\varphi(p)) + \sum \left(\varphi^i - \varphi(p)^i)(h_i \circ \varphi) \right)\\
+	& = \underbrace{X_p(g(\varphi(p)))}_{\mathclap{=0}} + \sum X_p((\varphi^i-\varphi(p)^i)(h_i \circ \varphi))\\
+	& = \sum X_p(\varphi^i)(h_i\circ\varphi)(p) - X_p(\varphi(p)^i)(h_i\circ \varphi)(p) + \sum (q^i-\varphi(p)^i)(p) X_p(h_i \circ \varphi)\\
+	& = \sum_{i=1}^n X_p(\varphi^i)\underbrace{(h_i \circ \varphi)(p)}_{\mathclap{=h_i(\varphi(p) = h_i(x_0) = \partial_ig(x_0) = \partial_i(f\circ \varphi^{-1})(\varphi(p)) = \pdifffrac[p]{}{x^i}(f)}}\\
+	& = \sum_{i=1}^nX_p(\varphi^i)\pdifffrac[p]{}{x^i}(f).
+\end{align*}
+\end{bew}
 
 \begin{Bem}
   Ist $X_p=\sum \xi^i\pdifffrac[p]{}{x^i}$, so gilt $\xi^i = X_p(\varphi^i)$.
 \end{Bem}
 
-\begin{proof}
-  (Beweis des Lemmas). Es gilt:
-  \begin{align*}
-    g(x) - g(x_0) = \int_0^1\difffrac{}{t}g(tx + (1-t)x_0)dt = \sum_{i=1}^n(x^i-x_0^i)\underbrace{\int_0^1\partial_ig(tx + (1-t)x_0) dt}_{=: h_i(x)}.
-  \end{align*}
-\end{proof}
+\begin{bew}[Beweis des Lemmas]
+Es gilt:
+\begin{align*}
+	g(x) - g(x_0) = \int_0^1\difffrac{}{t}g(tx + (1-t)x_0)dt = \sum_{i=1}^n(x^i-x_0^i)\underbrace{\int_0^1\partial_ig(tx + (1-t)x_0) dt}_{=: h_i(x)}.
+\end{align*}
+\end{bew}
 
 % Satz 2.9
 \begin{Satz}[Äquivalenz der Tangentialraumbegriffe]
@@ -238,19 +235,19 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
   \begin{align*}
     J_p \colon \T_p^{\text{geo}}M \to \T_p^{\text{alg}}M, \ J_{p}[c](f) = \difffrac[t=0]{}{t}(f\circ c)
   \end{align*}
-  ist ein linearer Isomorphismus \quot{$c(0)(f)$}.
+  ist ein linearer \gls{Isomorphismus} \quot{$c(0)(f)$}.
 \end{Satz}
 
-\begin{proof}
+\begin{bew}
   Wegen
   \begin{align*}
     J_p[c](f)& = \difffrac[t=0]{}{t}(f\circ c) = \difffrac[t=0]{}{t}(f \circ \varphi^{-1} \circ \varphi \circ c)\\
     &  = \D(f \circ \varphi^{-1})|_{\varphi(p)} \difffrac[t=0]{}{t} (\varphi \circ c) = \D (f\circ \varphi^{-1})|_{\varphi(p)}A[c]
   \end{align*}
-  ist $J_p = \D(\cdot)\circ A$ linear.\\
+  ist $J_p = \D(\cdot)\circ A$ linear.
 
   Ist $[c] \in \Kern J_p$, so folgt aus $0 = J_p[c](\varphi^i) = \difffrac[t=0]{}{t}(\varphi^i \circ c)$, dass $\difffrac[t=0]{}{t}(\varphi \circ c) = 0$ gilt, also $[c] = 0$. Damit ist $J_p$ injektiv, also ein Isomorphismus.
-\end{proof}
+\end{bew}
 
 \begin{Bem}
   \begin{enumerate}[label=\arabic*)]

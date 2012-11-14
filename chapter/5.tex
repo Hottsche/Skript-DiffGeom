@@ -7,9 +7,9 @@ Fasern : $\T_pM = \pi^{-1}(p)$ $m$-dimensionaler Vektorraum und $X_p = \sum \xi^
 
 % Definition 5.1
 \begin{Dfn}
-  Ein \CmMark{glattes reelles Vektorb"undel} vom Rang $k$ "uber einer glatten Mannigfaltigkeit $M$ ist eine glatte Mannigfaltigkeit $E$, der sogenannte \CmMark{Totalraum} des B"undels, zusammen mit einer glatten Abbildung $\pi \colon E \to M$, der Projektion, sodass f"ur jedes $p \in M$ gilt:
+  Ein \CmMark[Vektorb{\"u}ndel!glattes reelles]{glattes reelles Vektorb"undel} vom Rang $k$ "uber einer glatten Mannigfaltigkeit $M$ ist eine glatte Mannigfaltigkeit $E$, der sogenannte \CmMark{Totalraum} des B"undels, zusammen mit einer glatten Abbildung $\pi \colon E \to M$, der Projektion, sodass f"ur jedes $p \in M$ gilt:
   \begin{enumerate}[label=(\roman*)]
-  \item Die Faster $E_p = \pi^{-1}(p)$ trägt die Struktur eines $k$-dimensionalen reellen Vektorraumes.
+  \item Die Faser $E_p = \pi^{-1}(p)$ trägt die Struktur eines $k$-dimensionalen reellen Vektorraumes.
   \item Es existiert eine Umgebung $U$ von $p$ in $M$ und ein Diffeomorphismus
     \begin{align*}
       \tau \colon E|_U = \pi^{-1}(U) \to U \times \R^k,
@@ -57,24 +57,24 @@ Gilt $M = N$ so ist ein $M$-Vektorb"undelmorphismus $F$ von $E$ nach $E'$ eine g
 	\node at (0,0) {$\#$};
 \end{tikzpicture}\end{center}
 
-Die Vektorb"undel $E,E'$ "uber $M$ heißen \CmMark{isomorph}, wenn ein $M$-Vektor"-b"undel"-morphismus
+Die Vektorb"undel $E,E'$ "uber $M$ heißen \CmMark[Vektorb{\"u}ndel!isomorphes]{isomorph}, wenn ein $M$-Vektor"-b"undel"-morphismus
 $G$ existiert mit $G F = \Id_E$ und $FG = \Id_{E'}$.
 Dies ist genau dann der Fall, wenn $F$ faserweise ein Inverses besitzt.
-(Der Beweis dieser Aussage sei als "ubungsaufgabe "uberlassen.)
+(Der Beweis dieser Aussage sei als "Ubungsaufgabe "uberlassen.)
 
-Ein Vektorb"undel $E \xrightarrow{\pi} M$ heißt \CmMark{trivial}, wenn es einen Vektorb"undelisomorphismus von $E$ auf $M \times \R^k$ gibt. Jedes
+Ein Vektorb"undel $E \xrightarrow{\pi} M$ heißt \CmMark[Vektorb{\"u}ndel!triviales]{trivial}, wenn es einen Vektorb"undelisomorphismus von $E$ auf $M \times \R^k$ gibt. Jedes
 \begin{align*}
   \tau \colon E|_U \to U \times \R^k
 \end{align*}
 ist ein Vektorb"undelisomorphismus.
-Die B"undelkarten werden daher auch \CmMark{lokale Trivialisierungen} genannt.
+Die B"undelkarten werden daher auch \CmMark[Trivialisierung!lokale]{lokale Trivialisierungen} genannt.
 
 Es sei $(\tau_\alpha,U_{\alpha})_{\alpha \in \calI}$ eine Familie lokaler Trivialisierungen von $E$ mit $M = \bigcup_{\alpha \in J}U_{\alpha}$.
 Der Diffeomorphismus
 \begin{align*}
   \tau_{\alpha} \circ \tau_{\beta}^{-1}\colon (U_{\alpha} \cap U_{\beta}) \times \R^k \to (U_{\alpha} \cap U_{\beta}) \times \R^k
 \end{align*}
-definiert die sogenannten \CmMark{"Ubergangsfunktionen}
+definiert die sogenannten \CmMark{{\"U}bergangsfunktionen}
 \begin{align*}
   g_{\alpha\beta} \colon U_{\alpha} \cap U_{\beta} \to \gls{GL}_k(\R)
 \end{align*}
@@ -103,7 +103,7 @@ denn
 
 % Satz 5.2
 \begin{Satz}\label{satz-5-2}
-  Es sei $M$ eine glatte Mannigfaltigkeit mit einer offenen "uberdeckung $\{U_{\alpha}\}_{\alpha \in \calI}$ und einer glatten Abbildung
+  Es sei $M$ eine glatte Mannigfaltigkeit mit einer offenen "Uberdeckung $\{U_{\alpha}\}_{\alpha \in \calI}$ und einer glatten Abbildung
   \begin{align*}
     g_{\alpha\beta} \colon U_{\alpha} \cap U_{\beta} \to \Gl_k(\R)
   \end{align*}
@@ -119,7 +119,7 @@ wobei $(p,x)_{\alpha} \sim (q,y)_{\beta}$ genau dann gilt, wenn $p = q$ und $x =
 Der Beweis sei erneut als Aufgabe "uberlassen.
 
 \begin{kor}
-  Ist $E$ ein glattes Vektorb"undel "uber $M$ mit "ubergangsfunktionen $\{g_{\alpha\beta}\}$, so ist das oben konstruierte Vektorb"undel isomorph zu $E$.
+  Ist $E$ ein glattes Vektorb"undel "uber $M$ mit "Ubergangsfunktionen $\{g_{\alpha\beta}\}$, so ist das oben konstruierte Vektorb"undel isomorph zu $E$.
 \end{kor}
 
 Es sei $E \xrightarrow{\pi} N$ ein Vektorb"undel und $\Phi \colon M \to N$ glatt.
@@ -153,7 +153,7 @@ Faserweise gilt
   (E \oplus E')_p = E_p \oplus E'_p.
 \end{align*}
  
-\emph{"uberlege:} $\Hom(E,E')$, sowie $E \otimes E', \bigotimes E$ und $\Lambda^pE, \Lambda E$ sind "`vern"unftige"' B"undel.
+\emph{"Uberlege:} $\Hom(E,E')$, sowie $E \otimes E', \bigotimes E$ und $\Lambda^pE, \Lambda E$ sind "`vern"unftige"' B"undel.
 
 \section{Intermezzo: Multilineare Algebra}
 Es seien $V$ und $W$ $k$-Vektorr"aume. Das \CmMark{Tensorprodukt} $V \otimes W$ ist der von den Elementen $v \otimes w$ mit $v \in V$, $w \in W$ und den Relationen \begin{enumerate}[label=(\roman*),widest=iii]
@@ -195,7 +195,7 @@ Das Bilden von Tensorprodukten ist bis auf Isomorphie assoziativ. Man schreibt d
 	\[ \bigotimes^p V = \underbrace{V \otimes \ldots \otimes V}_{p\text{-mal}} \]
 Setzt man $\bigotimes^0 V = k$, so wird $\bigotimes V = \bigoplus_{p=0}^{\infty} \bigotimes^p V$ mit dem durch die Zuordnungen
 	\[ (v_1 \otimes \ldots \otimes v_{p+1} \otimes \ldots \otimes v_{p+q}) \mapsto v_1 \otimes \ldots \otimes v_{p+q} \in \bigotimes^{p+q} V \]
-induzierten produkt zu einer graduierten Algebra.
+induzierten Produkt zu einer graduierten Algebra.
 
 Das $p$-fach \CmMark[Produkt!{\"a}u{\ss}eres]{"au"sere Produkt} $\Lambda^pV$ ist der von den Elementen $v_1 \wedge \ldots \wedge v_p$, $v_i \in V$ und den Relationen \begin{enumerate}[label=(\roman*),widest=iii]
 \item
@@ -218,7 +218,7 @@ erzeugte Vektorraum.
 \end{enumerate}\end{emptythm}
 
 \begin{emptythm}[Universelle Eigenschaft:]
-Ist $U$ ein Vektorraum un $\sigma$ eine schiefsymmetrische multilineare Abbildung $\underbrace{V \X \ldots  \X V}_{p\text{-mal}} \to U$, so existiert genau eine lineare Abbildung $\varphi: \Lambda^pV \to U$ mit $\sigma = \varphi \circ s$.
+Ist $U$ ein Vektorraum und $\sigma$ eine schiefsymmetrische multilineare Abbildung $\underbrace{V \X \ldots  \X V}_{p\text{-mal}} \to U$, so existiert genau eine lineare Abbildung $\varphi: \Lambda^pV \to U$ mit $\sigma = \varphi \circ s$.
 \begin{center}\begin{tikzpicture}
 	\node (1) at (-2,0) {$\bigotimes^pV$}; \node (2) at (1,0) {$U$}; \node (3) at (-2,-1.5) {$\Lambda^pV$};
 	\draw[->] (1) --node[above,font=\scriptsize]{$\sigma$} (2);

@@ -99,11 +99,11 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \end{align*}
 \end{bem}
 
-\begin{proof}
+\begin{bew}
   \begin{align*}
     \underbrace{\left(\Phi_{*p}\pdifffrac[p]{}{x^i}\right)}_{\textcolor{red}{\in \T_qN}}(\psi^j) = \pdifffrac[p]{}{x^i}(\psi^j \circ \Phi) = \partial_i (\psi^j \circ \Phi \circ \varphi^{-1})(\varphi(p)) = \frac{\partial \Phi^j}{\partial y^i}(p).
   \end{align*}
-\end{proof}
+\end{bew}
 
 \begin{bem}[Charakterisierung durch Kurven]
   Ist $[c] \in \T_p\textcolor{red}{M}$, so gilt für $f \in C^{\infty}(\textcolor{red}{N})$:
@@ -227,45 +227,49 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \end{enumerate}
 \end{Kor}
 
-\begin{proof}\begin{enumerate}[label=(\roman*),widest=iii,leftmargin=*]
-  \item Sei $p \in P = \Phi^{-1}(q)$. Nach der zweiten Aussage des vorrangegangenen Satzes existieren Karten $(\alpha,U), (\beta, V)$ mit 
-	  \[ (\beta \circ \Phi \circ \alpha^{-1})(x^1,\ldots,x^{\textcolor{red}{m}}) = (x^1, \ldots,x^r, 0, \ldots, 0) \]
-  und es gilt:
-  \begin{align*}
-    \alpha(P \cap U) & = (\alpha \circ \Phi^{-1} \circ \beta^{-1})(0) \\
-    & = \{x \in \alpha (U) \mid x^1 = \ldots = x^r = 0\} = \alpha(U) \cap \{0\} \times \R^{m-r}.
-  \end{align*} 
-  \item Ist $q$ ein regulärer Wert von $\Phi$, so existieren nach dem ersten Teil des vorigen Satzes Karten $\psi,\alpha$ mit 
-      \[ (\psi \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^n) \qquad m \geq n = r \]
-  f"ur alle $x \in \alpha(U)$. Es gilt also für alle $u \in U$:
-  \begin{align*}
-    \Rang \Phi_{*u} = \Rang \D(\psi \circ \Phi \circ \alpha^{-1})|_x = \Rang
-    \left(\begin{array}{ccc|c}
-        1 &  & 0 & \\
-        & \ddots & & 0 \\
-        0 & & 1 & 
-      \end{array}\right)
-    = \textcolor{red}{n}
-  \end{align*}
-  Damit folgt die Behauptung aus (i).\\
-  \item $\Phi_{*p}$ ist injektiv $\Rightarrow r = m \leq n$. Nach Wahl von Karten wie in (ii):
-    \[ (\psi \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^m,f^{m+1}(x), \ldots, f^n(x)) \]
-    \[\Rang \Phi_{*u} = \Rang 
-    \left( \begin{array}{ccc}
-        1 & & 0 \\
-        & \ddots &  \\
-        0 & & 1 \\
-        \hline
-        & 0      & 
-      \end{array} \right)
-    = m \]
-  Nach der ersten Aussage des letzten Satzes erhalten wir spezielle Karten:
-  \begin{align*}
-    (\beta \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^m, 0, \ldots, 0) \in \R^{m} \times \{0\},
-  \end{align*}
-  wobei $\beta$ eine adaptierte Karte für $\Phi(U) = Q$ ist.\\
-  \item folgt aus (iii).
-\end{enumerate}\end{proof}
+\begin{bew}\begin{enumerate}[label=(\roman*),widest=iii,leftmargin=*]
+\item
+	Sei $p \in P = \Phi^{-1}(q)$. Nach der zweiten Aussage des vorrangegangenen Satzes existieren Karten $(\alpha,U), (\beta, V)$ mit 
+		\[ (\beta \circ \Phi \circ \alpha^{-1})(x^1,\ldots,x^{\textcolor{red}{m}}) = (x^1, \ldots,x^r, 0, \ldots, 0) \]
+	und es gilt:
+	\begin{align*}
+		\alpha(P \cap U) & = (\alpha \circ \Phi^{-1} \circ \beta^{-1})(0) \\
+		& = \{x \in \alpha (U) \mid x^1 = \ldots = x^r = 0\} = \alpha(U) \cap \{0\} \times \R^{m-r}.
+	\end{align*} 
+\item
+	Ist $q$ ein regulärer Wert von $\Phi$, so existieren nach dem ersten Teil des vorigen Satzes Karten $\psi,\alpha$ mit 
+		\[ (\psi \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^n) \qquad m \geq n = r \]
+	f"ur alle $x \in \alpha(U)$. Es gilt also für alle $u \in U$:
+	\begin{align*}
+		\Rang \Phi_{*u} = \Rang \D(\psi \circ \Phi \circ \alpha^{-1})|_x = \Rang
+		\left(\begin{array}{ccc|c}
+			1 &  & 0 & \\
+			& \ddots & & 0 \\
+			0 & & 1 & 
+		\end{array}\right)
+		= \textcolor{red}{n}
+	\end{align*}
+	Damit folgt die Behauptung aus (i).
+\item
+	$\Phi_{*p}$ ist injektiv $\Rightarrow r = m \leq n$. Nach Wahl von Karten wie in (ii):
+		\[ (\psi \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^m,f^{m+1}(x), \ldots, f^n(x)) \]
+		\[\Rang \Phi_{*u} = \Rang 
+			\left( \begin{array}{ccc}
+				1 & & 0 \\
+				& \ddots &  \\
+				0 & & 1 \\
+				\hline
+				& 0      & 
+			\end{array} \right)
+		= m \]
+	Nach der ersten Aussage des letzten Satzes erhalten wir spezielle Karten:
+	\begin{align*}
+		(\beta \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^m, 0, \ldots, 0) \in \R^{m} \times \{0\},
+	\end{align*}
+	wobei $\beta$ eine adaptierte Karte für $\Phi(U) = Q$ ist.
+\item
+	folgt aus (iii).
+\end{enumerate}\end{bew}
 
 
 % 5. Vorlesung <2012-10-30 Tue>
@@ -366,7 +370,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
     \draw[dashed,->] (1,1) to[out=30,in=190] (3,1.5) to[out=50,in=200] (4.5,2.5); \fill (2.75,2) circle(0.05) node[right]{$q$};
   \end{tikzpicture}\end{center}
 
-  Ist $X_p = \dot c(0) \in \T_pP$, so ist $c$ glatt als Abbildung $J \to M$ und ebenso $\Phi \circ c \equiv q$.
+  Ist $X_p = \dot c(0) \in \T_pP$, so ist $c$ glatt als Abbildung $\calI \to M$ und ebenso $\Phi \circ c \equiv q$.
   Damit gilt:
     \[ \Phi_{*p}(\dot c(0)) = \dot{\underbrace{\overline{\Phi \circ c}}_{\equiv q}}(0) = 0, \]
     % Punkt besser erkenntlich machen!
