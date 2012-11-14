@@ -72,6 +72,28 @@ eine Karte von $\T M$. Alle diese Karten bilden dann einen Atlas von $\T M$.
 	\end{align*}
 \end{enumerate}\end{Loes}
 
-\begin{Loes}
-asdf
-\end{Loes}
+\begin{Loes}\begin{enumerate}[label=\alph*),widest=a,leftmargin=*]
+\item
+	Es seien $X = -y\pdifffrac{}{x} + x\pdifffrac{}{y}, Y = -2y\pdifffrac{}{x} + \frac{1}{2}x\pdifffrac{}{y} \in \calV(\R)$, bestimme $\gamma_x^t$ und $\gamma_y^t$.\begin{description}[font=\normalfont\itshape]
+	\item[F"ur $X$:]
+		$t \mapsto \gamma_*^t(p)$ ist Integralkurve von $X$ mit $\gamma_x^0(p) = p$. \emph{Gesucht:} Kurve mit $\gamma(0) = p$, $\gamma_{*t}\pdifffrac{}{t} = X(\gamma(t)) \Leftrightarrow \gamma_{*t}\pdifffrac{}{t}(x) = X(\gamma(t))(x)$ und $\gamma_{*t}\pdifffrac{}{t}(y) = X(\gamma(t))(y) \Leftrightarrow \gamma_1'(t) = - \gamma_2(t)$ und $\gamma_2'(t) = \gamma_1(t)$. Das Anfangswertproblem
+			\[ \begin{pmatrix} \gamma_1 \\ \gamma_2 \end{pmatrix}' (t) = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} \gamma_1(t) \\ \gamma_2(t) \end{pmatrix} \text{ und } \gamma(0) = p \]
+		hat als L"osung $t \mapsto \exp(t \left( \begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix} \right) ) \cdot p$. Es gilt:
+			\[ \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}^{2n} = \begin{pmatrix} (-1)^n & 0 \\ 0 & (-1)^n \end{pmatrix} \text{ und } 
+				\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}^{2n+1} = (-1)^n \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \]
+		Damit gilt:
+		\begin{align*}
+			\exp\left(t \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \right) &= \sum_{k=0}^{\infty} \frac{1}{k!} t^k (\ldots)^k\\
+			&= \begin{pmatrix} \sum\limits_{k=0}^{\infty} \frac{(-1)^k}{2k!} t^{2k} & -\sum\limits_{k=0}^{\infty} \frac{t^{2k+1}}{(2k+1)!} (-1)^{k} \\
+				-\sum\limits_{k=0}^{\infty} \frac{t^{2k+1}}{(2k+1)!} (-1)^{k} & \sum\limits_{k=0}^{\infty} \frac{(-1)^k}{2k!} t^{2k} \end{pmatrix} \\
+			&= \begin{pmatrix} \cos(t) & -\sin(t) \\ \sin(t) & \cos(t) \end{pmatrix}
+		\end{align*}
+	Daraus folgt $\gamma(t) = \left( \begin{smallmatrix} \cos(t) & -\sin(t) \\ \sin(t) & \cos(t) \end{smallmatrix} \right) \cdot p = \gamma_x^t(p)$
+	\item[F"ur $Y$:]
+		$\gamma_{*t}\pdifffrac{}{t} = Y(\gamma(t))$, $\gamma(0) = p \xLeftrightarrow{\text{analog}} \gamma'(t) = \left( \begin{smallmatrix} 0 & -2 \\ \frac{1}{2} & 0 \end{smallmatrix} \right) \gamma(t)$
+			\[ \begin{pmatrix} 0 & -2 \\ \frac{1}{2} & 0 \end{pmatrix}^{2n} = \begin{pmatrix} (-1)^n & 0 \\ 0 & (-1)^n \end{pmatrix} \]
+		Daraus folgt $\underbrace{\gamma(t)}_{\mathclap{= \gamma_x^t(p)}} = \exp(t \left( \begin{smallmatrix} 0 & -2 \\ \frac{1}{2} & 0 \end{smallmatrix} \right) )\cdot p = \left( \begin{smallmatrix} \cos(t) & -2\sin(t) \\ \frac{1}{2}\sin(t) & \cos(t) \end{smallmatrix} \right) \cdot p$
+	\end{description}
+\item
+	asdf
+\end{enumerate}\end{Loes}

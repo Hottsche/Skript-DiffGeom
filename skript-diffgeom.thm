@@ -2,6 +2,7 @@
 \contentsline {Dfn}{{\cmLangThmDfn }{1.{1}}{differenzierbare Mannigfaltigkeit}}{8}{Dfn.1.1}
 \contentsline {bsp}{{\cmLangThmBsp }{1}{}}{8}{bsp.1}
 \contentsline {Dfn}{{\cmLangThmDfn }{1.{2}}{Differenzierbare Abbildungen}}{9}{Dfn.1.2}
+\contentsline {emptythm}{{}{1}{Konvention:}}{9}{emptythm.1}
 \contentsline {Bem}{{\cmLangThmBem }{1.{3}}{}}{9}{Dfn.1.3}
 \contentsline {Bsp}{{\cmLangThmBsp }{1.{4}}{}}{9}{Dfn.1.4}
 \contentsline {Dfn}{{\cmLangThmDfn }{1.{5}}{Diffeomorphismus}}{10}{Dfn.1.5}
@@ -89,20 +90,20 @@
 \contentsline {bsp}{{\cmLangThmBsp }{6}{}}{36}{bsp.6}
 \contentsline {Satz}{{Satz}{5.{2}}{}}{37}{Dfn.5.2}
 \contentsline {kor}{{\cmLangThmKor }{1}{}}{37}{kor.1}
-\contentsline {emptythm}{{}{1}{Eigenschaften:}}{38}{emptythm.1}
-\contentsline {emptythm}{{}{2}{Universelle Eigenschaft:}}{38}{emptythm.2}
-\contentsline {emptythm}{{}{3}{Eigenschaften:}}{39}{emptythm.3}
-\contentsline {emptythm}{{}{4}{Universelle Eigenschaft:}}{39}{emptythm.4}
+\contentsline {emptythm}{{}{2}{Eigenschaften:}}{38}{emptythm.2}
+\contentsline {emptythm}{{}{3}{Universelle Eigenschaft:}}{38}{emptythm.3}
+\contentsline {emptythm}{{}{4}{Eigenschaften:}}{39}{emptythm.4}
+\contentsline {emptythm}{{}{5}{Universelle Eigenschaft:}}{39}{emptythm.5}
 \contentsline {Dfn}{{\cmLangThmDfn }{5.{3}}{}}{40}{Dfn.5.3}
-\contentsline {dfn}{{\cmLangThmDfn }{3}{Gra\ss mann-Manningfaltigkeiten}}{42}{dfn.3}
-\contentsline {bem}{{\cmLangThmBem }{14}{}}{42}{bem.14}
-\contentsline {Loes}{{L\"osung}{1}{}}{44}{Loes.1}
-\contentsline {Loes}{{L\"osung}{2}{}}{44}{Loes.2}
-\contentsline {Loes}{{L\"osung}{3}{}}{45}{Loes.3}
-\contentsline {Loes}{{L\"osung}{4}{}}{45}{Loes.4}
-\contentsline {Loes}{{L\"osung}{1}{}}{47}{Loes.1}
-\contentsline {Loes}{{L\"osung}{2}{}}{47}{Loes.2}
-\contentsline {Loes}{{L\"osung}{4}{}}{49}{Loes.4}
-\contentsline {Loes}{{L\"osung}{1}{}}{50}{Loes.1}
-\contentsline {Loes}{{L\"osung}{2}{}}{51}{Loes.2}
-\contentsline {Loes}{{L\"osung}{3}{}}{51}{Loes.3}
+\contentsline {dfn}{{\cmLangThmDfn }{3}{Gra\ss mann-Manningfaltigkeiten}}{41}{dfn.3}
+\contentsline {bem}{{\cmLangThmBem }{14}{}}{41}{bem.14}
+\contentsline {Loes}{{L\"osung}{1}{}}{43}{Loes.1}
+\contentsline {Loes}{{L\"osung}{2}{}}{43}{Loes.2}
+\contentsline {Loes}{{L\"osung}{3}{}}{44}{Loes.3}
+\contentsline {Loes}{{L\"osung}{4}{}}{44}{Loes.4}
+\contentsline {Loes}{{L\"osung}{1}{}}{46}{Loes.1}
+\contentsline {Loes}{{L\"osung}{2}{}}{46}{Loes.2}
+\contentsline {Loes}{{L\"osung}{4}{}}{48}{Loes.4}
+\contentsline {Loes}{{L\"osung}{1}{}}{49}{Loes.1}
+\contentsline {Loes}{{L\"osung}{2}{}}{50}{Loes.2}
+\contentsline {Loes}{{L\"osung}{3}{}}{50}{Loes.3}

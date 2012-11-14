@@ -31,7 +31,8 @@
 
 \usepackage[ngerman]{babel}
 \usepackage[top=2.5cm, bottom=3cm, left=2.5cm, right=4.5cm]{geometry}
-%\geometry{top=2.5cm, bottom=3cm, inner=2.5cm,outer=4cm}
+
+%\usepackage[nobottomtitles]{titlesec}
 
 \input{preamble}
 
@@ -119,8 +120,6 @@ Hier ist eine Liste an Konventionen f"ur das Skript. Diese Regeln sind nicht in 
 
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Uebungen -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-\chapter{"Ubungen}
-
 % Die Benennung der "section" so aendern, dass "\"Ubung 123 vom " am Anfang steht
 % Der Code ist fast genau der vom Anfang der Praeambel, dort steht die Erklaerung
 \renewcommand*{\othersectionlevelsformat}[3]{\ifstr{#1}{section}{\"Ubung\ #3\ vom\ }{#3\autodot\enskip}}
@@ -128,7 +127,6 @@ Hier ist eine Liste an Konventionen f"ur das Skript. Diese Regeln sind nicht in 
 % Das Format der "section" in Kopfzeile der rechten Seiten
 \renewcommand*{\sectionmarkformat}{\"Ubung \thesection\autodot\ vom\enskip}
 
-\setcounter{section}{-1}
 
 \include{exercise/0}
 \include{exercise/1}

@@ -21,7 +21,7 @@
 \chapter{Differenzierbare Mannigfaltigkeiten}
 
 \begin{dfn}
-  Eine $n$-dimensionale \CmMark{topologische Mannigfaltigkeit} $M$ ist ein topologischer \gls{Hausdorff-Raum} mit einer abzählbaren Basis der Topologie in dem zu jedem Punkt $p \in M$ eine offene Menge $U$ mit $p \in U$ existiert und ein Hom"oomorphismus $\phi \colon U \to V$ auf eine offene Menge $V \subset \R^{n}$.
+  Eine $n$-dimensionale \CmMark[Mannigfaltigkeit!topologische]{topologische Mannigfaltigkeit} $M$ ist ein topologischer \gls{Hausdorff-Raum} mit einer abzählbaren Basis der \gls{Topologie} in dem zu jedem Punkt $p \in M$ eine offene Menge $U$ mit $p \in U$ existiert und ein \gls{Homoeomorphismus} $\phi \colon U \to V$ auf eine offene Menge $V \subset \R^{n}$.
 
 % Abbildung 1-1
 %\CmPutSvg{1-1-topologische-mf}{8.5cm}
@@ -66,10 +66,8 @@
   \begin{align*}
     \varphi_{\beta} \circ \varphi_{\alpha}^{-1}\colon \varphi_{\alpha}(U_{\alpha} \cap U_{\beta}) \to \varphi_{\beta}(U_{\alpha} \cap U_{\beta})
   \end{align*}
-  ein $C^k$-Diffeomorphismus ist.\\
+  ein $C^k$-\gls{Diffeomorphismus} ist.
 
-  % Abbildung 1-2
-  %\CmPutSvg{1-2-kartenwechsel}{8cm}
   \begin{center}\begin{tikzpicture}[font=\scriptsize]
   	\draw[->] (-1.5,0) to[out=20, in=160]node[above,font=\scriptsize]{$\varphi_\beta \circ \varphi^{-1}_\alpha$} (1.5,0);
 	
@@ -90,18 +88,16 @@
   \end{tikzpicture}\end{center}
 
 
-  Eine Karte $\psi \colon U \to V$ von $M$ hei\ss t \CmMark{verträglich} mit einem $C^k$-Atlas $\mathcal A = \{(\varphi_{\alpha},U_{\alpha}) \mid \alpha \in J\}$ wenn jeder Kartenwechsel
+  Eine Karte $\psi \colon U \to V$ von $M$ hei\ss t \CmMark[Karte!vertr{\"a}gliche]{verträglich} mit einem $C^k$-Atlas $\mathcal A = \{(\varphi_{\alpha},U_{\alpha}) \mid \alpha \in J\}$ wenn jeder Kartenwechsel
   \begin{align*}
-    \varphi_{\alpha} \circ \psi(U \cap U_{\alpha}) \to \varphi_{\alpha}(U \cap U_{\alpha})
+    \varphi_{\alpha} \circ \psi^{-1}: \psi(U \cap U_{\alpha}) \to \varphi_{\alpha}(U \cap U_{\alpha})
   \end{align*}
-  ein $C^k$-Diffeomorphismus ist, i.e. $\mathcal A' = \mathcal A \cup \{(\psi, U)\}$ ist ebenfalls ein $C^k$-Atlas.\\
-
-  Die Menge aller mit $\mathcal A$ verträglichen Karten ist ein \CmMark{maxmaler $C^k$-Atlas}. Jeder maximale Atlas enthält alle mit ihm verträglichen Karten. Ein maximaler $C^k$-Atlas hei\ss t auch \CmMark{$C^k$-differenzierbare Struktur}.
+  ein $C^k$-Diffeomorphismus ist, also $\mathcal A' = \mathcal A \cup \{(\psi, U)\}$ ebenfalls ein $C^k$-Atlas ist. Die Menge aller mit $\mathcal A$ verträglichen Karten ist ein \CmMark[Atlas!maximaler]{maximaler $C^k$-Atlas}. Jeder maximale Atlas enthält alle mit ihm verträglichen Karten. Ein maximaler $C^k$-Atlas hei\ss t auch \CmMark{$C^k$-differenzierbare Struktur}.
 
 \end{dfn}
 
 \begin{Dfn}[differenzierbare Mannigfaltigkeit]
-  Eine \CmMark{differenzierbare Mannigfaltigkeit} der Klasse $C^k$ ist eine topologische Mannigfaltigkeit zusammen mit einer $C^{k}$-differenzierbaren Struktur.\\
+  Eine \CmMark[Mannigfaltigkeit!differenzierbare]{differenzierbare Mannigfaltigkeit} der Klasse $C^k$ ist eine topologische Mannigfaltigkeit zusammen mit einer $C^{k}$-differenzierbaren Struktur.\\
 \end{Dfn}
 
 \begin{bsp}
@@ -184,7 +180,7 @@ Eine stetige Abbildung $f \colon M \to N$ zwischen glatten Mannigfaltigkeiten $M
 	%\draw[step=0.25,gray!15] (-5,-1) grid (5,5); \draw[step=0.5,gray!30] (-5,-1) grid (5,5); \fill (0,0) circle(0.1); %Hilfsgitter
 	
 	% Die Abbildungspfeile
-	\draw[->] (-1.5,0) to[out=20, in=160]node[above]{$\varphi' \circ f \circ \varphi$} (1.5,0);
+	\draw[->] (-1.5,0) to[out=20, in=160]node[above]{$\varphi' \circ f \circ \varphi^{-1}$} (1.5,0);
 	\draw[->] (-1,2) --node[above]{$f$} (1.5,2);
 	
 	% Die Achsen
@@ -210,14 +206,13 @@ Eine stetige Abbildung $f \colon M \to N$ zwischen glatten Mannigfaltigkeiten $M
 	
 	\draw[->] (3.75,2) node[right]{$f(p)$} to[out=280,in=80] node[right]{$\varphi'$} (3.75,0); \fill (3.75,2) circle (0.05);
 	\draw (3.5,0.25) circle(0.5); \node at (3,0.75) {$V'$};
-\end{tikzpicture}
-
-\textcolor{red}{Sollte das in der Zeichnung beim unteren Pfeil nicht $\varphi'\circ f \circ \varphi^{-1}$ hei\ss en?}\end{center}
+\end{tikzpicture}\end{center}
 Die Menge aller glatten Abbildungen von $M$ nach $N$ wird $C^{\infty}(M,N)$ genannt.
-
 \end{Dfn}
 
-\textbf{Konvention}: Ab jetzt seien zunächst alle Mannigfaltigkeiten, wie auch alle Abbildungen als glatt vorrausgesetzt.
+\begin{emptythm}[Konvention:]
+Ab jetzt seien zunächst alle Mannigfaltigkeiten, wie auch alle Abbildungen als glatt vorrausgesetzt.
+\end{emptythm}
 
 \begin{Bem}
   Da Kartenwechsel $C^{\infty}$ sind, gilt obige Bedingung automatisch für alle Karten von $M$ und $N$ (evtl. nach Einschränkung).
