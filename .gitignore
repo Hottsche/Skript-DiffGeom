@@ -23,6 +23,8 @@
 *.glg
 *.glo
 *.gls
+*.ist
+*.thm
 *_region_.tex
 
 # Editor files

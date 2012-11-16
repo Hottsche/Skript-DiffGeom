@@ -267,8 +267,163 @@ Zur Definition der "Ubergangsfunktionen schreibt man $\Hom(E, E') \cong E^* \oti
 \end{tikzpicture}\end{center}
 
 \begin{Dfn}
-Es sei $E \xrightarrow{\pi} M$ ein Vektorb"undel "uber M. Ein \CmMark{Schnitt} in $E$ ist eine glatte Abbildung $S: M \to E$ mit $\pi \circ S = \Id_M$. Der Raum der Schnitte wird mit $\Gamma(E)$ bezeichnet.
+Es sei $E \xrightarrow{\pi} M$ ein Vektorb"undel "uber M. Ein \CmMark{Schnitt} in $E$ ist eine glatte Abbildung $S: M \to E$ mit $\pi \circ S = \Id_M$, also $S(p) \in E_p = \pi^{-1}(p)$. Der Raum der Schnitte wird mit $\Gamma(E)$ bezeichnet. $\Gamma(E)$ ist ein $C^{\infty}$-Modul.
 \end{Dfn}
+
+
+%%%
+%%% 10. Vorlesung <2012-11-16 Fri>
+%%% 
+
+\textcolor{red}{Abbildung 10.1 Schnitt}
+
+\textcolor{red}{Abbildung 10.2 Diagramm Schnitt}
+
+Die $S_i$ bilden punktweise eine Basis der Fasern.
+
+Die Schnitte des $(r,s)$-Tensorbündels $\Gamma(\T_s^r(\T M)) = \mathcal T_s^r(M)$ bezeichnet man als \CmMark{$(r,s)$-Tensorfelder} auf $M$.
+Die $(1,0)$-Tensorfelder sind genau die Vektorfelder auf $M$; $\mathcal T_0^1(M) = \mathcal V(M)$.
+
+Es bezeichne $\mathcal V^{*}(M) = \mathcal T_1^0(M)$ den Raum der $(0,1)$-Tensorfelder.
+
+\begin{Prop}
+  Die $(r,s)$-Tensorfelder auf $M$ entsprechen genau den $C^{\infty}(M)$-multilinearen Abbildungen
+  \begin{align*}
+    & \underbrace{\mathcal V^{*}(M) \X \cdots \X \mathcal V^{*}(M)}_{r-\text{mal}} \X \underbrace{\mathcal V(M) \X \cdots \X \mathcal V(M)}_{k-\text{mal}} \to C^{\infty}(M),\\
+    p \mapsto & X_1 \otimes \cdots \otimes X_r \otimes \omega_1 \otimes \cdots \otimes \omega_s (\eta_1, \ldots, \eta_r, Y_1, \ldots, Y_s)\\
+    & = \eta_1(X_1)\eta_2(X_2)\cdots\eta_r(X_r) \cdot \omega(Y_1)\cdots \omega_s(Y_s) (p)
+  \end{align*}
+\end{Prop}
+
+Der Beweis sei als Übung überlassen.
+
+\begin{bsp}
+  \begin{enumerate}[label=(\arabic*)]
+  \item Ist $f \in C^{\infty}(M)$, so ist durch sein Differential
+    \begin{align*}
+      \dop f|_p(X_p) - X_p(f)
+    \end{align*}
+    ein $(0,1)$-Tensorfeld gegeben.
+  \item Die Lieklammer $[\cdot,\cdot]$ ist nicht $C^{\infty}(M)$-linear, also \textbf{kein} Tensorfeld.
+  \end{enumerate}
+\end{bsp}
+
+Ein Element von $\T_p^kM$ bezeichnet man als \CmMark[Kotangentialvektor]{Kotangentialvektoren}, das Bündel $\T^{*}M$ als \CmMark{Kotangentialbündel}.
+
+Ist $(\varphi, U)$ eine Karte von $M$, dann bilden die Differentiale $\dop \varphi^i = \dop x^i$ der Koordinatenfunktionen (punktweise) eine Basis von $\T_p^{*}M$, denn
+\begin{align*}
+  \dop x^i|_p\left(\pdifffrac[p]{}{x^i}\right) = \pdifffrac{}{x^j}(\varphi^i) = \delta_j^i.
+\end{align*}
+Die $\dop x^i$ sind also punktweise linear unabhängige $(0,1)$-Tensorfelder über dem Kartengebiet $U$.
+
+Ist $\psi$ eine weitere Karte und bezeichnen $\pdifffrac{}{y^i}$ bzw. $\dop y^i$ die entsprechenden Koordinaten(ko)tangentialvektoren, so gilt:
+\begin{align*}
+  \dop x^i & = \sum \alpha_j^i\dop y^j \text{ mit } \alpha_j^i \overset{!}{=} \dop x^i\left(\pdifffrac{}{y^j}\right) = \sum \alpha_k^i \underbrace{\dop y^k\left(\pdifffrac{}{y^j}\right)}_{\delta_j^k}, \text{ denn }\\
+  \alpha_j^i & = \dop x^i \left(\pdifffrac{}{y^j}\right) - \pdifffrac{}{y^j}(\varphi^i) = \pdifffrac{p^i}{y^i} = \partial_j(\varphi^i\circ \psi^{-1}).
+\end{align*}
+Es gilt also $\alpha = \D(\psi \circ \varphi^{-1})^{x^{-1}}$ vergleiche Satz 2.10
+\begin{align*}
+  \pdifffrac{}{x^i} = \sum \partial_i (\psi^j \circ \varphi^{-1})\pdifffrac{}{y^j}.
+\end{align*}
+Diese transponierten Inversen der Differentiale der Kartenwechsel sind geanu die Übergangsfunktionen $h_{\alpha\beta} = (g_{\alpha\beta}^{*})^{-1}$ in der Definition von $(\T M)^{*} = \T^{*}M$.
+
+Ist $S$ ein Tensorfeld vom Typ $(0,s)$ auf einer Mannigfaltigkeit $N$ und $\Phi \colon M \to N$ eine glatte Abbildung.
+
+\textcolor{red}{Abbildung 10.3 Diagramm Tensorfeld auf N und pullback}
+\begin{align*}
+  & S \colon \mathcal V(N) \X \cdots \X \mathcal V(N) \to C^{\infty}(N)\\
+  & \Phi^{*}S \colon \mathcal V(M) \X \cdots \X \mathcal V(M) \to C^{\infty}(M)
+\end{align*}
+Dann ergibt
+\begin{align*}
+  \Phi^{*}S(X_{1p},\ldots,X_{sp}) = S(\Phi_{*}X_{1\Phi(p)},\ldots,\Phi_{*}X_{s\Phi(p)})
+\end{align*}
+ein $(0,s)$-Tensorfeld auf $M$, das entlang $\Phi$ zurückgezogene Tensorfeld (\CmMark{pullback}).
+
+Es gilt $\Phi^{*}(S \otimes T) = \Phi^{*}S \otimes \Phi^{*}T$ für $S \in \mathcal T_1^0(N), T \in \mathcal T_t^0(N)$.
+
+Ist $\Psi \colon P \to M$ glatt, so gilt
+\begin{align*}
+  (\Phi \circ \Psi)^{*} = \Psi^{*} \circ \Phi^{*}.
+\end{align*}
+
+Ist $\Phi$ ein Diffeomorphismus, so lässt sich $\Phi^{*}$ für beliebige Tensorfelder $S \in \mathcal T_s^r(M)$ definieren:
+
+\textcolor{red}{TODO: aufräumen, hier habe ich leider nicht mehr so recht durchgesehen, was wohin gehört!, JB}
+\begin{align*}
+& S \colon \underbrace{\mathcal V^{*}(N) \cdots \mathcal V^{*}(N)}_{r\text{-mal}} \X \underbrace{ \mathcal V(N) \cdots\mathcal V(N)}_{s\text{-mal}} \to C^{\infty}\\
+& \Phi^{*}S \colon \mathcal V^{*}M \times V\mathcal V(M)\\
+& \omega \colon \mathcal V^{*}(M) = \mathcal T_1^0(M)\\
+& \mathcal V(M) \to C^{\infty}(M)\\
+& p \mapsto\Phi^{*}S (\omega_1,\ldots,\omega_r,X_1,\ldots,X_s)(p)\\
+& S(\Phi^{*})^{-1}(\omega_1, \ldots, (\Phi^{*})^{-1}\omega_{r}, \Phi_{*}X_1,\ldots,\Phi_{*}X_s)(p)
+\end{align*}
+Insbesondere $X \in \mathcal T_0^1(M) = \mathcal V(M)$:
+\begin{align*}
+  \Phi^{*}X(\omega) = X((\Phi^{*})^{-1}\omega) = ((\Phi^{*})^{-1}\omega)(X) = \omega(\Phi_{*}^{-1}X)
+\end{align*}
+also $\Phi^{*}X = \Phi_{*}^{-1}X$.
+
+\begin{bsp}[Anwendung]
+  Es sei $(\varphi_{\alpha},U_{\alpha})$ ein Atlas von $M$. Dann ist jedes $\varphi_{\alpha}$ ein Diffeomorphismus von $U_{\alpha}$ auf $\varphi_{\alpha}(U_{\alpha}) = V_{\alpha} \subset \R^m$.
+
+  Ist $S \in \mathcal T_s^r(M)$, so ist
+  \begin{align*}
+    S_{\alpha} = (\varphi_{\alpha}^{-1})^{*}S|_{U_\alpha}
+  \end{align*}
+  ein $(r,s)$-Tensorfeld auf $V_{\alpha}$.
+
+  \textcolor{red}{Abbildung 10.4 Diagram Beispiel/Anwendung}
+
+  Für alle $\alpha, \beta$ mit $U_{\alpha} \cap U_{\beta}$ gilt
+  \begin{align*}
+    (\varphi_{\alpha} \circ \varphi_{\beta}^{-1})^{*}S_{\alpha}|_{V_{\alpha} \cap V_{\beta}} & = (\varphi_{\alpha} \circ \varphi_{\beta}^{-1})^{*}\left((\varphi_{\alpha}^{-1})^{*}S|_{U_{\alpha}}\right)|_{V_{\alpha}\cap V_{\beta}}\\
+    & = \left.(\varphi_{\beta}^{-1})^{*} \circ \varphi_{\alpha}^{*} \circ (\varphi_{\alpha}^{-1})^{*} S|_{U_{\alpha}}\right|_{V_{\alpha} \cap V_{\beta}} = (\varphi_{\beta}^{-1})^{*}S|_{U_{\beta}}|_{V_{\alpha} \cap V_{\beta}} = S_{\beta}|_{V_{\alpha} \cap V_{\beta}}
+  \end{align*}
+  Ist umgekehrt $S_\alpha$ eine Familie von $(r,s)$-Tensorfeldern auf $V_{\alpha}$ mit obigem Transformationsverhalten, so definiert dies ein $(r,s)$-Tensorfeld auf $M$.
+\end{bsp}
+
+\begin{Dfn}
+  Es sei $X \in \mathcal V(M)$ mit dem Fluss $\gamma$ und $S \in \mathcal T_s^r$ ein glattes Vektorfeld auf $M$. Dann heißt
+  \begin{align*}
+    \mathcal L_X S = \difffrac[t=0]{}{t}(\gamma^{t*}S)
+  \end{align*}
+  die \CmMark{Lieableitung} von $S$ in Richtung $X$.
+\end{Dfn}
+
+\begin{bem}[Eigenschaften]
+  \begin{enumerate}[label=(\arabic*)]
+  \item $f \in \mathcal T_0^0(M) = C^{\infty}(M)$. Dann ist $\mathcal L_Xf = \dop f (X) = X(f)$.
+  \item $X,Y \in \mathcal T_0^1(M) = \mathcal V(M)$, so gilt
+    \begin{align*}
+      \mathcal L_XY = [X,Y].
+    \end{align*}
+\item Für $S \in \mathcal T_s^r(M), T \in \mathcal T_s^{r'}(M)$ gilt:
+  \begin{align*}
+    \mathcal L_X(S \otimes T) = (\mathcal L_XS) \otimes T + S \otimes (\mathcal L_X T).
+  \end{align*}
+  \end{enumerate}
+\end{bem}
+
+
+\section{Differentialformen und die äußere Ableitung}
+
+\begin{Dfn}
+  Das Vektorbündel $\Lambda^k(\T^{*}M)$ wird mit $\Lambda^k(M)$ bezeichnet und der Raum seiner Schnitte $\Gamma(\Lambda^k(\T^{*}M))$ mit $\Omega^k(M)$. Die Elemente von $\Omega^k(M)$ heißen \CmMark{Differentialformen} vom Grad $k$ oder kurz \CmMark{$k$-Formen} auf $M$.
+
+Ist $(\varphi, U)$ eine Karte von $M$, so bilden die Differentiale der Koordinatenfunktionen $\dop x^i = \dop \varphi^i$ eine Basis von $\T^{*}M$.
+Diese sind (lokale) Schnitte in $\Lambda^1(\T^{*}M)$, also lokal $1$-Formen.
+
+Das Differential von $f \in C^{\infty}(M)$ ist eine $1$-Form $\dop f(X) = X(f)$.
+
+Lokal gilt $\dop f = \sum f_i \dop x^i$, wobei $f_i = \dop f \left(\pdifffrac{}{x^i}\right) = \pdifffrac{}{x^i}(f) = \pdifffrac{f}{x^i}$.
+
+Desweiteren sind (lokal) die $k$-Formen $\dop x^{i_1} \wedge \ldots \wedge \dop x^{i_k}$ mit $i_1 < \cdots < i_k$ eine Basis von $\Omega^k$. Jede $k$-Form $\omega$ ist lokal von der Gestalt
+\begin{align*}
+  \omega = \sum_{i_1 < \cdots y i_k}f_{i_1,\ldots,i_k}\dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k}.
+\end{align*}
+\end{Dfn}
+
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "../skript-diffgeom"
