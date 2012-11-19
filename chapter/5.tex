@@ -268,17 +268,45 @@ Zur Definition der "Ubergangsfunktionen schreibt man $\Hom(E, E') \cong E^* \oti
 
 \begin{Dfn}
 Es sei $E \xrightarrow{\pi} M$ ein Vektorb"undel "uber M. Ein \CmMark{Schnitt} in $E$ ist eine glatte Abbildung $S: M \to E$ mit $\pi \circ S = \Id_M$, also $S(p) \in E_p = \pi^{-1}(p)$. Der Raum der Schnitte wird mit $\Gamma(E)$ bezeichnet. $\Gamma(E)$ ist ein $C^{\infty}$-Modul.
+\begin{center}\begin{tikzpicture}[scale=0.9]
+%	\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+	
+	\draw[name path=kurve] (-3,2) to[out=30,in=150] (0,2) to[out=330,in=210] (3,2);
+	\draw (-3,0) to[out=30,in=150] (0,0) to[out=330,in=210] (3,0);
+	
+	\foreach \x in {-2.5, -2, ..., 2.5}{
+		\draw[name path=strich] (\x,1) -- (\x,3);
+		\path[name intersections={of=kurve and strich}];
+		\fill (intersection-1) circle(0.05);
+	}
+	
+	\node at (3.5,0) {$M$};
+	\node at (3.5,2.5) {$E = \bigcup E_p$};
+\end{tikzpicture}\end{center}
 \end{Dfn}
-
 
 %%%
 %%% 10. Vorlesung <2012-11-16 Fri>
 %%% 
 
-\textcolor{red}{Abbildung 10.1 Schnitt}
-
-\textcolor{red}{Abbildung 10.2 Diagramm Schnitt}
-
+\begin{center}\begin{tikzpicture}
+%	\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+	
+	\node (1) at (-2.5,0) {$S|_U: U$};
+	\node (2) at (0,0) {$E|_U$};
+	\node (3) at (2.5,0) {$U \X \R^k$};
+	
+	\draw[->] (1)node[above,font=\tiny,gray,yshift=1mm]{$S_i^{-1}(p) = \tau^{-1}(p,e_i)$} -- (2); \draw[->] (2) --node[above,font=\scriptsize]{$\cong$}node[below,font=\scriptsize]{$\tau$} (3);
+	\draw[->] (1) to[out=330,in=210]node[below,font=\scriptsize]{$\pi \circ S|_U$} (3);
+	
+	\draw[->,gray] (3.5,-0.5)node[anchor=north,font=\tiny,xshift=7mm]{Basis $\{e_i\}$ von $\R^k$} to[out=90,in=0] (3);
+	
+	\node (4) at (-2.5,-1.5) {$p$}; \node (5) at (2.5,-1.5) {$(p,x)$};
+	\draw[|->] (4) -- (5);
+	
+	\node (6) at (-2.5,-2) {$p$}; \node (7) at (2.5,-2) {$(p,e_i)$};
+	\draw[|->] (7) -- (6);
+\end{tikzpicture}\end{center}
 Die $S_i$ bilden punktweise eine Basis der Fasern.
 
 Die Schnitte des $(r,s)$-Tensorbündels $\Gamma(\T_s^r(\T M)) = \mathcal T_s^r(M)$ bezeichnet man als \CmMark{$(r,s)$-Tensorfelder} auf $M$. Die $(1,0)$-Tensorfelder sind genau die Vektorfelder auf $M$; $\mathcal T_0^1(M) = \mathcal V(M)$. Es bezeichne $\mathcal V^{*}(M) = \mathcal T_1^0(M)$ den Raum der $(0,1)$-Tensorfelder.
