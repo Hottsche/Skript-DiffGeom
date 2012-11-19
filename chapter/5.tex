@@ -239,7 +239,7 @@ und
 
 \section{B"undelkonstruktion}
 Es seien $E$ und $E'$ Vektorb"undel vom Rang $k$ und $l$. Es bezeichnen stets $\tau$ und $\tau'$ lokale Trivialisierungen mit dem gleichen Trivialisierungsgebiet $U$ sowie $g_{\alpha\beta}$ und $g'_{\alpha\beta}$ die "Ubergangsfunktionen von $E$ beziehungsweise $E'$. Das \CmMark{Tensorprodukt} $E \otimes E'$ von $E$ und $E'$ ist das Vektorb"undel mit den Fasern $(E \otimes E')_p = E_p \otimes E'_p$, also $E \otimes E' = \bigcup_{p \in M} E_p \otimes E'_p \to M$ mit lokalen Trivialisierungen
-	\[ \sigma: \left\{\begin{array}{ccc} (E \otimes E')|_U = \bigcup\limits_{p \in M} E_p \otimes E'_p &\to& U \X (\R^k \otimes \R^l) \cong U \X \R^{kl} \\
+	\[ \sigma: \left\{\begin{array}{ccc} (E \otimes E')|_U = \bigcup\limits_{p \in U} E_p \otimes E'_p &\to& U \X (\R^k \otimes \R^l) \cong U \X \R^{kl} \\
 		E_p \otimes E'_p \ni w = \sum v_i \otimes u_i &\mapsto& (p, \sum \tau_p(v_i) \otimes \tau'_p(u_i)) \end{array}\right. \]
 das hei"s dass $\sigma = (\pi, \tau_p \otimes \tau'_p)$ ist. Wie in Kapitel 4 zeigt man dass $E \otimes E'$ ein B"undel ist. Alternativ l"asst sich $E \otimes E'$ mit Satz \ref{satz-5-2} durch die "Ubergangsfunktion definieren:
 	\[\begin{array}{ccc} E \otimes E' &=& \FakRaum{\dot \bigcup U_{\alpha} \X (\R^k \otimes \R^l)}{\sim} \\
@@ -306,7 +306,7 @@ Der Beweis sei als Übung überlassen.
 	Die Lieklammer $[\cdot,\cdot]$ ist \emph{nicht} $C^{\infty}(M)$-linear, also kein Tensorfeld.
 \end{enumerate}\end{bsp}
 
-Ein Element von $\T_p^*M$ bezeichnet man als \CmMark[Kotangentialvektor]{Kotangentialvektoren}, $\T_p^*M$ als \CmMark{Kotangentialvektorraum} und das Bündel $\T^{*}M$ als \CmMark{Kotangentialbündel}. \textcolor{red}{(in der Vorlesung wurde das Element von $\T_p^*M$ selbst das Kotangententialvektorraum bezeichnet und der kotangentialvektor wurde "uberhaupt nicht er"ahnt, das erscheint mir falsch, also haben wir es ge"andert)}
+Ein Element von $\T_p^*M$ bezeichnet man als \CmMark[Kotangentialvektor]{Kotangentialvektoren}, $\T_p^*M$ als \CmMark{Kotangentialvektorraum} und das Bündel $\T^{*}M$ als \CmMark{Kotangentialbündel}. \textcolor{red}{(in der Vorlesung wurde das Element von $\T_p^*M$ selbst das Kotangententialvektorraum bezeichnet und der kotangentialvektor wurde "uberhaupt nicht er"ahnt, das erscheint falsch, also haben wir es ge"andert)}
 
 Ist $(\varphi, U)$ eine Karte von $M$, dann bilden die Differentiale $\dop \varphi^i = \dop x^i$ der Koordinatenfunktionen (punktweise) eine Basis von $\T_p^{*}M$, denn
 \begin{align*}
@@ -338,34 +338,24 @@ Ist $S$ ein Tensorfeld vom Typ $(0,s)$ auf einer Mannigfaltigkeit $N$ und $\Phi 
 	\draw[->] (2) -- (4);
 	\draw[->] (3) --node[above,font=\scriptsize]{$\Phi$} (4);
 \end{tikzpicture}\end{center}
-\begin{align*}
-  & S \colon \mathcal V(N) \X \cdots \X \mathcal V(N) \to C^{\infty}(N)\\
-  & \Phi^{*}S \colon \mathcal V(M) \X \cdots \X \mathcal V(M) \to C^{\infty}(M)
-\end{align*}
+	\[ \begin{array}{rccc} S \colon & \mathcal V(N) \X \cdots \X \mathcal V(N) &\to& C^{\infty}(N)\\
+		\Phi^{*}S \colon & \mathcal V(M) \X \cdots \X \mathcal V(M) &\to& C^{\infty}(M) \end{array} \]
 Dann ergibt
-\begin{align*}
-  \Phi^{*}S(X_{1p},\ldots,X_{sp}) = S(\Phi_{*}X_{1\Phi(p)},\ldots,\Phi_{*}X_{s\Phi(p)})
-\end{align*}
+	\[ \Phi^{*}S(X_{1},\ldots,X_{s}) = S(\Phi_{*}X_{1},\ldots,\Phi_{*}X_{s}) \]
 ein $(0,s)$-Tensorfeld auf $M$, das entlang $\Phi$ zurückgezogene Tensorfeld (\CmMark{pullback}).
 
 Es gilt $\Phi^{*}(S \otimes T) = \Phi^{*}S \otimes \Phi^{*}T$ für $S \in \mathcal T_s^0(N), T \in \mathcal T_t^0(N)$.
-
 Ist $\Psi \colon P \to M$ glatt, so gilt
-\begin{align*}
-  (\Phi \circ \Psi)^{*} = \Psi^{*} \circ \Phi^{*}.
-\end{align*}
+	\[ (\Phi \circ \Psi)^{*} = \Psi^{*} \circ \Phi^{*}.\]
 
 Ist $\Phi$ ein Diffeomorphismus, so lässt sich $\Phi^{*}$ für beliebige Tensorfelder $S \in \mathcal T_s^r(M)$ definieren:
-
-\textcolor{red}{TODO: aufräumen, hier habe ich leider nicht mehr so recht durchgesehen, was wohin gehört!, JB}
-\begin{align*}
-& S \colon \underbrace{\mathcal V^{*}(N) \cdots \mathcal V^{*}(N)}_{r\text{-mal}} \X \underbrace{ \mathcal V(N) \cdots\mathcal V(N)}_{s\text{-mal}} \to C^{\infty}\\
-& \Phi^{*}S \colon \mathcal V^{*}M \times \mathcal V(M)\\
-& \omega \colon \mathcal V^{*}(M) = \mathcal T_1^0(M)\\
-& \mathcal V(M) \to C^{\infty}(M)\\
-& p \mapsto\Phi^{*}S (\omega_1,\ldots,\omega_r,X_1,\ldots,X_s)(p)\\
-& S((\Phi^{*})^{-1}\omega_1, \ldots, (\Phi^{*})^{-1}\omega_{r}, \Phi_{*}X_1,\ldots,\Phi_{*}X_s)(p)
-\end{align*}
+	\[ \begin{array}{rl} p \mapsto& \Phi^{*}S (\omega_1,\ldots,\omega_r,X_1,\ldots,X_s)(p)\\
+		& S((\Phi^{*})^{-1}\omega_1, \ldots, (\Phi^{*})^{-1}\omega_{r}, \Phi_{*}X_1,\ldots,\Phi_{*}X_s)(p) \end{array} \]
+mit
+	\[ \begin{array}{rccc} S \colon& \underbrace{\mathcal V^{*}(N) \cdots \mathcal V^{*}(N)}_{r\text{-mal}} \X \underbrace{ \mathcal V(N) \cdots\mathcal V(N)}_{s\text{-mal}} &\to& C^{\infty}(N)\\
+		\Phi^*S \colon& \mathcal V^{*}(M) \cdots \mathcal V^{*}(M) \X \mathcal V(N) \cdots\mathcal V(N) &\to& C^{\infty}(M) \end{array} \]
+	\[ \begin{array}{rccc} \textcolor{red}{\omega \in}& \mathcal V^{*}(M) = \mathcal T_1^0(M) &\to& C^{\infty}(M)\\
+		\textcolor{red}{X \in}& \mathcal V(M) = \calT_0^1(M) &\to& C^{\infty}(M) \end{array} \]
 Insbesondere: $X \in \mathcal T_0^1(M) = \mathcal V(M) = \{\calV^*(M) \to C^{\infty}(M)\}$
 \begin{align*}
   \Phi^{*}X(\omega) = X((\Phi^{*})^{-1}\omega) = ((\Phi^{*})^{-1}\omega)(X) = \omega(\Phi_{*}^{-1}X)
@@ -422,10 +412,7 @@ also $\Phi^{*}X = \Phi_{*}^{-1}X$.
 \end{Dfn}
 
 Ist $(\varphi, U)$ eine Karte von $M$, so bilden die Differentiale der Koordinatenfunktionen $\dop x^i = \dop \varphi^i$ eine Basis von $\T^{*}M$.
-Diese sind (lokale) Schnitte in $\Lambda^1(\T^{*}M)$, also lokal $1$-Formen.
-
-Das Differential von $f \in C^{\infty}(M)$ ist eine $1$-Form $\dop f(X) = X(f)$.
-
+Diese sind (lokale) Schnitte in $\Lambda^1(\T^{*}M)$, also lokal $1$-Formen. Das Differential von $f \in C^{\infty}(M)$ ist eine $1$-Form $\dop f(X) = X(f)$.
 Lokal gilt $\dop f = \sum f_i \dop x^i$, wobei $f_i = \dop f \left(\pdifffrac{}{x^i}\right) = \pdifffrac{}{x^i}(f) = \pdifffrac{f}{x^i}$.
 
 Desweiteren sind (lokal) die $\left( \begin{smallmatrix} m \\ k\end{smallmatrix} \right)$ $k$-Formen $\dop x^{i_1} \wedge \ldots \wedge \dop x^{i_k}$ mit $i_1 < \cdots < i_k$ eine Basis von $\Omega^k$. Jede $k$-Form $\omega$ ist lokal von der Gestalt
