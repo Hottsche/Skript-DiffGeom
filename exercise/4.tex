@@ -1,0 +1,68 @@
+\section{19. November 2012}
+\setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
+\setcounter{Loes}{0}
+
+\begin{Loes}
+asdf
+\end{Loes}
+
+\begin{Loes}
+Sei $\{U_\alpha | \alpha \in I\}$ eine offene "Uberdeckung vom $M$, $g_{\alpha\beta}: U_\alpha \cap U_\beta \to \GL(k,\R)$, $g_{\alpha\gamma}(p) = g_{\alpha\beta}(p) \cdot g_{\beta\gamma}(p)$ f"ur alle $ \in U_\alpha \cap U_\beta \cap U_\gamma$. Sei $E := \dot\bigcup_{\alpha \in I} (U_\alpha \X \R^k)_{/\sim}$, wobei f"ur $(p,v)_\alpha \in U_\alpha \X \R^k$, $(q,w)_\beta \in U_\beta \X \R^k$ gilt $(p,v)_\alpha \sim (q,w)_\beta \Leftrightarrow p=q$ und $v = g_{\alpha\beta}(p) \cdot w$.
+
+\emph{Behauptung:} $\pi: E \to M$, $[p,v] \mapsto p$ ist ein Vektorb"undel.
+
+\begin{description}[leftmargin=*]
+\item[\quot{$\bm{\sim}$} ist "Aquivalenzrelation:]\begin{itemize}[leftmargin=*]
+	\item
+		$(p,v)_\alpha \sim (p,v)_\alpha$ gilt: $g_{\alpha\alpha}(p) = \Id v$ ($g_{\alpha\alpha}(p) = \underbrace{g_{\alpha\alpha}(p)}_{\mathclap{\in \GL(k,\R)}} \cdot g_{\alpha\alpha}(p)$)
+	\item
+		$(p,v)_\alpha \sim (q,w)_\beta \Rightarrow (q,w)_\beta \sim (p,v)_\alpha$ gilt: $p=q$, $v=g_{\alpha\beta}(p)w$ $\Rightarrow w = (g_{\alpha\beta}(p))^{-1} v = g_{\beta\alpha} v$ ($g_{\alpha\alpha}(p) = g_{\alpha\beta}(p) g_{\beta\alpha}(p)$)
+	\item
+		Transitivit"at folgt aus $g_{\alpha\gamma} = g_{\alpha\beta} g_{\beta\gamma}$
+	\end{itemize}
+\item[$\bm{E_p}$ ist $\bm{k}$-dimensionaler Vektorraum:]
+	\[ [(p,v)_\alpha] + \lambda[(p,w)_\alpha] := [(p, v + \lambda w)_\alpha] \]
+	\begin{description}[font=\normalfont\itshape,leftmargin=*]
+	\item[unabh"angig von $\alpha$:]
+		\[\begin{array}{rl}
+			[(p,v)_\beta] + \lambda[(p,w)_\beta] &= [(p,g_{\alpha\beta}(p)v)_\alpha] + \lambda[(p,g_{\alpha\beta}(p)w)_\alpha]\\
+				&= [(p,g_{\alpha\beta}(p)v + \lambda g_{\alpha\beta}(p)w)_\alpha]\\
+				&= [(p,g_{\alpha\beta}(p) \cdot(v + \lambda w))_\alpha] = [(p,v + \lambda w)_\beta]
+		\end{array}\]
+	\item[$k$-dimensional:]
+		$q|_{\{p\} \X \R^k} : \{p\} \X \R^k \to E_p$ ist Vektorraum-Isomorphismus (wobei $q: \dot \bigcup_{\alpha \in I} (U_\alpha \X \R^k) \to E$)
+	\end{description}
+\item[B"undelkarten (glatt):]
+	$\Phi_\alpha: U_\alpha \X \R^k \to E|_{U_\alpha}$, $(p,v) \mapsto [(p,v)_\alpha]$ ist Hom"oomorphismus, da $\sim|_{(U_\alpha \X \R^k) \X (U_\alpha \X \R^k)}$ die triviale "Aquivalenzrelation ist.
+	\[\begin{array}{rl} \Phi_\alpha \circ \Phi_\beta^{-1}(p,v) &= \Phi_\alpha([(p,v)_\beta])\\
+		&= \Phi_\alpha([(p,g_{\alpha\beta}(p)v)_\alpha])\\
+		&= (p, g_{\alpha\beta}(p)v) \end{array}\]
+	$\Rightarrow \Phi_\alpha \circ \Phi_\beta^{-1}$ ist glatt. $\Phi_\alpha|_{E_p}$ ist Vektorraum-Isomorphismus.
+\item[\quot{normale} Karten:]
+	Sei $\varphi$ Karte von $M$ mit Kartengebiet $U \subset U_\alpha$ $\leadsto$ $\overline\varphi_\alpha: E|_U \to \varphi(U) \X \R^k$, $e \mapsto (\varphi(\pi(e)), (\Phi_\alpha)^2(e))$.
+	
+	Glatte Kartenwechsel $\checkmark$
+\item[$\bm{E}$ Hausdorffsch:]
+	$[(p,v)_\alpha] \ne [(q,w)_\beta] \in E$
+	\begin{description}[font=\normalfont,leftmargin=*]
+	\item[$p\ne q$:]
+		Die Urbilder in $M$ trennender Umgebungen von $p$ und $q$ unter $\pi$ trennen die Punkte in $E$.
+	\item[$p=q$:]
+		$v \ne g_{\alpha\beta}(p) w$ $\leadsto$ trennen im $\R^k$ und "uber $\Phi_\alpha$ zur"uckziehen.
+	\end{description}
+\item[abz"ahlbare basis der Topologie (f"ur $\bm{U_{\alpha}} \bm{\X} \R^{\bm{k}} \bm{\checkmark}$):]
+	Es gibt ein $I ' \subseteq I$ mit $I$ abz"ahlbar und $M = \bigcup_{\alpha \in I'} U_\alpha$. Sei $\{V_j | j \in J'\}$ abz"ahlbare Basis der Topologie von $M$. Dann ist mit $J = \{j \in J' | V_j \subset U_\alpha \text{ f"ur ein } \alpha \in I\}$, $\{V_j | j \in J\}$ auch abz"ahlbare Basis der Topologie von $M$, denn $U \underset{\mathclap{\text{offen}}}{\subset} M$ $\Rightarrow$
+		\[\begin{array}{rcl} U &=& \bigcup\limits_{\alpha \in I} (U_\alpha \cap U)\\
+			&=& \bigcup\limits_{\alpha \in I} \bigcup\limits_{\substack{j \in J' \\ U_j \substack U_\alpha \cap U}} V_j \qquad \textcolor{gray}{(U_j \subset U_\alpha \cap U \Rightarrow j \in J)}\\
+			&=& \bigcup\limits_{\alpha \in I} \bigcup\limits_{\substack{j \in J \\ V_j \subset U_\alpha \cap M}} V_j \end{array}\]
+	F"ur $j \in J$ sei $\alpha(j) \in I$, sodass $V_j \subset U_{\alpha(j)}$. Setze $I' := \{ \alpha(j) | j \in J\}$.
+		\[ \bigcup_{\alpha \in I'} U_\alpha = \bigcup_{j \in J} U_{\alpha(j)} \supseteq \bigcup_{j \in J} V_j = M \]
+\end{description}\end{Loes}
+
+\begin{Loes}
+asdf
+\end{Loes}
+
+\begin{Loes}
+asdf
+\end{Loes}

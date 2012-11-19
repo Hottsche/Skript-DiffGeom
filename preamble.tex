@@ -7,7 +7,6 @@
 %\rhead[\nouppercase{\leftmark}]{\thepage}		
 
 \usepackage{xcolor} % Farben
-\usepackage{hyperref} % Verweise als Hyperlinks
 \usepackage{marginnote} % Randnotizen
 \usepackage{enumitem} % Fuer mehr Einstellungmoeglichkeiten bei Aufzaehlungen
 \usepackage{xifthen} % Erlaubt die Verwendung von if-then-else Befehlen im Code
@@ -27,6 +26,7 @@
 \definecolor{color1}{cmyk}{1,0,0,0} %cyan
 \definecolor{color2}{rgb}{0,1,0} %green
 
+\usepackage[hyperindex=true]{hyperref} % Verweise als Hyperlinks
 \hypersetup{
   pdftitle={Differentialgeometrie Dr. Grensing},
   pdfsubject={Differentialgeometrie Geometrie},
@@ -124,6 +124,7 @@
 % Mathe Pakete
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{bm} % fette Mathe Zeichen
 %\usepackage{amsthm}
 \usepackage[hyperref,amsmath,thmmarks,thref, amsthm]{ntheorem}
 
@@ -157,6 +158,7 @@
 \DeclareMathOperator{\Diff}{Diff}
 \DeclareMathOperator{\End}{End} % endomorphisms
 \DeclareMathOperator{\Gl}{GL} % general linear group
+\DeclareMathOperator{\GL}{GL} % general linear group
 \DeclareMathOperator{\Gr}{Gr}
 \DeclareMathOperator{\Graph}{Graph}
 \DeclareMathOperator{\Hom}{Hom} % homomorphisms
