@@ -449,7 +449,177 @@ Desweiteren sind (lokal) die $\left( \begin{smallmatrix} m \\ k\end{smallmatrix}
 \end{align*}
 
 
+%%% 
+%%% 11. Vorlesung <2012-11-20 Tue>
+%%% 
+
+Jede $k$-Form definiert eine schiefsymmetrische $C^{\infty}(M)$-multilineare Abbildung 
+\begin{align*}
+  & \underbrace{\mathcal V(M) \X \cdots \X \mathcal V(M)}_{k\text{-mal}} \to \C^{\infty}(M)\\
+  & \omega(X_1,\ldots,X_k) (p)= \sum_{\sigma}\sgn(\sigma)f_{i_1, \ldots, i_k}\dop x^{i_1}(X_{\sigma(i_1)}|_p)\dop x^{i_2}(X_{\sigma(i_2)}|_p) \cdots
+\end{align*}
+Analog zu \textcolor{red}{Proposition 5.4} gilt, dass jede solche schiefe $C^{\infty}(M)$-multilineare Abbildung eine $k$-Form definiert.
+
+Insbesondere gilt für
+\begin{align*}
+  & \omega = \sum f_{i_1,\ldots, i_k}\dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k}\\
+  & \omega(\pdifffrac{}{x^{i_1}},\ldots, \pdifffrac{}{x^{i_k}} = \sum_{\sigma} \sgn(\sigma)f_{i_1,\ldots,i_k}\dop x^i\left(\pdifffrac{}{x^{i_{\sigma(1)}}}\right) \ldots \dop x^{i_k}\left(\pdifffrac{}{x^{i_{{\sigma(k)}}}}\right)\\
+  & = \sum \sigma \sgn(\sigma)f_{i_1, \ldots, i_k}\pdifffrac{x^{i_{\sigma(1}}}{x^{j_{\sigma(1}}} \ldots \pdifffrac{x^{i_k}}{x^{j_{\sigma(k}}}\\
+  & = \sum_{\sigma} \sgn(\sigma) f_{i_1, \ldots, i_k} \delta_{j_{\sigma(1)}}^{i_1} \ldots \delta_{j_{\sigma(k)}}^{i_k}\\
+  & = f_{j_1,\ldots,j_k}.
+\end{align*}
+
+Sind $\omega \in \Omega^k(M)$ und $\eta \in \Omega^l(M)$, so definiert $\omega \wedge \eta$ (punktweise) eine $(k+l)$-Form auf $M$.
+Ist $\Phi \colon M \to N$ glatt und $\omega \in \Omega^k(N)$, so definiert $(\Phi^{*}\omega)(X_1,\ldots,X_k) - \omega(\Phi_{*}X_1,\ldots, \Phi_{*}X_k)$ eine $k$-Form auf $M$.
+Für $\eta \in \Omega^l(N)$ gilt $\Phi^{*}(\omega \wedge \eta) = \Phi^{*}\omega \wedge \Phi^{*}\eta$.
+
+Damit ist für $\omega \in \Omega^k(M)$ und $X \in \mathcal V(M), \gamma $ der Fluss von $X$, die \CmMark{Lieableitung} con $\omega$ längs $X$ definiert:
+\begin{align*}
+  \mathcal L_X\omega = \difffrac[t=0]{}{t}(\gamma^{t*}\omega).
+\end{align*}
+Es gilt 
+\begin{align*}
+  \mathcal L_X(\omega \wedge \eta) = (\mathcal L_X\omega) \wedge \eta + \omega \wedge (\mathcal L_X\eta).
+\end{align*}
+
+Die $0$-Formen sind die $C^{\infty}$-Funktionen auf $M$, $\Omega^0(M) = C^{\infty}(M)$.
+
+Die $1$-Formen sind genau die Schnitte des Kotangentialbündels von $M$.
+
+Für eine $C^{\infty}$-Funktion $f$ auf $M$ definiert $\dop f$ eine $1$-Form auf $M$ durch $\dop f (X) = X(f)$.
+In lokalen Koordinaten gilt damit $\dop f = \sum_ig_i\dop x^i$ mit $g_i = \dop f\left(\pdifffrac{}{x^i}\right) = \pdifffrac{}{x^i}(f) = \pdifffrac{f}{x^i}$, also gilt $\dop f = \sum \pdifffrac{f}{x^i}\dop x^i$
+
+Die $\R$-lineare Abbildung $\dop \colon \Omega^0(M) \to \Omega^1(M)$ soll für beliebige Formen definiert werden.
+In lokalen Koordinaten definiert man für $\omega \in \Omega^k(M)$, $\omega = f \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k}$ durch Lineare Fortsetzung
+\begin{align*}
+  \dop \omega = \dop f \wedge \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k}.
+\end{align*}
+Es bleibt zu zeigen, dass diese Definition unabhängig von der Wahl der Karte ist.
+
+Man geht dabei entweder vor wie im Beispiel vor \textcolor{red}{Definiiton 5.5} beschrieben oder verwendet den folgenden Satz.
+
+\begin{Satz}
+  Es seien $\omega \in \Omega^k(M)$ und $X_0, \ldots, X_k \in \mathcal V(M)$.
+  Dann gilt:
+  \begin{align*}
+    \dop \omega(X_0, \ldots, X_k) = & \sum_i(-1)^iX_i(\omega(X_0, \ldots, \hat X_i, \ldots X_k)) \\
+    & + \sum_{i<j}(-1)^{i+j}\omega([X_i,X_j], X_0, \ldots, \hat X_i, \ldots, \hat X_j, \ldots, X_k).
+  \end{align*}
+\end{Satz}
+
+\begin{proof}
+  Man zeigt zunächst, dass der Term auf der rechten Seite, welcher offensichtlich schief ist, auch $C^{\infty}(M)$-linear ist.
+  Es bezeichne dafür $\eta$ den rechten Term und es seien $X_0, \ldots, X_k \in \mathcal V(M)$ und $f \in C^{\infty}(M)$.
+
+  Dann gilt:
+  \begin{align*}
+    \eta(X_0,\ldots,fX_l,\ldots, X_k) = & \sum_{i \neq l}(-1)^iX_i(f) \omega(X_0,\ldots, \hat X_l, \ldots, X_k)\\
+& + \sum_{i \neq l}(-1)^ifX_i(\omega(X_0,\ldots, \hat X_i, \ldots, X_k))\\
+& + (-1)^lfX_l(\omega(X_0, \ldots, \hat X_i, \ldots, X_k))\\ % evtl. Durchstreichungen
+& + \sum_{i\neq j }(-1)^{i+j}f\omega([X_i,X_j], \ldots )\\ % evtl. Durchstreichungen
+& + \sum_{l < j}(-1)^{l+j}\omega([fX_l,X_j], \ldots )\\
+& + \sum_{i<l}(-1)^{i+l}\omega([X_i,fX_l], \ldots )
+  \end{align*}
+Nebenrechnung (bzw. Überlegung):
+\begin{align*}
+  [fX, Y] = f[X,Y] - Y(f)X
+\end{align*}
+Damit folgt weiter:
+\begin{align*}
+  \eta(X_0,\ldots,fX_l,\ldots, X_k) = & f \eta(X_0,\ldots, X_k) \\
+& + \sum_{i\neq l} (-1)^i X_i(f)\omega(X_0, \ldots \hat X_i, \ldots, X_k)\\
+& - \sum_{l<j}(-1)^{l+j}X_j(f) \omega(X_l, \X_0, \ldots, \hat X_l, \ldots, \hat X_j, \ldots, X_k)\\
+& + \sum_{i<l}(-1)^{i+l}X_i(f) \omega(X_l, X_0, \ldots, hat X_i, \ldots, \hat X_l, \ldots, X_k)\\
+= & f \eta(X_0,\ldots, X_k) \\
+& + \sum_{i\neq l} (-1)^i X_i(f)\omega(X_0, \ldots \hat X_i, \ldots, X_k)\\
+& - \sum_{l<j}(-1)^{j}X_j(f) \omega(X_l, \X_0, \ldots, X_l, \ldots, \hat X_j, \ldots, X_k)\\
+& - \sum_{i<l}(-1)^{i}X_i(f) \omega(X_l, X_0, \ldots, hat X_i, \ldots, X_l, \ldots, X_k)\\
+& = f \eta(X_0,\ldots, X_k).
+\end{align*}
+Somit ist $\eta$ $C^{\infty}$-linear, d.h. definiert eine $(k+1)$-Form auf $M$.
+Im Folgenden kann man also annehmen:
+\begin{align*}
+  & \dop \omega = f \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k}\\
+& X_l ) \pdifffrac{}{x^{j_l}}, j_0 < \cdots < j_k.
+\end{align*}
+Damit verschwinden alle Lieklammern auf der rechten Seite.
+Es gilt 
+\begin{align*}
+  \eta(X_0, \ldots, X_k) & = \sum_l(-1)^lX_l\left(f\sum_{\sigma(0) = l} (-1)^l \sgn(\sigma) \dop x^{i_1}(X_{\sigma(1)}) \ldots \dop x^{i_k}(X_{\sigma(k)})\right)\\
+  & = \sum_{\sigma} \sgn(\sigma) X_{\sigma(0)}(f) \dop x^{i_1} (X_{\sigma(1)}) \ldots \dop x^{i_k}(X_{\sigma(k)})\\
+  & =\sum_{\sigma} \sgn(\sigma) \dop f(X_{\sigma(0)})\dop x^{i_1}, \ldots\\
+  & = \dop \omega(X_0, \ldots, X_k).
+\end{align*}
+\end{proof}
+
+% Definition 5.9
+\begin{Dfn}
+  Es sei $\omega \in \Omega^k(M)$. Die $(k+1)$-Form $\dop \omega$ heißt das \CmMark{(äußere) Differential} der Form $\omega$.
+  Gilt $\dop \omega = 0$, so heißt $\omega$ \CmMark{geschlossen}.
+  Existiert ein $\eta \in \Omega^{k-1}(M)$ mit $\dop \eta = \omega$, so heißt $\omega$ \CmMark{exakt}.
+\end{Dfn}
+
+\begin{bsp}
+  \begin{enumerate}[label=(\arabic*)]
+  \item Für eine $1$-Form $\omega$ ist $\dop \omega$ eine $2$-Form:
+    \begin{align*}
+      \dop \omega(X,Y) = X(\omega(Y)) - Y(\omega(X)) - \omega([X,Y]).
+    \end{align*}
+  \item Für $f \in C^{\infty}(M)$ ist $\dop f \in \Omega^1(M)$ und $\dop (\dop f)$ eine $2$-Form:
+    \begin{align*}
+      \dop(\dop f) (X,Y) & = X(\dop f(Y)) - Y(\dop f(X)) - \dop f [X,Y]\\
+      & = X(Y(f)) - Y(X(f)) -[X,Y](f)\\
+      & = 0
+    \end{align*}
+    Betrachte alternativ in lokalen Koordinaten:
+    \begin{align*}
+      \dop(\dop f) & = \dop\left(\sum_i \pdifffrac{f}{x^i}\dop x^i\right)\\
+      & = \sum \dop \left(\pdifffrac{f}{x^i}\right) \wedge \dop x^i\\
+      & = \sum_{i,j} \pdifffrac{^2 f}{x^j \partial x^i} \underbrace{\dop x^j \wedge \dop x^i}_{- \dop x^i \wedge \dop x^{j}}\\
+      & = 0
+    \end{align*}
+  \item $\omega = xy\dop y \in \Omega^1(\R^2)$ ist nicht geschlossen, denn
+    \begin{align*}
+      \dop \omega = \pdifffrac{xy}{x} + \pdifffrac{xy}{y}\underbrace{ \dop y \wedge \dop y}_{=0} = y \dop x \wedge \dop y \in \Omega^2(\R^2).
+    \end{align*}
+  \item $\omega = y \dop x + x \dop y \in \Omega^1(\R^2)$ ist exakt, denn für $f(x,y) = xy$ gilt:
+    \begin{align*}
+      \dop f = \pdifffrac{f}{x}\dop x + \pdifffrac{f}{y}\dop y -y \dop x + x \dop y = \omega.
+    \end{align*}
+  \end{enumerate}
+\end{bsp}
+
+% Lemma 5.10
+\begin{Lemma}
+  \begin{enumerate}[label=(\roman*)]
+  \item $\dop \colon \Omega^k(M) \to \Omega^{k+1}(M)$ ist $\R$-linear.
+  \item $\dop(\omega \wedge \eta) = \dop \omega \wedge \eta + (-1)^k \omega \wedge \dop \eta$ für $\omega \in \Omega^k(M), \eta \in \Omega^l(M)$.
+  \item $\dop \circ \dop = 0$.
+  \item $\Phi^l(\dop \omega) = \dop (\Phi^{*}\omega)$ für $\Phi \colon M \to N$ glatt und $\omega \in \Omega^k(M)$.
+  \end{enumerate}
+\end{Lemma}
+
+\begin{proof}
+  \begin{enumerate}[label=ad (\roman*).]
+  \item Klar, nach Definition.
+\item $\omega = f\dop^{i_1} \wedge \cdots \wedge \dop x^{i_k}$, $\eta = g \dop x^{j_1} \wedge \cdots \wedge \dop x^{j_l}$. Dann gilt:
+  \begin{align*}
+  &  \omega \wedge \eta = fg \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k} \wedge \dop x^{j_1} \wedge \cdots \wedge \dop x^{j_l}.\\
+& \dop (\omega \wedge \eta) = (g \dop f + f \dop g) \wedge \dop x^{i_1} \wedge \cdots \wedge \dop x^{j_l}
+& = g \dop f \wedge \dop x^{i_1} \wedge \cdots \wedge \dop x^{j_l}\\
+& + (-1)^k(f \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k}) \wedge \dop g \wedge \dop x1^{j_1} \wedge \cdots \wedge \dop x^{j_l}
+& = \dop \omega \wedge \eta + (-1)^k \wedge \dop \eta.
+  \end{align*}
+\item
+  \begin{align*}
+    \dop^2(\omega) & = \dop(\dop f \wedge \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k})\\
+ & \overset{(ii)}{=} \dop^2f \wedge \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k} + \sum_l \dop f \wedge \dop x^{i_1} \wedge \cdots \wedge \dop^2x^{i_l} \wedge \cdots \wedge \dop x^{i_k}.\\
+& = 0
+  \end{align*}
+  \end{enumerate}
+\end{proof}
+
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "../skript-diffgeom"
-%%% End: 
+%%% End: {}
