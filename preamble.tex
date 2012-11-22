@@ -49,6 +49,9 @@
 \usetikzlibrary{matrix,arrows,calc,intersections, positioning, patterns, decorations.text, decorations.pathmorphing}
 
 % neue Befehle fuer haeufig benutzte TikZ Formen; erstes Argument steht fuer die Position, Zweites fuer die Groesse
+\newcommand{\tikzrichtung}[3][1]{ % zeichnet eine rote Linie von einem Punkt in eine Richtung mit rotem Knoten am Ende
+	\draw[red] #2 -- ($#2 + #1*#3$) circle(0.05);
+}
 \newcommand{\tikzschnuller}[2][1]{
 	% definiere die Knoten relativ zum ersten Knoten skaliert mit dem Faktor
 	\coordinate (schnuller1) at #2; \coordinate (schnuller2) at ($(schnuller1)+#1*(-1.75,-0.75)$); \coordinate (schnuller3) at ($(schnuller1)+#1*(-2.5,-2.25)$); \coordinate (schnuller4) at ($(schnuller1)+#1*(0,-2)$); \coordinate (schnuller5) at ($(schnuller1)+#1*(1.75,-0.25)$);

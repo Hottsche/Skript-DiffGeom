@@ -10,7 +10,27 @@
 \chapter{Tangentialvektoren und Tangentialräume}
 
 % Abbildung 2-1
-\CmMarginSvg{2-1-tangentialvektoren-motivation}{3.5cm}
+%\CmMarginSvg{2-1-tangentialvektoren-motivation}{3.5cm}
+\marginnote{\begin{tikzpicture}[font=\scriptsize,scale = 0.5]
+	%draw[step=0.25,gray!15] (-3,-3) grid (3,3); \draw[step=0.5,gray!30] (-3,-3) grid (3,3); \fill (0,0) circle(0.1); %Hilfsgitter
+	% die Kurve
+	\draw (0,0) circle(2); \draw (0,0) ellipse(2 and 0.9);
+	\def\a{1}
+	\def\b{1}
+	\def\c{-0.8}
+	\def\d{1}
+	\coordinate (1) at (-1.5,1); \coordinate (2) at (0.5,1.25); \coordinate (3) at (0.5,-1.5);
+	\coordinate (ctrl1) at (0.5,0.5); \coordinate (ctrl2) at (-0.75,0.5); \coordinate (ctrl3) at (0.75,1);% \tikzrichtung[\a]{(1)}{(ctrl1)};\tikzrichtung[\b]{(2)}{(ctrl2)};\tikzrichtung[\d]{(3)}{(ctrl3)};\tikzrichtung[\c]{(2)}{(ctrl2)};
+	\draw (1) ..controls($(1) + \a*(ctrl1)$) and ($(2) + \b*(ctrl2)$).. (2) ..controls($(2) + \c*(ctrl2)$) and ($(3) + \d*(ctrl3)$).. (3) node[anchor=south west]{$c$};
+	\filldraw[fill=white] (2) circle (0.1); \draw[->] (0,0) -- ($0.9*(2)$); \node[anchor=west] at (2) {$p$};
+	% das Rechteck
+	\coordinate (a) at (-3,2); \coordinate (b) at (0.125,-0.75); \coordinate (c) at (0.75,3); \coordinate (d) at ($(c) + (b) - (a)$);
+	\draw (a) -- (c) -- (d) -- (b) -- cycle;
+	% Beschriftungen
+	\node at (2,3.5) {$\{p\}^\perp = E_p \cong \R^2$};
+	\node at (-1.5,-2.5) {$S^2 \subset \R^2$};
+\end{tikzpicture}}
+
 
 Betrachte in der nebenstehenden Abbildung eine differenzierbare \gls{Kurve} $c \colon (-\varepsilon,\varepsilon) \to S^2$ mit $c(0) = p$. Dann gilt:
 \begin{align*}
