@@ -1,0 +1,63 @@
+\chapter{Riemannsche Metriken}
+
+\begin{emptythm}[Was ist Geometrie?]
+Vereinfacht ausgedr"uckt suchen wir eine M"oglichkeit um Distanzen und Winkel auszudrücken. Betrachte im Folgenden die Einheitssph"are, auf der wir den eine Reise von $x$ nach $y$ unternehmen m"ochten.
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+Wir definieren mit $\calL(c) = \int_0^1 \|\dot c\| \dop t$ die \CmMark[Metrik!Riemann-]{Riemann-Metrik}, also das Skalarprodukt mit allen $\T_pM$. Damit folgt dass wenn $c: [0,1] \to M$ glatt ist, dass $\calL(c) = \int_0^1 \sqrt{\langle \dot c, \dot c \rangle}$ und der Abstand auf $M$ kann ausgedr"uckt werden durch $d_M(x,y) = \inf \{\calL(c) | c$ von $x$ nach $y\}$.
+
+Das wirft Fragen auf nach der Existenz k"urzester Abst"ande, Unterschieden zwischen lokal K"urzestem und global K"urzesten und der Eindeutigkeit.
+\end{emptythm}
+
+\begin{Dfn}
+Es sei $M$ eine glatte Mannigfaltigkeit. Eine \CmMark[Metrik!Riemann-]{Riemannsche Metrik} $g$ auf $M$ ist gegeben durch ein Skalarprodukt auf jedem $\T_pM$, welches glatt von $p$ abh"angt, das hei"st $g \in \calT_2^0(M)$, so dass $g_p = \langle \cdot, \cdot \rangle_p : \T_pM \X \T_pM \ \to \R$ symmetrisch und positiv definit ist. Ist $g$ eine Riemann-Metrik auf M, so hei"st $(M,g)$ eine \CmMark[Mannigfaltigkeit!Riemannsche]{Riemannsche Mannigfaltigkeit}.
+\end{Dfn}
+
+Ist $(M,g)$ eine Riemannsche Mannigfaltigkeit, $X, Y \in \calV(M)$, $X = \sum \xi^{i} \pdifffrac{}{x^{i}}$, $Y = \sum \eta^j \pdifffrac{}{y^j}$, dann ist
+\begin{align*}
+	g(X, Y) &= g\left(\sum \xi^{i} \pdifffrac{}{x^{i}}, \sum \eta^j \pdifffrac{}{y^j}\right)\\
+	&= \sum_{i,j}\xi^{i} \eta^j g\left(\pdifffrac{}{x^{i}}, \pdifffrac{}{y^j}\right)\\
+	&= \sum_{i,j} \xi^{i} \eta^j g_{ij} \qquad (g_{ij} \text{ glatt, } g_{ij} = g_{ji})
+\end{align*}
+
+\begin{bsp}\begin{enumerate}[label=\arabic*),leftmargin=*]
+\item
+	$\R^m$ tr"agt eine nat"urliche Riemannsche Metrik: F"ur $x \in \R^m$ ist $\calI_x: \T_x\R^m \to \R^n$ ein (nat"urlicher) Isomorphismus. Damit definiert
+		\[ g_x(\cdot,\cdot) = \langle \calI_x(\cdot,\cdot), \calI_x(\cdot,\cdot) \rangle \]
+	eine Riemannsche Metrik auf $\R^m$. Bez"uglich der Karte $(\Id, \R^m)$ gilt
+		\[ g_{ij} = \sum_{ij} \delta_{ij} \dop x^{i} \otimes \dop x^j = \sum_i \dop x^{i} \otimes \dop x^j \]
+\item
+	Betrachtet man Polarkoordinaten auf $\R^2(r, \vartheta)$:
+	\begin{align*}
+		\pdifffrac[(r,\vartheta)]{}{r} &= (\cos \vartheta, \sin \vartheta)\\
+		\pdifffrac[(r,\vartheta)]{}{\vartheta} &= r(-\sin \vartheta, \cos \vartheta)
+	\end{align*}
+	\begin{align*}
+		g_{rr} &= g\left( \pdifffrac{}{r}, \pdifffrac{}{r} \right) = 1\\
+		g_{\vartheta\vartheta} &= g\left( \pdifffrac{}{\vartheta}, \pdifffrac{}{\vartheta} \right) = r^2\\
+		g_{r\vartheta} &= g_{\vartheta r} = 0
+	\end{align*}
+\item
+	Sei $M \subseteq \R^n$ $m$-dimensionale glatte Untermannigfaltigkeit. $M$ tr"agt eine nat"urliche Riemann-Metrik:
+		\begin{center}\textcolor{red}{[BILD]}\end{center}
+	F"ur jedes $p \in M$ ist $\T_pM$ kanonisch isomorph zum von partiellen Ableitungen $\partial_1F|_p, \ldots ,\partial_mF|_p$ einer lokalen Parametrisierung $F$ aufgespannten Untervektorraum $\R^m$. Mit diesem (lokalen) isomorphismus definiert
+		\[ g_{ij} = \langle \partial_i F, \partial_j F \rangle \]
+	eine Riemann-Metrik auf $M$.
+\end{enumerate}\end{bsp}
+
+\begin{bem}
+Sind $\varphi$ und $\psi$ Karten einer Riemannschen Mannigfaltigkeit $(M,g)$ um $p$ und sind $g = \sum g_{ij} \dop x^{i} \otimes \dop x^j$ und $h = \sum h_{ij} \dop y^{i} \otimes \dop y^j$ die lokalen Darstellungen bez"uglich $\varphi$ beziehungsweise $\psi$, so gilt
+	\[ h_{kl} = g\left( \pdifffrac{}{y^k}, \pdifffrac{}{y^l} \right) = \sum_{i,j} \pdifffrac{x^{i}}{y^k} \underbrace{\pdifffrac{x^j}{y^l}}_{\mathclap{\qquad \partial_l(\varphi^{i}\circ \psi^{-1})}} g_{ij} \]
+\end{bem}
+
+Eine Riemannsche Metrik induziert eine Metrik auf dem Kotangentialb"undel: Die Isomorphismen $\T_pM \to \T_p^*M$, $X \mapsto \langle X, \cdot \rangle_p$ einen Isomorphismus von $\T M$ nach $\T^*M$. F"ur $\omega \in \T_p^*M$ sei $X(\omega) \in \T_pM$ mit $\omega = \langle X(\omega), \cdot \rangle_p$. Man definiert nun durch
+	\[ \langle \omega, \tilde \omega \rangle = \langle X(\omega), X(\tilde \omega) \rangle \]
+ein Skalarprodukt auf $\T_p^*M$. F"ur $\omega = \sum \omega_i \dop x^{i}$, $X(\omega) = \xi^{i} \pdifffrac{}{x^{i}}$ gilt
+	\[ \omega_i = \omega \left( \pdifffrac{}{x^{i}} \right) = \left\langle X(\omega), \pdifffrac{}{x^{i}} \right\rangle = \sum_j \xi^{i} g_{ij} \]
+Also $\xi^{i} = \sum g^{ij} \omega_i$, wobei $(g^{ij})$ die zu $(g_{ij})$ inverse Matrix ist. Damit gilt:
+\begin{align*}
+	\langle \omega, \tilde \omega \rangle &= \langle X(\omega), X(\tilde \omega) \rangle \\
+	&= \sum g_{kl} \xi^k \xi^l\\
+	&= \sum g_{kl} g^{ki} \omega_i g^{lj} \tilde \omega_j\\
+	&= \sum \delta_l^i g^{lj} \omega_i \tilde \omega_j\\
+	&= \sum g^{ij} \omega_i \tilde \omega_j\\
+\end{align*}

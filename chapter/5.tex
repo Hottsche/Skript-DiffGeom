@@ -492,7 +492,7 @@ Es bleibt zu zeigen, dass diese Definition unabhängig von der Wahl der Karte is
   \end{align*}
 \end{Satz}
 
-\begin{proof}
+\begin{bew}
 Man zeigt zunächst, dass der Term auf der rechten Seite, welcher offensichtlich schief ist, auch $C^{\infty}(M)$-linear ist.
 Es bezeichne dafür $\eta$ den rechten Term und es seien $X_0, \ldots, X_k \in \mathcal V(M)$ und $f \in C^{\infty}(M)$. Dann gilt:
 \begin{align*}
@@ -531,7 +531,7 @@ Es gilt
   & =\sum_{\sigma} \sgn(\sigma) \dop f(X_{\sigma(0)})\dop x^{i_1}, \ldots\\
   & = \dop \omega(X_0, \ldots, X_k).
 \end{align*}
-\end{proof}
+\end{bew}
 
 % Definition 5.9
 \begin{Dfn}
@@ -573,17 +573,17 @@ Es gilt
 \end{enumerate}\end{bsp}
 
 % Lemma 5.10
-\begin{Lemma}
+\begin{Lemma}\label{lemma-5-9}
   \begin{enumerate}[label=(\roman*)]
   \item $\dop \colon \Omega^k(M) \to \Omega^{k+1}(M)$ ist $\R$-linear.
   \item $\dop(\omega \wedge \eta) = \dop \omega \wedge \eta + (-1)^k \omega \wedge \dop \eta$ für $\omega \in \Omega^k(M), \eta \in \Omega^l(M)$.
   \item $\dop \circ \dop = 0$.
-  \item $\Phi^*(\dop \omega) = \dop (\Phi^{*}\omega)$ für $\Phi \colon M \to N$ glatt und $\omega \in \Omega^k(M)$.
+  \item\label{lemma-5-9-iv} $\Phi^*(\dop \omega) = \dop (\Phi^{*}\omega)$ für $\Phi \colon M \to N$ glatt und $\omega \in \Omega^k(M)$.
   \end{enumerate}
 \end{Lemma}
 
 \begin{bew}
-\begin{enumerate}[label=(\roman*),leftmargin=*]
+\begin{enumerate}[label=(\roman*),leftmargin=*,widest=iii]
 \item
 	Klar, nach Definition.
 \item
@@ -602,7 +602,64 @@ Es gilt
 		& \overset{(ii)}{=} \dop^2f \wedge \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k} + \sum_l \dop f \wedge \dop x^{i_1} \wedge \cdots \wedge \dop^2x^{i_l} \wedge \cdots \wedge \dop x^{i_k}.\\
 		& = 0
 	\end{align*}
+\item
+	$f \in C^{\infty}(N)$, $X \in \calV(M)$
+	\begin{align*}
+		(\Phi^* \dop f)(X) &= \dop f(\Phi_* X) = (\Phi_* X)(f) = X(f \circ \Phi)\\
+		&= X(\Phi^* f) = \dop (\Phi^* f)(X)
+	\end{align*}
+	Damit gilt f"ur $\omega = f \dop x^{i_1} \wedge \ldots \wedge d^{i_k}$:
+	\begin{align*}
+		\Phi^*(\dop \omega) &= \Phi^*(\dop f \wedge \dop x^{i_1} \wedge \ldots \wedge \dop x^{i_k}\\
+		&= (\Phi^* \dop f) \wedge \Phi^*(\dop x^{i_1}) \wedge \ldots \wedge \Phi^*(\dop x^{i_k})\\
+		&= \dop (\Phi^* f \Phi^* \dop x^{i_1} \wedge \ldots \wedge \Phi^* \wedge x^{i_k}) = \dop (\Phi^* \omega)
+	\end{align*}
 \end{enumerate}\end{bew}
+
+\begin{emptythm}[Erinnerung:]
+$\{$geschlossene $k$-Formen$\} = \Kern \{ \dop: \Omega^k(M) \to \Omega^{k-1}(M)\}$, $\{$exakte $k$-Formen$\} = \Bild\{ \dop: \Omega^{k-1}(M) \to \Omega^k(M)\}$, $\dop \circ \dop = 0$
+\end{emptythm}
+
+Der Quotient $H_{\dR}^k(M) = \frac{\Kern\{\dop: \Omega^k \to \Omega^{k+1}\}}{\Bild\{\dop : \Omega^{k-1} \to \Omega^k\}}$ hei"st die $k$-te \CmMark[Kohomologiegruppe!deRahm-]{deRahm-Ko"-homologie"-gruppe}. Ist $\Phi: M \to N$ glatt, so induziert $\Phi^*$ wegen Lemma \ref{lemma-5-9} \ref{lemma-5-9-iv} einen Homomorphismus $\Phi^* H_{\dR}^k$$(N)$ $\to$ $\Phi^* H_{\dR}^k(M)$. Ist $\Psi: P \to M$ glatt, so gilt
+	\[ (\Phi \circ \Psi)^* = \Psi^* \circ \Phi^* \]
+insbesondere gilt $\Id_M^* = \Id_{H_{\dR}^k}$ und ein Diffeomorphismus $M \to N$ induziert einen Isomorphismus von $H_{\dR}^k(N)$ nach $H_{\dR}^k(M)$.
+
+\begin{bsp}\begin{enumerate}[label=\arabic*),leftmargin=*]
+\item
+	$H_{\dR}^1(\R^2) = \{0\}$, \emph{zu zeigen:} $\dop \omega = 0 \Rightarrow \omega = \dop h, \omega \n \Omega^1$
+	
+	$\omega = f \dop x + g \dop y$ geschlossen
+	\begin{align*}
+		0 = \dop (\omega) &= \dop f \wedge \dop x + \dop g \wedge \dop y\\
+		&= \pdifffrac{f}{y} \dop y \wedge \dop x + \pdifffrac{g}{x} \dop x \wedge \dop y\\
+		&= \left( \pdifffrac{g}{x} - \pdifffrac{f}{y} \right) \dop x \wedge \dop y
+	\end{align*}
+	Setzt man
+		\[ h(x,y) = \int_0^{x} f(t,0) \dop t + \int_0^{y} g(x,t) \dop t \]
+	so gilt
+	\begin{align*}
+		\pdifffrac{h}{x}(x) &= f(x,0) + \int_0^{y} \pdifffrac{g}{x}(x,t) \dop t\\
+		&= f(x,0) + \int_0^{y} \pdifffrac{f}{y} (x,t) \dop t\\
+		&= f(x,y)
+	\end{align*}
+	Analog zeigt man, dass $\pdifffrac{h}{y}(x,y) = g(x,y)$. Damit gilt
+		\[ \dop h = \pdifffrac{h}{x} \dop x + \pdifffrac{h}{y} \dop y = f \dop x + g \dop y = \omega \]
+	Daraus folgt $H_{\dR}^1(\R^2) = \{0\}$
+\item
+	$H_{\dR}^1(\R^2 \setminus \{0\}) \ne \{0\}$
+	
+	Die Form $\omega(x,y) = \frac{1}{x^2+y^2} (x \dop y - y \dop x)$ ist geschlossen. W"are $\omega$ exakt, so g"abe es $h \in C^{\infty}(\R^2 \setminus \{0\})$ mit $\dop h = \omega$, das hei"st
+		\[ \pdifffrac{h}{x}(x,y) = \frac{-y}{x^2+y^2},\quad \pdifffrac{h}{y}(x,y) = \frac{x}{x^2+y^2} \]
+	Dann wäre
+		\begin{align*}
+			0 = h(1,0) - h(1,0) &= \int_{0}^{2\pi} \difffrac{}{t} h(\cos t, \sin t) \dop t\\
+			&= \int_{0}^{2\pi} - \sin t \pdifffrac{h}{x} (\cos t, \sin t) + \cos t \pdifffrac{h}{y} (\cos t, \sin t) \dop t\\
+			&= \int_{0}^{2\pi} \sin^2 t + \cos^2 t \dop t = 2 \pi
+		\end{align*}
+	$\omega$ ist geschlossen aber \emph{nicht} exakt, definiert eine Klasse
+		\[ 0 \ne [\omega] \in H_{\dR}^1(\R^2 \setminus \{0\}) \]
+	Insbesondere sind $\R^2$ und $\R^2 \setminus \{0\}$ \emph{nicht} diffeomorph.
+\end{enumerate}\end{bsp}
 
 %%% Local Variables: 
 %%% mode: latex

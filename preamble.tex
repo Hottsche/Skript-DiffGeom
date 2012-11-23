@@ -129,7 +129,7 @@
 \usepackage{amssymb}
 \usepackage{bm} % fette Mathe Zeichen
 %\usepackage{amsthm}
-\usepackage[hyperref,amsmath,thmmarks,thref, amsthm]{ntheorem}
+\usepackage[hyperref,amsmath,thmmarks,thref]{ntheorem}
 
 % common mathematical operators and sets
 \DeclareMathOperator{\aff}{aff} % affine Huelle
@@ -137,6 +137,7 @@
 \DeclareMathOperator{\diam}{diam} % diameter
 \DeclareMathOperator{\dist}{dist} % distance
 \DeclareMathOperator{\ddim}{dim} % dimension
+\DeclareMathOperator{\dR}{dR} % deRahm
 \DeclareMathOperator{\ggT}{ggT} % goesster gemeinsamer Teiler
 \DeclareMathOperator{\id}{id} % identity
 \DeclareMathOperator{\inh}{inh} % Inhalt
@@ -222,6 +223,7 @@
 \DeclareMathOperator{\calD}{\mathcal{D}}
 \DeclareMathOperator{\calI}{\mathcal{I}}
 \DeclareMathOperator{\calJ}{\mathcal{J}}
+\DeclareMathOperator{\calL}{\mathcal{L}}
 \DeclareMathOperator{\calT}{\mathcal{T}}
 \DeclareMathOperator{\calV}{\mathcal{V}}
 
@@ -297,24 +299,12 @@
 
 \newcommand{\cmLangThmShortBem}{Bem\xspace}
 
-% use classic amsthm theorems
+\theoremstyle{definition}
 
-%  \newtheorem{satz}[thmglobal]{\cmLangThmSatz}
-%  \newtheorem{lemma}[thmglobal]{\cmLangThmLemma}
-%  \newtheorem{kor}[thmglobal]{\cmLangThmKor}
-%  \newtheorem{prop}[thmglobal]{\cmLangThmProp}
+\newtheorem{Aufg}{Aufgabe}
+\newtheorem{Loes}{L\"osung}
 
-  \theoremstyle{definition}
-
-%  \newtheorem{dfn}[thmglobal]{\cmLangThmDfn}
-%  \newtheorem{bsp}[thmglobal]{\cmLangThmBsp}
-  
-  \newtheorem{Aufg}{Aufgabe}
-  \newtheorem{Loes}{L\"osung}
-
-  \theoremstyle{remark}
-
-%  \newtheorem{bem}[thmglobal]{\cmLangThmBem}
+\theoremstyle{remark}
 
 \theoremstyle{plain}
 \newtheorem{Dfn}{\cmLangThmDfn}[chapter]
@@ -322,6 +312,7 @@
 \newtheorem{Lemma}[Dfn]{\cmLangThmLemma}
 \newtheorem{Kor}[Dfn]{\cmLangThmKor}
 \newtheorem{Prop}[Dfn]{\cmLangThmProp}
+\theorembodyfont{\normalfont}
 \newtheorem{Bsp}[Dfn]{\cmLangThmBsp}
 \newtheorem{Bem}[Dfn]{\cmLangThmBem}
 
@@ -331,14 +322,15 @@
 \newtheorem{lemma}{\cmLangThmLemma}
 \newtheorem{kor}{\cmLangThmKor}
 \newtheorem{prop}{\cmLangThmProp}
+
 \newtheorem{bsp}{\cmLangThmBsp}
 \newtheorem{bem}{\cmLangThmBem}
 
 \theoremsymbol{\ensuremath{\Box}}
+\theorembodyfont{\normalfont}
 \newtheorem{bew}{Beweis}
 
 \theoremsymbol{}
-\theorembodyfont{\normalfont}
 \theoremstyle{empty}
 \newtheorem{emptythm}{}% druckt nur den optionalen Namen aus
 

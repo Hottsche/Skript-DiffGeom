@@ -51,13 +51,13 @@ Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\varphi,U)$ von $M
   Der oben definierte Begriff der Äquivalenz ist unabhängig von der Wahl der Karte.
 \end{Lemma}
 
-\begin{proof}
+\begin{bew}
   Es sei $(\psi,V)$ eine weitere Karte von $M$ um $p$. Dann gilt:
   \begin{align*}
     \difffrac[t=0]{}{t}(\psi\circ c_1) & = \difffrac[t=0]{}{t}(\psi\circ\varphi^{-1}\circ\varphi \circ c_1) = \D (\psi \circ \varphi^{-1})|_{\varphi(p)} \cdot \difffrac[t=0]{}{t}(\varphi \circ c_1)\\
     & = \D(\psi \circ \varphi^{-1})|_{\varphi(p)} \cdot \difffrac[t=0]{}{t}(\varphi \circ c_2) = \ldots = \difffrac[t=0]{}{t}(\psi \circ c_2).
   \end{align*}
-\end{proof}
+\end{bew}
 
 \begin{Dfn}[Geometrische Definition des Tangentialraums]
   Es sei $M$ eine glatte Mannigfaltigkeit und $p \in M$. Ein (geometrischer) \CmMark{Tangentialvektor} an $M$ in $p$ ist eine Äquivalenzklasse von Kurven $c$ mit $c(0) = p$. Die Menge
@@ -74,7 +74,7 @@ Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\varphi,U)$ von $M
   \end{align*}
 \end{Bem}
 
-\begin{proof}
+\begin{bew}
   Zu jedem Vektor $v \in \R^n$ sei $B(v) = [t \mapsto \varphi^{-1}(\varphi(p) + tv)]$ die Äquivalenzklasse der abgebildeten Kurve auf der Mannigfaltigkeit.
 
   % Abbildung 2-2
@@ -83,7 +83,7 @@ Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\varphi,U)$ von $M
   \[ A B(v) = \difffrac[t=0]{}{t}(\varphi \circ B(v)) = \difffrac[t=0]{}{t}(\varphi \circ \varphi^{-1}(\varphi(p) + tv)) = \difffrac[t=0]{}{t}(\varphi(p) + tv) = v. \]
   \[ B A (\underbrace{[c]}_{\ni c}) = B(v_c) = [t \mapsto \varphi^{-1}(\varphi(p) + tv_c)] \text{ wobei } v_c = \difffrac[t=0]{}{t}(\varphi \circ c). \]
   Die Kurven $c$ und $t \mapsto \varphi^{-1}(\varphi(p) + tv_c)$ sind äquivalent, also ist $B A[c] = [c]$ und somit $A$ bijektiv.
-\end{proof}
+\end{bew}
 
 Damit erhält $\T_p^{\text{geo}}M$ die Struktur eines reellen Vektorraumes vermöge der folgenden Verknüpfung:
 \begin{align*}
@@ -95,7 +95,7 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
   Die oben definierte Lineare Struktur ist unabhängig von der Wahl der Karte.
 \end{Lemma}
 
-\begin{proof}
+\begin{bew}
   Es sei $(\psi, V)$ eine Karte von $M$ um $p$ und $A'[c] = \difffrac[t]{}{t}(\psi \circ c)$. Dann gilt:
   \begin{align*}
     A A'^{-1}(v) & = \difffrac[t=0]{}{t}(\varphi \circ (\psi^{-1} (\psi(p) + tv)))\\
@@ -107,7 +107,7 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
     & = A^{-1} (\lambda A A'^{-1}[c_1] + \mu A A'^{-1} [c_2])\\
     & = A^{-1}(\lambda A [c_1] + \mu A [c_2]).
   \end{align*}
-\end{proof}
+\end{bew}
 
 
 % 3. Vorlesung <2012-10-23 Tue>
@@ -144,7 +144,7 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
 \textcolor{red}{Abbildung 2-3}
 
 
-\begin{proof}
+\begin{bew}
   Man kann o.E. annehmen, dass $U$ Kartengebiet einer Karte $\varphi$ von $M$ um $p$ ist und $\varphi(p) = 0 \in \R^n$.\\
 
   Es sei $\varepsilon > 0$ so, dass $\overline B_c(0) \subset \varphi(U)$. \\
@@ -163,7 +163,7 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
     \end{cases}.
   \end{align*}
   die gewünschten Eigenschaften.
-\end{proof}
+\end{bew}
 
 % Lemma 2.
 \begin{Lemma}
@@ -174,7 +174,7 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
 \end{enumerate}
 \end{Lemma}
 
-\begin{proof}\begin{enumerate}[label=(\roman*),widest=ii,leftmargin=*]
+\begin{bew}\begin{enumerate}[label=(\roman*),widest=ii,leftmargin=*]
 \item[(ii)]
 	Es sei $U$ eine Umgebung von $p$ mit $f|_U = g|_U$. Ist dann $\sigma$ wie in \textcolor{red}{Lemma 2.5}, so gilt $\sigma f = \sigma g$ und aus
 	\begin{align*}
@@ -187,7 +187,7 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
 		X_p(1) = X_p(1 \cdot 1) = X_p(1) \cdot 1 + 1 \cdot X_p(1) = 2 \cdot X_p(1),
 	\end{align*}
 	also $X_p(1) = 0$.
-\end{enumerate}\end{proof}
+\end{enumerate}\end{bew}
 
 \begin{Bem}
   Also gilt für $f \in C^{\infty}(M)$ und $g \in C^{\infty}(U)$ direkt:
@@ -290,12 +290,12 @@ Es sei $X_p = \sum \xi^i \pdifffrac[p]{}{x^i} = \sum \eta^i\pdifffrac[p]{}{y^i}$
 \end{align*}
 \end{Satz}
 
-\begin{proof}
+\begin{bew}
   Es gelte $\pdifffrac[p]{}{x^i} = \sum \alpha_i^j\pdifffrac[p]{}{y^j}$ und nach obiger Bemerkung zum vorletzten Satz gilt:
   \begin{align*}
     \alpha_i^j = \pdifffrac[p]{}{x^i}(\psi^j) = \partial_i(\psi^j \circ \varphi^{-1})(\varphi(p))
   \end{align*}
-\end{proof}
+\end{bew}
 
 \textcolor{red}{Kapitel 2 hat drei Nummerierungen zu viel, bitte die Nummerierung korrigieren}
 %%% Local Variables: 
