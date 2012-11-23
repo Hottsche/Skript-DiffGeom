@@ -2,7 +2,35 @@
 
 \begin{emptythm}[Was ist Geometrie?]
 Vereinfacht ausgedr"uckt suchen wir eine M"oglichkeit um Distanzen und Winkel auszudrücken. Betrachte im Folgenden die Einheitssph"are, auf der wir den eine Reise von $x$ nach $y$ unternehmen m"ochten.
-\begin{center}\textcolor{red}{[BILD]}\end{center}
+\begin{center}\begin{tikzpicture}
+	%\draw[step=0.25,gray!15] (-4,-4) grid (4,4); \draw[step=0.5,gray!30] (-4,-4) grid (4,4); \fill (0,0) circle(0.1); %Hilfsgitter
+	
+	\draw (0,0) circle (3);
+	\begin{scope}
+		\clip (-3,0) rectangle (3,1.6);
+		\draw[dashed] (0,0) ellipse (3 and 1);
+	\end{scope}
+	\begin{scope}
+		\clip (-3,0) rectangle (3,-1.6);
+		\draw (0,0) ellipse (3 and 1);
+	\end{scope}
+	
+	\fill (0,3) circle(0.1) node[anchor=south west]{$N$};
+	\fill (0,-3) circle(0.1) node[anchor=north west]{$S$};
+	
+	\coordinate (x) at (-0.5,2); \coordinate (y) at (0.75,-2);
+	\fill (x) circle(0.1)node[above]{$x$};
+	\fill (y) circle(0.1)node[below]{$y$};
+	\draw (x) -- (y);
+	\coordinate (a) at (1.25,0.75); \coordinate (b) at (1,0.25); \coordinate (c) at (1.5,-0.25);
+	\draw (x) ..controls(x) and ($(a) + (-1.25,1.25)$).. (a) ..controls($(a) + (0.25,-0.25)$) and ($(b) + (0,0.25)$).. (b) ..controls($(b) + (0,-0.25)$) and ($(c) + (0,0.25)$).. (c) ..controls($(c) + (0,-0.75)$) and (y).. (y);
+	
+	\node at (2.75,2.75) {$S^2 \subset \R^3$};
+	\draw[->] (1.5,-2)node[anchor=north]{$c$} to[out=90,in=310] (1.25,-1.25);
+	
+	\node at (-3.25,-2.5) {$c: [0,1] \to S^2$};
+	\node at (-3.25,-3.25) {$c(0) = x,\quad c(1) = y$};
+\end{tikzpicture}\end{center}
 Wir definieren mit $\calL(c) = \int_0^1 \|\dot c\| \dop t$ die \CmMark[Metrik!Riemann-]{Riemann-Metrik}, also das Skalarprodukt mit allen $\T_pM$. Damit folgt dass wenn $c: [0,1] \to M$ glatt ist, dass $\calL(c) = \int_0^1 \sqrt{\langle \dot c, \dot c \rangle}$ und der Abstand auf $M$ kann ausgedr"uckt werden durch $d_M(x,y) = \inf \{\calL(c) | c$ von $x$ nach $y\}$.
 
 Das wirft Fragen auf nach der Existenz k"urzester Abst"ande, Unterschieden zwischen lokal K"urzestem und global K"urzesten und der Eindeutigkeit.
@@ -38,7 +66,47 @@ Ist $(M,g)$ eine Riemannsche Mannigfaltigkeit, $X, Y \in \calV(M)$, $X = \sum \x
 	\end{align*}
 \item
 	Sei $M \subseteq \R^n$ $m$-dimensionale glatte Untermannigfaltigkeit. $M$ tr"agt eine nat"urliche Riemann-Metrik:
-		\begin{center}\textcolor{red}{[BILD]}\end{center}
+	\begin{center}\begin{tikzpicture}
+		%\draw[step=0.25,gray!15] (-4,-4) grid (4,4); \draw[step=0.5,gray!30] (-4,-4) grid (4,4); \fill (0,0) circle(0.1); %Hilfsgitter
+		
+		\draw (0,0) circle(2);
+		\begin{scope}
+			\clip (-2,0) rectangle (2,2);
+			\draw[dashed] (0,0) ellipse(2 and 0.75);
+		\end{scope}
+		\begin{scope}
+			\clip (-2,0) rectangle (2,-2);
+			\draw (0,0) ellipse(2 and 0.75);
+		\end{scope}
+		
+		\path[name path=laenge] (0,2) to[out=335,in=33] (0,-2);
+		\path[name path=breite] (0,2) ellipse(2 and 0.75);
+		\path[name path=aequator] (0,0) ellipse(2 and 0.75);
+		\path[name intersections={of=laenge and breite, by=p}];
+		\path[name intersections={of=laenge and aequator, by={grenze1, grenze2}}];
+		
+		\coordinate (a) at (1,2.25); \coordinate (b) at (-1,0.5); \coordinate (c) at (1.75,-1.5); \coordinate (d) at ($(a) + (c) - (b)$);
+		\path[draw,name path=raute] (a) -- (b) -- (c) -- (d) -- cycle;
+		
+		\begin{scope}
+			\clip (0,2) rectangle ($(grenze2) + (0.5,0)$);
+			\draw (0,2) to[out=335,in=33] (0,-2);
+			\clip (0,0) circle(2);
+			\draw (0,2) ellipse(2 and 0.75);
+		\end{scope}
+		\begin{scope}
+			\clip (0,0) circle(2);
+			\draw (0,2) ellipse(2 and 0.75);
+		\end{scope}
+		
+		\node at (-2,2) {$S^2 \subset \R^3$};
+		\fill (p) circle(0.05)node[anchor=south west,font=\scriptsize] at (p) {$p$};
+		\draw[->] (p) -- ($(p) + 0.6*(1,-1.7)$);
+		\draw[->] (p) -- ($(p) + 1.1*(1,0.15)$);
+		
+		\draw[->] (2.25,2.25)node[right,font=\scriptsize]{$\pdifffrac{}{\varphi}$} to[out=210,in=80] (1.65,1.5);
+		\draw[->] (3.25,1.25)node[right,font=\scriptsize]{$\pdifffrac{}{\vartheta}$} to[out=180,in=30] (1.2, 0.75);
+	\end{tikzpicture}\end{center}
 	F"ur jedes $p \in M$ ist $\T_pM$ kanonisch isomorph zum von partiellen Ableitungen $\partial_1F|_p, \ldots ,\partial_mF|_p$ einer lokalen Parametrisierung $F$ aufgespannten Untervektorraum $\R^m$. Mit diesem (lokalen) isomorphismus definiert
 		\[ g_{ij} = \langle \partial_i F, \partial_j F \rangle \]
 	eine Riemann-Metrik auf $M$.
