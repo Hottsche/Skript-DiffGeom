@@ -14,13 +14,10 @@
 ** PDF Release
    Für gewöhnlich werde ich nach jeder größeren Änderung ein PDF auf dem "pdf-release" Branch veröffentlichen und in der folgenden Liste verlinken.
 
-   Hier ein Link zur letzten Stabilen Version:
+   Hier ein Link zur letzten Version:
 
-   | Vorlesungen      | Link        |
-   |------------------+-------------|
-   | <2012-10-16 Tue> | [[https://github.com/Tarcvar/Skript-DiffGeom/blob/pdf-release/skript-diffgeom.pdf?raw=true][Vorlesung 1]] |
+   [[https://dl.dropbox.com/u/22321777/skript-diffgeom.pdf]]
+
 
 ** Hinweise
-   Im LaTeX Quelltext werden sehr häufig Funktionen aus meinem Paket [[https://github.com/Tarcvar/canonical-math]["Canonical Math"]] verwendet. Dies wird aber in diesem Repository mitgeliefert, stellt also keinen weiteren Einrichtungsaufwand dar. Eine rudimentäre Befehlsdokumentation findet sich [[https://github.com/Tarcvar/canonical-math/blob/master/doc/canonical-math-doc.org?][hier]].
-
-   
+   Für Mitarbeiter findet sich eine Liste von Konventionen am Anfang des Skriptes, auf die sich die bisherige Autorengruppe verständigt hat.
