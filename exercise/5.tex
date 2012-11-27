@@ -1,0 +1,101 @@
+\section{26. November 2012}
+\setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
+\setcounter{Loes}{0}
+
+\begin{emptythm}[Einschub]
+F"ur ein Tensorprodukt $V \otimes W$ und ein Element $v_1 \otimes w_1 + v_2 \otimes w_2 \in V \otimes W$ gilt im Allgemeinen
+	\[v_1 \otimes w_1 + v_2 \otimes w_2 \ne v_3 \otimes w_3 \]
+\emph{Beispiel:} $\left( \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right) \otimes \left( \begin{smallmatrix} 1 \\ 0 \end{smallmatrix} \right) + \left( \begin{smallmatrix} 0 \\ 1 \end{smallmatrix} \right) \otimes \left( \begin{smallmatrix} 0 \\ 1 \end{smallmatrix} \right)$
+\end{emptythm}
+
+\begin{Loes}
+Wir zeigen dass die $(r,s)$-Tensorfelder den $C^\infty(M)$-multilinearen Abbildungen entsprechen.
+	\[ \underbrace{\calV^*(M) \X \ldots \X \calV^*(M)}_{r\text{-mal}} \X \underbrace{\calV(M) \X \ldots \X \calV(M)}_{s\text{-mal}} \]
+Zunächste zeigen wir die Behauptung punktweise. Sei dazu $p \in M$ und die Abbildung
+	\[ F_p: \T_pM \otimes \ldots \otimes \T_pM \otimes \T_p^*M \otimes \ldots \otimes \T_p^*M \to \text{Multilin}_{\R}(\T_p^*M \otimes \ldots \otimes \T_pM) \]
+definiert durch
+\begin{align*}
+	F_p(\sum_i a_i \overbrace{X_1^{i}}^{\mathclap{\in \T_pM}} \otimes \ldots \otimes X_r^{i} \otimes \overbrace{\omega_1^{i}}^{\mathclap{\in \T_p^*M}} \otimes \ldots \otimes \omega_s^{i})(\eta_1,\ldots ,\eta_r, Y_1, \ldots ,Y_s)\\
+	\qquad := \sum_i a_i \eta_1(X_1^{i}) \cdot \ldots \cdot \eta_n(X_r^{i}) \cdot \omega_1^{i}(Y_1) \cdot \ldots \cdot \omega_s^{i}(Y_s)
+\end{align*}
+\begin{description}[leftmargin=*]
+\item[$\bm{F_p}$ ist wohldefiniert:]
+	\begin{itemize}[leftmargin=*]
+		\item
+			$F_p(\ldots)$ ist $\R$-multilinear $\checkmark$
+		\item
+			Sei $Z_1,\ldots ,Z_r$ Basis von $\T_pM$, $\mu_1,\ldots ,\mu_s$ die dazu duale Basis von $\T_p^*M$. Damit ist $\{Z_{i_1} \otimes \ldots \otimes Z_{i_r} \otimes \mu_{j_1} \otimes \ldots \otimes \mu_{j_s} | i_1, \ldots i_r, j_1, \ldots , j_s \in \{1,\ldots ,n\}\}$ eine Basis von $\T_pM \otimes \ldots \otimes \T_p^*M$. Sei $X_k^{i} = \sum_\alpha \chi_{k, \alpha}^{i} Z_\alpha$, $\omega_l^{i} = \sum_\beta w_{l, \beta}^{i} \mu_\beta$, dann folgt
+			\begin{align*}
+				& \sum_i a_i X_1^{i} \otimes \ldots \otimes \omega_s^{i}\\
+				=& \sum_i a_i (\sum_{\alpha_1} \chi_{k, \alpha_1}^{i} Z_{\alpha_1}) \otimes \ldots  \otimes (\sum_{\beta_s} w_{s, \beta_s}^{i} \mu_{\beta_s})\\
+				=& \sum_{\mathclap{\substack{\alpha_1,\ldots ,\alpha_r \\ \beta_1,\ldots ,\beta_s}}} \Big( \underbrace{\sum_i a_i \chi_{1,\alpha_1}^{i} \cdot \ldots \cdot \chi_{r,\alpha_r}^{i} \cdot w_{1, \beta_1}^{i} \cdot \ldots w_{s, \beta_s}^{i} }_{= A_{\alpha_1,\ldots , \alpha_r, \beta_1, \ldots ,\beta_s}} \Big) Z_{\alpha_1} \otimes \ldots \otimes Z_{\alpha_r} \otimes \mu_{\beta_1} \otimes \ldots \otimes \mu_{\beta_s}
+			\end{align*}
+			Damit folgt insgesamt
+			\begin{align*}
+				F_p\left(\sum a_i X_1^{i} \otimes \ldots \right) &= \sum a_i \eta_1 (X_1^{i}) \cdot \ldots \cdot \omega_s^{i} (Y_s) \\
+					& = \ldots \\
+					& = \sum_{\mathclap{\alpha_1,\ldots ,\beta_s}} A_{\alpha_1,\ldots ,\beta_s} \eta_1(Z_{\alpha_1}) \ldots \mu_{\beta_s}(Y_s)\\
+					& = F_p \left(\sum A_{\alpha_1,\ldots ,\beta_s} Z_{\alpha_1} \otimes \ldots \otimes \mu_{\beta_s}\right)
+			\end{align*}
+	\end{itemize}
+\item[$\bm{F_p}$ ist $\R$-linear]
+\item[$\bm{F_p}$ ist surjektiv:]
+	Sei $g: \T_p^*M \X \ldots \T_pM \to \R$ eine $\R$-multilineare Abbildung, dann ist $g$ eindeutig bestimmt durch
+		\[ \overset{\R \ni}{A_{\alpha_1, \ldots , \alpha_r, \beta_1, \ldots , \beta_s}} = g(\mu_{\alpha_1}, \ldots , \mu_{\alpha_r}, \beta_1, \ldots , \beta_s) \text{, mit } \alpha_1, \ldots , \beta_s \in \{1,\ldots ,n\} \]
+	Damit ist dann
+	\begin{align*}
+		F_p\left(\sum A_{\alpha_1,\ldots ,\beta_s} Z_{\alpha_1} \otimes \ldots \otimes \mu_{\beta_s}\right) (\mu_{\tilde\alpha_1},\ldots ,Z_{\tilde\beta_s}) &= \sum A_{\alpha_1,\ldots ,\beta_s} \underbrace{\mu_{\tilde \alpha_1}(Z_{\alpha_1})}_{\delta_{\tilde \alpha_1 \alpha_1}} \ldots \underbrace{\mu_{\beta_s} (Z_{\tilde \beta_s})}_{\delta_{\beta_s\tilde\beta_s}}\\
+		&= A_{\tilde\alpha_1,\ldots ,\tilde\beta_s}\\
+		&= g(\mu_{\tilde\alpha_1},\ldots ,Z_{\tilde\beta_s})
+	\end{align*}
+	Insgesamt folgt
+		\[ g = F_p\left(\sum A_{\alpha_1,\ldots ,\beta_s} Z_{\alpha_1} \otimes \ldots  \otimes Z_{\beta_s}\right) \]
+\item[$\bm{F_p}$ ist injektiv:]
+	Ist $0 = F_p(\sum A_{\alpha_1,\ldots ,\beta_s} Z_{\alpha_1} \otimes \ldots \otimes \mu_{\beta_s})$, so folgt
+	\begin{align*}
+		0 &= F_p() (\mu_{\tilde\alpha_1},\ldots ,\mu_{\tilde\alpha_r}, Z_{\tilde\beta_1}, \ldots , Z_{\tilde\beta_s})\\
+		&= A_{\tilde\alpha_1,\ldots ,\tilde\beta_s} \text{ f"ur alle } \tilde\alpha_1, \ldots , \tilde\beta_s \in \{1,\ldots ,n\}
+	\end{align*}
+	Daraus folgt $\sum A_{\alpha_1,\ldots ,\beta_s} Z_{\alpha_1} \otimes \ldots \otimes \mu_{\beta_s} = 0$
+\end{description}
+Insgesamt folgt damit dass $F_p$ ein Isomorphismus von $\R$-Vektorr"aumen ist. Wir definieren nun
+	\[ F: \calT_s^r(M) \to \text{Multilin}_{C^\infty(M)}(\underbrace{\calV^*(M) \X \ldots \X \calV^*(M)}_{r\text{-mal}} \X \underbrace{\calV(M) \X \ldots \calV(M)}_{s\text{-mal}}, C^\infty(M)) \]
+durch
+	\[ F(S)(\overset{\in \calV^*(M) \ni}{\omega_1,\ldots ,\omega_r}, \overset{\in \calV(M) \ni}{X_1,\ldots ,X_s})(p) := F_p(S_p)(\omega_1|_p,\ldots ,\omega_r|_p, X_1|_p,\ldots ,X_s|_p) \]
+\begin{description}
+\item[$\bm{F(S)(\omega_1,\ldots ,X_s) \in C^\infty(M)}$:]
+	lokale Koordinaten $\leadsto \pdifffrac{}{x^{i}} x^{i}$, Koeffizienten von $\omega_1, \ldots ,X_s$ glatt $\Rightarrow F(S)(\omega_1,\ldots ,X_s)$ glatt
+\item[$\bm{F(S)}$ ist $\bm{C^\infty(M)}$-multilinear:]
+	Seien $f \in C^\infty(M)$ und $\tilde\omega_i \in \calV^*(M)$, damit ist dann:
+	\begin{align*}
+		F(S)(\omega_1,\ldots ,\omega_i + f \tilde\omega_i, \ldots ,X_s)(p) =& F_p(S_p)(\omega_1|_p,\ldots ,\omega_i|_p + f(p)\tilde\omega_i|_p,\ldots ,X_s|_p)\\
+		=& F_p(S_p)(\omega_1|_p,\ldots ,\omega_i|_p,\ldots ,X_s|_p)\\
+		 & + f(p)F_p(S_p)(\omega_1|_p,\ldots ,\tilde\omega_i|_p,\ldots ,X_s|_p)\\
+		=& F(S)(\omega_1,\ldots ,\omega_i,\ldots ,X_s)(p)\\
+		 & + f(p)F(S)(\omega_1,\ldots ,\tilde\omega_i,\ldots ,X_s)(p)
+	\end{align*}
+\item[$\bm{F}$ ist $\bm{C^\infty(M)}$-linear] $\checkmark$
+\item[$\bm{F}$ ist injektiv:]
+	$F(S) = 0$, also ist $F_p(S_p) = 0$ f"ur alle $p \in M$. Da $F_p$ injektiv ist, ist $S_p = 0$ f"ur alle $p \in M$ und damit $S = 0$.
+\item[$\bm{F}$ ist surjektiv:]
+	Sei $g: \calV^*(M) \X \ldots \calV^*(M) \X \calV(M) \X \ldots \X \calV(M) \to C^\infty(M)$ eine $C^\infty(M)$-multilineare Abbildung. Seien weiter $p \in M$, $\varphi$ eine Karte um $p$ und $\chi$ eine glatte cut-off Funktion mit $\supp \chi \subset$\marginnote{$\supp$ \quot{Tr"ager}} Kartengebiet von $\varphi$ und $\chi \equiv 1$ auf einer Umgebung $V$ von $p$. F"ur $q \in V$ ist
+	\begin{align*}
+		g(\omega_1, \ldots ,X_s)(q) =&\, g(\chi\omega_1 + (1-\chi)\omega_1,\ldots ,\chi X_s + (1 - \chi) X_s)(q)\\
+		=&\, g(\chi \omega_1, \chi \omega_2 + (1 - \chi) \omega_2, \ldots \chi X_s + (1-\chi) X_s)(q)\\
+		 &\, + \underbrace{(1-\chi)(q)}_{=0} g(\omega_1, \chi \omega_2 + (1-\chi) \omega_2,\ldots )\\
+		=&\, g(\chi\omega_1, \chi\omega_2 + (1-\chi)\omega_2,\ldots ,\chi X_s+ (1-\chi) X_s)(q)\\
+		=&\, \ldots = g(\chi \omega_1, \ldots ,\chi X_s)(q) \qquad (*)
+	\end{align*}
+	Sei $S_p := \sum A_{\alpha_1, \ldots, \beta_s}(p) \pdifffrac[p]{}{x^{\alpha_1}} \otimes \ldots \otimes \dop x^{\beta_s}|_p$ mit
+		\[ A_{\alpha_1, \ldots, \beta_s}(p) = g(\chi \dop x^{\alpha_1},\ldots ,\chi \pdifffrac{}{x^{\beta_s}}) \]
+	Bachrechnen ergibt dass andere Karten das gleiche $S_p$ liefern. Daher ist $S$ auf ganz $M$ definiert. Wegen (*) und der lokalen Darstellung gilt $F(S) = g$.
+\end{description}
+\end{Loes}
+
+\begin{Loes}
+asdf
+\end{Loes}
+
+\begin{Loes}
+asdf
+\end{Loes}
