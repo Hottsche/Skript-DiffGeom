@@ -129,3 +129,163 @@ Also $\xi^{i} = \sum g^{ij} \omega_i$, wobei $(g^{ij})$ die zu $(g_{ij})$ invers
 	&= \sum \delta_l^i g^{lj} \omega_i \tilde \omega_j\\
 	&= \sum g^{ij} \omega_i \tilde \omega_j\\
 \end{align*}
+
+
+%%%
+%%% 13. Vorlesung <2012-11-27 Tue>
+%%%
+
+Für beliebige Tensoren $S, S' \in T_q^p(\T M)$ und $T, T' \in T_l^k(\T M)$ definiert man induktiv durch lineare Fortsetzung Skalarprodukte wie folgt:
+\begin{align*}
+  \left<S \otimes T, S' \otimes T'\right> = \left<S,S'\right>\left<T,T'\right>.
+\end{align*}
+Auf $\T M \otimes \T M$ hat die Metrik die folgende Gestalt:
+\begin{align*}
+  \left<X \otimes Y,\tilde X \otimes \tilde Y\right> = \sum g_{ij}g_{kl}\xi^i\xi^j\tilde\eta^k\tilde\eta^l.
+\end{align*}
+
+% Definition 6.2
+\begin{Dfn}
+  Es seien $(M, g)$ und $(N,h)$ Riemannsche Mannigfaltigkeiten.
+Ein Diffeomorphismus $\Phi \colon M \to N$ heißt \CmMark{Isometrie}, falls $\Phi^{*}h = g$, i.e. für alle $p \in M$ und $X,Y \in \T_pM$ gilt:
+\begin{align*}
+  g_p(X,Y) = \underbrace{h_{\Phi(p)}(\Phi_{*p}X,\Phi_{*p}Y)}_{\mathclap{= \Phi^{*}h(X,Y) \; \rightsquigarrow \text{Pullback Metrik}}}
+\end{align*}
+Ist umgekehrt $\Phi \colon M \to N$ ein Diffeomorphismus und $h$ eine Riemannsche Metrik auf $N$, so ist $\Phi^{*}h$ eine Riemannsche Metrik auf $M$.
+\end{Dfn}
+
+% Satz 6.3
+\begin{Satz}\label{Satz-6-3}
+  Jede glatte Mannigfaltigkeit trägt eine Riemannsche Metrik.
+\end{Satz}
+
+Um Metriken in den Überlappungsgebieten von Karten "`verkleben"' zu können, benötigt man das folgende Hilfsmittel.
+
+% Hilfssatz
+\begin{satz}[Zerlegung der Eins]
+  Es sei $M$ eine glatte Mannigfaltigkeit $\{U_i\}_{i \in J}$ eine offene Überdeckung von $M$.
+  Dann existiert eine Zerlegung der Eins auf einer abzählbaren, lokal endlichen Verfeinerung von $\{U_i\}_{i \in J}$, d.h. es existiert eine abzählbare offene Überdeckung $\{V_k\}_{k\in\N}$ von $M$ und glatte Funktionen mit kompaktem Träger $\alpha_k \colon M \to \R$, so dass gilt:
+
+  \begin{enumerate}[label=(\roman*)]
+  \item $\forall k \in \N \ \exists i(k) \in J: V_k \subseteq U_{i(k)}$ (Verfeinerung),
+  \item $\forall p \in M \ \exists U \ni p: \# \{k \mid V_k \cap U \neq \emptyset \} < \infty$ (lokal endlich),
+  \item $\forall k \in \N: \supp (\alpha_k) \subseteq V_k$,
+  \item $\forall k \in \N \ \forall p \in M: 0 \leq \alpha(p) \leq 1$,
+  \item $\forall p \in M: \sum_{k\in\N}\alpha_k(p) = 1$.
+  \end{enumerate}
+  (Wegen (ii) und (iii) ist die Summe in (v) endlich).
+\end{satz}
+An dieser Stelle geht maßgeblich ein, dass die Topologie von $M$ eine abzählbare Basis besitzt. Beweis siehe Boothby, Kapitel V.4 \cite{boothby1986introduction}.
+
+\begin{bew}(von Satz \ref{Satz-6-3})
+
+  Es sei $M$ eine glatte, $m$-dimensionale Mannigfaltigkeit. $\{(\varphi_i,U_i)\}_{i \in J}$ ein Atlat von $M$ und $\{(V_k,\alpha_k)\}_{k \in \N}$ eine Zerlegung der Eins auf einer abzählbaren, lokal endlichen Verfeinerung von $\{U_i\}_{i \in J}$.
+
+  Es sei $\beta$ ein Skalarprodukt auf $\R^m$.
+  Für jedes $k \in \N$ ist dann
+  \begin{align*}
+    g_k = \left.\varphi_{i(k)}\right|_{V_k}^{*}\beta
+  \end{align*}
+  eine Riemannsche Metrik auf $V_k$.
+
+  Damit ist $g = \sum g_k\alpha_k$ eine Riemannsche Metrik auf $M$.
+
+  Die Summe ist punktweise endlich und $g$ ist als Komposition glatter Abbildungen selbst glatt.
+  Symmetrie und Bilinearität folgen sofort.
+  Für jedes $p \in M$ gilt $\sum_{k \in \N}\alpha_k(p) = 1$, d.h. ex existiert ein $l \in \N$ mit $\alpha_l(p) > 0$ und für $X \in T_pM$ mit $X \neq 0$ folgt:
+  \begin{align*}
+    g_p(X,X) & = \sum \underbrace{g_k(p)(X,X)\alpha_k(p)}_{> 0}\\
+    & \geq g_l(p)(X,X)\alpha_l(p) > 0.
+  \end{align*}
+  Damit ist $g$ positiv definit.
+\end{bew}
+
+Für eine glatte Kurve $\gamma \colon [a,b] \to M$ heißt
+\begin{align*}
+  \mathcal L(\gamma) = \int_{a}^b\|\cdot \gamma\| = \int_a^b \sqrt{g_{\gamma(t)}(\cdot\gamma(t),\cdot\gamma(t))}\dop t
+\end{align*}
+die \CmMark[Kurvenlänge]{(Kurven-)Länge} von $\gamma$.
+
+Ist $\tau \colon [\alpha,\beta] \to [a,b]$ glatt und monoton, so gilt
+\begin{align*}
+  \mathcal L(\gamma \circ \tau) & = \int_{\alpha}^{\beta}\|\cdot\gamma(\tau(s))\||\tau'(s)|\dop s\\
+  & = \int_a^b\|\cdot\gamma\| = \mathcal L(\gamma).
+\end{align*}
+Damit ist die Kurvenlänge invariant unter Reparametrisierungen.
+
+Ist $\gamma$ regulär, d.h. $\cdot\gamma(t) \neq 0$ für alle $t \in [a,b]$, so ist ihre sogenannte \CmMark{Bogenlänge}
+\begin{align*}
+  \sigma \colon [a,b] \to [0,\mathcal L(\gamma)], t \mapsto \mathcal L(\gamma|_{[a,t]}) = \int_a^b\|\cdot\gamma\|.
+\end{align*}
+streng monoton steigend, $\sigma'(s) = \|\cdot\gamma(s)\| > 0$.
+
+Für $\tilde\gamma = \gamma \circ \sigma^{-1}\colon [0,\mathcal L(\gamma)] \to M$ gilt $\|\cdot\tilde\gamma\| \equiv 1$.
+Die Kurve $\tilde \gamma$ heißt \CmMark{Bogenlängenparametrisierung} von $\Gamma$.
+Gilt für $\gamma \colon [a,b] \to M$ gerade $\|\cdot\gamma\| \equiv \lambda$, so heißt $\gamma$ \CmMark[Parametrisierung!proportional zur Bogenlänge]{proportianal zur Bogenlänge} parametrisiert.
+
+Sind $\gamma \colon [a,b] \to M, \tilde \gamma \colon [b,c] \to M$ glatte Kurven mit $\gamma(b) = \tilde \gamma(b)$, so sei
+\begin{align*}
+  \mathcal L(\gamma \cup \tilde\gamma) = \mathcal L(\gamma) + \mathcal L(\tilde \gamma).
+\end{align*}
+Eine Kurve $\gamma \colon [a,b] \to M$ heißt \CmMark{stückweise glatt}, wenn $t_0, \ldots, t_k$ mit $a = t_0 < t_1 < \cdots < t_k = b$ existieren, so dass $\gamma|_{[t_{i-1},t_i]}$ für alle $i \leq k$ glatt ist.
+
+\textcolor{red}{Abbildung 13.1, stückweise glatte Wege}
+
+% Definition 6.4
+\begin{Dfn}
+  Für Punkte $p, q \in M$ ist der \CmMark{Abstand} definiert durch:
+  \begin{align*}
+    \dop(p,q) = inf\{ \mathcal L(\gamma) \mid \gamma \colon [0,1] \to M \text{ stückweise glatt mit } \gamma(0) = p, \gamma(1) = q\}.
+  \end{align*}
+\end{Dfn}
+
+% Satz 6.5
+\begin{Satz}
+  Es sei $(M,g)$ eine zusammenhängende Riemannsche Mannigfaltigkeit.
+  Die Abstandsfunktionen bilden eine Metrik auf $M$, welche die ursprüngliche Topologie induziert.
+\end{Satz}
+
+Der Beweis sei zur Übung überlassen.
+
+% Satz 6.6
+\begin{Satz}
+  Es seien $(M,g)$ und $(N,h)$ zusammenhängende Riemannsche Mannigfaltigkeiten und $\Phi \colon M \to N$ ein Diffeomorphismus.
+  Dann ist $\Phi$ genau dann eine Isometrie, wenn $\mathcal L(\Phi \circ \gamma) = \mathcal L(\gamma)$ für alle glatten $\gamma \colon [0,1] \to M$ gilt. 
+\end{Satz}
+
+\begin{bew}
+  Dass eine Isometrie die Kurvenlängen erhält, gilt ist offensichtlich.
+
+  Erhält $\Phi$ die Kurvenlängen, so erhält $\Phi$ auch die Norm von Tangentialvektoren, den andernfalls gäbe es $X_p \in T_pM$ mit o.E.
+  \begin{align*}
+    h_{\Phi(p)}(\Phi_{*p}X,\Phi_{*p}X) > g_p(X,X)
+  \end{align*}
+und eine Kurve $\gamma\colon [0,1] \to M$ mit $\gamma(0) = X$ und es gälte (für hinreichend kleines $\varepsilon$):
+\begin{align*}
+  \mathcal L(\gamma|_{[0,\varepsilon]}) & = \int_0^{\varepsilon}\sqrt{g_{\gamma(t)}(\cdot\gamma(t),\cdot\gamma(t))}\dop t\\
+& < \int_0^{\varepsilon}\sqrt{h_{\Phi(\gamma(t))}(\Phi_{*\gamma(t)},\cdot\gamma(t)\Phi_{*\gamma(t}\cdot\gamma(t)}\dop t\\
+& = \int_0^{\varepsilon}\sqrt{_{\Phi(\gamma(t))}(\cdot{(\Phi \circ \gamma)}(t), \cdot{(\Phi \circ \gamma)}(t))}\dop t\\
+& = \mathcal L ((\Phi \circ \gamma)|_{[0,\varepsilon]}).
+\end{align*}
+Mit der Polarisationsformel $\left<x,y\right> = - \frac{1}2 (\|x-y\|^{2} - \|x\|^2-\|y\|^2)$ folgt dann, dass $\Phi$ auch die Skalarprodukte erhält.
+\end{bew}
+
+% Definition 6.7
+\begin{Dfn}
+  Eine Kurve $\gamma \colon [a,b] \to M$ heißt \CmMark[Geodätische!minimale]{minimale Geodätische}, falls ein $\lambda \geq 0$ existiert, so dass für alle $a \leq s < t \leq b$ gilt:
+  \begin{align*}
+    \mathcal L(\gamma|_{[s,t]}) = \lambda(t-s) = \dop(\gamma(s),\gamma(t)).
+  \end{align*}
+
+  Eine Kurve $\gamma$ heißt \CmMark{Geodätische}, falls sie lokal minimierende Geodätische ist, d.h. für alle $t \in [a,b]$ existiert ein $\varepsilon > 0$, so dass $\gamma|_{[t-\varepsilon,t+\varepsilon]}$ minimierende Geodätische ist.
+\end{Dfn}
+
+Eine bessere Vorstellung erhält man durch Betrachtung von Geodätischen als Isometrien von Intervallen in den euklidischen Raum, denn $\dop(\gamma(s),\gamma(t)) = t-s = \dop_{\R}(t,s)$.
+
+\textcolor{red}{Abbildung 13.2: Geodätische}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../skript-diffgeom"
+%%% End: 

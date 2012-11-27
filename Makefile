@@ -5,6 +5,6 @@ MAKEINDEXSTYLE = index.ist
 
 all: $(MAIN).tex
 	pdflatex $(MAIN).tex
-#	bibtex $(MAIN).aux
+	bibtex $(MAIN).aux
 	makeindex -s $(MAKEINDEXSTYLE) "$(MAIN)"
 	pdflatex $(MAIN).tex
