@@ -18,7 +18,7 @@ definiert durch
 	F_p(\sum_i a_i \overbrace{X_1^{i}}^{\mathclap{\in \T_pM}} \otimes \ldots \otimes X_r^{i} \otimes \overbrace{\omega_1^{i}}^{\mathclap{\in \T_p^*M}} \otimes \ldots \otimes \omega_s^{i})(\eta_1,\ldots ,\eta_r, Y_1, \ldots ,Y_s)\\
 	\qquad := \sum_i a_i \eta_1(X_1^{i}) \cdot \ldots \cdot \eta_n(X_r^{i}) \cdot \omega_1^{i}(Y_1) \cdot \ldots \cdot \omega_s^{i}(Y_s)
 \end{align*}
-\begin{description}[leftmargin=*]
+\begin{description}
 \item[$\bm{F_p}$ ist wohldefiniert:]
 	\begin{itemize}[leftmargin=*]
 		\item
@@ -78,7 +78,7 @@ durch
 \item[$\bm{F}$ ist injektiv:]
 	$F(S) = 0$, also ist $F_p(S_p) = 0$ f"ur alle $p \in M$. Da $F_p$ injektiv ist, ist $S_p = 0$ f"ur alle $p \in M$ und damit $S = 0$.
 \item[$\bm{F}$ ist surjektiv:]
-	Sei $g: \calV^*(M) \X \ldots \calV^*(M) \X \calV(M) \X \ldots \X \calV(M) \to C^\infty(M)$ eine $C^\infty(M)$-multilineare Abbildung. Seien weiter $p \in M$, $\varphi$ eine Karte um $p$ und $\chi$ eine glatte cut-off Funktion mit $\supp \chi \subset$\marginnote{$\supp$ \quot{Tr"ager}} Kartengebiet von $\varphi$ und $\chi \equiv 1$ auf einer Umgebung $V$ von $p$. F"ur $q \in V$ ist
+	Sei $g: \calV^*(M) \X \ldots \calV^*(M) \X \calV(M) \X \ldots \X \calV(M) \to C^\infty(M)$ eine $C^\infty(M)$-multilineare Abbildung. Seien weiter $p \in M$, $\varphi$ eine Karte um $p$ und $\chi$ eine glatte cut-off Funktion mit $\supp \chi \subset$\marginnote{\scriptsize{$\supp$ \quot{Tr"ager}}} Kartengebiet von $\varphi$ und $\chi \equiv 1$ auf einer Umgebung $V$ von $p$. F"ur $q \in V$ ist
 	\begin{align*}
 		g(\omega_1, \ldots ,X_s)(q) =&\, g(\chi\omega_1 + (1-\chi)\omega_1,\ldots ,\chi X_s + (1 - \chi) X_s)(q)\\
 		=&\, g(\chi \omega_1, \chi \omega_2 + (1 - \chi) \omega_2, \ldots \chi X_s + (1-\chi) X_s)(q)\\
@@ -92,10 +92,31 @@ durch
 \end{description}
 \end{Loes}
 
-\begin{Loes}
-asdf
-\end{Loes}
+\begin{Loes}\begin{enumerate}[label=\alph*), leftmargin=*]
+\item
+	$\omega_1 = yz \dop x + xz \dop y + xy \dop z$ ist geschlossen und exakt
+		\[ \textcolor{gray}{\left(\dop f = \pdifffrac{f}{x} \dop x + \pdifffrac{f}{y} \dop y + \pdifffrac{f}{z} \dop z \right)} \]
+	$\dop(xyz) = (yz) \dop x + (xz) \dop y + (xy) \dop z \Rightarrow 0 = \dop \circ \dop(xyz) = \dop \omega_1$
+\item
+	$\omega_2 = y^2 \dop x + x^3yz \dop y + x^2y \dop z$ ist weder geschlossen noch exakt.
+	
+	$\dop \omega_2 \ne 0$ (nachrechnen); angenommen $\exists \eta : \dop \eta = \omega_2 \Rightarrow 0 = \dop^2 \eta = \dop \omega_2 \ne 0 \lightning \Rightarrow \omega_2$ nicht exakt
+\item
+	$\dop \omega_3 \ne 0$
+\item
+	$\omega_4$ ist exakt
+\end{enumerate}\end{Loes}
 
 \begin{Loes}
-asdf
+Skizze:
+\begin{center}\begin{tikzpicture}
+	\draw[name path=kreis] (0,0) circle(1);
+	\draw[->] (1,0) -- (1,1); \draw[->] (-1,0) -- (-1,-1); \draw[->] (0,1) -- (-1,1); \draw[->] (0,-1) -- (1,-1);
+	\path[name path=a] (-1,-1) -- (1,1);
+	\path[name path=b] (-1,1) -- (1,-1);
+	\path[name intersections={of= kreis and a}];
+	\draw[->] (intersection-1) -- ($(intersection-1) + sqrt(0.5)*(-1,1)$); \draw[->] (intersection-2) -- ($(intersection-2) + sqrt(0.5)*(1,-1)$);
+	\path[name intersections={of= kreis and b}];
+	\draw[->] (intersection-1) -- ($(intersection-1) + sqrt(0.5)*(-1,-1)$); \draw[->] (intersection-2) -- ($(intersection-2) + sqrt(0.5)*(1,1)$);
+\end{tikzpicture}\end{center}
 \end{Loes}

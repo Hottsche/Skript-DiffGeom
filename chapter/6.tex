@@ -137,17 +137,17 @@ Also $\xi^{i} = \sum g^{ij} \omega_i$, wobei $(g^{ij})$ die zu $(g_{ij})$ invers
 
 Für beliebige Tensoren $S, S' \in T_q^p(\T M)$ und $T, T' \in T_l^k(\T M)$ definiert man induktiv durch lineare Fortsetzung Skalarprodukte wie folgt:
 \begin{align*}
-  \left<S \otimes T, S' \otimes T'\right> = \left<S,S'\right>\left<T,T'\right>.
+  \left<S \otimes T, S' \otimes T'\right> = \left<S,S'\right> \otimes \left<T,T'\right>.
 \end{align*}
 Auf $\T M \otimes \T M$ hat die Metrik die folgende Gestalt:
 \begin{align*}
-  \left<X \otimes Y,\tilde X \otimes \tilde Y\right> = \sum g_{ij}g_{kl}\xi^i\xi^j\tilde\eta^k\tilde\eta^l.
+  \left<X \otimes Y,\tilde X \otimes \tilde Y\right> = \sum g_{ij}g_{kl}\xi^i\tilde\xi^j\eta^k\tilde\eta^l.
 \end{align*}
 
 % Definition 6.2
 \begin{Dfn}
   Es seien $(M, g)$ und $(N,h)$ Riemannsche Mannigfaltigkeiten.
-Ein Diffeomorphismus $\Phi \colon M \to N$ heißt \CmMark{Isometrie}, falls $\Phi^{*}h = g$, i.e. für alle $p \in M$ und $X,Y \in \T_pM$ gilt:
+Ein Diffeomorphismus $\Phi \colon M \to N$ heißt \CmMark{Isometrie}, falls $\Phi^{*}h = g$, das hei"st für alle $p \in M$ und $X,Y \in \T_pM$ gilt:
 \begin{align*}
   g_p(X,Y) = \underbrace{h_{\Phi(p)}(\Phi_{*p}X,\Phi_{*p}Y)}_{\mathclap{= \Phi^{*}h(X,Y) \; \rightsquigarrow \text{Pullback Metrik}}}
 \end{align*}
@@ -163,11 +163,11 @@ Um Metriken in den Überlappungsgebieten von Karten "`verkleben"' zu können, be
 
 % Hilfssatz
 \begin{satz}[Zerlegung der Eins]
-  Es sei $M$ eine glatte Mannigfaltigkeit $\{U_i\}_{i \in J}$ eine offene Überdeckung von $M$.
-  Dann existiert eine Zerlegung der Eins auf einer abzählbaren, lokal endlichen Verfeinerung von $\{U_i\}_{i \in J}$, d.h. es existiert eine abzählbare offene Überdeckung $\{V_k\}_{k\in\N}$ von $M$ und glatte Funktionen mit kompaktem Träger $\alpha_k \colon M \to \R$, so dass gilt:
+  Es sei $M$ eine glatte Mannigfaltigkeit und $\{U_i\}_{i \in \calI}$ eine offene Überdeckung von $M$.
+  Dann existiert eine \CmMark{Zerlegung der Eins} auf einer abzählbaren, lokal endlichen Verfeinerung von $\{U_i\}_{i \in \calI}$, das hei"st es existiert eine abzählbare offene Überdeckung $\{V_k\}_{k\in\N}$ von $M$ und glatte Funktionen mit kompaktem Träger $\alpha_k \colon M \to \R$, so dass gilt:
 
   \begin{enumerate}[label=(\roman*)]
-  \item $\forall k \in \N \ \exists i(k) \in J: V_k \subseteq U_{i(k)}$ (Verfeinerung),
+  \item $\forall k \in \N \ \exists i(k) \in \calI: V_k \subseteq U_{i(k)}$ (Verfeinerung),
   \item $\forall p \in M \ \exists U \ni p: \# \{k \mid V_k \cap U \neq \emptyset \} < \infty$ (lokal endlich),
   \item $\forall k \in \N: \supp (\alpha_k) \subseteq V_k$,
   \item $\forall k \in \N \ \forall p \in M: 0 \leq \alpha(p) \leq 1$,
@@ -178,64 +178,58 @@ Um Metriken in den Überlappungsgebieten von Karten "`verkleben"' zu können, be
 An dieser Stelle geht maßgeblich ein, dass die Topologie von $M$ eine abzählbare Basis besitzt. Beweis siehe Boothby, Kapitel V.4 \cite{boothby1986introduction}.
 
 \begin{bew}(von Satz \ref{Satz-6-3})
-
-  Es sei $M$ eine glatte, $m$-dimensionale Mannigfaltigkeit. $\{(\varphi_i,U_i)\}_{i \in J}$ ein Atlat von $M$ und $\{(V_k,\alpha_k)\}_{k \in \N}$ eine Zerlegung der Eins auf einer abzählbaren, lokal endlichen Verfeinerung von $\{U_i\}_{i \in J}$.
-
-  Es sei $\beta$ ein Skalarprodukt auf $\R^m$.
-  Für jedes $k \in \N$ ist dann
-  \begin{align*}
-    g_k = \left.\varphi_{i(k)}\right|_{V_k}^{*}\beta
-  \end{align*}
-  eine Riemannsche Metrik auf $V_k$.
-
-  Damit ist $g = \sum g_k\alpha_k$ eine Riemannsche Metrik auf $M$.
-
-  Die Summe ist punktweise endlich und $g$ ist als Komposition glatter Abbildungen selbst glatt.
-  Symmetrie und Bilinearität folgen sofort.
-  Für jedes $p \in M$ gilt $\sum_{k \in \N}\alpha_k(p) = 1$, d.h. ex existiert ein $l \in \N$ mit $\alpha_l(p) > 0$ und für $X \in T_pM$ mit $X \neq 0$ folgt:
-  \begin{align*}
-    g_p(X,X) & = \sum \underbrace{g_k(p)(X,X)\alpha_k(p)}_{> 0}\\
-    & \geq g_l(p)(X,X)\alpha_l(p) > 0.
-  \end{align*}
-  Damit ist $g$ positiv definit.
+Es sei $M$ eine glatte, $m$-dimensionale Mannigfaltigkeit. $\{(\varphi_i,U_i)\}_{i \in \calI}$ ein Atlas von $M$ und $\{(V_k,\alpha_k)\}_{k \in \N}$ eine Zerlegung der Eins auf einer abzählbaren, lokal endlichen Verfeinerung von $\{U_i\}_{i \in \calI}$. Es sei $\beta$ ein Skalarprodukt auf $\R^m$. Für jedes $k \in \N$ ist dann
+\begin{align*}
+	g_k = \left.\varphi_{i(k)}\right|_{V_k}^{*}\beta
+\end{align*}
+eine Riemannsche Metrik auf $V_k$. Damit ist $g = \sum g_k\alpha_k$ eine Riemannsche Metrik auf $M$.
+Die Summe ist punktweise endlich und $g$ ist als Komposition glatter Abbildungen selbst glatt.
+Symmetrie und Bilinearität folgen sofort.
+Für jedes $p \in M$ gilt $\sum_{k \in \N}\alpha_k(p) = 1$, das hei"st es existiert ein $l \in \N$ mit $\alpha_l(p) > 0$ und für $X \in \T_pM$ mit $X \neq 0$ folgt:
+\begin{align*}
+	g_p(X,X) & = \sum \underbrace{g_k(p)(X,X)}_{> 0}\alpha_k(p)\\
+	& \geq g_l(p)(X,X)\alpha_l(p) > 0.
+\end{align*}
+Damit ist $g$ positiv definit.
 \end{bew}
 
 Für eine glatte Kurve $\gamma \colon [a,b] \to M$ heißt
 \begin{align*}
-  \mathcal L(\gamma) = \int_{a}^b\|\cdot \gamma\| = \int_a^b \sqrt{g_{\gamma(t)}(\cdot\gamma(t),\cdot\gamma(t))}\dop t
+  \mathcal L(\gamma) = \int_{a}^b\|\dot \gamma\| = \int_a^b \sqrt{g_{\gamma(t)}(\dot\gamma(t),\dot\gamma(t))}\dop t
 \end{align*}
-die \CmMark[Kurvenlänge]{(Kurven-)Länge} von $\gamma$.
-
-Ist $\tau \colon [\alpha,\beta] \to [a,b]$ glatt und monoton, so gilt
+die \CmMark[L\"ange!Kurven-]{(Kurven-)Länge} von $\gamma$. Ist $\tau \colon [\alpha,\beta] \to [a,b]$ glatt und monoton, so gilt\marginnote{\textcolor{gray}{\scriptsize{$\tau'$ ist die Ableitung von $\tau$, der Strich wurde aus "asthetischen Gr"unden statt dem Punkt gew"ahlt}}}
 \begin{align*}
-  \mathcal L(\gamma \circ \tau) & = \int_{\alpha}^{\beta}\|\cdot\gamma(\tau(s))\||\tau'(s)|\dop s\\
-  & = \int_a^b\|\cdot\gamma\| = \mathcal L(\gamma).
+  \mathcal L(\gamma \circ \tau) & = \int_{\alpha}^{\beta}\|\dot\gamma(\tau(s))\||\tau'(s)|\dop s\\
+  & = \int_a^b\|\dot\gamma\| = \mathcal L(\gamma).
 \end{align*}
-Damit ist die Kurvenlänge invariant unter Reparametrisierungen.
-
-Ist $\gamma$ regulär, d.h. $\cdot\gamma(t) \neq 0$ für alle $t \in [a,b]$, so ist ihre sogenannte \CmMark{Bogenlänge}
+Damit ist die Kurvenlänge invariant unter Reparametrisierungen. Ist $\gamma$ \CmMark[regul\"ar!Kurve]{regul\"ar}, das hei"st $\dot\gamma(t) \neq 0$ für alle $t \in [a,b]$, so ist ihre sogenannte \CmMark{Bogenlänge}
 \begin{align*}
-  \sigma \colon [a,b] \to [0,\mathcal L(\gamma)], t \mapsto \mathcal L(\gamma|_{[a,t]}) = \int_a^b\|\cdot\gamma\|.
+  \sigma \colon [a,b] \to [0,\mathcal L(\gamma)], t \mapsto \mathcal L(\gamma|_{[a,t]}) = \int_a^t\|\dot\gamma\|.
 \end{align*}
-streng monoton steigend, $\sigma'(s) = \|\cdot\gamma(s)\| > 0$.
+streng monoton steigend, also $\sigma'(s) = \|\dot\gamma(s)\| > 0$.
+Für $\tilde\gamma = \gamma \circ \sigma^{-1}\colon [0,\mathcal L(\gamma)] \to M$ gilt $\|\dot{\tilde\gamma}\| \equiv 1$.
+Die Kurve $\tilde \gamma$ heißt \CmMark{Bogenlängenparametrisierung} von $\gamma$.
+Gilt für $\gamma \colon [a,b] \to M$ dass $\|\dot\gamma\| \equiv \lambda$, so heißt $\gamma$ \CmMark[Parametrisierung!proportional zur Bogenlänge]{proportianal zur Bogenlänge} parametrisiert.
 
-Für $\tilde\gamma = \gamma \circ \sigma^{-1}\colon [0,\mathcal L(\gamma)] \to M$ gilt $\|\cdot\tilde\gamma\| \equiv 1$.
-Die Kurve $\tilde \gamma$ heißt \CmMark{Bogenlängenparametrisierung} von $\Gamma$.
-Gilt für $\gamma \colon [a,b] \to M$ gerade $\|\cdot\gamma\| \equiv \lambda$, so heißt $\gamma$ \CmMark[Parametrisierung!proportional zur Bogenlänge]{proportianal zur Bogenlänge} parametrisiert.
-
+\marginnote{\begin{tikzpicture}[font=\scriptsize,scale=0.6]
+	%\draw[step=0.25,gray!15] (-4,-4) grid (4,4); \draw[step=0.5,gray!30] (-4,-4) grid (4,4); \fill (0,0) circle(0.1); %Hilfsgitter
+	\fill (0,0) circle(0.1)node[left]{$b$}; \fill (-3,-2) circle(0.1)node[left]{$a$}; \fill (1,-2) circle(0.1)node[right]{$c$};	
+	\draw (-3,-2) ..controls(-3,-2) and (-2.5,-1).. (-1.5,-1)node[above]{$\gamma$} ..controls(-0.5,-1) and (0,0).. (0,0);
+	\draw (0,0) ..controls(0,0) and (1,-0.5).. (0.75,-1)node[left]{$\tilde\gamma$} ..controls(0.5,-1.5) and (1,-2).. (1,-2);
+	\draw[->] (0,0) -- (0.4,0.75)node[left]{$\dot\gamma(b)$};
+	\draw[->] (0,0) -- (1,-0.5)node[above]{$\dot{\tilde\gamma}(b)$};
+\end{tikzpicture}}
 Sind $\gamma \colon [a,b] \to M, \tilde \gamma \colon [b,c] \to M$ glatte Kurven mit $\gamma(b) = \tilde \gamma(b)$, so sei
 \begin{align*}
   \mathcal L(\gamma \cup \tilde\gamma) = \mathcal L(\gamma) + \mathcal L(\tilde \gamma).
 \end{align*}
 Eine Kurve $\gamma \colon [a,b] \to M$ heißt \CmMark{stückweise glatt}, wenn $t_0, \ldots, t_k$ mit $a = t_0 < t_1 < \cdots < t_k = b$ existieren, so dass $\gamma|_{[t_{i-1},t_i]}$ für alle $i \leq k$ glatt ist.
 
-\textcolor{red}{Abbildung 13.1, stückweise glatte Wege}
-
 % Definition 6.4
 \begin{Dfn}
   Für Punkte $p, q \in M$ ist der \CmMark{Abstand} definiert durch:
   \begin{align*}
-    \dop(p,q) = inf\{ \mathcal L(\gamma) \mid \gamma \colon [0,1] \to M \text{ stückweise glatt mit } \gamma(0) = p, \gamma(1) = q\}.
+    \dop(p,q) = \inf\{ \mathcal L(\gamma) \mid \gamma \colon [0,1] \to M \text{ stückweise glatt mit } \gamma(0) = p, \gamma(1) = q\}.
   \end{align*}
 \end{Dfn}
 
@@ -254,35 +248,57 @@ Der Beweis sei zur Übung überlassen.
 \end{Satz}
 
 \begin{bew}
-  Dass eine Isometrie die Kurvenlängen erhält, gilt ist offensichtlich.
-
-  Erhält $\Phi$ die Kurvenlängen, so erhält $\Phi$ auch die Norm von Tangentialvektoren, den andernfalls gäbe es $X_p \in T_pM$ mit o.E.
-  \begin{align*}
-    h_{\Phi(p)}(\Phi_{*p}X,\Phi_{*p}X) > g_p(X,X)
-  \end{align*}
+Dass eine Isometrie die Kurvenlängen erhält gilt offensichtlich. Erhält $\Phi$ die Kurvenlängen, so erhält $\Phi$ auch die Norm von Tangentialvektoren, den andernfalls gäbe es $X_p \in \T_pM$ mit (ohne Einschr"ankung)
+\begin{align*}
+	h_{\Phi(p)}(\Phi_{*p}X,\Phi_{*p}X) > g_p(X,X)
+\end{align*}
 und eine Kurve $\gamma\colon [0,1] \to M$ mit $\gamma(0) = X$ und es gälte (für hinreichend kleines $\varepsilon$):
 \begin{align*}
-  \mathcal L(\gamma|_{[0,\varepsilon]}) & = \int_0^{\varepsilon}\sqrt{g_{\gamma(t)}(\cdot\gamma(t),\cdot\gamma(t))}\dop t\\
-& < \int_0^{\varepsilon}\sqrt{h_{\Phi(\gamma(t))}(\Phi_{*\gamma(t)},\cdot\gamma(t)\Phi_{*\gamma(t}\cdot\gamma(t)}\dop t\\
-& = \int_0^{\varepsilon}\sqrt{_{\Phi(\gamma(t))}(\cdot{(\Phi \circ \gamma)}(t), \cdot{(\Phi \circ \gamma)}(t))}\dop t\\
-& = \mathcal L ((\Phi \circ \gamma)|_{[0,\varepsilon]}).
+	\mathcal L(\gamma|_{[0,\varepsilon]}) & = \int_0^{\varepsilon}\sqrt{g_{\gamma(t)}\left(\dot\gamma(t),\dot\gamma(t)\right)}\dop t\\
+	& < \int_0^{\varepsilon}\sqrt{h_{\Phi(\gamma(t))} \left(\Phi_{*\gamma(t)}\dot\gamma(t), \Phi_{*\gamma(t)}\dot\gamma(t)\right)}\dop t\\
+	& = \int_0^{\varepsilon}\sqrt{h_{\Phi(\gamma(t))} \left(\dot{(\Phi \circ \gamma)}(t), \dot{(\Phi \circ \gamma)}(t) \right)}\dop t\\
+	& = \mathcal L \left((\Phi \circ \gamma)|_{[0,\varepsilon]}\right).
 \end{align*}
 Mit der Polarisationsformel $\left<x,y\right> = - \frac{1}2 (\|x-y\|^{2} - \|x\|^2-\|y\|^2)$ folgt dann, dass $\Phi$ auch die Skalarprodukte erhält.
 \end{bew}
 
 % Definition 6.7
 \begin{Dfn}
-  Eine Kurve $\gamma \colon [a,b] \to M$ heißt \CmMark[Geodätische!minimale]{minimale Geodätische}, falls ein $\lambda \geq 0$ existiert, so dass für alle $a \leq s < t \leq b$ gilt:
+  Eine Kurve $\gamma \colon [a,b] \to M$ heißt \CmMark[Geodätische!minimale]{minimale Geodätische} von $\gamma(\alpha)$ nach $\gamma(\beta)$, falls ein $\lambda \geq 0$ existiert, so dass für alle $a \leq s < t \leq b$ gilt:
   \begin{align*}
     \mathcal L(\gamma|_{[s,t]}) = \lambda(t-s) = \dop(\gamma(s),\gamma(t)).
   \end{align*}
 
-  Eine Kurve $\gamma$ heißt \CmMark{Geodätische}, falls sie lokal minimierende Geodätische ist, d.h. für alle $t \in [a,b]$ existiert ein $\varepsilon > 0$, so dass $\gamma|_{[t-\varepsilon,t+\varepsilon]}$ minimierende Geodätische ist.
+  Eine Kurve $\gamma$ heißt \CmMark{Geodätische}, falls sie lokal minimierende Geodätische ist, das hei"st für alle $t \in [a,b]$ existiert ein $\varepsilon > 0$, so dass $\gamma|_{[t-\varepsilon,t+\varepsilon]}$ minimierende Geodätische ist.
 \end{Dfn}
 
 Eine bessere Vorstellung erhält man durch Betrachtung von Geodätischen als Isometrien von Intervallen in den euklidischen Raum, denn $\dop(\gamma(s),\gamma(t)) = t-s = \dop_{\R}(t,s)$.
 
-\textcolor{red}{Abbildung 13.2: Geodätische}
+\begin{center}\begin{tikzpicture}
+	%\draw[step=0.25,gray!15] (-4,-4) grid (4,4); \draw[step=0.5,gray!30] (-4,-4) grid (4,4); \fill (0,0) circle(0.1); %Hilfsgitter
+	\draw (0,0) circle (2);
+	\fill (0,2) circle(0.1)node[above]{$N$}; \fill (0,-2) circle(0.1)node[below]{$S$};
+	\def\vert{0.5}
+	\begin{scope}
+		\clip (-2,0) rectangle (2,-2);
+		\draw (0,0) ellipse(2 and \vert);
+	\end{scope}\begin{scope}
+		\clip (-2,0) rectangle (2,2);
+		\draw[dashed] (0,0) ellipse(2 and \vert);
+	\end{scope}\begin{scope}
+		\clip (0,-2) rectangle (2,2);
+		\draw (0,0) ellipse(1 and 2);
+	\end{scope}\begin{scope}
+		\clip (0,-2) rectangle (-2,2);
+		\draw[dashed] (0,0) ellipse(1 and 2);
+	\end{scope}
+	
+	\fill (-1.25,-0.75) circle (0.1); \fill (-0.25,1) circle (0.1);
+	\draw (-1.25,-0.75) ..controls(-1.25,-0.25) and (-1,0.5).. (-0.25,1);
+	
+	\node at (2,2) {$S^2 \subset \R^3$};
+\end{tikzpicture}\\
+Geod"atische = Gro"skreissegmente\end{center}
 
 
 %%% Local Variables: 
