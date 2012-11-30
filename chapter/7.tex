@@ -6,38 +6,51 @@
 
 \paragraph{Frage:} Was ist eine \quot{gute} Differentialrechnung für Vektorfelder?
 
-Das gewöhnliche Differential im $\R^n$ für $Y \colon \R^n \to \R^n$ ist gerade die lineare Abbildung $\D Y|_p \cdot v = \lim \frac{1}t \left(Y(p+tr) -Y(p)\right) = \difffrac[t=0]{}{t} Y(p+tr)$
-
+Das gewöhnliche Differential im $\R^n$ für $Y \colon \R^n \to \R^n$ ist gerade die lineare Abbildung $\D Y|_p \cdot v = \lim \frac{1}t \left(Y(p+tv) -Y(p)\right) = \difffrac[t=0]{}{t} Y(p+tr)$.
 Betrachte im euklidischen Fall einen Punkt $p$, sowie einen Tangentialvektor $Y_p$.
-
-\textcolor{red}{Abbildung 14.2: Motivation Differential im Euklidischen, evtl. auch noch die Idee der Parallelverschiebung erklären.}
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+	\coordinate (end) at (1.5,0.75); %Endrichtung
+	\draw (0,0) -- ($(0,0) + 4*(end)$);
+	% die Punkte
+	\coordinate (p) at ($(0,0) + 0.5*(end)$); \coordinate (q) at ($(0,0) + 2.75*(end)$);
+	\fill (p) circle(0.1)node[anchor=north west]{$p$}; \fill (q) circle(0.1)node[anchor=north west]{$p + tv$};
+	% die Pfeile
+	\draw[->] (p) --node[left]{$Y_p$} ($(p) + 1.25*(-0.75,2)$);
+	\coordinate (dir) at (0.15,1);
+	\def\scl{1.5}
+	\draw[->] (q) --node[right]{$Y_{p+tv}$} ($(q) + \scl*(dir)$); \draw[->] (p) -- ($(p) + \scl*(dir)$);
+	% Parallelverschiebung
+	\draw[->,dashed] ($(q) + 0.5*\scl*(dir)$) --node[above,sloped]{Parallelverschiebung} ($(p) + 0.5*\scl*(dir)$);
+\end{tikzpicture}\\
+\textcolor{red}{evtl. auch noch die Idee der Parallelverschiebung erklären.}\end{center}
 
 Nun gehe zur Betrachtung von Vektorfeldern $X \colon \R^n \to \R^n$ über und setze $\D_XY|_p = \D Y|_p\cdot X_p$. Hierfür gilt:
 \begin{itemize}
 \item $\D$ ist $\R$-linear in $Y$: $\D(Y + \tilde Y) = \D Y + \D \tilde Y$.
-\item Es gilt die Leibnizregel: $\D fY = \D f \cdot Y + f\D Y$.
+\item Es gilt die Leibnizregel: $\D(fY) = \D f \cdot Y + f\D Y$.
 \item $\D$ ist $C^{\infty}(\R^n)$-linear in $X$:
   \begin{align*}
-    \D_{fX}Y|_p = \D Y|_p\cdot(fX)_p = \D Y|_p \cdot fp)X_p = f(p) \D Y|_p \cdot X_p = (f \D_XY)(p).
+    \D_{fX}Y|_p = \D Y|_p\cdot(fX)_p = \D Y|_p \cdot f(p)X_p = f(p) \D Y|_p \cdot X_p = (f \D_XY)(p).
   \end{align*}
 \end{itemize}
 
-Erinnerung: Die Lieableitung $\mathcal L_{(\cdot)}Y$ ist nicht $C^{\infty}$-linear.
+\emph{Erinnerung:} Die Lieableitung $\mathcal L_{(\cdot)}Y$ ist \emph{nicht} $C^{\infty}$-linear.
 
 % Definition 7.1
 \begin{Dfn}
   Es seien $M$ eine glatte Mannigfaltigkeit und $E$ ein Vektorbündel über $M$.
-  Ein \CmMark{kovariante Ableitung} (oder \CmMark{Zusammenhang} ([engl.] \quot{connection}) auf $E$ ist eine Abbildung
+  Eine \CmMark{kovariante Ableitung} (oder \CmMark{Zusammenhang} ([engl.] \quot{connection}) auf $E$ ist eine Abbildung
   \begin{align*}
     \nabla \colon \mathcal V(M) \times \Gamma(E) \to \Gamma(E), \quad \nabla(X,S) = \nabla_XS
   \end{align*}
   mit den folgenden Eigenschaften:
-  \begin{enumerate}[label=(\roman*)]
-  \item $\nabla S$ ist $C^{\infty}(M)$-linear, d.h.
+  \begin{enumerate}[label=(\roman*),widest=iii]
+  \item $\nabla S$ ist $C^{\infty}(M)$-linear, das hei"st
     \begin{align*}
-      \nabla_{X+Y}S = \nabla_XS+\nabla_YS \text{ und } \nabla_{fX}S = f\nabla_XS \; \forall X,Y \in \mathcal V(M), f \in C^{\infty}(M).
+      \nabla_{X+Y}S = \nabla_XS+\nabla_YS \text{ und } \nabla_{fX}S = f\nabla_XS
     \end{align*}
-  \item $\nabla_X$ ist $\R$-linear, d.h.
+    f"ur alle $X, Y \in \calV(M)$ und $f \in C^{\infty}(M)$.
+  \item $\nabla_X$ ist $\R$-linear, das hei"st
     \begin{align*}
       \nabla_X(\mu S + \nu T) = \mu\nabla_XS + \nu\nabla_XT.
     \end{align*}
@@ -46,63 +59,59 @@ Erinnerung: Die Lieableitung $\mathcal L_{(\cdot)}Y$ ist nicht $C^{\infty}$-line
       \nabla_X(fS) = \dop f(X) \cdot S + f\cdot \nabla_XS = X(f)\cdot S + f \cdot \nabla_XS.
     \end{align*}
   \end{enumerate}
-  Kurzform: $\nabla \colon \Gamma(E) = \Gamma(\T^{*}M \oplus E), S \mapsto \nabla_{(.)}S$ ist eine $C^{\infty}(M)$-Modulderivation.
+  Kurzform: $\nabla \colon \Gamma(E) \to \Gamma(\T^{*}M \otimes E), S \mapsto \nabla_{(.)}S$ ist eine $C^{\infty}(M)$-Modulderivation.
 \end{Dfn}
 
-\begin{bsp}
-  \begin{enumerate}[label=(\arabic*)]
+\begin{bsp}\begin{enumerate}[label=\arabic*),leftmargin=*]
+\item
+	Das gewöhnliche Differential $\D$ definiert in kanonischer Weise eine kovariante Ableitung auf $\T\R^n$.
+	\begin{align*}
+		X \in \mathcal V(\R^n), X \colon \R^n \to \T\R^n \cong \R^n \times \R^n \text{ via } \calI\colon X_p \mapsto (p,\underbrace{\calI_p(X_p)}_{=:\overline X_p}).
+	\end{align*}
+	Nun ist wie folgt eine kovariante Ableitung gegeben: $(\nabla_XY)_p = \calI^{-1}(p,\D_{\overline X_p}\overline Y)$.
+\item
+	$E = M \times \R^n$, ein Schnitt $S$ von $E$ ist von der Form $S_p = (p,s(p))$, $s \colon M \to \R^n$ glatt.
 
-  \item Das gewöhnlich Differential $\D$ definiert in kanonischer Weise eine kovariante Ableitung auf $\T\R^n$.
-    \begin{align*}
-      X \in \mathcal V(\R^n), \X \colon \R^n \to \T\R^n \cong \R^n \times \R^n \text{ via } \calI\colon X_p \mapsto (p,\underbrace{\calI_p(X_p)}_{=:\overline X_p}).
-    \end{align*}
-    Nun ist wie folgt eine kovariante Ableitung gegeben: $(\nabla_XY)_p = \calI^{-1}(p,\D_{\overline X_p}\overline Y)$.
+	Hier definiert man die kovariante Ableitung:
+	\begin{align*}
+		& \nabla_XS = (p,\calI_{s(p)}^{-1}(s_{*p},X_p))\\
+		&  s_{*p}\colon \T_{*p}M \to \T_{*p}\R^n, s_{*p}\colon X_p \in \T_{*p}\R^n \xrightarrow{\calI_{s(p)}} \R^n.
+	\end{align*}
+\item
+	$E = M \times \R^n, \omega = (\omega_j^i)$ eine $(n\times n)$-Matrix
+	von $1$-Formen auf $M$, d.h. $\omega(X)_p \in \mathfrak M^{n\times n}(\R)$.
+	Für einen Schnitt $S = (\Id, s)$ und $\mathcal V(M)$ ist 
+	\begin{align*}
+		\nabla_XS = (p,\calI_{s(p)}(s_{*p}X_p) + \sum \omega(X)_p^i\cdot \xi^i).
+	\end{align*}
+\item
+	$\dop \colon \Omega^0(M) = C^{\infty}(M) = \Gamma(M\times \R) \to \Omega^1(M) = \Gamma(\T^{*}M) = \Gamma(\underbrace{\T^{*}M \otimes (M \times \R)}_{\mathclap{\text{Fasern: } \T_p^{*}M\otimes\R \cong \T_p^{*}M}})$ mit $f \mapsto [\dop f \colon X \mapsto \dop f(X) = X(f)]$.
 
-  \item $E = M \times \R^n$, ein Schnitt $S$ von $E$ ist von der Form $S_p = (p,s(p)), s \colon M \to \R^n$ glatt.
+	Dann ist
+	\begin{align*}
+		& \dop \colon \mathcal V(M) \times C^{\infty}(M) \to C^{\infty}(M),\\
+		& \nabla_Xf = \dop (X,f) \mapsto X(f)
+	\end{align*}
+	eine kovariante Ableitung auf $C^{\infty}(M)$.
+\item
+	Es sei $M \subseteq \R^k$ eine glatte Untermannigfaltigkeit und $\nabla$ die kanonische kovariante Ableitung auf $\T \R^k$.
 
-    Hier definiert man die kovariante Ableitung:
-    \begin{align*}
-      & \nabla_XS = (p,\calI_{s(p)}(s_{*p},X_p)\\
-      &  s_{*p}\colon \T_{*p}M \to \T_{*p}\R^n, s_{*p}\colon X_p \in \T_{*p}\R^n \xrightarrow{\calI_{s(p)}} \R^n.
-    \end{align*}
+	Erster Ansatz für eine kovariante Ableitung:
+	\begin{align*}
+		\tilde \nabla_XY = \nabla_{\tilde X}\tilde Y|_M \text{ das funktioniert noch nicht.}
+	\end{align*}
+	Für $X,Y \in \mathcal V(M)$ seien $\tilde X, \tilde Y$ Fortsetzungen, das hei"st $\tilde X|_M = X$ und $\tilde Y|_M = Y$.
+	\begin{align*}
+		(\nabla_{\tilde X}\tilde Y)_p \in \T_p\R^k \supseteq \T_pM.
+	\end{align*}
 
-  \item $E = M \times \R^n, \omega = (\omega_j^i)$ eine $(n\times n)$-Matrix
-    von $1$-Formen auf $M$, d.h. $\omega(x)_p \in \mathfrak M^{n\times n}(\R)$.
-    Für einen Schnitt $S = (\Id, s)$ und $\mathcal V(M)$ ist 
-    \begin{align*}
-      \nabla_XS = (p,\calI_{s(p)}(s_{*p}X_p) + \sum \omega(X)_p^i\cdot \xi^i).
-    \end{align*}
+	Nächster Ansatz, der tasächlich eine kovariante Ableitung definiert.
+	\begin{align*}
+		\tilde \nabla_XY = (\nabla_{\tilde X}\tilde Y|_M)^{\text{proj}\T_pM},
+	\end{align*}
+	wobei $X^{\text{proj}\T_pM}$ die orthogonale Projektion von X auf den Tangentialraum $\T_pM$ bzgl. des Standardskalarproduktes ist.
 
-  \item $\dop \colon \Omega^0(M) = C^{\infty}(M) = \Gamma(M\times \R) \to \Omega^1(M) = \Gamma(\T^{*}M) = \Gamma(\underbrace{\T^{*}M \oplus (M \times \R)}_{\mathclap{\text{Fasern: } \T_p^{*}M\oplus\R \cong \T_p^{*}M}})$ mit $f \mapsto [\dop f \colon X \mapsto \dop f(X) = X(f)]$.
-
-Dann ist
-\begin{align*}
-& \dop \colon \mathcal V(M) \times C^{\infty}(M) \to \C^{\infty}(M),\\
-& \nabla_Xf = \dop (X,f) \mapsto X(f)
-\end{align*}
-eine kovariante Ableitung.
-
-\item Es sei $M \subseteq \R^k$ eine glatte Untermannigfaltigkeit und $\nabla$ die kanonische kovariante Ableitung auf $\T \R^k$. 
-
-Erster Ansatz für eine kovariante Ableitung:
-  \begin{align*}
-    \tilde \nabla_XY = \nabla_{\tilde X}\tilde Y|_M \text{ das funktioniert noch nicht.}
-  \end{align*}
-
-Für $X,Y \in \mathcal V(M)$ seien $\tilde X, \tilde Y$ Fortsetzungen, d.h. $\tilde X|_M = X$ und $\tilde Y|_M = Y$.
-
-\begin{align*}
-  (\nabla_{\tilde X}\tilde Y)_p \in \T_p\R^k \supseteq \T_pM.
-\end{align*}
-
-Nächster Ansatz, der tasächlich eine kovariante Ableitung definiert.
-\begin{align*}
-  \tilde \nabla_XY = (\nabla_{\tilde X}\tilde Y|_M)^{proj\T_pM},
-\end{align*}
-wobei $X^{proj.\T_pM}$ die orthogonale Projektion von X auf den Tangentialraum $\T_pM$ bzgl. des Standardskalarproduktes ist.
-
-  \end{enumerate}
-\end{bsp}
+\end{enumerate}\end{bsp}
 
 %%% Local Variables: 
 %%% mode: latex

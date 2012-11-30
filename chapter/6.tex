@@ -305,17 +305,17 @@ Eine bessere Vorstellung erhält man durch Betrachtung von Geodätischen als Iso
 %%% 14. Vorlesung <2012-11-30 Fri>
 %%% 
 
-\begin{bem}
-  \begin{enumerate}[label=(\arabic*)]
-  \item Die Geodätische von $\R^n$ mit Standardmetrik sind genau die Geradensegmente.
-  \item Ist $\gamma$ minimale Geodätische, so gilt $\|\dot\gamma\| = \lambda$, falls $\lambda > 0$, existiert eine Bogenlängenparametrisierung $\tilde\gamma$ von $\gamma$ auf $[0,l]$ mit $l = \mathcal L(\gamma) = \mathcal L(\tilde\gamma)$ und $dop(\tilde\gamma(0),\tilde\gamma(t)) = t$.
-    Damit ist $\tilde\gamma$ eine isometrische Einbettung von $[0,l]$ in $M$.
-  \end{enumerate}
-\end{bem}
+\begin{bem}\begin{enumerate}[label=\arabic*),leftmargin=*]
+\item
+	Die Geodätischen von $\R^n$ mit Standardmetrik sind genau die Geradensegmente.
+\item
+	Ist $\gamma$ eine minimale Geodätische, so gilt $\|\dot\gamma\| = \lambda$, falls $\lambda > 0$, existiert eine Bogenlängenparametrisierung $\tilde\gamma$ von $\gamma$ auf $[0,l]$ mit $l = \mathcal L(\gamma) = \mathcal L(\tilde\gamma)$ und $\dop(\tilde\gamma(0),\tilde\gamma(t)) = t$.
+	Damit ist $\tilde\gamma$ eine isometrische Einbettung von $[0,l]$ in $M$.
+\end{enumerate}\end{bem}
 
 % Definition 6.8
 \begin{Dfn}
-  Es sei $\gamma \colon [a,b] \to M$ eine stückweise glatte Kurve auf $M$.
+  Es sei $\gamma \colon [a,b] \to M$ eine (st"uckweise) glatte Kurve auf $M$.
   Das Integral
   \begin{align*}
     E(\gamma) = \frac{1}2 \int_a^b\|\dot\gamma\|^2
@@ -324,7 +324,7 @@ Eine bessere Vorstellung erhält man durch Betrachtung von Geodätischen als Iso
 \end{Dfn}
 
 % Lemma 6.9
-\begin{Lemma}
+\begin{Lemma}\label{lemma-6-9}
   Für eine (stückweise) glatte Kurve $\gamma \colon [0,1] \to M$.
   Dann gilt:
   \begin{align*}
@@ -334,13 +334,13 @@ Eine bessere Vorstellung erhält man durch Betrachtung von Geodätischen als Iso
 \end{Lemma}
 
 \begin{bew}
-  Es gilt die Cauchy-Schwarzsche Ungleichung für das Skalarprodukt $(f,g) \mapsto \int_0^1 fg$, $f,g \in \C^{\infty}([0,1], \R)$.
+  Es gilt die Cauchy-Schwarzsche Ungleichung für das Skalarprodukt $(f,g) \mapsto \int_0^1 fg$ mit $f,g \in \C^{\infty}([0,1], \R)$.
 
   Nun sei $f \equiv 1$ und $g = \|\dot\gamma\|$, so folgt:
   \begin{align*}
     \mathcal L(\gamma) = \int_0^1 \|\dot\gamma\| \leq \left|\left(\int_0^1 f^2\right)^{\frac{1}2} \left(\int_0^1g^2\right)^{\frac{1}2}\right| = \sqrt{2 E(\gamma)}
   \end{align*}
-  Gleichheit gilt genau dann, wenn $1$ und $\|\dot\gamma\|$ $\R$-linear abhängig sind, d.h. wenn $\|\dot\gamma\| \cong \lambda$ gilt.
+  Gleichheit gilt genau dann, wenn $1$ und $\|\dot\gamma\|$ $\R$-linear abhängig sind, das hei"st wenn $\|\dot\gamma\| \equiv \lambda$ gilt.
 \end{bew}
 
 % Satz 6.10
@@ -348,27 +348,35 @@ Eine bessere Vorstellung erhält man durch Betrachtung von Geodätischen als Iso
   Eine (stückweise) glatte Kurve ist genau dann minimale Geodätische, wenn ihre Energie minimal ist.
 \end{Satz}
 
-\begin{bew}
-  \begin{itemize}[label=\quot{$\Rightarrow$}]
-  \item Es sei $\gamma$ minimale Geodätische, d.h. $\mathcal L(\gamma|_{[0,t]} = \lambda t = \dop (\gamma(0),\gamma(t))$.
-    Also gilt $E(\gamma) = \frac{1}2 \mathcal L(\gamma)^2 \leq \frac{1}2 \mathcal L(c)^2 \overset{(*)}{\leq} E(c)$, wobei $c$ eine Kurve zwischen den Endpunkten von $\gamma$ ist und in $(*)$ das letzte Lemma verwendet wird.
-  \end{itemize}
-  \begin{itemize}[label=\quot{$\Leftarrow$}]
-  \item $\gamma$ sei energieminimierend.
-    \begin{align*}
-      \frac{1}2 \dop (\gamma(0), \gamma(1))^2 \leq \frac{1}2 \leq E(\gamma) \leq E(\underbrace{c_n}_{\mathclap{\text{reguläre Kurven}}}) = \frac{1}2 \mathcal L(c_n)^2 \xrightarrow{n\to\infty} \frac{1}2 \dop(\gamma(0),\gamma(1))^2
-    \end{align*}
+\begin{bew}\begin{description}[font=\normalfont]
+\item[\quot{$\Rightarrow$}:]
+	Es sei $\gamma$ minimale Geodätische, das hei"st $\mathcal L(\gamma|_{[0,t]}) = \lambda t = \dop (\gamma(0),\gamma(t))$.
+	Also gilt $E(\gamma) = \frac{1}2 \mathcal L(\gamma)^2 \leq \frac{1}2 \mathcal L(c)^2 \leq E(c)$, wobei $c$ eine Kurve zwischen den Endpunkten von $\gamma$ ist und die letzte Ungleichung aus Lemma \ref{lemma-6-9} folgt.
+\item[\quot{$\Leftarrow$}:]
+	Sei $\gamma$ energieminimierend.
+	\begin{align*}
+		\frac{1}2 \dop (\gamma(0), \gamma(1))^2 \leq \frac{1}2 \calL(\gamma)^2 \leq E(\gamma) \leq E(\underbrace{c_n}_{\mathclap{\text{reguläre Kurven}}}) = \frac{1}2 \mathcal L(c_n)^2 \xrightarrow{n\to\infty} \frac{1}2 \dop(\gamma(0),\gamma(1))^2
+	\end{align*}
+	\begin{center}\begin{tikzpicture}
+		%\draw[step=0.25,gray!15] (-6,-4) grid (6,4); \draw[step=0.5,gray!30] (-6,-4) grid (6,4); \fill (0,0) circle(0.1); %Hilfsgitter,
+		
+		\coordinate (1) at (-0.5,0.5); \coordinate (2) at (0,1.55); \coordinate (3) at (0.5,0.5);
+		\coordinate (ctrl1) at (-1,-1.5); \coordinate (ctrl3) at (1,-1.5);
+		\draw (-6,-1.5) ..controls(-6,-1.5) and ($(1) + (ctrl1)$).. (1) ..controls($(1) - 1/3*(ctrl1)$) and (2).. (2) ..controls(2) and ($(3) - 1/3*(ctrl3)$).. (3) ..controls($(3) + (ctrl3)$) and (6,-1.5).. (6,-1.5);
+		
+		\coordinate (4) at (0,0.75);
+		\draw[very thick] (1) ..controls($(1) - 1/3*(ctrl1)$) and (2).. (2) ..controls(2) and ($(3) - 1/3*(ctrl3)$).. (3) ..controls($(3) - 1/15*(ctrl3)$) and ($(4) + (0.25,0)$).. (4) ..controls($(4)-(0.25,0)$) and ($(1) - 1/15*(ctrl1)$).. (1) -- cycle;
+		
+		\draw[dashed] (0,1.25) circle(1.25); \node[font=\scriptsize] at (0,2) {$c(t_i)$}; \node at (3,2) {$U$ Kartenumgebung};
+		\node[font=\scriptsize] at (0,-1.25) {Die L"ange des fetten Dreiecks wird beliebig klein};
+	\end{tikzpicture}\end{center}
 
-    \textcolor{red}{Abbildung 14.1: reguläre Approximation von \quot{Ecken} in Kurven.}
-
-    Damit gilt: $\mathcal L(\gamma) = \dop(\gamma(0),\gamma(1))$ und wegen Cauchy-Schwarz ist $\gamma$ proportional zur Bogenlänge parametrisiert.
-    Wendet man dieses Argument auf beliebige Teilstücke an, erhält man:
-    \begin{align*}
-      \mathcal L(\gamma|_{[s,t]}) = \dop(\gamma(s),\gamma(t)) = \lambda(s-t).
-    \end{align*}
-
-  \end{itemize}
-\end{bew}
+	Damit gilt: $\mathcal L(\gamma) = \dop(\gamma(0),\gamma(1))$ und wegen Cauchy-Schwarz ist $\gamma$ proportional zur Bogenlänge parametrisiert.
+	Wendet man dieses Argument auf beliebige Teilstücke an, erhält man:
+	\begin{align*}
+		\mathcal L(\gamma|_{[s,t]}) = \dop(\gamma(s),\gamma(t)) = \lambda(s-t).
+	\end{align*}
+\end{description}\end{bew}
 
 %%% Local Variables: 
 %%% mode: latex
