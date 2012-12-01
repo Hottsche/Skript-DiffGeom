@@ -75,14 +75,49 @@ Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\varphi,U)$ von $M
 \end{Bem}
 
 \begin{bew}
-  Zu jedem Vektor $v \in \R^n$ sei $B(v) = [t \mapsto \varphi^{-1}(\varphi(p) + tv)]$ die Äquivalenzklasse der abgebildeten Kurve auf der Mannigfaltigkeit.
-
-  % Abbildung 2-2
-  \CmPutSvg{2-2-beweis-bijektivitaet-tpm-rn}{10cm}
-
-  \[ A B(v) = \difffrac[t=0]{}{t}(\varphi \circ B(v)) = \difffrac[t=0]{}{t}(\varphi \circ \varphi^{-1}(\varphi(p) + tv)) = \difffrac[t=0]{}{t}(\varphi(p) + tv) = v. \]
-  \[ B A (\underbrace{[c]}_{\ni c}) = B(v_c) = [t \mapsto \varphi^{-1}(\varphi(p) + tv_c)] \text{ wobei } v_c = \difffrac[t=0]{}{t}(\varphi \circ c). \]
-  Die Kurven $c$ und $t \mapsto \varphi^{-1}(\varphi(p) + tv_c)$ sind äquivalent, also ist $B A[c] = [c]$ und somit $A$ bijektiv.
+Zu jedem Vektor $v \in \R^n$ sei $B(v) = [t \mapsto \varphi^{-1}(\varphi(p) + tv)]$ die Äquivalenzklasse der abgebildeten Kurve auf der Mannigfaltigkeit.
+% Abbildung 2-2
+%\CmPutSvg{2-2-beweis-bijektivitaet-tpm-rn}{10cm}
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+	%\draw[step=0.25,gray!15] (-6,-4) grid (6,4); \draw[step=0.5,gray!30] (-6,-4) grid (6,4); \fill (0,0) circle(0.1); %Hilfsgitter
+	
+	\draw[->] (1.5,0) -- (5,0); \draw[->] (3,-1.5) -- (3,1.75); \draw (3,0) circle (1); \draw[->] ($(3,0) - (1.25,0.75)$) --node[above,xshift=0.25cm,yshift=0.25cm]{$v$} ($(3,0) + 1.2*(1.25,0.75)$); \filldraw[fill=white] (3,0) circle(0.05);
+	\node at (3,-2) {$\Bild(t \mapsto \varphi(p) + vt)$}; \draw[dashed] (3.5,-1.75) to[out=70,in=290] (3.5,0.25); \node at (4,1.5) {$\varphi(p) = 0$};
+	
+	\coordinate (0) at (-3.25,2); \coordinate (1) at (-4.5,0.25); \coordinate (2) at (-2.5,-2); \coordinate (3) at (-0.25,0.5); \coordinate (4) at (0,1.25); \coordinate (5) at (-0.25,1.75);
+	\coordinate (ctrl1) at (0,1); \coordinate (ctrl2) at (1,0); \coordinate (ctrl3) at (1,1); \coordinate (ctrl4) at (ctrl1);
+	
+	\draw (0) ..controls(0) and ($(1) + 1.25*(ctrl1)$).. (1) ..controls($(1) - (ctrl1)$) and ($(2) - (ctrl2)$).. (2) ..controls($(2) + 1.5*(ctrl2)$) and ($(3) - 1.25*(ctrl3)$).. (3) ..controls($(3) + 0.25*(ctrl3)$) and ($(4) - 0.25*(ctrl4)$).. (4) ..controls($(4) + 0.25*(ctrl4)$) and (5).. (5);
+	
+	\coordinate (cntr) at (-2,1.25);
+	\begin{scope}
+		\clip ($(cntr)-(1,0.6)$) rectangle ($(cntr)+(1,-0.1)$);
+		\draw[name path=l] (cntr) ellipse(1 and 0.5);
+	\end{scope}
+	\path[name path=u] ($(cntr) - (0,0.5)$) ellipse(0.75 and 0.5);
+	\path[name intersections={of=u and l}];
+	\begin{scope}
+		\clip (intersection-1) rectangle ($(intersection-2)+(0,0.5)$);
+		\draw ($(cntr) - (0,0.5)$) ellipse(0.75 and 0.5);
+	\end{scope}
+	
+	\coordinate (a) at (-4,0.75); \coordinate (b) at (-4.25,0); \coordinate (c) at (-3.75,-0.25); \coordinate (d) at (-3.25,-0.75); \coordinate (e) at (-2.75,-0.75); \coordinate (f) at (-1,0);
+	\coordinate (ctrlb) at (0.5,-1); \coordinate (ctrlc) at (1,-1); \coordinate (ctrld) at (1,-0.5); \coordinate (ctrle) at (1,0);
+	
+	\draw (a) ..controls(a) and ($(b) - 0.25*(ctrlb)$).. (b) ..controls($(b) + 0.25*(ctrlb)$) and ($(c) - 0.25*(ctrlc)$).. (c) ..controls($(c) + 0.25*(ctrlc)$) and ($(d) - 0.25*(ctrld)$).. (d) ..controls($(d) + 0.25*(ctrld)$) and ($(e) - 0.25*(ctrle)$).. (e) ..controls($(e) + 1.25*(ctrle)$) and (f).. (f);
+	
+	\draw (e) circle(0.75); \filldraw[fill=white] (e) circle(0.05)node[anchor=north west]{$p$}; \node at (-3.25,0) {$U$};
+	\draw[dashed] (-4,-2)node[below]{$\varphi^{-1}(\varphi(p) + tv$} to[out=70,in=220] (-3.25,-0.75);
+	
+	\coordinate (cntr) at (0.25,0);
+	\def\lnge{2.0}
+	\def\hohe{1}
+	\def\angle{20}
+	\draw[->] ($(cntr) + (\lnge, -\hohe)$) to[out=180+\angle,in=360-\angle] node[below]{$\varphi^{-1}$} ($(cntr) + (-\lnge, -\hohe)$);
+\end{tikzpicture}\end{center}
+	\[ A B(v) = \difffrac[t=0]{}{t}(\varphi \circ B(v)) = \difffrac[t=0]{}{t}(\varphi \circ \varphi^{-1}(\varphi(p) + tv)) = \difffrac[t=0]{}{t}(\varphi(p) + tv) = v. \]
+	\[ B A (\underbrace{[c]}_{\ni c}) = B(v_c) = [t \mapsto \varphi^{-1}(\varphi(p) + tv_c)] \text{ wobei } v_c = \difffrac[t=0]{}{t}(\varphi \circ c). \]
+Die Kurven $c$ und $t \mapsto \varphi^{-1}(\varphi(p) + tv_c)$ sind äquivalent, also ist $B A[c] = [c]$ und somit $A$ bijektiv.
 \end{bew}
 
 Damit erhält $\T_p^{\text{geo}}M$ die Struktur eines reellen Vektorraumes vermöge der folgenden Verknüpfung:
