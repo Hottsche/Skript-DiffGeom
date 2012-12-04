@@ -78,12 +78,10 @@ Nun gehe zur Betrachtung von Vektorfeldern $X \colon \R^n \to \R^n$ über und se
 		&  s_{*p}\colon \T_{*p}M \to \T_{*p}\R^n, s_{*p}\colon X_p \in \T_{*p}\R^n \xrightarrow{\calI_{s(p)}} \R^n.
 	\end{align*}
 \item
-	$E = M \times \R^n, \omega = (\omega_j^i)$ eine $(n\times n)$-Matrix
-	von $1$-Formen auf $M$, d.h. $\omega(X)_p \in \mathfrak M^{n\times n}(\R)$.
-	Für einen Schnitt $S = (\Id, s)$ und $\mathcal V(M)$ ist 
-	\begin{align*}
-		\nabla_XS = (p,\calI_{s(p)}(s_{*p}X_p) + \sum \omega(X)_p^i\cdot \xi^i).
-	\end{align*}
+	Sei $E = M \times \R^n$, ein Schnitt $S = (\Id, \sigma)$, $\sigma: M \to \R^n$. Dann ist $(\nabla_X S)_p = (p, \calI_p(\sigma_{*p}(X_p))$, $\sigma_{*p}: \T_pM \to \T_{\sigma(p)}\R^n$. Sei $ \omega = (\omega_j^k)_{j,k \le n}$ eine $(n\times n)$-Matrix von 1-Formen auf $M$, das hei"st $\omega(X)|_p \in \mathfrak M^{n\times n}(\R)$.
+	Für einen Schnitt $S = (\Id, \sigma)$ und sei dann
+		\[ (\nabla_XS)_p = (\Id, \calI_p(\sigma_{*p}(X_p)) + \omega(X)|_p \cdot \sigma(p). \]
+	Dies definiert eine kovariante Ableitung auf $E = M \X \R^n$.
 \item
 	$\dop \colon \Omega^0(M) = C^{\infty}(M) = \Gamma(M\times \R) \to \Omega^1(M) = \Gamma(\T^{*}M) = \Gamma(\underbrace{\T^{*}M \otimes (M \times \R)}_{\mathclap{\text{Fasern: } \T_p^{*}M\otimes\R \cong \T_p^{*}M}})$ mit $f \mapsto [\dop f \colon X \mapsto \dop f(X) = X(f)]$.
 
@@ -110,8 +108,72 @@ Nun gehe zur Betrachtung von Vektorfeldern $X \colon \R^n \to \R^n$ über und se
 		\tilde \nabla_XY = (\nabla_{\tilde X}\tilde Y|_M)^{\text{proj}\T_pM},
 	\end{align*}
 	wobei $X^{\text{proj}\T_pM}$ die orthogonale Projektion von X auf den Tangentialraum $\T_pM$ bzgl. des Standardskalarproduktes ist.
-
 \end{enumerate}\end{bsp}
+
+Schreibt man in Beispiel 3) $\sigma = ( \sigma^1, \ldots ,\sigma^n)$, so kann man $\dop \sigma = (\dop \sigma^1,\ldots ,\dop\sigma^n)$ als 1-Form auf $M$ mit Werten in $\R^n$ auffassen:
+	\begin{align*}
+		\dop \sigma(X)_p &= (\dop \sigma^1(X)_p,\ldots , \dop \sigma^n(X)_p)\\
+		&= (X(\sigma^1)_p,\ldots ,X(\sigma^n)_p)\\
+		&= \calI_p(\sum X(\sigma^{i}) \partial_i),
+	\end{align*}
+	wobei $\partial_i$ das $i$-te Koordinatenfeld in der Karte $(\Id, \R^n)$ ist. Identifiziert man $E = M \X \R^n$ mit $C^{\infty}(M, \R^n)$, so gilt $\nabla_X S = \dop \sigma(X) \omega(X) \sigma$ (Kurzschreibweise f"ur die zweite Komponente von $S$). Lokal ist \emph{jede} kovariante Ableitung von dieser Form.
+
+\begin{Lemma}
+Die kovariante Ableitung $(\nabla_XS)_p$ h"angt nur von den Werten von $X$ und $S$ in einer Umgebung von $p$ ab.
+\end{Lemma}
+
+\begin{bew}
+Es seien $p \in M$ und $X_1, X_2 \in \calV(M)$ sowie $S_1, S_2 \in \Gamma(E)$ und $U$ eine Umgebung von $p$ mit $X_1|_U = X_2|_U$ und $S_1|_U = S_2|_U$. W"ahle nun ein $\sigma \in C^{\infty}(M)$ mit dem Tr"ager $\supp \sigma \subseteq U$ und $\sigma|_V \equiv 1$ auf einer Umgebung $V$ von $p$. Dann gilt: $\sigma X_1 = \sigma X_2$ und $\sigma S_1 = \sigma S_2$. F"ur $q \in V$ folgt dann:
+\begin{align*}
+	(\nabla_{\sigma X_i} \sigma S_i)_q &= \sigma(q)(\nabla_{X_i} \sigma S_i)|_q\\
+	&= \sigma(q)(\underbrace{X_i(\sigma)|_q}_{=0} S_i + \underbrace{\sigma(q)}_{=1}\nabla_{X_i} S_i|_q)\\
+	&= \nabla_{X_i} S_i|_q
+\end{align*}
+Damit folgt $\nabla_{X_1} S_1 = \nabla_{X_2} S_2$
+\end{bew}
+
+\section{Lokale Koordinaten}
+
+Es sei $(\varphi, U)$ eine Karte von $M$ um $p \in M$ und $E|_U \overset{\tau}{\to} U \X \R^n$. Dann ist $s_i(p) = \tau^{-1}(p, e_i)$ eine lokale Basis. Jeder Schnitt $S$ ist also lokal von der Form $S|_U = \sum_i \sigma^{i} s_i$. Somit existieren glatte Funktionen $\Gamma_{ij}^k$, die sogenannten \CmMark{Christoffelsymbole} mit 
+	\[ \nabla_{\pdifffrac{}{x^{i}}} s^j = \sum_k \Gamma_{ij}^k s^k. \]
+F"ur $S = \sum \sigma^j s_j$ und $X = \sum \xi^{i} \pdifffrac{}{x^{i}}$ folgt dann:
+\begin{align*}
+	(\nabla_XS)_p &= \sum_{i,j} \xi_p^{i} \nabla_{\pdifffrac{}{x^{i}}} \left(\sigma^j s_j\right)\\
+	&= \sum_{i,j} \xi_p^{i} \left(\pdifffrac{\sigma^j}{x^{i}} \cdot s_j(p) \nabla_{\pdifffrac{}{x^{i}}} s_j|_p\right)\\
+	&= \sum_{i,j} \xi_p^{i} \left(\pdifffrac[p]{\sigma^j}{x^{i}} s_j(p) + \sigma^j(p) \sum_k \Gamma_{ij}^k(p) s_k(p)\right)\\
+	&= \sum_k \Bigg(\underbrace{\sum_i \xi_p^{i} \pdifffrac[p]{\sigma^k}{x^{i}}}_{\mathclap{= X(\sigma^k)|_p = \difffrac[t=0]{}{t} (\sigma^k \circ \gamma) \text{ mit } \dot\gamma(0) = X_p}} + \sum_{i,j} \xi_p^{i} \sigma^j(p) \Gamma_{ij}^k(p)\Bigg) s_k(p)
+\end{align*}
+
+\begin{bem}\begin{enumerate}[label=\arabic*),leftmargin=*]
+\item
+	$X \mapsto (\nabla_XS)_p$ h"angt nur von dem Wert $X_p$ von  $X$ in $p$ ab, Schreibweise $(\nabla_XS)_p = \nabla_{X_p}S$.
+\item
+	$S \mapsto \nabla_{X_p}S$ h"angt nur von den Werten von $S$ entlang einer Kurve $\gamma$ mit $\dot\gamma(0) = X_p$ ab. Es gilt
+		\[ \nabla_XS = \sum_k X(\sigma^k)S_k + \sum_k \sum_j\left(\left(\sum_i \Gamma_{ij}^k \xi^{i}\right) \sigma^j\right) s_k. \]
+	Schreibt man $\sigma = (\sigma^1,\ldots ,\sigma^n)$ und fasst $\dop \sigma = (\dop \sigma^1,\ldots ,\dop \sigma^n)$ also lokale 1-Form mit Werten in $\R^n$ auf, so ist f"ur $s=(s_1,\ldots ,s_n)$ $\dop\sigma \cdot s = \sum \dop \sigma^j s^j$ eine lokale 1-Form mit Werten in $E$. Es gilt: $\dop \sigma \cdot s(X) = \D_X \sigma \cdot s$. Analog definiert $\omega(X) = (\omega_j^k(X))_{k,j}$ eine lokale 1-Form mit Werten in den reellen $(n\X n)$-Matrizen. Dann ist 
+	\[ \omega \sigma : X \mapsto \omega(X) \sigma = \left( \sum_{i,j} \Gamma_{ij}^k \xi^{i} \sigma^j \right)^k \]
+eine lokale 1-Form mit Werten in $\R^n$ und $\omega\sigma \cdot s$ eine lokale 1-Form mit Werten in $E$. Damit gilt
+	\[ \nabla_XS = (\dop \sigma(X) + \omega(X) \sigma) \cdot s \]
+oder kurz
+	\[ \nabla = \dop + \omega. \]
+\end{enumerate}\end{bem}
+
+\section{Transformationsverhalten}
+
+asdf
+
+\begin{bem}
+asdf
+\end{bem}
+
+\begin{Prop}
+asdf
+\end{Prop}
+
+\begin{Prop}
+asdf
+\end{Prop}
+
 
 %%% Local Variables: 
 %%% mode: latex
