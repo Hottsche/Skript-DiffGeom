@@ -197,7 +197,183 @@ Es seien $E_1$ und $E_2$ Vektorb"undel mit kovarianten Ableitungen  $\nabla^1$ u
 durch lineare Fortsetzungen eine kovarainte Abbildung auf $E_1 \otimes E_2$.
 \end{Prop}
 
+\begin{Dfn}
+Die Abbildung
+\begin{align*}
+	R^\nabla &= R : \calV(M) \X \calV(M) \X \Gamma(E) \to \Gamma(E)\\
+	R(X,Y)S &= \nabla_X \nabla_Y S - \nabla_Y \nabla_X S - \nabla_{[X,Y]} S
+\end{align*}
+hei"st der \CmMark[Tensor!Kr"ummungs-]{Kr"ummungstensor} der Abbildung $\nabla$.
+\end{Dfn}
 
+\begin{bem}
+F"ur alle $X, Y \in \calV(M)$ gilt $R(Y,X) = - R(X,Y)$.
+\end{bem}
+
+\begin{Prop}
+$R$ ist $C^\infty(M)$-linear in allen Argumenten.
+\end{Prop}
+Der Beweis sei zur "Ubung "uberlassen.
+
+\section{Schnitte entlang von Ableitungen}
+
+\begin{center}\begin{tikzpicture}
+%	\draw[step=0.25,gray!15] (-6,-5) grid (6,5); \draw[step=0.5,gray!30] (-6,-5) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+	
+	\node (1) at (-5,0.5) {$\calI$}; \node (2) at (-5,2) {$M$}; \node (3) at (-3,2) {$\T M$};
+	\draw[->] (1) --node[left,font=\scriptsize]{$c$} (2); \draw[->] (2) -- (3);
+	
+	\node at (5,1) {$\nabla_{\dot c} \tilde X = \gamma$};
+	
+	\draw[name path=kurve] (-2,-0.5) ..controls(-2,-0.5) and (-1.5,0).. (0.5,0)node[above,font=\scriptsize]{$c$} ..controls(2.5,0) and (3,1.5).. (3,1.5);
+	
+	\path[name path=pkt] (-1.5,-1) -- (-1.5,2);
+	\path[name intersections={of=kurve and pkt}];
+	\coordinate (a) at (intersection-1);
+	\draw[->] (a) -- ($(a) + 0.8*(0.7,1.5)$);
+	
+	\path[name path=pkt] (-0.5,-1) -- (-0.5,2);
+	\path[name intersections={of=kurve and pkt}];
+	\coordinate (a) at (intersection-1);
+	\draw[->] (a) -- ($(a) + 0.8*(1,0.8)$);
+	
+	\path[name path=pkt] (0.75,-1) -- (0.75,2);
+	\path[name intersections={of=kurve and pkt}];
+	\coordinate (a) at (intersection-1);
+	\draw[->] (a) -- ($(a) + 0.5*(0.7,-1.5)$);
+	
+	\path[name path=pkt] (1.75,-1) -- (1.75,2);
+	\path[name intersections={of=kurve and pkt}];
+	\coordinate (a) at (intersection-1);
+	\draw[->] (a) -- ($(a) + (1,-0.5)$);
+	
+	\path[name path=pkt] (2.5,-1) -- (2.5,2);
+	\path[name intersections={of=kurve and pkt}];
+	\coordinate (a) at (intersection-1);
+	\draw[->] (a) -- ($(a) + 0.5*(0.7,2.5)$);
+\end{tikzpicture}\\
+\textcolor{red}{Anmerkung: die Zeichnung ist wom"oglich unvollst"andig}\end{center}
+
+\begin{Dfn}
+Es seien $E$ ein Vektorb"undel "uber $M$ mit kovarianter Ableitung $\nabla$ und $\Phi: N \to M$. Ein \CmMark{Schnitt} entlang $\Phi$ ist eine glatte Abbildung $S: N \to E$, so dass $S(p) \in E_{\Phi(p)}$ gilt, dies entspricht genau dem Schnitt in das l"angs $\Phi$ zur"uckgezogene B"undel $\Phi^*$.
+\begin{center}\begin{tikzpicture}
+	\def\hor{1.75}
+	\def\vert{1}
+	\node (1) at (-\hor,\vert) {$\Phi^*E$}; \node (2) at (\hor,\vert) {$E$}; \node (3) at (-\hor,-\vert) {$N$}; \node (4) at (\hor,-\vert) {$M$};
+	
+	\draw[right hook->] (1) -- (2); \draw[->] (1) -- (3); \draw[->] (2) --node[right,font=\scriptsize]{$\pi$} (4); \draw[->] (3) --node[above,font=\scriptsize]{$\Phi$} (4); \draw[->] (3) --node[above,font=\scriptsize]{$S$} (2);
+	\draw[->,dashed] (3) to[out=120,in=240]node[left,font=\scriptsize]{$\tilde S$} (1);
+\end{tikzpicture}\end{center}
+\end{Dfn}
+F"ur einen Schnitt $S$ in $E$ l"angs $\Phi$ und $X_p \in \T_pN$ ist die kovariante Abbildung $\nabla_{X_p}S$ von $S$ in Richtung $X_p$ wie folgt definiert:
+
+Es sei $s_1,\ldots ,s_n$ eine lokale Basis "uber einer Trivialisierungsumgebung $U \subseteq M$. Dann ist $S$ lokal gegeben durch
+	\[ S_p = \sum_j \sigma^j(p) s_j(\Phi(p)) \]
+f"ur $p \in V = \Phi^{-1}(U) \subseteq N$, und damit
+	\[ \nabla_{X_p}S = \left( \dop \sigma(X_p) + \omega(\Phi_{*p}X_p) \sigma(p) \right) S(\Phi(p)).\]
+Dies H"angt nicht von der Wahl der Trivialisierung ab, denn ist $U'$ ein weiteres Trivialisierungsgebiet mit lokaler Basis $\tilde s_1, \ldots , \tilde s_n$ und "Ubergangsfunktion $\psi: C \cap U' \to \GL_n(\R)$, so gilt
+\begin{align*}
+	\tilde\sigma &= (\psi \circ \Phi) \sigma \qquad \text{und}\\
+	\tilde\omega &= (\psi \circ \Phi) \omega(\psi \circ \Phi)^{-1} - \dop (\psi \circ \Phi)(\psi \circ \Phi)^{-1}
+\end{align*}
+damit folgt
+\begin{align*}
+	\dop \tilde\sigma(X_p) &+ \tilde\omega(\Phi_{*p}X_p) \tilde\sigma(p) - \dop((\psi \circ \Phi)\sigma) (X_p)\\
+	&+ (\psi \circ \Phi) \omega (\Phi_{*p}X_p)(\psi \circ \Phi)^{-1}(\psi \circ \Phi)\sigma\\
+	&- \dop(\psi \circ \Phi)(X_p)(\psi \circ \Phi)^{-1}(\psi \circ \Phi)\sigma
+\end{align*}\begin{align*}
+	&= \dop(\psi \circ \Phi)(X_p)\sigma + (\psi \circ \Phi)\omega(\Phi_{*p}X_p)\sigma - \dop(\psi \circ \Phi)(X_p)\sigma\\
+	&= (\psi \circ \Phi)(\dop\sigma(X_p) + \omega(\Phi_{*p}X_p)\sigma)
+\end{align*}
+Damit ist $p \mapsto \nabla_{X_p}S$ als Schnitt entlang $\Phi$ wohldefiniert.
+\begin{bem}
+Dies definiert eine kovariante Ableitung auf $\Phi^*E \subseteq N \X E$. Sind umgekehrt $S \in \Gamma(E)$ und $X_p \in \T_pN$, so ist $S \circ \Phi$ ein Schnitt entlang $\Phi$ und es gilt
+	\[ \nabla_{X_p}(S \circ \Phi) = \nabla_{\Phi_{*p}X_p}S \]
+\end{bem}
+
+\begin{emptythm}[Spezialfall:]
+Sei $\Phi = c : \calI = [a,b] \to M$. Ein Schnitt in $E$ entlang $c$ ist eine glatte Abbildung $S: \calI \to E$ mit $S(t) \in E_{c(t)}$. Die kovariante Abbildung $\nabla_{\pdifffrac[t]{}{t}} S$ wird kurz als $\nabla_tS$ oder $S'(t)$ geschrieben. In lokalen Koordinaten gilt
+\begin{align*}
+	S' &= \left( \dop \sigma \left( \pdifffrac{}{t} \right) + \omega\left( c_* \left( \pdifffrac{}{t} \right) \right) \sigma \right) S \circ c\\
+	&= \left( \sigma' + \omega(\dot c) \sigma \right) S \circ c
+\end{align*}
+\end{emptythm}
+
+\begin{Dfn}
+Ein Schnitt $S \in \Gamma(E)$ hei"st \CmMark[Schnitt!paralleler]{parallel} (oder \CmMark[Schnitt!konstanter]{konstant}), wenn $\nabla S \equiv 0$. Ein Schnitt $S$ entlang $c$ hei"st \CmMark[Schnitt!paralleler]{parallel}, wenn $S' \equiv 0$ gilt.
+\end{Dfn}
+
+\begin{Prop}\label{prop-7-9}
+Es sei $c: \calI \to M$ eine (st"uckweise) glatte Kurve und $\xi \in E_{c(s)}$. Dann existiert genau ein entlang $c$ paralleler Schnitt $S_\xi$ in $E$ mit $S_\xi(s) = \xi$.
+\end{Prop}
+
+\begin{bew}
+in lokalen Koordinaten definiert
+	\[ 0 = S_\xi'(t) = (\sigma'(t) + \omega(\dot c(t) \sigma(t)) S(\dop t)) \]
+ein lineares Differentialgleichungssystem:
+	\[ \sigma'(t)  = A(t) \cdot \sigma(t) \]
+wobei $A(t) = -\omega(\dot c(t))$. Ist $[t, T]$ \textcolor{red}{ein kompaktes} Teilintervall in $\calI$ mit $s \in [t, T]$, so existiert eine Partition $t = t_0 < \ldots < t_k = T$, so dass $c([t_i, t_{i+1}])$ in einer Trivialisierungsumgebung liegt. Man findet so sukzessive eindeutige L"osungen auf den Teilintervallen (\emph{lineares} System), welche durch Fortsetzungen eine eindeutige L"osung auf $[t, T]$ definieren. Erneut folgt aus der Eindeutigkeit, dass ein f"ur alle Zeiten definierter paralleler Schnitt $S_\xi$ existiert.
+\end{bew}
+
+\begin{Dfn}
+Es sei $c$ eine glatte Kurve in $M$. Die lineare Abbildung
+	\[\begin{array}{cccc} P_{s,t}^c: & E_{c(s)} &\to& E_{c(t)} \\
+		& \xi &\mapsto& S_\xi(t), \end{array}\]
+wobei $S_\xi$ den nach Proposition \ref{prop-7-9} eindeutigen parallelen Schnitt einlang $c$ mit $S_\xi(s) = \xi$ bezeichnet, hei"st \CmMark{Paralleltransport} entlang $c$.
+\end{Dfn}
+
+\begin{bem}\begin{enumerate}[label=\arabic*),leftmargin=*]
+\item
+	$P_{s,t}^c$ ist invertierbar mit Inversen $(P_{s,t}^c)^{-1} = P_{t,s}^c = P_{s,t}^{\overline c}$, wobei $\overline c = (s+t-\tau)$.
+\item
+	Die Abbildung $P_{s,t}^c$ ist im Allgemeinen \emph{nicht} unabh"angig von der Wahl von $c$.
+\end{enumerate}\end{bem}
+
+\begin{bsp}
+In $\R^n$ ist ein Vektorfeld $X$ genau dann parallel, wenn $X$ (beziehungsweise $\overline X_p \in \calI_p(X_p)$) konstant im \quot{"ublichen} Sinne ist: Paralleltransport entlang einer Kurve entspricht der gew"ahlten Parallelverschiebung.
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+%	\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+	
+	\draw[name path=kurve] (-4.5,-0.5) ..controls(-4.5,-0.5) and (-4,0.5).. (0,0.5)node[below]{$c$} ..controls(4,0.5) and (4.5,3).. (4.5,3);
+	
+	\foreach \x in {3.5, 1.5, ..., -1.5}{% Schleife von rechts nach links
+		\path[name path=strich] (\x,-1) -- (\x,5);
+		\path[name intersections={of=strich and kurve}];
+		\coordinate (a) at (intersection-1);
+		\draw[->] (a) -- +(0,3);
+		\draw[dashed] ($(a) + (0,1)$) -- +(-1,0);
+		
+		\path[name path=strich] (\x - 1,-1) -- (\x - 1,5);
+		\path[name intersections={of=strich and kurve}];
+		\coordinate (a) at (intersection-1);
+		\draw[->] (a) -- +(0,3);
+		\draw[dashed] ($(a) + (0,2)$) -- +(-1,0);
+	}
+	\path[name path=strich] (-2.5,-1) -- (-2.5,5);
+	\path[name intersections={of=strich and kurve}];
+	\coordinate (a) at (intersection-1);
+	\draw[->] (a) -- +(0,3);
+	\draw[dashed] ($(a) + (0,1)$) -- +(-1,0);
+	
+	\path[name path=strich] (-3.5,-1) -- (-3.5,5);
+	\path[name intersections={of=strich and kurve}];
+	\coordinate (a) at (intersection-1);
+	\draw[->] (a) -- +(0,3);
+
+	\fill (a) circle(0.05) node[anchor=north west]{$c(s)$};% nur am letzten Strich
+\end{tikzpicture}\end{center}
+\end{bsp}
+
+Es seien $S \in \Gamma(E)$ und $X_p \in \T_pM$. Ist $c$ eine Integralkurve von $X_p$, das hei"st $c(0) = p$ und $\dot c(0) = X_p$, so ist $\tilde S = S \circ c$ ein Schnitt entlang $c$ und es gilt $\tilde S'(0) = \nabla_{X_p} S$. Nun sei ferner $\xi_1,\ldots ,\xi_n$ eine Basis von $E_p$ und es bezeichnen $s_1,\ldots ,s_n$ die parallelen Schnitte  entlang $c$ mit $s_i(0) = \xi_i$. Dann gilt $\tilde S(t) = \sum \sigma^j(t)s_j(t)$ und es folgt
+\begin{align*}
+	\nabla_{X_p}S &= \tilde S'(0) = \nabla_t \big( \sum_j \sigma^j s_j \big)(0)\\
+	&= \sum_j \big( (\sigma^j)' s_j + \sigma^j \underbrace{\nabla_t s_j}_{\equiv 0} \big) (0)\\
+	&= \sum_j \lim_{t \to 0} \left( \frac{\sigma^j(t) - \sigma^j(0)}{t} \right) s_j(0)\\
+	&= \lim_{t \to 0} \frac{1}{t} \left( \sum_j \sigma^j(t) s_j(0) - \sigma^j(0) s_j(0) \right)\\
+	&= \lim_{t \to 0} \frac{1}{t} \left( \sum_j \sigma^j \big(P_{t,0}^c (s_j(t) \big) - \sigma^j(0) s_j(0) \right)\\
+	&= \lim_{t \to 0} \frac{1}{t} \left( P_{t,0}^c \big( \sum \sigma^j s_j(t) \big) - \sum \sigma^j s_j(0) \right)\\
+	&= \lim_{t \to 0} \frac{1}{t} \left( P_{t,0}^c \big( \tilde S(t) - \tilde S(0) \big) \right)
+\end{align*}
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "../skript-diffgeom"
