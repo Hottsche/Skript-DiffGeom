@@ -40,8 +40,6 @@ Betrachte in der nebenstehenden Abbildung eine differenzierbare \gls{Kurve} $c \
 
 % Bemerke $1 = \left<c(t),c(t)\right>$
 
-\textcolor{red}{(Ich habe Punkte "uber einige der $c$ gesetzt, bitte "uberpr"ufen)}Es sei $M$ eine glatte Mannigfaltigkeit und es seien glatte Kurven $c_i\colon (-\varepsilon_i,\varepsilon_i) \to M$ mit $c_1(0) = c_2(0) = p \in M$ gegeben.
-
 Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\varphi,U)$ von $M$ und $p$ gibt, so dass gilt
 \begin{align*}
   \difffrac[t=0]{}{t}(\varphi \circ c_1) = \difffrac[t=0]{}{t}(\varphi \circ c_2)
@@ -152,7 +150,7 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
   
   Für $f,g \in C^{\infty}(\R^n), \ x,y \in \R^n$ ist die \CmMark{Richtungsableitung} wie folgt definiert:
   \begin{align*}
-    \partial_vf(x) = \D f|x \cdot v = \difffrac[t=0]{}{t}f(x+tv).
+    \partial_vf(x) = \D f(x) \cdot v = \difffrac[t=0]{}{t}f(x+tv).
   \end{align*}
   Diese erfüllt die Leibniz-Regel:
   \begin{align*}
@@ -170,7 +168,7 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
 \end{Dfn}
 
 \begin{Lemma}
-  Es sei U eine Umgebung von $p \in M$. Dann existiert eine Umgebung $V \subset U$ von $p$ und eine glatte reellwertige Funktion $\sigma \in C^{\infty}(M)$ mit den Eigenschaften $\sigma|_V = 1$ und $\supp(\sigma) \subset U$.
+  Es sei U eine Umgebung von $p \in M$. Dann existiert eine Umgebung $V \subset U$ von $p$ und eine glatte reellwertige Funktion $\sigma \in C^{\infty}(M)$ mit den Eigenschaften $\sigma|_V = 1$ und $\gls{supp}(\sigma) \subset U$.
 \end{Lemma}
 
 %%%
