@@ -50,7 +50,7 @@ Nun gehe zur Betrachtung von Vektorfeldern $X \colon \R^n \to \R^n$ über und se
       \nabla_{X+Y}S = \nabla_XS+\nabla_YS \text{ und } \nabla_{fX}S = f\nabla_XS
     \end{align*}
     f"ur alle $X, Y \in \calV(M)$ und $f \in C^{\infty}(M)$.
-  \item $\nabla_X$ ist $\R$-linear, das hei"st
+  \item $\nabla_X$ ist $\R$-linear, das hei"st f"ur alle $\mu, \nu \in \R$ gilt:
     \begin{align*}
       \nabla_X(\mu S + \nu T) = \mu\nabla_XS + \nu\nabla_XT.
     \end{align*}
@@ -251,8 +251,7 @@ Der Beweis sei zur "Ubung "uberlassen.
 	\path[name intersections={of=kurve and pkt}];
 	\coordinate (a) at (intersection-1);
 	\draw[->] (a) -- ($(a) + 0.5*(0.7,2.5)$);
-\end{tikzpicture}\\
-\textcolor{red}{Anmerkung: die Zeichnung ist wom"oglich unvollst"andig}\end{center}
+\end{tikzpicture}\end{center}
 
 \begin{Dfn}
 Es seien $E$ ein Vektorb"undel "uber $M$ mit kovarianter Ableitung $\nabla$ und $\Phi: N \to M$. Ein \CmMark{Schnitt} entlang $\Phi$ ist eine glatte Abbildung $S: N \to E$, so dass $S(p) \in E_{\Phi(p)}$ gilt, dies entspricht genau dem Schnitt in das l"angs $\Phi$ zur"uckgezogene B"undel $\Phi^*$.
@@ -382,7 +381,7 @@ Es seien $S \in \Gamma(E)$ und $X_p \in \T_pM$. Ist $c$ eine Integralkurve von $
 
 \section{Der Levi-Civita Zusammenhang}
 
-Für das \quot{gewöhnliche} Differential auf $\R^k$ gilt:
+Für das \quot{gew"ohnliche} Differential auf $\R^k$ gilt:
 \begin{align*}
   \D Y(X) - \D X(Y) = \sum_i^k\pdifffrac{y^j}{x^i}X^i - \pdifffrac{x^j}{x^i}Y^i = [X,Y].
 \end{align*}
@@ -395,37 +394,36 @@ Für das \quot{gewöhnliche} Differential auf $\R^k$ gilt:
   \end{align*}
 heißt \CmMark{Torsion} oder der \CmMark{Torsionstensor} von $\nabla$.
 Die kovariante Ableitung heißt \CmMark{torsionslos}, wenn $T \equiv 0$ gilt.
-
-Betrachtet man die Standardmetrik $g^{\text{std}} = \left<\cdot,\cdot\right>$ des $\R^k$ in Koordinaten $(\Id, \R^k)$, so gilt:
-\begin{align*}
-  g^{\text{std}} & = \sum_{ij} g_{ij} \dop x^i \otimes \dop x^j - \sum_{ij} \delta_{ij} \dop x^i \otimes x^j\\
-  & = \sum_i \dop x^i \otimes \dop x^i.
-\end{align*}
-Das heißt die Metrik $g^{\text{std}}$ (d.h. die $g_{ij}$) ist konstant.
 \end{Dfn}
 
+Betrachtet man die Standardmetrik $g^{\text{std}} = \left<\cdot,\cdot\right>$ des $\R^k$ in den Koordinaten $(\Id, \R^k)$, so gilt:
+\begin{align*}
+  g^{\text{std}} & = \sum_{i,j} g_{ij} \dop x^i \otimes \dop x^j = \sum_{i,j} \delta_{ij} \dop x^i \otimes x^j\\
+  & = \sum_i \dop x^i \otimes \dop x^i.
+\end{align*}
+Das heißt die Metrik $g^{\text{std}}$ (das hei"st die $g_{ij}$) ist konstant.
 
 % Satz 7.12
 \begin{Satz}[Levi-Civita, 1961] \label{satz-7-12}
-  Auf einer Riemannschen Mannigfaltigkeit existiert genau ein torsionsloser Zusammenhang bezüglich dessen kovariante Ableitung die Metrik parallel ist ($\nabla g \equiv 0$).
+  Auf einer Riemannschen Mannigfaltigkeit existiert genau ein torsionsloser Zusammenhang bezüglich dessen kovarianter Ableitung die Metrik parallel ist ($\nabla g \equiv 0$).
 \end{Satz}
 
-Zur Parallelität: Die Metrik $g$ einer Riemannschen Mannigfaltigkeit ist ein $(0,2)$-Tensorfeld, das heißt lokal ist $g$ endliche Summe von Elementen der Form $\omega \otimes \eta$, wobei $\omega, \eta \in \Omega^1(M)$.
+\emph{Zur Parallelität:} Die Metrik $g$ einer Riemannschen Mannigfaltigkeit ist ein $(0,2)$-Tensorfeld, das heißt lokal ist $g$ endliche Summe von Elementen der Form $\omega \otimes \eta$, wobei $\omega, \eta \in \Omega^1(M)$.
 
 Für $X,Y,Z \in \mathcal V(M)$ gilt:
 \begin{align*}
-  \nabla_Z(\omega \otimes \eta)(X,Y) & = \left((\nabla^{*}_Z\omega) \otimes \eta + \omega \otimes (\nabla^{*}_Z \eta)\right)(X,Y)\\
+  \nabla_Z(\omega \otimes \eta)(X,Y) & = \big((\nabla^{*}_Z\omega) \otimes \eta + \omega \otimes (\nabla^{*}_Z \eta)\big)(X,Y)\\
 & = (\nabla^{*}_Z \omega)(X)\eta(Y) + \omega(X)(\nabla^{*}_Z \eta)(Y)\\
-& = \left(Z(\omega(X)) - \omega(\nabla_ZX)\right)\eta(Y) + \omega(X)\left(Z(\eta(Y)-\eta(\nabla_ZY)\right)\\
-& = Z(\omega(X))\eta(Y) + \omega(X)Z(\eta(Y)) - (\omega(\nabla_ZX)\eta(Y) + \omega(X)\eta(\nabla_ZY))\\
-& = Z((\omega \otimes \eta)(X,Y)) - (\omega \otimes \eta)(\nabla_ZX,Y) - (\omega \otimes \eta)(X,\nabla_Z Y)
+& = \big(Z(\omega(X)) - \omega(\nabla_ZX)\big)\eta(Y) + \omega(X)\big(Z(\eta(Y)-\eta(\nabla_ZY))\big)\\
+& = Z\big(\omega(X)\big)\eta(Y) + \omega(X)Z\big(\eta(Y)\big) - \big(\omega(\nabla_ZX)\eta(Y) + \omega(X)\eta(\nabla_ZY)\big)\\
+& = Z\big((\omega \otimes \eta)(X,Y)\big) - (\omega \otimes \eta)(\nabla_ZX,Y) - (\omega \otimes \eta)(X,\nabla_Z Y)
 \end{align*}
 
 Somit ist $g$ genau dann parallel, wenn für $X,Y,Z \in \mathcal V(M)$ gilt:
 \begin{align*}
   0 = (\nabla_Z g)(X,Y) = Z(g(X,Y)) - g(\nabla_ZX,Y) - g(X,\nabla_ZY)
 \end{align*}
-bzw.
+beziehungsweise
 \begin{align*}
   Z\left<X,Y\right> = \left<\nabla_ZX,Y\right> + \left<X,\nabla_ZY\right>.
 \end{align*}
@@ -437,30 +435,31 @@ Ist $c$ eine glatte Kurve, $P_t \colon \T_{c(0)}M \to \T_{c(t)}M$ eine Isometrie
 \end{align*}
 Also gilt $P_t^{*} g_{c(t)} = g_{c(0)}$ und es folgt:
 \begin{align*}
-  \nabla_t g = \lim_{t \to 0}\frac{1}{t} ((P_t^{*}g_{c(t)}) - g_{c(0)}) = 0.
+  \nabla_t g = \lim_{t \to 0}\frac{1}{t} \left( (P_t^{*}g_{c(t)}) - g_{c(0)} \right) = 0.
 \end{align*}
 
-\begin{bew}(von Satz \ref{satz-7-12})\\
-  Ist $\nabla$ eine kovariante Ableitung mit den geforderten Eigenschaften, so gilt für $X,Y,Z \in \mathcal V(M)$:
-  \begin{align*}
-    X\left<Y,Z\right> & = \left<\nabla_XY,Z\right> + \left<Y,\nabla_XZ\right>\\
-    Y\left<Z,X\right> & = \left<\nabla_YZ,X\right> + \left<Z,\nabla_YX\right>\\
-    & = \left<\nabla_YZ,X\right> + \overline{\left<Z,\nabla_XY\right>} - \left<Z,[X,Y]\right>\\
-    Z\left<X,Y\right> & = \left<\nabla_ZX,Y \right> + \left<X,\nabla_ZY\right>
-  \end{align*}
-  Damit erhält man:
-  \begin{align*}
-    Z\left<\nabla_XY,Z\right> = & \ X \left<Y,Z\right> + Y\left<Z,X\right> - Z\left<X,Y\right>\\
-    & - \left<X,\nabla_YZ - \nabla_ZY\right> \\
-    & - \left<Y,\nabla_XZ - \nabla_ZX\right> + \left<Z,[X,Y]\right>\\
-    = & \ X\left<Y,Z\right> + Y\left<Z,X\right> - Z\left<X,Y\right> - \left<X,[Y,Z]\right> - \left<X,[X,Z]\right> + \left<Z,[X,Y]\right>.
-  \end{align*}
-  Die rechte Seite der Gleichung ist $C^{\infty}(M)$-linear in $Z$, definiert also für alle $X,Y \in \mathcal V(M)$ eine $1$-Form $\omega_{(X,Y)}$.
-  Da die Metrik $\left<\cdot,\cdot\right>$ positiv definit ist, existiert ein Vektorfeld $A_{(X,Y)} \in \mathcal V(M)$ mit $\omega_{(X,Y)} = \left<A_{(X,Y)},\cdot\right>$, das, wie man leicht nachrechnet $A_{(X,Y)}$-linear und derivativ in $Y$ und $C^{\infty}(M)$-linear in $X$ ist und durch
-  \begin{align*}
-    \nabla \colon \mathcal V(M) \times \mathcal V(M) \to \mathcal V(M), \ (X,Y) \mapsto A_{(X,Y)}
-  \end{align*}
-  wird eine eindeutige kovariante Ableitung definert, die die geforderten Eigenschaften erfüllt.
+\begin{bew}[von Satz \ref{satz-7-12}]
+Ist $\nabla$ eine kovariante Ableitung mit den geforderten Eigenschaften, so gilt für $X,Y,Z \in \mathcal V(M)$:
+\begin{align*}
+	X\left<Y,Z\right> & = \left<\nabla_XY,Z\right> + \left<Y,\nabla_XZ\right>\\
+	Y\left<Z,X\right> & = \left<\nabla_YZ,X\right> + \left<Z,\nabla_YX\right>\\
+	& = \left<\nabla_YZ,X\right> + \overline{\left<Z,\nabla_XY\right>} - \left<Z,[X,Y]\right>\\
+	Z\left<X,Y\right> & = \left<\nabla_ZX,Y \right> + \left<X,\nabla_ZY\right>
+\end{align*}
+Indem man die ersten beiden Gleichungen addiert und die Dritte abzieht erh"alt man:
+\begin{align*}
+	Z\left<\nabla_XY,Z\right> = & \ X \left<Y,Z\right> + Y\left<Z,X\right> - Z\left<X,Y\right>\\
+	& - \left<X,\nabla_YZ - \nabla_ZY\right> \\
+	& - \left<Y,\nabla_XZ - \nabla_ZX\right> + \left<Z,[X,Y]\right>\\
+	= & \ X\left<Y,Z\right> + Y\left<Z,X\right> - Z\left<X,Y\right> - \left<X,[Y,Z]\right> - \left<Y,[X,Z]\right> + \left<Z,[X,Y]\right>.
+\end{align*}
+Die rechte Seite der Gleichung ist $C^{\infty}(M)$-linear in $Z$, definiert also für alle $X,Y \in \mathcal V(M)$ eine $1$-Form $\omega_{(X,Y)}$.
+Da die Metrik $\left<\cdot,\cdot\right>$ positiv definit ist, existiert ein Vektorfeld $A_{(X,Y)} \in \mathcal V(M)$ mit $\omega_{(X,Y)} = \left<A_{(X,Y)},\cdot\right>$, das, wie man leicht nachrechnet, $A_{(X,Y)}$-linear und derivativ in $Y$ und $C^{\infty}(M)$-linear in $X$ ist und durch
+\[\begin{array}{cccc}
+	\nabla \colon & \mathcal V(M) \times \mathcal V(M) &\to& \mathcal V(M)\\
+	&(X,Y) &\mapsto& A_{(X,Y)}
+\end{array}\]
+wird eine eindeutige kovariante Ableitung definert, die die geforderten Eigenschaften erfüllt.
 \end{bew}
 
 \begin{bem}
@@ -472,24 +471,24 @@ Also gilt $P_t^{*} g_{c(t)} = g_{c(0)}$ und es folgt:
   Die nach obigem Satz eindeutig bestimmte, torsionsfreie Zusammenhang bezüglich dessen die Metrik parallel ist, heißt \CmMark{Levi-Civita Zusammenhang}.
 \end{Dfn}
 
-\begin{bsp}
-  \begin{enumerate}[label=(\arabic*)]
-  \item Der Levi-Civita Zusammenhang des $\R^k$ mit der Standardmetrik ist die gewöhnliche Ableitung $\D$.
-  \item Ist $M \subset \R^k$ eine Untermannigfaltigkeit mit der induzierten Metrik, so ist durch
-    \begin{align*}
-      (\nabla_XY)_p = (\D_XY|_p)^T = \D_XY|_p - (D_XY|_p)^{\perp}.
-    \end{align*}
-    wird ein Zusammenhang definiert, der gerade der Levi-Civita Zusammenhang ist, denn $\nabla$ ist torsionslos, da $\D$ torsionslost ist und für Vektorfelder $X,Y,Z \in \mathcal V(M)$ gilt:
-    \begin{align*}
-      Z\left<X,Y\right> & = \left<\D_ZY, Y\right> + \left<X, \D_ZY\right>\\
-      & = \left<(D_ZX)T + (\D_ZX)^{\perp}, Y\right> + \left<X,(\D_ZY)^T + (\D_ZY)^{\perp}\right>\\
-      & = \left<\D_ZX)^T,Y\right> + \left<X,(\D_ZY)^T\right>\\
-      & = \left<\nabla_ZX,Y\right> + \left<X,\nabla_ZY\right>.
-    \end{align*}
-    \end{enumerate}
-  \end{bsp}
+\begin{bsp}\begin{enumerate}[label=\arabic*),leftmargin=*]
+\item
+	Der Levi-Civita Zusammenhang des $\R^k$ mit der Standardmetrik ist die gewöhnliche Ableitung $\D$.
+\item
+	Ist $M \subseteq \R^k$ eine Untermannigfaltigkeit mit der induzierten Metrik, so ist durch
+	\begin{align*}
+		(\nabla_XY)_p = (\D_XY|_p)^T = \D_XY|_p - (D_XY|_p)^{\perp}
+	\end{align*}
+	ein Zusammenhang definiert, der gerade der Levi-Civita Zusammenhang ist, denn $\nabla$ ist torsionslos, da $\D$ torsionslos ist und für Vektorfelder $X,Y,Z \in \mathcal V(M)$ gilt:
+	\begin{align*}
+		Z\left<X,Y\right> & = \left<\D_ZY, Y\right> + \left<X, \D_ZY\right>\\
+		& = \left<(D_ZX)^T + (\D_ZX)^{\perp}, Y\right> + \left<X,(\D_ZY)^T + (\D_ZY)^{\perp}\right>\\
+		& = \left<(\D_ZX)^T,Y\right> + \left<X,(\D_ZY)^T\right>\\
+		& = \left<\nabla_ZX,Y\right> + \left<X,\nabla_ZY\right>.
+	\end{align*}
+\end{enumerate}\end{bsp}
 
-\subsection{Lokale Koordinaten}
+\section{Lokale Koordinaten}
 Es sei $(M,g)$ eine Riemmannsche Mannigfaltigkeit mit Levi-Civita Zusammenhang $\nabla$.
 In einer Karte gilt:
 \begin{align*}
@@ -497,17 +496,18 @@ In einer Karte gilt:
 \end{align*}
 Es sei
 \begin{align*}
-  g_{ij} = \left<\pdifffrac{}{x^i},\pdifffrac{}{x^j}\right>, \
+  g_{ij} = \left<\pdifffrac{}{x^i},\pdifffrac{}{x^j}\right> \text{ und }
   g = \left<\cdot,\cdot\right> = \sum g_{ij}\dop x^i \otimes \dop x^j.
 \end{align*}
 Es gilt $\Gamma_{ij}^k = \Gamma_{ji}^k$, denn 
 \begin{align*}
-  \nabla_{\pdifffrac{}{x^i}}\pdifffrac{}{x^j} - \nabla_{\pdifffrac{}{x^j}}\pdifffrac{}{x^i} = [\pdifffrac{}{x^i},\pdifffrac{}{x^j}] = 0.
+  \nabla_{\pdifffrac{}{x^i}}\pdifffrac{}{x^j} - \nabla_{\pdifffrac{}{x^j}}\pdifffrac{}{x^i} = \left[\pdifffrac{}{x^i},\pdifffrac{}{x^j}\right] = 0.
 \end{align*}
+Dann ist
 \begin{align*}
   \Gamma_{ij}^k & = \sum_{l,m} g^{kl} g_{lm}\Gamma_{ij}^m\\
-  & = \sum_{l,m} g^{kl} \left<\Gamma_{ij}^k\pdifffrac{}{x^m},\pdifffrac{}{x^l}\right>\\
-  & = \sum_lg^{kl}\left<\nabla_{\pdifffrac{}{x^i}}\pdifffrac{}{x^j,\pdifffrac{}{x^j}}\right>\\
+  & = \sum_{l,m} g^{kl} \left<\Gamma_{ij}^m\pdifffrac{}{x^m},\pdifffrac{}{x^l}\right>\\
+  & = \sum_lg^{kl}\left<\nabla_{\pdifffrac{}{x^i}}\pdifffrac{}{x^j},\pdifffrac{}{x^l}\right>\\
   & = \frac{1}{2} \sum_l g^{kl}\left(\pdifffrac{g_{jl}}{x^i} + \pdifffrac{g_{li}}{x^j} - \pdifffrac{g_{ij}}{x^l}\right).
 \end{align*}
 
@@ -527,13 +527,15 @@ Man definiert die zweite kovariante Ableitung als
 
 % Proposition 7.14
 \begin{Prop}
-  FÜr $X,Y,Z,W \in \mathcal V(M)$ gilt:
-  \begin{enumerate}[label=(\roman*)]
-  \item $R(X,Y)Z + R(Y,Z)X + R(Z,X)Y = 0$,
-\item $\left<R(X,Y)Z,W\right> = -\left<R(Y,X)Z,W\right> = - \left<R(X,Y)W,Z\right>$,
-\item $\left<R(X,Y)Z,W\right> = \left<R(Z,W)X,Y\right>$.
-  \end{enumerate}
-\end{Prop}
+F"ur $X,Y,Z,W \in \mathcal V(M)$ gilt:
+\begin{enumerate}[label=(\roman*)]
+\item
+	$R(X,Y)Z + R(Y,Z)X + R(Z,X)Y = 0$,
+\item
+	$\left<R(X,Y)Z,W\right> = -\left<R(Y,X)Z,W\right> = - \left<R(X,Y)W,Z\right>$,
+\item
+	$\left<R(X,Y)Z,W\right> = \left<R(Z,W)X,Y\right>$.
+\end{enumerate}\end{Prop}
 
 Der Beweis sei als Übung überlassen.
 
@@ -541,16 +543,14 @@ Es seien $X,Y \in \T_pM$ linear unabhängig. Dann hängt
 \begin{align*}
   \frac{\left<R(X,Y)Y,X\right>}{\|X\|^2\|Y\|^2 - \left<X,Y\right>^2}
 \end{align*}
-nur von der von $X$ und $Y$ aufgespannten Ebene ab.
-
-Es seien $Z = aX + bY, \ W = cX + dY$ und ohne Einschränkung seien $X,Y$ orthonormal.
+nur von der von $X$ und $Y$ aufgespannten Ebene ab. Um das zu zeigen seien $Z = aX + bY, \ W = cX + dY$ und ohne Einschränkung seien $X,Y$ orthonormal.
 Dann gilt:
 \begin{align*}
   \|Z\|^2\|W\|^2 - \left<Z,W\right>^2 & = \|aX + bY\|^2\|cX + dY\|^2 - \left<aX + bY, cX + dY\right>^2\\
 & = (a^2 + b^2)(c^2 + d^2) - (ac + bd)^2 = a^2d^2 + b^2c^2 - 2abcd\\
 & = (ad - bc)^2
 \end{align*}
-
+Also
 \begin{align*}
   \frac{\left<R(aX+bY,cX+dY)(cX+dY),(aX+bY)\right>}{\|aX+bY\|^2\|cX+dY\|^2 - \left<aX+bY, cX+dY\right>^2} & = \frac{(ad-bc)^2\left<R(X,Y)Y,X\right>}{(ad-bc)^2}\\
 & = \left<R(X,Y)Y,X\right>.
@@ -558,10 +558,10 @@ Dann gilt:
 
 % Definition 7.15
 \begin{Dfn}
-  Es sei $\sigma$ eine von $X,Y \in \mathcal V(M)$ aufgespannte Ebene in $\T_pM$.
+Es sei $\sigma$ eine von $X,Y \in \mathcal V(M)$ aufgespannte Ebene in $\T_pM$.
 Dann heißt 
 \begin{align*}
-  sec_p(\sigma) = \sec_p(X,Y) = \frac{\left<R(X,Y)Y,X\right>}{\|X\|^2\|Y\|^2 - \left<X,Y\right>^2}
+	\sec_p(\sigma) = \sec_p(X,Y) = \frac{\left<R(X,Y)Y,X\right>}{\|X\|^2\|Y\|^2 - \left<X,Y\right>^2}
 \end{align*}
 die \CmMark{Schnittkrümmung} der Ebene $\sigma$.
 \end{Dfn}
