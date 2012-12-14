@@ -156,7 +156,7 @@ Faserweise gilt
 \emph{"Uberlege:} $\Hom(E,E')$, sowie $E \otimes E', \bigotimes E$ und $\Lambda^pE, \Lambda E$ sind "`vern"unftige"' B"undel.
 
 \section{Intermezzo: Multilineare Algebra}
-Es seien $V$ und $W$ $k$-Vektorr"aume. Das \CmMark{Tensorprodukt} $V \otimes W$ ist der von den Elementen $v \otimes w$ mit $v \in V$, $w \in W$ und den Relationen \begin{enumerate}[label=(\roman*),widest=iii]
+Es seien $V$ und $W$ $k$-Vektorr"aume. Das \CmMark[Tensor!-produkt]{Tensorprodukt} $V \otimes W$ ist der von den Elementen $v \otimes w$ mit $v \in V$, $w \in W$ und den Relationen \begin{enumerate}[label=(\roman*),widest=iii]
 \item
 	$(v + v') \otimes w = v \otimes w + v' \otimes w$
 \item
@@ -238,7 +238,7 @@ und
 	\[ \varphi_1 \wedge \ldots  \wedge \varphi_p : \Lambda^pV \to \Lambda^pW \]
 
 \section{B"undelkonstruktion}
-Es seien $E$ und $E'$ Vektorb"undel vom Rang $k$ und $l$. Es bezeichnen stets $\tau$ und $\tau'$ lokale Trivialisierungen mit dem gleichen Trivialisierungsgebiet $U$ sowie $g_{\alpha\beta}$ und $g'_{\alpha\beta}$ die "Ubergangsfunktionen von $E$ beziehungsweise $E'$. Das \CmMark{Tensorprodukt} $E \otimes E'$ von $E$ und $E'$ ist das Vektorb"undel mit den Fasern $(E \otimes E')_p = E_p \otimes E'_p$, also $E \otimes E' = \bigcup_{p \in M} E_p \otimes E'_p \to M$ mit lokalen Trivialisierungen
+Es seien $E$ und $E'$ Vektorb"undel vom Rang $k$ und $l$. Es bezeichnen stets $\tau$ und $\tau'$ lokale Trivialisierungen mit dem gleichen Trivialisierungsgebiet $U$ sowie $g_{\alpha\beta}$ und $g'_{\alpha\beta}$ die "Ubergangsfunktionen von $E$ beziehungsweise $E'$. Das \CmMark[Tensor!-produkt]{Tensorprodukt} $E \otimes E'$ von $E$ und $E'$ ist das Vektorb"undel mit den Fasern $(E \otimes E')_p = E_p \otimes E'_p$, also $E \otimes E' = \bigcup_{p \in M} E_p \otimes E'_p \to M$ mit lokalen Trivialisierungen
 	\[ \sigma: \left\{\begin{array}{ccc} (E \otimes E')|_U = \bigcup\limits_{p \in U} E_p \otimes E'_p &\to& U \X (\R^k \otimes \R^l) \cong U \X \R^{kl} \\
 		E_p \otimes E'_p \ni w = \sum v_i \otimes u_i &\mapsto& (p, \sum \tau_p(v_i) \otimes \tau'_p(u_i)) \end{array}\right. \]
 das hei"s dass $\sigma = (\pi, \tau_p \otimes \tau'_p)$ ist. Wie in Kapitel 4 zeigt man dass $E \otimes E'$ ein B"undel ist. Alternativ l"asst sich $E \otimes E'$ mit Satz \ref{satz-5-2} durch die "Ubergangsfunktion definieren:
@@ -254,7 +254,7 @@ Die "Ubergangsfunktionen von $E^*$ sind die transponierten Inversen der "Ubergan
 	\[ h_{\alpha\beta} = (g_{\alpha\beta}^{-1})^* \]
 Das B"undel
 	\[ \T_s^r E = \underbrace{E \otimes \ldots \otimes E}_{r} \otimes \underbrace{E^* \otimes \ldots \otimes E^*}_{s} \]
-hei"st das $(r,s)$-\CmMark{Tensorb"undel} von $E$. Das Homomorphismenb"undel $\Hom(E,E^*)$ ist definiert durch
+hei"st das $(r,s)$-\CmMark[Tensor!-b\"undel]{Tensorb"undel} von $E$. Das Homomorphismenb"undel $\Hom(E,E^*)$ ist definiert durch
 	\[ \sigma: \left\{ \begin{array}{ccc} \Hom(E,E')|_U = \bigcup\limits_{p \in U}^{\cdot} \Hom(E_p, E_p') &\to& U \X \Hom(\R^k, \R^l)\\
 		\varphi \in \Hom(E_p, E'_p) &\mapsto& (p, \tau'_p \circ \varphi \circ \tau_p^{-1}) \end{array} \right. \]
 Zur Definition der "Ubergangsfunktionen schreibt man $\Hom(E, E') \cong E^* \otimes E'$ und definiert $h_{\alpha\beta} = (g_{\alpha\beta}^{-1})^* \otimes g'_{\alpha\beta}$.
@@ -309,7 +309,7 @@ Es sei $E \xrightarrow{\pi} M$ ein Vektorb"undel "uber M. Ein \CmMark{Schnitt} i
 \end{tikzpicture}\end{center}
 Die $S_i$ bilden punktweise eine Basis der Fasern.
 
-Die Schnitte des $(r,s)$-Tensorbündels $\Gamma(\T_s^r(\T M)) = \mathcal T_s^r(M)$ bezeichnet man als \CmMark{$(r,s)$-Tensorfelder} auf $M$. Die $(1,0)$-Tensorfelder sind genau die Vektorfelder auf $M$; $\mathcal T_0^1(M) = \mathcal V(M)$. Es bezeichne $\mathcal V^{*}(M) = \mathcal T_1^0(M)$ den Raum der $(0,1)$-Tensorfelder.
+Die Schnitte des $(r,s)$-Tensorbündels $\Gamma(\T_s^r(\T M)) = \mathcal T_s^r(M)$ bezeichnet man als $(r,s)$-\CmMark[Tensor!-feld]{Tensorfelder} auf $M$. Die $(1,0)$-Tensorfelder sind genau die Vektorfelder auf $M$; $\mathcal T_0^1(M) = \mathcal V(M)$. Es bezeichne $\mathcal V^{*}(M) = \mathcal T_1^0(M)$ den Raum der $(0,1)$-Tensorfelder.
 
 \begin{Prop}\label{prop-5-4}
 Die $(r,s)$-Tensorfelder auf $M$ entsprechen genau den $C^{\infty}(M)$-multilinearen Abbildungen
