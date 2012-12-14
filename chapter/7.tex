@@ -571,14 +571,12 @@ die \CmMark{Schnittkrümmung} der Ebene $\sigma$.
 %% Vorlesung <2012-12-14 Fri>
 %% 
 
-Es sei $e_1, \ldots, e_m \in \T_pM$ eine Orthonormalbasis bezüglich $g(p)$. Die für $X,Y \in \T_pM$ durch Spurbildung definierte Abbildung
+Es sei $e_1, \ldots, e_m \in  \T_pM$ eine Orthonormalbasis bezüglich $g(p)$. Die für $X,Y \in \T_pM$ durch Spurbildung definierte Abbildung
 \begin{align*}
-  \ric_p(X,Y) = \operatorname{spur} R(\cdot,X)Y = \sum_i\left<R(e_i,X)Y,e_i\right>
+  \ric_p(X,Y) = \gls{spur} R(\cdot,X)Y = \sum_i\left<R(e_i,X)Y,e_i\right>
 % spur = trace (tr)
 \end{align*}
-heißt \CmMark{Ricci-Tensor} in $p$.
-
-Aus den Symmetrien von $R$ folgt, dass $\ric_p$ symmetrisch ist.
+heißt \CmMark{Ricci-Tensor} in $p$. Aus den Symmetrien von $R$ folgt, dass $\ric_p$ symmetrisch ist.
 Es existiert ein $(1,1)$-Tensorfeld $\Ric$, so dass
 \begin{align*}
   \ric_p(X,Y) = \left<\Ric(X),Y\right>
@@ -591,14 +589,12 @@ für alle $p \in M, \ X,Y \in \T_pM$ gilt.
   \begin{align*}
     \frac{\ric_p(X,X)}{\|X\|^2} = \left<\Ric\left(\frac{X}{\|X\|}\right),\frac{X}{\|X\|}\right>
   \end{align*}
-die \CmMark{Ricci-Krümmung} in $p$ in Richtung $X$.
-\end{Dfn}
-
-Die Spur von $\Ric$
+die \CmMark{Ricci-Krümmung} in $p$ in Richtung $X$. Die Spur von $\Ric$
 \begin{align*}
-  \operatorname{scal}(p) = \operatorname{spur} ... \text{\textcolor{red}{Hier fehlt noch etwas!}}
+  \scal(p) = \spur \Ric_p(\cdot) = \sum_i \ric_p(e_i,e_i) = \sum_{i,j} \left\langle R(e_i,e_j)e_j,e_i \right\rangle
 \end{align*}
 heißt die \CmMark{Skalarkrümmung} von $M$ in $p$.
+\end{Dfn}
 
 
 %%% Local Variables: 

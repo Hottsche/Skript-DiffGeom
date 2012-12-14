@@ -1,20 +1,18 @@
-
 %% 
 %% Vorlesung <2012-12-14 Fri>, Fortsetzung
 %%
 
-\chapter{Geodätische und die Exponentialabbildung}
+\chapter{Geod\"atische und die Exponentialabbildung}
 
-\textit{Heuristik:} Geodätische sind Minimalstellen des Energiefunktionals $\gamma \mapsto E(\gamma) = \int \|\dot\gamma\|^2s$. 
-Was sind kritische Punkte dieser Abbildung? Für $f \in C^{\infty}(M)$ ist $p$ kritischer Punkt, wenn alle Richtungsableitungen verschwinden, d.h. $0 = X(f) = \difffrac[t=0]{}{t}(f(c(t)))$.
+\begin{emptythm}[Heuristik:] Geodätische sind Minimalstellen des Energiefunktionals $\gamma \mapsto E(\gamma) = \int \|\dot\gamma\|^2$. 
+Was sind kritische Punkte dieser Abbildung? Für $f \in C^{\infty}(M)$ ist $p$ kritischer Punkt, wenn alle Richtungsableitungen verschwinden, das hei"st $0 = X(f) = \difffrac[t=0]{}{t}(f(c(t)))$.
+\end{emptythm}
 
 \begin{center}
   \textcolor{red}{Abbildung: \quot{Kurve von Kurven}}
 \end{center}
 
-Eine \quot{Kurve} durch $\gamma$ ist eine sogenannte \CmMark[Variation|glatte]{glatte Variation} $h\colon[0,1]\times[0,1] \to M, h(s,t) = h_s(t)$ mit $h(0) = \gamma$ und $h_s(0) = p$, sowie $h_s(1) = q, \ \forall s \in [0,1]$.
-
-Dann ist
+Eine \quot{Kurve} durch $\gamma$ ist eine sogenannte \CmMark[Variation!glatte]{glatte Variation} $h\colon[0,1]\times[0,1] \to M$, $h(s,t) = h_s(t)$ mit $h_0 = \gamma$ und $h_s(0) = p$, sowie $h_s(1) = q$ f"ur alle $s \in [0,1]$. Dann ist
 \begin{align*}
   X(t) = \difffrac[s=0]{}{s}h_s(t)
 \end{align*}
@@ -22,93 +20,88 @@ ein glattes Vektorfeld entlang $\gamma$.
 Ferner gilt $X(0) = 0$ und $X(1) = 0$.
 Nun betrachte
 \begin{align*}
-  0 & = \difffrac[s=0]{}{s}E(h_s) = \int \difffrac[s=0]{}{s} \left<\difffrac{}{t} h_s,\difffrac{}{t}h_s\right>\\
-  & = \int_0^1 2 \left<\nabla_s \difffrac{}{t}h_s(t), \difffrac{}{t}h_s(t)\right>\\
-& = \int_0^1 2 \left<\nabla_t\underbrace{\difffrac{}{s}h_s(t)}_{=X(t)}, \difffrac{}{t}h_s(t)\right>\\
-& = \int_0^1 2 \left<\nabla_tX,\difffrac{}{t}h_s(t)\right>\\
-& = 2 \int_0^1 \difffrac{}{t}\left<X,\difffrac{}{t}h_s(t)\right> - \left<X,\nabla_t\difffrac{}{t}h_s(t)\right>\\
-& = \underbrace{2 \int_0^1 \difffrac{}{t}\left<X,\difffrac{}{t}h_s(t)\right>}_{=0} - 2 \int_0^1 \left<X,\nabla_t\difffrac{}{t}h_s(t)\right>\\
-& = -2 \int_0^1 \left<X(t),\nabla_t\dot\gamma(t)\right>\dop t
+	0  = \difffrac[s=0]{}{s}E(h_s) &= \int_{0}^{1} \difffrac[s=0]{}{s} \left<\difffrac{}{t} h_s(t),\difffrac{}{t}h_s(t)\right>\\
+	& = \int_0^1 2 \left<\nabla_s \difffrac{}{t}h_s(t), \difffrac{}{t}h_s(t)\right>\\
+	& = \int_0^1 2 \left<\nabla_t\smash{\underbrace{\difffrac{}{s}h_s(t)}_{=X(t)}}, \difffrac{}{t}h_s(t)\right> \vphantom{\underbrace{\difffrac{}{s}h_s(t)}_{=X(t)}}\\
+	& = \int_0^1 2 \left<\nabla_tX,\difffrac{}{t}h_s(t)\right>\\
+	& = 2 \int_0^1 \difffrac{}{t}\left<X,\difffrac{}{t}h_s(t)\right> - \left<X,\nabla_t\difffrac{}{t}h_s(t)\right>\\
+	& = \underbrace{2 \int_0^1 \difffrac{}{t}\left<X,\difffrac{}{t}h_s(t)\right>}_{=0} - 2 \int_0^1 \left<X,\nabla_t\difffrac{}{t}h_s(t)\right>\\
+	& = -2 \int_0^1 \left<X(t),\nabla_t\dot\gamma(t)\right>\dop t
 \end{align*}
 
 % Definition 8.1
 \begin{Dfn}
-  Eine glatte Kurve $c$ in $M$ heißt \CmMark{Geodätische}\footnote{Die Äquivalenz zur bereits bekannten Definition wird in Kürze gezeigt.}, wenn $\nabla_t\dot c \cong 0$ gilt.
+  Eine glatte Kurve $c$ in $M$ heißt \CmMark{Geod\"atische}\footnote{Die Äquivalenz zur bereits bekannten Definition wird in Kürze gezeigt.}, wenn $\nabla_t\dot c \equiv 0$ gilt.
 \end{Dfn}
 
-Ist $c$ Geodätische, so ist $c$ proportional zur Bogenlängenparametrisierung, d.h. $\|\dot c\| = $const, denn $\difffrac{}{t}\|\dot c(t)\|^{2} = \difffrac{}{t}\left<\dot c(t),\dot c(t) \right> = 2\left<\nabla_t\dot c(t), \dot c(t)\right> = 0$ .
-
+Ist $c$ Geodätische, so ist $c$ proportional zur Bogenlängenparametrisierung, das hei"st $\|\dot c\| = $const, denn $\difffrac{}{t}\|\dot c(t)\|^{2} = \difffrac{}{t}\left<\dot c(t),\dot c(t) \right> = 2\left<\nabla_t\dot c(t), \dot c(t)\right> = 0$.
 Mit $c$ ist auch jede affine Umparametrisierung $t \mapsto c(at + b)$ eine Geodätische.
 
 % Proposition 8.2
 \begin{Prop}
-  Für jedes $p \in M$ und $v \in \T_pM$ existiert genau eine Geodätische $\gamma_{p,v}\colon[0,l] \to M$ mit $\gamma_{p,v}(0) = p$ und $\dot \gamma_{p,v}(0) = v$.
+Für jedes $p \in M$ und $v \in \T_pM$ existiert genau eine Geodätische $\gamma_{p,v}\colon[0,\epsilon] \to M$ mit $\gamma_{p,v}(0) = p$ und $\dot \gamma_{p,v}(0) = v$.
 Zudem hängt $\gamma_{p,v}$ glatt von $p$ und $v$ ab.
 \end{Prop}
 
-\begin{bew}
-  \begin{enumerate}[label=(\Alph*)]
-  \item Es sei $(\varphi, U)$ eine Karte um $p$, $\gamma^i(t) = \varphi^i(\gamma(t))$. Dann besitzt das folgende Anfangswertproblem
-    \begin{align*}
-      \begin{cases}
-        0 = \nabla_t\dot \gamma|_t = \sum_k\left(\ddot \gamma^k(t) + \sum_{ij}\Gamma_{ij}^k(\gamma(t))\dot \gamma^i(t)\gamma^j(t)\right) \pdifffrac[p(t)]{}{x^k}\\
-        \gamma^i(0) = \varphi^i(p)\\
-        \dot\gamma^i(0) ) \xi^i, \quad v = \sum \xi^i_p\pdifffrac[p]{}{x^i}
-      \end{cases}
-    \end{align*}
-    eine eindeutige Lösung (lokal), wleche glatt von den Startwerten $p$ und $v$ abhängt.
-  \item (Alternativ)
-    Ist $(\varphi, U)$ eine Karte von $M$ um $p$, dann ist
-    \begin{align*}
-      \overline \varphi \colon & \T M|_U \to \R^{2m}\\
-      & X_p-\sum \xi^i\pdifffrac[p]{}{x^i} \mapsto \overline\varphi(X_p) = (\varphi^1(p), \ldots, \varphi^m(p), \xi_p^1, \ldots, \xi_p^m) =: (y^1, \ldots, y^{2m})
-    \end{align*}
-    eine Karte von $\T M$.
-
-    Es sei $S$ das durch
-    \begin{align*}
-      S \colon & \T M \to \T\T M\\
-      & X = \sum \xi^i \pdifffrac{}{x^i} \mapsto \sum_i^m \xi^i \pdifffrac{}{y^i} - \sum_{i,j,k=1}^{m} \Gamma_{ij}^k \xi^i\xi^j\pdifffrac{}{y^{m+k}}
-    \end{align*}
-    defninierte glatte Vektorfeld auf $\T M$.
-
-    $g^t$ ist genau dann Integralkurve von $S$ durch $X_p = \sum \xi_p^i\pdifffrac[p]{}{x^i}$, wenn
-    \begin{align*}
-      \difffrac{}{t}g^t = \dot g^t = S(g^t) \text{ und } g^0 = X_p
-    \end{align*}
-    Setzt man $\overline \varphi(g^t) = (\gamma^1(t), \ldots, \gamma^m(t),\eta^1(t), \ldots, \eta^m(t))$, so ist dies genau dann der Fall, wenn gilt:
-    \begin{align*}
-      & (\dot\gamma^1,\ldots, \dot\gamma^m,\dot\eta^1,\ldots, \dot\eta^m) = \left(\eta^1, \ldots, \eta^m, -\sum_{i,j}\Gamma_{ij}^1\eta^i\eta^j, \ldots, -\sum_{i,j}\Gamma_{ij}^m\eta^i\eta^j\right)\\
-      & \rightsquigarrow \eta^i = -\dot\gamma^i \text{ und } \ddot\gamma-\sum_{i,j}\Gamma_{ij}^k\dot\gamma^i,\dot\gamma^j
-    \end{align*}
-    und 
-    \begin{align*}
-      (\gamma^1(0), \ldots, \gamma^m(0), \eta^1(0), \ldots, \eta^m(0) = \overline\varphi(X_p) = (\varphi^1(p), \ldots, \varphi^m(p), xi_p^1, \ldots, \xi_p^m)
-    \end{align*}
-    also genau dann, wenn
-    \begin{align*}
-      \gamma(t) = \overline\varphi^{-1}(\gamma^1(t), \ldots, \gamma^m(t))
-    \end{align*}
-    eine Geodätische durch $p$ mit $\dot \gamma(0) = X_p$ ist.
-
-    Der maximale Fluss $g^t$ von $S$ heißt \CmMark[Fluss|geodätischer]{geodätischer Fluss}.
-    Mit Satz \ref{satz-4-9} folgt die Aussage der Proposition.
-  \end{enumerate}
-\end{bew}
+\begin{bew}\begin{enumerate}[label=(\Alph*),leftmargin=*,widest=B]
+\item
+	Es sei $(\varphi, U)$ eine Karte um $p$, $\gamma^i(t) = \varphi^i(\gamma(t))$. Dann besitzt das folgende Anfangswertproblem
+	\begin{align*}
+		\begin{cases}
+			0 = \nabla_t\dot \gamma|_t = \sum_k\left(\ddot \gamma^k(t) + \sum_{ij}\Gamma_{ij}^k\big(\gamma(t)\big)\dot \gamma^i(t)\gamma^j(t)\right) \pdifffrac[\gamma(t)]{}{x^k}\\
+			\gamma^i(0) = \varphi^i(p)\\
+			\dot\gamma^i(0) = \xi_p^i, \quad v = \sum \xi^i_p\pdifffrac[p]{}{x^i}
+		\end{cases}
+	\end{align*}
+	eine eindeutige Lösung (lokal), wleche glatt von den Startwerten $p$ und $v$ abhängt.
+\item
+	(Alternativ) Ist $(\varphi, U)$ eine Karte von $M$ um $p$, dann ist
+	\[ \overline \varphi \colon \left\{\begin{array}{cccl}
+		\T M|_U &\to& \R^{2m}&\\
+		X_p=\sum \xi_p^i\pdifffrac[p]{}{x^i} &\mapsto& \overline\varphi(X_p) &= (\varphi^1(p), \ldots, \varphi^m(p), \xi_p^1, \ldots, \xi_p^m)\\
+		&&& =: (y^1, \ldots, y^{2m})
+	\end{array}\right.\]
+	eine Karte von $\T M$.	
+	Es sei $S$ das durch
+	\[ S \colon \left\{ \begin{array}{ccc}
+		\T M &\to& \T\T M\\
+		X = \sum \xi^i \pdifffrac{}{x^i} &\mapsto& \sum_i^m \xi^i \pdifffrac{}{y^i} - \sum_{i,j,k=1}^{m} \Gamma_{ij}^k \xi^i\xi^j\pdifffrac{}{y^{m+k}}
+	\end{array}\right.\]
+	defninierte glatte Vektorfeld auf $\T M$.	
+	$g^t$ ist genau dann Integralkurve von $S$ durch $X_p = \sum \xi_p^i\pdifffrac[p]{}{x^i}$, wenn
+	\begin{align*}
+		\difffrac{}{t}g^t = \dot g^t = S(g^t) \text{ und } g^0 = X_p.
+	\end{align*}
+	Setzt man $\overline \varphi(g^t) = (\gamma^1(t), \ldots, \gamma^m(t),\eta^1(t), \ldots, \eta^m(t))$, so ist dies genau dann der Fall, wenn gilt:
+	\begin{align*}
+		& (\dot\gamma^1,\ldots, \dot\gamma^m,\dot\eta^1,\ldots, \dot\eta^m) = \left(\eta^1, \ldots, \eta^m, -\sum_{i,j}\Gamma_{ij}^1\eta^i\eta^j, \ldots, -\sum_{i,j}\Gamma_{ij}^m\eta^i\eta^j\right)\\
+		& \rightsquigarrow \eta^i = \dot\gamma^i \text{ und } \ddot\gamma = -\sum_{i,j}\Gamma_{ij}^k\dot\gamma^i \dot\gamma^j
+	\end{align*}
+	und 
+	\begin{align*}
+		(\gamma^1(0), \ldots, \gamma^m(0), \eta^1(0), \ldots, \eta^m(0) = \overline\varphi(X_p) = (\varphi^1(p), \ldots, \varphi^m(p), \xi_p^1, \ldots, \xi_p^m)
+	\end{align*}
+	also genau dann, wenn
+	\begin{align*}
+		\gamma(t) = \overline\varphi^{-1}(\gamma^1(t), \ldots, \gamma^m(t))
+	\end{align*}
+	eine Geodätische durch $p$ mit $\dot \gamma(0) = X_p$ ist.	
+	Der maximale Fluss $g^t$ von $S$ heißt \CmMark[Fluss!geod\"atischer]{geod"atischer Fluss}.
+	Mit Satz \ref{satz-4-9} folgt die Aussage der Proposition.
+\end{enumerate}\end{bew}
 
 \begin{center}
   \textcolor{red}{Abbildung: geodätischer Fluss}
 \end{center}
 
 Für $v \in \T_pM$ sei $\gamma_v(t) = \pi(g^t(v))$ die eindeutige Geodätische mit $\gamma_v(0) = p$ und $\dot \gamma_v(0) = v$.
+Ist $\delta \in \R$ und $c(t) = \gamma_v(\delta t)$, so ist $c$ eine Geodätische durch $p$ mit $\dot c(0) = \delta v$, das hei"st $c = \gamma_{\delta v}$, beziehungsweise $\gamma_{\delta v}(t) = \gamma_v(\delta t)$.
 
-Ist $\delta \in \R$ und $c(t) = \gamma_v(\delta t)$, so ist $c$ eine Geodätische durch $p$ mit $\dot c(0) = \delta v$, d.h. $c = \gamma_{\delta v}$ bzw. $\gamma_{\delta v}(t) = \gamma_v(\delta t)$.
-
-Der Definitionsbereich $\mathcal D_S$ des geodätischen Flusses ist eine offene Menge in $\R \X \T_pM$ und somit sind sowohl $\mathcal D = \{v \in \T M \mid (1,v) \in \mathcal D_S\}$, als auch $\mathcal D_p = \mathcal D \cap T_pM$ offen für alle $p \in M$ (in $\T M$ bzw. $\T_pM$). Weiterhin gilt $0_p \in \mathcal D_p$.
+Der Definitionsbereich $\mathcal D_S$ des geodätischen Flusses ist eine offene Menge in $\R \X \T_pM$ und somit sind sowohl $\mathcal D = \{v \in \T M \mid (1,v) \in \mathcal D_S\}$, als auch $\mathcal D_p = \mathcal D \cap T_pM$ offen für alle $p \in M$ (in $\T M$, beziehungsweise $\T_pM$). Weiterhin gilt $0_p \in \mathcal D_p$.
 
 % Definition 8.3
 \begin{Dfn}
-  Die Abbildung $\exp_p\colon\mathcal D_p \to M, \ v \mapsto \gamma_v(1)$ heißt CmMark{Exponentialabbildung}.
+  Die Abbildung $\exp_p\colon\mathcal D_p \to M$, $v \mapsto \gamma_v(1)$ heißt \CmMark{Exponentialabbildung}.
 \end{Dfn}
 
 %%% Local Variables: 
