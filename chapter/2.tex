@@ -65,12 +65,12 @@ Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\varphi,U)$ von $M
   heißt (geometrischer) \CmMark[Tangential!-raum]{Tangentialraum} an $M$ in $p$.
 \end{Dfn}
 
-\begin{Bem}
+\begin{bem}
   Mit den Bezeichnungen wie oben ist die folgende Abbildung bijektiv:
   \begin{align*}
     A \colon \T_p^{\text{geo}}M \to \R^n, [c] \mapsto \difffrac[t=0]{}{t}(\varphi \circ c).
   \end{align*}
-\end{Bem}
+\end{bem}
 
 \begin{bew}
 Zu jedem Vektor $v \in \R^n$ sei $B(v) = [t \mapsto \varphi^{-1}(\varphi(p) + tv)]$ die Äquivalenzklasse der abgebildeten Kurve auf der Mannigfaltigkeit.
@@ -146,17 +146,16 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
 % 3. Vorlesung <2012-10-23 Tue>
 
 \paragraph{Motivation: Richtungsableitungen im $\R^n$}\hfill
-\begin{Bem}
-  
-  Für $f,g \in C^{\infty}(\R^n), \ x,y \in \R^n$ ist die \CmMark{Richtungsableitung} wie folgt definiert:
-  \begin{align*}
-    \partial_vf(x) = \D f(x) \cdot v = \difffrac[t=0]{}{t}f(x+tv).
-  \end{align*}
-  Diese erfüllt die Leibniz-Regel:
-  \begin{align*}
-    \partial_v(fg)(x) = \partial_vf(x)\cdot g(x) + f(x) \cdot \partial_v(g)(x).
-  \end{align*}
-\end{Bem}
+\begin{bem}
+Für $f,g \in C^{\infty}(\R^n), \ x,y \in \R^n$ ist die \CmMark{Richtungsableitung} wie folgt definiert:
+\begin{align*}
+	\partial_vf(x) = \D f(x) \cdot v = \difffrac[t=0]{}{t}f(x+tv).
+\end{align*}
+Diese erfüllt die Leibniz-Regel:
+\begin{align*}
+	\partial_v(fg)(x) = \partial_vf(x)\cdot g(x) + f(x) \cdot \partial_v(g)(x).
+\end{align*}
+\end{bem}
 
 \begin{Dfn}[Algebraische Definition des Tangentialraumes]
   Es sei $M$ eine glatte Mannigfaltigkeit und $p\in M$. Ein (algebraischer) \CmMark[Tangential!-vektor]{Tangentialvektor} an $M$ in $p$ ist eine Lineare Abbildung $X_p \colon C^{\infty}(M) \to \R$, welche die Leibniz-Regel erfüllt:
@@ -167,7 +166,7 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \varphi^{-1}(\varphi(p) + 
   Die algebraischen Tangentialvektoren bilden einen reellen Vektorraum $\T_p^{\text{alg}}M$, den Tangentialraum an $M$ in $p$.
 \end{Dfn}
 
-\begin{Lemma}
+\begin{Lemma}\label{lemma-2-5}
   Es sei U eine Umgebung von $p \in M$. Dann existiert eine Umgebung $V \subset U$ von $p$ und eine glatte reellwertige Funktion $\sigma \in C^{\infty}(M)$ mit den Eigenschaften $\sigma|_V = 1$ und $\gls{supp}(\sigma) \subset U$.
 \end{Lemma}
 
@@ -209,7 +208,7 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
 
 \begin{bew}\begin{enumerate}[label=(\roman*),widest=ii,leftmargin=*]
 \item[(ii)]
-	Es sei $U$ eine Umgebung von $p$ mit $f|_U = g|_U$. Ist dann $\sigma$ wie in \textcolor{red}{Lemma 2.5}, so gilt $\sigma f = \sigma g$ und aus
+	Es sei $U$ eine Umgebung von $p$ mit $f|_U = g|_U$. Ist dann $\sigma$ wie in Lemma \ref{lemma-2-5}, so gilt $\sigma f = \sigma g$ und aus
 	\begin{align*}
 		X_p(\sigma)f(p)+\sigma(p)X_p(f) = X_{p}(\sigma f) = X_p(\sigma g) = X_p(\sigma) g(p) + \sigma(p) X_p(g)
 	\end{align*}
@@ -222,7 +221,7 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
 	also $X_p(1) = 0$.
 \end{enumerate}\end{bew}
 
-\begin{Bem}
+\begin{bem}
   Also gilt für $f \in C^{\infty}(M)$ und $g \in C^{\infty}(U)$ direkt:
   \begin{align*}
     & \sigma g =
@@ -237,10 +236,10 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
   \begin{align*}
     \pdifffrac[p]{}{x^i} \in \T_p^{\text{alg}}M, \pdifffrac[p]{}{x^i}(f) = \partial_i(f \circ \varphi^{-1})(\varphi(p)) = \D(f \circ \varphi^{-1})|_{\varphi(p)}e_i.
   \end{align*}
-\end{Bem}
+\end{bem}
 
 % Satz 2.7
-\begin{Satz}
+\begin{Satz}\label{satz-2-7}
   Die Vektoren $\pdifffrac[p]{}{x^1},\ldots,\pdifffrac[p]{}{x^n}$ bilden eine Basis von $T_p^{\text{alg}}M$.
 \end{Satz}
 
@@ -271,9 +270,9 @@ Für $x_0=\varphi(p) \in \R^n, \ B_{\rho}(x_0) \subset \varphi(U)$ und für $g =
 \end{align*}
 \end{bew}
 
-\begin{Bem}
+\begin{bem}
   Ist $X_p=\sum \xi^i\pdifffrac[p]{}{x^i}$, so gilt $\xi^i = X_p(\varphi^i)$.
-\end{Bem}
+\end{bem}
 
 \begin{bew}[Beweis des Lemmas]
 Es gilt:
@@ -283,7 +282,7 @@ Es gilt:
 \end{bew}
 
 % Satz 2.9
-\begin{Satz}[Äquivalenz der Tangentialraumbegriffe]
+\begin{Satz}[Äquivalenz der Tangentialraumbegriffe]\label{satz-2-9}
   Die Abbildung
   \begin{align*}
     J_p \colon \T_p^{\text{geo}}M \to \T_p^{\text{alg}}M, \ J_{p}[c](f) = \difffrac[t=0]{}{t}(f\circ c)
@@ -302,16 +301,16 @@ Es gilt:
   Ist $[c] \in \Kern J_p$, so folgt aus $0 = J_p[c](\varphi^i) = \difffrac[t=0]{}{t}(\varphi^i \circ c)$, dass $\difffrac[t=0]{}{t}(\varphi \circ c) = 0$ gilt, also $[c] = 0$. Damit ist $J_p$ injektiv, also ein Isomorphismus.
 \end{bew}
 
-\begin{Bem}
+\begin{bem}
   \begin{enumerate}[label=\arabic*)]
   \item Ist $X_p = \sum \xi^i\pdifffrac[p]{}{x^i}$, so gilt $X_p = \dot c(0)$ für $c(t) = \varphi^{-1}(\varphi(p) + t\xi)$.
 \item Für jede glatte Kurve $c$ durch $p$ ist $\difffrac[t=0]{}{t}(\varphi \circ c)$ der Koeffizientenvektor von $\dot c(0)$ in der Basis $\pdifffrac[p]{}{x^i}$.
   \end{enumerate}
-\end{Bem}
+\end{bem}
 
 
 % Satz 2.10
-\begin{Satz}[Transformationsverhalten bei Kartenwechsel]
+\begin{Satz}[Transformationsverhalten bei Kartenwechsel]\label{satz-2-10}
   Es seien $\varphi$ und $\psi$ Karten in $M$ um $p$ und es bezeichnen $\pdifffrac[p]{}{x^i}$ und $\pdifffrac[p]{}{y^i}$ die damit assoziierten Basen von $\T_pM$. Dann gilt
   \begin{align*}
     \pdifffrac[p]{}{x^i} = \sum_j \partial_i(\psi^j \circ \varphi^{-1})(\varphi(p)) \pdifffrac[p]{}{y^j}.
@@ -330,7 +329,6 @@ Es sei $X_p = \sum \xi^i \pdifffrac[p]{}{x^i} = \sum \eta^i\pdifffrac[p]{}{y^i}$
   \end{align*}
 \end{bew}
 
-\textcolor{red}{Kapitel 2 hat drei Nummerierungen zu viel, bitte die Nummerierung korrigieren}
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "../skript-diffgeom"

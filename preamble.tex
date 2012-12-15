@@ -83,7 +83,7 @@
 %\newcommand{\tikzkartoffel}[2][1]{}		
 \newcommand{\tikzsegel}[2][1]{
 	% definiere die Knoten relativ zum ersten Knoten skaliert mit dem Faktor
-	\coordinate (segel1) at #2; \coordinate (segel2) at ($(segel1)+#1*(3.5,1.5)$); \coordinate (segel3) at ($(segel1)+(2.5,0)$);
+	\coordinate (segel1) at #2; \coordinate (segel2) at ($(segel1)+#1*(3.5,1.5)$); \coordinate (segel3) at ($(segel1)+#1*(2.5,0)$);
 	%\fill (segel1) circle (0.05) (segel2) circle (0.05) (segel3) circle (0.05);
 	
 	% die Richtungsvektoren der Bezier Tangenten fuer die einzelnen Knoten (der Erste und der letzte haben keine Tangente)
