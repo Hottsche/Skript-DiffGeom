@@ -31,8 +31,67 @@ f"ur $\tilde c(t) = f(\gamma_1(\varepsilon) \gamma_2(t))$. Dann ist $c$ die Kür
 \end{Loes}
 
 \begin{Loes}
-asdf
+Sei $M$ eine Untermannigfaltigkeit von $\R^k$ und die Abbildung $\nabla^M: \calV(M) \X \calV(M) \to \calV(M)$ mit $(\nabla_X^MY)_p :=((\nabla_{\tilde X} \tilde Y)_p)^{\T_pM}$, wobei $\tilde X, \tilde Y$ Fortsetzungen von $X, Y$ sind. Wir haben zu zeigen:
+\begin{enumerate}[label=(\arabic*.\arabic*)]
+\item[(0)]
+	Unabh"angigkeit von der Wahl der Fortsetzungen
+\item[(1.1)]
+	$\nabla_{X_1+X_2}^M Y = \nabla_{X_1}^M Y + \nabla_{X_2}^M Y$
+\item[(1.2)]
+	$\nabla_{fX}^M Y = f \nabla_{X}^M Y$
+\item[(2.1)]
+	$\nabla_X^M (Y_1 + \lambda Y_2) = \nabla_X^M Y_1 + \lambda \nabla_X^M Y_2$
+\item[(2.2)]
+	$\nabla_X^M (fY) = X(f) \cdot Y + f \nabla_X^M Y$
+\item[(3)]
+	$\nabla_X^M Y \in \calV(M)$ (klar ist, dass auf $\T_pM$ projiziert wird)
+\end{enumerate}
+Wir werden nun diese einzelnen Behauptungen beweisen, wobei der Beweis von (2.1) in (1.1) enthalten ist.
+\begin{enumerate}[label=(\arabic*.\arabic*)]
+\item[(0)]
+	Es sei $c: (-\varepsilon, \varepsilon) \to M$ glatt mit $c(0) = p$ und $\dot c(0) = X_p$. Damit erh"alt man folgendes:
+	\begin{align*}
+		((\nabla_{\tilde X} \tilde Y))^{\T_pM} &= ((\D \tilde Y)_p \tilde X_p)^{\T_pM}&\\
+		&= ((\D \tilde Y)_p X_p)^{\T_pM} & \Rightarrow \text{unabh. von der Wahl von }\tilde X\\
+		&= \left( \difffrac[t=0]{}{t}\left( \tilde Y \circ c(t) \right) \right)^{\T_pM}&\\
+		&= \left( \difffrac[t=0]{}{t}\left( Y \circ c(t) \right) \right)^{\T_pM} & \Rightarrow \text{unabh. von der Wahl von }\tilde Y\\
+	\end{align*}
+\item[(1.1)]
+	W"ahle $\tilde X_1 + \tilde X_2$, beziehungsweise $\tilde Y_1 + \lambda \tilde Y_2$, als Fortsetzung entsprechend der Regeln f"ur $\nabla$. Daraus folgen dann die Behauptungen.
+\item[(1.2)]
+	Es gilt:
+	\begin{align*}
+		(\nabla_{fX}^MY)_p &= \left( (\nabla_{f\tilde X} \tilde Y)_p \right)^{\T_pM} = \left( (D \tilde Y)_p \smash{\underbrace{(f \tilde X)_p}_{=f(p)X_p}} \right)^{\T_pM} \vphantom{\underbrace{(f \tilde X)_p}_{=f(p)X_p}}\\
+		&= \left( (\D \tilde Y)_p (f(p)X_p) \right)^{\T_pM}\\
+		&= f(p) \left( (\D \tilde Y)_p X_p \right)^{\T_pM}\\
+		&= f(p) \left( \nabla_X^M Y)_p \right)
+	\end{align*}
+\item[(2.2)]
+	Es gilt:
+	\begin{align*}
+		\left( \nabla_X^M(fX) \right)_p &= \left( \big(\D\widetilde{(fY)}\big)_p \cdot X_p \right)^{\T_pM}\\
+		&= \left( \difffrac[t=0]{}{t} \Big( \widetilde{(fY)} \circ c \Big) (t) \right)^{\T_pM}\\
+		&= \left( \difffrac[t=0]{}{t} \Big( (fY) \circ c \Big) (t) \right)^{\T_pM}\\
+		&= \left( \difffrac[t=0]{}{t} \Big( f\big(c(t)\big) \cdot Y\big(c(t)\big) \Big) (t) \right)^{\T_pM}\\
+		&= \left( \difffrac[t=0]{}{t} \Big( f\big(c(t)\big) \Big) Y\big(c(0)\big) + f\big(c(0)\big) \cdot \difffrac[t=0]{}{t} \Big( Y\big(c(t)\big) \Big) \right)^{\T_pM}\\
+		&= \left( X_P(f) \cdot Y_p + f(p)(\nabla_{\tilde X} \tilde Y)_p \right)^{\T_pM}\\
+		&= X_p(f) \cdot Y_p^{\T_pM} + f(p)\left((\nabla_{\tilde X} \tilde Y)_p \right)^{\T_pM}\\
+		&= X_p(f) Y_p + f(p)(\nabla_X^MY)_p
+	\end{align*}
+\item[(3)]
+	Es gilt $(\nabla_X^MY)_p \in \T_pM$ (klar wegen Projektion) und h"angt glatt von $p$ ab. Sind $e_1, \ldots ,e_n$ um $p$, definiere glatte Vektorfelder, so dass f"ur $q \in \mathrm{Umg}(p)$ $e_1|_q, \ldots ,e_n|q$ (erhalte mit Gram-Schmitt (glatt!)) eine Orthonormalbasis ist, so ist (lokal):
+		\[ \nabla_X^M Y = \sum_{i=1}^n \langle \D \tilde Y \cdot \tilde X, e_i \rangle \cdot e_i \Rightarrow \text{glatt} \]
+	(Erhalte $e_1,\ldots ,e_n$ aus beliebigen lokalen Basisvektoren durch Gram-Schmitt.)
+\end{enumerate}
 \end{Loes}
+
+\begin{bem}\begin{itemize}
+\item
+	$\nabla^M$ ist der \CmMark[Zusammenhang!Levi-Civita-]{Levi-Civita Zusammenhang} von $(M,g)$ mit $g(X,Y) = \langle X, Y \rangle$.
+\item
+	Die Projektion auf $\T_pM$ ist n"otig, zum Beispiel $M = S^1$, $\tilde X = \tilde Y = \left(\begin{smallmatrix} -Y \\ X \end{smallmatrix}\right) \in \calV(\R^2) \Rightarrow X = Y = \tilde X|_{S^1} \in \calV(S^1)$
+		\[ \D \tilde Y \cdot \tilde X = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \cdot \begin{pmatrix} -Y \\ X \end{pmatrix} = \begin{pmatrix} -X \\ -Y \end{pmatrix} = -\begin{pmatrix} X \\ Y \end{pmatrix} \in \left( \T_{(X,Y)}S^1 \right)^\perp \]
+\end{itemize}\end{bem}
 
 \begin{Loes}\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
 \item
