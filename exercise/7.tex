@@ -95,7 +95,27 @@ Wir werden nun diese einzelnen Behauptungen beweisen, wobei der Beweis von (2.1)
 
 \begin{Loes}\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
 \item
-	asdf
+	Es sei $E$ ein Vektorb"undel "uber $M$ und $\nabla$ ein Zusammenhang auf $E$. Betrachte $(\nabla_X^*s^*)_p(v) := X_p(s^*\tilde v) - s_p^*((\nabla_X \tilde v)_p)$ mit $X \in \calV(M)$, $s^* \in \Gamma(E^*)$, $v \in E_p$, $\tilde v \in \Gamma(E)$ und $\tilde v_p = v$.
+	Warum dieses $\nabla^*$ betrachten? F"ur $s^* \in \Gamma(E^*)$, $s \in \Gamma(E)$ sei
+		\[ \langle s^*, s \rangle := s^*(s) \in C^\infty(M) \]
+	Damit ist
+	\begin{align*}
+		X(\langle s^*, s \rangle) &= \langle \nabla_X^* s^*, s \rangle + \langle s^*, \nabla_X s \rangle\\
+		&= (\nabla_X^* s^*)(s) + s^*(\nabla_X s)
+	\end{align*}
+	Das f"uhrt zu
+		\[ (\nabla_X^* s^*)(s) = X(s^*(s)) - s^*(\nabla_Xs) \]
 \item
-	asdf
+	Seien $E_1$ und $E_2$ Vektorb"undel mit Zusammenh"angen $\nabla^1$ und $\nabla^2$. Wir haben zu zeigen, dass es genau einen Zusammenhang $\nabla$ auf $E_1 \otimes E_2$ gibt mit $\nabla_X(S_1 \otimes S_2) = (\nabla_X^1 s_1) \otimes s_2 + s_1 \otimes (\nabla_X^2 s_2)$.
+	\begin{description}[font=\normalfont\itshape]
+	\item[Eindeutigkeit:]
+		Seien $s \in \Gamma(E_1 \otimes E_2)$ und seien $e_1^1,\ldots ,e_m^1, e_1^2,\ldots ,e_n^2 : U \to E_1$ beziehungsweise $E_2$ lokale Basisschnitte von $E_1$ und $E_2$. Daraus folgt $s|_U = \sum \sigma_{ij} e_i^1 \otimes e_j^2$.
+		\begin{align*}
+			\nabla_x(s)|_U &= \nabla_X \left( \smash{\sum_{ij}} \sigma_{ij} e_i^1 \otimes e_j^2 \right) \vphantom{\sum_{ij}}\\
+			&= \sum_{ij} \left( X(\sigma_{ij})\cdot e_i^1 \otimes e_j^2 + \sigma_{ij} \nabla_X (e_i^1 \otimes e_j^2) \right)\\
+			&= \sum_{ij} \left( X(\sigma_{ij}) e_i^1 \otimes e_j^2 + \sigma_{ij}\big((\nabla_X^1 e_i^1) \otimes e_j^2 + e_i^1 \otimes (\nabla_X^2 e_j^2)\big) \right)
+		\end{align*}
+	\item[Existenz:]
+		Zeige die Unabh"angigkeit von der Wahl der $e_i^k$.
+	\end{description}
 \end{enumerate}\end{Loes}
