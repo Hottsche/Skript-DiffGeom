@@ -53,7 +53,7 @@ Nun betrachte
 \end{align*}
 
 % Definition 8.1
-\begin{Dfn}
+\begin{Dfn}\label{dfn-8-1}
   Eine glatte Kurve $c$ in $M$ heißt \CmMark{Geod\"atische}\footnote{Die Äquivalenz zur bereits bekannten Definition wird in Kürze gezeigt.}, wenn $\nabla_t\dot c \equiv 0$ gilt.
 \end{Dfn}
 
@@ -147,6 +147,153 @@ Der Definitionsbereich $\mathcal D_S$ des geodätischen Flusses ist eine offene 
 \begin{Dfn}
   Die Abbildung $\exp_p\colon\mathcal D_p \to M$, $v \mapsto \gamma_v(1)$ heißt \CmMark{Exponentialabbildung}.
 \end{Dfn}
+
+
+%% 
+%% Vorlesung <2012-12-18 Tue>
+%%
+
+Es wurde bereits gezeigt, dass $\nabla_t \dot \gamma_v \equiv 0$ (Geodätische Differentialgelichung).
+
+Die Exponentialabbildung is nach Satz \textcolor{red}{4.7 (?!)} glatt.
+Es gilt $\exp_p(0_p) = p$.
+Zur Berechnung des Differentiales von $\exp_p$ in $0_p$
+\begin{align*}
+  \exp_{p*0_p} \colon \T_{0_p}\T_pM \to \T_pM
+\end{align*}
+identifiziert man $\T_{0_p}\T_pM$ mit $\T_pM$.
+Es gilt
+\begin{align*}
+  \exp_{p*0_p}(v) = \difffrac[t=0]{}{t}\exp_p(tv) = \difffrac[t=0]{}{t}\gamma_{tv}(1) = \difffrac[t=0]{}{t}\gamma_v(t) = \dot \gamma_v(0) = v.
+\end{align*}
+
+Es existiert für alle $p \in M$ eine Umgebung $V$ von $0_p \in \T_pM$ und $U$ von $p$, so dass $\exp_p \colon V \to U$ ein Diffeomorphismus ist.
+
+Wählt man eine Orthonormalbasis $e_1, \ldots, e_m$ von $\T_pM$ und setzt
+\begin{align*}
+  \psi \colon \T_pM \to \R^m, v = \sum_i b^ie_i \mapsto (b^1, \ldots, b^m),
+\end{align*}
+so ist $(\psi \circ \exp_p|_U^{-1}, U)$ eine Karte von $M$ um $p$.
+
+Im Allgemeinen ist dies keine Isometrie!
+
+% Definition 8.4
+\begin{Dfn}
+  Diese Karte bezeichnet man als \CmMark{Riemannsche Normalkoordinaten}.
+\end{Dfn}
+
+% Proposition 8.5
+\begin{Prop}
+  In Riemannschen Normalkoordinatn gilt für alle $i,j,k \leq m$:
+  \begin{enumerate}[label=(\roman*)]
+  \item $g_{ij}(0) = \delta_{ij}$
+  \item $\Gamma^k_{ij}(0) = 0$
+  \item $\partial_k g_{ij}(0) = \pdifffrac[0]{g_{ij}}{x^k} = 0$
+  \end{enumerate}
+\end{Prop}
+
+Beweis zur Übung.
+
+\section{Polarkoordinaten}
+
+Es ist $\varphi = (r, \vartheta^1, \ldots, \vartheta^{m-1})$ die Hintereinanderausführung von Riemannschen Normalkoordinaten des $\R^m$.
+
+\begin{center}
+  \textcolor{red}{Abbildung: Zurückziehen von Polarkoordinaten via Riemannscher Normalkoordinaten.}
+\end{center}
+
+Die Umkehrabbildung ist ein Diffeomorphismus
+\begin{align*}
+  f \colon (0, \varepsilon) \times S^{m-1} \to U \subset M, \ 
+  (t,v) \mapsto \exp_p(tv) = \gamma_v(t).
+\end{align*}
+Für jedes $v \in S^{m-1}$ ist $t \mapsto f(t,v) = \gamma_v(t)$ eine Geodätische in $M$.
+
+% Lemma 8.6
+\begin{Lemma}[Gauß-Lemma]
+  Jede radiale Geodätische $\gamma_v$ ist orthogonal zu der geodätischen Sphäre
+  \begin{align*}
+    S_r = \{q \in M \mid \ \exists v \in M: \|v\| = r \text{ und } q = \exp_p(v) \}.
+  \end{align*}
+\end{Lemma}
+
+\begin{bew}
+  Man zeigt das Folgende:
+  Ist $X$ ein Vektorfeld auf $S^{m-1}$ und bezeichnet man seine Fortsetzung auf $(0,\varepsilon) \times S^{m-1}$ \quot{$\subset$} $\B_{\varepsilon}(0)\setminus\{0\}$ bzw. $\B_{\varepsilon}(0_p)\setminus\{0_p\} \subset \T_pM$ mit $X_{rv} = X_v$, so ist
+  \begin{align*}
+    Y_q = Y_{f(r,v)} = f_{*(r,v)}(0,X_v) = \exp_{p*}(r X_v)
+  \end{align*}
+  orthogonal zu 
+  \begin{align*}
+    \pdifffrac[q]{}{r} = \difffrac[t=r]{}{t}\exp_p(t,v) = \dot \gamma_v(r)
+  \end{align*}
+
+  \begin{center}
+    \textcolor{red}{Abbildung: Erhalten der Orthogonalität durch $\exp_p$.}
+  \end{center}
+
+  $Y(t) = Y_{\gamma_v(t)}$ als Vektorfeld entlang $\gamma_v$.
+  Dann gilt:
+  \begin{align*}
+    \difffrac[t=r]{}{t} \left<Y,\pdifffrac{}{r}\right>_{\gamma_v(t)} & = \left<\nabla_tY|_r, \dot \gamma_v(r)\right> + \left<Y(r), \underbrace{\nabla_t\dot\gamma_v|_r}_{=0}\right>\\
+    & = \left<\nabla_{Y(r)}\dot\gamma_v(r), \dot \gamma_v(r)\right> + \left<\underbrace{[\dot\gamma_v(r),Y(r)]}_{\mathclap{= [f_{*}(\pdifffrac{}{r},f_{*}(0,X_v)] = f_{*}[\pdifffrac{}{r},X] = 0}}, \dot \gamma_v(r)\right>\\
+    = \frac{1}{2}Y(t) \|\dot\gamma_v\|^2.
+  \end{align*}
+  Ferner gilt
+  \begin{align*}
+    \left<Y(r),\pdifffrac{}{r}\right>_{\gamma_v(r)} = \left<\exp_{p*}(rX_v),\dot\gamma_v(r)\right> \xrightarrow{r \to 0}\left<\exp_{p*}(0_p),v\right> = 0,
+  \end{align*}
+  also $\left<Y,\pdifffrac{}{r}\right> \equiv 0$.
+\end{bew}
+
+\begin{bem}
+  Insbesondere gilt für alle $i \leq m-1$:
+  \begin{align*}
+    \left<\pdifffrac{}{r}, \pdifffrac{}{\vartheta^i}\right> = 0.
+  \end{align*}
+\end{bem}
+
+% Satz 8.7
+\begin{Satz}
+  Für jedes $p \in M$ existiert ein $\varepsilon > 0$, so dass für alle $q \in \B_{\varepsilon}(p)$ genau eine minimierende Geodätische von $p$ nach $q$ existiert, d.h. eine Geodätische $\gamma$ im Sinne der Definition \ref{dfn-8-1} mit $\mathcal L(\gamma) = \dop(p,q)$.
+
+  Ist $q \notin \exp_p(\B_{\varepsilon}(0_p)) = \B_{\varepsilon}(p)$, so existiert ein $q' \in \partial \B_{\varepsilon}(p)$ mit
+  \begin{align*}
+    \dop(p,q) = \varepsilon + \dop(q',q).
+  \end{align*}
+\end{Satz}
+
+\begin{bew}
+  Es sei $\varepsilon > 0$ so, dass auf $\B_{\varepsilon}(p)$ Polorkoordinaten $\varphi = (r,\vartheta^1, \ldots, \vartheta^{m-1})$ existieren.
+
+  Es sei $c \colon [0,1]$ eine beliebige glatte Kurve von $p$ nach $q$ mit Koordinaten $\varphi(c(t)) = (r(t), \vartheta^1(t), \ldots, \vartheta^{m-1}(t))$.
+
+  \begin{center}
+    \textcolor{red}{Abbildung: Bild von $c$.}
+  \end{center}
+
+  Für $t_0 = \inf\{t \in [0,1] \mid c(t) \notin \B_{\varepsilon}(p)\}$ ist $c|_{[0,t_0]}$ eine Kurve zu $\B_{\varepsilon}(p)$.
+  Es gilt
+  \begin{align*}
+    \left\|\pdifffrac[t]{}{r}\right\| = \|\dot\gamma_w(t)\| = \|w\| = 1.
+  \end{align*}
+
+  Aus der Cauchy-Schwarz-Ungleichung folgt
+  \begin{align*}
+    \|\dot c(t)\| & = \|\dot c(t)\|\left\|\pdifffrac[c(t)]{}{r}\right\|\\
+    & \geq \left|\left< \dot c(t), \pdifffrac[c(t)]{}{r}\right>\right|\\
+    & = \left|\left<\dot r(t) \pdifffrac{}{r} + \sum_{i=1}^{m-1}\dot\vartheta(t)\pdifffrac{}{\vartheta^i},\pdifffrac[c(t)]{}{r}\right>\right|\\
+    & = \left|\left<\dot r(t)\pdifffrac[c(t)]{}{r}, \pdifffrac[c(t)]{}{r}\right>\right|\\
+    & = \left|\dot r(t)\right|,
+  \end{align*}
+  wobei Gleichheit genau dann gilt, wenn $\dot c(t)$ und $\pdifffrac[c(t)]{}{r}$ linear abhängig sind.
+
+  \begin{align*}
+    \mathcal L(c) = \int_0^{t_0}\|\dot c\| + \int_{t_0}^T\|\dot c\| \geq \int_0^{t_0} \left|\left<\dot c,\pdifffrac{}{r}\right>\right| = \int_0^{t_0}|\dot r| = r(t_0)
+  \end{align*}
+  Gleichheit gilt genau dann, wenn $\vartheta^1(t), \ldots, \vartheta^{m-1}(t)$ konstant sind und $\dot r(t) \geq 0$ gilt, also genau dann, wenn $c$ eine monotone Umparametrisierung von $t \mapsto \exp_p(tv)$ ist.
+\end{bew}
+
 
 %%% Local Variables: 
 %%% mode: latex
