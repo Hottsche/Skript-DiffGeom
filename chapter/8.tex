@@ -125,11 +125,11 @@ Zudem hängt $\gamma_{p,v}$ glatt von $p$ und $v$ ab.
 	\draw[->] (-0.5,3.25) --node[above]{$v$} (0.75,3.75);
 	\node at (3.5,3.5) {$\T_pM$};
 	
-	\coordinate (segel) at (-2.25,-0.5); \node at ($(segel) + (4.5,1.25)$) {$M$};
+	\coordinate (segel) at (-2.5,-0.75); \node at ($(segel) + (4.75,1.25)$) {$M$};
 	\tikzsegel[1.5]{(segel)}
-	\coordinate (pkt) at ($0.75*(-0.5,0.5)+(segel3)$);
-	\coordinate (ctrl1) at (1,1); \coordinate (ctrl2) at (-1,1); \coordinate (ctrl3) at (0,1); \coordinate (ctrl4) at (-1,0);
-	\draw[dashed] (segel1) ..controls($(segel1) + 0.5*(ctrl1)$) and ($(pkt) + 0.25*(ctrl2)$).. (pkt) ..controls($(pkt) + 0.5*(ctrl3)$) and ($(segel2) + 0.75*(ctrl4)$).. (segel2);
+	\coordinate (pkt) at ($0.75*(-0.25,0.5)+(segel3)$);
+	\coordinate (ctrl1) at (1,1); \coordinate (ctrl2) at (-1,1); \coordinate (ctrl3) at (0,1); \coordinate (ctrl4) at (-1.25,-0.25);
+	\draw[dashed] (segel1) ..controls($(segel1) + 0.5*(ctrl1)$) and ($(pkt) + 0.25*(ctrl2)$).. (pkt) ..controls($(pkt) + 0.5*(ctrl3)$) and ($(segel2) + (ctrl4)$).. (segel2);
 	
 	\coordinate(pkt1) at ($(segel) + (1.25,0.75)$); \coordinate(pkt2) at ($(segel) + (2.5,1)$); \coordinate(pkt3) at ($(segel) + (3.75,1.75)$);
 	\fill(pkt1) circle(0.05)node[anchor=north east,font=\tiny]{$p$}; \fill(pkt2) circle(0.05) node[below,font=\tiny]{$\gamma_v(1)= \exp_p(v)$};
@@ -197,8 +197,34 @@ Der Beweis sei zur "Ubung "uberlassen.
 
 Es ist $\varphi = (r, \vartheta^1, \ldots, \vartheta^{m-1})$ die Hintereinanderausführung von Riemannschen Normalkoordinaten des $\R^m$.
 
-\begin{center}
-  \textcolor{red}{Abbildung: Zurückziehen von Polarkoordinaten via Riemannscher Normalkoordinaten.}
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+%	\draw[step=0.25,gray!15] (-3,-6) grid (9,6); \draw[step=0.5,gray!30] (-3,-6) grid (9,6); \fill (0,0) circle(0.1); %Hilfsgitter
+	
+	\def\breite{2.5}
+	\def\hoehe{2}
+	\def\shift{1}
+	\def\vert{2.5}
+	\draw (-\breite, \vert) -- (-\breite+\shift, \vert+\hoehe) -- (\breite+\shift, \vert+\hoehe) -- (\breite, \vert) -- cycle;
+	
+	\coordinate (0p) at (-1,3);
+	\draw[->] (0p) --node[below]{$e_1$} +(2,0); \draw[->] (0p) --node[left]{$e_2$} +(0.5,1); \draw[->] (0p) -- +(25:2) node[below]{$v$}; \fill (0p) circle(0.05) node[anchor=north east]{$0_p$};
+	%\draw[->] ($(0p) + (1.25,0)$) arc (0:25:1.25) node[right]{$\vartheta$};
+	\draw[->] ($(0p) + (1.25,0)$) arc (0:12.5:1.25) node[right]{$\vartheta$} arc(12.5:25:1.25);
+	
+	\draw[->] (-0.5,1) to[out=120,in=240]node[right]{$\exp_p^{-1}$} +(0,1.25);
+	
+	\def\scl{1.5}
+	\tikzsegel[\scl]{(-2.5,-1)};
+	\coordinate (pkt) at ($(segel3) + 0.5*(-0.25,0.75)$);
+	\draw[dashed] (segel1) ..controls($(segel1) + (ctrls6)$) and ($(pkt) + (ctrls5)$).. (pkt) ..controls($(pkt) + (ctrls4)$) and ($(segel2) + (ctrls3)$).. (segel2);
+	
+	\coordinate (p) at ($(segel) + (1.5,0.75)$); \coordinate (q) at ($(segel) + (3.25,0.75)$); \fill (p) circle(0.05)node[left]{$p$}; \fill (q) circle(0.05)node[above right]{$q = \exp_p(v) = \gamma_v(1)$};
+	\draw[->] (p) -- +(1,0)node[below]{$\gamma_v$}; \draw (p) -- (q);
+	
+	\node (q) at (5,0) {$q= \exp_p(v)$}; \node (v) at (5,3.5) {$v$}; \node[align=flush left,text depth=-18pt,anchor=west] (v2) at (7.4,3.5) {$(\| v \|, \vartheta)$\\ $= (r,\vartheta)$ \\ $=\varphi(q) \in (0,\varepsilon) \X S^1$}; \node[anchor=west] (R) at (7.4,4) {$\R^2$};
+	\draw[|->] (q) -- (v); \draw[|->] (v) -- (v2);
+	\draw[->] ($(v) + (0,0.5)$) -- (R);
+\end{tikzpicture}
 \end{center}
 
 Die Umkehrabbildung ist ein Diffeomorphismus
@@ -227,9 +253,34 @@ orthogonal zu
 	\pdifffrac[q]{}{r} = \difffrac[t=r]{}{t}\exp_p(tv) = \dot \gamma_v(r)
 \end{align*}
 
-\begin{center}
-	\textcolor{red}{Abbildung: Erhalten der Orthogonalität durch $\exp_p$.}
-\end{center}
+\begin{center}\begin{tikzpicture}[font=\scriptsize,normal/.style={above,sloped, inner sep=0pt,outer sep=0pt,allow upside down}]
+%	\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+	
+	\def\breite{2.75}
+	\def\hoehe{2.5}
+	\def\shift{1}
+	\def\vert{2.25}
+	\draw (-\breite, \vert) -- (-\breite+\shift, \vert+\hoehe) -- (\breite+\shift, \vert+\hoehe) -- (\breite, \vert) -- cycle;
+	\draw[->] (-2,2.75)node[above]{$0_p$} -- (2.5,2.75); \draw[dashed, name path=strich] (-2,2.75) -- (1.5,4.75); \fill (-2,2.75) circle(0.05);
+	
+	\foreach \x in {-1.25, -0.25, 0.75}{
+		\path[name path=senkrecht] (\x,2) -- (\x,5);
+		\path[name intersections={of={strich and senkrecht}},draw];
+		\draw[->] (\x,2.75) -- (intersection-1);
+		\draw (\x,2.875) to[out=180,in=90] (\x-0.125,2.75); \fill ($(\x,2.75)+(135:0.125/2)$) circle(0.02);
+	}
+	\node at (0,3.25) {$X_v$}; \node at (1.5,3.75) {$X_{rv} = rX_v$};
+	\path (-0.25,2.75)node[below]{$v$}; \path (0.75,2.75)node[below]{$rv$};
+	
+	\draw[->] (-0.5,2) to[out=240,in=120]node[right]{$\exp_p$} (-0.5,1);
+	
+	\coordinate (segel) at (-2.5,-1);
+	\tikzsegel[1.5]{(segel)}
+	
+	\coordinate (p) at ($(segel) + (0.75,0.5)$); \coordinate (q) at ($(segel) + (2.75,-0.25)$); \fill (p) circle(0.05) node[anchor=north east]{$p$};
+	\draw[->] (p) ..controls($(p) + (0.5,0.25)$) and ($(q) + (-0.5,0.75)$)..node[below]{$\gamma_v$} (q) node[pos=0.4,normal]{\tikz \draw[->] (0,0) -- ++(0,0.7);} node[pos=0.8,normal]{\tikz \draw[->] (0,0) -- ++(0,1.5);};
+	\node at ($(segel) + (2,1)$) {$Y_1$}; \node at ($(segel) + (3,1.25)$) {$Y_r$};
+\end{tikzpicture}\end{center}
 
 $Y(t) = Y_{\gamma_v(t)}$ als Vektorfeld entlang $\gamma_v$.
 Dann gilt:
@@ -263,8 +314,22 @@ Ist $q \notin \exp_p(\B_{\varepsilon}(0_p)) = \B_{\varepsilon}(p)$, so existiert
 
 \begin{bew}
 Es sei $\varepsilon > 0$ so, dass auf $\B_{\varepsilon}(p)$ Polorkoordinaten $\varphi = (r,\vartheta^1, \ldots, \vartheta^{m-1})$ existieren. Sei weiter $c \colon [0,1]$ eine beliebige glatte Kurve von $p$ nach $q$ mit Koordinaten $\varphi(c(t)) = (r(t), \vartheta^1(t), \ldots, \vartheta^{m-1}(t))$.
-\begin{center}
-	\textcolor{red}{Abbildung: Bild von $c$.}
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+%	\draw[step=0.25,gray!15] (-6,-6) grid (6,6); \draw[step=0.5,gray!30] (-6,-6) grid (6,6); \fill (0,0) circle(0.1); %Hilfsgitter
+	
+	\coordinate (segel) at (-3,-1);
+	\tikzsegel[2]{(segel)};
+	\coordinate (p) at ($(segel) + (2.5,1.25)$); \coordinate (q) at ($(segel) + (3.25,0.75)$);
+	\coordinate (pkt1) at ($(segel) + (3.25,2)$); \coordinate (pkt2) at ($(segel) + (3.75,1.75)$);
+	\coordinate (ctrl1) at (1,0); \coordinate (ctrl2) at (1,1); \coordinate (ctrl3) at (0,1); \coordinate (ctrl4) at (-1,-0.25);
+
+	\fill (p) circle(0.05)node[left]{$p$}; \fill (q) circle(0.05)node[right]{$q$};
+	\draw (p) ..controls($(p) + 0.75*(ctrl1)$) and ($(pkt1) - 0.25*(ctrl2)$).. (pkt1) ..controls($(pkt1) + 0.25*(ctrl2)$) and($(pkt2) + 0.25*(ctrl3)$).. (pkt2)node[right]{$c$} ..controls($(pkt2) - 0.5*(ctrl3)$) and($(q) + (ctrl4)$).. (q);
+	
+	\draw[clip] ($(segel) + (2.825,1)$) ellipse(1 and 0.5);
+	\draw[very thick] (p) ..controls($(p) + 0.75*(ctrl1)$) and ($(pkt1) - 0.25*(ctrl2)$).. (pkt1);
+\end{tikzpicture}\\
+Das Bild von $c$ ist nicht notwendig in $\B_\varepsilon(0)$ enthalten
 \end{center}
 Für $t_0 = \inf\{t \in [0,1] \mid c(t) \notin \B_{\varepsilon}(p)\}$ ist $c|_{[0,t_0]}$ eine Kurve zu $\B_{\varepsilon}(p)$.
 Es gilt

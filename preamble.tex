@@ -83,15 +83,15 @@
 %\newcommand{\tikzkartoffel}[2][1]{}		
 \newcommand{\tikzsegel}[2][1]{
 	% definiere die Knoten relativ zum ersten Knoten skaliert mit dem Faktor
-	\coordinate (segel1) at #2; \coordinate (segel2) at ($(segel1)+#1*(3.5,1.5)$); \coordinate (segel3) at ($(segel1)+#1*(2.5,0)$);
+	\coordinate (segel1) at #2; \coordinate (segel2) at ($(segel1)+#1*(4,1.5)$); \coordinate (segel3) at ($(segel1)+#1*(2,-0.5)$);
 	%\fill (segel1) circle (0.05) (segel2) circle (0.05) (segel3) circle (0.05);
 	
 	% die Richtungsvektoren der Bezier Tangenten fuer die einzelnen Knoten (der Erste und der letzte haben keine Tangente)
-	\coordinate (ctrls1) at ($#1*(1,1.5)$); \coordinate (ctrls2) at ($#1*(-0.5,0.25)$); \coordinate (ctrls3) at ($#1*(-0.25,-0.25)$); \coordinate (ctrls4) at ($#1*(0,1)$); \coordinate (ctrls5) at ($#1*(-0.5,0.25)$); \coordinate (ctrls6) at ($#1*(1,0.25)$);
+	\coordinate (ctrls1) at ($#1*(0.75,1.5)$); \coordinate (ctrls2) at ($#1*(-0.75,0.25)$); \coordinate (ctrls3) at ($#1*(-0.5,-0.25)$); \coordinate (ctrls4) at ($#1*(0.25,1)$); \coordinate (ctrls5) at ($#1*(-0.375,0.375)$); \coordinate (ctrls6) at ($#1*(0.75,0.125)$);
 	% die eigentlichen Tangenten
 	\coordinate (tang1) at ($(segel1)+(ctrls1)$); \coordinate (tang2) at ($(segel2)+(ctrls2)$); \coordinate (tang3) at ($(segel2)+(ctrls3)$); \coordinate (tang4) at ($(segel3)+(ctrls4)$); \coordinate (tang5) at ($(segel3)+(ctrls5)$); \coordinate (tang6) at ($(segel1)+(ctrls6)$);
-	%\fill[red] (tang1) circle (0.05); \fill[red] (tang2) circle (0.05); \fill[red] (tang3) circle (0.05); \fill[red] (tang4) circle (0.05); \fill[red] (tang5) circle (0.05); \fill[red] (tang6) circle (0.05);
-    %\draw[red] (tang1) -- (segel1) -- (tang6); \draw[red] (tang2) -- (segel2) -- (tang3); \draw[red] (tang4) -- (segel3) -- (tang5);
+%	\fill[red] (tang1) circle (0.05); \fill[red] (tang2) circle (0.05); \fill[red] (tang3) circle (0.05); \fill[red] (tang4) circle (0.05); \fill[red] (tang5) circle (0.05); \fill[red] (tang6) circle (0.05);
+ %   \draw[red] (tang1) -- (segel1) -- (tang6); \draw[red] (tang2) -- (segel2) -- (tang3); \draw[red] (tang4) -- (segel3) -- (tang5);
 	
 	\draw (segel1) ..controls(tang1) and (tang2).. (segel2) ..controls(tang3) and (tang4).. (segel3) ..controls(tang5) and (tang6).. (segel1) --cycle;
 }
