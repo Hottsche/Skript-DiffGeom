@@ -11,36 +11,89 @@
 		\[ \nabla_t(g \circ c) = \nabla_{c_*\pdifffrac{}{t}} g = 0. \]
 	Daraus folgt dann mit $g = \sum g_{ij} \dop x^{i} \otimes \dop x^j$:
 	\begin{align*}
-		0 =& \left( \nabla_t(g \circ c) \right) \left( X(t), Y(t) \right)\\
-		=& \left( \nabla_t \left( (\sum g_{ij} \dop x^{i} \otimes \dop x^j) \circ c \right) \right) \left(X(t), Y(t)\right)\\
-		=& \left( \sum \difffrac{}{t} (g_{ij} \circ c) \cdot \dop x^{i}|_{c(t)} \otimes \dop x^j|_{c(t)} + \sum g_{ij} \circ c \cdot \smash{\underbrace{\nabla_t(\dop x^{i}|_{c(t)} \otimes \dop x^j|_{c(t)}}_{\mathclap{\substack{= \nabla_t(\dop x^{i}|_{c(t)} \otimes \dop x^j|_{c(t)} \\ + \dop x^{i}|_{c(t)} \otimes (\nabla_t(\dop x^j|_{c(t)}))}}}} \right) \left( X(t), Y(t) \right) \vphantom{\underbrace{\nabla_t}_{\substack{\nabla_t \\ \nabla_t}}}\\
-		=& \sum \difffrac{}{t} \left( g_{ij} \circ c \right) \dop x^{i}|_{c(t)} \otimes \dop x^{j}|_{c(t)} \left( X(t), Y(t) \right)\\
+		0 ={}& \left( \nabla_t(g \circ c) \right) \left( X(t), Y(t) \right)\\
+		={}& \left( \nabla_t \left( (\sum g_{ij} \dop x^{i} \otimes \dop x^j) \circ c \right) \right) \left(X(t), Y(t)\right)\\
+		={}& \left( \sum \difffrac{}{t} (g_{ij} \circ c) \cdot \dop x^{i}|_{c(t)} \otimes \dop x^j|_{c(t)} + \sum g_{ij} \circ c \cdot \smash{\underbrace{\nabla_t(\dop x^{i}|_{c(t)} \otimes \dop x^j|_{c(t)}}_{\mathclap{\substack{= \nabla_t(\dop x^{i}|_{c(t)} \otimes \dop x^j|_{c(t)} \\ + \dop x^{i}|_{c(t)} \otimes (\nabla_t(\dop x^j|_{c(t)}))}}}} \right) \left( X(t), Y(t) \right) \vphantom{\underbrace{\nabla_t}_{\substack{\nabla_t \\ \nabla_t}}}\\
+		={}& \sum \difffrac{}{t} \left( g_{ij} \circ c \right) \dop x^{i}|_{c(t)} \otimes \dop x^{j}|_{c(t)} \left( X(t), Y(t) \right)\\
 		 & + \sum \left( g_{ij} \circ c \right) \left( (\nabla_t \dop x^{i}|_{c(t)})(X(t)) \cdot \dop x^j|_{c(t)} (Y(t)) + \dop x^{i}|_{c(t)}(X(t)) \cdot (\nabla_t(\dop x^j|_{c(t)}))(Y(t)) \right)\\
-		=& \sum \difffrac{}{t} (g_{ij} \circ c) \cdot \dop x^{i}|_{c(t)}(X(t)) \cdot \dop x^j|_{c(t)} (Y(t))\\
+		={}& \sum \difffrac{}{t} (g_{ij} \circ c) \cdot \dop x^{i}|_{c(t)}(X(t)) \cdot \dop x^j|_{c(t)} (Y(t))\\
 		 & + \sum (g_{ij} \circ c) \left( \left( \difffrac{}{t} \dop x^{i}|_{c(t)}(X(t)) - \dop x^{i}|_{c(t)} ( \nabla_t X(t)) \right) \cdot \dop x^j|_{c(t)} Y(t) \right.\\
 		 & \hphantom{+ \sum (g_{ij} \circ c) ()} \left. + \dop x^{i}|_{c(t)}(X(t)) \cdot \left( \difffrac{}{t}(\dop x^j|_{c(t)} (Y(t)) - \dop x^j|_{c(t)}(\nabla_t Y(t))) \right) \right)\\
-		=& \sum \difffrac{}{t} \left( (g_{ij} \circ c) \cdot \dop x^{i}|_{c(t)} (X(t)) \cdot \dop x^j|_{c(t)} (Y(t)) \right)\\
+		={}& \sum \difffrac{}{t} \left( (g_{ij} \circ c) \cdot \dop x^{i}|_{c(t)} (X(t)) \cdot \dop x^j|_{c(t)} (Y(t)) \right)\\
 		 & - \sum (g_{ij} \circ c) \dop x^{i}|_{c(t)} ( \nabla_t X(t)) \cdot \dop x^j|_{c(t)} (Y(t))\\
 		 & - \sum (g_{ij} \circ c) \dop x^{i}|_{c(t)} (X(t)) \cdot \dop x^j|_{c(t)} (\nabla_tY(t))\\
-		=& \difffrac{}{t} \left( \sum g_{ij}(c(t)) \cdot (\dop x^{i}|_{c(t)} \otimes \dop x^j|_{c(t)}) (X(t), Y(y)) \right)\\
+		={}& \difffrac{}{t} \left( \sum g_{ij}(c(t)) \cdot (\dop x^{i}|_{c(t)} \otimes \dop x^j|_{c(t)}) (X(t), Y(y)) \right)\\
 		 & - \sum g_{ij}(c(t)) \cdot \dop x^{i}|_{c(t)} \otimes \dop x^{j}|_{c(t)} (\nabla_tX(t), Y(t))\\
 		 & - \sum g_{ij}(c(t)) \cdot \dop x^{i}|_{c(t)} \otimes \dop x^{j}|_{c(t)} (X(t), \nabla_tY(t))\\
-		=& \difffrac{}{t}\left( g_{c(t)}\big(X(t), Y(t)\big) \right) - g_{c(t)}\big(\nabla_t X(t), Y(t)\big) - g_{c(t)}\big(X(t), \nabla_t Y(t)\big)
+		={}& \difffrac{}{t}\left( g_{c(t)}\big(X(t), Y(t)\big) \right) - g_{c(t)}\big(\nabla_t X(t), Y(t)\big) - g_{c(t)}\big(X(t), \nabla_t Y(t)\big)
 	\end{align*}
 	Wir verwenden dabei f"ur $\nabla$ das $\nabla^*$ aus Aufgabe 3 a) von Blatt 7.
 \end{description}
 
 \begin{Loes}
-asdf
-\end{Loes}
+Es sei $E$ ein Vektorb"undel "uber $M$ mit kovarianter Ableitung $\nabla$ und sei die Abbildung $R: \calV(M) \X \calV(M) \X \Gamma(E) \to \Gamma(E)$ definiert durch $R(X, Y)S = \nabla_X\nabla_YS - \nabla_Y\nabla_XS - \nabla_{[X,y]}S$. Wir wollen zeigen dass $R$ eine $C^\infty(M)$-multilineare Abbildung ist.
+\begin{itemize}[leftmargin=*]
+\item
+	Sei $g \in C^\infty(M)$:
+	\begin{align*}
+		[fX,Y](g) &= f \cdot X(Y(g)) - Y(f \cdot X(g))\\
+		&= f \cdot X(Y(g)) - f \cdot Y(X(g)) - Y(f) \cdot X(g)\\
+		&= f \cdot [X,Y](g) - Y(f) \cdot X(g)\\
+		&= (f \cdot [X,Y] - Y(f) \cdot X)(g)
+	\end{align*}
+\item
+	Additivit"at: $\checkmark$
+\item
+	\begin{align*}
+		R(fX,Y)S &= \nabla_{fX}\nabla_YS - \nabla_Y\nabla_{fX}S - \nabla_{[fX,Y]}S\\
+		&= f\nabla_X\nabla_YS - Y(f) \cdot \nabla_XS - f \cdot \nabla_Y\nabla_XS - f\nabla_{[X,Y]}S + Y(f)\nabla_XS\\
+		&= f(\nabla_X\nabla_YS - \nabla_Y\nabla_XS - \nabla_{[X,Y]}S) = f \cdot R(X,Y) S
+	\end{align*}
+\item
+	In zweiter Komponente: $\checkmark$ ($R(X,Y)S = -R(Y,X)S$)
+\item
+	\begin{align*}
+		D(X,Y)(f \cdot S) = {} & \nabla_X\underbrace{\nabla_Y(f \cdot S)}_{\mathclap{=Y(f)\cdot S + f \cdot \nabla_YS}} - \nabla_Y\underbrace{\nabla_X(f\cdot S)}_{\mathclap{=X(f) \cdot S + f \cdot \nabla_XS}} - \underbrace{\nabla_{[X,Y]}(f\cdot S)}_{\mathclap{\substack{=[X,Y](f) \cdot S\\ + f \cdot \nabla_{[X,Y]}S}}}\\
+		= {} & X(Y(f)) \cdot S + Y(f)\nabla_XS + X(f) \cdot \nabla_YS + f \cdot \nabla_X\nabla_Y \cdot S\\
+		 & -(Y(X(f)) \cdot S + X(f)\nabla_YS + Y(f)\cdot\nabla_XS + f\cdot\nabla_Y\nabla_X\cdot S)\\
+		 & -X(Y(f)) + Y(X(f)) - f\nabla_{[X,Y]}S \\ =& f \cdot R(X,Y)S
+	\end{align*}
+\end{itemize}\end{Loes}
 
-\begin{Loes}\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
+\begin{Loes}
+Aufgrund des Levi-Civita Zusammenhangs gilt $\nabla = \nabla^{2c}$.
+\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
 \item
-	asdf
+	\emph{Behauptung:} $R(X,Y)Z + R(Y,Z)X + R(Z,X)Y = 0$
+	
+	Aufgrund der $C^\infty(M)$-multilinearit"at gen"ugt es die Behauptung f"ur $X=\pdifffrac{}{x^{i}}$, $Y=\pdifffrac{}{x^{j}}$ und $Z=\pdifffrac{}{x^{k}}$ zu zeigen. Daraus folgt $[X,Y] = [X,Z] = [Y,Z] = 0$.
+	\begin{align*}
+		&R(X,Y)Z + R(Y,Z)X + R(Z,X)Y\\
+		&= \nabla_X\nabla_Y Z - \nabla_Y\nabla_X Z + \nabla_Y\nabla_Z X - \nabla_Z\nabla_Y X + \nabla_Z\nabla_X Y - \nabla_X\nabla_Z Y\\
+		&= \nabla_X(\underbrace{\nabla_YZ-\nabla_ZY}_{\mathclap{\substack{=[Y,Z] \text{(da } \nabla \text{ torsionslos)} \\ =0}}}) + \nabla_Y(\underbrace{\nabla_ZX-\nabla_XZ}_{\mathclap{=[Z,X]=0}}) + \nabla_Z(\underbrace{\nabla_XY-\nabla_YX}_{\mathclap{=[X,Y]=0}}) = 0
+	\end{align*}
 \item
-	asdf
+	Im Folgenden setzen wir $R(X,Y,Z,W) = g(R(X,Y)Z,W)$, zu beweisen ist dann dass $R(X,Y,Z,W) = -R(X,Y,W,Z)$.
+	
+	Es gen"ugt zu zeigen dass $R(X,Y,U,U) = 0$ f"ur alle $X,Y$ ist, da $R(X,Y,Z+W,Z+W) = R(X,Y,Z,Z) + R(X,Y,Z,W) + R(X,Y,W,Z) + R(X,Y,W,W)$ ist. Wir k"onnen annehmen, dass $[X,Y] = 0$ gilt.
+	\begin{align*}
+		R(X,Y,U,U) =& g(\nabla_X\nabla_YU - \nabla_Y\nabla_XU, U)\\
+		=& g(\nabla_X\nabla_YU, U) - g(\nabla_Y\nabla_XU, U)\\
+		=& X(\underbrace{g(\nabla_YU, U)}_{\mathclap{\substack{= \frac{1}{2}(g(\nabla_YU,U) + g(U, \nabla_YU)) \\ =\frac{1}{2} Y(g(U,U))}}}) - g(\nabla_YU, \nabla_XU) - Y(\underbrace{g(\nabla_XU, U)}_{\mathclap{=\frac{1}{2}X(g(U,U))}}) + g(\nabla_XU, \nabla_YU)\\
+		=& \frac{1}{2} \Big( X\big(Y(g(U,U))\big) - Y\big(X(g(U,U))\big) \Big) = \frac{1}{2} [X,Y] (g(U,U)) = 0
+	\end{align*}
 \item
-	asdf
+	\emph{behauptung:} $R(X,Y,Z,W) = R(Z,W,X,Y)$
+	
+	Nach a) gilt:
+	\begin{align*}
+		R(X,Y,Z,W) + R(Y,Z,X,W) + R(Z,X,Y,W) &= 0 \tag{I}\\
+		R(Y,Z,W,X) + R(Z,W,Y,X) + R(W,Y,Z,X) &= 0 \tag{II}\\
+		R(Z,W,X,Y) + R(W,X,Z,Y) + R(X,Z,W,Y) &= 0 \tag{III}\\
+		R(W,X,Y,Z) + R(X,Y,W,Z) + R(Y,W,X,Z) &= 0 \tag{IV}\\
+	\end{align*}
+	Addiert man die Gleichungen zu (I) - (III) + (II) - (IV) bleibt "ubrig:
+		\[ 2 R(X,Y,Z,W) - 2 R(Z,W,X,Y) = 0 \]
 \end{enumerate}\end{Loes}
 
 \begin{Loes}
