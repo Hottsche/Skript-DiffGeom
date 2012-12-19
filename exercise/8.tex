@@ -1,0 +1,53 @@
+\section{3. Dezember 2012}
+\setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
+\setcounter{Loes}{0}
+
+\begin{description}[font=\normalfont\itshape]
+\item[Behauptung:]
+	F"ur eine glatte Kurve $c$ und Vektorfelder $X, Y$ l"angs $c$ gilt:
+		\[ \difffrac{}{t}g_{c(t)} \left( X(t), Y(t) \right) = g_{c(t)} \left( (\nabla_tX)(t), Y(t) \right) + g_{c(t)} \left( X(t), (\nabla_tY)(t) \right) \]
+\item[Beweis:]
+	Mit dem Levi-Civita Zusammenhang gilt
+		\[ \nabla_t(g \circ c) = \nabla_{c_*\pdifffrac{}{t}} g = 0. \]
+	Daraus folgt dann mit $g = \sum g_{ij} \dop x^{i} \otimes \dop x^j$:
+	\begin{align*}
+		0 =& \left( \nabla_t(g \circ c) \right) \left( X(t), Y(t) \right)\\
+		=& \left( \nabla_t \left( (\sum g_{ij} \dop x^{i} \otimes \dop x^j) \circ c \right) \right) \left(X(t), Y(t)\right)\\
+		=& \left( \sum \difffrac{}{t} (g_{ij} \circ c) \cdot \dop x^{i}|_{c(t)} \otimes \dop x^j|_{c(t)} + \sum g_{ij} \circ c \cdot \smash{\underbrace{\nabla_t(\dop x^{i}|_{c(t)} \otimes \dop x^j|_{c(t)}}_{\mathclap{\substack{= \nabla_t(\dop x^{i}|_{c(t)} \otimes \dop x^j|_{c(t)} \\ + \dop x^{i}|_{c(t)} \otimes (\nabla_t(\dop x^j|_{c(t)}))}}}} \right) \left( X(t), Y(t) \right) \vphantom{\underbrace{\nabla_t}_{\substack{\nabla_t \\ \nabla_t}}}\\
+		=& \sum \difffrac{}{t} \left( g_{ij} \circ c \right) \dop x^{i}|_{c(t)} \otimes \dop x^{j}|_{c(t)} \left( X(t), Y(t) \right)\\
+		 & + \sum \left( g_{ij} \circ c \right) \left( (\nabla_t \dop x^{i}|_{c(t)})(X(t)) \cdot \dop x^j|_{c(t)} (Y(t)) + \dop x^{i}|_{c(t)}(X(t)) \cdot (\nabla_t(\dop x^j|_{c(t)}))(Y(t)) \right)\\
+		=& \sum \difffrac{}{t} (g_{ij} \circ c) \cdot \dop x^{i}|_{c(t)}(X(t)) \cdot \dop x^j|_{c(t)} (Y(t))\\
+		 & + \sum (g_{ij} \circ c) \left( \left( \difffrac{}{t} \dop x^{i}|_{c(t)}(X(t)) - \dop x^{i}|_{c(t)} ( \nabla_t X(t)) \right) \cdot \dop x^j|_{c(t)} Y(t) \right.\\
+		 & \hphantom{+ \sum (g_{ij} \circ c) ()} \left. + \dop x^{i}|_{c(t)}(X(t)) \cdot \left( \difffrac{}{t}(\dop x^j|_{c(t)} (Y(t)) - \dop x^j|_{c(t)}(\nabla_t Y(t))) \right) \right)\\
+		=& \sum \difffrac{}{t} \left( (g_{ij} \circ c) \cdot \dop x^{i}|_{c(t)} (X(t)) \cdot \dop x^j|_{c(t)} (Y(t)) \right)\\
+		 & - \sum (g_{ij} \circ c) \dop x^{i}|_{c(t)} ( \nabla_t X(t)) \cdot \dop x^j|_{c(t)} (Y(t))\\
+		 & - \sum (g_{ij} \circ c) \dop x^{i}|_{c(t)} (X(t)) \cdot \dop x^j|_{c(t)} (\nabla_tY(t))\\
+		=& \difffrac{}{t} \left( \sum g_{ij}(c(t)) \cdot (\dop x^{i}|_{c(t)} \otimes \dop x^j|_{c(t)}) (X(t), Y(y)) \right)\\
+		 & - \sum g_{ij}(c(t)) \cdot \dop x^{i}|_{c(t)} \otimes \dop x^{j}|_{c(t)} (\nabla_tX(t), Y(t))\\
+		 & - \sum g_{ij}(c(t)) \cdot \dop x^{i}|_{c(t)} \otimes \dop x^{j}|_{c(t)} (X(t), \nabla_tY(t))\\
+		=& \difffrac{}{t}\left( g_{c(t)}\big(X(t), Y(t)\big) \right) - g_{c(t)}\big(\nabla_t X(t), Y(t)\big) - g_{c(t)}\big(X(t), \nabla_t Y(t)\big)
+	\end{align*}
+	Wir verwenden dabei f"ur $\nabla$ das $\nabla^*$ aus Aufgabe 3 a) von Blatt 7.
+\end{description}
+
+\begin{Loes}
+asdf
+\end{Loes}
+
+\begin{Loes}\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
+\item
+	asdf
+\item
+	asdf
+\item
+	asdf
+\end{enumerate}\end{Loes}
+
+\begin{Loes}
+\emph{Behauptung:} F"ur den Levi-Civita Zusammenhang ist die Parallelverschiebung eine Isometrie.
+
+Es sei $c: I \to M$ und $X_{c(0)}, Y_{c(0)} \in \T_{c(0)}M$ mit $X(t) = P_{0,t}^c X_{c(0)}$ und $Y(t) = P_{0,t}^c Y_{c(0)}$. Daraus folgt
+	\[ \difffrac{}{t} g\left(X(t), Y(t)\right) = g\left( \smash{\underbrace{\nabla_tX(t)}_{=0}}, Y(t) \right) + g \left( X(t), \smash{\underbrace{\nabla_t Y(t)}_{=0}} \right) = 0\]
+und damit gilt dann
+	\[ g \left( P_{0,t}^c X_{c(0)}, P_{0,t}^c Y_{c(0)} \right) = g \left( X_{c(0)}, Y_{c(0)} \right) \]
+\end{Loes}
