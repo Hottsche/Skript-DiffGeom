@@ -22,7 +22,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
     % \draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
     
     % Die Abbildungspfeile
-    \draw[->] (-1.5,0) to[out=20, in=160]node[above]{$\psi' \circ \Phi \circ \varphi^{-1}$}node[below]{diff'bar} (1.5,0);
+    \draw[->] (-1.5,0) to[out=20, in=160]node[above]{$\psi' \circ \Phi \circ \phi^{-1}$}node[below]{diff'bar} (1.5,0);
     \draw[->] (-1.5,3) to[out=20, in=160]node[above]{$\Phi$} (1.5,3);
     
     % Die Achsen
@@ -74,7 +74,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
     \draw (4,0.25) circle (0.5); \fill (4,0.25) circle (0.05) node[right]{$y$};
     
     % Abbildungspfeile
-    \draw[->] (-4, 2.25) to[out=250,in=110] node[left]{$\varphi$} (-4,0.75);
+    \draw[->] (-4, 2.25) to[out=250,in=110] node[left]{$\phi$} (-4,0.75);
     \draw[->] (3.75, 2.5) to[out=250,in=110] node[left]{$\psi$} (3.75,0.75);
   \end{tikzpicture}\end{center}
 
@@ -85,23 +85,23 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 
 % Lemma 3.2
 \begin{Lemma}[Differentiale in lokalen Koordinaten]
-  Sind $\varphi$ und $\psi$ Karten von $M$ und $N$ um $p$ und $\Phi(p) = q$, sowie $\pdifffrac[p]{}{x^i}$ und $\pdifffrac[q]{}{y^i}$ die Standardbasen von $\T_pM$ und $\T_qN$ bezüglich der Karten $\varphi$ und $\psi$, so gilt:
+  Sind $\phi$ und $\psi$ Karten von $M$ und $N$ um $p$ und $\Phi(p) = q$, sowie $\pdifffrac[p]{}{x^i}$ und $\pdifffrac[q]{}{y^i}$ die Standardbasen von $\T_pM$ und $\T_qN$ bezüglich der Karten $\phi$ und $\psi$, so gilt:
   \begin{align*}
-    \Phi_{*p}\pdifffrac[p]{}{x^i} = \sum \partial_i\left(\psi^j \circ \Phi \circ \varphi^{-1}\right)\big(\varphi(p)\big)\pdifffrac[q]{}{y^j}.
+    \Phi_{*p}\pdifffrac[p]{}{x^i} = \sum \partial_i\left(\psi^j \circ \Phi \circ \phi^{-1}\right)\big(\phi(p)\big)\pdifffrac[q]{}{y^j}.
   \end{align*}
-  Die partielle Ableitung $\partial_i(\psi^j \circ \Phi \circ \varphi^{-1})(\varphi(p))$ bezeichnet man auch kurz $\frac{\partial \Phi^j}{\partial x^i}(p)$.
+  Die partielle Ableitung $\partial_i(\psi^j \circ \Phi \circ \phi^{-1})(\phi(p))$ bezeichnet man auch kurz $\frac{\partial \Phi^j}{\partial x^i}(p)$.
 \end{Lemma}
 
 \begin{bem}
   Aus der Linearität von $\Phi_{*p}$ folgt, dass für $X_p = \sum \xi^i\pdifffrac[p]{}{x^i} \in \T_pM$ und $\Phi_{*p}X_p = \sum \eta^j\pdifffrac[q]{}{y^j}$ gilt:
   \begin{align*}
-    \eta^j = \sum \frac{\partial \Phi^j}{\partial x^i}\xi^i \text{, beziehungsweise } \eta = \D(\psi \circ \Phi \circ \varphi^{-1})\xi.
+    \eta^j = \sum \frac{\partial \Phi^j}{\partial x^i}\xi^i \text{, beziehungsweise } \eta = \D(\psi \circ \Phi \circ \phi^{-1})\xi.
   \end{align*}
 \end{bem}
 
 \begin{bew}
   \begin{align*}
-    \underbrace{\left(\Phi_{*p}\pdifffrac[p]{}{x^i}\right)}_{\textcolor{red}{\in \T_qN}}(\psi^j) = \pdifffrac[p]{}{x^i}(\psi^j \circ \Phi) = \partial_i (\psi^j \circ \Phi \circ \varphi^{-1})(\varphi(p)) = \frac{\partial \Phi^j}{\partial y^i}(p).
+    \underbrace{\left(\Phi_{*p}\pdifffrac[p]{}{x^i}\right)}_{\textcolor{red}{\in \T_qN}}(\psi^j) = \pdifffrac[p]{}{x^i}(\psi^j \circ \Phi) = \partial_i (\psi^j \circ \Phi \circ \phi^{-1})(\phi(p)) = \frac{\partial \Phi^j}{\partial y^i}(p).
   \end{align*}
 \end{bew}
 
@@ -278,9 +278,9 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 \begin{enumerate}[label=(\roman*),widest=ii,leftmargin=*]
   \item
   Es sei $(\psi, V)$ eine Karte von $N$ um $q$ mit $\psi(q) = 0$.
-  Ist dann $(\varphi, U)$ eine Karte von $M$ um $p$ mit $\varphi(p) = 0$, so kann man ohne Einschr"ankung annehmen, dass 
+  Ist dann $(\phi, U)$ eine Karte von $M$ um $p$ mit $\phi(p) = 0$, so kann man ohne Einschr"ankung annehmen, dass 
   \begin{align*}
-    \partial_i(\psi^j \circ \Phi \circ \varphi^{-1}) = \left(\pdifffrac{\Phi^j}{x^i}\right)_{i,j \leq r} 
+    \partial_i(\psi^j \circ \Phi \circ \phi^{-1}) = \left(\pdifffrac{\Phi^j}{x^i}\right)_{i,j \leq r} 
   \end{align*}
   invertierbar ist.
   Es sei $\alpha \colon U \to \R^m$ gegeben durch
@@ -288,12 +288,12 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
     \alpha^j =
     \begin{cases}
       \psi^j \circ \Phi & \text{ für } j \leq r\\
-      \varphi^j & \text{ sonst}
+      \phi^j & \text{ sonst}
     \end{cases}
   \end{align*}
   Betrachte nun den Kartenwechsel
   \begin{align*}
-    \left(\pdifffrac{\textcolor{red}{\alpha}^j}{x^i}\right)_{i,j} = \left(\partial_i(\alpha^j \circ \varphi^{-1})(0)\right)_{i,j} = \left(
+    \left(\pdifffrac{\textcolor{red}{\alpha}^j}{x^i}\right)_{i,j} = \left(\partial_i(\alpha^j \circ \phi^{-1})(0)\right)_{i,j} = \left(
       \begin{array}{c|c}
         \left(\pdifffrac{\Phi^j}{x^i}\right)_{i,j \le r} & \ast\\
         \hline

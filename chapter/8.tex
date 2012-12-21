@@ -68,20 +68,20 @@ Zudem hängt $\gamma_{p,v}$ glatt von $p$ und $v$ ab.
 
 \begin{bew}\begin{enumerate}[label=(\Alph*),leftmargin=*,widest=B]
 \item
-	Es sei $(\varphi, U)$ eine Karte um $p$, $\gamma^i(t) = \varphi^i(\gamma(t))$. Dann besitzt das folgende Anfangswertproblem
+	Es sei $(\phi, U)$ eine Karte um $p$, $\gamma^i(t) = \phi^i(\gamma(t))$. Dann besitzt das folgende Anfangswertproblem
 	\begin{align*}
 		\begin{cases}
 			0 = \nabla_t\dot \gamma|_t = \sum_k\left(\ddot \gamma^k(t) + \sum_{ij}\Gamma_{ij}^k\big(\gamma(t)\big)\dot \gamma^i(t)\gamma^j(t)\right) \pdifffrac[\gamma(t)]{}{x^k}\\
-			\gamma^i(0) = \varphi^i(p)\\
+			\gamma^i(0) = \phi^i(p)\\
 			\dot\gamma^i(0) = \xi_p^i, \quad v = \sum \xi^i_p\pdifffrac[p]{}{x^i}
 		\end{cases}
 	\end{align*}
 	eine eindeutige Lösung (lokal), wleche glatt von den Startwerten $p$ und $v$ abhängt.
 \item
-	(Alternativ) Ist $(\varphi, U)$ eine Karte von $M$ um $p$, dann ist
-	\[ \overline \varphi \colon \left\{\begin{array}{cccl}
+	(Alternativ) Ist $(\phi, U)$ eine Karte von $M$ um $p$, dann ist
+	\[ \overline \phi \colon \left\{\begin{array}{cccl}
 		\T M|_U &\to& \R^{2m}&\\
-		X_p=\sum \xi_p^i\pdifffrac[p]{}{x^i} &\mapsto& \overline\varphi(X_p) &= (\varphi^1(p), \ldots, \varphi^m(p), \xi_p^1, \ldots, \xi_p^m)\\
+		X_p=\sum \xi_p^i\pdifffrac[p]{}{x^i} &\mapsto& \overline\phi(X_p) &= (\phi^1(p), \ldots, \phi^m(p), \xi_p^1, \ldots, \xi_p^m)\\
 		&&& =: (y^1, \ldots, y^{2m})
 	\end{array}\right.\]
 	eine Karte von $\T M$.	
@@ -95,18 +95,18 @@ Zudem hängt $\gamma_{p,v}$ glatt von $p$ und $v$ ab.
 	\begin{align*}
 		\difffrac{}{t}g^t = \dot g^t = S(g^t) \text{ und } g^0 = X_p.
 	\end{align*}
-	Setzt man $\overline \varphi(g^t) = (\gamma^1(t), \ldots, \gamma^m(t),\eta^1(t), \ldots, \eta^m(t))$, so ist dies genau dann der Fall, wenn gilt:
+	Setzt man $\overline \phi(g^t) = (\gamma^1(t), \ldots, \gamma^m(t),\eta^1(t), \ldots, \eta^m(t))$, so ist dies genau dann der Fall, wenn gilt:
 	\begin{align*}
 		& (\dot\gamma^1,\ldots, \dot\gamma^m,\dot\eta^1,\ldots, \dot\eta^m) = \left(\eta^1, \ldots, \eta^m, -\sum_{i,j}\Gamma_{ij}^1\eta^i\eta^j, \ldots, -\sum_{i,j}\Gamma_{ij}^m\eta^i\eta^j\right)\\
 		& \rightsquigarrow \eta^i = \dot\gamma^i \text{ und } \ddot\gamma = -\sum_{i,j}\Gamma_{ij}^k\dot\gamma^i \dot\gamma^j
 	\end{align*}
 	und 
 	\begin{align*}
-		(\gamma^1(0), \ldots, \gamma^m(0), \eta^1(0), \ldots, \eta^m(0) = \overline\varphi(X_p) = (\varphi^1(p), \ldots, \varphi^m(p), \xi_p^1, \ldots, \xi_p^m)
+		(\gamma^1(0), \ldots, \gamma^m(0), \eta^1(0), \ldots, \eta^m(0) = \overline\phi(X_p) = (\phi^1(p), \ldots, \phi^m(p), \xi_p^1, \ldots, \xi_p^m)
 	\end{align*}
 	also genau dann, wenn
 	\begin{align*}
-		\gamma(t) = \overline\varphi^{-1}(\gamma^1(t), \ldots, \gamma^m(t))
+		\gamma(t) = \overline\phi^{-1}(\gamma^1(t), \ldots, \gamma^m(t))
 	\end{align*}
 	eine Geodätische durch $p$ mit $\dot \gamma(0) = X_p$ ist.	
 	Der maximale Fluss $g^t$ von $S$ heißt \CmMark[Fluss!geod\"atischer]{geod"atischer Fluss}.
@@ -195,7 +195,7 @@ Der Beweis sei zur "Ubung "uberlassen.
 
 \section{Polarkoordinaten}
 
-Es ist $\varphi = (r, \vartheta^1, \ldots, \vartheta^{m-1})$ die Hintereinanderausführung von Riemannschen Normalkoordinaten des $\R^m$.
+Es ist $\phi = (r, \theta^1, \ldots, \theta^{m-1})$ die Hintereinanderausführung von Riemannschen Normalkoordinaten des $\R^m$.
 
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
 %	\draw[step=0.25,gray!15] (-3,-6) grid (9,6); \draw[step=0.5,gray!30] (-3,-6) grid (9,6); \fill (0,0) circle(0.1); %Hilfsgitter
@@ -208,8 +208,8 @@ Es ist $\varphi = (r, \vartheta^1, \ldots, \vartheta^{m-1})$ die Hintereinandera
 	
 	\coordinate (0p) at (-1,3);
 	\draw[->] (0p) --node[below]{$e_1$} +(2,0); \draw[->] (0p) --node[left]{$e_2$} +(0.5,1); \draw[->] (0p) -- +(25:2) node[below]{$v$}; \fill (0p) circle(0.05) node[anchor=north east]{$0_p$};
-	%\draw[->] ($(0p) + (1.25,0)$) arc (0:25:1.25) node[right]{$\vartheta$};
-	\draw[->] ($(0p) + (1.25,0)$) arc (0:12.5:1.25) node[right]{$\vartheta$} arc(12.5:25:1.25);
+	%\draw[->] ($(0p) + (1.25,0)$) arc (0:25:1.25) node[right]{$\theta$};
+	\draw[->] ($(0p) + (1.25,0)$) arc (0:12.5:1.25) node[right]{$\theta$} arc(12.5:25:1.25);
 	
 	\draw[->] (-0.5,1) to[out=120,in=240]node[right]{$\exp_p^{-1}$} +(0,1.25);
 	
@@ -221,7 +221,7 @@ Es ist $\varphi = (r, \vartheta^1, \ldots, \vartheta^{m-1})$ die Hintereinandera
 	\coordinate (p) at ($(segel) + (1.5,0.75)$); \coordinate (q) at ($(segel) + (3.25,0.75)$); \fill (p) circle(0.05)node[left]{$p$}; \fill (q) circle(0.05)node[above right]{$q = \exp_p(v) = \gamma_v(1)$};
 	\draw[->] (p) -- +(1,0)node[below]{$\gamma_v$}; \draw (p) -- (q);
 	
-	\node (q) at (5,0) {$q= \exp_p(v)$}; \node (v) at (5,3.5) {$v$}; \node[align=flush left,text depth=-18pt,anchor=west] (v2) at (7.4,3.5) {$(\| v \|, \vartheta)$\\ $= (r,\vartheta)$ \\ $=\varphi(q) \in (0,\varepsilon) \X S^1$}; \node[anchor=west] (R) at (7.4,4) {$\R^2$};
+	\node (q) at (5,0) {$q= \exp_p(v)$}; \node (v) at (5,3.5) {$v$}; \node[align=flush left,text depth=-18pt,anchor=west] (v2) at (7.4,3.5) {$(\| v \|, \theta)$\\ $= (r,\theta)$ \\ $=\phi(q) \in (0,\epsilon) \X S^1$}; \node[anchor=west] (R) at (7.4,4) {$\R^2$};
 	\draw[|->] (q) -- (v); \draw[|->] (v) -- (v2);
 	\draw[->] ($(v) + (0,0.5)$) -- (R);
 \end{tikzpicture}
@@ -229,7 +229,7 @@ Es ist $\varphi = (r, \vartheta^1, \ldots, \vartheta^{m-1})$ die Hintereinandera
 
 Die Umkehrabbildung ist ein Diffeomorphismus
 \begin{align*}
-  f \colon (0, \varepsilon) \times S^{m-1} \to U \subseteq M, \ 
+  f \colon (0, \epsilon) \times S^{m-1} \to U \subseteq M, \ 
   (t,v) \mapsto \exp_p(tv) = \gamma_v(t).
 \end{align*}
 Für jedes $v \in S^{m-1}$ ist $t \mapsto f(t,v) = \gamma_v(t)$ eine Geodätische in $M$. Wir bezeichnen solche Geod"atischen im Folgenden als \CmMark[Geod\"atische!radiale]{radiale Geod\"atische}.
@@ -244,7 +244,7 @@ Für jedes $v \in S^{m-1}$ ist $t \mapsto f(t,v) = \gamma_v(t)$ eine Geodätisch
 
 \begin{bew}
 Man zeigt das Folgende:
-Ist $X$ ein Vektorfeld auf $S^{m-1}$ und bezeichnet man seine Fortsetzung auf $(0,\varepsilon) \times S^{m-1}$ \quot{$\subseteq$} $\B_{\varepsilon}(0)\setminus\{0\}$ bzw. $\B_{\varepsilon}(0_p)\setminus\{0_p\} \subseteq \T_pM$ mit $X_{rv} = X_v$, so ist
+Ist $X$ ein Vektorfeld auf $S^{m-1}$ und bezeichnet man seine Fortsetzung auf $(0,\epsilon) \times S^{m-1}$ \quot{$\subseteq$} $\B_{\epsilon}(0)\setminus\{0\}$ bzw. $\B_{\epsilon}(0_p)\setminus\{0_p\} \subseteq \T_pM$ mit $X_{rv} = X_v$, so ist
 \begin{align*}
 	Y_q = Y_{f(r,v)} = f_{*(r,v)}(0,X_v) = \exp_{p*}(r X_v)
 \end{align*}
@@ -299,21 +299,25 @@ also $\left<Y,\pdifffrac{}{r}\right> \equiv 0$.
 \begin{bem}
   Insbesondere gilt für alle $i \leq m-1$:
   \begin{align*}
-    \left<\pdifffrac{}{r}, \pdifffrac{}{\vartheta^i}\right> = 0.
+    \left<\pdifffrac{}{r}, \pdifffrac{}{\theta^i}\right> = 0.
   \end{align*}
 \end{bem}
 
 % Satz 8.7
-\begin{Satz}
-Für jedes $p \in M$ existiert ein $\varepsilon > 0$, so dass für alle $q \in \B_{\varepsilon}(p)$ genau eine minimierende Geodätische von $p$ nach $q$ existiert, das hei"st eine Geodätische $\gamma$ im Sinne der Definition \ref{dfn-8-1} mit $\mathcal L(\gamma) = \dop(p,q)$.
-Ist $q \notin \exp_p(\B_{\varepsilon}(0_p)) = \B_{\varepsilon}(p)$, so existiert ein $q' \in \partial \B_{\varepsilon}(p)$ mit
+\begin{Satz}\label{satz-8-7}
+Für jedes $p \in M$ existiert ein $\epsilon > 0$, so dass für alle $q \in \B_{\epsilon}(p)$ genau eine minimierende Geodätische von $p$ nach $q$ existiert, das hei"st eine Geodätische $\gamma$ im Sinne der Definition \ref{dfn-8-1} mit $\mathcal L(\gamma) = \dop(p,q)$.
+Ist $q \notin \exp_p(\B_{\epsilon}(0_p)) = \B_{\epsilon}(p)$, so existiert ein $q' \in \partial \B_{\epsilon}(p)$ mit
 \begin{align*}
-	\dop(p,q) = \varepsilon + \dop(q',q).
+	\dop(p,q) = \epsilon + \dop(q',q).
+\end{align*}
+Ferner, ist $\delta < \epsilon$ und $q \notin \B_\delta(p)$, so existiert ein $q' \in \B_\delta(q)$ mit
+\begin{align*}
+	\dop(p,q) = \delta + \dop(q',q)
 \end{align*}
 \end{Satz}
 
 \begin{bew}
-Es sei $\varepsilon > 0$ so, dass auf $\B_{\varepsilon}(p)$ Polorkoordinaten $\varphi = (r,\vartheta^1, \ldots, \vartheta^{m-1})$ existieren. Sei weiter $c \colon [0,1]$ eine beliebige glatte Kurve von $p$ nach $q$ mit Koordinaten $\varphi(c(t)) = (r(t), \vartheta^1(t), \ldots, \vartheta^{m-1}(t))$.
+Es sei $\epsilon > 0$ so, dass auf $\B_{\epsilon}(p)$ Polorkoordinaten $\phi = (r,\theta^1, \ldots, \theta^{m-1})$ existieren. Sei weiter $c \colon [0,1]$ eine beliebige glatte Kurve von $p$ nach $q$ mit Koordinaten $\phi(c(t)) = (r(t), \theta^1(t), \ldots, \theta^{m-1}(t))$.
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
 %	\draw[step=0.25,gray!15] (-6,-6) grid (6,6); \draw[step=0.5,gray!30] (-6,-6) grid (6,6); \fill (0,0) circle(0.1); %Hilfsgitter
 	
@@ -329,9 +333,9 @@ Es sei $\varepsilon > 0$ so, dass auf $\B_{\varepsilon}(p)$ Polorkoordinaten $\v
 	\draw[clip] ($(segel) + (2.825,1)$) ellipse(1 and 0.5);
 	\draw[very thick] (p) ..controls($(p) + 0.75*(ctrl1)$) and ($(pkt1) - 0.25*(ctrl2)$).. (pkt1);
 \end{tikzpicture}\\
-Das Bild von $c$ ist nicht notwendig in $\B_\varepsilon(0)$ enthalten
+Das Bild von $c$ ist nicht notwendig in $\B_\epsilon(0)$ enthalten
 \end{center}
-Für $t_0 = \inf\{t \in [0,1] \mid c(t) \notin \B_{\varepsilon}(p)\}$ ist $c|_{[0,t_0]}$ eine Kurve zu $\B_{\varepsilon}(p)$.
+Für $t_0 = \inf\{t \in [0,1] \mid c(t) \notin \B_{\epsilon}(p)\}$ ist $c|_{[0,t_0]}$ eine Kurve zu $\B_{\epsilon}(p)$.
 Es gilt
 \begin{align*}
 	\left\|\pdifffrac[t]{}{r}\right\| = \|\dot\gamma_w(t)\| = \|w\| = 1.
@@ -340,7 +344,7 @@ Aus der Cauchy-Schwarz-Ungleichung folgt
 \begin{align*}
 	\|\dot c(t)\| & = \|\dot c(t)\|\left\|\pdifffrac[c(t)]{}{r}\right\|\\
 	& \geq \left|\left< \dot c(t), \pdifffrac[c(t)]{}{r}\right>\right|\\
-	& = \left|\left<\dot r(t) \pdifffrac{}{r} + \sum_{i=1}^{m-1}\dot\vartheta^i(t)\pdifffrac{}{\vartheta^i},\pdifffrac[c(t)]{}{r}\right>\right|\\
+	& = \left|\left<\dot r(t) \pdifffrac{}{r} + \sum_{i=1}^{m-1}\dot\theta^i(t)\pdifffrac{}{\theta^i},\pdifffrac[c(t)]{}{r}\right>\right|\\
 	& = \left|\left<\dot r(t)\pdifffrac[c(t)]{}{r}, \pdifffrac[c(t)]{}{r}\right>\right|\\
 	& = \left|\dot r(t)\right|,
 \end{align*}
@@ -348,7 +352,97 @@ wobei die Gleichheit genau dann gilt, wenn $\dot c(t)$ und $\pdifffrac[c(t)]{}{r
 \begin{align*}
 	\mathcal L(c) = \int_0^{t_0}\|\dot c\| + \int_{t_0}^T\|\dot c\| \geq \int_0^{t_0} \left|\left<\dot c,\pdifffrac{}{r}\right>\right| = \int_0^{t_0}|\dot r| = r(t_0)
 \end{align*}
-Gleichheit gilt genau dann, wenn $\vartheta^1(t), \ldots, \vartheta^{m-1}(t)$ konstant sind und $\dot r(t) \geq 0$ gilt, also genau dann, wenn $c$ eine monotone Umparametrisierung von $t \mapsto \exp_p(tv)$ f"ur $v \in S^{m-1}$ ist.
+Gleichheit gilt genau dann, wenn $\theta^1(t), \ldots, \theta^{m-1}(t)$ konstant sind und $\dot r(t) \geq 0$ gilt, also genau dann, wenn $c$ eine monotone Umparametrisierung von $t \mapsto \exp_p(tv)$ f"ur $v \in S^{m-1}$ ist.
+
+F"ur den zweiten Teil sei $\epsilon$ so, dass Polarkoordinaten $\phi=(r, \theta^1,\ldots ,\theta^{m-1})$ um $p$ existieren. Es sei $q \in \B_\delta(p)$ und $c$ sei eine glatte Kurve von $p$ nach $q$.
+\marginnote{\textcolor{red}{BILD}}
+F"ur $t_0 = \inf \{ t \in [0,1] | c(t) \notin \B_\delta(p) \}$ gilt dann:
+\begin{align*}
+	\calL(c) \ge \delta + \dop(c(t_0), q) \ge \delta + \dop(\partial \B_\delta(p), q),
+\end{align*}
+also $d(p,q) = \inf_c \calL(c) \ge \delta + \dop(\partial \B_\delta(p), q)$. Da $\partial \B_\delta(p)$ kompakt ist, die Abstandsfunktion $\dop(\cdot, q)$ auf $\partial \B_\delta(p)$ ihr Minimum in $q'$ an. Damit gilt
+\begin{align*}
+	\dop(q',q) &= \dop(\partial \B_\delta(p), q) \qquad \text{und}\\
+	\dop(p,q) &= \dop(p,q') + \dop(q',q) = \delta + \dop(q',q)
+\end{align*}
+somit gilt dann die Behauptung.
+\end{bew}
+
+\begin{Kor}\label{kor-8-8}
+F"ur alle $p \in M$ existiert ein $\rho > 0$, so dass f"ur alle $q, q' \in \B_\rho(p=$ genau eine minimierende Geod"atische von $q$ nach $q'$ existiert.
+\end{Kor}
+
+\begin{bew}
+F"ur $q \in M$ existiert ein $\rho = \rho(q) > 0$, so dass $\exp$ auf $\B_\rho(q)$ ein Diffeomorphismus ist. Da $\exp: \calD \to \calD$ glatt und $\calD$ offen ist, existiert eine Umgebung $U_q$ von $q$, so dass $\exp_p: \B_{\frac{\rho}{2}}(0_q) \to \B_{\frac{\rho}{2}}(q')$ ein Diffeomorphismus ist f"ur alle $q' \in U_q$. F"ur $p \in ;$ existiert nach Satz \ref{satz-8-7} ein $\epsilon > 0$, so dass $\overline \B_\epsilon(p)$ kompakt ist. Die "Uberdeckung $\bigcup_{q \in \overline \B_\epsilon(q)} \B_{\frac{\rho(q)}{2}}(q)$ besitzt eine endliche Teil"uberdeckung. F"ur $\rho = \min_{i \le k} \{ \frac{\rho(q_i)}{4} \}$ existieren auf jedem $\B_{2\rho}(q)$, $q \in \B_\epsilon(p)$, Polarkoordinaten; insbesondere existiert f"ur $q, q' \in \B_\rho(p)$ eine eindeutige minimierende Geod"atische von $q$ nach $q'$.
+\end{bew}
+
+\begin{bem}
+Die Geod"atischen im obigen Korollar h"angen stetig von ihren Endpunkten ab.
+\end{bem}
+
+\begin{Kor}\label{kor-8-9}
+Es seien $p, q \in M$ und $c: [0,1] \to M$ st"uckweise glatte Kurven von $p$ nach $q$, so dass $\calL(c) = \dop(p,q)$. Damit ist $c$ eine unparametrisierte Geod"atische im Sinne von Definition \ref{dfn-8-1}.
+\end{Kor}
+
+\begin{bew}
+Die Kurve ist lokal l"angenminimierend, denn ist $\overline c$ eine Kurve von $c(s)$ nach $c(t)$ mit $\calL(\overline c) < \calL(c|_{[s,t]})$, so w"are $c|_{[0,s]} \cup \overline c \cup c|_{[t,1]}$ eine Kurve k"urzer als $c$.
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+Da $c$ kompaktes Bild hat, exisitert ein minimales $\rho > 0$ f"ur alle $c(t)$ wie in Korollar \ref{kor-8-8}. Dann findet man eine Partition $0 = t_0 < t_1 < \ldots < t_k = 1$ mit $\dop(c(t_{i-1}), c(t_{i})) < \frac{\rho}{2}$, so dass $c|_{[t_{i-1}, t_{i+1}]}$ glatt ist.
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+Dann stimmt $c|_{[t_{i-1}, t_{i+1}]}$ f"ur jedes $i < k$ mit der nach Korollar \ref{kor-8-8} eindeutigen Geod"atischen (bis auf Umparametrisierung) "uberein.
+\end{bew}
+
+\begin{Dfn}
+Eine Riemannsche Mannigfaltigkeit hei"st \CmMark[vollst\"andig!geo\"atisch]{geod"atisch vollst"andig}, wenn jede Geod"atische auf ganz $\R$ fortgesetzt werden kann.
+\end{Dfn}
+
+\begin{Satz}[Satz von Hopf-Rinow]
+F"ur eine Riemannsche Mannigfaltigkeit sind die folgenden Aussagen "aquivalent:
+\begin{enumerate}[label=(\roman*)]
+\item
+	$M$ ist ged"atisch vollst"andig
+\item
+	F"ur alle $p \in M$ gilt $\calD_p = \T_pM$
+\item
+	Es existiert ein $p \in M$ mit $\calD_p = \T_pM$
+\item
+	Abgeschlosse und beschr"ankte Mengen sind kompakt
+\item
+	$M$ ist vollst"andig (als metrischer Raum)
+\end{enumerate}
+Jede dieser Eigenschaften impliziert, dass je zwei Punkte in $M$ durch eine minimierende Geod"atische verbunden werden k"onnen.
+\end{Satz}
+
+\begin{bew}
+Man zeigt zun"achst, dass falls (iii) f"ur $p \in M$ gilt, es zu jedem  $q \in M$ eine minimierende Geod"atische von $p$ nach $q$ gibt. Es gelte $\calD_p = \T_pM$ und es sei $q \in M$.
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+F"ur $\epsilon > 0$ wie in Satz \ref{satz-8-7} ist um $\partial \B_{\frac{\epsilon}{2}}(p)$ kompakt; es sei $\overline q \in \partial \B_{\frac{\epsilon}{2}}(p)$ ein Punkt minimalen Abstandes zu $q$. Dann gilt $\overline q = \exp_p(\frac{\epsilon}{2}v)$ f"ur ein $v \in \T_pM$ mit $\|v\| = 1$.
+\begin{description}[font=\normalfont\itshape]
+\item[Behauptung:] Dann ist $\gamma_v|_{[0,R]}: t \mapsto \exp_p(tv)$ minimierende Geod"atische nach $q$ f"ur $R = \dop(p,q)$.
+\end{description}
+Es sei $\calI = \{t \in [0,R] | \dop(\gamma_v(t),q) = R - t\}$. Dann ist $\calI$ nichtleer und abgeschlossen, denn $t \mapsto \dop(\gamma_v(t),q) + t$ ist stetig.
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+F"ur $t_0 \in \calI$ und $0 < \rho < \epsilon_0$ sei $q' \in \partial \B_\rho(\gamma_v(t_0))$ wie in Satz \ref{satz-8-7} angewandt auf $p_0 = \gamma_v(t_0)$. Dann gilt $\dop(p_0, q) = \rho + \dop(q',q)$ und es folgt:
+\begin{align*}
+	\dop(p,q') &\ge \dop(p,q) - \dop (q',q)\\
+	&= \dop(p,q) - \dop(p_0,q) + \rho\\
+	&= R - (R - t) + \rho = t_0 + \rho
+\end{align*}
+Damit ist die Verkettung von $\gamma_v|_{[0,t_v]}$ und der minimalen Geod"atischen von $p_0$ nach $q'$ nach Korollar \ref{kor-8-9} eine Geod"atische. Aus der Eindeutigkeit von kurzen Geod"atischen folgt, dass diese Zusamensetzung mit $\gamma_v$ "ubereinstimmt. Es gilt also $q' = \gamma_v(t_0 + \rho)$ und mit $\dop(\gamma_v(t_0 + p), q) = \dop(p_0,q) - \rho = R - (t_0 + \rho)$ gilt $t_0 + \rho \in \calI$.
+
+Wir k"onnen nun die einzelnen Implikationen zeigen. Dabei gelten (i) $\Rightarrow$ (ii) $\Rightarrow$ (iii) offensichtlich.
+\begin{description}[font=\normalfont]
+\item[(iii) $\Rightarrow$ (iv):]
+	Es gelte $\calD_p = \T_pM$ und es sei $K \subseteq M$ abgeschlossen und beschr"ankt. Dann existiert $R$ mit $K \subseteq \overline\B_R(p)$. Da $\overline\B_R(0_p)$ kompakt ist, ist auch $K$ kompakt.
+\item[(iv) $\Rightarrow$ (v):]
+	gilt offensichtlich
+\item[(v) $\Rightarrow$ (i):]
+	Es sei $c$ eine nach Bogenl"ange parametrisierte Geod"atische mit maximalem Definitionsintervall $\calI$. $\calI$ ist nichtleer und offen. Ist $(t_n)$ eine Folge in $\calI$ mit Grenzwert $t$. Dann ist $q_n = c(t_n)$ wegen
+		\[ \dop(c(t_n), c(t_m)) \le |t_m - t_n| \]
+	eine Cauchy-Folge und konvergiert somit gegen ein $p \in M$.
+	\begin{center}\textcolor{red}{[BILD]}\end{center}
+	Es sei $\rho > 0$ wie in Korollar \ref{kor-8-8}. F"ur hinreichend gro"ses $n$ gilt dann $|t_n - t| < \frac{\rho}{2}$. Die nach Bogenl"ange parametrisierte Geod"atische von $q_n = c(t_n)$ mit Startvektor $\dot c(t_n)$ existiert auf $(-\frac{\rho}{2}, \frac{\rho}{2})$, setzt also $c$ bis zum Zeitpunkt $|t_n| + \frac{\rho}{2} > |t|$ fort.
+\end{description}
 \end{bew}
 
 

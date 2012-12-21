@@ -45,6 +45,28 @@
   citecolor=rltblue
 }
 
+% vertausche die Theta, Phi, Rho und Epsilon mit ihrer "var" Version
+%\newcommand{\swapcmd}[2]{
+%	\let\temp\#1
+%	\left\#1\#2
+%	\let\#2\temp
+%}
+\let\temp\phi
+\let\phi\varphi
+\let\varphi\temp
+
+\let\temp\theta
+\let\theta\vartheta
+\let\vartheta\temp
+
+\let\temp\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\temp
+
+\let\temp\rho
+\let\rho\varrho
+\let\varrho\temp
+
 \usepackage{tikz} % Fuer Zeichnungen in TikZ
 \usetikzlibrary{matrix,arrows,calc,intersections, positioning, patterns, decorations.text, decorations.pathmorphing}
 

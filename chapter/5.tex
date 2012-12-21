@@ -1,8 +1,8 @@
 \chapter{Vektorb"undel}\label{kapitel-5}
 
 Betrachte $\T M$ als glatte Mannigfaltigkeit durch
-	\[ \begin{array}{ccc} \T M|_U = \pi^{-1}(U) &\to& \varphi(U) \times \R^m \cong U \times \R^m \\
-		X_p = \sum \xi^i\pdifffrac[p]{}{x^i} &\mapsto& \left(\varphi(p),\xi\right). \end{array} \]
+	\[ \begin{array}{ccc} \T M|_U = \pi^{-1}(U) &\to& \phi(U) \times \R^m \cong U \times \R^m \\
+		X_p = \sum \xi^i\pdifffrac[p]{}{x^i} &\mapsto& \left(\phi(p),\xi\right). \end{array} \]
 Fasern : $\T_pM = \pi^{-1}(p)$ $m$-dimensionaler Vektorraum und $X_p = \sum \xi^i \pdifffrac[p]{}{x^i} \mapsto \xi$ ist ein linearer Isomorphismus.
 
 % Definition 5.1
@@ -97,7 +97,7 @@ denn
 \begin{bsp}
   Die "ubergangsfunktionen von $\T M$ sind gegeben durch
   \begin{align*}
-    \D(\psi \circ \varphi^{-1}) = \left(\partial_i(\psi^j \circ \varphi^{-1})\right)_{i,j \leq m}.
+    \D(\psi \circ \phi^{-1}) = \left(\partial_i(\psi^j \circ \phi^{-1})\right)_{i,j \leq m}.
   \end{align*}
 \end{bsp}
 
@@ -128,7 +128,7 @@ Das längs $\Phi$ zur"uckgezogene B"undel ("`\CmMark{pullback}"') ist definiert 
   E' = \Phi^{\ast}E = \{(p,x) \mid x \in E_{\Phi(p)}\} \subseteq M \times E,
 \end{align*}
 die Projektion $\pi' \colon \Phi^{\ast}E \to M, (p,x) \mapsto p$ und die folgenden B"undelkarten:
-Es sei $p \in M$ und $(\tau, U)$ eine B"undelkarte von $E$ um $\Phi(p)$, sowie $(\varphi,V)$ eine Karte von $M$ um $p$ mit $\Phi(V) \subseteq U$.
+Es sei $p \in M$ und $(\tau, U)$ eine B"undelkarte von $E$ um $\Phi(p)$, sowie $(\phi,V)$ eine Karte von $M$ um $p$ mit $\Phi(V) \subseteq U$.
 Dann definiert 
 \begin{align*}
   \Phi^{\ast}E|_V \to V \times \R^k, (p,x) \mapsto \left(p, \tau_{\Phi(p)}(x)\right)
@@ -175,18 +175,18 @@ Es seien $V$ und $W$ $k$-Vektorr"aume. Das \CmMark[Tensor!-produkt]{Tensorproduk
 \item
 	$V \otimes W \cong W \otimes V$
 \item
-	$V^* \otimes W \cong \Hom(V, W)$ verm"oge $(\varphi \otimes w)(v) = \varphi(v) \cdot w$ wobei $V^*$ der \gls{Dualraum} zu $V$ ist
+	$V^* \otimes W \cong \Hom(V, W)$ verm"oge $(\phi \otimes w)(v) = \phi(v) \cdot w$ wobei $V^*$ der \gls{Dualraum} zu $V$ ist
 \item
 	Sind $\{v_i\}_{i \in \calI}$ und $\{w_j\}_{j \in \calJ}$ Basen von $V$ und $W$, so ist $\{v_i \otimes w_j\}_{(i,j) \in \calI \X \calJ}$ eine Basis von $V \otimes W$. Insbesondere gilt f"ur Vektorr"aume endlicher Dimension dass $\ddim (V \otimes W) = \ddim V \cdot \ddim W$
 \end{enumerate}\end{emptythm}
 
 \begin{emptythm}[Universelle Eigenschaft:]
-Ist $U$ ein Vektorraum und $\beta$ eine bilineare Abbildung von $V \X W$ in $U$. Dann existiert genau eine lineare Abbildung $\varphi: V \otimes W \to U$ mit $\beta = \varphi \circ b$.
+Ist $U$ ein Vektorraum und $\beta$ eine bilineare Abbildung von $V \X W$ in $U$. Dann existiert genau eine lineare Abbildung $\phi: V \otimes W \to U$ mit $\beta = \phi \circ b$.
 \begin{center}\begin{tikzpicture}
 	\node (1) at (-2,0) {$V \X W$}; \node (2) at (1,0) {$U$}; \node (3) at (-2,-1.5) {$V \otimes W$};
 	\draw[->] (1) --node[above,font=\scriptsize]{$\beta$} (2);
 	\draw[->] (1) --node[left,font=\scriptsize] {$b$} (3);
-	\draw[->,dashed] (3) --node[below,font=\scriptsize] {$\varphi$} (2);
+	\draw[->,dashed] (3) --node[below,font=\scriptsize] {$\phi$} (2);
 \end{tikzpicture}\end{center}
 Diese Eigenschaft bestimmt $(V \otimes W, b)$ eindeutig bis auf Isomorphie.
 \end{emptythm}
@@ -218,24 +218,24 @@ erzeugte Vektorraum.
 \end{enumerate}\end{emptythm}
 
 \begin{emptythm}[Universelle Eigenschaft:]
-Ist $U$ ein Vektorraum und $\sigma$ eine schiefsymmetrische multilineare Abbildung $\underbrace{V \X \ldots  \X V}_{p\text{-mal}} \to U$, so existiert genau eine lineare Abbildung $\varphi: \Lambda^pV \to U$ mit $\sigma = \varphi \circ s$.
+Ist $U$ ein Vektorraum und $\sigma$ eine schiefsymmetrische multilineare Abbildung $\underbrace{V \X \ldots  \X V}_{p\text{-mal}} \to U$, so existiert genau eine lineare Abbildung $\phi: \Lambda^pV \to U$ mit $\sigma = \phi \circ s$.
 \begin{center}\begin{tikzpicture}
 	\node (1) at (-2,0) {$\bigotimes^pV$}; \node (2) at (1,0) {$U$}; \node (3) at (-2,-1.5) {$\Lambda^pV$};
 	\draw[->] (1) --node[above,font=\scriptsize]{$\sigma$} (2);
 	\draw[->] (1) --node[left,font=\scriptsize] {$s$} (3);
-	\draw[->,dashed] (3) --node[below,font=\scriptsize] {$\varphi$} (2);
+	\draw[->,dashed] (3) --node[below,font=\scriptsize] {$\phi$} (2);
 \end{tikzpicture}\end{center}
 Die Isomorphieklasse von $(\Lambda^pV, s)$ ist durch diese Eigenschaft eindeutig bestimmt.
 \end{emptythm}
 
 Setzt man $\Lambda^0V = k$, so wird $\Lambda V = \bigoplus_{p=0}^{\infty}\Lambda^pV$ mit dem durch
 	\[ (v_1 \wedge \ldots \wedge v_p, v_{p+1} \wedge \ldots \wedge v_{p+q}) \mapsto v_1 \wedge \ldots \wedge v_{p+q} \]
-induzierten Produkt zu einer assoziativen, graduiert kommutativen Algebra: $v \in \Lambda^pV$, $w \in \Lambda^qV$, $v \wedge w = (-1)^{p \cdot q} w \wedge v$. Sind $V_1$, $V_2$, $W_1$, $W_2$ Vektorr"aume und $\varphi \in \Hom(V_1, W_1)$, $\psi \in \Hom(V_2, W_2)$, so definiert die Fortsetzung von 
-	\[ \varphi \otimes \psi (v_1 \otimes v_2) = (\varphi(v_1)) \otimes (\psi(v_2)) \]
-ein Element $\varphi \otimes \psi \in \Hom(V_1 \otimes V_2, W_1 \otimes W_2)$. Sind $V$, $W$ Vektorr"aume und $\varphi_1,\ldots ,\varphi_p \in \Hom(V, W)$, so induzieren diese eine lineare Abbildung
-	\[ \varphi_1 \otimes \ldots \otimes \varphi_p : \bigoplus^p V \to \bigoplus^p W \]
+induzierten Produkt zu einer assoziativen, graduiert kommutativen Algebra: $v \in \Lambda^pV$, $w \in \Lambda^qV$, $v \wedge w = (-1)^{p \cdot q} w \wedge v$. Sind $V_1$, $V_2$, $W_1$, $W_2$ Vektorr"aume und $\phi \in \Hom(V_1, W_1)$, $\psi \in \Hom(V_2, W_2)$, so definiert die Fortsetzung von 
+	\[ \phi \otimes \psi (v_1 \otimes v_2) = (\phi(v_1)) \otimes (\psi(v_2)) \]
+ein Element $\phi \otimes \psi \in \Hom(V_1 \otimes V_2, W_1 \otimes W_2)$. Sind $V$, $W$ Vektorr"aume und $\phi_1,\ldots ,\phi_p \in \Hom(V, W)$, so induzieren diese eine lineare Abbildung
+	\[ \phi_1 \otimes \ldots \otimes \phi_p : \bigoplus^p V \to \bigoplus^p W \]
 und
-	\[ \varphi_1 \wedge \ldots  \wedge \varphi_p : \Lambda^pV \to \Lambda^pW \]
+	\[ \phi_1 \wedge \ldots  \wedge \phi_p : \Lambda^pV \to \Lambda^pW \]
 
 \section{B"undelkonstruktion}
 Es seien $E$ und $E'$ Vektorb"undel vom Rang $k$ und $l$. Es bezeichnen stets $\tau$ und $\tau'$ lokale Trivialisierungen mit dem gleichen Trivialisierungsgebiet $U$ sowie $g_{\alpha\beta}$ und $g'_{\alpha\beta}$ die "Ubergangsfunktionen von $E$ beziehungsweise $E'$. Das \CmMark[Tensor!-produkt]{Tensorprodukt} $E \otimes E'$ von $E$ und $E'$ ist das Vektorb"undel mit den Fasern $(E \otimes E')_p = E_p \otimes E'_p$, also $E \otimes E' = \bigcup_{p \in M} E_p \otimes E'_p \to M$ mit lokalen Trivialisierungen
@@ -256,7 +256,7 @@ Das B"undel
 	\[ \T_s^r E = \underbrace{E \otimes \ldots \otimes E}_{r} \otimes \underbrace{E^* \otimes \ldots \otimes E^*}_{s} \]
 hei"st das $(r,s)$-\CmMark[Tensor!-b\"undel]{Tensorb"undel} von $E$. Das Homomorphismenb"undel $\Hom(E,E^*)$ ist definiert durch
 	\[ \sigma: \left\{ \begin{array}{ccc} \Hom(E,E')|_U = \bigcup\limits_{p \in U}^{\cdot} \Hom(E_p, E_p') &\to& U \X \Hom(\R^k, \R^l)\\
-		\varphi \in \Hom(E_p, E'_p) &\mapsto& (p, \tau'_p \circ \varphi \circ \tau_p^{-1}) \end{array} \right. \]
+		\phi \in \Hom(E_p, E'_p) &\mapsto& (p, \tau'_p \circ \phi \circ \tau_p^{-1}) \end{array} \right. \]
 Zur Definition der "Ubergangsfunktionen schreibt man $\Hom(E, E') \cong E^* \otimes E'$ und definiert $h_{\alpha\beta} = (g_{\alpha\beta}^{-1})^* \otimes g'_{\alpha\beta}$.
 \begin{center}\begin{tikzpicture}
 	\node (1) at (-1.5,1) {$V^*$}; \node (2) at (1.5,1) {$V$}; \node (3) at (-1.5,-1) {$W^*$}; \node (4) at (1.5,-1) {$W$};
@@ -336,9 +336,9 @@ Der Beweis sei als Übung überlassen.
 
 Ein Element von $\T_p^*M$ bezeichnet man als \CmMark[Kotangentialvektor]{Kotangentialvektoren}, $\T_p^*M$ als \CmMark{Kotangentialvektorraum} und das Bündel $\T^{*}M$ als \CmMark{Kotangentialbündel}. \textcolor{red}{(in der Vorlesung wurde das Element von $\T_p^*M$ selbst das Kotangententialvektorraum bezeichnet und der kotangentialvektor wurde "uberhaupt nicht er"ahnt, das erscheint falsch, also haben wir es ge"andert)}
 
-Ist $(\varphi, U)$ eine Karte von $M$, dann bilden die Differentiale $\dop \varphi^i = \dop x^i$ der Koordinatenfunktionen (punktweise) eine Basis von $\T_p^{*}M$, denn
+Ist $(\phi, U)$ eine Karte von $M$, dann bilden die Differentiale $\dop \phi^i = \dop x^i$ der Koordinatenfunktionen (punktweise) eine Basis von $\T_p^{*}M$, denn
 \begin{align*}
-  \dop x^i|_p\left(\pdifffrac[p]{}{x^i}\right) = \pdifffrac{}{x^j}(\varphi^i) = \delta_j^i.
+  \dop x^i|_p\left(\pdifffrac[p]{}{x^i}\right) = \pdifffrac{}{x^j}(\phi^i) = \delta_j^i.
 \end{align*}
 Die $\dop x^i$ sind also punktweise linear unabhängige $(0,1)$-Tensorfelder über dem Kartengebiet $U$.
 
@@ -347,10 +347,10 @@ Ist $\psi$ eine weitere Karte und bezeichnen $\pdifffrac{}{y^i}$ beziehungsweise
 mit
 	\[ \alpha_j^i \overset{!}{=} \dop x^i\left(\pdifffrac{}{y^j}\right) = \sum \alpha_k^i \underbrace{\dop y^k\left(\pdifffrac{}{y^j}\right)}_{\delta_j^k} \]
 denn
-	\[ \alpha_j^i = \textcolor{red}{\pdifffrac{}{y^j}(\varphi^i)} = \pdifffrac{p^i}{y^i} = \partial_j(\varphi^i\circ \psi^{-1}) \]
-Es gilt also $\alpha = \D(\psi \circ \varphi^{-1})^{x^{-1}}$, vergleiche Satz \ref{satz-2-10}.
+	\[ \alpha_j^i = \textcolor{red}{\pdifffrac{}{y^j}(\phi^i)} = \pdifffrac{p^i}{y^i} = \partial_j(\phi^i\circ \psi^{-1}) \]
+Es gilt also $\alpha = \D(\psi \circ \phi^{-1})^{x^{-1}}$, vergleiche Satz \ref{satz-2-10}.
 \begin{align*}
-  \pdifffrac{}{x^i} = \sum \partial_i (\psi^j \circ \varphi^{-1})\pdifffrac{}{y^j}.
+  \pdifffrac{}{x^i} = \sum \partial_i (\psi^j \circ \phi^{-1})\pdifffrac{}{y^j}.
 \end{align*}
 Diese transponierten Inversen der Differentiale der Kartenwechsel sind geanu die Übergangsfunktionen $h_{\alpha\beta} = (g_{\alpha\beta}^{*})^{-1}$ in der Definition von $(\T M)^{*} = \T^{*}M$.
 
@@ -391,9 +391,9 @@ Insbesondere: $X \in \mathcal T_0^1(M) = \mathcal V(M) = \{\calV^*(M) \to C^{\in
 also $\Phi^{*}X = \Phi_{*}^{-1}X$.
 
 \begin{bsp}[Anwendung]
-  Es sei $(\varphi_{\alpha},U_{\alpha})$ ein Atlas von $M$. Dann ist jedes $\varphi_{\alpha}$ ein Diffeomorphismus von $U_{\alpha}$ auf $\varphi_{\alpha}(U_{\alpha}) = V_{\alpha} \subset \R^m$. Ist $S \in \mathcal T_s^r(M)$, so ist
+  Es sei $(\phi_{\alpha},U_{\alpha})$ ein Atlas von $M$. Dann ist jedes $\phi_{\alpha}$ ein Diffeomorphismus von $U_{\alpha}$ auf $\phi_{\alpha}(U_{\alpha}) = V_{\alpha} \subset \R^m$. Ist $S \in \mathcal T_s^r(M)$, so ist
   \begin{align*}
-    S_{\alpha} = (\varphi_{\alpha}^{-1})^{*}S|_{U_\alpha}
+    S_{\alpha} = (\phi_{\alpha}^{-1})^{*}S|_{U_\alpha}
   \end{align*}
   ein $(r,s)$-Tensorfeld auf $V_{\alpha}$.
 
@@ -401,9 +401,9 @@ also $\Phi^{*}X = \Phi_{*}^{-1}X$.
 
   Für alle $\alpha, \beta$ mit $U_{\alpha} \cap U_{\beta}$ gilt
   \begin{align*}
-    (\varphi_{\alpha} \circ \varphi_{\beta}^{-1})^{*}S_{\alpha}|_{V_{\alpha} \cap V_{\beta}} & = (\varphi_{\alpha} \circ \varphi_{\beta}^{-1})^{*}\left((\varphi_{\alpha}^{-1})^{*}S|_{U_{\alpha}}\right)|_{V_{\alpha}\cap V_{\beta}}\\
-    & = \left.(\varphi_{\beta}^{-1})^{*} \circ \varphi_{\alpha}^{*} \circ (\varphi_{\alpha}^{-1})^{*} S|_{U_{\alpha}}\right|_{V_{\alpha} \cap V_{\beta}}\\
-    & = \left.(\varphi_{\beta}^{-1})^{*}S|_{U_{\beta}}\right|_{V_{\alpha} \cap V_{\beta}}\\
+    (\phi_{\alpha} \circ \phi_{\beta}^{-1})^{*}S_{\alpha}|_{V_{\alpha} \cap V_{\beta}} & = (\phi_{\alpha} \circ \phi_{\beta}^{-1})^{*}\left((\phi_{\alpha}^{-1})^{*}S|_{U_{\alpha}}\right)|_{V_{\alpha}\cap V_{\beta}}\\
+    & = \left.(\phi_{\beta}^{-1})^{*} \circ \phi_{\alpha}^{*} \circ (\phi_{\alpha}^{-1})^{*} S|_{U_{\alpha}}\right|_{V_{\alpha} \cap V_{\beta}}\\
+    & = \left.(\phi_{\beta}^{-1})^{*}S|_{U_{\beta}}\right|_{V_{\alpha} \cap V_{\beta}}\\
     & = S_{\beta}|_{V_{\alpha} \cap V_{\beta}}
   \end{align*}
   Ist umgekehrt $S_\alpha$ eine Familie von $(r,s)$-Tensorfeldern auf $V_{\alpha}$ mit obigem Transformationsverhalten, so definiert dies ein $(r,s)$-Tensorfeld auf $M$.
@@ -439,7 +439,7 @@ also $\Phi^{*}X = \Phi_{*}^{-1}X$.
   Das Vektorbündel $\Lambda^k(\T^{*}M)$ wird mit $\Lambda^k(M)$ bezeichnet und der Raum seiner Schnitte $\Gamma(\Lambda^k(\T^{*}M))$ mit $\Omega^k(M)$. Die Elemente von $\Omega^k(M)$ heißen \CmMark{Differentialformen} vom Grad $k$ oder kurz \CmMark{$k$-Formen} auf $M$.
 \end{Dfn}
 
-Ist $(\varphi, U)$ eine Karte von $M$, so bilden die Differentiale der Koordinatenfunktionen $\dop x^i = \dop \varphi^i$ eine Basis von $\T^{*}M$.
+Ist $(\phi, U)$ eine Karte von $M$, so bilden die Differentiale der Koordinatenfunktionen $\dop x^i = \dop \phi^i$ eine Basis von $\T^{*}M$.
 Diese sind (lokale) Schnitte in $\Lambda^1(\T^{*}M)$, also lokal $1$-Formen. Das Differential von $f \in C^{\infty}(M)$ ist eine $1$-Form $\dop f(X) = X(f)$.
 Lokal gilt $\dop f = \sum f_i \dop x^i$, wobei $f_i = \dop f \left(\pdifffrac{}{x^i}\right) = \pdifffrac{}{x^i}(f) = \pdifffrac{f}{x^i}$.
 

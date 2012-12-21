@@ -26,7 +26,7 @@
 % Abbildung 1-1
 %\CmPutSvg{1-1-topologische-mf}{8.5cm}
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
-	\draw[->] (-1.5,0) to[out=20, in=160]node[above,font=\scriptsize]{$\varphi' \circ \varphi^{-1}$} (1.5,0);
+	\draw[->] (-1.5,0) to[out=20, in=160]node[above,font=\scriptsize]{$\phi' \circ \phi^{-1}$} (1.5,0);
 	
 	\draw[->] (-4,-0.5) -- (-2,-0.5); \draw[->] (-3.75,-0.75) -- (-3.75, 1.25); \node[font=\scriptsize] at (-4, 1.25) {$\R^n$};
 	\draw[->] (2,-0.5) -- (4,-0.5); \draw[->] (2.25,-0.75) -- (2.25, 1.25); \node[font=\scriptsize] at (2, 1.25) {$\R^m$};
@@ -36,7 +36,7 @@
 	\draw (-4.25, 1.75) to[out=70,in=180] (-1.75,3) to[out=300,in=90] (-1.25, 1.25) to[out=180,in=340] (-4.25, 1.75) -- cycle; \node at (-1.25,3) {$M$};
 	\filldraw[fill=gray!20] (-2.75,2) circle(0.4); \node[font=\scriptsize] at (-3.25,2.25) {$U$};
 	\filldraw[fill=gray!20] (-3,0.25) circle (0.5); \node at (-2.25, 0.5) {$V$};
-	\draw[->] (-2.75,1.5) to[out=280,in=80] node[right]{$\varphi$} (-2.75,0.75);
+	\draw[->] (-2.75,1.5) to[out=280,in=80] node[right]{$\phi$} (-2.75,0.75);
 			
 	\draw (1.75, 1.75) to[out=70,in=180] (4.25,3) to[out=300,in=90] (4.75, 1.25) to[out=180,in=340] (1.75, 1.75) -- cycle; \node at (4.75,3) {$M$};
 	\filldraw[fill=gray!20] (3.55,2.25) circle(0.6); \node[font=\scriptsize] at (2.75,2.25) {$U'$};
@@ -53,23 +53,23 @@
 		 (2.5,-0.25) ..controls(ctrl0up) and (ctrl1down).. (3,0.25) ..controls(ctrl1up) and (ctrl2down).. (3,0.7) ..controls(ctrl2up) and (ctrl3down).. (4,0.5) ..controls(ctrl3up) and (ctrl4down).. (3.75,-0.3) ..controls(ctrl4up) and (ctrl0down).. (2.5,-0.25); \node at (4.25, 0.5) {$V'$};
 	\end{scope}
 	\draw  (2.5,-0.25) ..controls(ctrl0up) and (ctrl1down).. (3,0.25) ..controls(ctrl1up) and (ctrl2down).. (3,0.7) ..controls(ctrl2up) and (ctrl3down).. (4,0.5) ..controls(ctrl3up) and (ctrl4down).. (3.75,-0.3) ..controls(ctrl4up) and (ctrl0down).. (2.5,-0.25) -- cycle; \node at (4.25, 0.5) {$V'$};
-	\draw[->] (3.5,1.5) to[out=280,in=80] node[right]{$\varphi'$} (3.5,0.75);
+	\draw[->] (3.5,1.5) to[out=280,in=80] node[right]{$\phi'$} (3.5,0.75);
 \end{tikzpicture}\end{center}
 
-  $\varphi' \circ \varphi^{-1}$ ist ein Hom"oomorphismus offener Mengen des $\R^n$ bzw. $\R^m$. Nach dem \href{http://de.wikipedia.org/wiki/Fixpunktsatz_von_Brouwer}{Satz von Brouwer} (1912) gilt dann $m = n$. Damit ist die Dimension einer zusammenh"angenden topologischen Mannigfaltigkeit eindeutig definiert.\\
+  $\phi' \circ \phi^{-1}$ ist ein Hom"oomorphismus offener Mengen des $\R^n$ bzw. $\R^m$. Nach dem \href{http://de.wikipedia.org/wiki/Fixpunktsatz_von_Brouwer}{Satz von Brouwer} (1912) gilt dann $m = n$. Damit ist die Dimension einer zusammenh"angenden topologischen Mannigfaltigkeit eindeutig definiert.\\
 
-  Die Abbildung $\varphi \colon U \to V \subset \R^n$ hei\ss t \CmMark{Karte} von $M$ um $p$, die Menge $U$ hei\ss t \CmMark{Kartengebiet}.\\
+  Die Abbildung $\phi \colon U \to V \subset \R^n$ hei\ss t \CmMark{Karte} von $M$ um $p$, die Menge $U$ hei\ss t \CmMark{Kartengebiet}.\\
 
-  Eine Menge von Karten $\mathcal A = \{(\varphi_{\alpha}, U_{\alpha}) \mid \alpha \in J \}$ hei\ss t \CmMark{Atlas} von $M$, falls $\bigcup_{\alpha \in J}U_{\alpha} = M$.\\
+  Eine Menge von Karten $\mathcal A = \{(\phi_{\alpha}, U_{\alpha}) \mid \alpha \in J \}$ hei\ss t \CmMark{Atlas} von $M$, falls $\bigcup_{\alpha \in J}U_{\alpha} = M$.\\
 
   Ein Atlas $\mathcal A$ von $M$ hei\ss t $C^k$-Atlas, wenn für alle $\alpha, \beta \in J$ mit $U_{\alpha} \cap U_{\beta} \neq \emptyset$ der sogenannte \CmMark{Kartenwechsel}:
   \begin{align*}
-    \varphi_{\beta} \circ \varphi_{\alpha}^{-1}\colon \varphi_{\alpha}(U_{\alpha} \cap U_{\beta}) \to \varphi_{\beta}(U_{\alpha} \cap U_{\beta})
+    \phi_{\beta} \circ \phi_{\alpha}^{-1}\colon \phi_{\alpha}(U_{\alpha} \cap U_{\beta}) \to \phi_{\beta}(U_{\alpha} \cap U_{\beta})
   \end{align*}
   ein $C^k$-\gls{Diffeomorphismus} ist.
 
   \begin{center}\begin{tikzpicture}[font=\scriptsize]
-  	\draw[->] (-1.5,0) to[out=20, in=160]node[above,font=\scriptsize]{$\varphi_\beta \circ \varphi^{-1}_\alpha$} (1.5,0);
+  	\draw[->] (-1.5,0) to[out=20, in=160]node[above,font=\scriptsize]{$\phi_\beta \circ \phi^{-1}_\alpha$} (1.5,0);
 	
 	\draw[->,thick] (-4,-0.5) -- (-2,-0.5); \draw[->,thick] (-3.75,-0.75) --node[left]{$\R^n$} (-3.75, 1.25);
 	\draw[->,thick] (2,-0.5) -- (4,-0.5); \draw[->,thick] (2.25,-0.75) -- (2.25, 1.25);
@@ -83,14 +83,14 @@
 	\end{scope}
 	\draw (0.25,2.25) circle(0.5) (-0.25,2) circle(0.5); \node at (-1, 2.25) {$U_\alpha$}; \node at (1,2.5) {$U_\beta$};
 	
-	\draw[->] (-0.5,2) to[out=180,in=75] node[left]{$\varphi_\alpha$} (-3,0.25);
-	\draw[->] (0.5,2.25) to[out=0,in=105] node[right]{$\varphi_\beta$} (3,0.25);
+	\draw[->] (-0.5,2) to[out=180,in=75] node[left]{$\phi_\alpha$} (-3,0.25);
+	\draw[->] (0.5,2.25) to[out=0,in=105] node[right]{$\phi_\beta$} (3,0.25);
   \end{tikzpicture}\end{center}
 
 
-  Eine Karte $\psi \colon U \to V$ von $M$ hei\ss t \CmMark[Karte!vertr{\"a}gliche]{verträglich} mit einem $C^k$-Atlas $\mathcal A = \{(\varphi_{\alpha},U_{\alpha}) \mid \alpha \in J\}$ wenn jeder Kartenwechsel
+  Eine Karte $\psi \colon U \to V$ von $M$ hei\ss t \CmMark[Karte!vertr{\"a}gliche]{verträglich} mit einem $C^k$-Atlas $\mathcal A = \{(\phi_{\alpha},U_{\alpha}) \mid \alpha \in J\}$ wenn jeder Kartenwechsel
   \begin{align*}
-    \varphi_{\alpha} \circ \psi^{-1}: \psi(U \cap U_{\alpha}) \to \varphi_{\alpha}(U \cap U_{\alpha})
+    \phi_{\alpha} \circ \psi^{-1}: \psi(U \cap U_{\alpha}) \to \phi_{\alpha}(U \cap U_{\alpha})
   \end{align*}
   ein $C^k$-Diffeomorphismus ist, also $\mathcal A' = \mathcal A \cup \{(\psi, U)\}$ ebenfalls ein $C^k$-Atlas ist. Die Menge aller mit $\mathcal A$ verträglichen Karten ist ein \CmMark[Atlas!maximaler]{maximaler $C^k$-Atlas}. Jeder maximale Atlas enthält alle mit ihm verträglichen Karten. Ein maximaler $C^k$-Atlas hei\ss t auch \CmMark{$C^k$-differenzierbare Struktur}.
 
@@ -122,15 +122,15 @@
 
     ist offen in $S^1$ und die Kartenabbildung
     \begin{align*}
-      \varphi \colon (\sin t, \cos t) \mapsto t
+      \phi \colon (\sin t, \cos t) \mapsto t
     \end{align*}
     ist ein Hom"oomorphismus.
     \begin{align*}
-      \varphi' \colon U' = \{(\sin t, \cos t) \mid t \in (-\pi,\pi)\} \to (-\pi,\pi)
+      \phi' \colon U' = \{(\sin t, \cos t) \mid t \in (-\pi,\pi)\} \to (-\pi,\pi)
     \end{align*}
-    ebenfalls. $\mathcal A = \{(\varphi, U), (\varphi',U')\}$ ist ein Atlas von $S^1$, denn $U \cup U' = S^1$.
+    ebenfalls. $\mathcal A = \{(\phi, U), (\phi',U')\}$ ist ein Atlas von $S^1$, denn $U \cup U' = S^1$.
     \begin{align*}
-      & \varphi' \circ \varphi^{-1} \colon \varphi(U \cap U') \to \varphi'(U \cap U')\\
+      & \phi' \circ \phi^{-1} \colon \phi(U \cap U') \to \phi'(U \cap U')\\
       & (0,\pi)\cup(\pi,2\pi) \to (-\pi,0)\cup(0,\pi), t \mapsto \begin{cases}
         t & 0 < t < \pi\\
         t-2\pi & \pi < t < 2\pi
@@ -140,10 +140,10 @@
   \item Jeder reelle Vektorraum endlicher Dimension ist in kanonischer Weise eine $C^{\infty}$-Mannigfaltigkeit.\\
     W"ahle eine Basis $\{v_1, \ldots, v_n\}$ von $V$. Diese definiert mit
     \begin{align*}
-      \varphi\left(\sum\lambda_iv_i\right) = (\lambda_1, \ldots, \lambda_n)
+      \phi\left(\sum\lambda_iv_i\right) = (\lambda_1, \ldots, \lambda_n)
     \end{align*}
     eine Bijektion auf $\R^n$. Damit erhält man eine globale Karte von $V$.
-    Der zugehörige Atlas h"angt nicht von der Wahl der Basis ab, denn ist $\{w_1, \ldots, w_n\}$ eine weitere Basis von $V$ und $\psi(\sum \lambda_iw_i) = (\lambda_1, \ldots, \lambda_n)$ eine weitere Karte, so ist $\varphi \circ \psi^{-1}$ als \gls{Endomorphismus} des $\R^n$ schon $C^{\infty}$.
+    Der zugehörige Atlas h"angt nicht von der Wahl der Basis ab, denn ist $\{w_1, \ldots, w_n\}$ eine weitere Basis von $V$ und $\psi(\sum \lambda_iw_i) = (\lambda_1, \ldots, \lambda_n)$ eine weitere Karte, so ist $\phi \circ \psi^{-1}$ als \gls{Endomorphismus} des $\R^n$ schon $C^{\infty}$.
 
   \item $S^n = \{(x^0, x^1, \ldots, x^n) \mid \sum_{i = 0}^n(x^{i})^2 = 1\}$.\\
 
@@ -158,29 +158,29 @@
 		% Punkte N und p
 		\filldraw[fill=white] (0,1) circle (0.05) node[anchor=south west,xshift=-2,yshift=-1.5]{$N$} ($(0,1)+0.35*(1,-1.25)-0.35*(0,1)$) circle (0.05) node[right]{$p$};
 		% Punkt phi(p) bei Schnittpunkt von Gerade und Kreis
-		\path [name intersections={of=kreis and gerade}]; \filldraw[fill=white] (intersection-2) circle(0.05) node[right]{$\varphi(p)$};
+		\path [name intersections={of=kreis and gerade}]; \filldraw[fill=white] (intersection-2) circle(0.05) node[right]{$\phi(p)$};
 	\end{tikzpicture}\end{center}}%[3.5cm]
     
     Betrachte den Nordpol $N = (1,0,\ldots,0)$ und den S"udpol $S = (-1,0,\ldots,0)$ und die Abbildung
     \begin{align*}
-      & \varphi \colon U = S^{n}\setminus\{N\} \to \R^n, x \mapsto \left(\frac{x^1}{1-x^0}, \ldots, \frac{x^{n}}{1-x^0}\right),\\
+      & \phi \colon U = S^{n}\setminus\{N\} \to \R^n, x \mapsto \left(\frac{x^1}{1-x^0}, \ldots, \frac{x^{n}}{1-x^0}\right),\\
       & \psi \colon U' = S^{n} \setminus \{S\} \to \R^n, x \mapsto \left(\frac{x^1}{1+x^0}, \ldots, \frac{x^n}{1+x^0}\right)
     \end{align*}
 
-    Aufgabe: Zeige, dass $(\varphi, U), (\psi, U')$ einen $C^{\infty}$-Atlas auf $S^n$ definiert.
+    Aufgabe: Zeige, dass $(\phi, U), (\psi, U')$ einen $C^{\infty}$-Atlas auf $S^n$ definiert.
 
   \end{enumerate}
 \end{bsp}
 
 \begin{Dfn}[Differenzierbare Abbildungen]
-Eine stetige Abbildung $f \colon M \to N$ zwischen glatten Mannigfaltigkeiten $M$ und $N$ hei\ss t \CmMark{glatt} ($C^{\infty}$-differenzierbar), wenn es zu jedem $p \in M$ Karten $(\varphi, U)$ in $M$ um $p$ und geeignete $(\varphi', U')$ in $N$ um $f(p)$ gibt, so dass $\varphi' \circ f\circ\varphi^{-1}$ glatt ist.
+Eine stetige Abbildung $f \colon M \to N$ zwischen glatten Mannigfaltigkeiten $M$ und $N$ hei\ss t \CmMark{glatt} ($C^{\infty}$-differenzierbar), wenn es zu jedem $p \in M$ Karten $(\phi, U)$ in $M$ um $p$ und geeignete $(\phi', U')$ in $N$ um $f(p)$ gibt, so dass $\phi' \circ f\circ\phi^{-1}$ glatt ist.
 % Abbildung 1-5
 %\CmPutSvg{1-5-glatte-abb}{9cm}
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
 	%\draw[step=0.25,gray!15] (-5,-1) grid (5,5); \draw[step=0.5,gray!30] (-5,-1) grid (5,5); \fill (0,0) circle(0.1); %Hilfsgitter
 	
 	% Die Abbildungspfeile
-	\draw[->] (-1.5,0) to[out=20, in=160]node[above]{$\varphi' \circ f \circ \varphi^{-1}$} (1.5,0);
+	\draw[->] (-1.5,0) to[out=20, in=160]node[above]{$\phi' \circ f \circ \phi^{-1}$} (1.5,0);
 	\draw[->] (-1,2) --node[above]{$f$} (1.5,2);
 	
 	% Die Achsen
@@ -196,7 +196,7 @@ Eine stetige Abbildung $f \colon M \to N$ zwischen glatten Mannigfaltigkeiten $M
 	\coordinate (ctrlk0l) at (-0.25,0.5); \coordinate (ctrlk1l) at (0.5,0.25); \coordinate (ctrlk2l) at (-0.25,1); \coordinate (ctrlk3l) at (2,0.25);
 	\draw (kartoffel0l) ..controls($(kartoffel0l)+0.5*(ctrlk0l)$) and ($(kartoffel1l)-0.3*(ctrlk1l)$).. (kartoffel1l) ..controls($(kartoffel1l)+0.6*(ctrlk1l)$) and($(kartoffel2l)+0.45*(ctrlk2l)$).. (kartoffel2l) ..controls($(kartoffel2l)-0.25*(ctrlk2l)$) and ($(kartoffel3l)+0.15*(ctrlk3l)$).. (kartoffel3l)  ..controls($(kartoffel3l)-0.1*(ctrlk3l)$) and ($(kartoffel0l)-0.9*(ctrlk0l)$).. (kartoffel0l); \node at (-3.5,2.25) {$U$};
 	% Der Punkt in der Kartoffel, der Pfeils raus und der Kreis
-	\draw[->] (-2.75,2) node[right]{$p$} to[out=280,in=80] node[right]{$\varphi$} (-2.75,0); \fill (-2.75,2) circle (0.05);
+	\draw[->] (-2.75,2) node[right]{$p$} to[out=280,in=80] node[right]{$\phi$} (-2.75,0); \fill (-2.75,2) circle (0.05);
 	\draw (-3,0.25) circle(0.5); \node at (-3.5,0.75) {$V$};
 	
 	% Die rechte Kartoffel
@@ -204,12 +204,12 @@ Eine stetige Abbildung $f \colon M \to N$ zwischen glatten Mannigfaltigkeiten $M
 	\coordinate (ctrlk0r) at (-0.25,0.5); \coordinate (ctrlk1r) at (-0.25,0.25); \coordinate (ctrlk2r) at (-0.25,0.5); \coordinate (ctrlk3r) at (0.25,0);
 	\draw (kartoffel0r) ..controls($(kartoffel0r)+0.5*(ctrlk0r)$) and ($(kartoffel1r)-(ctrlk1r)$).. (kartoffel1r) ..controls($(kartoffel1r)+(ctrlk1r)$) and ($(kartoffel2r)+(ctrlk2r)$).. (kartoffel2r) ..controls($(kartoffel2r)-(ctrlk2r)$) and ($(kartoffel3r)+(ctrlk3r)$).. (kartoffel3r) ..controls($(kartoffel3r)-(ctrlk3r)$) and ($(kartoffel0r)-(ctrlk0r)$).. (kartoffel0r); \node at (3.25,2.25) {$U'$};
 	
-	\draw[->] (3.75,2) node[right]{$f(p)$} to[out=280,in=80] node[right]{$\varphi'$} (3.75,0); \fill (3.75,2) circle (0.05);
+	\draw[->] (3.75,2) node[right]{$f(p)$} to[out=280,in=80] node[right]{$\phi'$} (3.75,0); \fill (3.75,2) circle (0.05);
 	\draw (3.5,0.25) circle(0.5); \node at (3,0.75) {$V'$};
 \end{tikzpicture}
 
 % Korrektur
-% \textcolor{red}{Sollte das in der Zeichnung beim unteren Pfeil nicht $\varphi'\circ f \circ \varphi^{-1}$ hei\ss en?}
+% \textcolor{red}{Sollte das in der Zeichnung beim unteren Pfeil nicht $\phi'\circ f \circ \phi^{-1}$ hei\ss en?}
 % Ja! sollte es! (JB, <2012-11-9 Fri>)
 
 \end{center}
@@ -228,13 +228,13 @@ Ab jetzt seien zunächst alle Mannigfaltigkeiten, wie auch alle Abbildungen als 
 \begin{bsp}
   Es folgen zwei Beispiele für differenzierbare Abbildungen:
   \begin{enumerate}
-  \item $(\varphi,U) \in \mathcal A \Rightarrow \varphi \in C^{\infty}(U,\R^n)$, denn
+  \item $(\phi,U) \in \mathcal A \Rightarrow \phi \in C^{\infty}(U,\R^n)$, denn
     \begin{align*}
-      \Id_{\R^n}\circ \varphi \circ \varphi^{-1} = \varphi \circ \varphi^{-1} \in C^{\infty}.
+      \Id_{\R^n}\circ \phi \circ \phi^{-1} = \phi \circ \phi^{-1} \in C^{\infty}.
     \end{align*}
   \item $f \in C^{\infty}(M,N), \ g \in C^{\infty}(N,P) \Rightarrow g \circ f \in C^{\infty}(M,P)$, denn
     \begin{align*}
-      \varphi_p \circ g \circ f \circ \varphi^{-1}_m = (\varphi_p \circ g \circ \varphi_n^{-1}) \circ (\varphi_n \circ f \circ \varphi_m^{-1}) \in C^{\infty}.
+      \phi_p \circ g \circ f \circ \phi^{-1}_m = (\phi_p \circ g \circ \phi_n^{-1}) \circ (\phi_n \circ f \circ \phi_m^{-1}) \in C^{\infty}.
     \end{align*}
   \end{enumerate}
 \end{bsp}
@@ -249,11 +249,11 @@ Eine Abbildung $f \colon M \to N$ hei\ss t \CmMark{Diffeomorphismus}, wenn $f$ b
 \section{Produkte von Mannigfaltigkeiten}
 
 Es seien $M$ und $N$ glatte Mannigfaltigkeiten der Dimensionen $m$ und $n$. Dann hat $M \times N$ versehen mit der \gls{Produkttopologie}, die Struktur einer Mannigfaltigkeit. Da $M$ und $N$ hausdorffsch sind und abzählbare Basen ihrer Topologie besitzen gilt dies auch für $M \times N$.
-Sind $(\varphi, U)$ und $(\psi, V)$ Karten von $M$ bzw. $N$, so ist $\varphi \times \psi$ ein Homöomorphismus von $U \times V$ auf sein offenes Bild in $\R^m \times \R^n \cong \R^{m + n}$.
+Sind $(\phi, U)$ und $(\psi, V)$ Karten von $M$ bzw. $N$, so ist $\phi \times \psi$ ein Homöomorphismus von $U \times V$ auf sein offenes Bild in $\R^m \times \R^n \cong \R^{m + n}$.
 
-Seien $\mathcal A = \{(\varphi_{\alpha}, U_{\alpha}) \mid \alpha \in \calI \}$ und $\mathcal A' = \{(\psi_{\beta}, V_{\beta}) \mid \beta \in \calJ\}$ $C^{\infty}$-Atlanten von $M$ und $N$. Dann ist $\mathcal B = \{(\varphi_{\alpha}\times\psi_{\beta},U_{\alpha}\times V_{\beta}) \mid (\alpha, \beta) \in \calI \times \calJ\}$ ein $C^{\infty}$-Atlas von $M\times N$, denn 
+Seien $\mathcal A = \{(\phi_{\alpha}, U_{\alpha}) \mid \alpha \in \calI \}$ und $\mathcal A' = \{(\psi_{\beta}, V_{\beta}) \mid \beta \in \calJ\}$ $C^{\infty}$-Atlanten von $M$ und $N$. Dann ist $\mathcal B = \{(\phi_{\alpha}\times\psi_{\beta},U_{\alpha}\times V_{\beta}) \mid (\alpha, \beta) \in \calI \times \calJ\}$ ein $C^{\infty}$-Atlas von $M\times N$, denn 
 \begin{align*}
-  (\varphi_{\alpha} \times \psi_{\beta}) \circ (\varphi_{\mu} \times \psi_{\nu})^{-1} = (\varphi_{\alpha} \circ \varphi_{\mu}^{-1}) \times (\psi_{\beta} \circ \psi_{\nu}^{-1})
+  (\phi_{\alpha} \times \psi_{\beta}) \circ (\phi_{\mu} \times \psi_{\nu})^{-1} = (\phi_{\alpha} \circ \phi_{\mu}^{-1}) \times (\psi_{\beta} \circ \psi_{\nu}^{-1})
 \end{align*}
 ist ein $C^{\infty}$-Diffeomorphismus. Damit ist $M\times N$ in kanonischer Weise eine glatte $(m+n)$-dimensionale Mannigfaltigkeit. Die kanonischen Projektionen $\pi_M\colon M\times N \to M, \ \pi_N\colon M \times N \to N$ und die Abbildung $\tau \colon M \times N \to N \times M, (p,q) \mapsto (q,p)$ sind glatte Abbildungen.
 
@@ -286,9 +286,9 @@ Es folgen einige Beispiele für Produkt-Mannigfaltigkeiten:
 \section{Untermannigfaltigkeiten}
 
 \begin{Dfn}[Untermannigfaltigkeit]\label{def-1-4}
-  Es sei $N$ eine glatte Mannigfaltigkeit. Eine Teilmenge $M \subseteq N$ heißt \CmMark{Untermannigfaltigkeit} von $N$, wenn für alle $p \in M$ eine Karte $(\varphi, U)$ von $N$ um $p$ existiert, so dass
+  Es sei $N$ eine glatte Mannigfaltigkeit. Eine Teilmenge $M \subseteq N$ heißt \CmMark{Untermannigfaltigkeit} von $N$, wenn für alle $p \in M$ eine Karte $(\phi, U)$ von $N$ um $p$ existiert, so dass
   \begin{align*}
-    \varphi(U \cap M) = \varphi(U) \cap \underbrace{(\R^m \times \{0\})}_{\mathclap{\{(x^1,\ldots,x^m,0,\ldots,0) \in \R^m\times\R^{n-m} \cong \R^{n} \}}}
+    \phi(U \cap M) = \phi(U) \cap \underbrace{(\R^m \times \{0\})}_{\mathclap{\{(x^1,\ldots,x^m,0,\ldots,0) \in \R^m\times\R^{n-m} \cong \R^{n} \}}}
   \end{align*}
 gilt. Eine solche Karte heißt an $M$ \CmMark[Karte!adaptierte]{adaptierte Karte}. Die Zahl $n-m$ heißt \CmMark{Kodimension} von $M$ in $N$.
 
@@ -297,9 +297,9 @@ gilt. Eine solche Karte heißt an $M$ \CmMark[Karte!adaptierte]{adaptierte Karte
 \begin{center}\begin{tikzpicture}[font=\scriptsize,scale=0.9]
 	%\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
 	
-	\draw[->] (1.5,-0.5) -- (5.5,-0.5)node[below]{$\R^m$}; \draw[->] (1.5,-0.5) -- (1.5,2.5)node[left]{$\R^{n-m}$}; \draw[ultra thick] (1.5,-0.5) --node[above]{$\varphi(U\cap M)$} (4,-0.5); \node at (4.5,2) {$\R^n$};
+	\draw[->] (1.5,-0.5) -- (5.5,-0.5)node[below]{$\R^m$}; \draw[->] (1.5,-0.5) -- (1.5,2.5)node[left]{$\R^{n-m}$}; \draw[ultra thick] (1.5,-0.5) --node[above]{$\phi(U\cap M)$} (4,-0.5); \node at (4.5,2) {$\R^n$};
 	
-	\draw[->] (-3,0.75) to[out=330,in=180]node[below]{$\varphi$} (1,0);
+	\draw[->] (-3,0.75) to[out=330,in=180]node[below]{$\phi$} (1,0);
 	
 	\coordinate(1) at (-0.25,2.75); \coordinate(2) at (-5.25,1.25); \coordinate(3) at (-4.25,4.25);
 	\coordinate(ctrl1) at (0,-1.25); \coordinate(ctrl2) at (1.75,-1); \coordinate(ctrl3) at (-0.5,-0.25);
@@ -329,27 +329,27 @@ gilt. Eine solche Karte heißt an $M$ \CmMark[Karte!adaptierte]{adaptierte Karte
 \begin{Lemma}\label{lemma-1-5}
   Es seien $N$ eine $n$-dimensionale glatte Mannigfaltigkeit und $M \subseteq N$ eine $m$-dimensionale Untermannigfaltigkeit von $N$. Bezeichnet $\mathcal A$ einen $C^{\infty}$-Atlas von $N$ und $\pi \colon \R^n \to \R^m, (x^1, \ldots, x^m,\ldots,x^n) \mapsto (x^1, \ldots, x^m)$, so ist
   \begin{align*}
-    \mathcal B = \{(\pi \circ \varphi|_{U \cap M},U\cap M) \mid (\varphi, U) \in \mathcal A \text{ an } M \text{ adaptierte Karte}\}
+    \mathcal B = \{(\pi \circ \phi|_{U \cap M},U\cap M) \mid (\phi, U) \in \mathcal A \text{ an } M \text{ adaptierte Karte}\}
   \end{align*}
   ein $C^{\infty}$-Atlas von $M$.
 \end{Lemma}
 
 \begin{bew}
   Die Hausdorff-Eigenschaft und die Abzählbarkeit der Topologie werden von $N$ auf $M$ vererbt.\\
-  Ist $p \in N$, so existiert eine adaptierte Karte $(\varphi,U)$ von $N$ um $p$ und $\pi \circ \varphi|_{U \cap M}$ ist ein Homöomorphismus von $U \cap M$ auf eine offene Teilmenge des $\R^m$. Jeder Kartenwechsel
+  Ist $p \in N$, so existiert eine adaptierte Karte $(\phi,U)$ von $N$ um $p$ und $\pi \circ \phi|_{U \cap M}$ ist ein Homöomorphismus von $U \cap M$ auf eine offene Teilmenge des $\R^m$. Jeder Kartenwechsel
   \begin{align*}
-    (\pi \circ \varphi|_{U \cap M}) \circ (\pi \circ \psi|_{V \cap M})^{-1} = (\pi \circ \varphi) \circ (\psi^{-1} \circ \imath) = \pi \circ (\varphi \circ \psi^{-1}) \circ \imath
+    (\pi \circ \phi|_{U \cap M}) \circ (\pi \circ \psi|_{V \cap M})^{-1} = (\pi \circ \phi) \circ (\psi^{-1} \circ \imath) = \pi \circ (\phi \circ \psi^{-1}) \circ \imath
   \end{align*}
   ist ein $C^{\infty}$-Diffeomorphismus.
 \end{bew}
 
 \begin{bem}
-  Erinnerung: $M \subseteq \R^n$ heißt glatte $n$-dimensionale Untermannigfaltigkeit des $\R^n$, wenn für alle $p \in M$ eine offene Umgebung $U$ und eine Abbildung $\varphi \colon U \to \R^n$  mit folgenden Eigenschaften existiert:
+  Erinnerung: $M \subseteq \R^n$ heißt glatte $n$-dimensionale Untermannigfaltigkeit des $\R^n$, wenn für alle $p \in M$ eine offene Umgebung $U$ und eine Abbildung $\phi \colon U \to \R^n$  mit folgenden Eigenschaften existiert:
   \begin{enumerate}[label=(\roman*),widest=ii]
-  \item $\varphi \colon U \to \varphi(U)$ ist ein Diffeomorphismus auf sein offenes Bild im $\R^{n}$.
-  \item $\varphi(U \cap M) = \varphi(U) \cap (\R^{m} \times \{0\})$.
+  \item $\phi \colon U \to \phi(U)$ ist ein Diffeomorphismus auf sein offenes Bild im $\R^{n}$.
+  \item $\phi(U \cap M) = \phi(U) \cap (\R^{m} \times \{0\})$.
   \end{enumerate}
-Jedes solche $M$ ist eine Untermannigfaltigkeit im Sinne von Definition \ref{def-1-4}, denn jedes $\varphi$ wie oben ist wegen (i) eine Karte von $\R^n$ (im Sinne glatter Mannigfaltigkeiten) und wegen (ii) eine an $M$ adaptierte Karte. Also sind mit Lemma \ref{lemma-1-5} glatte Untermannigfaltigkeiten des $\R^n$ glatte Mannigfaltigkeiten (im allgemeineren Sinne).
+Jedes solche $M$ ist eine Untermannigfaltigkeit im Sinne von Definition \ref{def-1-4}, denn jedes $\phi$ wie oben ist wegen (i) eine Karte von $\R^n$ (im Sinne glatter Mannigfaltigkeiten) und wegen (ii) eine an $M$ adaptierte Karte. Also sind mit Lemma \ref{lemma-1-5} glatte Untermannigfaltigkeiten des $\R^n$ glatte Mannigfaltigkeiten (im allgemeineren Sinne).
 \end{bem}
 
 %%% Local Variables: 

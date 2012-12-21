@@ -7,27 +7,27 @@ $c: [0,1] \to (S^2, g_{\text{std}})$ k"urzeste $C^1$-Kurve zwischen $c(0) = N = 
 
 W"ahle ein geeignetes Intervall der L"ange $2 \pi$, sodass
 	\[\begin{array}{cccc} f: & I \X \left( -\frac{\pi}{2}, \frac{\pi}{2} \right) &\to& f \left( I \X \left( -\frac{\pi}{2}, \frac{\pi}{2} \right) \right)\\
-		& (\varphi, \vartheta) &\mapsto& (\cos\vartheta \cos\varphi, \cos\vartheta\sin\varphi, \sin\vartheta)\end{array}\]
+		& (\phi, \theta) &\mapsto& (\cos\theta \cos\phi, \cos\theta\sin\phi, \sin\theta)\end{array}\]
 bijektiv ist und $c(1) \in U$ (falls $c(1) \ne N,S$). Daraus folgt dass $f^{-1}$ eine Karte von $S^2$ ist. Sei nun ohne Einschr"ankung $c$ in keiner Umgebung von $0$ konstant. Weiter sei $\gamma := f^{-1} \circ c$ (eventuell nur in einer Umgebung von $0$ ohne $\{0\}$ definiert). Es bleibt nun zu zeigen, dass $\gamma_1$ konstant ist.
 
 Bestimme $g_{ij}$ bez"uglich $f^{-1}$. Es ist
 \begin{align*}
-	\partial_1 f = & \pdifffrac{f}{\varphi} = \left( -\cos\vartheta \sin\varphi, \cos\vartheta \cos\varphi, 0 \right)\\
-	\partial_2 f = & \pdifffrac{f}{\vartheta} = \left( -\sin\vartheta \cos\varphi, -\sin\vartheta \sin\varphi, \cos\vartheta \right)\\
+	\partial_1 f = & \pdifffrac{f}{\phi} = \left( -\cos\theta \sin\phi, \cos\theta \cos\phi, 0 \right)\\
+	\partial_2 f = & \pdifffrac{f}{\theta} = \left( -\sin\theta \cos\phi, -\sin\theta \sin\phi, \cos\theta \right)\\
 \end{align*}
 Daraus folgt
 \begin{align*}
-	g_{11} = & \left\langle \partial_1 f, \partial_1 f \right\rangle = \cos^2 \vartheta\\
+	g_{11} = & \left\langle \partial_1 f, \partial_1 f \right\rangle = \cos^2 \theta\\
 	g_{22} = & \left\langle \partial_2 f, \partial_2 f \right\rangle = 1\\
 	g_{12} = & \left\langle \partial_1 f, \partial_2 f \right\rangle = 0 = g_{21}
 \end{align*}
 Damit ist dann
 \begin{align*}
-	L(c|_{(0, \varepsilon)}) &= \int_0^\varepsilon \sqrt{g(\dot c, \dot c)} = \int_0^\varepsilon \sqrt{\vphantom{g(\dot c, \dot c)} \smash{\underbrace{g_{11}(c(t)) \dot\gamma_1(t)^2 + g_{22}(c(t)) \dot\gamma_2(t)^2}_{= (\dot\gamma_1, \dot\gamma_2) \left(\begin{smallmatrix} g_{11} & g_{12} \\ g_{21} & g_{22} \end{smallmatrix}\right) \left(\begin{smallmatrix} \dot\gamma_1 \\ \dot\gamma_2 \end{smallmatrix}\right)}}} \dop t\\
-	&= \int_0^\varepsilon \sqrt{ \smash{\underbrace{\cos^2(\gamma_2(t))}_{\ge 0}} \dot\gamma_1(t)^2 + \dot\gamma_2(t)^2} \dop t \rule{0pt}{33pt}\\ % \smash macht dass die Groesse nicht von \sqrt beruecksichtig wird
-	&\ge \int_0^\varepsilon \left| \dot\gamma_2(t) \right| \dop t =L(\tilde c) \rule{0pt}{25pt}% \rule fuegt ein wenig vertikalen Abstand nach oben ein
+	L(c|_{(0, \epsilon)}) &= \int_0^\epsilon \sqrt{g(\dot c, \dot c)} = \int_0^\epsilon \sqrt{\vphantom{g(\dot c, \dot c)} \smash{\underbrace{g_{11}(c(t)) \dot\gamma_1(t)^2 + g_{22}(c(t)) \dot\gamma_2(t)^2}_{= (\dot\gamma_1, \dot\gamma_2) \left(\begin{smallmatrix} g_{11} & g_{12} \\ g_{21} & g_{22} \end{smallmatrix}\right) \left(\begin{smallmatrix} \dot\gamma_1 \\ \dot\gamma_2 \end{smallmatrix}\right)}}} \dop t\\
+	&= \int_0^\epsilon \sqrt{ \smash{\underbrace{\cos^2(\gamma_2(t))}_{\ge 0}} \dot\gamma_1(t)^2 + \dot\gamma_2(t)^2} \dop t \rule{0pt}{33pt}\\ % \smash macht dass die Groesse nicht von \sqrt beruecksichtig wird
+	&\ge \int_0^\epsilon \left| \dot\gamma_2(t) \right| \dop t =L(\tilde c) \rule{0pt}{25pt}% \rule fuegt ein wenig vertikalen Abstand nach oben ein
 \end{align*}
-f"ur $\tilde c(t) = f(\gamma_1(\varepsilon) \gamma_2(t))$. Dann ist $c$ die Kürzeste. Daraus folgt $L(c|_{(0,\varepsilon]}) = L(\tilde c|_{(0,\varepsilon]}$ und somit ist f"ur alle $t \in (0,\varepsilon]$ stets $\cos^2(\gamma_2(t)) \dot\gamma_1(t) = 0$. Da $\cos^2(\gamma_2(t)) > 0$ muss $\dot\gamma_1(t) = 0$ gelten. Da sich $c$ nicht aus $\Bild f$ heraus bewegt, au"ser eventuell f"ur $c(1)$, ist $\dot\gamma_1(t) = 0$ f"ur alle $t \in (0,1)$.
+f"ur $\tilde c(t) = f(\gamma_1(\epsilon) \gamma_2(t))$. Dann ist $c$ die Kürzeste. Daraus folgt $L(c|_{(0,\epsilon]}) = L(\tilde c|_{(0,\epsilon]}$ und somit ist f"ur alle $t \in (0,\epsilon]$ stets $\cos^2(\gamma_2(t)) \dot\gamma_1(t) = 0$. Da $\cos^2(\gamma_2(t)) > 0$ muss $\dot\gamma_1(t) = 0$ gelten. Da sich $c$ nicht aus $\Bild f$ heraus bewegt, au"ser eventuell f"ur $c(1)$, ist $\dot\gamma_1(t) = 0$ f"ur alle $t \in (0,1)$.
 \end{Loes}
 
 \begin{Loes}
@@ -49,7 +49,7 @@ Sei $M$ eine Untermannigfaltigkeit von $\R^k$ und die Abbildung $\nabla^M: \calV
 Wir werden nun diese einzelnen Behauptungen beweisen, wobei der Beweis von (2.1) in (1.1) enthalten ist.
 \begin{enumerate}[label=(\arabic*.\arabic*)]
 \item[(0)]
-	Es sei $c: (-\varepsilon, \varepsilon) \to M$ glatt mit $c(0) = p$ und $\dot c(0) = X_p$. Damit erh"alt man folgendes:
+	Es sei $c: (-\epsilon, \epsilon) \to M$ glatt mit $c(0) = p$ und $\dot c(0) = X_p$. Damit erh"alt man folgendes:
 	\begin{align*}
 		((\nabla_{\tilde X} \tilde Y))^{\T_pM} &= ((\D \tilde Y)_p \tilde X_p)^{\T_pM}&\\
 		&= ((\D \tilde Y)_p X_p)^{\T_pM} & \Rightarrow \text{unabh. von der Wahl von }\tilde X\\

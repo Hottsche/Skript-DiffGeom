@@ -26,21 +26,21 @@
 	
 	\coordinate (N) at (0,\radius); \coordinate (S) at (0,-\radius); \coordinate (Pkt1) at (-2,-0.25); \coordinate (direction) at (-0.6,1.25); \coordinate (direction2) at (0.6,1.25);
 	
-	\path[name path=upper,draw] (N) node[above]{$N$} -- (Pkt1)node[left]{$(0,\varphi(p))$}; \fill (N) circle (0.05) (Pkt1) circle (0.05);
+	\path[name path=upper,draw] (N) node[above]{$N$} -- (Pkt1)node[left]{$(0,\phi(p))$}; \fill (N) circle (0.05) (Pkt1) circle (0.05);
 	
 	\path[name path=left] (S) node[below]{$S$} -- ($(S)+2*(direction)$); \fill (S) circle (0.05); \path[name intersections={of=upper and left}];
 	\draw (intersection-1) node[right]{$p$} -- (S); \fill (intersection-1) circle (0.05); \fill ($(S)+1.1*(direction)$) circle(0.05) node[right]{$(0,\psi(p))$};
 	
-	\draw (S) -- ($(S)+2.5*(direction2)$); \fill ($(S)+1.25*(direction2)$) circle(0.05) node[right]{$(0, \varphi(p))$};
+	\draw (S) -- ($(S)+2.5*(direction2)$); \fill ($(S)+1.25*(direction2)$) circle(0.05) node[right]{$(0, \phi(p))$};
 \end{tikzpicture}\end{center}
 \begin{enumerate}[label=\alph*),leftmargin=*,widest=a,font=\normalfont]
 \item
 	$S^n = (S^n \setminus \{N\}) \cup (S^n\setminus \{S\}) \checkmark$
 	
-	$\varphi, \psi$ Hom"oomorphismen, $\Phi: \{(x^0,\ldots ,x^n) \in \R^n | x^0 < 1\} \to \R^n, x \mapsto \frac{1}{1-x^0}(x^1, \ldots ,x^n) \Rightarrow \Phi$ ist stetig $\Rightarrow  \varphi = \Phi|_{S^n \setminus \{N\}}$ ist stetig. Es ist
-		\[ \varphi^{-1}(y) = \frac{1}{1+|y|^2}(\|y\|^2 - 1, 2y)\]
-	also ist $\varphi^{-1}$ stetig. Analog f"ur $\psi$:
-		\[\varphi \circ \psi^{-1}(y) = \frac{y}{\|y\|^2} = \psi \circ \varphi{-1}(y) \]
+	$\phi, \psi$ Hom"oomorphismen, $\Phi: \{(x^0,\ldots ,x^n) \in \R^n | x^0 < 1\} \to \R^n, x \mapsto \frac{1}{1-x^0}(x^1, \ldots ,x^n) \Rightarrow \Phi$ ist stetig $\Rightarrow  \phi = \Phi|_{S^n \setminus \{N\}}$ ist stetig. Es ist
+		\[ \phi^{-1}(y) = \frac{1}{1+|y|^2}(\|y\|^2 - 1, 2y)\]
+	also ist $\phi^{-1}$ stetig. Analog f"ur $\psi$:
+		\[\phi \circ \psi^{-1}(y) = \frac{y}{\|y\|^2} = \psi \circ \phi{-1}(y) \]
 	f"ur $y \in \R^n \setminus \{0\}$. Also glatter Kartenwechsel.\marginnote{\begin{tikzpicture}[font=\scriptsize]
 		\def\radius{1.25}
 		\def\angle{22}
@@ -53,59 +53,59 @@
 			\clip (-\radius - 0.25,0) rectangle (\radius + 0.25,\radius + 0.25);
 			\draw[dashed] (0,0) ellipse (1.25 and 0.25);
 		\end{scope}
-		\draw[->] (\anglePoint:\radius) node[anchor=south west]{$p$} -- ($(\anglePoint:\radius)+(270:1.2)$); \fill (\anglePoint:\radius) circle(0.05) ($(\anglePoint:\radius)+(270:1.25)$) circle(0.05) node[anchor=north]{$\varphi_i^+(p)$};
+		\draw[->] (\anglePoint:\radius) node[anchor=south west]{$p$} -- ($(\anglePoint:\radius)+(270:1.2)$); \fill (\anglePoint:\radius) circle(0.05) ($(\anglePoint:\radius)+(270:1.25)$) circle(0.05) node[anchor=north]{$\phi_i^+(p)$};
 	\end{tikzpicture}}
-		\[ \varphi_i^\pm: U_i^\pm \to B_1(0) \subset \R^n, x \mapsto (x^0,\ldots ,x^{i-1}, x^{i+1},\ldots ,x^n) \]
-		\[ (\varphi_i^\pm)^{-1}: B_1(0) \to U_i^\pm, y \mapsto (y^0,\ldots ,y^{i-1}, \pm (1 - \|y\|^2), \textcolor{red}{y^i},\ldots ,y^{n+1}) \]
-	$\varphi_i^\pm \circ (\varphi_j^\pm)^{-1}$ glatt
+		\[ \phi_i^\pm: U_i^\pm \to B_1(0) \subset \R^n, x \mapsto (x^0,\ldots ,x^{i-1}, x^{i+1},\ldots ,x^n) \]
+		\[ (\phi_i^\pm)^{-1}: B_1(0) \to U_i^\pm, y \mapsto (y^0,\ldots ,y^{i-1}, \pm (1 - \|y\|^2), \textcolor{red}{y^i},\ldots ,y^{n+1}) \]
+	$\phi_i^\pm \circ (\phi_j^\pm)^{-1}$ glatt
 	
-	$\psi \circ (\varphi_j^\pm)^{-1}$ glatt
+	$\psi \circ (\phi_j^\pm)^{-1}$ glatt
 	
-	$\varphi \circ (\varphi_j^\pm)^{-1}$ glatt
+	$\phi \circ (\phi_j^\pm)^{-1}$ glatt
 	
-	$\varphi_i^\pm \circ \varphi$ glatt
+	$\phi_i^\pm \circ \phi$ glatt
 	
-	$\varphi_i^\pm \circ \psi$ glatt
+	$\phi_i^\pm \circ \psi$ glatt
 \item
 	asdf
 \end{enumerate}
 \end{Loes}
 
 \begin{Loes}
-$\varphi: \R \to \R, x \mapsto x^3$
+$\phi: \R \to \R, x \mapsto x^3$
 
-\emph{Behauptung:} $\varphi$ induziert eine $C^\infty$-Struktur auf $\R$, die von der Standardstruktur abweicht.
+\emph{Behauptung:} $\phi$ induziert eine $C^\infty$-Struktur auf $\R$, die von der Standardstruktur abweicht.
 
 Dazu müssen wir zeigen:\begin{enumerate}[font=\normalfont,label=(\roman*)]
 \item
-	$\{(\varphi, \R)\}$ ist ein $C^\infty$-Atlas
+	$\{(\phi, \R)\}$ ist ein $C^\infty$-Atlas
 \item
-	$\varphi$ ist nicht vertr"aglich mit $(\Id, \R)$
+	$\phi$ ist nicht vertr"aglich mit $(\Id, \R)$
 \end{enumerate}
 \emph{Beweis:}\begin{enumerate}[leftmargin=*,widest=ii,font=\normalfont,label=(\roman*)]
 \item
-	$\varphi$ ist Hom"oomorphismus, da $\varphi$ und $\varphi^{-1}: x \mapsto \sqrt[3]{x}$ stetig sind. Offensichtlich "uberdeckt $\varphi$ ganz $\R$. Der einzige Kartenwechsel $\varphi \circ \varphi^{-1} = \Id_{\R}$ ist glatt.
+	$\phi$ ist Hom"oomorphismus, da $\phi$ und $\phi^{-1}: x \mapsto \sqrt[3]{x}$ stetig sind. Offensichtlich "uberdeckt $\phi$ ganz $\R$. Der einzige Kartenwechsel $\phi \circ \phi^{-1} = \Id_{\R}$ ist glatt.
 \item
 	Betrachte
-		\[ \Id_{\R} \circ \varphi^{-1} = \varphi^{-1}: x \mapsto \sqrt[3]{x} \]
-	$\Id_{\R} \circ \varphi^{-1}$ ist in $0$ nicht differenzierbar $\Rightarrow$ (ii) $\checkmark$
+		\[ \Id_{\R} \circ \phi^{-1} = \phi^{-1}: x \mapsto \sqrt[3]{x} \]
+	$\Id_{\R} \circ \phi^{-1}$ ist in $0$ nicht differenzierbar $\Rightarrow$ (ii) $\checkmark$
 \end{enumerate}
 \begin{description}[font=\normalfont\itshape]
 \item[Behauptung:]
 	Die beiden $C^\infty$ Strukturen sind diffeomorph
 \item[Beweis:]
 	Sei
-		\[\begin{array}{cccc} f:&  \overset{\text{von } \Id \text{ induziert}}{(\R, \tau_{\text{std}})} &\to& \overset{\text{von } \varphi \text{ induziert}}{(\R, \tau)} \\
+		\[\begin{array}{cccc} f:&  \overset{\text{von } \Id \text{ induziert}}{(\R, \tau_{\text{std}})} &\to& \overset{\text{von } \phi \text{ induziert}}{(\R, \tau)} \\
 			& x &\mapsto& \sqrt[3]{x} \end{array}\]
 	\marginnote{\begin{tikzpicture}[font=\tiny]
 	\draw[->] (-1.5,0.5) -- node[above]{$(\R,\tau_{\text{std}})$} (-0.5,0.5); \draw[->] (0.5,0.5) -- node[above]{$(\R,\tau)$} (1.5,0.5);
 	\draw[->] (-1.5,-0.5) -- node[below]{$\R$} (-0.5,-0.5); \draw[->] (0.5,-0.5) -- node[below]{$\R$} (1.5,-0.5);
-	\draw[->] (-1.3,0.4) --node[left,yshift=3]{$\Id$} (-1.3,-0.4); \draw[->] (1.3,0.4) --node[right,yshift=3]{$\varphi$} (1.3,-0.4);
-	\draw[->] (-0.4, 0.5) to[out=340,in=200]node[above]{$f$} (0.4,0.5); \draw[->] (-0.4, -0.5) to[out=20,in=160]node[above]{$\varphi \circ f \circ (\Id_{\R})^{-1}$} (0.4,-0.5);
+	\draw[->] (-1.3,0.4) --node[left,yshift=3]{$\Id$} (-1.3,-0.4); \draw[->] (1.3,0.4) --node[right,yshift=3]{$\phi$} (1.3,-0.4);
+	\draw[->] (-0.4, 0.5) to[out=340,in=200]node[above]{$f$} (0.4,0.5); \draw[->] (-0.4, -0.5) to[out=20,in=160]node[above]{$\phi \circ f \circ (\Id_{\R})^{-1}$} (0.4,-0.5);
 	\end{tikzpicture}}
 	Dann ist $f$ bijektiv. Es gilt f"ur $x \in \R$:
-		\[ \varphi \circ f \circ (\Id_{\R})^{-1} (x) = (\sqrt[3]{x})^3 = x \]
-	ist glatt. Betrachte nun $f^{-1}$: $\Id_{\R} \circ f^{-1} \circ \varphi^{-1}(x) = (\sqrt[3]{x})^3 = x$ ist glatt. Damit ist $f$ ein Diffeomorphismus.
+		\[ \phi \circ f \circ (\Id_{\R})^{-1} (x) = (\sqrt[3]{x})^3 = x \]
+	ist glatt. Betrachte nun $f^{-1}$: $\Id_{\R} \circ f^{-1} \circ \phi^{-1}(x) = (\sqrt[3]{x})^3 = x$ ist glatt. Damit ist $f$ ein Diffeomorphismus.
 \end{description}
 \end{Loes}
 
@@ -115,13 +115,13 @@ $k \in \N \cup \{\infty\}$, $M_1, M_2$ $C^k$-Mannigfaltigkeiten, $N_i \subseteq 
 \item[Behauptung:]
 	$f|_{N_1} \in C^j(N_1, N_2)$
 \item[Beweis:]
-	Sei $p \in N_1$, sei $(\varphi_1, U_1)$ eine adoptierte Karte von $M_1$ in $p$, das hei\ss t $p \in U_1$.
-		\[ \varphi_1(U_1 \cap N_1) = \varphi_1(U_1) \cap \left(\R^{\ddim N_1} \times \{0\}^{n-\ddim N}\right) \]
-	Sei $(\varphi_2, U_2)$ eine adoptiere Karte von $N_2$ um $f(p)$. Dann erhaltenen wir Karten von $N_i$, indem wir die Projektion $\pi_i: \R^{\ddim M_i} \to \R^{\ddim N_i}, x \mapsto (x^1,\ldots ,x^{\ddim N_i})$ hinter die Karten $\varphi_i$ schalten (das hei\ss t betrachte $\pi_i \circ \varphi_i$).
+	Sei $p \in N_1$, sei $(\phi_1, U_1)$ eine adoptierte Karte von $M_1$ in $p$, das hei\ss t $p \in U_1$.
+		\[ \phi_1(U_1 \cap N_1) = \phi_1(U_1) \cap \left(\R^{\ddim N_1} \times \{0\}^{n-\ddim N}\right) \]
+	Sei $(\phi_2, U_2)$ eine adoptiere Karte von $N_2$ um $f(p)$. Dann erhaltenen wir Karten von $N_i$, indem wir die Projektion $\pi_i: \R^{\ddim M_i} \to \R^{\ddim N_i}, x \mapsto (x^1,\ldots ,x^{\ddim N_i})$ hinter die Karten $\phi_i$ schalten (das hei\ss t betrachte $\pi_i \circ \phi_i$).
 	
 	Es ist
-		\[(\pi_2 \circ \varphi_2) \circ f|_{N_1} \circ (\pi_1 \circ \varphi_1)^{-1} = \underbrace{\pi_2}_{C^\infty} \circ (\underbrace{\varphi_2 \circ f \circ \varphi_1^{-1}}_{C^j}) \circ C_1\]
-	mit $C_1: \R^{\ddim N_1} \ni x \mapsto (x, 0,\ldots ,0) \in \R^{\ddim M_1}$. Also $(\pi_2 \circ \varphi_2) \circ f \circ (\pi_1 \circ \varphi_1)^{-1} \in C^j$ und damit $f|_{N_1} \in C^j(N_1, N_2)$
+		\[(\pi_2 \circ \phi_2) \circ f|_{N_1} \circ (\pi_1 \circ \phi_1)^{-1} = \underbrace{\pi_2}_{C^\infty} \circ (\underbrace{\phi_2 \circ f \circ \phi_1^{-1}}_{C^j}) \circ C_1\]
+	mit $C_1: \R^{\ddim N_1} \ni x \mapsto (x, 0,\ldots ,0) \in \R^{\ddim M_1}$. Also $(\pi_2 \circ \phi_2) \circ f \circ (\pi_1 \circ \phi_1)^{-1} \in C^j$ und damit $f|_{N_1} \in C^j(N_1, N_2)$
 \end{description}
 \end{Loes}
 
@@ -147,11 +147,11 @@ $k \in \N \cup \{\infty\}$, $M_1, M_2$ $C^k$-Mannigfaltigkeiten, $N_i \subseteq 
 			\draw (0,0) circle (0.75); \fill (-0.75,0) circle (0.05) (0.75,0) circle (0.05); \node at (0.75,-0.75) {$S^1$};
 		\end{tikzpicture}}
 	\item[Beweis:]
-		Sei $\varphi: \overbrace{S^n \setminus \{(1, 0,\ldots ,0)\}}^{=:U} \to \R^n$, $\varphi(x) = \frac{1}{1-x^0}(x^1,\ldots ,x^n)$
+		Sei $\phi: \overbrace{S^n \setminus \{(1, 0,\ldots ,0)\}}^{=:U} \to \R^n$, $\phi(x) = \frac{1}{1-x^0}(x^1,\ldots ,x^n)$
 		
-		\emph{Zu zeigen:} $\varphi(U \cap N) = \varphi(U) \cap (\R \times \{0\}^{n-1})$
-			\[ \varphi(U \cap N) = \varphi(N \setminus \{(1,\ldots ,0)\}) = \R \times \{0\}^{n-1} \]
-		F"ur $p \in N \setminus \{(1,0, \ldots ,0)\}$ ist $\varphi$ also eine adoptierte Karte um $p$. F"ur $p = (1, 0, \ldots, 0)$ ist analog $\psi$ (aus 1 a)) eine adoptierte Karte.
+		\emph{Zu zeigen:} $\phi(U \cap N) = \phi(U) \cap (\R \times \{0\}^{n-1})$
+			\[ \phi(U \cap N) = \phi(N \setminus \{(1,\ldots ,0)\}) = \R \times \{0\}^{n-1} \]
+		F"ur $p \in N \setminus \{(1,0, \ldots ,0)\}$ ist $\phi$ also eine adoptierte Karte um $p$. F"ur $p = (1, 0, \ldots, 0)$ ist analog $\psi$ (aus 1 a)) eine adoptierte Karte.
 	\end{description}
 \item
 	$M = \R^2$, $N = \{(x, 0) | x \ge 0\} \cup \{(0,y)|y \ge 0\}$; Skizze:
@@ -164,10 +164,10 @@ $k \in \N \cup \{\infty\}$, $M_1, M_2$ $C^k$-Mannigfaltigkeiten, $N_i \subseteq 
 	\item[Behauptung:]
 		$N$ ist keine glatte Untermannigfaltigkeit von $\R$.
 	\item[Beweis:]
-		Angenommen $N$ w"are Untermannigfaltigkeit von $\R^2$. Da $N$ hom"oomorph zu $\R$ ist, w"are es eine eindimensionale Untermannigfaltigkeit. Damit existiert eine Karte $(\varphi, U)$ von $\R^2$ um $(0,0)$ mit $\varphi(U\cap N) = \varphi(U) \cap (\R \times \{0\})$. Betrachte $\varphi^{-1}$, beziehungsweise $f(t) = \varphi^{-1}(t,0)$. Es sei $t_0 \in \R$ mit $f(t_0) = (0,0)$. Da $f(t) = N \cap U$ ist entweder $f(t) \in \{(0, y) | y \ge 0\}$ f"ur $t > t_0$ und $f(t) \in \{(x, 0) | x \ge 0\}$ f"ur $t < t_0$ oder umgekehrt. Dann ist $f'(t) \in \R e_2$ f"ur $ t > t_0$ und $f'(t) \in \R e_1$ f"ur $t < t_0$ oder umgekehrt.
+		Angenommen $N$ w"are Untermannigfaltigkeit von $\R^2$. Da $N$ hom"oomorph zu $\R$ ist, w"are es eine eindimensionale Untermannigfaltigkeit. Damit existiert eine Karte $(\phi, U)$ von $\R^2$ um $(0,0)$ mit $\phi(U\cap N) = \phi(U) \cap (\R \times \{0\})$. Betrachte $\phi^{-1}$, beziehungsweise $f(t) = \phi^{-1}(t,0)$. Es sei $t_0 \in \R$ mit $f(t_0) = (0,0)$. Da $f(t) = N \cap U$ ist entweder $f(t) \in \{(0, y) | y \ge 0\}$ f"ur $t > t_0$ und $f(t) \in \{(x, 0) | x \ge 0\}$ f"ur $t < t_0$ oder umgekehrt. Dann ist $f'(t) \in \R e_2$ f"ur $ t > t_0$ und $f'(t) \in \R e_1$ f"ur $t < t_0$ oder umgekehrt.
 		
 		$\Rightarrow f'(0) \in \R e_1 \cap \R e_2 = \{(0,0)\}$
 		
-		\emph{Andererseits:} $f'(0) = \underbrace{(D \varphi^{-1}|_{\varphi(0,0)})}_{\text{Isom., da } \varphi^{-1} \text{ Diffeom.}}(\left(\begin{smallmatrix}1\\0\end{smallmatrix}\right)) \ne \left(\begin{smallmatrix}1\\0\end{smallmatrix}\right)$
+		\emph{Andererseits:} $f'(0) = \underbrace{(D \phi^{-1}|_{\phi(0,0)})}_{\text{Isom., da } \phi^{-1} \text{ Diffeom.}}(\left(\begin{smallmatrix}1\\0\end{smallmatrix}\right)) \ne \left(\begin{smallmatrix}1\\0\end{smallmatrix}\right)$
 	\end{description}
 \end{enumerate}\end{Loes}

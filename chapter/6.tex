@@ -54,15 +54,15 @@ Ist $(M,g)$ eine Riemannsche Mannigfaltigkeit, $X, Y \in \calV(M)$, $X = \sum \x
 	eine Riemannsche Metrik auf $\R^m$. Bez"uglich der Karte $(\Id, \R^m)$ gilt
 		\[ g_{ij} = \sum_{ij} \delta_{ij} \dop x^{i} \otimes \dop x^j = \sum_i \dop x^{i} \otimes \dop x^j \]
 \item
-	Betrachtet man Polarkoordinaten auf $\R^2(r, \vartheta)$:
+	Betrachtet man Polarkoordinaten auf $\R^2(r, \theta)$:
 	\begin{align*}
-		\pdifffrac[(r,\vartheta)]{}{r} &= (\cos \vartheta, \sin \vartheta)\\
-		\pdifffrac[(r,\vartheta)]{}{\vartheta} &= r(-\sin \vartheta, \cos \vartheta)
+		\pdifffrac[(r,\theta)]{}{r} &= (\cos \theta, \sin \theta)\\
+		\pdifffrac[(r,\theta)]{}{\theta} &= r(-\sin \theta, \cos \theta)
 	\end{align*}
 	\begin{align*}
 		g_{rr} &= g\left( \pdifffrac{}{r}, \pdifffrac{}{r} \right) = 1\\
-		g_{\vartheta\vartheta} &= g\left( \pdifffrac{}{\vartheta}, \pdifffrac{}{\vartheta} \right) = r^2\\
-		g_{r\vartheta} &= g_{\vartheta r} = 0
+		g_{\theta\theta} &= g\left( \pdifffrac{}{\theta}, \pdifffrac{}{\theta} \right) = r^2\\
+		g_{r\theta} &= g_{\theta r} = 0
 	\end{align*}
 \item
 	Sei $M \subseteq \R^n$ $m$-dimensionale glatte Untermannigfaltigkeit. $M$ tr"agt eine nat"urliche Riemann-Metrik:
@@ -104,8 +104,8 @@ Ist $(M,g)$ eine Riemannsche Mannigfaltigkeit, $X, Y \in \calV(M)$, $X = \sum \x
 		\draw[->] (p) -- ($(p) + 0.6*(1,-1.7)$);
 		\draw[->] (p) -- ($(p) + 1.1*(1,0.15)$);
 		
-		\draw[->] (2.25,2.25)node[right,font=\scriptsize]{$\pdifffrac{}{\varphi}$} to[out=210,in=80] (1.65,1.5);
-		\draw[->] (3.25,1.25)node[right,font=\scriptsize]{$\pdifffrac{}{\vartheta}$} to[out=180,in=30] (1.2, 0.75);
+		\draw[->] (2.25,2.25)node[right,font=\scriptsize]{$\pdifffrac{}{\phi}$} to[out=210,in=80] (1.65,1.5);
+		\draw[->] (3.25,1.25)node[right,font=\scriptsize]{$\pdifffrac{}{\theta}$} to[out=180,in=30] (1.2, 0.75);
 	\end{tikzpicture}\end{center}
 	F"ur jedes $p \in M$ ist $\T_pM$ kanonisch isomorph zum von partiellen Ableitungen $\partial_1F|_p, \ldots ,\partial_mF|_p$ einer lokalen Parametrisierung $F$ aufgespannten Untervektorraum $\R^m$. Mit diesem (lokalen) isomorphismus definiert
 		\[ g_{ij} = \langle \partial_i F, \partial_j F \rangle \]
@@ -113,8 +113,8 @@ Ist $(M,g)$ eine Riemannsche Mannigfaltigkeit, $X, Y \in \calV(M)$, $X = \sum \x
 \end{enumerate}\end{bsp}
 
 \begin{bem}
-Sind $\varphi$ und $\psi$ Karten einer Riemannschen Mannigfaltigkeit $(M,g)$ um $p$ und sind $g = \sum g_{ij} \dop x^{i} \otimes \dop x^j$ und $h = \sum h_{ij} \dop y^{i} \otimes \dop y^j$ die lokalen Darstellungen bez"uglich $\varphi$ beziehungsweise $\psi$, so gilt
-	\[ h_{kl} = g\left( \pdifffrac{}{y^k}, \pdifffrac{}{y^l} \right) = \sum_{i,j} \pdifffrac{x^{i}}{y^k} \underbrace{\pdifffrac{x^j}{y^l}}_{\mathclap{\qquad \partial_l(\varphi^{i}\circ \psi^{-1})}} g_{ij} \]
+Sind $\phi$ und $\psi$ Karten einer Riemannschen Mannigfaltigkeit $(M,g)$ um $p$ und sind $g = \sum g_{ij} \dop x^{i} \otimes \dop x^j$ und $h = \sum h_{ij} \dop y^{i} \otimes \dop y^j$ die lokalen Darstellungen bez"uglich $\phi$ beziehungsweise $\psi$, so gilt
+	\[ h_{kl} = g\left( \pdifffrac{}{y^k}, \pdifffrac{}{y^l} \right) = \sum_{i,j} \pdifffrac{x^{i}}{y^k} \underbrace{\pdifffrac{x^j}{y^l}}_{\mathclap{\qquad \partial_l(\phi^{i}\circ \psi^{-1})}} g_{ij} \]
 \end{bem}
 
 Eine Riemannsche Metrik induziert eine Metrik auf dem Kotangentialb"undel: Die Isomorphismen $\T_pM \to \T_p^*M$, $X \mapsto \langle X, \cdot \rangle_p$ einen Isomorphismus von $\T M$ nach $\T^*M$. F"ur $\omega \in \T_p^*M$ sei $X(\omega) \in \T_pM$ mit $\omega = \langle X(\omega), \cdot \rangle_p$. Man definiert nun durch
@@ -178,9 +178,9 @@ Um Metriken in den Überlappungsgebieten von Karten "`verkleben"' zu können, be
 An dieser Stelle geht maßgeblich ein, dass die Topologie von $M$ eine abzählbare Basis besitzt. Beweis siehe Boothby, Kapitel V.4 \cite{boothby1986introduction}.
 
 \begin{bew}(von Satz \ref{Satz-6-3})
-Es sei $M$ eine glatte, $m$-dimensionale Mannigfaltigkeit. $\{(\varphi_i,U_i)\}_{i \in \calI}$ ein Atlas von $M$ und $\{(V_k,\alpha_k)\}_{k \in \N}$ eine Zerlegung der Eins auf einer abzählbaren, lokal endlichen Verfeinerung von $\{U_i\}_{i \in \calI}$. Es sei $\beta$ ein Skalarprodukt auf $\R^m$. Für jedes $k \in \N$ ist dann
+Es sei $M$ eine glatte, $m$-dimensionale Mannigfaltigkeit. $\{(\phi_i,U_i)\}_{i \in \calI}$ ein Atlas von $M$ und $\{(V_k,\alpha_k)\}_{k \in \N}$ eine Zerlegung der Eins auf einer abzählbaren, lokal endlichen Verfeinerung von $\{U_i\}_{i \in \calI}$. Es sei $\beta$ ein Skalarprodukt auf $\R^m$. Für jedes $k \in \N$ ist dann
 \begin{align*}
-	g_k = \left.\varphi_{i(k)}\right|_{V_k}^{*}\beta
+	g_k = \left.\phi_{i(k)}\right|_{V_k}^{*}\beta
 \end{align*}
 eine Riemannsche Metrik auf $V_k$. Damit ist $g = \sum g_k\alpha_k$ eine Riemannsche Metrik auf $M$.
 Die Summe ist punktweise endlich und $g$ ist als Komposition glatter Abbildungen selbst glatt.
@@ -252,12 +252,12 @@ Der Beweis sei zur Übung überlassen.
   \begin{align*}
     h_{\Phi(p)}(\Phi_{*p}X,\Phi_{*p}X) > g_p(X,X)
   \end{align*}
-  und eine Kurve $\gamma\colon [0,1] \to M$ mit $\gamma(0) = X$ und es gälte (für hinreichend kleines $\varepsilon$):
+  und eine Kurve $\gamma\colon [0,1] \to M$ mit $\gamma(0) = X$ und es gälte (für hinreichend kleines $\epsilon$):
   \begin{align*}
-    \mathcal L(\gamma|_{[0,\varepsilon]}) & = \int_0^{\varepsilon}\sqrt{g_{\gamma(t)}\left(\dot\gamma(t),\dot\gamma(t)\right)}\dop t\\
-    & < \int_0^{\varepsilon}\sqrt{h_{\Phi(\gamma(t))} \left(\Phi_{*\gamma(t)}\dot\gamma(t), \Phi_{*\gamma(t)}\dot\gamma(t)\right)}\dop t\\
-    & = \int_0^{\varepsilon}\sqrt{h_{\Phi(\gamma(t))} \left(\dot{(\Phi \circ \gamma)}(t), \dot{(\Phi \circ \gamma)}(t) \right)}\dop t\\
-    & = \mathcal L \left((\Phi \circ \gamma)|_{[0,\varepsilon]}\right).
+    \mathcal L(\gamma|_{[0,\epsilon]}) & = \int_0^{\epsilon}\sqrt{g_{\gamma(t)}\left(\dot\gamma(t),\dot\gamma(t)\right)}\dop t\\
+    & < \int_0^{\epsilon}\sqrt{h_{\Phi(\gamma(t))} \left(\Phi_{*\gamma(t)}\dot\gamma(t), \Phi_{*\gamma(t)}\dot\gamma(t)\right)}\dop t\\
+    & = \int_0^{\epsilon}\sqrt{h_{\Phi(\gamma(t))} \left(\dot{(\Phi \circ \gamma)}(t), \dot{(\Phi \circ \gamma)}(t) \right)}\dop t\\
+    & = \mathcal L \left((\Phi \circ \gamma)|_{[0,\epsilon]}\right).
   \end{align*}
   Mit der Polarisationsformel $\left<x,y\right> = - \frac{1}2 (\|x-y\|^{2} - \|x\|^2-\|y\|^2)$ folgt dann, dass $\Phi$ auch die Skalarprodukte erhält.
 \end{bew}
@@ -269,7 +269,7 @@ Der Beweis sei zur Übung überlassen.
     \mathcal L(\gamma|_{[s,t]}) = \lambda(t-s) = \dop(\gamma(s),\gamma(t)).
   \end{align*}
 
-  Eine Kurve $\gamma$ heißt \CmMark{Geodätische}, falls sie lokal minimierende Geodätische ist, das hei"st für alle $t \in [a,b]$ existiert ein $\varepsilon > 0$, so dass $\gamma|_{[t-\varepsilon,t+\varepsilon]}$ minimierende Geodätische ist.
+  Eine Kurve $\gamma$ heißt \CmMark{Geodätische}, falls sie lokal minimierende Geodätische ist, das hei"st für alle $t \in [a,b]$ existiert ein $\epsilon > 0$, so dass $\gamma|_{[t-\epsilon,t+\epsilon]}$ minimierende Geodätische ist.
 \end{Dfn}
 
 Eine bessere Vorstellung erhält man durch Betrachtung von Geodätischen als Isometrien von Intervallen in den euklidischen Raum, denn $\dop(\gamma(s),\gamma(t)) = t-s = \dop_{\R}(t,s)$.

@@ -3,39 +3,39 @@
 \setcounter{Loes}{0}
 
 \begin{Loes}
-Sei $M$ eine glatte Mannigfaltigkeit. Sei desweiteren f"ur alle drei Teilaufgaben $p \in M$, $\varphi$ eine Karte um $p$ mit Kartengebiet $U$ und
-	\[ \overline \varphi: \left\{ \begin{array}{ccc}  \T M|_U &\to& \R^{2n} \\
-		\sum_i \xi^i\pdifffrac[q]{}{x^i} &\mapsto& (\varphi(q), \xi) \end{array} \right.\]
+Sei $M$ eine glatte Mannigfaltigkeit. Sei desweiteren f"ur alle drei Teilaufgaben $p \in M$, $\phi$ eine Karte um $p$ mit Kartengebiet $U$ und
+	\[ \overline \phi: \left\{ \begin{array}{ccc}  \T M|_U &\to& \R^{2n} \\
+		\sum_i \xi^i\pdifffrac[q]{}{x^i} &\mapsto& (\phi(q), \xi) \end{array} \right.\]
 eine Karte von $\T M$. Alle diese Karten bilden dann einen Atlas von $\T M$.
 \begin{enumerate}[label=\alph*),widest=a,leftmargin=*]
 \item
 	\emph{Zeige:} $\pi: \T M \to M$, $\T_p M \ni x \mapsto p$ ist eine Submersion.
 	
 	Es ist
-	\begin{align*} \varphi \circ \pi \circ \overline \varphi^{-1} \underbrace{(y, \xi)}_{\mathclap{\in \varphi(U) \X \R^n}} &= \varphi\left(\pi\left(\sum_i \xi^i \pdifffrac[\varphi^{-1}(y)]{}{x^i}\right)\right)\\
-		&= \varphi(\varphi^{-1}(y)) = y
+	\begin{align*} \phi \circ \pi \circ \overline \phi^{-1} \underbrace{(y, \xi)}_{\mathclap{\in \phi(U) \X \R^n}} &= \phi\left(\pi\left(\sum_i \xi^i \pdifffrac[\phi^{-1}(y)]{}{x^i}\right)\right)\\
+		&= \phi(\phi^{-1}(y)) = y
 	\end{align*}
 	also ist $\pi$ glatt. Desweiteren ist
-		\[ \D(\varphi \circ \pi \circ \overline \varphi^{-1})|_{(y, \xi)} = \left(\begin{smallmatrix}
+		\[ \D(\phi \circ \pi \circ \overline \phi^{-1})|_{(y, \xi)} = \left(\begin{smallmatrix}
         1 &  & \\
         & \ddots & & \\
          & & 1
       \end{smallmatrix} 0\right) \]
-     surjektiv und damit auch $\pi_{*\overline\varphi^{-1}(y, \xi)}$. Offensichtlich ist $\pi$ surjektiv und damit eine Submersion.
+     surjektiv und damit auch $\pi_{*\overline\phi^{-1}(y, \xi)}$. Offensichtlich ist $\pi$ surjektiv und damit eine Submersion.
 \item
 	\emph{Zeige:} $\sigma: M \to \T M$, $p \mapsto 0_{\T_pM}$ ist eine Einbettung.
 	
 	Es gilt
-		\[\overline \varphi \circ \sigma \circ \varphi^{-1} (y) = \overline \varphi(0_{\T_{\varphi^{-1}(y)}M}) = (\varphi(\varphi^{-1}(y)),0) = (y,0) \]
-	Daraus folgt folgt dass $D(\overline \varphi \circ \sigma \circ \varphi^{-1})|_y = \left( \begin{smallmatrix} 1 & &  \\ & \ddots & \\ & & 1 \\ & 0 & \end{smallmatrix} \right)$ injektiv ist und damit auch $\sigma_{* \varphi^{-1}(y)}$. $\sigma$ ist injektiv und stetig, $\pi \circ \sigma = \Id_m$, also ist $\sigma^{-1} = \pi|_{\Bild(\sigma)}$ stetig.
+		\[\overline \phi \circ \sigma \circ \phi^{-1} (y) = \overline \phi(0_{\T_{\phi^{-1}(y)}M}) = (\phi(\phi^{-1}(y)),0) = (y,0) \]
+	Daraus folgt folgt dass $D(\overline \phi \circ \sigma \circ \phi^{-1})|_y = \left( \begin{smallmatrix} 1 & &  \\ & \ddots & \\ & & 1 \\ & 0 & \end{smallmatrix} \right)$ injektiv ist und damit auch $\sigma_{* \phi^{-1}(y)}$. $\sigma$ ist injektiv und stetig, $\pi \circ \sigma = \Id_m$, also ist $\sigma^{-1} = \pi|_{\Bild(\sigma)}$ stetig.
 \item
 	\emph{Zeige:} Ist $\Phi: M \to N$ eine glatte Abbildung, so auch $\Phi_*: \T M \to \T N$.
 	
 	Sei $\psi$ eine Karte um $\Phi(p)$ und $\overline \psi$ die zugeh"orige Karte von $\T N$.
 	\begin{align*}
-		(\overline \psi \circ \Phi_* \circ \overline \varphi^{-1})\underbrace{(y, \xi)}_{\mathclap{\in \varphi(U) \X \R^n}} &= (\overline \psi \circ \Phi_*)\left(\sum \xi^{i} \pdifffrac[\varphi^{-1}(y)]{}{x^{i}}\right)\\
-		&= \overline \psi\left(\sum_i\left(\sum_j \pdifffrac[\varphi^{-1}(y)]{\Phi^{i}}{x^j} \xi^j\right) \pdifffrac[\Phi(\varphi^{-1}(y))]{}{\psi^{i}}\right)\\
-		&= \left( \underbrace{(\psi \circ \Phi \circ \varphi^{-1})}_{\text{glatt}}(y), \underbrace{\left( \sum_j \underbrace{\pdifffrac[_\varphi^{-1}(y)]{\Phi^{i}}{x^j}}_{\text{glatt in }y} \overbrace{\xi^j}^{\substack{\text{glatt}\\ \text{in }\xi}} \right)_{i = 1,\ldots ,n}}_{\text{glatt}} \right)
+		(\overline \psi \circ \Phi_* \circ \overline \phi^{-1})\underbrace{(y, \xi)}_{\mathclap{\in \phi(U) \X \R^n}} &= (\overline \psi \circ \Phi_*)\left(\sum \xi^{i} \pdifffrac[\phi^{-1}(y)]{}{x^{i}}\right)\\
+		&= \overline \psi\left(\sum_i\left(\sum_j \pdifffrac[\phi^{-1}(y)]{\Phi^{i}}{x^j} \xi^j\right) \pdifffrac[\Phi(\phi^{-1}(y))]{}{\psi^{i}}\right)\\
+		&= \left( \underbrace{(\psi \circ \Phi \circ \phi^{-1})}_{\text{glatt}}(y), \underbrace{\left( \sum_j \underbrace{\pdifffrac[_\phi^{-1}(y)]{\Phi^{i}}{x^j}}_{\text{glatt in }y} \overbrace{\xi^j}^{\substack{\text{glatt}\\ \text{in }\xi}} \right)_{i = 1,\ldots ,n}}_{\text{glatt}} \right)
 	\end{align*}
 	Daraus folgt dass $\Phi_*$ glatt ist.
 \end{enumerate}\end{Loes}
@@ -60,8 +60,8 @@ eine Karte von $\T M$. Alle diese Karten bilden dann einen Atlas von $\T M$.
 	\end{align*}
 	$M = \R$, $X = Y = \pdifffrac{}{x}$, $f = g = \Id$ $\Rightarrow $ Leibnitz-Regel gilt nicht.
 \item
-	\emph{Bemerkung:} Ist $X|_U = \sum_{i=1}^{n}\xi^{i}\pdifffrac{}{x^{i}}$ lokale Darstellung bez"uglich $\varphi$ von $X \in \calV(M)$, so ist
-		\[ \xi^{i} = X(\varphi^{i}) \]
+	\emph{Bemerkung:} Ist $X|_U = \sum_{i=1}^{n}\xi^{i}\pdifffrac{}{x^{i}}$ lokale Darstellung bez"uglich $\phi$ von $X \in \calV(M)$, so ist
+		\[ \xi^{i} = X(\phi^{i}) \]
 	Seien $X|_U = \sum_i \xi^i \pdifffrac{}{x^{i}}$, $Y|_U = \sum_i \eta^{i} \pdifffrac{}{x^{i}}$. Damit gilt dann
 	\begin{align*}
 		[X,Y](x^j) &= (XY - YX)(x^j)\\

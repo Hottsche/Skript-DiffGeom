@@ -15,21 +15,21 @@
 
 \section{Das Tangentialbündel als glatte Mannigfaltigkeit}
 
-Es sei $(\varphi, U)$ eine Karte von $M$. Setzt man $\T M|_U = \pi^{-1}(U) = \dot \bigcup_{p\in U}\T_pM$, so ist nach Satz \ref{satz-2-9}
+Es sei $(\phi, U)$ eine Karte von $M$. Setzt man $\T M|_U = \pi^{-1}(U) = \dot \bigcup_{p\in U}\T_pM$, so ist nach Satz \ref{satz-2-9}
 die Abbildung
 \begin{align*}
-  & \overline \varphi \colon \T M|_U \to \varphi(U) \times \R^m \subset \R^{2m}\\
-  &\T_p M \ni X_p = \sum \xi^i\pdifffrac[p]{}{x^i} \mapsto (\varphi(p),\xi)
+  & \overline \phi \colon \T M|_U \to \phi(U) \times \R^m \subset \R^{2m}\\
+  &\T_p M \ni X_p = \sum \xi^i\pdifffrac[p]{}{x^i} \mapsto (\phi(p),\xi)
 \end{align*}
 bijektiv.
-Es sei eine Topologie auf $\T M$ dadurch erklärt, dass eine Menge $V \subset \T M$ genau dann offen ist, wenn für alle Karten $(\varphi, U)$ die Menge $\overline \varphi(V \cap \T M|_U)$ offen in $\R^{2m}$ ist. Diese Topologie ist hausdorffsch und besitzt eine abzählbare Basis, da dies für $M$ und $\R^m$ gilt. Nach Konstruktion sind alle $\overline \varphi$ Homöomorphismen. Ist $\mathcal A = \{(\varphi, U\}$ ein $C^{\infty}$-Atlas von $M$, so definiert
+Es sei eine Topologie auf $\T M$ dadurch erklärt, dass eine Menge $V \subset \T M$ genau dann offen ist, wenn für alle Karten $(\phi, U)$ die Menge $\overline \phi(V \cap \T M|_U)$ offen in $\R^{2m}$ ist. Diese Topologie ist hausdorffsch und besitzt eine abzählbare Basis, da dies für $M$ und $\R^m$ gilt. Nach Konstruktion sind alle $\overline \phi$ Homöomorphismen. Ist $\mathcal A = \{(\phi, U\}$ ein $C^{\infty}$-Atlas von $M$, so definiert
 \begin{align*}
-  \overline A = \{(\overline \varphi, \T M|_U) \mid (\varphi, U) \in \mathcal A\}
+  \overline A = \{(\overline \phi, \T M|_U) \mid (\phi, U) \in \mathcal A\}
 \end{align*}
-eine glatte Struktur auf $\T M$. Für Karten $(\varphi, U), (\psi, V)$ von $M$ ist der Kartenwechsel
+eine glatte Struktur auf $\T M$. Für Karten $(\phi, U), (\psi, V)$ von $M$ ist der Kartenwechsel
 \[\begin{array}{ccc}
-  \overline \psi \circ \overline \varphi^{-1} \colon \varphi(U \cap V) \times \R^m &\to& \psi(U \cap V) \times \R^m \\
-  (x, \xi) &\mapsto& (\psi \circ \varphi^{-1}(x),\D(\psi \circ \varphi^{-1}|_x\xi),
+  \overline \psi \circ \overline \phi^{-1} \colon \phi(U \cap V) \times \R^m &\to& \psi(U \cap V) \times \R^m \\
+  (x, \xi) &\mapsto& (\psi \circ \phi^{-1}(x),\D(\psi \circ \phi^{-1}|_x\xi),
 \end{array}\]
 $(X_p = \sum \xi^i \pdifffrac[p]{}{x^i})$ ist glatt. Damit trägt $\T M$ in kanonischer Weise eine glatte Struktur.
 Darüber hinaus ist die kanonische Projektion $\pi \colon \T M \to M$ bezüglich dieser glatten Struktur eine Submersion. (Beweis: Übungsaufgabe)
@@ -42,13 +42,13 @@ Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so
 \end{Dfn}
 
 \begin{bem}
-Ist $(\varphi, U)$ eine Karte von $M$, so sind die Abbildungen $U \to \T M|_U, \ p \mapsto \pdifffrac[p]{}{x^{i}}$ glatte Vektorfelder (in der Karte $\overline \varphi$ sind diese genau die Abbildungen $(x,e_i)$).
+Ist $(\phi, U)$ eine Karte von $M$, so sind die Abbildungen $U \to \T M|_U, \ p \mapsto \pdifffrac[p]{}{x^{i}}$ glatte Vektorfelder (in der Karte $\overline \phi$ sind diese genau die Abbildungen $(x,e_i)$).
 
 Ist $X$ ein glattes Vektorfeld, so gilt für jedes $u \in U$:
 \begin{align*}
 	X_U = \sum \xi^i(u) \pdifffrac[U]{}{x^i},
 \end{align*}
-wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$ ist. Ein Vektorfeld ist genau dann glatte, wenn für jede Karte $(\varphi, U)$ die Koeffizientenfunktionen $\xi^i(u)$ von $X_U = \sum \xi^i(u) \pdifffrac[U]{}{x^i}$ glatte Funktionen sind.
+wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$ ist. Ein Vektorfeld ist genau dann glatte, wenn für jede Karte $(\phi, U)$ die Koeffizientenfunktionen $\xi^i(u)$ von $X_U = \sum \xi^i(u) \pdifffrac[U]{}{x^i}$ glatte Funktionen sind.
 \end{bem}
 
 
@@ -118,7 +118,7 @@ wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$
 
 % Lemma 4.4
 \begin{Lemma}
-  Es seien $X,Y \in \mathcal V(M)$ glatte Vektorfelder und $(\varphi,U)$ eine Karte von $M$.
+  Es seien $X,Y \in \mathcal V(M)$ glatte Vektorfelder und $(\phi,U)$ eine Karte von $M$.
   Sind dann $X|_U = \sum \xi^i\pdifffrac{}{x^i}, \ Y|_U = \sum \eta^i \pdifffrac{}{x^i}$ und $[X,Y]|_U = \sum \zeta^i \pdifffrac{}{x^i}$ die ensprechenden lokalen Darstellungen, so gilt:
   \begin{align*}
     \zeta^j = \sum \left(\xi^i\pdifffrac{\eta^j}{x^i} - \eta^i \pdifffrac{\xi^j}{x^i} \right).
@@ -148,10 +148,10 @@ oder in lokalen Koordinaten:
 \begin{align*}
   \begin{cases}
     \dot \gamma(t) = \xi(\tilde \gamma(t))\\
-    \tilde \gamma(0) = 0, \text{ falls } \varphi(p) = 0,
+    \tilde \gamma(0) = 0, \text{ falls } \phi(p) = 0,
   \end{cases}
 \end{align*}
-mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ und $X|_{\textcolor{red}{U}} = \sum \xi^i \pdifffrac{}{x^i}$.
+mit $\tilde \gamma = \phi \circ \gamma$ für eine Karte $(\phi,U)$ um $p$ und $X|_{\textcolor{red}{U}} = \sum \xi^i \pdifffrac{}{x^i}$.
 
 % Definition 4.5
 \begin{Dfn}
@@ -163,9 +163,9 @@ mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ 
 \end{Dfn}
 
 \begin{bem}
-  Eine Kurve $\gamma$ ist genau dann Integralkurve von $X$ durch $p$, wenn für jede Karte $(\varphi,U)$ die Kurve $\tilde \gamma = \varphi \circ \gamma$ eine Lösung des (autonomen) Anfangswertproblems
+  Eine Kurve $\gamma$ ist genau dann Integralkurve von $X$ durch $p$, wenn für jede Karte $(\phi,U)$ die Kurve $\tilde \gamma = \phi \circ \gamma$ eine Lösung des (autonomen) Anfangswertproblems
   \begin{align*}
-    \dot{\tilde \gamma} = \xi(\gamma(t)),  \ \tilde \gamma(0) = \varphi(p)
+    \dot{\tilde \gamma} = \xi(\gamma(t)),  \ \tilde \gamma(0) = \phi(p)
   \end{align*}
   ist, wobei $X_U = \sum \xi^i \pdifffrac{}{x^i}$ gelte.
 
@@ -180,7 +180,7 @@ mit $\tilde \gamma = \varphi \circ \gamma$ für eine Karte $(\varphi,U)$ um $p$ 
 
 % Satz 4.6
 \begin{Satz}[Lokale Existenz und Eindeutigkeit]\label{satz-4-6}
-  Es sei $U \subseteq \R^n$ offen und $\calI_{\varepsilon}=(-\varepsilon,\varepsilon)$ und $F \colon \calI_{\varepsilon} \times \R^n \to \R^n$ $C^k$-differenzierbar.
+  Es sei $U \subseteq \R^n$ offen und $\calI_{\epsilon}=(-\epsilon,\epsilon)$ und $F \colon \calI_{\epsilon} \times \R^n \to \R^n$ $C^k$-differenzierbar.
   Dann existiert für alle $x \in U$ eine Umgebung $V$ von $x$ in $U$ und ein $\delta > 0$, so dass
   \begin{enumerate}[label=(\roman*),leftmargin=*,widest=iii]
   \item Für alle $x \in V$ existiert eine $C^{k+1}$-Lösung $y_x\colon \calI_{\delta} \to V$, von $y_x'(t)=F(t,y(t))$ und $y_x(0) = x$.
@@ -200,11 +200,11 @@ Zum Beweis siehe Lang: "`Differential and Riemannian Manifolds"', 3. Auflage, 19
 
 % Korollar 4.7
 \begin{Kor}\label{korollar-4-7}\label{kor-4-7}
-  Es sei $X \in \mathcal V(M)$ und $p \in M$. Dann existiert eine offene Umgebung $U$ von $p$, ein $\varepsilon > 0$ und eine glatte Abbildung:
+  Es sei $X \in \mathcal V(M)$ und $p \in M$. Dann existiert eine offene Umgebung $U$ von $p$, ein $\epsilon > 0$ und eine glatte Abbildung:
   \begin{align*}
-    \gamma\colon(-\varepsilon,\varepsilon) \times U \to M
+    \gamma\colon(-\epsilon,\epsilon) \times U \to M
   \end{align*}
-  so dass $t \mapsto \gamma^t(p)$ eine Integralkurve von $X$ durch $p$ ist. (Setze dann $F(t,x) = \xi(\varphi^{-1}(x))$.)
+  so dass $t \mapsto \gamma^t(p)$ eine Integralkurve von $X$ durch $p$ ist. (Setze dann $F(t,x) = \xi(\phi^{-1}(x))$.)
 \end{Kor}
 
 % Korollar 4.8
@@ -298,8 +298,8 @@ Es sei $s \in \overline \calJ_p^{+} \cap (\calJ_p \cap \R_{\geq 0}$ und $q = \ga
 	\path[name intersections={of=kurve and senkrecht}];
 	\fill (intersection-1) circle (0.05) node[anchor=south east] {$\gamma^t(p)$} (0,0) circle(0.05) (2.75,2) circle(0.05);
 \end{tikzpicture}}
-Dann existieren $\varepsilon > 0$ und eine Umgebung $U$ von $q$, so dass $\gamma$ auf $(-\varepsilon,\varepsilon) \times U$ glatt ist.
-Es sei $t \in \calJ_p^{+}$ mit $s-t < \varepsilon$ und $\gamma^t(p) \in U$.
+Dann existieren $\epsilon > 0$ und eine Umgebung $U$ von $q$, so dass $\gamma$ auf $(-\epsilon,\epsilon) \times U$ glatt ist.
+Es sei $t \in \calJ_p^{+}$ mit $s-t < \epsilon$ und $\gamma^t(p) \in U$.
 Nach Definition von $\calJ_p^{+}$ existiert eine offene Umgebung $V$ von $p$ in $M$ und $\delta > 0$, so dass $(-\delta,t+\delta)\times V \subseteq \mathcal D_X$ gilt und darauf $\gamma$ glatt ist.
 Dann ist $V' = \left(\left.\gamma^t\right|_V\right)^{-1}(U) = \{p' \in V \mid \gamma^t(p') \in U\}$ eine offene Umgebung von $p$.
 Für alle $p' \in V'$ gilt:
@@ -307,12 +307,12 @@ Für alle $p' \in V'$ gilt:
 	r \mapsto
 	\begin{cases}
 		\gamma^r(p') & \text{ falls } r < t+\delta\\
-		\gamma^{r-t}(\gamma^t(p')) & \text{ falls } r \in \textcolor{red}{(t-s,t+\varepsilon)}
+		\gamma^{r-t}(\gamma^t(p')) & \text{ falls } r \in \textcolor{red}{(t-s,t+\epsilon)}
 	\end{cases}.
 \end{align*}
 ist eine Integralkurve von $X$ durch $p'$.
 
-Es gilt also $(-\delta,t+\varepsilon) \subseteq \calJ_{p'}$ für alle $p' \in V'$ und somit $(-\delta,t+\varepsilon) \times V' \subset \mathcal D_X$. An der obigen Darstellung sieht man, dass $\gamma$ darauf glatt ist.
+Es gilt also $(-\delta,t+\epsilon) \subseteq \calJ_{p'}$ für alle $p' \in V'$ und somit $(-\delta,t+\epsilon) \times V' \subset \mathcal D_X$. An der obigen Darstellung sieht man, dass $\gamma$ darauf glatt ist.
 Also gilt $s \in \calJ_p^{+}$. Analog argumentiert man für $\calJ_p^{-}$.
 \end{bew}
 
@@ -333,19 +333,19 @@ Also gilt $s \in \calJ_p^{+}$. Analog argumentiert man für $\calJ_p^{-}$.
 \end{Lemma}
 
 \begin{bew}
-  Nach Korollar \ref{korollar-4-7} existiert eine Umgebung $U$ von $q$ und $\varepsilon > 0$, so dass auf $(-\varepsilon,\varepsilon) \times U$ ein lokaler Fluss von $X$ definiert ist.
+  Nach Korollar \ref{korollar-4-7} existiert eine Umgebung $U$ von $q$ und $\epsilon > 0$, so dass auf $(-\epsilon,\epsilon) \times U$ ein lokaler Fluss von $X$ definiert ist.
   
-  Wählt man $k$ so groß, dass $t_{\infty} - t_k < \varepsilon$ gilt, so ist für $\overline q = c(t_k)$ und $t$ mit $|t-t_k| < \varepsilon$ der Fluss $t \mapsto \gamma^{t-t_k}(\overline q)$ erklärt. Aus Korollar \ref{korollar-4-8} folgt, dass $\gamma^{t_k}(p) = c(t_k) = \overline q$ gilt.
+  Wählt man $k$ so groß, dass $t_{\infty} - t_k < \epsilon$ gilt, so ist für $\overline q = c(t_k)$ und $t$ mit $|t-t_k| < \epsilon$ der Fluss $t \mapsto \gamma^{t-t_k}(\overline q)$ erklärt. Aus Korollar \ref{korollar-4-8} folgt, dass $\gamma^{t_k}(p) = c(t_k) = \overline q$ gilt.
   Damit ist die Kurve
   \begin{align*}
     \overline c(t) =
     \begin{cases}
       c(t) & \text{ für } t < t_{\infty}\\
-      \gamma^{t-t_k}(\overline q) & \text{ falls } |t-t_k| < \varepsilon
+      \gamma^{t-t_k}(\overline q) & \text{ falls } |t-t_k| < \epsilon
     \end{cases}
   \end{align*}
   eine glatte Fortsetzung von $c$ und eine Integralkurve von $X$ durch $p$.
-  Insbesondere gilt $t_{\infty} < t_k + \varepsilon$, also $t_{\infty} \in \calI_p$ und
+  Insbesondere gilt $t_{\infty} < t_k + \epsilon$, also $t_{\infty} \in \calI_p$ und
   \begin{align*}
     \gamma^{t_{\infty}}(p)= \gamma^{t_{\infty}-t_k}(\gamma^{t_k}(p)) = \overline c(t_{\infty}) = \lim_{t\to t_{\infty}}c(t) = q.
   \end{align*}
