@@ -28,8 +28,8 @@
 	\draw (a) -- (c) -- (d) -- (b) -- cycle;
 	% Beschriftungen
 	\node at (2,3.5) {$\{p\}^\perp = E_p \cong \R^2$};
-	\node at (-1.5,-2.5) {$S^2 \subset \R^2$};
-\end{tikzpicture}}
+	\node at (1.5,-2.5) {$S^2 \subset \R^2$};
+\end{tikzpicture}}[-2cm]
 
 
 Betrachte in der nebenstehenden Abbildung eine differenzierbare \gls{Kurve} $c \colon (-\epsilon,\epsilon) \to S^2$ mit $c(0) = p$. Dann gilt:
@@ -153,7 +153,7 @@ Für $f,g \in C^{\infty}(\R^n), \ x,y \in \R^n$ ist die \CmMark{Richtungsableitu
 \end{align*}
 Diese erfüllt die Leibniz-Regel:
 \begin{align*}
-	\partial_v(fg)(x) = \partial_vf(x)\cdot g(x) + f(x) \cdot \partial_v(g)(x).
+	\partial_v(fg)(x) = \partial_vf(x)\cdot g(x) + f(x) \cdot \partial_v g(x).
 \end{align*}
 \end{bem}
 
@@ -262,10 +262,10 @@ Damit sind die Vektoren linear unabhängig.
 Es sei $X_p\in \T_p^{\text{alg}}M$ und $f \in C^{\infty}(M)$.
 Für $x_0=\phi(p) \in \R^n, \ B_{\rho}(x_0) \subset \phi(U)$ und für $g = f \circ \phi^{-1}|_{B_{\rho}(x_0)}$ gilt mit den Bezeichnungen wie im letzten Lemma:
 \begin{align*}
-	X_p(f) & = X_p(g \circ \phi) = X_p(g(\phi(p)) + \sum \left(\phi^i - \phi(p)^i)(h_i \circ \phi) \right)\\
-	& = \underbrace{X_p(g(\phi(p)))}_{\mathclap{=0}} + \sum X_p((\phi^i-\phi(p)^i)(h_i \circ \phi))\\
-	& = \sum X_p(\phi^i)(h_i\circ\phi)(p) - X_p(\phi(p)^i)(h_i\circ \phi)(p) + \sum (q^i-\phi(p)^i)(p) X_p(h_i \circ \phi)\\
-	& = \sum_{i=1}^n X_p(\phi^i)\underbrace{(h_i \circ \phi)(p)}_{\mathclap{=h_i(\phi(p) = h_i(x_0) = \partial_ig(x_0) = \partial_i(f\circ \phi^{-1})(\phi(p)) = \pdifffrac[p]{}{x^i}(f)}}\\
+	X_p(f) & = X_p(g \circ \phi) = X_p \left( (g(\phi(p))) + \sum ( \phi^i - \phi(p)^i ) (h_i \circ \phi) \right)\\
+	& = \underbrace{X_p \big(g(\phi(p))\big)}_{\mathclap{=0}} + \sum X_p \left((\phi^i-\phi(p)^i)(h_i \circ \phi) \right)\\
+	& = \sum X_p(\phi^i)(h_i\circ\phi)(p) - X_p(\phi(p)^i)(h_i\circ \phi)(p) + \sum (\phi^i-\phi(p)^i)(p) X_p(h_i \circ \phi)\\
+	& = \sum_{i=1}^n X_p(\phi^i)\underbrace{(h_i \circ \phi)(p)}_{\mathclap{=h_i(\phi(p)) = h_i(x_0) = \partial_ig(x_0) = \partial_i(f\circ \phi^{-1})(\phi(p)) = \pdifffrac[p]{}{x^i}(f)}}\\
 	& = \sum_{i=1}^nX_p(\phi^i)\pdifffrac[p]{}{x^i}(f).
 \end{align*}
 \end{bew}
@@ -277,7 +277,7 @@ Für $x_0=\phi(p) \in \R^n, \ B_{\rho}(x_0) \subset \phi(U)$ und für $g = f \ci
 \begin{bew}[Beweis des Lemmas]
 Es gilt:
 \begin{align*}
-	g(x) - g(x_0) = \int_0^1\difffrac{}{t}g(tx + (1-t)x_0)dt = \sum_{i=1}^n(x^i-x_0^i)\underbrace{\int_0^1\partial_ig(tx + (1-t)x_0) dt}_{=: h_i(x)}.
+	g(x) - g(x_0) = \int_0^1\difffrac{}{t}g(tx + (1-t)x_0) \dop t = \sum_{i=1}^n(x^i-x_0^i)\underbrace{\int_0^1\partial_ig(tx + (1-t)x_0) \dop t}_{=: h_i(x)}.
 \end{align*}
 \end{bew}
 
@@ -302,7 +302,7 @@ Es gilt:
 \end{bew}
 
 \begin{bem}
-  \begin{enumerate}[label=\arabic*)]
+  \begin{enumerate}[label=\arabic*),leftmargin=*]
   \item Ist $X_p = \sum \xi^i\pdifffrac[p]{}{x^i}$, so gilt $X_p = \dot c(0)$ für $c(t) = \phi^{-1}(\phi(p) + t\xi)$.
 \item Für jede glatte Kurve $c$ durch $p$ ist $\difffrac[t=0]{}{t}(\phi \circ c)$ der Koeffizientenvektor von $\dot c(0)$ in der Basis $\pdifffrac[p]{}{x^i}$.
   \end{enumerate}

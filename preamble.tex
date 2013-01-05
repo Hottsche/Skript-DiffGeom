@@ -45,7 +45,7 @@
   citecolor=rltblue
 }
 
-% vertausche die Theta, Phi, Rho und Epsilon mit ihrer "var" Version
+% vertausche die Theta, Phi, Rho und Epsilon mit ihren "var" Versionen
 %\newcommand{\swapcmd}[2]{
 %	\let\temp\#1
 %	\left\#1\#2
@@ -68,7 +68,7 @@
 \let\varrho\temp
 
 \usepackage{tikz} % Fuer Zeichnungen in TikZ
-\usetikzlibrary{matrix,arrows,calc,intersections, positioning, patterns, decorations.text, decorations.pathmorphing, decorations.markings, fixedpointarithmetic}
+\usetikzlibrary{matrix,arrows,calc,intersections, positioning, patterns, decorations.text, decorations.pathmorphing, decorations.markings}
 
 % neue Befehle fuer haeufig benutzte TikZ Formen; erstes Argument steht fuer die Position, Zweites fuer die Groesse
 \newcommand{\tikzrichtung}[3][1]{ % zeichnet eine rote Linie von einem Punkt in eine Richtung mit rotem Knoten am Ende
@@ -394,7 +394,7 @@
 \setlist[itemize]{itemsep=0cm} %\setlist[itemize]{itemsep=0cm, leftmargin=2cm}
 
 % replace the slim emptyset symbol
-\let\emptyset\varnothing
+%\let\emptyset\varnothing
 
 % set line distances
 \linespread{1.1}
@@ -451,7 +451,8 @@
 
 % Highlight(bold) and index the given text
 % usage: \CmMark[(optionally put another text for the index in here)]{(text to highlight and add to index)}
-\newcommand{\CmMark}[2][]{\textbf{\CmIndex[#1]{#2}}}
+%\newcommand{\CmMark}[2][]{\textbf{\CmIndex[#1]{#2}}}
+\newcommand{\CmMark}[2][]{\textbf{\CmIndex[#1]{#2}}\marginnote{\scriptsize{#2}}} % <-- Das ist nur ein Versuch die definierten Begriffe in den Rand zu stellen
 
 
 % sectioning support
