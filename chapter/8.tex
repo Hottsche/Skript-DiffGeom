@@ -11,10 +11,10 @@ Was sind kritische Punkte dieser Abbildung? Für $f \in C^{\infty}(M)$ ist $p$ k
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
 %	\draw[step=0.25,gray!15] (-6,-4) grid (6,4); \draw[step=0.5,gray!30] (-6,-4) grid (6,4); \fill (0,0) circle(0.1); %Hilfsgitter
 	
-	\coordinate (p) at (-2,-1); \coordinate (q) at (2,1); \coordinate (wirbel) at (-0.5,-0.5);
-	\coordinate (ctrl1) at (1,0);
-	\def\left{0.75}
-	\def\right{1.75}
+	\coordinate (p) at (-2,-1); \coordinate (q) at (2,1); \coordinate (wirbel) at (-0.5,-0.5); %die beiden Endpunkte und der Wendepunkt
+	\coordinate (ctrl1) at (1,0); % Wendetangente
+	\def\left{0.75} % linke Laenge der Wendetangente
+	\def\right{1.75} % rechte Laenge
 	\fill (p) circle(0.05)node[below]{$p$}; \fill (q) circle(0.05)node[right]{$q$};
 	
 	\draw[name path=kurve] (p) ..controls(p) and ($(wirbel) - \left*(ctrl1)$).. (wirbel)node[below]{$\gamma(t)$} ..controls($(wirbel) + \right*(ctrl1)$) and (q)..node[below]{$\gamma$} (q);

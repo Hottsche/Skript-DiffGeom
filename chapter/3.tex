@@ -22,7 +22,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
     % \draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
     
     % Die Abbildungspfeile
-    \draw[->] (-1.5,0) to[out=20, in=160]node[above]{$\psi' \circ \Phi \circ \phi^{-1}$}node[below]{diff'bar} (1.5,0);
+    \draw[->] (-1.5,0) to[out=20, in=160]node[above]{$\psi \circ \Phi \circ \phi^{-1}$}node[below]{diff'bar} (1.5,0);
     \draw[->] (-1.5,3) to[out=20, in=160]node[above]{$\Phi$} (1.5,3);
     
     % Die Achsen
@@ -101,12 +101,12 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 
 \begin{bew}
   \begin{align*}
-    \underbrace{\left(\Phi_{*p}\pdifffrac[p]{}{x^i}\right)}_{\textcolor{red}{\in \T_qN}}(\psi^j) = \pdifffrac[p]{}{x^i}(\psi^j \circ \Phi) = \partial_i (\psi^j \circ \Phi \circ \phi^{-1})(\phi(p)) = \frac{\partial \Phi^j}{\partial y^i}(p).
+    \underbrace{\left(\Phi_{*p}\pdifffrac[p]{}{x^i}\right)}_{\in \T_qN}(\psi^j) = \pdifffrac[p]{}{x^i}(\psi^j \circ \Phi) = \partial_i (\psi^j \circ \Phi \circ \phi^{-1})(\phi(p)) = \frac{\partial \Phi^j}{\partial y^i}(p).
   \end{align*}
 \end{bew}
 
 \begin{bem}[Charakterisierung durch Kurven]
-  Ist $[c] \in \T_p\textcolor{red}{M}$, so gilt für $f \in C^{\infty}(\textcolor{red}{N})$:
+  Ist $[c] \in \T_p M$, so gilt für $f \in C^{\infty}(N)$:
   \begin{align*}
     \Phi_{*p}[c](f) = [c](f \circ \Phi) = \difffrac[t=0]{}{t}(\underbrace{f \circ \Phi \circ c)}_{\substack{\text{glatte Kurve}\\ \text{auf }N}} = [\Phi \circ c](f)
   \end{align*}
@@ -144,16 +144,16 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   $\T_pM \quot{=} \langle \partial_1F|_x,\ldots ,\partial_m F|_x \rangle$
 \end{bem}
 
-\begin{bem}[Eigenschaften des Differentials]\hfill
+\begin{emptythm}[Eigenschaften des Differentials]\hfill
   \begin{enumerate}[label=(\roman*),widest=iii]
   \item (\emph{Kettenregel}) Sind $\Phi \colon M \to N$ und $\Psi \colon N \to P$ glatt, so gilt:
     \begin{align*}
       (\Psi \circ \Phi)_{*p} = \Psi_{*\Phi(p)} \circ \Phi_{*p}.
     \end{align*}
-  \item Ist $\textcolor{red}{\Phi} \colon M \to N$ ein Diffeomorphismus, so ist $\Phi_{*p}$ ein Vektorraumisomorphismus. % Verwendet die Kettenregel
+  \item Ist $\Phi \colon M \to N$ ein Diffeomorphismus, so ist $\Phi_{*p}$ ein Vektorraumisomorphismus. % Verwendet die Kettenregel
   \item (\emph{Satz von der Umkehrabbildung}) Ist $\Phi \colon M \to N$ glatt und $\Phi_{*p}$ bijektiv, so existieren Umgebungen $U$ von $p$ und $V$ von $\Phi(p)$, so dass $\Phi|_{U} \colon U \to V$ ein Diffeomorphismus ist.
   \end{enumerate}
-\end{bem}
+\end{emptythm}
 
 % Definition 2.3
 \begin{Dfn}[Reguläre Punkte, Submersion, Immersion]
@@ -219,9 +219,9 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 \begin{Kor}
   \begin{enumerate}[label=(\roman*),widest=iii,leftmargin=*]
   \item Falls $\Phi$ auf einer offenen Umgebung von $P = \Phi^{-1}(q)$ konstanten Rang $r$ hat, so ist $P$ eine Untermannigfaltigkeit der Kodimension $r$.
-  \item Ist $q$ ein regulärer Wert von $\Phi$, so ist $P = \Phi^{-1}(q)$ eine Untermannigfaltigkeit von $M$ der Kodimension $\textcolor{red}{n}$. \textcolor{red}{$n$ oder $r$?}
+  \item Ist $q$ ein regulärer Wert von $\Phi$, so ist $P = \Phi^{-1}(q)$ eine Untermannigfaltigkeit von $M$ der Kodimension $n$.
   
-    Beispiel: $\|\cdot\|^{-1}(1) = S^n \supset \R^{n+1} \to \R, x \mapsto \|\textcolor{red}{x}\|$.
+    Beispiel: $\|\cdot\|^{-1}(1) = S^n \supset \R^{n+1} \to \R, x \mapsto \|x\|$.
   \item Ist $\Phi_{*p}$ injektiv, so existiert eine Umgebung $U$ von $p$, so dass $\Phi(U) = Q \subset N$ eine Untermannigfaltigkeit von $N$ ist.
   \item Ist $\Phi$ eine Einbettung, so ist $Q = \Phi(M)$ eine $m$-dimensionale Untermannigfaltigkeit von $M$ und $\Phi \colon M \to Q$ ist ein Diffeomorphismus.
   \end{enumerate}
@@ -229,15 +229,15 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 
 \begin{bew}\begin{enumerate}[label=(\roman*),widest=iii,leftmargin=*]
 \item
-	Sei $p \in P = \Phi^{-1}(q)$. Nach der zweiten Aussage des vorrangegangenen Satzes existieren Karten $(\alpha,U), (\beta, V)$ mit 
-		\[ (\beta \circ \Phi \circ \alpha^{-1})(x^1,\ldots,x^{\textcolor{red}{m}}) = (x^1, \ldots,x^r, 0, \ldots, 0) \]
+	Sei $p \in P = \Phi^{-1}(q)$. Nach Satz \ref{satz-3-4} (ii) existieren Karten $(\alpha,U), (\beta, V)$ mit 
+		\[ (\beta \circ \Phi \circ \alpha^{-1})(x^1,\ldots,x^m) = (x^1, \ldots,x^r, 0, \ldots, 0) \]
 	und es gilt:
 	\begin{align*}
 		\alpha(P \cap U) & = (\alpha \circ \Phi^{-1} \circ \beta^{-1})(0) \\
 		& = \{x \in \alpha (U) \mid x^1 = \ldots = x^r = 0\} = \alpha(U) \cap \{0\} \times \R^{m-r}.
 	\end{align*} 
 \item
-	Ist $q$ ein regulärer Wert von $\Phi$, so existieren nach dem ersten Teil des vorigen Satzes Karten $\psi,\alpha$ mit 
+	Ist $q$ ein regulärer Wert von $\Phi$, so existieren nach Satz \ref{satz-3-4} (i) Karten $\psi, \alpha$ mit 
 		\[ (\psi \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^n) \qquad m \geq n = r \]
 	f"ur alle $x \in \alpha(U)$. Es gilt also für alle $u \in U$:
 	\begin{align*}
@@ -247,7 +247,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 			& \ddots & & 0 \\
 			0 & & 1 & 
 		\end{array}\right)
-		= \textcolor{red}{n}
+		= n
 	\end{align*}
 	Damit folgt die Behauptung aus (i).
 \item
@@ -293,7 +293,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \end{align*}
   Betrachte nun den Kartenwechsel
   \begin{align*}
-    \left(\pdifffrac{\textcolor{red}{\alpha}^j}{x^i}\right)_{i,j} = \left(\partial_i(\alpha^j \circ \phi^{-1})(0)\right)_{i,j} = \left(
+    \left(\pdifffrac{\alpha^j}{x^i}\right)_{i,j} = \left(\partial_i(\alpha^j \circ \phi^{-1})(0)\right)_{i,j} = \left(
       \begin{array}{c|c}
         \left(\pdifffrac{\Phi^j}{x^i}\right)_{i,j \le r} & \ast\\
         \hline
@@ -309,7 +309,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \begin{align*}
     \left((\psi \circ \Phi \circ \alpha^{-1})(x^1,\ldots,x^m)\right)^j = (\psi^j \circ \Phi \circ \alpha^{-1})(\alpha(U)) = (\psi^j\circ \Phi)(U) = \alpha^j(U) = x^j.
   \end{align*}
-  Damit hat $\psi \circ \Phi \circ \alpha^{-1}$ die gesuchte Darstellung. \textcolor{red}{(soll das in der Gleichung oben $U$ oder ein $u \in U$ sein?)}
+  Damit hat $\psi \circ \Phi \circ \alpha^{-1}$ die gesuchte Darstellung.
 
   \item
   Der Rang von $\Phi$ sei auf $U$ konstant gleich $r$. Dann gilt für alle $x \in \alpha(U)$.
