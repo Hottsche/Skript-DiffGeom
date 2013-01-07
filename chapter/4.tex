@@ -17,10 +17,9 @@
 
 Es sei $(\phi, U)$ eine Karte von $M$. Setzt man $\T M|_U = \pi^{-1}(U) = \dot \bigcup_{p\in U}\T_pM$, so ist nach Satz \ref{satz-2-9}
 die Abbildung
-\begin{align*}
-  & \overline \phi \colon \T M|_U \to \phi(U) \times \R^m \subset \R^{2m}\\
-  &\T_p M \ni X_p = \sum \xi^i\pdifffrac[p]{}{x^i} \mapsto (\phi(p),\xi)
-\end{align*}
+\[\begin{array}{cccc} \overline \phi \colon & \T M|_U &\to& \phi(U) \times \R^m \subset \R^{2m}\\
+	&\T_p M \ni X_p = \sum \xi^i\pdifffrac[p]{}{x^i} &\mapsto& (\phi(p),\xi)
+\end{array}\]
 bijektiv.
 Es sei eine Topologie auf $\T M$ dadurch erklärt, dass eine Menge $V \subset \T M$ genau dann offen ist, wenn für alle Karten $(\phi, U)$ die Menge $\overline \phi(V \cap \T M|_U)$ offen in $\R^{2m}$ ist. Diese Topologie ist hausdorffsch und besitzt eine abzählbare Basis, da dies für $M$ und $\R^m$ gilt. Nach Konstruktion sind alle $\overline \phi$ Homöomorphismen. Ist $\mathcal A = \{(\phi, U\}$ ein $C^{\infty}$-Atlas von $M$, so definiert
 \begin{align*}
@@ -32,7 +31,7 @@ eine glatte Struktur auf $\T M$. Für Karten $(\phi, U), (\psi, V)$ von $M$ ist 
   (x, \xi) &\mapsto& (\psi \circ \phi^{-1}(x),\D(\psi \circ \phi^{-1}|_x\xi),
 \end{array}\]
 $(X_p = \sum \xi^i \pdifffrac[p]{}{x^i})$ ist glatt. Damit trägt $\T M$ in kanonischer Weise eine glatte Struktur.
-Darüber hinaus ist die kanonische Projektion $\pi \colon \T M \to M$ bezüglich dieser glatten Struktur eine Submersion. (Beweis: Übungsaufgabe)
+Darüber hinaus ist die kanonische Projektion $\pi \colon \T M \to M$ bezüglich dieser glatten Struktur eine Submersion. (Beweis als Übungsaufgabe)
 
 Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so ist $\Phi_{*} \colon \T M \to \T N, \ X_p \mapsto \Phi_{*p}X_p$ eine glatte Abbildung (ebensfalls Übungsaufgabe).
 
@@ -58,8 +57,7 @@ wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$
 
 \begin{bsp}
   Betrachte die $n$-Sphäre $S^n \subset \R^{n+1}$ und deren Tangentialraum $\T_pS^n = p^{\perp}$.
-  Ein glattes Vektorfeld auf $S^n$ ist also eine glatte Abbildung $X \colon S^n \to \R^{n+1}$ mit $X_p \perp p$.
-  
+  Ein glattes Vektorfeld auf $S^n$ ist also eine glatte Abbildung $X \colon S^n \to \R^{n+1}$ mit $X_p \perp p$.  
   Es sei $n=2k-1$, dann ist
   \begin{align*}
     X \colon S^n \to \R^{n+1}, (x^1,y^1, \ldots, x^k,y^k) \mapsto (-y^1,x^1, \ldots, -y^k,x^k)
@@ -68,7 +66,7 @@ wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$
 \end{bsp}
 
 \begin{bem}
-  Der \CmMark{Satz vom Igel} besagt gerade: Jedes glatte Vektorfeld auf einer Sphäre gerader Dimension hat eine Nullstelle.
+  Der \CmMark[Igel, Satz vom]{Satz vom Igel} besagt gerade: Jedes glatte Vektorfeld auf einer Sphäre gerader Dimension hat eine Nullstelle.
 \end{bem}
 
 \begin{bem}
@@ -82,17 +80,17 @@ wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$
 \end{bem}
 
 \begin{bem}
-  Sind $X,Y \in \mathcal V(M)$ und ist $g \in \C^{\infty}(M)$, so sind die punktweise Summe $X+Y$ und das Produkt $gX$ wieder ein glatte Vektorfelder auf $M$. Damit ist $\mathcal V(M)$ ein $\R$-Vektorraum beziehungsweise $C^{\infty}(M)$-Modul.
-  
-  Jedes Vektorfeld $X$ ist eine Derivation von $C^{\infty}(M)$:
-  \begin{align*}
-    X(fg)(p) = X(f)(p)g(p) + f(p) X(g)(p) = \left(gX(f) + fX(g)\right)(p).
-  \end{align*}
-  Es seien $X,Y \in \mathcal V(M)$ glatte Vektorfelder. Die \CmMark{Lieklammer} $[X,Y]$ von $X$ und $Y$ ist dann durch den folgenden Ausdruck definiert:
-  \begin{align*}
-    [X,Y](f)(p) = X_p(Yf)-Y_p(Xf).
-  \end{align*}
+Sind $X,Y \in \mathcal V(M)$ und ist $g \in \C^{\infty}(M)$, so sind die punktweise Summe $X+Y$ und das Produkt $gX$ wieder ein glatte Vektorfelder auf $M$. Damit ist $\mathcal V(M)$ ein $\R$-Vektorraum beziehungsweise $C^{\infty}(M)$-Modul.
+Jedes Vektorfeld $X$ ist eine Derivation von $C^{\infty}(M)$:
+\begin{align*}
+	X(fg)(p) = X(f)(p)g(p) + f(p) X(g)(p) = \left(gX(f) + fX(g)\right)(p).
+\end{align*}
 \end{bem}
+
+Es seien $X,Y \in \mathcal V(M)$ glatte Vektorfelder. Die \CmMark{Lieklammer} $[X,Y]$ von $X$ und $Y$ ist dann durch den folgenden Ausdruck definiert:
+\begin{align*}
+	[X,Y](f)(p) = X_p(Yf)-Y_p(Xf).
+\end{align*}
 
 % Lemma 4.3
 \begin{Lemma}
@@ -105,14 +103,13 @@ wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$
 \begin{bew}
   Es seien $X,Y \in \mathcal V(M)$, $f,g \in \C^{\infty}(M)$ und $p \in M$. Dann gilt:
   \begin{align*}
-    [X,Y](fg)  = & X_p(Y(f)g + fY(g)) - Y_p(X(f)g+fX(g))\\
-    = & X_p(Y(f))g(p) + \cancel{Y_p(f)X_p(g)} + \bcancel{X_p(f)Y(g)(p)} + f(p)X_p(Y(g))\\
-    & - Y_p(X(f))g(p) - \bcancel{X_p(f)Y_p(g)} - \cancel{Y_p(f)X(g)(p)} - f(p)Y_p(X(g))\\
-    = & (X_p(Y(f))-Y_p(X(f))g(p) + f(p)(X_p(Y(g))-Y_p(X(g))\\
-    = & [X,Y]_p (f)g(p) + f(p)[X,Y]_p(g).
+    [X,Y](fg)  ={} & X_p(Y(f)g + fY(g)) - Y_p(X(f)g+fX(g))\\
+    ={} & X_p(Y(f))g(p) + Y_p(f)X_p(g) + X_p(f)Y(g)(p) + f(p)X_p(Y(g))\\
+    & - Y_p(X(f))g(p) - X_p(f)Y_p(g) - Y_p(f)X(g)(p) - f(p)Y_p(X(g))\\
+    ={} & (X_p(Y(f))-Y_p(X(f))g(p) + f(p)(X_p(Y(g))-Y_p(X(g))\\
+    ={} & [X,Y]_p (f)g(p) + f(p)[X,Y]_p(g).
   \end{align*}
-  \textcolor{red}{(nicht sicher ob ich die Durchstreichungen lassen oder rausnehmen soll)}
-  Damit gilt $[X,Y] \in \mathcal V(M)$. Schiefsymmetrie und $\R$-Linearität gelten offensichtlich. Die Jacobiidentität sie als Übungsaufgabe überlassen (Nachrechnen!).
+  Damit gilt $[X,Y] \in \mathcal V(M)$. Schiefsymmetrie und $\R$-Linearität gelten offensichtlich. Die Jacobiidentität sei als Übungsaufgabe überlassen (Nachrechnen!).
 \end{bew}
 
 
@@ -167,7 +164,7 @@ mit $\tilde \gamma = \phi \circ \gamma$ für eine Karte $(\phi,U)$ um $p$ und $X
   \begin{align*}
     \dot{\tilde \gamma} = \xi(\gamma(t)),  \ \tilde \gamma(0) = \phi(p)
   \end{align*}
-  ist, wobei $X_U = \sum \xi^i \pdifffrac{}{x^i}$ gelte.
+  ist, wobei $X_{\textcolor{red}{U}} = \sum \xi^i \pdifffrac{}{x^i}$ gelte.
 
   Für jedes $p \in M$ ist somit (lokal) ein Anfangswertproblem gestellt. Gesucht ist eine \quot{simultane} Lösung all dieser Anfangswertprobleme, also eine Abbildung $(t,p) \mapsto \gamma(t,p) = \gamma^t(p)$ mit 
   \begin{align*}

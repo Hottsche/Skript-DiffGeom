@@ -367,15 +367,15 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
     
     \node at (-4.5,0.75) {$P$}; \filldraw (-3.25,1) circle (0.05); \draw[->] (-3.25,1) --node[below]{$X_p \in \T_pP$} (-2.5,1.25);
     \draw[->] (-1.5,1.5) node[right]{$\Phi^{-1}(q)$} to[out=150,in=0] (-2.5,1.75); \node at (-4,1) {$c$};
-    \draw[dashed,->] (1,1) to[out=30,in=190] (3,1.5) to[out=50,in=200] (4.5,2.5); \fill (2.75,2) circle(0.05) node[right]{$q$};
+    \draw[dashed] (1,1) to[out=20,in=150] ($(segel3) + (-0.125,0.375)$) to[out=60,in=200] (segel2); \fill (2.75,1.75) circle(0.05) node[right]{$q$};
   \end{tikzpicture}\end{center}
 
   Ist $X_p = \dot c(0) \in \T_pP$, so ist $c$ glatt als Abbildung $\calI \to M$ und ebenso $\Phi \circ c \equiv q$.
   Damit gilt:
     \[ \Phi_{*p}(\dot c(0)) = \dot{\underbrace{\overline{\Phi \circ c}}_{\equiv q}}(0) = 0, \]
     % Punkt besser erkenntlich machen!
-  also $T_pP \subseteq \Kern \Phi_{*p}$. Es gilt:
-   \[ \dim T_pP = \dim P = m-r = \dim \T_pM - \Rang \Phi_{*p} = \dim \Kern \Phi_{*p}. \]
+  also $\T_pP \subseteq \Kern \Phi_{*p}$. Es gilt:
+   \[ \dim \T_pP = \dim P = m-r = \dim \T_pM - \Rang \Phi_{*p} = \dim \Kern \Phi_{*p}. \]
 \end{bem}
 
 \begin{Bsp}
