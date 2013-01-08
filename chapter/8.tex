@@ -536,13 +536,41 @@ Wir k"onnen nun die einzelnen Implikationen zeigen. Dabei gelten (i) $\Rightarro
 \end{description}
 \end{bew}
 
-\begin{emptythm}[Bemerkungen/Beispiel]\begin{enumerate}[label=\arabic*),leftmargin=*]
+\begin{emptythm}[Bemerkungen/Beispiele]\begin{enumerate}[label=\arabic*),leftmargin=*]
 \item
 	Geod"atische sind im Allgemeinen nicht eindeutig. Betrachte die Einheitssph"are mit Geod"atischen vom Nord- zum S"udpol:
-	\begin{center}\textcolor{red}{[BILD]}\end{center}
+	\begin{center}\begin{tikzpicture}[font=\scriptsize]
+		\draw (0,0) circle(1.5);
+		\begin{scope}
+			\clip (-1.5,0) rectangle (1.5,-1);
+			\draw (0,0) ellipse(1.5 and 0.5);
+		\end{scope}\begin{scope}
+			\clip (-1.5,0) rectangle (1.5,1);
+			\draw[dashed] (0,0) ellipse(1.5 and 0.5);
+		\end{scope}
+		
+		\coordinate (N) at (0,1.5); \coordinate (S) at (0,-1.5);
+		\fill (N) circle (0.05) node[above]{$N$} (S) circle (0.05) node[below]{$S$};
+		
+		\draw (N) to[out=330,in=30] (S);
+		\draw (N) to[out=210,in=150] (S);
+		\draw[dashed] (N) to[out=250,in=110] (S);
+	\end{tikzpicture}\end{center}
 \item
 	$\R^2 \setminus \{0\}$
-	\begin{center}\textcolor{red}{[BILD]}\end{center}
+	\begin{center}\begin{tikzpicture}[font=\scriptsize,scale=2]
+		\draw[->] (-1.5,0) -- (1.5,0);
+		\draw[->] (0,-0.5) -- (0,1);
+		\filldraw[fill=white] (0,0) circle(0.05);
+		\draw (-1,0.1) -- (-1,-0.1)node[below]{$-1$} (1,0.1) -- (1,-0.1)node[below]{$1$};
+		
+		\def\faktor{0.1}
+		\def\tangente{0.5}
+		\foreach \y in {1, 2, 3, 4}{
+			\coordinate (cntr) at ($(0,0) + \faktor*(0,\y)$);
+			\draw (-1,0) ..controls(-1,0) and ($(cntr) - \tangente*(1,0)$).. (cntr) ..controls($(cntr) + \tangente*(1,0)$) and (1,0).. (1,0);
+		}
+	\end{tikzpicture}\end{center}
 \item
 	$\B_1(0) \subseteq \R^2$ ist geod"atisch konvex aber nicht vollst"andig.
 \end{enumerate}\end{emptythm}
@@ -564,7 +592,56 @@ Es seien $M$ eine vollst"andige Riemannsche Mannigfaltigkeit und $c$ eine Geod"a
 	Nach dem Satz von Hopf-Rinow existiert eine minimale Geod"atische von $c(a)$ nach $c(b)$. Ist $c$ also die K"urzeste von $c(a)$ nach $c(b)$, so ist $c$ auch minimierend.
 \item
 	Ist $\overline c$ eine weitere Geod"atische von $c(a)$ nach $c(b)$, so gilt $\dot c(b) \ne \dot{\overline{c}}(b)$.
-	\begin{center}\textcolor{red}{[BILD]}\end{center}
+	\begin{center}
+	\begin{tikzpicture}[font=\scriptsize, tangent/.style={
+        decoration={
+            markings,% switch on markings
+            mark=
+                at position #1
+                with
+                {
+                    \coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
+                    \coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
+                    \coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
+                }
+        },
+        postaction=decorate
+    },
+    use tangent/.style={
+        shift=(tangent point-#1),
+        x=(tangent unit vector-#1),
+        y=(tangent orthogonal unit vector-#1)
+    },
+    use tangent/.default=1]
+%		\tikzgitter{(-5,-5)}{(5,5)}
+		
+		\coordinate (a) at (-3,-2); \coordinate (ende) at (3,3);
+		\coordinate (ctrla1) at (2,0.25); \coordinate (ctrlende) at (-0.5,-3); \coordinate (ctrlende) at (-0.5,-2.75);
+		\fill (a) circle(0.05)node[below]{$c(a)$};
+		
+		% Zeichen die Kurve und definiere den Punkt b auf der Kurve
+		\draw[tangent=0.8] (a) ..controls($(a) + (ctrla1)$) and ($(ende) + (ctrlende)$).. coordinate[pos=0.8] (b) coordinate[pos=0.95] (d) (ende);
+		\draw[->,use tangent] (0,0) -- (1,0)node[below right]{$\dot c(b)$};
+		\fill (b) circle(0.05)node[below,xshift=2mm]{$c(b)$};
+		\draw[dashed] (b) circle (1.5);
+		
+		\coordinate (ctrla2) at (1,2.5); \coordinate (ctrlb) at (-1.5,0);
+		\draw[tangent=1] (a) ..controls($(a) + (ctrla2)$) and ($(b) + (ctrlb)$)..node[above left]{$\overline c$} coordinate[pos=0.75] (e) (b);
+		\draw[->,use tangent] (0,0) -- (1,0)node[below]{$\dot{\overline c}(b)$};
+		
+		\fill (d) circle(0.05) (e) circle(0.05);
+		
+		\begin{scope}
+			\clip (b) rectangle (d);
+			\draw[very thick] (a) ..controls($(a) + (ctrla1)$) and ($(ende) + (ctrlende)$).. (ende);
+		\end{scope}\begin{scope}
+			\clip ($(b)+(0,1)$) rectangle ($(e) - (0,1)$);
+			\draw[very thick] (a) ..controls($(a) + (ctrla2)$) and ($(b) + (ctrlb)$)..(b);
+		\end{scope}
+		
+		\draw (e) ..controls(2,1.5) and (2.5,2)..node[above left]{$\tilde c$} (d);
+	\end{tikzpicture}\\
+	\scriptsize{die zusammengesetzte Kurve kann keine Geod"atische sein, da die Tangentialvektoren nicht "ubereinstimmen}\end{center}
 	F"ur hinreichend kleines $\epsilon > 0$ existiert dann nach Satz \ref{satz-8-7} eine minimierende Geod"atische $\tilde c$ von $\overline c(b-\epsilon)$ nach $c(b+\epsilon)$. Die L"ange von $\overline c|_{[a,b-\epsilon]} \cup \tilde c$ ist strikt kleiner als die L"ange von $c|_{[a,b+\epsilon]}$. Damit ist $c|_{[a,b+\epsilon]}$ nicht minimierend.
 \end{enumerate}\end{bew}
 
