@@ -1,0 +1,51 @@
+\chapter{Jacobifelder}
+
+F"ur $p,q \in M$ sei $\Omega_{pq}$ der Raum aller glatten Kurven $c:[0,1] \to M$ mit $c(0)=p$ und $c(1)=q$.
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+
+\begin{Dfn}
+Eine \CmMark[Variation]{(glatte) Variation} einer glatten Kurve $c:[a,b] \to M$ ist eine glatte Abbildung
+\begin{align*}
+	h:(-\epsilon, \epsilon) \X [a,b] \to M && h_s(t) = h(s,t)
+\end{align*}
+mit $h_0 = c$. Gilt $h(\cdot, a) \equiv c(a)$ und $h(\cdot, b) \equiv c(b)$, so hei"st $h$ eine \CmMark[Variation!mit festen Endpunkten]{Variation mit festen Endpunkten} oder \CmMark[Variation!eigentliche]{eigentliche Variation}. Man schreibt $c_s$ f"ur eine Variation $h$ von $c$.
+\end{Dfn}
+
+Ist $c_s$ eine glatte Variation von $c$, so ist
+\begin{align*}
+	Y(t) &= \difffrac[s=0]{}{s} c_s(t)\\
+	&= \difffrac[s=0]{}{s} h(s,t) = h_{*(0,t)}\left(\pdifffrac{}{s}\right)
+\end{align*}
+ein Vektorfeld entlang $c$. ist $c_s$ eigentlich, so gilt $Y(a) = 0 \in \T_{c(a)}M$ und $Y(b) = 0 \in \T_{c(b)}M$.
+Tats"achlich ist jedes Vektorfeld ein solches Variationsfeld einer Variation von $c$: Ist $Y$ ein Vektorfeld entlang $c$, so definiert $h(s,t) = \exp_{c(t)}(s Y(t))$ eine Variation von $c$ und es gilt:
+\begin{align*}
+	\difffrac[s=0]{}{s} h(s,t) &= \exp_{c(t)*0}(Y(t))\\
+	&= \id_{\T_{c(t)}M}(Y(t)) = Y(t).
+\end{align*}
+Falls $Y$ in den Endpunkten von $c$ verschwindet, so ist die so definierte Variation eigentlich. Bestimme $\difffrac[s=0]{}{s} E(c_s)$ und $\difffrac[s=0]{}{s}\calL(c_s)$:
+\begin{align*}
+	\frac{1}{2} \difffrac[s=0]{}{s} \langle \dot c_s, \dot c_s \rangle &= \langle \nabla_s \dot c(s), \dot c(s) \rangle\\
+		&= \left\langle \nabla_s \difffrac{}{t} c_s, \dot c(s) \right\rangle = \left\langle \nabla_t \difffrac{}{s} c_s, \dot c_s \right\rangle \\
+		&= \left\langle \difffrac[s=0]{}{s} c_s, \dot c_s \right\rangle' - \left\langle \difffrac[s=0]{}{s} c_s, \nabla_t \dot c_s \right\rangle \\
+		&= \left\langle Y, \dot c \right\rangle' - \left\langle Y, \nabla_t \dot c \right\rangle\\
+\end{align*}
+\begin{align*}
+	\difffrac[s=0]{}{t} \|\dot c_s\| &= \frac{1}{2 \|c_s\|} \difffrac[s=0]{}{s} \langle \dot c_s, \dot c_s \rangle\\
+		&= \frac{\langle Y, \dot c \rangle' - \langle Y, \nabla_t \dot c \rangle}{\|\dot c\|}
+\end{align*}
+Damit folgt:
+\begin{align*}
+	\difffrac[s=0]{}{s} E(c_s) = \difffrac[s=0]{}{s} \int_a^b \frac{1}{2} \|\dot c_s\| = \left. \langle Y, \dot c \rangle \right|_a^b - \int_a^b \langle Y, \nabla_t \dot c \rangle
+\end{align*}
+Betrachte $E: \Omega_{pq} \to \R$. Dann ist $c \in \Omega_{pq}$ genau dann eine Geod"atische, wenn $c$ ein kritischer Punkt von $E$ ist, das hei"st $\difffrac[s=0]{}{s}E(c_s) = 0$ f"ur jede eigentliche Veriation von $c$.
+Ist $c$ ein kritischer Punkt von $E$, so sei $c_s$ die von $Y = f \nabla_t \dot c$ mit $f(0) = 0 = f(1)$ erzeugte Variation.
+Dann ist $c_s$ eigentlich und es gilt
+\begin{align*}
+	0 = \difffrac[s=0]{}{s} E(c_s) = - \int_a^b f \|\nabla_t \dot c\|^2
+\end{align*}
+also $\nabla_t \dot c = 0$.
+Ist $c$ nach der Bogenl"ange parametrisiert, so gilt
+\begin{align*}
+	\difffrac[s=0]{}{s} \calL(c_s) = \difffrac[s=0]{}{s} E(c_s)
+\end{align*}
+Eine kurve $c \in \Omega_{pq}$ ist genau dann ein kritischer Punkt von $\calL$, wenn $c$ eine umparametrisierte Geod"atische ist.

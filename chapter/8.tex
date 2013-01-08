@@ -314,12 +314,22 @@ Ferner, ist $\delta < \epsilon$ und $q \notin \B_\delta(p)$, so existiert ein $q
 \begin{align*}
 	\dop(p,q) = \delta + \dop(q',q)
 \end{align*}
+\begin{center}\begin{tikzpicture}[font=\scriptsize,scale=0.9]
+	\coordinate (p) at (0,0); \coordinate (q) at (0.75,0.5);
+	
+	\draw[] (p) circle(1.5);
+	\draw (p) to[out=60,in=180] (q);
+	\fill (p) circle(0.05) node[below]{$p$} (q) circle(0.05) node[above]{$q$};
+	
+	\node[align=left] (txt) at (5,0) {$t \mapsto \exp_p(t \cdot v)$\\$\textcolor{white!100}{t \mapsto} = \gamma_{tv}(1) = \gamma_v(t)$\\Geod. mit Startwerten $\gamma(0)=p$, $\dot\gamma(0)=v$};
+	\draw[->] (txt) to[out=180,in=330] (0.25,0.25);
+\end{tikzpicture}\end{center}
 \end{Satz}
 
 \begin{bew}
 \marginnote{\begin{tikzpicture}[font=\scriptsize,scale=0.7]
 %	\draw[step=0.25,gray!15] (-6,-3) grid (6,3); \draw[step=0.5,gray!30] (-6,-3) grid (6,3); \fill (0,0) circle(0.1); %Hilfsgitter
-	\coordinate (p) at (0,0); \coordinate (q) at (3.5,1.5);
+	\coordinate (p) at (0,0); \coordinate (q) at (3.25,1.5);
 	\coordinate (a) at (1.5,1);
 	\coordinate (ctrlp) at (0.25,1.5); \coordinate (ctrla) at (0.75,0.25); \coordinate (ctrlq) at (-1.75,1);
 	\draw[dashed] (p) circle(1.75);
@@ -438,19 +448,19 @@ Eine Riemannsche Mannigfaltigkeit hei"st \CmMark[vollst\"andig!geo\"atisch]{geod
 
 \begin{Satz}[Satz von Hopf-Rinow]
 F"ur eine Riemannsche Mannigfaltigkeit sind die folgenden Aussagen "aquivalent:
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\roman*),widest=iii]
 \item
-	$M$ ist ged"atisch vollst"andig
+	$M$ ist geod"atisch vollst"andig, das hei"st jede Geod"atische existiert f"ur alle Zeiten
 \item
-	F"ur alle $p \in M$ gilt $\calD_p = \T_pM$
+	F"ur alle $p \in M$ gilt $\calD_p = \T_pM$, also $\exp$ ist auf ganz $M$
 \item
-	Es existiert ein $p \in M$ mit $\calD_p = \T_pM$
+	Es existiert ein $p \in M$ mit $\calD_p = \T_pM$, also $\exp_p$ ist auf $\T_pM$ f"ur ein $p \in M$ definiert
 \item
-	Abgeschlosse und beschr"ankte Mengen sind kompakt
+	Abgeschlosse und beschr"ankte Teilmengen sind kompakt
 \item
 	$M$ ist vollst"andig (als metrischer Raum)
 \end{enumerate}
-Jede dieser Eigenschaften impliziert, dass je zwei Punkte in $M$ durch eine minimierende Geod"atische verbunden werden k"onnen.
+Jede dieser Eigenschaften impliziert, dass je zwei Punkte $p, q$ in $M$ durch eine minimierende Geod"atische von $p$ nach $q$ verbunden werden k"onnen.
 \end{Satz}
 
 \begin{bew}
@@ -526,6 +536,37 @@ Wir k"onnen nun die einzelnen Implikationen zeigen. Dabei gelten (i) $\Rightarro
 \end{description}
 \end{bew}
 
+\begin{emptythm}[Bemerkungen/Beispiel]\begin{enumerate}[label=\arabic*),leftmargin=*]
+\item
+	Geod"atische sind im Allgemeinen nicht eindeutig. Betrachte die Einheitssph"are mit Geod"atischen vom Nord- zum S"udpol:
+	\begin{center}\textcolor{red}{[BILD]}\end{center}
+\item
+	$\R^2 \setminus \{0\}$
+	\begin{center}\textcolor{red}{[BILD]}\end{center}
+\item
+	$\B_1(0) \subseteq \R^2$ ist geod"atisch konvex aber nicht vollst"andig.
+\end{enumerate}\end{emptythm}
+
+\begin{Kor}
+Es seien $M$ eine vollst"andige Riemannsche Mannigfaltigkeit und $c$ eine Geod"atische. Dann gilt:\begin{enumerate}[label=(\roman*),widest=iii,leftmargin=*]
+\item
+	$c$ ist lokal l"angenminimierend.
+\item
+	Falls es keine k"urzere Geod"atische von $c(a)$ nach $c(b)$ gibt, so ist $c|_{[a,b]}$ minimal.
+\item
+	Falls es eine weitere Geod"atische $\overline{c}$ von $c(a)$ nach $c(b)$ mit $\calL(\overline c) = \calL(c|_{[a,b]})$ gibt, so ist $c|_{[a,b+\epsilon]}$ f"ur kein $\epsilon$ minimierend.
+\end{enumerate}\end{Kor}
+
+\begin{bew}\begin{enumerate}[label=(\roman*),widest=iii,leftmargin=*]
+\item
+	Siehe Korollar \ref{kor-8-9}.
+\item
+	Nach dem Satz von Hopf-Rinow existiert eine minimale Geod"atische von $c(a)$ nach $c(b)$. Ist $c$ also die K"urzeste von $c(a)$ nach $c(b)$, so ist $c$ auch minimierend.
+\item
+	Ist $\overline c$ eine weitere Geod"atische von $c(a)$ nach $c(b)$, so gilt $\dot c(b) \ne \dot{\overline{c}}(b)$.
+	\begin{center}\textcolor{red}{[BILD]}\end{center}
+	F"ur hinreichend kleines $\epsilon > 0$ existiert dann nach Satz \ref{satz-8-7} eine minimierende Geod"atische $\tilde c$ von $\overline c(b-\epsilon)$ nach $c(b+\epsilon)$. Die L"ange von $\overline c|_{[a,b-\epsilon]} \cup \tilde c$ ist strikt kleiner als die L"ange von $c|_{[a,b+\epsilon]}$. Damit ist $c|_{[a,b+\epsilon]}$ nicht minimierend.
+\end{enumerate}\end{bew}
 
 %%% Local Variables: 
 %%% mode: latex
