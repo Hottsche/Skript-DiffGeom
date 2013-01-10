@@ -1,0 +1,133 @@
+\section{7. Januar 2012}
+\setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
+\setcounter{Loes}{0}
+
+\begin{Loes}
+Nach der Vorlesung gibt es einen Diffeomorphismus
+\begin{align*}
+	\exp_p: \underset{\subset \T_pM}{U(0)} \to \underset{\subset M}{U(p)}
+\end{align*}
+Seien $e_1,\ldots , e_n \in \T_pM$ eine Orthonormalbasis von $\T_pM$ und sei $\phi^{-1}(x_1,\ldots ,x_n) := \exp_p(x_1e_1,\ldots ,x_ne_n)$ definiert.
+
+\textbf{Behauptung:}\begin{enumerate}[label=(\roman*)]
+\item
+	$g_{ij}(p) = \delta_{ij}$
+\item
+	$\difffrac{}{x^2}(g_{ij})(p) = 0$
+\item
+	$\Gamma_{ij}^k(p) = 0$
+\end{enumerate}
+\textbf{Beweis:}\begin{enumerate}[label=(\roman*),leftmargin=*,widest=iii]
+\item
+	\begin{align*}
+		g_p \left( \smash{ \underset{\substack{=\exp_{p*}(e_i) \\ \equiv \id}}{\pdifffrac[p]{}{x^{i}}}, \underset{= \exp_{p*}(e_j)}{\pdifffrac[p]{}{x^{j}}} } \vphantom{\pdifffrac{}{}} \right) = g_p(e_i, e_j) = \delta_{ij} \vphantom{\underset{\substack{a\\a}}{\pdifffrac{}{}}}
+	\end{align*}
+\end{enumerate}
+$\gamma_v(t) := \exp_p(tv)$ ist die Geod"atische die in $p$ in Richtung $v$ startet.
+
+\emph{Beweis:} Es sei $c_v$ die Geod"atische mit $c_v(0) = p$, $\dot c_v(0) = v$, sowie $c_{\lambda v}$ die Ged"atische mit $c_{\lambda v}(0) = p$, $\dot c_{\lambda v}(0) = \lambda v$, wobei $\lambda \in \R$.
+Definiere nun $\gamma(t) := c_v(\lambda t)$. Dann ist $\gamma(t) = c_{\lambda v}(t)$, denn:\begin{itemize}
+\item
+	$\gamma(0) = c_v(0) = p$
+\item
+	$\dot \gamma(0) = \lambda \cdot \dot c_v(0) = \lambda v$
+\item
+	$\ddot \gamma^k(t) + \sum_{i,j=1}^n \Gamma_{ij}^k(\gamma(t)) \dot\gamma^{i}(t) \dot\gamma^{j}(t)$\\
+	$= \lambda^2 \left( \ddot c_v^k(\lambda t) + \sum_{ij} \Gamma_{ij}^k(c_v(\lambda t)) \dot c_v^{i}(\lambda t) \dot c_v^{j}(\lambda t) \right)$\\
+	$=0$
+\end{itemize}
+Betrachte also
+\begin{align*}
+	c_v(t) = c_v(t \cdot 1) = c_{tv}(1) = \exp_p(t \cdot v)
+\end{align*}
+Die Geod"atischen durch $p$ werden also von den Normalkoordinaten auf die Ursprungsgeraden abgebildet. Setze $\gamma(t) = t \cdot e_{i_0}$, dann ist $\exp_p \circ \gamma$ eine Geod"atische und damit gilt f"ur alle $k$:
+\begin{align*}
+	0 = \ddot\gamma^k + \sum_{ij} \Gamma_{ij}^k \dot\gamma^{i} \dot\gamma^{j} = 0 + \sum_{ij} \Gamma_{ij}^k \circ \gamma \delta_{ii_0} \delta_{ji_0} = \Gamma_{i_0i_0}^k \circ \gamma
+\end{align*}
+\textbf{Beweis:}\begin{enumerate}[label=(\roman*),leftmargin=*,widest=iii]
+\item[(iii)]
+	Nun sei $i_0 \ne j_0$ und $\tilde\gamma(t) = t(e_{i_0} + e_{j_0})$, damit ist $\exp_p \circ \tilde\gamma$ eine Geod"atische und f"ur alle $k$ gilt:
+	\begin{align*}
+		0 &= \ddot{\tilde\gamma}^k + \sum_{ij} \Gamma_{ij}^k \dot{\tilde\gamma}^{i} \dot{\tilde\gamma}^{j} = 0 + \sum_{ij} \Gamma_{ij}^k (\delta_{ii_0} + \delta{ij_0}) (\delta_{ji_0} + \delta_{jj_0})\\
+		&= \left( \Gamma_{i_0i_0}^k + \Gamma_{j_0j_0}^k + \Gamma_{i_0j_0}^k +\Gamma_{j_0i_0}^k \right) \circ \gamma
+	\end{align*}
+	In $0$ gilt $\gamma(0) = \tilde\gamma(0) = p$, also $\Gamma_{ij}^k(\gamma(0)) = 0$. Daraus folgt dann:
+	\begin{align*}
+		0 = \Gamma_{i_0j_0}^k (\tilde\gamma(0)) + \Gamma_{j_0i_0}^k (\tilde\gamma(0)) = 2 \Gamma_{i_0j_0}^2(p)
+	\end{align*}
+	Damit folgt schlie"slich $\Gamma_{ij}^k(p) = 0$ f"ur alle $i, j, k$.
+\item[(ii)]
+	\begin{align*}
+		\pdifffrac[p]{g_{ij}}{x^k} ={}& \pdifffrac[p]{}{x^k} \left( g \left( \pdifffrac{}{x^{i}}, \pdifffrac{}{x^j} \right) \right)\\
+		={}& g \left( \nabla_{\pdifffrac[p]{}{x^k}} \pdifffrac{}{x^{i}}, \pdifffrac[p]{}{x^{j}} \right) + g \left( \pdifffrac[p]{}{x^{i}}, \nabla_{\pdifffrac[p]{}{x^j}} \pdifffrac[p]{}{x^{j}} \right)\\
+		={}& g \left( \sum_l \Gamma_{ki}^l(p) \cdot \pdifffrac[p]{}{x^l}, \pdifffrac[p]{}{x^j} \right) + g \left( \pdifffrac[p]{}{x^{i}}, \sum_l \smash{\underbrace{\Gamma_{kj}^l(p)}_{=0}} \pdifffrac[p]{}{x^l} \right)\\
+		={}& 0
+	\end{align*}
+\end{enumerate}
+\end{Loes}
+
+\begin{Loes}\begin{enumerate}[label=\alph*), widest=b, leftmargin=*]\item
+\emph{Behauptung:} $\sec(\R^n, g_{\eukl}) \equiv 0$
+
+Es gilt $\nabla_XY = \D Y \cdot X$ und, wegen Torsionsfreiheit, $[X,Y] = \nabla_XY - \nabla_YX = \D Y \cdot X - \D X \cdot Y$. Nun gilt
+\begin{align*}
+	R(X,Y)Z &= \nabla_X(\nabla_YZ) - \nabla_Y(\nabla_XZ) - \nabla_{[X,Y]}Z
+\end{align*}
+Bevor wir fortfahren ben"otigen wir noch eine Nebenrechnung:
+\begin{align*}
+	&\left( \D(\D Z \cdot Y) \cdot X - \D(\D Z \cdot X) \cdot Y \right)_i\\
+	&= \sum_l \left( \D(\D Z \cdot Y) \right)_{il} \cdot X_l - \sum_l \left( \D(\D Z \cdot X) \right)_{il} \cdot Y_l\\
+	&= \sum_l \partial_l \left( (\D Z \cdot Y)_i \right) \cdot X_l - \sum_l \partial_l(\D Z \cdot X)_i \cdot Y_l\\
+	&= \sum_l \partial_l \left( \sum_m \smash{\underbrace{(\D Z)_{im}}_{=\partial_mZ_i}} \cdot Y_m \right) \cdot X_l - \sum_l \partial_l \left( \sum_m (\D Z)_{im} \cdot X_m \right) \cdot Y_l \vphantom{\underbrace{A}_{A_A}}\\
+	&= \sum_{lm} \left( \partial_l (\partial_m Z_i \cdot Y_m) \cdot X_l - \partial_l (\partial_m Z_i \cdot X_m) \cdot Y_l \right)\\
+	&= \sum_{lm} ( \partial_l\partial_m Z_i Y_m X_l + \partial_m Z_i \partial_l Y_m X_l - \underbrace{\partial_l\partial_m Z_i}_{= \partial_m\partial_l Z_i} X_m Y_l + \partial_m Z_i \partial_l X_m Y_l )\\
+	&= \sum_m \partial_m Z_i \cdot (\D Y \cdot X)_m - \sum_m \partial_m Z_i ( \D X \cdot Y )_m\\
+	&= (\D Z \cdot (\D Y \cdot X) - \D Z \cdot \D X \cdot Y)_i\\
+	&= (\D Z \cdot (\D Y \cdot X - \D X \cdot Y))_i
+\end{align*}
+Mit dieser Nebenrechnung folgern wir schlie"slich $R(X,Y)Z = 0$ und daraus folgt letztendlich
+\begin{align*}
+	\sec(\mspan\{X,Y\}) = \frac{g(R(X,Y)Y,X)}{\|X\|^2\{Y\|^2 - \langle X,Y \rangle^2} = 0
+\end{align*}
+\item n"achste Woche\end{enumerate}\end{Loes}
+
+\begin{Loes}
+Sei $S^n(r) := \{x \in \R^{n+1} | \|x\| = r\}$, \emph{Behauptung:} $\sec_{S^n(r)} \equiv \frac{1}{r^2}$
+
+Sei $\nabla = \nabla S^n(r)$ der Levi-Civita Zusammenhang von $(S^n(r), g_{\text{ind}})$. Daraus folgt:
+\begin{align*}
+	(\nabla_X Y)_p &= \left( (\nabla_X^{\R^{n+1}} Y)_p \right) \T_p S^n(r) \\
+	&= (\nabla_X^{\R^{n+1}} Y)_p - \langle (\nabla_X^{\R^{n+1}} Y)_p, N(p) \rangle \cdot N(p)
+\end{align*}
+wobei $N(p) = \frac{1}{r} \cdot p$ das Normaleneinheitsvektorfeld an $S^n(r)$ ist. Betrachte nun
+\begin{align*}
+	\langle (\nabla_X^{\R^{n+1}} Y)_p, N(p) \rangle &= \underbrace{X_p ( \overbrace{\langle Y, N \rangle}^{\equiv 0} )}_{=0} - \langle Y_p, (\nabla_X^{\R^{n+1}} N)_p \rangle\\
+	&= - \langle Y_p, \underbrace{(\D N)_p}_{\frac{1}{r}\cdot\id} \cdot X_p \rangle\\
+	&= - \frac{1}{r} \langle Y_p, X_p \rangle
+\end{align*}
+Daraus folgt dann $\nabla_XY = \nabla_X^{R^{n+1}} Y + \frac{1}{r} \langle X, Y \rangle N$. Als n"achstes betrachten wir nun:
+\begin{align*}
+R^{S^n(r)}(X,Y)Z ={}& \nabla_X \nabla_Y Z - \nabla_Y \nabla_X - \nabla_{[X,Y]}Z\\
+={}& \nabla_X^{\R^{n+1}} (\nabla_Y Z) + \frac{1}{r} \langle X, \nabla_Y Z \rangle \cdot N\\
+   & - \nabla_Y^{\R^{n+1}} (\nabla_X Z) - \frac{1}{r} \langle Y, \nabla_X Z \rangle \cdot N\\
+   & - \nabla_{[X,Y]}^{\R^{n+1}} Z - \frac{1}{r} \langle [X,Y], Z \rangle \cdot N\\
+={}& \overbrace{R^{\R^{n+1}} (X,Y)Z}^{=0} + \nabla_X^{\R^{n+1}} (\frac{1}{r} \langle Y, Z \rangle \cdot N) + \frac{1}{r} \langle X, \nabla_Y^{\R^{n+1}} Z + \frac{1}{r} \langle Y, Z \rangle \cdot \overset{\textcolor{gray}{\perp X}}{N} \rangle N\\
+   & - \nabla_Y^{\R^{n+1}} ( \frac{1}{r} \langle X, Y \rangle N) - \frac{1}{r} \langle Y, \nabla_X^{\R^{n+1}} Z + \frac{1}{r} \langle Y, Z \rangle \cdot \overset{\textcolor{gray}{\perp Y}}{N} \rangle \cdot N\\
+   & - \frac{1}{r} \langle \underbrace{[X,Y]}_{\mathclap{=\D Y \cdot X - \D X \cdot Y}} Z \rangle \cdot N\\
+={}& X(\frac{1}{r} \langle Y, Z \rangle) N + \frac{1}{r} \langle Y, Z \rangle \nabla_X^{\R^{n+1}} N + \frac{1}{r} \langle X, \D Z \cdot Y \rangle \cdot N\\
+   & - Y ( \frac{1}{r} \langle X, Z \rangle ) \cdot N - \frac{1}{r} \langle X, Z \rangle \nabla_Y^{\R^{n+1}} N - \frac{1}{r} \langle Y, \D Z \cdot X \rangle \cdot N - \frac{1}{r} \langle \D Y \cdot X\\
+   & - \D X \cdot Y, Z \rangle \cdot N\\
+={}& \frac{1}{r} ( \langle \D Y \cdot X, Z \rangle + \langle Y, \D Z \cdot X \rangle ) \cdot N + \frac{1}{r} \langle Y, Z \rangle \overbrace{\D N}^{= \frac{1}{r} \cdot \id} \cdot X + \langle X, \D Z \cdot Y \rangle \cdot N\\
+   & - \frac{1}{r} ( \langle \D X \cdot Y, Z \rangle + \langle X, \D Z \cdot Y \rangle ) \cdot N - \frac{1}{r^2} \langle X Z \rangle \cdot Y + \langle Y, \D Z \cdot X \rangle \cdot N\\
+   & - \frac{1}{r} \langle \D Y \cdot X - \D X \cdot Y, Z \rangle \cdot N\\
+={}& \frac{1}{r^2} ( \langle Y, Z \rangle \cdot X - \langle X, Z \rangle \cdot Y)
+\end{align*}
+Daraus folgt dann
+\begin{align*}
+	\langle \D(X,Y) Y, X \rangle = \frac{1}{r^2} ( \langle Y, Y, \rangle \langle X, X \rangle - \langle X, Y \rangle^2)
+\end{align*}
+und damit folgt dann schlie"slich
+\begin{align*}
+\sec_{S^n(r)}(\span\{X,Y\}) = \frac{1}{r^2}
+\end{align*}
+\end{Loes}
