@@ -79,3 +79,93 @@ Ist $c$ nach der Bogenl"ange parametrisiert, so gilt
 	\difffrac[s=0]{}{s} \calL(c_s) = \difffrac[s=0]{}{s} E(c_s)
 \end{align*}
 Eine kurve $c \in \Omega_{pq}$ ist genau dann ein kritischer Punkt von $\calL$, wenn $c$ eine umparametrisierte Geod"atische ist.
+
+\section{Ausblick: Hesse \& Morse - Theorie}
+
+Sei $f \in C^\infty(M)$, sei nach Konvention $\nabla_X f = X(f) = \dop f(X)$, und $\nabla f = \dop f \in \Omega^1(M) = \Gamma(\T M^*)$. F"ur die Hessesche $\Hh_f = \nabla^2 f$ gilt nach Proposition \ref{prop-7-3}:
+\begin{align*}
+	\nabla^2 f (X,Y) &= (\nabla_X \dop f)(Y) = X(\dop f(Y)) - \dop f(\nabla_X Y)\\
+	&= X(Yf) - (\nabla_X Y)(f) \qquad (= \nabla_{X,Y}^2 \text{ in Kapitel 7})\\
+	&= [X,Y]f + Y(Xf) - (\underbrace{\nabla_X Y - \nabla_Y X}_{\mathclap{[X,Y] \text{ Torsionsfreiheit}}}) f - (\nabla_Y X) f\\
+	&= Y(Xf) - (\nabla_YX)(f) = \nabla^2 f(Y,X) = \Hh_f(Y,X)
+\end{align*}
+Die Hessesche ist also eine symmetrische $\R$-Bilinearform $\Hh_f: \calV(M) \X \calV(M) \to C^\infty(M)$. Sie ist im Allgemeinen \emph{nicht} $\C^\infty(M)$-bilinear. Ist $p \in M$ ein kritischer Punkt von $f$, das hei"st $\dop f|_p = 0$, dann h"angt $\Hh_f|_p$ nur von $\xi = X_p$ und $\eta = Y_p$ ab: Ist $\tilde X$ ein Vektorfeld mit $\tilde X_p = \xi = X_p$, so gilt:
+\begin{align*}
+	\Hh_f|_p(\tilde X,Y) &= \tilde X_p(Yf) - \underbrace{\dop f|_p(\nabla_{\tilde X}Y)}_{=0} = \tilde X_p(Yf) = \xi(Yf)\\
+	&= X_p(Yf) = \ldots = \Hh_f|_p(X,Y)
+\end{align*}
+$\Hh_f|_p$ ist eine Bilinearform auf $\T_pM$. Insbesondere h"angt $\Hh_f|_p$ nur von der differenzierbaren Struktur von $M$ und \emph{nicht} von der Riemannschen Struktur ab.
+Ist $\Hh_f$ nicht ausgeartet, so hei"st die Anzahl der negativen Eigenwerte der \CmMark{Index} von $f$ in $p$.
+Ist $v \in \T_pM$ der Eigenvektor zu einem negativen Eigenwert $k$ und $\gamma$ eine Kurve mit $\gamma(0)=p$ und $\dot\gamma(0)=v$. Dann gilt
+\begin{align*}
+	0 > \lambda || v ||^2 = \Hh_f|_p (v,v) = v((f \circ \gamma)') = \difffrac[t=0]{^2}{t^2} f(\gamma(t))
+\end{align*}
+Entlang der Kurve $\gamma$ nimmt $f$ also ein striktes Maximum an.
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+tats"achlich ist jeder nicht ausgeartete kritische Punkt von solcher Gestalt.
+
+\begin{emptythm}[Morse-Lemma]
+Es sei $p \in M$ ein nicht ausgearteter kritischer Punkt von $f \in C^\infty(M)$ mit Index $\alpha$. Dann existiert eine Karte ($\phi, U)$ um $p$ mit $\phi(p) = 0$ und $f = f(p) - (\phi^1)^2 - (\phi^2)^2 - \ldots  -(\phi^\alpha)^2 + (\phi^{\alpha+1})^2 + \ldots + (\phi^m)^2$.
+\end{emptythm}
+
+\paragraph{Morse-Theorie}
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+Die Topologien von $M^a$  und $M^b$ sind identisch, wenn zwischen $a$ und $b$ keine kritischen Werte auftreten.
+\emph{\quot{Rekonstruktion}:} Klebe sukzessive f"ur die nicht ausgearteten kritischen Punkte $p$ Zellen der Dimension $\Ind_f(p)$, das hei"st $\B_1(0) \subseteq \R^{\Ind_f(p)}$.
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+Auf jeder glatten Mannigfaltigkeit existiert einee sogenannte \CmMark{Morse-Funktion}, das hei"st eine Funktion mit isolierten kritschen Punkten, alle nicht entartet und $f^{-1}([a,b])$ kompakt. Ist $f(p) = a$ ein kritischer Wert, so unterscheiden sich $M^{\alpha - \epsilon}$ und $M^{\alpha + \epsilon}$ durch das Ankleben einer $\Ind_f(p)$-Zelle.
+
+Weitere Informationen zu diesem Thema lassen sich im Buch \quot{Morse Theory} von J. Milnor \cite{milnor1963morsetheo} finden.
+
+\section{Zweite Ableitung des Energiefunktionals (in kritischen Punkten)}
+Es sei $c$ eine nach Bogen"ange parametrisierte Geod"atische, $c_s$ eine Variation von $c$ und $Y(t) = \difffrac[s=0]{}{s} c_s(t)$. Dann gelten die folgenden Gleichungen:
+\begin{align*}
+	E(c_s) = \frac{1}{2} \int_0^{\calL} \| \dot c_s \|^2
+\end{align*}
+\begin{align*}
+	\difffrac{}{s} \langle \dot c_s, \dot c_s \rangle &= 2 \langle \nabla_s \dot c_s, \dot c_s \rangle \\
+	&= 2 \left\langle \nabla_t \difffrac{}{s} c_s, \dot c_s \right\rangle \\
+	\difffrac{^2}{s^2} \langle \dot c_s, \dot c_s \rangle &= 2 \left\langle \nabla_s \nabla_t \difffrac{}{s} c_s, \dot c_s \right\rangle + 2 \left\langle \nabla_t \difffrac{}{s} c_s, \nabla_s \dot c_s \right\rangle\\
+	&= 2 \left\langle \nabla_s \nabla_t \difffrac{}{s} c_s, \dot c_s \right\rangle + 2 \left\| \nabla_t \difffrac{}{s} c_s \right\|^2
+\end{align*}
+\begin{align*}
+	\nabla_s \nabla_t \difffrac{}{s} c_s = \nabla_t \nabla_s \difffrac{}{s} c_s + R \left( \smash{\underbrace{\difffrac{}{s} c_s}_{\mathclap{s=0:\, Y(t)}}}, \difffrac{}{t} c_s \right) \difffrac{}{s} c_s \vphantom{\underbrace{\difffrac{}{a}}_{A}}
+\end{align*}
+Zur "Ubersichtlichkeit setzen wir nun $\nabla_t Y =: Y'$
+\begin{align*}
+	\frac{1}{2} \difffrac[s=0]{^2}{s^2} \langle \dot c_s, \dot c_s \rangle &= \left\langle \nabla_t \nabla_s \difffrac{}{s} c_s, \dot c_s \right\rangle + \left\langle R(Y,\dot c)Y, \dot c \right\rangle + \| \nabla_t Y \|^2\\
+	&= \left\langle \nabla_s \difffrac{}{s} c_s, \dot c \right\rangle' - \left\langle R(Y, \dot c) \dot c, Y \right\rangle + \| Y' \|^2
+\end{align*}
+\begin{align*}
+	\difffrac{^2}{s^2} E(c_s) = \left. \left\langle \nabla_s \difffrac{}{s} c_s, \dot c_s \right\rangle \right|_{0}^{\calL} + \int_0^{\calL} \| Y' \|^2 - \left\langle R(Y, \dot c) \dot c, Y \right\rangle
+\end{align*}
+\begin{align*}
+	\difffrac[s=0]{^2}{s^2} \| \dot c_s \| &= \difffrac[s=0]{}{s} \left( \frac{1}{2 \| \dot c_s \|} \difffrac{}{s} \| \dot c \|^2 \right) \\
+	&= - \frac{1}{4} \left( \difffrac[s=0]{}{s} \| c_s \|^2 \right)^2 + \frac{1}{2} \difffrac[s=0]{^2}{s^2} \| \dot c_s \|^2
+\end{align*}
+\begin{align*}
+	\difffrac[s=0]{^2}{s^2} \calL(c_s) &= \difffrac[s=0]{^2}{s^2} E(c_s) - \frac{1}{4} \int \left( \difffrac[s=0]{}{s} \| \dot c_s \|^2 \right)^2 \\
+	&= \left.\left\langle \nabla_s \difffrac{}{s} c_s, \dot c_s \right\rangle\right|_{0}^{\calL} + \int_0^{\calL} \| Y' \|^2 - \langle R(Y, \dot c) \dot c, Y \rangle - ( \langle Y', \dot c \rangle )^2
+\end{align*}
+Bezeichnet $Y^\perp = Y - \langle \dot c, Y \rangle \dot c$ den Normalenanteil von $Y$ bez"uglich $\dot c$, so gilt:
+\begin{align*}
+	{Y^\perp}' &= Y' - \langle \nabla_t \dot c, Y \rangle \dot c - \langle \dot c, Y' \rangle \dot c - \langle \dot c, Y \rangle \nabla_t \dot c \\
+	&= Y' - \langle \dot c, Y' \rangle \dot c = (Y')^\perp
+\end{align*}
+\begin{align*}
+	\| {Y'}^\perp \| - \langle R(Y^\perp, \dot c) \dot c, Y^\perp \rangle ={}& \langle Y' - \langle \dot c, Y' \rangle \dot c, Y' - \langle \dot c, Y' \rangle \dot c \rangle - \langle R(Y, \dot c) \dot c, Y \rangle \\
+	   & + \langle R(Y, \dot C) \dot c, \langle \dot c, Y \rangle \dot c \rangle \\
+	   & + \langle R ( \langle \dot c, Y \rangle \dot c, \dot c) \dot c, Y - \langle \dot c, Y' \rangle \dot c \rangle \\
+	={}& \| Y' \|^2 - \langle R(Y, \dot c) \dot c, Y \rangle - ( \langle Y', \dot c \rangle )^2
+\end{align*}
+Es gilt:
+\begin{align*}
+	\difffrac[s=0]{^2}{s^2} \calL(c_s) = \left.\left\langle \nabla_s \difffrac{}{s} c_s, \dot c \right\rangle\right|_{0}^{\calL} + \int_0^{\calL} \| {Y'}^\perp \|^2 - \langle R(Y^\perp, \dot c) \dot c, Y^\perp \rangle
+\end{align*}
+\begin{Dfn}
+Es sei $Y$ ein Vektorfeld entlang einer Kurve $c$ und $c_s$ die von $Y$ erzeugte Variation. Die durch
+\begin{align*}
+	\calI(Y,Y) = \difffrac[s=0]{^2}{s^2} E(c_s)
+\end{align*}
+auf dem Raum der Vektorfelder entlang $c$ definierte symmetrische Bilinearform hei"st die \CmMark{Indexform} von $c$.
+\end{Dfn}
