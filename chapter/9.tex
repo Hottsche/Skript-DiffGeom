@@ -101,15 +101,113 @@ Ist $v \in \T_pM$ der Eigenvektor zu einem negativen Eigenwert $k$ und $\gamma$ 
 	0 > \lambda || v ||^2 = \Hh_f|_p (v,v) = v((f \circ \gamma)') = \difffrac[t=0]{^2}{t^2} f(\gamma(t))
 \end{align*}
 Entlang der Kurve $\gamma$ nimmt $f$ also ein striktes Maximum an.
-\begin{center}\textcolor{red}{[BILD]}\end{center}
-tats"achlich ist jeder nicht ausgeartete kritische Punkt von solcher Gestalt.
+\begin{center}\begin{tikzpicture}[font=\scriptsize,normal/.style={above,sloped, inner sep=0pt,outer sep=0pt,allow upside down,below}]
+	%\tikzgitter{(-7,-7)}{(7,7)}
+		
+	% neuer Befehl f"ur die kleine Parabel (1. Parameter Scheite, 2. Parameter linker Linenstil, 3. Parameter rechter Linienstil, optionaler Parameter Rotation)
+	\newcommand\tikzKleineParabel[4][0]{
+		\def\kbreite{1}
+		\def\khoehe{2}
+		\def\kstretch{0.75}
+		\coordinate[rotate around={#1:#2}] (links) at ($#2 + (-\kbreite,-\khoehe)$); \coordinate[rotate around={#1:#2}] (rechts) at ($#2 + (\kbreite,-\khoehe)$);
+		
+		\draw[#3,rotate around={#1:#2}] (links) ..controls (links) and ($#2 - (\kstretch,0)$).. #2;
+		\draw[#4,rotate around={#1:#2}] #2 ..controls($#2 + (\kstretch,0)$) and (rechts).. (rechts);
+	}
+	
+	% grosse Parabel mit den kleinen Parabeln drauf
+	\def\stretch{2.5}
+	\def\gbreite{4}
+	\def\ghoehe{4}
+	\coordinate (lende) at (-\gbreite,\ghoehe); \coordinate (rende) at (\gbreite,\ghoehe); \coordinate (scheitel) at (0,0);
+	\draw (lende) ..controls(lende) and ($(scheitel) - (\stretch,0)$)..
+		node[pos=0.4,normal]{\tikz \tikzKleineParabel{(0,0)}{dashed}{};}
+		node[pos=0.7,normal]{\tikz \tikzKleineParabel{(0,0)}{dashed}{};}
+		(scheitel) ..controls($(scheitel) + (\stretch,0)$) and (rende)..
+		node[pos=0.3,normal]{\tikz \tikzKleineParabel{(0,0)}{}{dashed};}
+		node[pos=0.6,normal]{\tikz \tikzKleineParabel{(0,0)}{}{dashed};}
+		(rende);
+	
+	% Beschriftung
+	\fill (scheitel) circle(0.05) node[above]{$p$}; \node at (0.5*\gbreite,0.75*\ghoehe) {$M$}; \node at (\gbreite,-0.5*\ghoehe) {$f$ H"ohenfunktion};
+	
+	% mittlere kleine Parabel und die beiden Waagrechten kleinen Parabeln links und rechts
+	\tikzKleineParabel{(scheitel)}{}{dashed}
+	\tikzKleineParabel[270]{(lende)}{}{}
+	\tikzKleineParabel[90]{(rende)}{}{}
+\end{tikzpicture}\end{center}
+Tats"achlich ist jeder nicht ausgeartete kritische Punkt von solcher Gestalt.
 
 \begin{emptythm}[Morse-Lemma]
 Es sei $p \in M$ ein nicht ausgearteter kritischer Punkt von $f \in C^\infty(M)$ mit Index $\alpha$. Dann existiert eine Karte ($\phi, U)$ um $p$ mit $\phi(p) = 0$ und $f = f(p) - (\phi^1)^2 - (\phi^2)^2 - \ldots  -(\phi^\alpha)^2 + (\phi^{\alpha+1})^2 + \ldots + (\phi^m)^2$.
 \end{emptythm}
 
 \paragraph{Morse-Theorie}
-\begin{center}\textcolor{red}{[BILD]}\end{center}
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+%	\tikzgitter{(-5,-5)}{(5,5)}
+	
+	% die grosse Ellipse
+	\def\hoehe{2}
+	\def\breite{1.25}
+	\coordinate (mitte) at (0,0);
+	\draw (mitte) ellipse({\breite} and \hoehe);
+	
+	%die kleinen Ellipse
+	\def\kbreite{0.5}
+	\def\khoehe{0.125}
+	\coordinate (a) at ($(mitte) - (\breite,0)$); \coordinate (b) at ($(mitte) - (0.25,0)$); \coordinate (d) at ($(mitte) + (\breite,0)$); \coordinate (c) at ($(mitte) + (0.25,0)$);
+	\coordinate (cntrl) at ($0.5*(a)+0.5*(b)$); \coordinate (cntrr) at ($0.5*(c)+0.5*(d)$);
+	\begin{scope}
+		\clip ($(mitte) - 1.1*(\breite,0)$) rectangle ($(mitte) + 1.1*(\breite,-2*\khoehe)$);
+		\draw (cntrl) ellipse({\kbreite} and {\khoehe});
+		\draw (cntrr) ellipse({\kbreite} and {\khoehe});
+	\end{scope}
+	\begin{scope}
+		\clip ($(mitte) - 1.1*(\breite,0)$) rectangle ($(mitte) + 1.1*(\breite,2*\khoehe)$);
+		\draw[dashed] (cntrl) ellipse({\kbreite} and {\khoehe});
+		\draw[dashed] (cntrr) ellipse({\kbreite} and {\khoehe});
+	\end{scope}
+	
+	% das Loch in der Mitte
+	\begin{scope}
+		\clip ($(mitte) + (0.5,1)$) rectangle ($(mitte) - (1, 1)$);
+		\path[draw,name path=gkreis] ($(mitte) - (0.75,0)$) ellipse (1 and 1.25);
+    \end{scope}
+    \path[name path=kkreis] ($(mitte) + (0.5,0)$) ellipse (0.75 and 1);
+    \path[name intersections={of=gkreis and kkreis}];
+    \begin{scope}
+      \clip (intersection-1) rectangle ($(intersection-2)-(0.5,0)$);
+      \draw ($(mitte) + (0.5,0)$) ellipse (0.75 and 1);
+    \end{scope}
+	
+	% die Punkte
+	\coordinate (p) at ($(mitte) - (0,\hoehe)$); \coordinate (q) at (intersection-2); \coordinate (r) at (intersection-1); \coordinate (s) at ($(mitte) + (0,\hoehe)$);
+	\fill (p) circle(0.05)node[below]{$p=0$} (q) circle(0.05)node[below right]{$q$} (r) circle(0.05)node[above right]{$r$} (s) circle(0.05)node[above]{$s$};
+	
+	%der Strich
+	\def\strichentfernung{2.5}
+	\draw ($(d) + (\strichentfernung,-\hoehe - 0.5)$) node[below left]{$\R$} -- ++(0,2*\hoehe+1);
+	
+	% der Pfeil
+	\draw[->] ($(d) + 0.5*(\strichentfernung,0) - (0.5,0)$) --node[above]{$f$} ++(1,0);
+	
+	% ich bastle einen neuen Befehl f"ur die Striche mit der Beschriftung
+	\newcommand\beschriftung[2]{
+		\coordinate (pos) at ($#1 + (\strichentfernung+\breite,0)$);
+		\def\weite{0.1}
+		\draw ($(pos) - (\weite,0)$) -- ++(2*\weite,0) node[right,align=left]{#2};
+	}
+	\beschriftung{(s)}{$f(s)$ Index 2\\ (glob. Max. d. H"ohenfktn.)}
+	\beschriftung{(r)}{$f(r)$ Index 1}
+	\beschriftung{(mitte)}{$a=f(x)$}
+	\beschriftung{(q)}{$f(q)$ Index 1}
+	\beschriftung{(p)}{$f(p)=0$ Index 0}
+	
+	\node at ($(mitte) + (-1.75*\breite,0.75*\hoehe)$) {$M = T^2 \subseteq \R^3$};
+	\node (txt) at ($(mitte) + (-1.75*\breite,-1*\hoehe)$) {$M^{a} = \{ f \le a \}$};
+	\draw[->] (txt) to[in=180] ($(mitte) - 0.5*(\breite,\hoehe)$);
+	
+\end{tikzpicture}\end{center}
 Die Topologien von $M^a$  und $M^b$ sind identisch, wenn zwischen $a$ und $b$ keine kritischen Werte auftreten.
 \emph{\quot{Rekonstruktion}:} Klebe sukzessive f"ur die nicht ausgearteten kritischen Punkte $p$ Zellen der Dimension $\Ind_f(p)$, das hei"st $\B_1(0) \subseteq \R^{\Ind_f(p)}$.
 \begin{center}\textcolor{red}{[BILD]}\end{center}
