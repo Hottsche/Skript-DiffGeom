@@ -20,3 +20,6 @@ vc.tex: .git/logs/HEAD
 		\\gdef\\GITAbrHash{%h}\
 		\\gdef\\GITAuthorDate{%ad}\
 		\\gdef\\GITAuthorName{%an}" >> vc.tex
+	echo "\gdef\GITVersionTag{" >> vc.tex
+	git describe --abbrev=0 --tags >> vc.tex
+	echo "}" >> vc.tex
