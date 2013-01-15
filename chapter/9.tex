@@ -358,25 +358,20 @@ Es gilt:
 %% 
 
 \begin{emptythm}[Erinnerung]
-  Für eine glatte Funktion $f$ auf $M$ gilt in kritischen Punkten $p$:
-  \begin{align*}
-    H_f(v,v) = \difffrac[t=0]{^2}{t^2}f(\gamma(t))
-  \end{align*}
-  mit $\gamma(0) = p, \dot\gamma(0) = v$.
-
-  Diese Eigenschaft verwenden wir in der folgenden Definition als
-  Ausgangspunkt.
+Für eine glatte Funktion $f$ auf $M$ gilt in kritischen Punkten $p$:
+\begin{align*}
+	H_f(v,v) = \difffrac[t=0]{^2}{t^2}f(\gamma(t))
+\end{align*}
+mit $\gamma(0) = p, \dot\gamma(0) = v$.
+Diese Eigenschaft verwenden wir in der folgenden Definition als Ausgangspunkt.
 \end{emptythm}
 
 \begin{Dfn}
-  Es sei $Y$ ein Vektorfeld entlang einer nach Bogenlänge
-  parametrisierte Kurve $c$ und $c_s$ die von $Y$ erzeugte
-  Variation. Die durch
-  \begin{align*}
-    \calI(Y,Y) = \difffrac[s=0]{^2}{s^2} E(c_s)
-  \end{align*}
-  auf dem Vektorraum der Vektorfelder entlang $c$ definierte
-  symmetrische Bilinearform hei"st die \CmMark{Indexform} von $c$.
+Es sei $Y$ ein Vektorfeld entlang einer nach Bogenlänge parametrisierte geod"atische Kurve $c$ und $c_s$ die von $Y$ erzeugte Variation. Die durch
+\begin{align*}
+	\calI(Y,Y) = \difffrac[s=0]{^2}{s^2} E(c_s)
+\end{align*}
+auf dem Vektorraum der Vektorfelder entlang $c$ definierte symmetrische Bilinearform hei"st die \CmMark{Indexform} von $c$.
 \end{Dfn}
 
 Sind $X,Y$ Vektorfelder entlang $c$, welche in den Endpunkten
@@ -388,36 +383,26 @@ verschwinden, so gilt
 denn bezeichnet $c_s$ die von $Y$ erzeugte eigentliche Variation, so
 gilt
 \begin{align*}
-  \difffrac[s=0]{^2}{s^2}E(c_s) & =
-  \left.\left<\nabla_s\difffrac{}{s}c_s,\dot
-      c\right>\right|_0^{\mathcal L} + \int_0^{\mathcal L}\|Y'\|^2 -
-  \left<R(Y,\dot c)\dot c,Y\right>\\
-  & = \int_0^{\mathcal L}\left<Y',Y\right>' - \left<Y'',Y\right> -
-  \left<R(Y,\dot c)\dot c,Y\right>\\
-  & = \left.\left<Y',Y\right>\right|_0^{\mathcal L} - \int_0^{\mathcal
-    L} \left<Y'',Y\right> + \left<R(Y,\dot c)\dot c,Y\right>\\
+  \difffrac[s=0]{^2}{s^2}E(c_s) & = \left.\left<\nabla_s\difffrac{}{s}c_s,\dot c\right>\right|_0^{\mathcal L} + \int_0^{\mathcal L}\|Y'\|^2 - \left<R(Y,\dot c)\dot c,Y\right>\\
+  & = \int_0^{\mathcal L}\left<Y',Y\right>' - \left<Y'',Y\right> - \left<R(Y,\dot c)\dot c,Y\right>\\
+  & = \left.\left<Y',Y\right>\right|_0^{\mathcal L} - \int_0^{\mathcal L} \left<Y'',Y\right> + \left<R(Y,\dot c)\dot c,Y\right>\\
   & = - \int_0^{\mathcal L}\left<Y'' + R(Y,\dot c) \dot c, Y\right>.
 \end{align*}
 
-Die Indexform um eine Geodätische $c$ ist genau dann ausgeartet, wenn
-ein zu den Endpunkten verschwindendes Vektorfeld entlang $c$ existiert
-mit
+Die Indexform um eine Geodätische $c$ ist genau dann ausgeartet, wenn ein in den Endpunkten verschwindendes Vektorfeld entlang $c$ existiert mit
 \begin{align*}
-  Y'' + R(Y,\dot c) \dot c \equiv 0. \label{eq:jacobi-field-deq}
+  Y'' + R(Y,\dot c) \dot c \equiv 0. \tag{*}
 \end{align*}
 
 % Definition 9.3
 \begin{Dfn}
-  Ein Vektorfeld entlang einer Geodätischen $c$ heißt
-  \CmMark{Jacobifeld}, wenn es obige Differentialgleichung
-  (\ref{eq:jacobi-field-deq}) erfüllt.
+Ein Vektorfeld entlang einer Geodätischen $c$ heißt \CmMark{Jacobifeld}, wenn es die obige Differentialgleichung (*) erfüllt.
 \end{Dfn}
 
 % Lemma 9.4
 \begin{Lemma}\label{thm:lemma-9-4}
-  Es sei $c \colon [0,1] \to M$ eine Geödätische, $p = c(0)$. Dann
-  existiert für alle $v,w \in \T_pM$ genau ein Jacobifeld $J$ entlang
-  $c$ mit $J(c) = v, \ J'(0) = w$.
+Es sei $c \colon [0,1] \to M$ eine Geod"atische, $p = c(0)$.
+Dann existiert für alle $v,w \in \T_pM$ genau ein Jacobifeld $J$ entlang $c$ mit $J(0) = v, \ J'(0) = w$.
 \end{Lemma}
 
 \begin{bew}
@@ -431,7 +416,7 @@ mit
     \eta^i E_i
   \end{align*}
   und $Y'' = \sum \ddot \eta^i E_i$. Setzt man $R(E_j,\dot c)\dot c =
-  \sum_i\rho_j^i E_i$, so ist (\ref{eq:jacobi-field-deq}) äquivalent
+  \sum_i\rho_j^i E_i$, so ist (*) äquivalent
   zum System linearer Differentialgleichungen zweiter Ordnung
   \begin{align*}
     \ddot \eta^i + \sum_i \eta^i\rho_j^i = 0.
@@ -450,56 +435,39 @@ mit
   \end{center}
 \end{bsp}
 
-Sind die Startwerde eines Jacobifeldes tangential an $c$, etwa $J(0) =
+Sind die Startwerte eines Jacobifeldes tangential an $c$, etwa $J(0) =
 \lambda \dot c(0)$ und $J'(0) = \mu \dot c(0)$, so gilt
 \begin{align*}
   J(t) = (\lambda + t\mu)\dot c(t),
 \end{align*}
 denn
 \begin{align*}
-  & J''(t) = \nabla_t(\mu \dot c(t) + (\lambda + t
-  \mu)\underbrace{\nabla_t\dot c(t)}_{=0}) = \mu\nabla_t\dot c = 0,\\
-  & \left.R(J,\dot c)\dot c\right|_t = (\lambda + t\mu)R(\dot c, \dot
-  c)\dot c = 0.
+  J''(t) = \nabla_t(\mu \dot c(t) + (\lambda + t \mu)\underbrace{\nabla_t\dot c(t)}_{=0}) = \mu\nabla_t\dot c = 0,\\
+  \left.R(J,\dot c)\dot c\right|_t = (\lambda + t\mu)R(\dot c, \dot c)\dot c = 0.
 \end{align*}
-Zu $c$ tangentiale Jacobifelder tragen keine geometrischen
-Informationen; vgl. zweite Ableitung des Längenfunktionals.
-
-Gilt für die Startwerte eines Jacobifeldes $J(0),\ J'(0) = \dot
-c(0)^{\perp}$,
+Zu $c$ tangentiale Jacobifelder tragen keine geometrischen Informationen; vgl. zweite Ableitung des Längenfunktionals.
+Gilt für die Startwerte eines Jacobifeldes $J(0)$ und $J'(0) = \dot c(0)^{\perp}$
 \begin{align*}
-  \left<J',\dot c\right> = \left<J'',\dot c\right> + \left<J',
-    \nabla_t\dot c\right> = - \left<R(J,\dot c)\dot c,\dot c\right> =
-  0,
+	\left<J',\dot c\right>' = \left<J'',\dot c\right> + \left<J', \nabla_t\dot c\right> = - \left<R(J,\dot c)\dot c,\dot c\right> = 0,
 \end{align*}
-also $J'(t) \perp \dot c(t)$ für alle $t$ und $\left<J,\dot c\right>'
-= \left<J',\dot c\right> = 0$, somit $J(t) \perp \dot c(t)$ für alle
-$t$.
+also $J'(t) \perp \dot c(t)$ für alle Zeiten $t$ und $\left<J,\dot c\right>' = \left<J',\dot c\right> = 0$, somit $J(t) \perp \dot c(t)$ für alle $t$.
 
-Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$
-hat Dimension $2 \dim(M)$ und die zu $c$ normalen Jacobifelder bilden
-einen Vektorraum der Dimension $2 \dim(M) - 2$.
-
+Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dimension $2 \dim(M)$ und die zu $c$ normalen Jacobifelder bilden einen Vektorraum der Dimension $2 \dim(M) - 2$.
 
 % Satz 9.5
 \begin{Satz}
-  Es sei $c \colon [0,1] \to M$ eine Geodätische und $c_s$ eine
-  Variation von $c$, so dass alle Kurven $c_s$ Geodätische sind. Dann
-  ist das zugehörige Variationsfeld ein Jacobifeld entlang $c$.
-
-  Jedes Jacobifeld in von dieser Gestalt.
+Es sei $c \colon [0,1] \to M$ eine Geodätische und $c_s$ eine Variation von $c$, so dass alle Kurven $c_s$ Geodätische sind.
+Dann ist das zugehörige Variationsfeld ein Jacobifeld entlang $c$.
+Jedes Jacobifeld in von dieser Gestalt.
 \end{Satz}
 
 \begin{bew}
   Es sei $c_s$ eine Variation von $c$ und alle $c_s$ seien
   Geodätische. Dann gilt:
   \begin{align*}
-    Y'' & = \left.\nabla_t(\nabla_t\difffrac{}{s}c_s)\right|_{s=0} =
-    \left.\nabla_t(\nabla_s\difffrac{}{t}c_s)\right|_{s=0}\\
-    & = \nabla_s\underbrace{\nabla_t \difffrac{}{t} c_s}_{=0} +
-    \left.R(\underbrace{\difffrac{}{t}c_s}_{=\dot
-        c},\underbrace{\difffrac{}{s}c_s}_{=Y})\underbrace{\difffrac{}{t}c_s}_{=\dot
-        c}\right|_{s=0}\\
+    Y'' & = \left.\nabla_t \left(\nabla_t\difffrac{}{s}c_s \right)\right|_{s=0} \\
+    & = \left.\nabla_t \left(\nabla_s\difffrac{}{t}c_s \right)\right|_{s=0}\\
+    & = \nabla_s\underbrace{\nabla_t \difffrac{}{t} c_s}_{=0} + \left. R\left(\smash{\underbrace{\difffrac{}{t}c_s}_{=\dot c},\underbrace{\difffrac{}{s}c_s}_{=Y}}\vphantom{\difffrac{}{}}\right) \smash{\underbrace{\difffrac{}{t}c_s}_{=\dot c}}\right|_{s=0}\\
     & = -R(Y,\dot c)\dot c
   \end{align*}
   Es sei umgekehrt $J$ ein Jacobifeld entlang $c$, $\gamma$ die durch
@@ -511,8 +479,8 @@ einen Vektorraum der Dimension $2 \dim(M) - 2$.
   \end{align*}
   eine Variation von $c$ und alle Kurven $c_s$ sind Geodätische.
 
-  Das zugehörige Variationsfeld $Y = \difffrac[t=0]{}{s} c_s$ ist nach
-  dem oberen Bemerkungen ein Jacobifeld. Es gilt
+  Das zugehörige Variationsfeld $Y = \difffrac[s=0]{}{s} c_s$ ist nach
+  dem oben Bewiesenen ein Jacobifeld. Es gilt
   \begin{align*}
     Y(0) = \difffrac[s=0]{}{s}\exp_{\gamma(s)}(0) =
     \difffrac[s=0]{}{s}\gamma(s) = J(0).
@@ -529,8 +497,8 @@ einen Vektorraum der Dimension $2 \dim(M) - 2$.
   Nach Lemma \ref{thm:lemma-9-4} stimmen $J$ und $V$ überein.
 \end{bew}
 
-\begin{emptythm}[Erinnerung]
-  Korollar \ref{thm:kor-8-12}(iii).
+\begin{emptythm}[Erinnerung( Korollar \ref{thm:kor-8-12} \ref{thm:kor-8-12-iii})]
+  asdf
   \begin{center}
     \textcolor{red}{Abbildung 2 <2013-1-15>}
   \end{center}
@@ -538,12 +506,8 @@ einen Vektorraum der Dimension $2 \dim(M) - 2$.
 
 % Definition 9.6
 \begin{Dfn}
-  Ein Punkt $p \in M$ heißt zu $q$ \CmMark{konjugiert}, wenn $q$ ein singulärer
-  Wert von $\exp_p$ ist.
-
-  $p$ heißt \CmMark[konjugiert!entlang einer Geodätischen]{konjugiert
-  entlang der Geodätischen} $c$, wenn $\exp_{p*\dot c(0)}$ singulär
-  ist, d.h. $\Kern \exp_{p*\dot c(0)} \neq \{0\}$.
+Ein Punkt $p \in M$ heißt zu $q$ \CmMark{konjugiert}, wenn $q$ ein singulärer Wert von $\exp_p$ ist.
+$p$ heißt \CmMark[konjugiert!entlang einer Geodätischen]{konjugiert zu $\bm{q}$ entlang der Geodätischen $\bm{c}$}, wenn $\exp_{p*\dot c(0)}$ singulär ist, das hei"st $\Kern \exp_{p*\dot c(0)} \neq \{0\}$.
 \end{Dfn}
 
 % Proposition 9.7
