@@ -2,7 +2,7 @@
 %% Skript Differentialgeometrie im Wintersemester 12/13
 %% Zur Vorlesung von Dr. Grensing am KIT Karlsruhe
 %%
-%% Mitschrieb und Textsatz von Jan-Bernhard Kordaß.
+%% Hauptdokument
 %%
 
 \documentclass[paper=A4, twoside, chapterprefix=true, bibliography=totoc, headsepline]{scrbook}
@@ -13,7 +13,7 @@
 % Nummerierung der Paragraphen anpassen (sonst kommt etwas wie "Definition 2.9.1" heraus)
 \renewcommand{\thesection}{\arabic{section}}
 
-%Aendert die Kapitelbeschriftung in der Kopfzeile der linken Seiten
+% Aendert die Kapitelbeschriftung in der Kopfzeile der linken Seiten
 \renewcommand*{\chaptermarkformat}{\chapappifchapterprefix{\ }\thechapter:\enskip}
 \renewcommand*{\sectionmarkformat}{\thesection\autodot\enskip}
 
@@ -35,34 +35,28 @@
 %\usepackage[nobottomtitles]{titlesec}
 
 
-% Import current git version identification number.
+% Importiert den Abgekürzten Hash der aktuellen Git ID
 \input{vc.tex}
 
+% Lade saemtliche erweiterte LaTeX Konfigurationen
 \input{preamble}
-
-%--------------------------------------------------------------------
-%-------------------- Eintraege fuer das Glossar --------------------
-%--------------------------------------------------------------------
-
+ 
+% Lade Eintraege des Glossars
 \input{glossary}
 
-%-----------------------------------------------------------------------------------
-%-------------------- Allgemeine Informationen ueber das Skript --------------------
-%-----------------------------------------------------------------------------------
 
-%\titlehead{inoffizielles Vorlesungsskript}
+% Informationen zum Skript
 \subject{inoffizielles Skript}
 \title{Differentialgeometrie}
 \subtitle{Gehalten von Dr. S. Grensing im Wintersemester 2012/13}
 \author{getippt von Aleksandar Sandic\thanks{\href{mailto:aleksandar.sandic@student.kit.edu}{Aleksandar.Sandic@student.kit.edu}} und Jan-Bernhard Korda\ss\thanks{\href{mailto:jan-bernhard.kordass@student.kit.edu}{Jan-Bernhard.Kordass@student.kit.edu}}}
 
-%--------------------------------------------------------------------
-%-------------------- Hier beginnt das Skript -----------------------
-%--------------------------------------------------------------------
+
+%%
+%% Inhalt
+%% 
 
 \begin{document}
-
-%\CmCover{Vorlesung Differentialgeometrie}{Gehalten von Dr. Grensing}{Wintersemester 2012/13}
 
 \maketitle
 
@@ -73,98 +67,195 @@
 
 \chapter*{Vorwort}
 \addcontentsline{toc}{chapter}{Vorwort}
-\setlength\parskip{\smallskipamount}
-Skript Version \textbf{0.01} (git: \GITAbrHash) \quad Build: \today
+\setlength\parskip{\smallskipamount} Skript Version \textbf{0.01}
+(git: \GITAbrHash) \quad Build: \today
 
 \section*{\"Uber dieses Skript}
-Dies ist eine Mitschrieb der Vorlesung \quot{Differentialgeometrie} von Dr. S. Grensing gehalten im Wintersemester 2012/13 am Karlsruher Institut f"ur Technologie. Dr. Grensing ist nicht f"ur den Inahlt verantwortlich und es besteht weder eine Garantie über Vollständigkeit, noch Korrektheit der enthaltenen Aussagen.
+Dies ist eine Mitschrieb der Vorlesung \quot{Differentialgeometrie}
+von Dr. S. Grensing gehalten im Wintersemester 2012/13 am Karlsruher
+Institut f"ur Technologie. Dr. Grensing ist nicht f"ur den Inahlt
+verantwortlich und es besteht weder eine Garantie über
+Vollständigkeit, noch Korrektheit der enthaltenen Aussagen.
 
 \section*{Wer}
-Das Skript wurde in Zusammenarbeit von Jan-Bernhard Korda"s und Aleksandar Sandic getippt. Bei Anmerkungen bzw. beim Auffinden von Fehlern schickt bitte eine E-Mail an
+Das Skript wurde in Zusammenarbeit von Jan-Bernhard Korda"s und
+Aleksandar Sandic getippt. Bei Anmerkungen bzw. beim Auffinden von
+Fehlern schickt bitte eine E-Mail an
 \begin{center}
   \href{mailto:jan-bernhard.kordass@student.kit.edu}{jan-bernhard.kordass@student.kit.edu}\\
   \href{mailto:aleksandar.sandic@student.kit.edu}{aleksandar.sandic@student.kit.edu}
 \end{center}
 
 \section*{Wo}
-Momentan ist das Skript noch im Aufbau und der Quellcode befindet sich auf GitHub. Nach Ende der Vorlesung wenn das Skript fertig ist werden wir es im Mitschiebwiki hosten. Wer den Quellcode nicht kompilieren kann oder m"ochte kann auch ein fertiges PDF herunterladen, es handelt sich aber unter Umst"anden nicht um die aktuellste Version.
+Momentan ist das Skript noch im Aufbau und der Quellcode befindet sich
+auf GitHub. Nach Ende der Vorlesung wenn das Skript fertig ist werden
+wir es im Mitschiebwiki hosten. Wer den Quellcode nicht kompilieren
+kann oder m"ochte kann auch ein fertiges PDF herunterladen, es handelt
+sich aber unter Umst"anden nicht um die aktuellste Version.
 
 Aktuellsten Version auf GitHub: \url{https://github.com/Tarcvar/Skript-DiffGeom}\\
 Fertiges PDF: \url{https://dl.dropbox.com/u/22321777/skript-diffgeom.pdf}\\
 Seite der Vorlesung: \url{http://www.math.kit.edu/iag5/edu/difgeo2012w/de}\\
 Mitschiebwiki: \url{http://mitschriebwiki.nomeata.de/}
 
-\section*{\textcolor{red}{Hinweise f"ur Autoren (dieser Teil wird nach der Fertig"-stellung entfernt)}}
-Hier ist eine Liste an Konventionen f"ur das Skript. Diese Regeln sind nicht in Stein gemei\ss elt und wenn jemand anderer Meinung ist können wir uns absprechen und die Regeln "andern, aber ansonsten sollte jeder der am Skript mitarbeitet sich nach M"oglichkeit an sie halten. Selbst wenn wir unsere Meinung anschließend "andern ist es viel leichter die "Anderungen vorzunehmen wenn alles einheitlich ist.
+\section*{\textcolor{red}{Hinweise f"ur Autoren}}
+
+\textcolor{red}{(dieser Teil wird nach der Fertig"-stellung entfernt)}
+
+Hier ist eine Liste an Konventionen f"ur das Skript. Diese Regeln sind
+nicht in Stein gemei\ss elt und wenn jemand anderer Meinung ist können
+wir uns absprechen und die Regeln "andern, aber ansonsten sollte jeder
+der am Skript mitarbeitet sich nach M"oglichkeit an sie halten. Selbst
+wenn wir unsere Meinung anschließend "andern ist es viel leichter die
+"Anderungen vorzunehmen wenn alles einheitlich ist.
 
 \begin{description}[font=\normalfont\itshape]
-\item[Anf"uhrungszeichen:]
-	sie können nicht direkt im Code gesetzt werden, man muss entweder den genauen Befehl kennen oder man nimmt einfach unseren eigenen \verb|\quot{}| Befehl.
-\item[Abs"atze:]
-	benutzt nicht \verb|\\| f"ur neue Abs"atze, dieser Befehl ist dazu da um einen Zeilenumbruch zu erzwingen. F"ur einen neuen Absatz fügt eine leere Zeile ein (also zweimal die Enter Taste dr"ucken), der Unterschied ist dass dadurch ein etwas gr"o\ss erer Abstand zwischen Abs"atzen eingef"ugt wird der die Unterscheidung leichter macht (der Abstand wird durch \verb|parskip| bestimmt). Es ist in der Literatur "ublich die erste Zeile eines Absatzes einzur"ucken (\verb|parindent|), allerdings sind unsere Abs"atze dafür zu kurz, es w"urde h"asslich aussehen alle paar Zeilen eine Einr"uckung zu haben. Nach einem Theorem wird automatisch ein noch gr"o"serer Abstand eingef"ugt, es gibt also keinen Grund an der Stelle etwas zu "andern.
-\item[Theoreme:]
-	das \verb|ntheorem| Paket stellt theoremartige Umgebungen zur Verf"ugung. Unsere Konvention besagt dass die Befehle aller nummerierten Theoreme mit Gro"sbuchstaben anfangen sollen (zum Beispiel \verb|Dfn| f"ur Definitionen). F"ur alle nummerierten Theoreme gibt es auch eine nicht nummerierte Version mit Kleinbuchstaben (also \verb|dfn|). F"ur Beweise sollte \verb|bew| anstelle von \verb|proof| verwendet werden. Bei jedem Theorem kann man als optionalen Parameter einen speziellen Namen vergeben, wie \verb|\begin{Satz}[Satz des Pythagoras]|. Wenn in der Vorlesung keine Umgebung verwendet wurde dann benutzt auch keine im Skript, wenn wir "uberall Bemerkung auf Bemerkung haben bläht es das Skript auf und st"ort den Lesefluss. Bitte nummeriert nur Theoreme die auch in der Vorlesung nummeriert wurden.
-\item[Spezielle Theoreme:]
-	wenn eine spezielle Theoremumgebung benötig wird, wie zum Beispiel \quot{Anwendung}, f"ur die es sich nicht lohnen w"urde eine eigene Theoremumgebung zu definieren, kann die \verb|\emptythm| Umgebung verwendet werden. Gebt dabei den gew"unschten Namen als optionales Argument ein, also \verb|\emptythm[Anwendung]|. Der Name wird dabei ganz normal gesetzt, also ohne Klammern wie sonst bei optionalen Argumenten "ublich.
-\item[Listen und Aufz"ahlungen:]
-	die Umgebungen \verb|itemize|, \verb|enumerate| und \verb|description| k"onnen dank des \verb|enumitem| Pakets stark beeinflusst werden. Im Allgemeinen sind die Standardeinstellungen in Ordnung, allerdings m"ussen wir manchmal ein Ausnahme machen und Listen "andern. Die h"aufigste Option wird \verb|label=| sein um die Nummerierung zu "andern. Haltet euch an den Standard der Vorlesung. Eintr"age sind standardm"a\ss ig leicht einger"uckt, das ist gut f"ur die Lesbarkeit, aber bei mehr als einer oder zwei Zeilen pro Eintrag wird es h"asslich. Mit der Option \verb|leftmargin=*| wird der Listeineintrag ganz an den Rand geschoben (beziehungsweise soweit es geht bei Unterlisten), das spart Platz und sieht besser aus. Die Schriftart von Labels bei der \verb|description| Umgebung kann mit der Option \verb|font=| eingestellt werden.
-\item[Zeichungen:]
-	sollten vorzugsweise in TikZ gschrieben werden anstatt ein externes Programm zu verwenden. TikZ liefert saubere Ergebnisse, passt nahtlos in das Design, erzeugt keine weiteren Abh"angigkeiten und die Zeichnungen können jederzeit von jedem ge"andert oder korrigiert werden. F"ur h"aufig verwendete Formen wurden eigene Befehle geschrieben, mehr dazu findet man im Quellcode.
-\item[Umlaute und "s:]
-	je nach Kodierung kann man diese Zeichen entweder direkt im Code benutzen oder man schreibt \verb|"a|, \verb|"o|, \verb|"u| und \verb|"s|. Wir k"onnen f"ur's Erste bei normalen Umlauten bleiben, ich würde aber trotzdem am Ende einmal Suchen\&Ersetzen durchlaufen lassen.
-\item[Farben:]
-	Blau ist f"ur Hyperlinks reserviert, rot f"ur Fehler und Unsicherheiten, grau f"ur Anmerkungen und Notizen f"ur den Leser. Der Vorteil von blau ist dass es bei einem Schwarz-Wei"s Ausdruck nicht von schwarz unterscheidbar ist.
-\item[Randnotizen:]
-	können mit \verb|\marginnote{}| gesetzt werden (beachtet dass keine Leerzeilen im Befehl erlaubt sind). Randnotizen sind gut f"ur Anmerkungen oder kleine Zeichnungen. Wir k"onnen bei Bedarf auch einstellen dass bei Definitionen der definierte Begriff im Rand daneben steht. Das \verb|ntheorem| Paket erlaubt es auch die Nummer von Theormen in den Rand zu stellen, das w"are auch eine "Uberlegung wert.
-\item[Glossareintr"age:]
-	das \verb|glossaries| Paket erlaubt es ein Glossar zu erstellen. Hier sollten alle Begriffe stehen die \emph{nicht} in dieser Vorlesung definiert wurden aber verwendet werden. Die Idee ist dass der Leser manchmal nicht die genaue Definition wei"s und es ist praktisch wenn man eine kleine Ged"achtnisst"utze im Skript hat.
-\end{description}
+\item[Anf"uhrungszeichen:] sie können nicht direkt im Code gesetzt
+  werden, man muss entweder den genauen Befehl kennen oder man nimmt
+  einfach unseren eigenen \verb|\quot{}| Befehl.
+\item[Abs"atze:] benutzt nicht \verb|\\| f"ur neue Abs"atze, dieser
+  Befehl ist dazu da um einen Zeilenumbruch zu erzwingen. F"ur einen
+  neuen Absatz fügt eine leere Zeile ein (also zweimal die Enter Taste
+  dr"ucken), der Unterschied ist dass dadurch ein etwas gr"o\ss erer
+  Abstand zwischen Abs"atzen eingef"ugt wird der die Unterscheidung
+  leichter macht (der Abstand wird durch \verb|parskip| bestimmt). Es
+  ist in der Literatur "ublich die erste Zeile eines Absatzes
+  einzur"ucken (\verb|parindent|), allerdings sind unsere Abs"atze
+  dafür zu kurz, es w"urde h"asslich aussehen alle paar Zeilen eine
+  Einr"uckung zu haben. Nach einem Theorem wird automatisch ein noch
+  gr"o"serer Abstand eingef"ugt, es gibt also keinen Grund an der
+  Stelle etwas zu "andern.
+\item[Theoreme:] das \verb|ntheorem| Paket stellt theoremartige
+  Umgebungen zur Verf"ugung. Unsere Konvention besagt dass die Befehle
+  aller nummerierten Theoreme mit Gro"sbuchstaben anfangen sollen (zum
+  Beispiel \verb|Dfn| f"ur Definitionen). F"ur alle nummerierten
+  Theoreme gibt es auch eine nicht nummerierte Version mit
+  Kleinbuchstaben (also \verb|dfn|). F"ur Beweise sollte \verb|bew|
+  anstelle von \verb|proof| verwendet werden. Bei jedem Theorem kann
+  man als optionalen Parameter einen speziellen Namen vergeben, wie
+  \verb|\begin{Satz}[Satz des Pythagoras]|. Wenn in der Vorlesung
+    keine Umgebung verwendet wurde dann benutzt auch keine im Skript,
+    wenn wir "uberall Bemerkung auf Bemerkung haben bläht es das
+    Skript auf und st"ort den Lesefluss. Bitte nummeriert nur Theoreme
+    die auch in der Vorlesung nummeriert wurden.
+  \item[Spezielle Theoreme:] wenn eine spezielle Theoremumgebung
+    benötig wird, wie zum Beispiel \quot{Anwendung}, f"ur die es sich
+    nicht lohnen w"urde eine eigene Theoremumgebung zu definieren,
+    kann die \verb|\emptythm| Umgebung verwendet werden. Gebt dabei
+    den gew"unschten Namen als optionales Argument ein, also
+    \verb|\emptythm[Anwendung]|. Der Name wird dabei ganz normal
+    gesetzt, also ohne Klammern wie sonst bei optionalen Argumenten
+    "ublich.
+  \item[Listen und Aufz"ahlungen:] die Umgebungen \verb|itemize|,
+    \verb|enumerate| und \verb|description| k"onnen dank des
+    \verb|enumitem| Pakets stark beeinflusst werden. Im Allgemeinen
+    sind die Standardeinstellungen in Ordnung, allerdings m"ussen wir
+    manchmal ein Ausnahme machen und Listen "andern. Die h"aufigste
+    Option wird \verb|label=| sein um die Nummerierung zu
+    "andern. Haltet euch an den Standard der Vorlesung. Eintr"age sind
+    standardm"a\ss ig leicht einger"uckt, das ist gut f"ur die
+    Lesbarkeit, aber bei mehr als einer oder zwei Zeilen pro Eintrag
+    wird es h"asslich. Mit der Option \verb|leftmargin=*| wird der
+    Listeineintrag ganz an den Rand geschoben (beziehungsweise soweit
+    es geht bei Unterlisten), das spart Platz und sieht besser
+    aus. Die Schriftart von Labels bei der \verb|description| Umgebung
+    kann mit der Option \verb|font=| eingestellt werden.
+  \item[Zeichungen:] sollten vorzugsweise in TikZ gschrieben werden
+    anstatt ein externes Programm zu verwenden. TikZ liefert saubere
+    Ergebnisse, passt nahtlos in das Design, erzeugt keine weiteren
+    Abh"angigkeiten und die Zeichnungen können jederzeit von jedem
+    ge"andert oder korrigiert werden. F"ur h"aufig verwendete Formen
+    wurden eigene Befehle geschrieben, mehr dazu findet man im
+    Quellcode.
+  \item[Umlaute und "s:] je nach Kodierung kann man diese Zeichen
+    entweder direkt im Code benutzen oder man schreibt \verb|"a|,
+    \verb|"o|, \verb|"u| und \verb|"s|. Wir k"onnen f"ur's Erste bei
+    normalen Umlauten bleiben, ich würde aber trotzdem am Ende einmal
+    Suchen\&Ersetzen durchlaufen lassen.
+  \item[Farben:] Blau ist f"ur Hyperlinks reserviert, rot f"ur Fehler
+    und Unsicherheiten, grau f"ur Anmerkungen und Notizen f"ur den
+    Leser. Der Vorteil von blau ist dass es bei einem Schwarz-Wei"s
+    Ausdruck nicht von schwarz unterscheidbar ist.
+  \item[Randnotizen:] können mit \verb|\marginnote{}| gesetzt werden
+    (beachtet dass keine Leerzeilen im Befehl erlaubt
+    sind). Randnotizen sind gut f"ur Anmerkungen oder kleine
+    Zeichnungen. Wir k"onnen bei Bedarf auch einstellen dass bei
+    Definitionen der definierte Begriff im Rand daneben steht. Das
+    \verb|ntheorem| Paket erlaubt es auch die Nummer von Theormen in
+    den Rand zu stellen, das w"are auch eine "Uberlegung wert.
+  \item[Glossareintr"age:] das \verb|glossaries| Paket erlaubt es ein
+    Glossar zu erstellen. Hier sollten alle Begriffe stehen die
+    \emph{nicht} in dieser Vorlesung definiert wurden aber verwendet
+    werden. Die Idee ist dass der Leser manchmal nicht die genaue
+    Definition wei"s und es ist praktisch wenn man eine kleine
+    Ged"achtnisst"utze im Skript hat.
+  \end{description}
 
-\input{chapter/1}
-\input{chapter/2}
-\input{chapter/3}
-\input{chapter/4}
-\input{chapter/5}
-\input{chapter/6}
-\input{chapter/7}
-\input{chapter/8}
-\input{chapter/9}
+  \subsection*{Erstellung \textcolor{red}{*wichtig*}}
 
-%-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Anhang -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+  Abschließend noch eine Bemerkung zum Erstellen einer \quot{neuen}
+  Version, nach einer "Anderung. Damit im Skript die korrekte Git
+  Versions-ID geladen wird und weiterhin sichergestellt wird, dass alle
+  Referenzen verf"ugbar sind, die Bibliographie und auch die Eintr"age
+  des Stichwortverzeichnisses aktuell sind, sei ausdrücklich empfohlen
+  das beigelegte \verb|Makefile| zu verwenden (zumindest unter
+  UNIX-artigen Systemen, Windows-Nutzer müssen all dies manuell sicher
+  stellen).
 
-\appendix
+  Dazu navigiert man in der Konsole in das Verzeichnis des Skriptes
+  und ruft \verb|make| via \verb|make -k| auf.
 
-%-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Uebungen -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+  %% 
+  %% Vorlesungsinhalt
+  %% 
 
-% Die Benennung der "section" so aendern, dass "\"Ubung 123 vom " am Anfang steht
-% Der Code ist fast genau der vom Anfang der Praeambel, dort steht die Erklaerung
-\renewcommand*{\othersectionlevelsformat}[3]{\ifstr{#1}{section}{\"Ubung\ #3\ vom\ }{#3\autodot\enskip}}
-
-% Das Format der "section" in Kopfzeile der rechten Seiten
-\renewcommand*{\sectionmarkformat}{\"Ubung \thesection\autodot\ vom\enskip}
+  \input{chapter/1} \input{chapter/2} \input{chapter/3}
+  \input{chapter/4} \input{chapter/5} \input{chapter/6}
+  \input{chapter/7} \input{chapter/8} \input{chapter/9}
 
 
-\include{exercise/0}
-\include{exercise/1}
-\include{exercise/2}
-\include{exercise/3}
-\include{exercise/4}
-\include{exercise/5}
-\include{exercise/6}
-\include{exercise/7}
-\include{exercise/8}
-\include{exercise/9}
-%-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Stichwortverzeichnis -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+  %% 
+  %% Anhang
+  %% 
 
-\printindex
+  \appendix
 
-%-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Symbolverzeichnis -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+  %% 
+  %% Inhalte der Uebung
+  %% 
 
-\printglossaries
+  % Die Benennung der "section" so aendern, dass "\"Ubung 123 vom " am Anfang steht
+  % Der Code ist fast genau der vom Anfang der Praeambel, dort steht die Erklaerung
+  \renewcommand*{\othersectionlevelsformat}[3]{\ifstr{#1}{section}{\"Ubung\ #3\ vom\ }{#3\autodot\enskip}}
 
-%-_-_-_-_-_-_-_-_-_-_-_-_-_-_ Literaturverzeichnis -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+  % Das Format der "section" in Kopfzeile der rechten Seiten
+  \renewcommand*{\sectionmarkformat}{\"Ubung \thesection\autodot\ vom\enskip}
 
-\bibliographystyle{plain}
-\bibliography{literature}
+  \include{exercise/0}
+  \include{exercise/1}
+  \include{exercise/2}
+  \include{exercise/3}
+  \include{exercise/4}
+  \include{exercise/5}
+  \include{exercise/6}
+  \include{exercise/7}
+  \include{exercise/8}
+  \include{exercise/9}
+
+  %% 
+  %% Stichwortverzeichnis
+  %% 
+  \printindex
+
+  %% 
+  %% Glossar
+  %% 
+  \printglossaries
+
+  %% 
+  %% Bibliographie
+  %% 
+  \bibliographystyle{plain}
+  \bibliography{literature}
 
 \end{document}
