@@ -47,9 +47,9 @@ Ist $(\phi, U)$ eine Karte von $M$, so sind die Abbildungen $U \to \T M|_U, \ p 
 
 Ist $X$ ein glattes Vektorfeld, so gilt für jedes $u \in U$:
 \begin{align*}
-	X_U = \sum \xi^i(u) \pdifffrac[U]{}{x^i},
+	X_u = \sum \xi^i(u) \pdifffrac[u]{}{x^i},
 \end{align*}
-wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$ ist. Ein Vektorfeld ist genau dann glatte, wenn für jede Karte $(\phi, U)$ die Koeffizientenfunktionen $\xi^i(u)$ von $X_U = \sum \xi^i(u) \pdifffrac[U]{}{x^i}$ glatte Funktionen sind.
+wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$ ist. Ein Vektorfeld ist genau dann glatt, wenn für jede Karte $(\phi, U)$ die Koeffizientenfunktionen $\xi^i(u)$ von $X_u = \sum \xi^i(u) \pdifffrac[u]{}{x^i}$ glatte Funktionen sind.
 \end{bem}
 
 
@@ -82,11 +82,11 @@ wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$
 \end{bem}
 
 \begin{bem}
-Sind $X,Y \in \mathcal V(M)$ und ist $g \in \C^{\infty}(M)$, so sind die punktweise Summe $X+Y$ und das Produkt $gX$ wieder ein glatte Vektorfelder auf $M$. Damit ist $\mathcal V(M)$ ein $\R$-Vektorraum beziehungsweise $C^{\infty}(M)$-Modul.
-Jedes Vektorfeld $X$ ist eine Derivation von $C^{\infty}(M)$:
-\begin{align*}
-	X(fg)(p) = X(f)(p)g(p) + f(p) X(g)(p) = \left(gX(f) + fX(g)\right)(p).
-\end{align*}
+  Sind $X,Y \in \mathcal V(M)$ und ist $g \in \C^{\infty}(M)$, so sind die punktweise Summe $X+Y$ und das Produkt $gX$ wieder glatte Vektorfelder auf $M$. Damit ist $\mathcal V(M)$ ein $\R$-Vektorraum beziehungsweise $C^{\infty}(M)$-Modul.
+  Jedes Vektorfeld $X$ ist eine Derivation von $C^{\infty}(M)$:
+  \begin{align*}
+    X(fg)(p) = X(f)(p)g(p) + f(p) X(g)(p) = \left(gX(f) + fX(g)\right)(p).
+  \end{align*}
 \end{bem}
 
 Es seien $X,Y \in \mathcal V(M)$ glatte Vektorfelder. Die \CmMark{Lieklammer} $[X,Y]$ von $X$ und $Y$ ist dann durch den folgenden Ausdruck definiert:
@@ -150,7 +150,7 @@ oder in lokalen Koordinaten:
     \tilde \gamma(0) = 0, \text{ falls } \phi(p) = 0,
   \end{cases}
 \end{align*}
-mit $\tilde \gamma = \phi \circ \gamma$ für eine Karte $(\phi,U)$ um $p$ und $X|_{\textcolor{red}{U}} = \sum \xi^i \pdifffrac{}{x^i}$.
+mit $\tilde \gamma = \phi \circ \gamma$ für eine Karte $(\phi,U)$ um $p$ und $X|_U = \sum \xi^i \pdifffrac{}{x^i}$.
 
 % Definition 4.5
 \begin{Dfn}
@@ -166,7 +166,7 @@ mit $\tilde \gamma = \phi \circ \gamma$ für eine Karte $(\phi,U)$ um $p$ und $X
   \begin{align*}
     \dot{\tilde \gamma} = \xi(\gamma(t)),  \ \tilde \gamma(0) = \phi(p)
   \end{align*}
-  ist, wobei $X_{\textcolor{red}{U}} = \sum \xi^i \pdifffrac{}{x^i}$ gelte.
+  ist, wobei $X|_U = \sum \xi^i \pdifffrac{}{x^i}$ gelte.
 
   Für jedes $p \in M$ ist somit (lokal) ein Anfangswertproblem gestellt. Gesucht ist eine \quot{simultane} Lösung all dieser Anfangswertprobleme, also eine Abbildung $(t,p) \mapsto \gamma(t,p) = \gamma^t(p)$ mit 
   \begin{align*}
