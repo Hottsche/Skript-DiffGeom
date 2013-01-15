@@ -231,8 +231,8 @@ Gestalt.
       \path[draw,name path=gkreis] ($(mitte) - (0.75,0)$) ellipse (1
       and 1.25);
     \end{scope}
-    \path[name path=kkreis] ($(mitte) + (0.5,0)$) ellipse (0.75 and
-    1); \path[name intersections={of=gkreis and kkreis}];
+    \path[name path=kkreis] ($(mitte) + (0.5,0)$) ellipse (0.75 and 1);
+    \path[name intersections={of=gkreis and kkreis}];
     \begin{scope}
       \clip (intersection-1) rectangle ($(intersection-2)-(0.5,0)$);
       \draw ($(mitte) + (0.5,0)$) ellipse (0.75 and 1);
@@ -426,13 +426,31 @@ Dann existiert für alle $v,w \in \T_pM$ genau ein Jacobifeld $J$ entlang $c$ mi
 \end{bew}
 
 \begin{bsp}[Jacobifelder des $\R^n$]
-  Die Geodätischen des $\R^n$ sind genau die Geraden. Ein Vektorfeld
-  $Y$ entlang einer Geraden ist genau dann ein Jacobifeld, wenn $Y'' =
-  0$ gilt; jedes solche ist der Form $Y(t) = v + tw$.
-
-  \begin{center}
-    \textcolor{red}{Abbildung 1, <2013-1-15 Tue>}
-  \end{center}
+Die Geodätischen des $\R^n$ sind genau die Geraden.
+Ein Vektorfeld $Y$ entlang einer Geraden ist genau dann ein Jacobifeld, wenn $Y'' = 0$ gilt; jedes solche ist der Form $Y(t) = v + tw$.
+\begin{center}\begin{tikzpicture}
+%	\tikzgitter{(-5,-5)}{(5,5)}
+	
+	\coordinate (0) at (0,0); \fill (0) circle(0.05);
+	\def\baseangle{20}
+	\def\betweenangle{20}
+	\def\claenge{5}
+	\def\pfeillaenge{1.5}
+	\def\strichlaenge{4.5}
+	
+	\draw (0) --node[below right,pos=0.85]{$c$} ++(\baseangle:\claenge);
+	\draw[->] (0) --node[above left]{$w$} ++(\baseangle+\betweenangle:\pfeillaenge);
+	\draw[dashed] ($(0)+(\baseangle+\betweenangle:\pfeillaenge)$) -- ++(\baseangle+\betweenangle:\strichlaenge-\pfeillaenge);
+	
+	\def\schritt{0.125}
+	\foreach \i in {0.125,0.25,...,0.75}{
+		\path (0) --coordinate[pos=\i] (pkt) ++(\baseangle:\claenge);
+		\path[name path=w] (0) -- ++(\baseangle+\betweenangle:1*\strichlaenge);
+		\path[name path=vec] (pkt) -- ++(\baseangle+90:3);
+		\path[name intersections={of=w and vec}];
+		\draw[->] (pkt) -- (intersection-1);
+	}
+\end{tikzpicture}\end{center}
 \end{bsp}
 
 Sind die Startwerte eines Jacobifeldes tangential an $c$, etwa $J(0) =
@@ -497,11 +515,26 @@ Jedes Jacobifeld in von dieser Gestalt.
   Nach Lemma \ref{thm:lemma-9-4} stimmen $J$ und $V$ überein.
 \end{bew}
 
-\begin{emptythm}[Erinnerung( Korollar \ref{thm:kor-8-12} \ref{thm:kor-8-12-iii})]
-  asdf
-  \begin{center}
-    \textcolor{red}{Abbildung 2 <2013-1-15>}
-  \end{center}
+\begin{emptythm}[Erinnerung (Korollar \ref{thm:kor-8-12} \ref{thm:kor-8-12-iii})]
+Die zusammengesetzte Kurve oben ist k"urzer als die durchgezogene Kurve unten.
+\begin{center}\begin{tikzpicture}[font=\scriptsize,scale=0.8]
+	%\tikzgitter{(-5,-5)}{(5,5)}
+	
+	\coordinate (p) at (-3,-2); \coordinate (ende) at (3,3);
+	\coordinate (ctrlp1) at (2,0.25); \coordinate (ctrlende) at (-0.5,-3); \coordinate (ctrlende) at (-0.5,-2.75);
+	\fill (p) circle(0.05)node[below]{$p$};
+	
+	% Zeichen die Kurve und definiere den Punkt q auf der Kurve
+	\draw (p) ..controls($(p) + (ctrlp1)$) and ($(ende) + (ctrlende)$)..node[below right]{$c$} coordinate[pos=0.8] (q) coordinate[pos=0.95] (d) (ende);
+	\fill (q) circle(0.05)node[below right]{$q$};
+	
+	\coordinate (ctrlp2) at (1,2.5); \coordinate (ctrlq) at (-1.5,0);
+	\draw (p) ..controls($(p) + (ctrlp2)$) and ($(q) + (ctrlq)$)..node[above left]{$\overline c$} coordinate[pos=0.75] (e) (q);
+	
+	\fill (d) circle(0.05) (e) circle(0.05);
+	
+	\draw (e) ..controls(2,1.5) and (2.5,2).. (d);
+\end{tikzpicture}\end{center}
 \end{emptythm}
 
 % Definition 9.6
@@ -517,10 +550,37 @@ $p$ heißt \CmMark[konjugiert!entlang einer Geodätischen]{konjugiert zu $\bm{q}
   gibt, welches in den Endpunkten verschwindet.
 \end{Prop}
 
-\begin{center}
-  \textcolor{red}{Abbildung 3 <2013-1-15>: Variationsfeld aus
-    Geodätischen auf der Sphäre für das Übungsblatt}
-\end{center}
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+	% Kreis
+	\def\radius{3}
+	\draw (0,0) circle (\radius);
+	% Ellipse
+	\def\kleinradius{0.75}
+	\begin{scope}
+		\clip (-\radius,0) rectangle (\radius,1);
+		\draw[dashed] (0,0) ellipse[x radius=\radius,y radius=\kleinradius];
+	\end{scope}
+	\begin{scope}
+		\clip (-\radius,0) rectangle (\radius,-1);
+		\draw (0,0) ellipse[x radius=\radius,y radius=\kleinradius];
+	\end{scope}
+	%Beschriftungen
+	\coordinate (N) at (0,\radius); \coordinate (S) at (0,-\radius);
+	\fill (N) circle (0.05) node[above]{$N$} (S) circle (0.05) node[below]{$S$};
+	\node at (0.9*\radius,0.9*\radius) {$S^2$};
+	%Boegen
+	\def\firstangle{20}
+	\draw (N) to[out=180+\firstangle,in=180-\firstangle] node[left,pos=0.2]{$c$} (S);
+	\def\stepangle{10}
+	\foreach \i in {1,2,...,5}{
+		\draw (N) to[out=180 + \firstangle + \i * \stepangle,in=180-\firstangle - \i * \stepangle] (S);
+	}
+	\foreach \i in {0.1,0.2,...,0.9}{
+		\path (N) to[out=180+\firstangle,in=180-\firstangle] coordinate[pos=\i] (a) (S);
+		\path (N) to[out=180 + \firstangle + 5 * \stepangle,in=180-\firstangle - 5 * \stepangle] coordinate[pos=\i] (b) (S);
+		\draw[->] (a) -- (b);
+	}
+\end{tikzpicture}\end{center}
 
 %%% Local Variables: 
 %%% mode: latex
