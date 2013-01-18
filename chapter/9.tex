@@ -358,20 +358,20 @@ Es gilt:
 %% 
 
 \begin{emptythm}[Erinnerung]
-Für eine glatte Funktion $f$ auf $M$ gilt in kritischen Punkten $p$:
-\begin{align*}
-	H_f(v,v) = \difffrac[t=0]{^2}{t^2}f(\gamma(t))
-\end{align*}
-mit $\gamma(0) = p, \dot\gamma(0) = v$.
-Diese Eigenschaft verwenden wir in der folgenden Definition als Ausgangspunkt.
+  Für eine glatte Funktion $f$ auf $M$ gilt in kritischen Punkten $p$:
+  \begin{align*}
+    H_f(v,v) = \difffrac[t=0]{^2}{t^2}f(\gamma(t))
+  \end{align*}
+  mit $\gamma(0) = p, \dot\gamma(0) = v$.
+  Diese Eigenschaft verwenden wir in der folgenden Definition als Ausgangspunkt.
 \end{emptythm}
 
 \begin{Dfn}
-Es sei $Y$ ein Vektorfeld entlang einer nach Bogenlänge parametrisierte geod"atische Kurve $c$ und $c_s$ die von $Y$ erzeugte Variation. Die durch
-\begin{align*}
-	\calI(Y,Y) = \difffrac[s=0]{^2}{s^2} E(c_s)
-\end{align*}
-auf dem Vektorraum der Vektorfelder entlang $c$ definierte symmetrische Bilinearform hei"st die \CmMark{Indexform} von $c$.
+  Es sei $Y$ ein Vektorfeld entlang einer nach Bogenlänge parametrisierte geod"atische Kurve $c$ und $c_s$ die von $Y$ erzeugte Variation. Die durch
+  \begin{align*}
+    \calI(Y,Y) = \difffrac[s=0]{^2}{s^2} E(c_s)
+  \end{align*}
+  auf dem Vektorraum der Vektorfelder entlang $c$ definierte symmetrische Bilinearform hei"st die \CmMark{Indexform} von $c$.
 \end{Dfn}
 
 Sind $X,Y$ Vektorfelder entlang $c$, welche in den Endpunkten
@@ -396,13 +396,13 @@ Die Indexform um eine Geodätische $c$ ist genau dann ausgeartet, wenn ein in de
 
 % Definition 9.3
 \begin{Dfn}
-Ein Vektorfeld entlang einer Geodätischen $c$ heißt \CmMark{Jacobifeld}, wenn es die obige Differentialgleichung (*) erfüllt.
+  Ein Vektorfeld entlang einer Geodätischen $c$ heißt \CmMark{Jacobifeld}, wenn es die obige Differentialgleichung (*) erfüllt.
 \end{Dfn}
 
 % Lemma 9.4
 \begin{Lemma}\label{thm:lemma-9-4}
-Es sei $c \colon [0,1] \to M$ eine Geod"atische, $p = c(0)$.
-Dann existiert für alle $v,w \in \T_pM$ genau ein Jacobifeld $J$ entlang $c$ mit $J(0) = v, \ J'(0) = w$.
+  Es sei $c \colon [0,1] \to M$ eine Geod"atische, $p = c(0)$.
+  Dann existiert für alle $v,w \in \T_pM$ genau ein Jacobifeld $J$ entlang $c$ mit $J(0) = v, \ J'(0) = w$.
 \end{Lemma}
 
 \begin{bew}
@@ -426,31 +426,31 @@ Dann existiert für alle $v,w \in \T_pM$ genau ein Jacobifeld $J$ entlang $c$ mi
 \end{bew}
 
 \begin{bsp}[Jacobifelder des $\R^n$]
-Die Geodätischen des $\R^n$ sind genau die Geraden.
-Ein Vektorfeld $Y$ entlang einer Geraden ist genau dann ein Jacobifeld, wenn $Y'' = 0$ gilt; jedes solche ist der Form $Y(t) = v + tw$.
-\begin{center}\begin{tikzpicture}
-%	\tikzgitter{(-5,-5)}{(5,5)}
-	
-	\coordinate (0) at (0,0); \fill (0) circle(0.05);
-	\def\baseangle{20}
-	\def\betweenangle{20}
-	\def\claenge{5}
-	\def\pfeillaenge{1.5}
-	\def\strichlaenge{4.5}
-	
-	\draw (0) --node[below right,pos=0.85]{$c$} ++(\baseangle:\claenge);
-	\draw[->] (0) --node[above left]{$w$} ++(\baseangle+\betweenangle:\pfeillaenge);
-	\draw[dashed] ($(0)+(\baseangle+\betweenangle:\pfeillaenge)$) -- ++(\baseangle+\betweenangle:\strichlaenge-\pfeillaenge);
-	
-	\def\schritt{0.125}
-	\foreach \i in {0.125,0.25,...,0.75}{
-		\path (0) --coordinate[pos=\i] (pkt) ++(\baseangle:\claenge);
-		\path[name path=w] (0) -- ++(\baseangle+\betweenangle:1*\strichlaenge);
-		\path[name path=vec] (pkt) -- ++(\baseangle+90:3);
-		\path[name intersections={of=w and vec}];
-		\draw[->] (pkt) -- (intersection-1);
-	}
-\end{tikzpicture}\end{center}
+  Die Geodätischen des $\R^n$ sind genau die Geraden.
+  Ein Vektorfeld $Y$ entlang einer Geraden ist genau dann ein Jacobifeld, wenn $Y'' = 0$ gilt; jedes solche ist der Form $Y(t) = v + tw$.
+  \begin{center}\begin{tikzpicture}
+      %	\tikzgitter{(-5,-5)}{(5,5)}
+      
+      \coordinate (0) at (0,0); \fill (0) circle(0.05);
+      \def\baseangle{20}
+      \def\betweenangle{20}
+      \def\claenge{5}
+      \def\pfeillaenge{1.5}
+      \def\strichlaenge{4.5}
+      
+      \draw (0) --node[below right,pos=0.85]{$c$} ++(\baseangle:\claenge);
+      \draw[->] (0) --node[above left]{$w$} ++(\baseangle+\betweenangle:\pfeillaenge);
+      \draw[dashed] ($(0)+(\baseangle+\betweenangle:\pfeillaenge)$) -- ++(\baseangle+\betweenangle:\strichlaenge-\pfeillaenge);
+      
+      \def\schritt{0.125}
+      \foreach \i in {0.125,0.25,...,0.75}{
+        \path (0) --coordinate[pos=\i] (pkt) ++(\baseangle:\claenge);
+        \path[name path=w] (0) -- ++(\baseangle+\betweenangle:1*\strichlaenge);
+        \path[name path=vec] (pkt) -- ++(\baseangle+90:3);
+        \path[name intersections={of=w and vec}];
+        \draw[->] (pkt) -- (intersection-1);
+      }
+    \end{tikzpicture}\end{center}
 \end{bsp}
 
 Sind die Startwerte eines Jacobifeldes tangential an $c$, etwa $J(0) =
@@ -466,7 +466,7 @@ denn
 Zu $c$ tangentiale Jacobifelder tragen keine geometrischen Informationen; vgl. zweite Ableitung des Längenfunktionals.
 Gilt für die Startwerte eines Jacobifeldes $J(0)$ und $J'(0) = \dot c(0)^{\perp}$
 \begin{align*}
-	\left<J',\dot c\right>' = \left<J'',\dot c\right> + \left<J', \nabla_t\dot c\right> = - \left<R(J,\dot c)\dot c,\dot c\right> = 0,
+  \left<J',\dot c\right>' = \left<J'',\dot c\right> + \left<J', \nabla_t\dot c\right> = - \left<R(J,\dot c)\dot c,\dot c\right> = 0,
 \end{align*}
 also $J'(t) \perp \dot c(t)$ für alle Zeiten $t$ und $\left<J,\dot c\right>' = \left<J',\dot c\right> = 0$, somit $J(t) \perp \dot c(t)$ für alle $t$.
 
@@ -474,9 +474,9 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
 
 % Satz 9.5
 \begin{Satz}
-Es sei $c \colon [0,1] \to M$ eine Geodätische und $c_s$ eine Variation von $c$, so dass alle Kurven $c_s$ Geodätische sind.
-Dann ist das zugehörige Variationsfeld ein Jacobifeld entlang $c$.
-Jedes Jacobifeld in von dieser Gestalt.
+  Es sei $c \colon [0,1] \to M$ eine Geodätische und $c_s$ eine Variation von $c$, so dass alle Kurven $c_s$ Geodätische sind.
+  Dann ist das zugehörige Variationsfeld ein Jacobifeld entlang $c$.
+  Jedes Jacobifeld in von dieser Gestalt.
 \end{Satz}
 
 \begin{bew}
@@ -516,31 +516,31 @@ Jedes Jacobifeld in von dieser Gestalt.
 \end{bew}
 
 \begin{emptythm}[Erinnerung (Korollar \ref{thm:kor-8-12} \ref{thm:kor-8-12-iii})]
-Die zusammengesetzte Kurve oben ist k"urzer als die durchgezogene Kurve unten.
-\begin{center}\begin{tikzpicture}[font=\scriptsize,scale=0.8]
-	%\tikzgitter{(-5,-5)}{(5,5)}
-	
-	\coordinate (p) at (-3,-2); \coordinate (ende) at (3,3);
-	\coordinate (ctrlp1) at (2,0.25); \coordinate (ctrlende) at (-0.5,-3); \coordinate (ctrlende) at (-0.5,-2.75);
-	\fill (p) circle(0.05)node[below]{$p$};
-	
-	% Zeichen die Kurve und definiere den Punkt q auf der Kurve
-	\draw (p) ..controls($(p) + (ctrlp1)$) and ($(ende) + (ctrlende)$)..node[below right]{$c$} coordinate[pos=0.8] (q) coordinate[pos=0.95] (d) (ende);
-	\fill (q) circle(0.05)node[below right]{$q$};
-	
-	\coordinate (ctrlp2) at (1,2.5); \coordinate (ctrlq) at (-1.5,0);
-	\draw (p) ..controls($(p) + (ctrlp2)$) and ($(q) + (ctrlq)$)..node[above left]{$\overline c$} coordinate[pos=0.75] (e) (q);
-	
-	\fill (d) circle(0.05) (e) circle(0.05);
-	
-	\draw (e) ..controls(2,1.5) and (2.5,2).. (d);
-\end{tikzpicture}\end{center}
+  Die zusammengesetzte Kurve oben ist k"urzer als die durchgezogene Kurve unten.
+  \begin{center}\begin{tikzpicture}[font=\scriptsize,scale=0.8]
+      % \tikzgitter{(-5,-5)}{(5,5)}
+      
+      \coordinate (p) at (-3,-2); \coordinate (ende) at (3,3);
+      \coordinate (ctrlp1) at (2,0.25); \coordinate (ctrlende) at (-0.5,-3); \coordinate (ctrlende) at (-0.5,-2.75);
+      \fill (p) circle(0.05)node[below]{$p$};
+      
+      % Zeichen die Kurve und definiere den Punkt q auf der Kurve
+      \draw (p) ..controls($(p) + (ctrlp1)$) and ($(ende) + (ctrlende)$)..node[below right]{$c$} coordinate[pos=0.8] (q) coordinate[pos=0.95] (d) (ende);
+      \fill (q) circle(0.05)node[below right]{$q$};
+      
+      \coordinate (ctrlp2) at (1,2.5); \coordinate (ctrlq) at (-1.5,0);
+      \draw (p) ..controls($(p) + (ctrlp2)$) and ($(q) + (ctrlq)$)..node[above left]{$\overline c$} coordinate[pos=0.75] (e) (q);
+      
+      \fill (d) circle(0.05) (e) circle(0.05);
+      
+      \draw (e) ..controls(2,1.5) and (2.5,2).. (d);
+    \end{tikzpicture}\end{center}
 \end{emptythm}
 
 % Definition 9.6
 \begin{Dfn}
-Ein Punkt $p \in M$ heißt zu $q$ \CmMark{konjugiert}, wenn $q$ ein singulärer Wert von $\exp_p$ ist.
-$p$ heißt \CmMark[konjugiert!entlang einer Geodätischen]{konjugiert zu $\bm{q}$ entlang der Geodätischen $\bm{c}$}, wenn $\exp_{p*\dot c(0)}$ singulär ist, das hei"st $\Kern \exp_{p*\dot c(0)} \neq \{0\}$.
+  Ein Punkt $p \in M$ heißt zu $q$ \CmMark{konjugiert}, wenn $q$ ein singulärer Wert von $\exp_p$ ist.
+  $p$ heißt \CmMark[konjugiert!entlang einer Geodätischen]{konjugiert zu $\bm{q}$ entlang der Geodätischen $\bm{c}$}, wenn $\exp_{p*\dot c(0)}$ singulär ist, das hei"st $\Kern \exp_{p*\dot c(0)} \neq \{0\}$.
 \end{Dfn}
 
 % Proposition 9.7
@@ -551,36 +551,135 @@ $p$ heißt \CmMark[konjugiert!entlang einer Geodätischen]{konjugiert zu $\bm{q}
 \end{Prop}
 
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
-	% Kreis
-	\def\radius{3}
-	\draw (0,0) circle (\radius);
-	% Ellipse
-	\def\kleinradius{0.75}
-	\begin{scope}
-		\clip (-\radius,0) rectangle (\radius,1);
-		\draw[dashed] (0,0) ellipse[x radius=\radius,y radius=\kleinradius];
-	\end{scope}
-	\begin{scope}
-		\clip (-\radius,0) rectangle (\radius,-1);
-		\draw (0,0) ellipse[x radius=\radius,y radius=\kleinradius];
-	\end{scope}
-	%Beschriftungen
-	\coordinate (N) at (0,\radius); \coordinate (S) at (0,-\radius);
-	\fill (N) circle (0.05) node[above]{$N$} (S) circle (0.05) node[below]{$S$};
-	\node at (0.9*\radius,0.9*\radius) {$S^2$};
-	%Boegen
-	\def\firstangle{20}
-	\draw (N) to[out=180+\firstangle,in=180-\firstangle] node[left,pos=0.2]{$c$} (S);
-	\def\stepangle{10}
-	\foreach \i in {1,2,...,5}{
-		\draw (N) to[out=180 + \firstangle + \i * \stepangle,in=180-\firstangle - \i * \stepangle] (S);
-	}
-	\foreach \i in {0.1,0.2,...,0.9}{
-		\path (N) to[out=180+\firstangle,in=180-\firstangle] coordinate[pos=\i] (a) (S);
-		\path (N) to[out=180 + \firstangle + 5 * \stepangle,in=180-\firstangle - 5 * \stepangle] coordinate[pos=\i] (b) (S);
-		\draw[->] (a) -- (b);
-	}
-\end{tikzpicture}\end{center}
+    % Kreis
+    \def\radius{3}
+    \draw (0,0) circle (\radius);
+    % Ellipse
+    \def\kleinradius{0.75}
+    \begin{scope}
+      \clip (-\radius,0) rectangle (\radius,1);
+      \draw[dashed] (0,0) ellipse[x radius=\radius,y radius=\kleinradius];
+    \end{scope}
+    \begin{scope}
+      \clip (-\radius,0) rectangle (\radius,-1);
+      \draw (0,0) ellipse[x radius=\radius,y radius=\kleinradius];
+    \end{scope}
+    % Beschriftungen
+    \coordinate (N) at (0,\radius); \coordinate (S) at (0,-\radius);
+    \fill (N) circle (0.05) node[above]{$N$} (S) circle (0.05) node[below]{$S$};
+    \node at (0.9*\radius,0.9*\radius) {$S^2$};
+    % Boegen
+    \def\firstangle{20}
+    \draw (N) to[out=180+\firstangle,in=180-\firstangle] node[left,pos=0.2]{$c$} (S);
+    \def\stepangle{10}
+    \foreach \i in {1,2,...,5}{
+      \draw (N) to[out=180 + \firstangle + \i * \stepangle,in=180-\firstangle - \i * \stepangle] (S);
+    }
+    \foreach \i in {0.1,0.2,...,0.9}{
+      \path (N) to[out=180+\firstangle,in=180-\firstangle] coordinate[pos=\i] (a) (S);
+      \path (N) to[out=180 + \firstangle + 5 * \stepangle,in=180-\firstangle - 5 * \stepangle] coordinate[pos=\i] (b) (S);
+      \draw[->] (a) -- (b);
+    }
+  \end{tikzpicture}\end{center}
+
+
+%%
+%% Vorlesung <2013-1-18 Fri>
+%% 
+
+\textcolor{red}{erster Teil der Vorlesung leider verpasst.}
+
+
+% Lemma 9.10
+\begin{lemma}\label{thm:lemma-9-10}
+  Es sei $c \colon [0,1] \to M$ eine Geodätische, $v = \dot c(0) \in
+  \T_{p}M$ und $\psi$ stückweise glatte Kurve in $\T_pM$ mit $\psi() =
+  0$ und $\psi(1) = v$.
+  \begin{align*}
+    \mathcal L(\exp_p \circ \psi) \geq \mathcal L(c),
+  \end{align*}
+  wobei Gleichheit genau dann gilt, wenn $\psi$ eine monotone
+  Reparametrisierung von $t \mapsto tv$ ist.
+\end{lemma}
+
+\begin{bew}
+  Es seien $\rho$ und $\theta$ glatt, so dass $\psi = \rho \theta$ mit
+  $\|\theta\| \equiv 1$ (Polarkoordinaten).
+  \begin{align*}
+    \|(\exp_p \circ \psi)'\|^2 = \|\exp_{p*}
+  \end{align*}
+
+  \textcolor{red}{hier fehlt etwas, was ich nicht mehr lesen konnte.}
+
+  Damit folgt:
+  \begin{align*}
+    \mathcal L(\exp_p \circ \psi) \geq \int_0^1 |\acute{\rho}| \geq
+    |\rho(1) - \rho(0)| = \|v\| = \mathcal L(c).
+  \end{align*}
+  Gleichheit genau dann, wenn $\theta$ konstant und $\rho$ monoton ist.
+\end{bew}
+
+\begin{bew}[von Satz 9.8]
+  \begin{enumerate}[label=ad (\roman*)]
+  \item Es sei $c \colon [0,1] \to M$ Geodätische $p = c(0), q = c(1)$
+    und es existiere keine zu $p$ konjugierte entlang $c$.
+
+    Es bezeichne $\phi \colon [0,1] \to \T_pM, \phi(t) = tv$. Für jedes $t
+    \in [0,1]$ ist nach Voraussetzung $\exp_{p*\phi(t)}$ regulär, also eine
+    lokaler Diffeomorphismus.
+
+    Es sei $\{W_i\}$ eine endliche offene Überdeckung von $\phi([0,1])$, so
+    dass $\exp_p|_{W_i} \colon W_i \to \exp_p(W_i) = U_i$ ein
+    Diffeomorphismus ist.
+
+    \begin{center}
+      \textcolor{red}{Abbildung: offene Überdeckung ($\epsilon$-Schlauch)}
+    \end{center}
+
+    Ziel: Lifte Variationen von $M$ nach $\T_pM$.
+
+    Es sei $t_i$ eine Partition von $[0,1]$, so dass $\phi([t_{i-1},t_i]
+    \subset W_i$. Ist $c_j$ eine Variation von $c$, so kann $\epsilon$
+    so gewählt werden, dass
+    \begin{align*}
+      c_s \colon [t_{i-1},t_i]\X(-\epsilon,\epsilon) \to U_i = \exp_p(W_i)
+    \end{align*}
+    gilt.
+
+    Dies definiert eine Variation $\psi_s$ von $\phi$ wie folgt: Is
+    t$\psi_s$ bis $t_{i-1}$ definiert und gilt $\psi_s(t_{i-1}) \in W_i$,
+    so setzt man $\psi_s(t) = \exp_p|_{W_i}^{-1}(c_s(t))$.
+
+    Nach Lemma \ref{thm:lemma-9-10} gilt also
+    \begin{align*}
+      \mathcal L(\exp_p\circ \psi_s) = \mathcal L(c_s) \geq \mathcal L(c)
+    \end{align*}
+    für alle $s$. Mit der Cauchy-Schwarz Ungleichung folgt:
+    \begin{align*}
+      E(c_s) \geq \frac{1}{2} \mathcal L(c_s)^2 \geq \frac{1}{2} \mathcal
+      L(c)^2 = E(c)
+    \end{align*}
+  \item Es sei $c(t_0)$ entlang $c$ zu $p = c(0)$ konjugiert.
+
+    Behauptung: Dann existiert ein zu $c$ orthogonales Vektorfeld $Y$
+    entlang der Geodätischen $c$ mit $Y(0) = 0$, $Y(1) = 0$ und
+    $\calI(Y,Y) = 0$.
+
+Dann gilt für die zugehärige eigentliche Variation $c_s$ von $c$:
+\begin{align*}
+  \difffrac[s=0]{}{s}\mathcal L(c_s) = \lambda
+  \difffrac[s=0]{}{s}E(c_s) = 0
+\end{align*}
+und, da $Y$ normal ist,
+\begin{align*}
+  \difffrac[s=0]{^2}{s^2}\mathcal L(c_s) = \difffrac[s=0]{^2}{s^2}
+  E(c_s) = \calI(Y,Y) < 0
+\end{align*}
+Somit ist $c$ lokales Maximum.
+
+
+  \end{enumerate}
+\end{bew}
 
 %%% Local Variables: 
 %%% mode: latex
