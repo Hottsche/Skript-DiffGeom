@@ -473,10 +473,10 @@ also $J'(t) \perp \dot c(t)$ für alle Zeiten $t$ und $\left<J,\dot c\right>' = 
 Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dimension $2 \dim(M)$ und die zu $c$ normalen Jacobifelder bilden einen Vektorraum der Dimension $2 \dim(M) - 2$.
 
 % Satz 9.5
-\begin{Satz}
+\begin{Satz}\label{satz-9-5}
   Es sei $c \colon [0,1] \to M$ eine Geodätische und $c_s$ eine Variation von $c$, so dass alle Kurven $c_s$ Geodätische sind.
   Dann ist das zugehörige Variationsfeld ein Jacobifeld entlang $c$.
-  Jedes Jacobifeld in von dieser Gestalt.
+  Jedes Jacobifeld ist von dieser Gestalt.
 \end{Satz}
 
 \begin{bew}
@@ -496,7 +496,6 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
     c_s(t) = \exp_{\gamma(s)}(t(V(s) + sW(s)))
   \end{align*}
   eine Variation von $c$ und alle Kurven $c_s$ sind Geodätische.
-
   Das zugehörige Variationsfeld $Y = \difffrac[s=0]{}{s} c_s$ ist nach
   dem oben Bewiesenen ein Jacobifeld. Es gilt
   \begin{align*}
@@ -512,7 +511,7 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
     & = V'(0) + W(0) + 0W'(0)\\
     & = W(0) = J'(0)
   \end{align*}
-  Nach Lemma \ref{thm:lemma-9-4} stimmen $J$ und $V$ überein.
+  Nach Lemma \ref{thm:lemma-9-4} stimmen $J$ und $Y$ überein.
 \end{bew}
 
 \begin{emptythm}[Erinnerung (Korollar \ref{thm:kor-8-12} \ref{thm:kor-8-12-iii})]
@@ -587,99 +586,143 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
 %% Vorlesung <2013-1-18 Fri>
 %% 
 
-\textcolor{red}{erster Teil der Vorlesung leider verpasst.}
+\begin{bew}
+Nach Satz \ref{satz-9-5} ist jedes Jacobifeld $\calJ$ entlang $c$ mit $\calJ(0) = 0$ von der Gestalt $\calJ(t) = \difffrac[s=0]{}{s} \exp_p(t(\dot c(0) + s\calJ'(0))$, oder allgemein $\difffrac[s=0]{}{s} \exp_{\gamma(s)} (t(V(s) + sW(s)))$.
+Es gilt dann
+\begin{align*}
+	\calJ(1) = \difffrac[s=0]{}{s} \exp_p (\dot c(0) + s \calJ'(0)) = \exp_{p*\dot{c}(0)} (\calJ'(0))
+\end{align*}
+Damit existiert genau dann ein nichttriviales Jacobifeld $\calJ$ entlang $c$ mit $\calJ(0) = 0$, $\calJ(1) = 0$, wenn $\Kern \exp_{p*\dot{c}(0)} \ne \{0\}$.
+\end{bew}
 
+\begin{bem}\begin{enumerate}[label=\arabic*),leftmargin=*]
+\item
+	Der Raum der nichttrivialen Jacobifelder mit verschwindenden Endpunkten entlang $c$ hat genau die Dimension $\ddim \Kern \exp_{p*\dot{c}(0)}$.
+\item
+	Ist $p$ konjugiert zu $q$, so ist $q$ konjugiert zu $p$.
+\item
+	F"ur jedes Jacobifeld $\calJ$ entlang $c$ mit $\calJ(0) = 0 = \calJ(1)$ gilt $\langle \calJ, \dot c \rangle = \langle \calJ', \dot c \rangle = 0$, denn
+	\begin{align*}
+		\langle \calJ', \dot c \rangle' = \langle \calJ'', \dot c \rangle = - \langle R(\calJ, \dot c) \dot c, \dot c \rangle = 0,
+	\end{align*}
+	also ist $\langle \calJ', \dot c \rangle = \langle \calJ, \dot c \rangle'$ konstant. Ferner gilt $\langle \calJ(0), \dot c (0) \rangle = 0 = \langle \calJ(1), \dot c(1) \rangle$, also ist $\langle \calJ, \dot c \rangle \equiv 0$.
+\item
+	Sind $p$ und $q$ nicht entlang $c$ zueinander konjugiert, dann ist jedes Jacobifeld $\calJ$ entlang $c$ eindeutig durch $\calJ(0)$ und $\calJ(1)$ bestimmt, denn sind $\calJ$ und $\tilde\calJ$ Jacobifelder mit identischen Randwerten, so ist $\calJ - \tilde\calJ$ ein Jacobifeld welches in den Endpunkten verschwindet.
+\item
+	Zwei Punkte sind genau dann konjugiert entlang der Geod"atischen $c$, wenn eine eigentliche geod"atische Variation von $c$ existiert.
+\end{enumerate}\end{bem}
 
-% Lemma 9.10
-\begin{lemma}\label{thm:lemma-9-10}
-  Es sei $c \colon [0,1] \to M$ eine Geodätische, $v = \dot c(0) \in
-  \T_{p}M$ und $\psi$ stückweise glatte Kurve in $\T_pM$ mit $\psi() =
-  0$ und $\psi(1) = v$.
-  \begin{align*}
-    \mathcal L(\exp_p \circ \psi) \geq \mathcal L(c),
-  \end{align*}
-  wobei Gleichheit genau dann gilt, wenn $\psi$ eine monotone
-  Reparametrisierung von $t \mapsto tv$ ist.
-\end{lemma}
+\begin{Satz}\label{satz-9-8}
+Es seien $p, q \in M$ und sei $c: [0,1] \to M$ eine Geod"atische von $p$ nach $q$.\begin{enumerate}[label=(\roman*),widest=ii]
+\item
+	Ist entlang $c$ kein Punkt zu $p$ konjugiert, dann existiert eine Umgebung $U$ von $c$ in $\Omega_{pq}$, so dass $\calL(\tilde c) > \calL(c)$ und $E(\tilde c) \ge E(c)$ f"ur alle $\tilde c \in U$ gelten.
+\item
+	Falls ein $t_0 \in (0,1)$ existiert, so dass $p = c(0)$ zu $c(t_0)$ entlang $c$ konjugiert ist, so existiert eine eigentliche Variet"at $c_s$ von $c$ mit $\calL(c_s) < \calL(c)$ und $E(c_s) < E(c)$ f"ur hinreichend kleine $s$.
+\end{enumerate}\end{Satz}
+
+\begin{Lemma}[globales Gau"s Lemma]
+Es seien $v, w \in \T_pM$ und $c(t) = \exp_p(t \cdot v)$. Dann gilt
+\begin{align*}
+	\langle \exp_{p*tv}(v), \exp_{p*tv}(w) \rangle = \langle v, w \rangle.
+\end{align*}
+Insbesondere ist jede Geod"atische in $p$ orthogonal zu der Abstandssph"are
+\begin{align*}
+	S_r(p) = \{ q | d(p, q) = r \}.
+\end{align*}
+\end{Lemma}
 
 \begin{bew}
-  Es seien $\rho$ und $\theta$ glatt, so dass $\psi = \rho \theta$ mit
-  $\|\theta\| \equiv 1$ (Polarkoordinaten).
-  \begin{align*}
-    \|(\exp_p \circ \psi)'\|^2 = \|\exp_{p*}
-  \end{align*}
-
-  \textcolor{red}{hier fehlt etwas, was ich nicht mehr lesen konnte.}
-
-  Damit folgt:
-  \begin{align*}
-    \mathcal L(\exp_p \circ \psi) \geq \int_0^1 |\acute{\rho}| \geq
-    |\rho(1) - \rho(0)| = \|v\| = \mathcal L(c).
-  \end{align*}
-  Gleichheit genau dann, wenn $\theta$ konstant und $\rho$ monoton ist.
+$Y$ sei das durch die Startwerte $Y(0) = 0$ und $Y'(0) = \frac{w}{t}$ bestimmte Jacobifeld entlang $c$. Dann gilt:
+\begin{align*}
+	Y(t) &= \difffrac[s=0]{}{s} \exp_{\gamma(s)}(t(V(s) + sW(s))) & \gamma(0) = p, \dot\gamma(0) = Y(0) = 0\\
+	&= \difffrac[s=0]{}{s} \exp_p\left(t \left(v + s \frac{w}{t}\right)\right) & V(s) = V(0) = \dot c(0) = v\\
+	&= \exp_{p*tv}(w) & W(s) = \ldots = \frac{w}{t}
+\end{align*}
+Es sei $\frac{w}{t} = \lambda v + u$ mit $u \perp v$. Der zu $c$ tangentiale Anteil von $Y$ ist dann
+\begin{align*}
+	Y^T(s) = \lambda s \dot c (s),
+\end{align*}
+denn ${Y^T}{''} = 0$ und $R(Y^T, \dot c) \dot c = \lambda s R(\dot c, \dot c) \dot c = 0$.
+Also gilt $Y(t) = \lambda t \dot c(t) + Y^\perp(t)$, wobei $Y^\perp$ der zu $c$ orthogonale Anteil von $Y$ ist. Es folgt
+\begin{align*}
+	\langle \exp_{p*tv}(v), \exp_{p*tv}(w) \rangle &= \left\langle \difffrac{}{t} \smash{\underbrace{\exp_p(tv)}_{=c}}, Y(t) \right\rangle \vphantom{\underbrace{\difffrac{}{}}_{a}} \\
+	&= \langle \dot c(t), \lambda t \dot c(t) + Y^\perp(t) \rangle \\
+	&= \lambda t \|\dot c(t) \|^2 = \lambda t \|v\|^2 \\
+\end{align*}
+\begin{align*}
+	\langle v, w \rangle &= \langle v, t(\lambda v + w) \rangle = t \lambda \|v\|^2
+\end{align*}
 \end{bew}
 
-\begin{bew}[von Satz 9.8]
-  \begin{enumerate}[label=ad (\roman*)]
-  \item Es sei $c \colon [0,1] \to M$ Geodätische $p = c(0), q = c(1)$
-    und es existiere keine zu $p$ konjugierte entlang $c$.
-
-    Es bezeichne $\phi \colon [0,1] \to \T_pM, \phi(t) = tv$. Für jedes $t
-    \in [0,1]$ ist nach Voraussetzung $\exp_{p*\phi(t)}$ regulär, also eine
-    lokaler Diffeomorphismus.
-
-    Es sei $\{W_i\}$ eine endliche offene Überdeckung von $\phi([0,1])$, so
-    dass $\exp_p|_{W_i} \colon W_i \to \exp_p(W_i) = U_i$ ein
-    Diffeomorphismus ist.
-
-    \begin{center}
-      \textcolor{red}{Abbildung: offene Überdeckung ($\epsilon$-Schlauch)}
-    \end{center}
-
-    Ziel: Lifte Variationen von $M$ nach $\T_pM$.
-
-    Es sei $t_i$ eine Partition von $[0,1]$, so dass $\phi([t_{i-1},t_i]
-    \subset W_i$. Ist $c_j$ eine Variation von $c$, so kann $\epsilon$
-    so gewählt werden, dass
-    \begin{align*}
-      c_s \colon [t_{i-1},t_i]\X(-\epsilon,\epsilon) \to U_i = \exp_p(W_i)
-    \end{align*}
-    gilt.
-
-    Dies definiert eine Variation $\psi_s$ von $\phi$ wie folgt: Is
-    t$\psi_s$ bis $t_{i-1}$ definiert und gilt $\psi_s(t_{i-1}) \in W_i$,
-    so setzt man $\psi_s(t) = \exp_p|_{W_i}^{-1}(c_s(t))$.
-
-    Nach Lemma \ref{thm:lemma-9-10} gilt also
-    \begin{align*}
-      \mathcal L(\exp_p\circ \psi_s) = \mathcal L(c_s) \geq \mathcal L(c)
-    \end{align*}
-    für alle $s$. Mit der Cauchy-Schwarz Ungleichung folgt:
-    \begin{align*}
-      E(c_s) \geq \frac{1}{2} \mathcal L(c_s)^2 \geq \frac{1}{2} \mathcal
-      L(c)^2 = E(c)
-    \end{align*}
-  \item Es sei $c(t_0)$ entlang $c$ zu $p = c(0)$ konjugiert.
-
-    Behauptung: Dann existiert ein zu $c$ orthogonales Vektorfeld $Y$
-    entlang der Geodätischen $c$ mit $Y(0) = 0$, $Y(1) = 0$ und
-    $\calI(Y,Y) = 0$.
-
-Dann gilt für die zugehärige eigentliche Variation $c_s$ von $c$:
+% Lemma 9.10
+\begin{Lemma}\label{thm:lemma-9-10}
+Es sei $c \colon [0,1] \to M$ eine Geodätische, $v = \dot c(0) \in \T_{p}M$ und $\psi$ (stückweise) glatte Kurve in $\T_pM$ mit $\psi(0) = 0$ und $\psi(1) = v$, dann gilt
 \begin{align*}
-  \difffrac[s=0]{}{s}\mathcal L(c_s) = \lambda
-  \difffrac[s=0]{}{s}E(c_s) = 0
+	\mathcal L(\exp_p \circ \psi) \geq \mathcal L(c),
 \end{align*}
-und, da $Y$ normal ist,
+wobei Gleichheit genau dann gilt, wenn $\psi$ eine monotone Reparametrisierung von $t \mapsto tv$ ist.
+\end{Lemma}
+
+\begin{bew}
+Es seien $\rho$ und $\theta$ glatt, so dass $\psi = \rho \theta$ mit $\|\theta\| \equiv 1$ (Polarkoordinaten).
 \begin{align*}
-  \difffrac[s=0]{^2}{s^2}\mathcal L(c_s) = \difffrac[s=0]{^2}{s^2}
-  E(c_s) = \calI(Y,Y) < 0
+	\|(\exp_p \circ \psi)'\|^2 ={}& \|\exp_{p*\rho\theta} ( \rho' \theta + \rho \theta') \|^2 \\
+	={}& {\rho'}{^2} \underbrace{\langle \exp_{p*\rho\theta} (\theta), \exp_{p*\rho\theta} (\theta) \rangle}_{= \langle \theta, \theta \rangle = 1} \\
+	   & + 2\rho\rho' \underbrace{\langle \exp_{p*\rho\theta} (\theta), \exp_{p*\rho\theta} (\theta') \rangle}_{= \langle \theta, \theta' \rangle = \frac{1}{2} \|\theta\|^2{'} = 0} \\
+	   & + \rho^2 \langle \exp_{p*\rho\theta} (\theta'), \exp_{p*\rho\theta} (\theta') \rangle \\
+	={}& {\rho'}{^2} + \rho^2 \| \exp_{p*\psi}(\theta') \|^2
 \end{align*}
-Somit ist $c$ lokales Maximum.
-
-
-  \end{enumerate}
+Damit folgt
+\begin{align*}
+	\calL(\exp_p \circ \psi) \ge \int_0^1 | \rho' | \ge | \rho(1) - \rho(0) | = \|v\| = \calL(c)
+\end{align*}
+Gleichheit gilt genau dann, wenn $\theta$ konstant und $\rho$ monoton ist.
 \end{bew}
+
+\begin{bew}[von Satz \ref{satz-9-8}]\begin{enumerate}[label=(\roman*),leftmargin=*,widest=ii]
+\item
+	Es sei $c \colon [0,1] \to M$ eine Geodätische, seien $p = c(0)$ und $q = c(1)$ und es existieren keine zu $p$ konjugierten Punkte entlang $c$.
+	Es bezeichne $\phi \colon [0,1] \to \T_pM$ mit $\phi(t) = tv$. Für jedes $t \in [0,1]$ ist nach Voraussetzung $\exp_{p*\phi(t)}$ regulär, also eine lokaler Diffeomorphismus.
+	Es sei $\{W_i\}$ eine endliche offene Überdeckung von $\phi([0,1])$, so dass $\exp_p|_{W_i} \colon W_i \to \exp_p(W_i) = U_i$ ein Diffeomorphismus ist.
+	\begin{center}
+		\textcolor{red}{Abbildung: offene Überdeckung ($\epsilon$-Schlauch)}
+	\end{center}
+	\emph{Ziel:} Lifte Variationen von $M$ nach $\T_pM$.
+
+	Es sei $t_i$ eine Partition von $[0,1]$, so dass $\phi([t_{i-1},t_i]) \subseteq W_i$. Ist $c_s$ eine Variation von $c$, so kann $\epsilon > 0$ so gewählt werden, dass
+	\begin{align*}
+		c_s \colon [t_{i-1},t_i]\X(-\epsilon,\epsilon) \to U_i = \exp_p(W_i)
+	\end{align*}
+	gilt. Dies definiert eine Variation $\psi_s$ von $\phi$ wie folgt:
+	Ist $\psi_s$ bis $t_{i-1}$ definiert und gilt $\psi_s(t_{i-1}) \in W_i$, so setzt man $\psi_s(t) = \exp_p|_{W_i}^{-1}(c_s(t))$.
+	Nach Lemma \ref{thm:lemma-9-10} gilt also
+	\begin{align*}
+		\mathcal L(\exp_p\circ \psi_s) = \mathcal L(c_s) \geq \mathcal L(c)
+	\end{align*}
+	für alle $s$. Mit der Cauchy-Schwarz Ungleichung folgt dann:
+	\begin{align*}
+		E(c_s) \geq \frac{1}{2} \mathcal L(c_s)^2 \geq \frac{1}{2} \mathcal
+		L(c)^2 = E(c)
+	\end{align*}
+\item
+	Es sei $c(t_0)$ entlang $c$ zu $p = c(0)$ konjugiert.
+	
+	\begin{description}\item[Behauptung:] Dann existiert ein zu $c$ orthogonales Vektorfeld $Y$ entlang der Geodätischen $c$ mit $Y(0) = 0$, $Y(1) = 0$ und $\calI(Y,Y) = 0$.\end{description}
+	Dann gilt für die zugehärige eigentliche Variation $c_s$ von $c$:
+	\begin{align*}
+		\difffrac[s=0]{}{s}\mathcal L(c_s) = \lambda
+		\difffrac[s=0]{}{s}E(c_s) = 0
+	\end{align*}
+	und, da $Y$ normal ist,
+	\begin{align*}
+		\difffrac[s=0]{^2}{s^2}\mathcal L(c_s) = \difffrac[s=0]{^2}{s^2}
+		E(c_s) = \calI(Y,Y) < 0
+	\end{align*}
+	Somit ist $c$ lokales Maximum.
+	\begin{description}\item[Beweis der Behauptung:]
+		Es existiert ein nichttriviales (zu $c$ orthogonales) Jacobifeld $\calJ$ entlang $c|_{[0,t_0]}$ mit $\calJ(0) = 0$ und $\calJ(t_0) = 0$.
+	\end{description}
+\end{enumerate}\end{bew}
 
 %%% Local Variables: 
 %%% mode: latex
