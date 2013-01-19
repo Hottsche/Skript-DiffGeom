@@ -684,11 +684,39 @@ Gleichheit gilt genau dann, wenn $\theta$ konstant und $\rho$ monoton ist.
 	Es sei $c \colon [0,1] \to M$ eine Geodätische, seien $p = c(0)$ und $q = c(1)$ und es existieren keine zu $p$ konjugierten Punkte entlang $c$.
 	Es bezeichne $\phi \colon [0,1] \to \T_pM$ mit $\phi(t) = tv$. Für jedes $t \in [0,1]$ ist nach Voraussetzung $\exp_{p*\phi(t)}$ regulär, also eine lokaler Diffeomorphismus.
 	Es sei $\{W_i\}$ eine endliche offene Überdeckung von $\phi([0,1])$, so dass $\exp_p|_{W_i} \colon W_i \to \exp_p(W_i) = U_i$ ein Diffeomorphismus ist.
-	\begin{center}
-		\textcolor{red}{Abbildung: offene Überdeckung ($\epsilon$-Schlauch)}
-	\end{center}
+	
 	\emph{Ziel:} Lifte Variationen von $M$ nach $\T_pM$.
-
+	\begin{center}\begin{tikzpicture}[font=\scriptsize]
+		%\tikzgitter{(-5,-5)}{(5,5)}
+		
+		\coordinate (a) at (-2.5,-1); \coordinate (b) at (3,2.5); % Endpkte. der Kurve
+		\coordinate (ctrla) at (1,2); \coordinate (ctrlb) at (-2,-0.5); % Controls Punkte fuer die Kruemmung
+		\coordinate (c) at ($(a) + (ctrla)$); \coordinate (d) at ($(b) + (ctrlb)$); % die daraus entstehenden Tangentialvektoren
+		
+		\draw (a) ..controls(c) and (d).. coordinate[pos=0.6] (beschr) (b); % die Hauptkurve
+		\draw[->] (-0.5,2.5) node[left]{$c$} to[out=340,in=110] (beschr); % die Beschriftung
+		
+		\def\schlauchbreite{0.25cm}
+		\def\schlauchweite{0.25cm}
+		% Eckpunkte fuer den Schlauch, ueber- und unterhalb der Endpkte. und daneben
+		\coordinate (0) at ($(a)!\schlauchbreite!90:(c)$); \coordinate (1) at ($(b)!\schlauchbreite!270:(d)$); \coordinate (2) at ($(b)!-\schlauchweite!0:(d)$);
+		\coordinate (3) at ($(b)!\schlauchbreite!90:(d)$); \coordinate (4) at ($(a)!\schlauchbreite!270:(c)$); \coordinate (5) at ($(a)!-\schlauchweite!0:(c)$);
+		% diese Vektoren geben die Verschiebung gegenueber den Endpktn. an
+		\coordinate (shiftavert) at ($0.5*(0) - 0.5*(a)$); \coordinate (shiftbvert) at ($0.5*(1) - 0.5*(b)$);
+		\coordinate (shiftahor) at ($0.5*(5) - 0.5*(a)$); \coordinate (shiftbhor) at ($0.5*(2) - 0.5*(b)$);
+		%\draw[red] (0) circle(0.05) (1) circle(0.05) (2) circle(0.05) (3) circle(0.05) (4) circle(0.05) (5) circle(0.05);
+		% der Schlauch
+		\draw[dashed] (0) ..controls($(0) + (ctrla)$) and ($(1) + (ctrlb)$).. (1) ..controls($(1) + (shiftbhor)$) and ($(2) + (shiftbvert)$).. (2) ..controls($(2) - (shiftbvert)$) and ($(3) + (shiftbhor)$)..
+			(3) ..controls($(3) + (ctrlb)$) and ($(4) + (ctrla)$).. (4) ..controls($(4) + (shiftahor)$) and($(5) - (shiftavert)$).. (5) ..controls($(5) + (shiftavert)$) and($(0) + (shiftahor)$).. (0) -- cycle;
+		
+		\draw[->] (4.5,3.5) node[right]{$\epsilon$-Schlauch} to[out=180,in=45] (1);
+		
+		\foreach \i in {0, 0.2, ...,1}{ % Kreise entlang der Kurve
+			\path (a) ..controls(c) and (d).. coordinate[pos=\i] (p) (b);
+			\draw (p) circle(0.8);
+		}
+		\node at (1,0.75) {$U_i$};
+	\end{tikzpicture}\end{center}
 	Es sei $t_i$ eine Partition von $[0,1]$, so dass $\phi([t_{i-1},t_i]) \subseteq W_i$. Ist $c_s$ eine Variation von $c$, so kann $\epsilon > 0$ so gewählt werden, dass
 	\begin{align*}
 		c_s \colon [t_{i-1},t_i]\X(-\epsilon,\epsilon) \to U_i = \exp_p(W_i)
