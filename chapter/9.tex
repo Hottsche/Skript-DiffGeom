@@ -748,26 +748,19 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
     \end{align*}
     Somit ist $c$ lokales Maximum.
     \begin{description}\item[Beweis der Behauptung:]
-      Es existiert ein nichttriviales (zu $c$ orthogonales) Jacobifeld $\calJ$ entlang $c|_{[0,t_0]}$ mit $\calJ(0) = 0$ und $\calJ(t_0) = 0$
-    \end{description}
-
+      Es existiert ein nichttriviales (zu $c$ orthogonales) Jacobifeld $\calJ$ entlang $c|_{[0,t_0]}$ mit $\calJ(0) = 0$ und $\calJ(t_0) = 0$.
     %% 
     %% Vorlesung <2013-1-22 Tue>
     %% 
-
-    Erinnerung: Ist $c \in \Omega_{pq}$ eine Geodätische und $t_o \in (0,1)$, so dass $c(t_0)$ zu $p = c(0)$ entlang $c$ konjugiert ist, so existiert ein Vektorfeld $Y$ entlang $c$ mit $\calI(Y,Y) < 0$.
+    \emph{Erinnerung:} Ist $c \in \Omega_{pq}$ eine Geodätische und $t_o \in (0,1)$, so dass $c(t_0)$ zu $p = c(0)$ entlang $c$ konjugiert ist, so existiert ein Vektorfeld $Y$ entlang $c$ mit $\calI(Y,Y) < 0$.
 
     \begin{center}
       \textcolor{red}{Abbildung 1: Wdh: Sphäre}
     \end{center}
-
-    Nun zum Beweis der Existenz von $Y$.
-
-    Da $c(t_0)$ zu $p$ entlang $c$ konjugiert ist, existiert ein nichttriviales Jacobifeld $J$ entlang $c|_{[0,t_0]}$ mit $J(0) = 0, J(t_0) = 0$.
-    Es sei $X$ das entlang $c$ parallele Vektorfeld mit
-    \begin{align*}
-      X(t_0) = -J'(t_0)
-    \end{align*}
+	\begin{description}[font=\normalfont\itshape]
+    \item[Beweis der Existenz von $Y$:] Da $c(t_0)$ zu $p$ entlang $c$ konjugiert ist, existiert ein nichttriviales Jacobifeld $J$ entlang $c|_{[0,t_0]}$ mit $J(0) = 0, J(t_0) = 0$.
+    \end{description}
+    Es sei $X$ das entlang $c$ parallele Vektorfeld mit $X(t_0) = -J'(t_0)$
     (nach Lemma \ref{thm:lemma-9-4} ist $J'(t_0) \neq 0)$ und
     $\alpha\colon[0,1] \to \R$ mit $\alpha(0) = 0 = \alpha(1)$ und
     $\alpha(t_0) = 1$. Für $z = \alpha \cdot X$ und $\eta > 0$ sei
@@ -775,23 +768,24 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
       Y(t) =
       \begin{cases}
         J(t) + \eta \cdot Z(t) & \text{ für } 0 \leq t \leq t_0\\
-        \eta \cdot Z(t) & \text{ für } t_0 \leq t \leq 1
+        \eta \cdot Z(t) & \text{ für } t_0 < t \leq 1
       \end{cases}
     \end{align*}
-    $Y$ ist nun stückweise glatt, die Variantionsformel für $\mathcal L$ und $E$, bzw. die Indexform lassen sich aber ganz analog für stückweise glatte Vektorfelder bzw. Variationen formalisieren.
-    Es gilt, da $Y$ orthogonales zu $c$ ist, für die zu $Y$ gehörigen Variationen $c_s$:
+    $Y$ ist nun stückweise glatt, die Variantionsformeln für $\mathcal L$ und $E$, beziehungsweise die Indexform lassen sich aber ganz analog für stückweise glatte Vektorfelder beziehungsweise Variationen formalisieren.
+    Es gilt, da $Y$ orthogonal zu $c$ ist, für die zu $Y$ gehörigen Variationen $c_s$:
     \begin{align*}
-      J(X,Y) = & \difffrac[s=0]{^2}{s^2}E(c_s) =
-      \difffrac[s=0]{^2}{s^2} \mathcal L(c_s)\\
-      = & \int_0^1\|Y'\| - \left<R(Y,\dot c)\dot c,Y\right>\\
-      = & \int_0^{t_0}\left<J',J'\right> - \left<R(J,\dot c)\dot c,J\right>
-      + 2 \eta\int_0^{t_0} \left< J',Z'\right> - \left< R(J,\dot c)\dot c,Z\right>\\
-      & + \eta^2 \int_0^1 \left<Z',Z'\right> - \left<R(Z,\dot c)\dot c,Z\right>
+      J(Y,Y) = & \difffrac[s=0]{^2}{s^2}E(c_s) = \difffrac[s=0]{^2}{s^2} \mathcal L(c_s)\\
+      = &{} \int_0^1\|Y'\|^2 - \left<R(Y,\dot c)\dot c,Y\right>\\
+      = &{} \int_0^{t_0}\left<J',J'\right> - \left<R(J,\dot c)\dot c,J\right>\\ 
+	    &+ 2 \eta\int_0^{t_0} \left< J',Z'\right> - \left< R(J,\dot c)\dot c,Z\right>\\
+        & + \eta^2 \int_0^1 \left<Z',Z'\right> - \left<R(Z,\dot c)\dot c,Z\right>
     \end{align*}
     und mit 
     \begin{align*}
-      & \left<J',J'\right> = \left<J',J'\right> + \left<J'',J\right> = \left<J',J'\right> - \left<R(J,\dot c)\dot c,J\right>\\
-      & \left<J',Z\right>' = \left<J',Z'\right> + \left<J'',Z\right> = \left<J',Z'\right> - \left<R(J,\dot c) \dot c,Z\right>
+      \left<J',J\right>' &= \left<J',J'\right> + \left<J'',J\right> \\
+      	&= \left<J',J'\right> - \left<R(J,\dot c)\dot c,J\right>\\
+      \left<J',Z\right>' &= \left<J',Z'\right> + \left<J'',Z\right> \\
+      	&= \left<J',Z'\right> - \left<R(J,\dot c) \dot c,Z\right>
     \end{align*}
     folgt
     \begin{align*}
@@ -799,10 +793,11 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
       & = 0 + 2 \eta\left(\left<J'(t_0),Z(t_0) \right> - \left<J'(0),Z(0)\right>\right) + \eta^2 J(Z,Z)\\
       & = -2\eta \|J'(t_0)\|^2 + \eta^2J(Z,Z)
     \end{align*}
-    Für hinreichend kleines $\eta > 0$ ist damit $\calI(Y,Y) < 0$.
+    Für hinreichend kleines $\eta > 0$ ist damit $\calJ(Y,Y) < 0$.
+    \end{description}
   \end{enumerate}\end{bew}
 
-Betrachte die Sphäre vom Radius $r > 0$, $S^n_r \subset \R^{n+1}$:
+Betrachte die Sphäre vom Radius $r > 0$, $S^n_r \subseteq \R^{n+1}$:
 
 \begin{center}
   \textcolor{red}{Abbildung 2: Sphäre vom Radius $r$}
@@ -810,20 +805,18 @@ Betrachte die Sphäre vom Radius $r > 0$, $S^n_r \subset \R^{n+1}$:
 
 Als differenzierbare Mannigfaltigkeit ist $S^n_r$ diffeomorph zur Standardsphäre $S^n = S^n_1$, vermöge der Abbildung $p \mapsto \frac{1}{r}p$. Bezeichnet $\left<\cdot,\cdot\right>_r$, die von
 $\R^{n+1}$ auf $S^n_r$ induzierte Riemannsche Metrik, so sind $(S^n_r,\left<\cdot,\cdot\right>_r)$ und $(S^n,r^2\left<\cdot,\cdot\right>_1)$ isometrisch.
-
 Es folgt also $\diam(S^n_r,\left<\cdot,\cdot\right>_r) = \pi r = r \diam(S^n,\left<\cdot,\cdot\right>_1)$.
-
 Für die Schnittkrümmung einer von $v,w \in \T_pM$ aufgespannte Ebene
 \begin{align*}
   \sec_p^{S^n_r}(\{v,w\}) & =
   \frac{\left<R(v,w)w,r\right>_r}{\|v\|_r^2\|w\|_r^2-\left<v,w\right>_r}
-  & =
+  =
   \frac{r^2\left<R(v,w)w,v\right>_1}{r^4(\|v\|_1^2\|w\|_1^2-\left<v,w\right>_1)}\\
   & = \frac{1}{r^2} \sec_p^{S^n}(\{v,w\}) = \frac{1}{r^2}.
 \end{align*}
 Insbesondere gilt für die Ricci-Krümmung:
 \begin{align*}
-  \ric_p^{S_r^n}(v,v) & = \sum_i \left<R(e_i,\frac{v}{\|v\|_1})\frac{v}{\|v\|_1},e_i\right>\\
+  \ric_p^{S_r^n}(v,v) & = \sum_i \left<R\left(e_i,\frac{v}{\|v\|_1}\right)\frac{v}{\|v\|_1},e_i\right>\\
   & = \|v\|_1^2\sum_{i \geq 2}\sec_p^{S^n_r}(\{v,e_i\}) = \|v\|_1^2 \frac{1}{r^2}(n-1)\\
   & = (n-1)\frac{1}{r^2}\left<v,v\right>_1.
 \end{align*}
@@ -833,7 +826,7 @@ wobei $\{\frac{v}{\|v\|_1}, e_2, \ldots, e_n\}$ eine Orthonormalbasis ist.
 \begin{Satz}[Bonnet-Myers]
   Es sei $(M,g)$ eine vollständige $m$-dimensionale Riemannsche Mannigfaltigkeit mit 
   \begin{align*}
-    \ric_p \geq (n-1) \frac{1}{r^2} g
+    \ric_p \geq (m-1) \frac{1}{r^2} g
   \end{align*}
   für ein $r > 0$.
   Dann gilt
@@ -846,12 +839,12 @@ wobei $\{\frac{v}{\|v\|_1}, e_2, \ldots, e_n\}$ eine Orthonormalbasis ist.
 \begin{bew}
   Es sei $l < \diam(M,g)$.
   Dann existieren $p,q \in M$ mit $\d(p,q) = l$ und nach dem Satz von Hopf-Rinow eine minimale Geodätische $c\colon[0,l] \to M$ von $p$ nach $q$.
-  Für jedes Vektorfeld $Y$ entlang $c$, welches in den Endpunkten verschwinde, ist $J(Y,Y) \geq 0$.
+  Für jedes Vektorfeld $Y$ entlang $c$, welches in den Endpunkten verschwindet, ist $J(Y,Y) \geq 0$.
   Es sei $\dot c(0) = e_1, \ldots, e_m \in \T_pM$ eine Orthonormalbasis und $E_i$ die entlang $c$ parallelen Vektorfelder mit $E_i(0) = e_i$ für $i \leq m$.
   Für 
   \begin{align*}
-    Y_i(t) & = \sin(\frac{\pi}{l}t)E_i(t)\\
-    0 & \leq J(Y_i,Y_i) = -\int\limits_0^l\left<Y_i''+R(Y_i,\dot c)\dot c,Y_i\right>\\
+    Y_i(t) & = \sin \left(\frac{\pi}{l}t \right) E_i(t)\\
+    0  \leq J(Y_i,Y_i) &= -\int\limits_0^l\left<Y_i''+R(Y_i,\dot c)\dot c,Y_i\right>\\
     & = -\int\limits_0^l\left<-\frac{\pi^2}{l^2}\sin\left(\frac{\pi}{l}t\right)E_i(t) + \sin\left(\frac{\pi}{l}t\right)R(E_i,\dot c)\dot c|_t,\sin\left(\frac{\pi}{l}t\right)E_i(t)\right>\\
     & = \int\limits_0^l \sin^2\left(\frac{\pi}{l}t\right)\left(\frac{\pi^2}{l^2}-\left<R(E_i,\dot c)\dot c,E_i(t)\right>\right).
   \end{align*}
@@ -863,8 +856,8 @@ wobei $\{\frac{v}{\|v\|_1}, e_2, \ldots, e_n\}$ eine Orthonormalbasis ist.
 \end{bew}
 
 \begin{bem}
-  \begin{enumerate}[label=(\arabic*)]
-  \item Die Existenz einer uniformen positiven Krümmungs ist entprechend
+  \begin{enumerate}[label=(\arabic*),leftmargin=*]
+  \item Die Existenz einer uniformen positiven Krümmungsschranke ist entprechend
     \begin{align*}
       M = \{x \in \R^3 \mid x_1^2 + x_2^2 - x_3^2 = -1, x_3 > 0\}
     \end{align*}
@@ -875,7 +868,7 @@ wobei $\{\frac{v}{\|v\|_1}, e_2, \ldots, e_n\}$ eine Orthonormalbasis ist.
       \sec_x(M,g) = \frac{1}{\|x\|^4}
     \end{align*}
     also $\sec > 0$, aber $\sec_x \xrightarrow{\|x\|\to\infty}0$ und $M$ ist nicht kompakt.
-  \item Die Durchmesserschranke im Satz von Bonnet-Myers ist scharf in dem Sinne, dass falls $(M,g)$ vollständig Riemannsche Mannigfaltigkeit mit $\ric \geq (m-1)\frac{1}{r^2}$ ist und $\diam(M,g) = \pi r$ gilt, so folgt $(M,g)$ ist isometrisch zu $S^m_r$. (Cheng, 1975)
+  \item Die Durchmesserschranke im Satz von Bonnet-Myers ist scharf in dem Sinne, dass falls $(M,g)$ eine vollständige Riemannsche Mannigfaltigkeit mit $\ric \geq (m-1)\frac{1}{r^2}$ ist und $\diam(M,g) = \pi r$ gilt, so folgt $(M,g)$ ist isometrisch zu $S^m_r$. (Cheng, 1975 \cite{Cheng1975})
   \end{enumerate}
 \end{bem}
 
@@ -893,7 +886,7 @@ wobei $\{\frac{v}{\|v\|_1}, e_2, \ldots, e_n\}$ eine Orthonormalbasis ist.
 \begin{bem}
   \begin{enumerate}[label=(\arabic*)]
   \item Sind zwei glatte Wege homotop, so kann eine glatte Homotopie gewählt werden.
-    Die \CmMark{Fundamentalgruppe} $\pi_1(M,p)$ ist die Menge der Homotopieklassen von Wegen $c \in \Omega_{pp}$ bezüglich eigentlicher Homotopien mit der durch die Verkettung von Wegen induzierten Gruppenstruktur.
+    Die \CmMark{Fundamentalgruppe} $\pi_1(M,p)$ ist die Menge der Homotopieklassen von Wegen $c \in \Omega_{pq}$ bezüglich eigentlicher Homotopien mit der durch die Verkettung von Wegen induzierten Gruppenstruktur.
     \begin{center}
       \textcolor{red}{Abbildung: Wege und Fundamentalgruppen (Unterschlagung des Basispunktes)}
     \end{center}
