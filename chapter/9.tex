@@ -800,8 +800,37 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
 Betrachte die Sphäre vom Radius $r > 0$, $S^n_r \subseteq \R^{n+1}$:
 
 \begin{center}
-  \textcolor{red}{Abbildung 2: Sphäre vom Radius $r$}
-\end{center}
+\begin{tikzpicture}[font=\scriptsize]
+%	\tikzgitter{(-5,-5)}{(5,5)}
+	\def\radius{3}
+	\def\kradius{1.25}
+	
+	\draw (0,0) circle(\kradius) (0,0) circle(\radius);
+	\def\fraction{0.5}
+	\begin{scope}
+		\clip (-\radius,0) rectangle (\radius,\radius);
+		\draw[dashed] (0,0) ellipse[x radius=\radius,y radius = \fraction*\radius] (0,0) ellipse[x radius=\kradius,y radius = \fraction];
+	\end{scope}\begin{scope}
+		\clip (-\radius,0) rectangle (\radius,-\radius);
+		\draw (0,0) ellipse[x radius=\radius,y radius = \fraction*\radius] (0,0) ellipse[x radius=\kradius,y radius = \fraction];
+	\end{scope}
+	
+	\coordinate (p) at (2.25,1.75);
+	\fill (p) circle(0.05) node[above left]{$p$};
+	\draw[->] (0,0) --coordinate[pos=0.4] (pkt) (p) coordinate[pos=0.9] (a) (p) --node[right]{$v$} coordinate[pos=0.1] (b) (1.5,-1.75);
+	\draw[dashed,name path=a] (0,0) -- (1.5,-1.75);
+	
+	\draw (a) edge[bend right=30] (b);
+	\fill ($(p) + 0.8*0.5*(a) + 0.8*0.5*(b) - 0.8*(p) $) circle(0.025);
+	
+	\coordinate (vec) at ($(1.5,-1.75) - (p)$);
+	
+	\path[name path=b] (pkt) -- ++(vec);
+	\path[name intersections={of=a and b}];
+	\draw[->] (pkt) -- (intersection-1);
+	
+	\node at (-1.25,1) {$S^n$}; \node at (-2,2.5) {$S_r^n$};
+\end{tikzpicture}\end{center}
 
 Als differenzierbare Mannigfaltigkeit ist $S^n_r$ diffeomorph zur Standardsphäre $S^n = S^n_1$, vermöge der Abbildung $p \mapsto \frac{1}{r}p$. Bezeichnet $\left<\cdot,\cdot\right>_r$, die von
 $\R^{n+1}$ auf $S^n_r$ induzierte Riemannsche Metrik, so sind $(S^n_r,\left<\cdot,\cdot\right>_r)$ und $(S^n,r^2\left<\cdot,\cdot\right>_1)$ isometrisch.
@@ -855,22 +884,46 @@ wobei $\{\frac{v}{\|v\|_1}, e_2, \ldots, e_n\}$ eine Orthonormalbasis ist.
   und somit $\frac{\pi^2}{l^2} - \frac{1}{r^2} \geq 0$, also $l \leq \pi r$.
 \end{bew}
 
-\begin{bem}
-  \begin{enumerate}[label=(\arabic*),leftmargin=*]
-  \item Die Existenz einer uniformen positiven Krümmungsschranke ist entprechend
-    \begin{align*}
-      M = \{x \in \R^3 \mid x_1^2 + x_2^2 - x_3^2 = -1, x_3 > 0\}
-    \end{align*}
-    \textcolor{red}{Abbildung 3: $M$}
-    Dies ist nicht $\mathbb H^2$.
-    Es gilt:
-    \begin{align*}
-      \sec_x(M,g) = \frac{1}{\|x\|^4}
-    \end{align*}
-    also $\sec > 0$, aber $\sec_x \xrightarrow{\|x\|\to\infty}0$ und $M$ ist nicht kompakt.
-  \item Die Durchmesserschranke im Satz von Bonnet-Myers ist scharf in dem Sinne, dass falls $(M,g)$ eine vollständige Riemannsche Mannigfaltigkeit mit $\ric \geq (m-1)\frac{1}{r^2}$ ist und $\diam(M,g) = \pi r$ gilt, so folgt $(M,g)$ ist isometrisch zu $S^m_r$. (Cheng, 1975 \cite{Cheng1975})
-  \end{enumerate}
-\end{bem}
+\begin{bem}\begin{enumerate}[label=(\arabic*),leftmargin=*]
+\item
+	Die Existenz einer uniformen positiven Krümmungsschranke ist entprechend
+	\begin{align*}
+		M = \{x \in \R^3 \mid x_1^2 + x_2^2 - x_3^2 = -1, x_3 > 0\}
+	\end{align*}
+	\begin{center}\begin{tikzpicture}
+		%\tikzgitter{(-3,-3)}{(3,3)}
+		\def\hor{1.5}
+		\def\vert{1}
+		\draw[dashed,thin] (-\hor,-\vert) -- (\hor,\vert) (-\hor,\vert) -- (\hor,-\vert);
+		
+		\def\abzug{0.1}
+		\draw (-\hor+\abzug,\vert) ..controls(-\hor+\abzug,\vert) and (-0.5,0.25).. coordinate[pos=0.3](a) coordinate[pos=0.6](b) (0,0.25) ..controls(0.5,0.25) and (\hor-\abzug,\vert).. coordinate[pos=0.4](c) coordinate[pos=0.7](d) (\hor-\abzug,\vert);
+		%\fill[red] (a) circle(0.05) (b) circle(0.05) (c) circle(0.05) (d) circle(0.05);
+		
+		\begin{scope}
+			\clip (a) rectangle ($(d)+(0,0.25)$);
+			\draw[dashed] let \p1=($0.5*(d)-0.5*(a)$) in ($0.5*(d) + 0.5*(a)$) ellipse[x radius={veclen(\x1,\y1)},y radius=0.125cm];
+		\end{scope}\begin{scope}
+			\clip (b) rectangle ($(c)+(0,0.25)$);
+			\draw[dashed] let \p1=($0.5*(c)-0.5*(b)$) in ($0.5*(c) + 0.5*(b)$) ellipse[x radius={veclen(\x1,\y1)},y radius=0.1cm];
+		\end{scope}\begin{scope}
+			\clip (a) rectangle ($(d)-(0,0.25)$);
+			\draw let \p1=($0.5*(d)-0.5*(a)$) in ($0.5*(d) + 0.5*(a)$) ellipse[x radius={veclen(\x1,\y1)},y radius=0.125cm];
+		\end{scope}\begin{scope}
+			\clip (b) rectangle ($(c)-(0,0.25)$);
+			\draw let \p1=($0.5*(c)-0.5*(b)$) in ($0.5*(c) + 0.5*(b)$) ellipse[x radius={veclen(\x1,\y1)},y radius=0.1cm];
+		\end{scope}
+	\end{tikzpicture}\\
+	Dies ist nicht $\mathbb H^2$
+	\end{center}
+	Es gilt:
+	\begin{align*}
+		\sec_x(M,g) = \frac{1}{\|x\|^4}
+	\end{align*}
+	also $\sec > 0$, aber $\sec_x \xrightarrow{\|x\|\to\infty}0$ und $M$ ist nicht kompakt.
+\item
+Die Durchmesserschranke im Satz von Bonnet-Myers ist scharf in dem Sinne, dass falls $(M,g)$ eine vollständige Riemannsche Mannigfaltigkeit mit $\ric \geq (m-1)\frac{1}{r^2}$ ist und $\diam(M,g) = \pi r$ gilt, so folgt $(M,g)$ ist isometrisch zu $S^m_r$. (Cheng, 1975 \cite{Cheng1975})
+\end{enumerate}\end{bem}
 
 \section{Exkurs: Überlagerungen, Fundamentalgruppe und Gruppenwirkungen}
 
@@ -883,17 +936,23 @@ wobei $\{\frac{v}{\|v\|_1}, e_2, \ldots, e_n\}$ eine Orthonormalbasis ist.
   Gilt $H(\cdot, 0) \equiv c_0(0) = c_1(0) = p$ und $H(\cdot,1) \equiv c_0(1) = c_1(1) = q$, so heißt $H$ eigentlich.
 \end{emptythm}
 
-\begin{bem}
-  \begin{enumerate}[label=(\arabic*)]
-  \item Sind zwei glatte Wege homotop, so kann eine glatte Homotopie gewählt werden.
-    Die \CmMark{Fundamentalgruppe} $\pi_1(M,p)$ ist die Menge der Homotopieklassen von Wegen $c \in \Omega_{pq}$ bezüglich eigentlicher Homotopien mit der durch die Verkettung von Wegen induzierten Gruppenstruktur.
-    \begin{center}
-      \textcolor{red}{Abbildung: Wege und Fundamentalgruppen (Unterschlagung des Basispunktes)}
-    \end{center}
-    Für eine zusammenhängende Mannigfaltigkeit sind $\pi_1(M,p)$ und $\pi_1(M,q)$ isomorph, schreibe $\pi_1(M)$.
-    Eine Mannigfaltigkeit heißt \CmMark{einfach zusammenhängend}, falls $M$ zusammenhängend ist und $\pi_1(M) = 0$ gilt.
-  \end{enumerate}
-\end{bem}
+\begin{bem}\begin{enumerate}[label=(\arabic*)]
+\item
+	Sind zwei glatte Wege homotop, so kann eine glatte Homotopie gewählt werden.
+	Die \CmMark{Fundamentalgruppe} $\pi_1(M,p)$ ist die Menge der Homotopieklassen von Wegen $c \in \Omega_{pq}$ bezüglich eigentlicher Homotopien mit der durch die Verkettung von Wegen induzierten Gruppenstruktur.
+	\begin{center}\begin{tikzpicture}[font=\scriptsize]
+%		\tikzgitter{(-4,-4)}{(4,4)}
+		\coordinate (p) at (0,0); \coordinate (q) at (-1,1.5);
+		
+		\draw (p)node[below]{$p$} ..controls(-0.25,0.75) and (-1,0.75)..node[sloped]{$<$} (q)node[below left]{$q$};
+		\fill (p) circle(0.05) (q) circle(0.05);
+		\draw (p) ..controls(-1.5,0.75) and (-1,-1.25).. node[pos=0.5,sloped]{$>$} node[above,pos=0.3]{$c_2$} (p);
+		\draw (p) ..controls(1.5,1.5) and (1.25,-1).. node[pos=0.5,sloped]{$>$} node[above,pos=0.3]{$c_1$} (p);
+		\draw (q) ..controls(-2.25,2.75) and (0.5,3).. (q);
+	\end{tikzpicture}	\end{center}
+	Für eine zusammenhängende Mannigfaltigkeit sind $\pi_1(M,p)$ und $\pi_1(M,q)$ isomorph, schreibe $\pi_1(M)$.
+	Eine Mannigfaltigkeit heißt \CmMark{einfach zusammenhängend}, falls $M$ zusammenhängend ist und $\pi_1(M) = 0$ gilt.
+\end{enumerate}\end{bem}
 
 %%% Local Variables: 
 %%% mode: latex
