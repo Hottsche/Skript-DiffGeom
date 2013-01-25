@@ -506,7 +506,7 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
   \begin{align*}
     Y'(0) & = \left.\nabla_t\difffrac[s=0]{}{s}c_s\right|_{t=0}\\
     & = \nabla_s\difffrac[t=0]{}{t}\left.\exp_{\gamma(s)}(t(V(s) +
-      sW(s))\right|_{s=0}\\
+      sW(s)))\right|_{s=0}\\
     & = \left.\nabla_s(V(s) + sW(s))\right|_{s=0}\\
     & = V'(0) + W(0) + 0W'(0)\\
     & = W(0) = J'(0)
@@ -936,23 +936,99 @@ Die Durchmesserschranke im Satz von Bonnet-Myers ist scharf in dem Sinne, dass f
   Gilt $H(\cdot, 0) \equiv c_0(0) = c_1(0) = p$ und $H(\cdot,1) \equiv c_0(1) = c_1(1) = q$, so heißt $H$ eigentlich.
 \end{emptythm}
 
-\begin{bem}\begin{enumerate}[label=(\arabic*)]
+\begin{bem}
+Sind zwei glatte Wege homotop, so kann eine glatte Homotopie gewählt werden.
+Die \CmMark{Fundamentalgruppe} $\pi_1(M,p)$ ist die Menge der Homotopieklassen von Wegen $c \in \Omega_{pq}$ bezüglich eigentlicher Homotopien mit der durch die Verkettung von Wegen induzierten Gruppenstruktur.
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+%	\tikzgitter{(-4,-4)}{(4,4)}
+	\coordinate (p) at (0,0); \coordinate (q) at (-1,1.5);
+	
+	\draw (p)node[below]{$p$} ..controls(-0.25,0.75) and (-1,0.75)..node[sloped]{$<$} (q)node[below left]{$q$};
+	\fill (p) circle(0.05) (q) circle(0.05);
+	\draw (p) ..controls(-1.5,0.75) and (-1,-1.25).. node[pos=0.5,sloped]{$>$} node[above,pos=0.3]{$c_2$} (p);
+	\draw (p) ..controls(1.5,1.5) and (1.25,-1).. node[pos=0.5,sloped]{$>$} node[above,pos=0.3]{$c_1$} (p);
+	\draw (q) ..controls(-2.25,2.75) and (0.5,3).. (q);
+\end{tikzpicture}	\end{center}
+Für eine zusammenhängende Mannigfaltigkeit sind $\pi_1(M,p)$ und $\pi_1(M,q)$ isomorph, schreibe $\pi_1(M)$.
+Eine Mannigfaltigkeit heißt \CmMark{einfach zusammenhängend}, falls $M$ zusammenhängend ist und $\pi_1(M) = 0$ gilt.
+\end{bem}
+
+Eine glatte Abbildung $\pi: \tilde M \to M$ hei"st \CmMark{\"Uberlagerung}, wenn f"ur alle $p \in M$ eine Umgebung $U$ existiert, so dass $\pi^{-1}(U) = \dot \bigcup U_i$ eine disjunkte Vereinigung offener Mengen $U_i$ ist und f"ur alle $U_i: \pi|_{U_i}: U_i \to U$ ein Diffeomorphismus ist.
+Sind $M$ und $\tilde M$ Riemannsch, so hei"st eine "Uberlagerung $\pi$ \CmMark[\"Uberlagerung!Riemannsche]{Riemannsche \"Uberlagerung}, falls $\pi$ eine lokale Isometrie ist.
+
+\begin{Prop}\label{prop-9-12}
+Es seien $M$ und $\tilde M$ zusammenh"angende Riemannsche Mannigfaltigkeiten, $\tilde M$ vollst"andig und $\pi: \tilde M \to M$ eine lokale Isometrie. Dann ist $\pi$ eine Riemannsche "Uberlagerung.
+\end{Prop}
+
+\begin{bew}
+F"ur $p \in M$ und $v \in \T_pM$ seien $\tilde p \in \pi^{-1}p)$, $\tilde v = \pi_{*p}^{-1}(v) \in \T_{\tilde p *}\tilde M$ und $\tilde c$ die Geod"atische von $\tilde M$ mit $\tilde c(0) = \tilde p$, $\dot{\tilde{c}}(0) = \tilde v$.
+Dann existiert $\tilde c$ f"ur alle Zeiten. Da $\pi$ eine lokale Isometrie ist, ist $c = \pi \circ \tilde c$ eine auf ganz $\R$ definierte Geod"atische von $M$ mit $c(0) = \pi(\tilde p) = p$ und $\tilde c(0) = \pi_{* \tilde p}(\tilde v) = v$.
+Nach dem Satz \ref{hopf-rinow} von Hopf-Rinow ist $M$ damit vollst"andig. Es sei $p = \pi(\tilde p)$ und sei $q \in M$.
+Dann existiert eine Geod"atische $c: [0,1] \to M$ von $p$ nach $q$. Es sei $\tilde c$ die Geod"atische in $\tilde M$ mit $\tilde c(0) = \tilde p$ und $\dot{\tilde{c}} = \pi_{*p}^{-1}(\dot c(0))$.
+Dann gilt $\pi \circ \tilde c = c$ und $\pi(\tilde c(1)) = c(1) = q$.
+Damit ist $\pi$ surjektiv. Betrachte nun das folgende Diagramm:
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+F"ur hinreichend kleines $\epsilon > 0$ ist $\exp$ ein Diffeomorphismus und das folgende Diagramm kommutiert.
+Damit ist $\pi_{\B_\epsilon(\tilde p)}$ ein Diffeomorphismus.
+W"aren f"ur $\tilde p_1$ und $\tilde p_2$ die $\epsilon$-B"alle nicht disjunkt und es existiere eine nichttriviale Geod"atische der L"ange $< 2 \epsilon$ von $\tilde p_1$ nach $\tilde p_2$ und damit eine Geod"atische von $p$ nach $p$ der L"ange $< 2 \epsilon$, also in $\B_\epsilon(p)$.
+Also sind $\B_\epsilon(\tilde p_1)$ und $\B_\epsilon(\tilde p_2)$ f"ur $\tilde p_1 \ne \tilde p_2$ disjunkt.
+\end{bew}
+
+\begin{Prop}
+Es seien $\tilde M$ und $M$ zusammenh"angenden Riemannsche Mannigfaltigkeiten und $\pi: \tilde M \to M$ eine Riemannsche "Uberlagerung . Dann ist $\tilde M$ genau dann vollst"andig, wenn $M$ vollst"andig ist.
+\end{Prop}
+
+\begin{bew}\begin{description}[font=\normalfont]
+\item[\quot{$\Rightarrow$}:]
+	Folgt nach Proposition \ref{prop-9-12}
+\item[\quot{$\Leftarrow$}:]
+	Es sei $M$ vollst"andig und $\tilde p_i$ eine Cauchy-Folge in $\tilde M$.
+	Dann ist $p_i = \pi(\tilde p_i)$ auch eine Cauchy-Folge, denn $\pi$ ist 1-Lipschitz, konvergiert also gegen $p \in M$.
+	Dann liegen fast alle $p_i$ in einer Umgebung $U$, so dass $\pi_{U_k}: U_k \to U$ eine Isometrie ist.
+	Sei $U_k$ so, dass fast alle $\tilde p_i$ in $U_k$ liegen.
+	Dann konvergiert $\tilde p_i$ gegen $\tilde p \in U_i$, mit $\tilde p \in \pi^{-1}(p)$.
+\end{description}\end{bew}
+
+F"ur jede zusammenh"angende Riemannsche Mannigfaltigkeit $M$ existiert eine bis auf Isometrie eindeutige einfachzusammenh"angende Riemannsche "Uberlagerung $\tilde M$.
+Betrachte die topologisch universelle "Uberlagerung $\tilde M$ von $M$.
+Zieht man die differenzierbare und geometrische Struktur von $M$ auf $\tilde M$ zurück, so wird $\tilde M$ zu einer Riemannschen Mannigfaltigkeit und die "Uberlagerungsabbildung zu einer Riemannschen "Uberlagerung,
+
+\emph{Problem:} Es ist nicht klar, warum $\tilde M$ eine abz"ahlbare Basis der Topologie hat.
+Es gibt dabei zwei Auswege, zum Einen kann man zeigen dass $\pi_1(M)$ abz"ahlbar ist (Diplomarbeit von M. Mermann), die andere M"oglichkeit ist in \quot{Foundations of Differential Geometry}, Band I, Appendix 2 \cite{kobayashi-nomizu1963foundations-diffgeo} beschrieben.
+
+Die Fundamentalgruppe $\pi_1(M)$ ist isomorph zur Gruppe der Decktransformationen:
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+Jede Decktransformation ist glatt, also ein Diffeomorphismus, und sogar eine Isometrie, da $\pi$ eine lokale Isometrie ist. Jedes Element von $\pi_1(M)$ induziert eine Isometrie von $\tilde M$.
+
+\section{Wirkung diskreter Gruppen}
+Es seien $\Gamma$ eine diskrete Gruppe und $X$ eine Menge.
+Eine \CmMark{Wirkung} von $\Gamma$ auf $X$, geschrieben $\Gamma \curvearrowright X$, ist ein Gruppenhomomorphismus $\rho: \Gamma \to \Sym(X)$, schreibe $\rho(\gamma)(x) = \gamma.x$, und insbesondere gilt $\gamma(\delta, x) = (\gamma \delta).x$ und $1_\Gamma.x = x$.
+Ist $\Gamma \curvearrowright$ eine Wirkung, so bezeichnet $\Gamma.x = \{\gamma.x | \gamma \in \Gamma\}$ die \CmMark{Bahn} oder den \CmMark{Orbit} von $x$ und $\Gamma_x = \{\gamma \in \Gamma | \gamma.x = x \}$ die \CmMark{Isotropieuntergruppe} von $\Gamma$ in $x$.
+Jede Wirkung induziert eine "Aquivalenzklassenrelation auf $X$:
+\begin{align*}
+	x \sim y \Leftrightarrow \exists \gamma \in \Gamma: \gamma.x = y \Leftrightarrow y \in \Gamma.x
+\end{align*}
+Die "Aquivalenzklasse $[x]_\sim$ ist also genau die Bahn durch $x$.
+Der Quotient $\FakRaum{X}{\Gamma} = \FakRaum{x}{\sim} = \bigcup \Gamma.x$ hei"st \CmMark{Bahnenraum} der Wirkung , die Abbildung $X \to \FakRaum{X}{\Gamma}, x \mapsto [x]_\sim$ die \CmMark[Projektion!kanoniche]{kanonische Projektion}.
+Eine Wirkung hei"st \CmMark[Wirkung!freie]{frei}, wenn f"ur alle $x \in X$ $\Gamma_x = \{ 1_\Gamma \}$ gilt.
+Es sei $M$ eine Riemannsche Mannigfaltigkeit und $\Gamma$ eine glatte oder isometrische Wirkung, das hei"st $\rho: \Gamma \to \Diff(M)$ oder $\rho: \Gamma \to \Iso(M)$.
+Eine solche Wirkung hei"st \CmMark[Wirkung!eigentlich diskontinuierliche]{eigentlich diskontinuierlich}, wenn f"ur jedes Kompaktum $K \subseteq M$ mit $\# \{ \gamma \in \Gamma | \gamma.K \cap K \ne \emptyset \} < \infty$; in diesem Fall ist $\FakRaum{\Gamma}{\Gamma}$ Hausdorffsch.
+Ist diese Wirkung zudem frei, so ist der Bahnenraum $\FakRaum{\Gamma}{\Gamma}$ in nat"urlicher Weise eine (Riemannsche) Mannigfaltigkeit und die kanonische Projektion $\pi: M \to \FakRaum{M}{\Gamma}$ eine Riemannsche "Uberlagerung.
+
+\begin{Bsp}\begin{enumerate}[label=\arabic*),leftmargin=*]
 \item
-	Sind zwei glatte Wege homotop, so kann eine glatte Homotopie gewählt werden.
-	Die \CmMark{Fundamentalgruppe} $\pi_1(M,p)$ ist die Menge der Homotopieklassen von Wegen $c \in \Omega_{pq}$ bezüglich eigentlicher Homotopien mit der durch die Verkettung von Wegen induzierten Gruppenstruktur.
-	\begin{center}\begin{tikzpicture}[font=\scriptsize]
-%		\tikzgitter{(-4,-4)}{(4,4)}
-		\coordinate (p) at (0,0); \coordinate (q) at (-1,1.5);
-		
-		\draw (p)node[below]{$p$} ..controls(-0.25,0.75) and (-1,0.75)..node[sloped]{$<$} (q)node[below left]{$q$};
-		\fill (p) circle(0.05) (q) circle(0.05);
-		\draw (p) ..controls(-1.5,0.75) and (-1,-1.25).. node[pos=0.5,sloped]{$>$} node[above,pos=0.3]{$c_2$} (p);
-		\draw (p) ..controls(1.5,1.5) and (1.25,-1).. node[pos=0.5,sloped]{$>$} node[above,pos=0.3]{$c_1$} (p);
-		\draw (q) ..controls(-2.25,2.75) and (0.5,3).. (q);
-	\end{tikzpicture}	\end{center}
-	Für eine zusammenhängende Mannigfaltigkeit sind $\pi_1(M,p)$ und $\pi_1(M,q)$ isomorph, schreibe $\pi_1(M)$.
-	Eine Mannigfaltigkeit heißt \CmMark{einfach zusammenhängend}, falls $M$ zusammenhängend ist und $\pi_1(M) = 0$ gilt.
-\end{enumerate}\end{bem}
+	Ist $\pi: \tilde M \to M$ eine universelle Riemannsche "Uberlagerung, so ist $\pi_1(M) \curvearrowright \tilde M$ frei und eigentlich diskontinuierlich und isometrisch, der Quotient $\FakRaum{\tilde M}{\pi_1(M)}$ ist isometrisch zu $M$.
+\item
+	Betrachte die Wirkung $\Z^2 \curvearrowright \R^2$ durch Translationen $(a,b).(x,y) = (x+a, y+b)$. Die Wirkung von $\Z^2$ auf $\R^2$ ist isometrisch, frei und eigentlich diskontinuierlich.
+	\begin{bew}
+	Der Quotient $\FakRaum{\R^2}{\Z^2}$ ist diffeomorph zum Torus $T^2 = S^1 \X S^1$.
+	Die glatte Abbildung $\R^2 \to T^2$, $(x,y) \mapsto (e^{2 \pi i x}, e^{2 \pi i x})$ faktorisiert "uber die Wirkung und induziert einen Diffeomorphismus.
+	\begin{center}\textcolor{red}{[BILD]}\end{center}
+	Die durch die Wirkung auf $T^2$ induzierte Metrik ist flach, in dem Sinne dass die Kr"ummung konstant Null ist.
+	Die Geod"atischen des  flachen Torus sind genau die Bilder von Geod"atischen des $\R^2$, also von Geraden, unter der kanonischen Projektion.
+	\begin{center}\textcolor{red}{[BILD]}\end{center}
+	\end{bew}
+\end{enumerate}\end{Bsp}
 
 %%% Local Variables: 
 %%% mode: latex

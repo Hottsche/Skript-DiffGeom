@@ -71,27 +71,21 @@
 (git: \GITAbrHash) \quad Build: \today
 
 \section*{\"Uber dieses Skript}
-Dies ist eine Mitschrieb der Vorlesung \quot{Differentialgeometrie}
-von Dr. S. Grensing gehalten im Wintersemester 2012/13 am Karlsruher
-Institut f"ur Technologie. Dr. Grensing ist nicht f"ur den Inahlt
-verantwortlich und es besteht weder eine Garantie über
-Vollständigkeit, noch Korrektheit der enthaltenen Aussagen.
+Dies ist eine Mitschrieb der Vorlesung \quot{Differentialgeometrie} von Dr. S. Grensing gehalten im Wintersemester 2012/13 am Karlsruher Institut f"ur Technologie.
+Dr. Grensing ist nicht f"ur den Inahlt verantwortlich und es besteht weder eine Garantie über Vollständigkeit, noch Korrektheit der enthaltenen Aussagen.
 
 \section*{Wer}
-Das Skript wurde in Zusammenarbeit von Jan-Bernhard Korda"s und
-Aleksandar Sandic getippt. Bei Anmerkungen bzw. beim Auffinden von
-Fehlern schickt bitte eine E-Mail an
+Das Skript wurde in Zusammenarbeit von Jan-Bernhard Korda"s und Aleksandar Sandic getippt.
+Bei Anmerkungen bzw. beim Auffinden von Fehlern schickt bitte eine E-Mail an
 \begin{center}
   \href{mailto:jan-bernhard.kordass@student.kit.edu}{jan-bernhard.kordass@student.kit.edu}\\
   \href{mailto:aleksandar.sandic@student.kit.edu}{aleksandar.sandic@student.kit.edu}
 \end{center}
 
 \section*{Wo}
-Momentan ist das Skript noch im Aufbau und der Quellcode befindet sich
-auf GitHub. Nach Ende der Vorlesung wenn das Skript fertig ist werden
-wir es im Mitschiebwiki hosten. Wer den Quellcode nicht kompilieren
-kann oder m"ochte kann auch ein fertiges PDF herunterladen, es handelt
-sich aber unter Umst"anden nicht um die aktuellste Version.
+Momentan ist das Skript noch im Aufbau und der Quellcode befindet sich auf GitHub.
+Nach Ende der Vorlesung wenn das Skript fertig ist werden wir es im Mitschiebwiki hosten.
+Wer den Quellcode nicht kompilieren kann oder m"ochte kann auch ein fertiges PDF herunterladen, es handelt sich aber unter Umst"anden nicht um die aktuellste Version.
 
 Aktuellsten Version auf GitHub: \url{https://github.com/Tarcvar/Skript-DiffGeom}\\
 Fertiges PDF: \url{https://dl.dropbox.com/u/22321777/skript-diffgeom.pdf}\\
@@ -99,46 +93,29 @@ Seite der Vorlesung: \url{http://www.math.kit.edu/iag5/edu/difgeo2012w/de}\\
 Mitschiebwiki: \url{http://mitschriebwiki.nomeata.de/}
 
 \section*{\textcolor{red}{Hinweise f"ur Autoren}}
-
 \textcolor{red}{(dieser Teil wird nach der Fertig"-stellung entfernt)}
 
-Hier ist eine Liste an Konventionen f"ur das Skript. Diese Regeln sind
-nicht in Stein gemei\ss elt und wenn jemand anderer Meinung ist können
-wir uns absprechen und die Regeln "andern, aber ansonsten sollte jeder
-der am Skript mitarbeitet sich nach M"oglichkeit an sie halten. Selbst
-wenn wir unsere Meinung anschließend "andern ist es viel leichter die
-"Anderungen vorzunehmen wenn alles einheitlich ist.
+Hier ist eine Liste an Konventionen f"ur das Skript.
+Diese Regeln sind nicht in Stein gemei\ss elt und wenn jemand anderer Meinung ist können wir uns absprechen und die Regeln "andern, aber ansonsten sollte jeder der am Skript mitarbeitet sich nach M"oglichkeit an sie halten.
+Selbst wenn wir unsere Meinung anschließend "andern ist es viel leichter die "Anderungen vorzunehmen wenn alles einheitlich ist.
 
 \begin{description}[font=\normalfont\itshape]
-\item[Anf"uhrungszeichen:] sie können nicht direkt im Code gesetzt
-  werden, man muss entweder den genauen Befehl kennen oder man nimmt
-  einfach unseren eigenen \verb|\quot{}| Befehl.
-\item[Abs"atze:] benutzt nicht \verb|\\| f"ur neue Abs"atze, dieser
-  Befehl ist dazu da um einen Zeilenumbruch zu erzwingen. F"ur einen
-  neuen Absatz fügt eine leere Zeile ein (also zweimal die Enter Taste
-  dr"ucken), der Unterschied ist dass dadurch ein etwas gr"o\ss erer
-  Abstand zwischen Abs"atzen eingef"ugt wird der die Unterscheidung
-  leichter macht (der Abstand wird durch \verb|parskip| bestimmt). Es
-  ist in der Literatur "ublich die erste Zeile eines Absatzes
-  einzur"ucken (\verb|parindent|), allerdings sind unsere Abs"atze
-  dafür zu kurz, es w"urde h"asslich aussehen alle paar Zeilen eine
-  Einr"uckung zu haben. Nach einem Theorem wird automatisch ein noch
-  gr"o"serer Abstand eingef"ugt, es gibt also keinen Grund an der
-  Stelle etwas zu "andern.
-\item[Theoreme:] das \verb|ntheorem| Paket stellt theoremartige
-  Umgebungen zur Verf"ugung. Unsere Konvention besagt dass die Befehle
-  aller nummerierten Theoreme mit Gro"sbuchstaben anfangen sollen (zum
-  Beispiel \verb|Dfn| f"ur Definitionen). F"ur alle nummerierten
-  Theoreme gibt es auch eine nicht nummerierte Version mit
-  Kleinbuchstaben (also \verb|dfn|). F"ur Beweise sollte \verb|bew|
-  anstelle von \verb|proof| verwendet werden. Bei jedem Theorem kann
-  man als optionalen Parameter einen speziellen Namen vergeben, wie
-  \verb|\begin{Satz}[Satz des Pythagoras]|. Wenn in der Vorlesung
-    keine Umgebung verwendet wurde dann benutzt auch keine im Skript,
-    wenn wir "uberall Bemerkung auf Bemerkung haben bläht es das
-    Skript auf und st"ort den Lesefluss. Bitte nummeriert nur Theoreme
-    die auch in der Vorlesung nummeriert wurden.
-  \item[Spezielle Theoreme:] wenn eine spezielle Theoremumgebung
+\item[Anf"uhrungszeichen:]
+	sie können nicht direkt im Code gesetzt werden, man muss entweder den genauen Befehl kennen oder man nimmt einfach unseren eigenen \verb|\quot{}| Befehl.
+\item[Abs"atze:]
+	benutzt nicht \verb|\\| f"ur neue Abs"atze, dieser Befehl ist dazu da um einen Zeilenumbruch zu erzwingen.
+	F"ur einen neuen Absatz fügt eine leere Zeile ein (also zweimal die Enter Taste dr"ucken), der Unterschied ist dass dadurch ein etwas gr"o\ss erer Abstand zwischen Abs"atzen eingef"ugt wird der die Unterscheidung leichter macht (der Abstand wird durch \verb|parskip| bestimmt).
+	Es ist in der Literatur "ublich die erste Zeile eines Absatzes einzur"ucken (\verb|parindent|), allerdings sind unsere Abs"atze dafür zu kurz, es w"urde h"asslich aussehen alle paar Zeilen eine Einr"uckung zu haben.
+	Nach einem Theorem wird automatisch ein noch gr"o"serer Abstand eingef"ugt, es gibt also keinen Grund an der Stelle etwas zu "andern.
+\item[Theoreme:]
+	das \verb|ntheorem| Paket stellt theoremartige Umgebungen zur Verf"ugung.
+	Unsere Konvention besagt dass die Befehle aller nummerierten Theoreme mit Gro"sbuchstaben anfangen sollen (zum Beispiel \verb|Dfn| f"ur Definitionen).
+	F"ur alle nummerierten Theoreme gibt es auch eine nicht nummerierte Version mit Kleinbuchstaben (also \verb|dfn|).
+	F"ur Beweise sollte \verb|bew| anstelle von \verb|proof| verwendet werden.
+	Bei jedem Theorem kann man als optionalen Parameter einen speziellen Namen vergeben, wie \verb|\begin{Satz}[Satz des Pythagoras]|.
+	Wenn in der Vorlesung keine Umgebung verwendet wurde dann benutzt auch keine im Skript, wenn wir "uberall Bemerkung auf Bemerkung haben bläht es das Skript auf und st"ort den Lesefluss.
+	Bitte nummeriert nur Theoreme die auch in der Vorlesung nummeriert wurden.
+\item[Spezielle Theoreme:] wenn eine spezielle Theoremumgebung
     benötig wird, wie zum Beispiel \quot{Anwendung}, f"ur die es sich
     nicht lohnen w"urde eine eigene Theoremumgebung zu definieren,
     kann die \verb|\emptythm| Umgebung verwendet werden. Gebt dabei
