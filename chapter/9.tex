@@ -967,7 +967,21 @@ Nach dem Satz \ref{hopf-rinow} von Hopf-Rinow ist $M$ damit vollst"andig. Es sei
 Dann existiert eine Geod"atische $c: [0,1] \to M$ von $p$ nach $q$. Es sei $\tilde c$ die Geod"atische in $\tilde M$ mit $\tilde c(0) = \tilde p$ und $\dot{\tilde{c}} = \pi_{*p}^{-1}(\dot c(0))$.
 Dann gilt $\pi \circ \tilde c = c$ und $\pi(\tilde c(1)) = c(1) = q$.
 Damit ist $\pi$ surjektiv. Betrachte nun das folgende Diagramm:
-\begin{center}\textcolor{red}{[BILD]}\end{center}
+\begin{center}\begin{tikzpicture}
+	\def\hor{2.5}
+	\def\vert{1}
+	\node (1) at (-\hor,\vert) {$\B_\epsilon(0_{\tilde p})$};
+	\node (2) at (\hor,\vert) {$\B_\epsilon(\tilde p)$};
+	\node (3) at (-\hor,-\vert) {$\T_pM \supseteq \B_\epsilon(0_p)$};
+	\node (4) at (\hor,-\vert) {$\B_\epsilon(p) \subseteq M$};
+	\node at (0,0) {$\#$};
+	\node at (2*\hor,0) {$\tilde p \in \pi^{-1}(p)$};
+	
+	\draw[->] (1) --node[above,font=\scriptsize]{$\exp_{\tilde p}$} (2);
+	\draw[->] (3) --node[above,font=\scriptsize]{$\exp_{p}$} (4);
+	\draw[->] (1) --node[left,font=\scriptsize]{$\pi_{*\tilde{p}}$} (3);
+	\draw[->] (2) --node[right,font=\scriptsize]{$\pi$} (4);
+\end{tikzpicture}\end{center}
 F"ur hinreichend kleines $\epsilon > 0$ ist $\exp$ ein Diffeomorphismus und das folgende Diagramm kommutiert.
 Damit ist $\pi_{\B_\epsilon(\tilde p)}$ ein Diffeomorphismus.
 W"aren f"ur $\tilde p_1$ und $\tilde p_2$ die $\epsilon$-B"alle nicht disjunkt und es existiere eine nichttriviale Geod"atische der L"ange $< 2 \epsilon$ von $\tilde p_1$ nach $\tilde p_2$ und damit eine Geod"atische von $p$ nach $p$ der L"ange $< 2 \epsilon$, also in $\B_\epsilon(p)$.
@@ -997,7 +1011,17 @@ Zieht man die differenzierbare und geometrische Struktur von $M$ auf $\tilde M$ 
 Es gibt dabei zwei Auswege, zum Einen kann man zeigen dass $\pi_1(M)$ abz"ahlbar ist (Diplomarbeit von M. Mermann), die andere M"oglichkeit ist in \quot{Foundations of Differential Geometry}, Band I, Appendix 2 \cite{kobayashi-nomizu1963foundations-diffgeo} beschrieben.
 
 Die Fundamentalgruppe $\pi_1(M)$ ist isomorph zur Gruppe der Decktransformationen:
-\begin{center}\textcolor{red}{[BILD]}\end{center}
+\begin{center}\begin{tikzpicture}
+%	\tikzgitter{(-4,-4)}{(4,4)}
+	
+	\node at (1.5,1) {$\tilde M$}; \node at (1.5,-1) {$M$};
+	
+	\coordinate (p) at (-1.5,-1); \coordinate (tildeq) at (-1.5,0.5); \coordinate (tildep) at (-1.5,1.5);
+	\fill (p) circle(0.05)node[left,font=\scriptsize]{$p$} (tildeq) circle(0.05)node[left,font=\scriptsize]{$[c](\tilde p)=\tilde q$} (tildep) circle(0.05)node[left,font=\scriptsize]{$\tilde p$};
+	
+	\draw (p) ..controls(0.5,-3) and (0.5,1)..node[right,font=\scriptsize]{$c$} (p);
+	\draw (tildeq) ..controls(0.5,-1) and (0.5,3).. (tildep);
+\end{tikzpicture}\end{center}
 Jede Decktransformation ist glatt, also ein Diffeomorphismus, und sogar eine Isometrie, da $\pi$ eine lokale Isometrie ist. Jedes Element von $\pi_1(M)$ induziert eine Isometrie von $\tilde M$.
 
 \section{Wirkung diskreter Gruppen}
@@ -1023,10 +1047,144 @@ Ist diese Wirkung zudem frei, so ist der Bahnenraum $\FakRaum{\Gamma}{\Gamma}$ i
 	\begin{bew}
 	Der Quotient $\FakRaum{\R^2}{\Z^2}$ ist diffeomorph zum Torus $T^2 = S^1 \X S^1$.
 	Die glatte Abbildung $\R^2 \to T^2$, $(x,y) \mapsto (e^{2 \pi i x}, e^{2 \pi i x})$ faktorisiert "uber die Wirkung und induziert einen Diffeomorphismus.
-	\begin{center}\textcolor{red}{[BILD]}\end{center}
+	\begin{center}\begin{tikzpicture}[font=\scriptsize]
+%		\tikzgitter{(-5,-5)}{(5,5)}
+		
+		\def\step{0.75}
+		
+		%\filldraw[pattern=north east lines] (0,0) rectangle (\step,\step);
+		\fill[fill=gray!20] (0,0) rectangle (\step,\step);
+		\draw (-\step,0) -- (6*\step,0) (0,-\step) --node[left,pos=0.6]{$\R^2$} (0,5*\step);
+		\foreach \i in {0,1,...,5}{
+			\foreach \j in {0,1,...,4}{
+				\fill (\i*\step,\j*\step) circle(0.05);
+			}
+		}
+		\fill (4.5*\step,3.5*\step)node[right]{$x$} circle(0.05);
+		\fill (0.5*\step,0.5*\step) circle(0.05) (0.3*\step,\step) circle(0.05) node[above]{$y$} (0.3*\step,0) circle(0.05) node[below]{$y'$};
+		
+		\coordinate(sqr) at (-0.5,-2);
+		\def\seite{0.75}
+		% neuer Befehl fuer einen kurzen schraegen strich
+		\filldraw[fill=gray!20] ($(sqr)-(\seite,\seite)$) rectangle ($(sqr)+(\seite,\seite)$);
+		\newcommand{\strich}[1]{
+			\def\hor{0.05}
+			\def\vert{0.1}
+			\draw ($#1 - (\hor,\vert)$) -- ($#1 + (\hor,\vert)$);
+		}
+		\strich{($(sqr)+(0,\seite)$)}
+		\strich{($(sqr)+(0,-\seite)$)}
+		% doppelt gestrichen, zwei vertikal versetzte Striche
+		\newcommand{\sstrich}[1]{
+			\strich{($#1-(0,0.05)$)}
+			\strich{($#1+(0,0.05)$)}
+		}
+		\sstrich{($(sqr)-(\seite,0)$)}
+		\sstrich{($(sqr)+(\seite,0)$)}
+		
+		\coordinate (tor) at (4.75,-2);
+		\tikztorus[0.75]{(tor)}
+		
+		\draw[gray,dashed,name path=a] (tor) ellipse[x radius=1.2,y radius=0.5];
+		\draw[gray,dashed,name path=b] ($0.5*(torusUntenLoch) + 0.5*(torusUnten)$) ellipse[x radius=0.15,y radius=0.28];
+		\strich{($(tor) + (0,0.5)$)}
+		\path[name intersections={of=a and b}];
+		\sstrich{(intersection-1)}
+		
+		\draw[->] (0.75,-2) ..controls(1.5,-1.75) and (2,-2.25)..node[above]{verkleben} (2.75,-2);
+		
+		\draw (0.75,-2.5) -- (2.75,-2.5); \draw (0.75,-3) -- (2.75,-3);
+		\draw (0.75,-2.75) ellipse[x radius=0.125,y radius=0.25] (2.75,-2.75) ellipse[x radius=0.125,y radius=0.25];
+		\draw[gray,dashed] (0.875,-2.75) --coordinate(pkt) (2.875,-2.75);
+		\strich{(pkt)}
+		\sstrich{(0.625,-2.75)}
+		\sstrich{(2.625,-2.75)}
+	\end{tikzpicture}\end{center}
 	Die durch die Wirkung auf $T^2$ induzierte Metrik ist flach, in dem Sinne dass die Kr"ummung konstant Null ist.
 	Die Geod"atischen des  flachen Torus sind genau die Bilder von Geod"atischen des $\R^2$, also von Geraden, unter der kanonischen Projektion.
-	\begin{center}\textcolor{red}{[BILD]}\end{center}
+	\begin{center}\begin{tikzpicture}[font=\scriptsize]
+		%\tikzgitter{(-4,-5)}{(8,5)}
+		\def\step{0.75}
+		
+		\fill[fill=gray!20] (0,0) rectangle (\step,\step);
+		\draw (-\step,0) -- (6*\step,0) (0,-\step) --node[left,pos=0.6]{$\R^2$} (0,5*\step);
+		\foreach \i in {0,1,...,5}{
+			\foreach \j in {0,1,...,4}{
+				\fill (\i*\step,\j*\step) circle(0.05);
+			}
+		}
+		\fill[gray] (0.33*\step,\step) circle(0.05) (0.33*\step,0) circle(0.05);
+		
+		\coordinate (vec) at (\step,3*\step);
+		\draw[->,gray] ($-0.2*(vec)$) --node[left,pos=0.7]{$\tilde c$} ($1.2*(vec)$); \draw[gray] ($1.2*(vec)$) -- ($1.5*(vec)$);
+		\draw[gray,dashed] ($-0.2*(vec) + 0.33*(\step,0)$) -- ($1.5*(vec) + 0.33*(\step,0)$);
+		\draw[gray,dashed] ($-0.2*(vec) + 0.66*(\step,0)$) -- ($1.5*(vec) + 0.66*(\step,0)$);
+		
+		\draw[gray,->] (4,1.5) to[out=290,in=70] (4,0.75);
+		\draw[gray,->] (4.125,2.25) to[out=290,in=70] node[right]{$(0,-1)^2 \in \Z^2$} (4.125,0.75);
+		
+		\coordinate(sqr) at (-0.5,-2);
+		\def\seite{0.75}
+		% neuer Befehl fuer einen kurzen schraegen strich
+		\filldraw[fill=gray!20] ($(sqr)-(\seite,\seite)$) rectangle ($(sqr)+(\seite,\seite)$);
+		\newcommand{\strich}[1]{
+			\def\hor{0.05}
+			\def\vert{0.1}
+			\draw ($#1 - (\hor,\vert)$) -- ($#1 + (\hor,\vert)$);
+		}
+		\strich{($(sqr)+(0,\seite)$)}
+		\strich{($(sqr)+(0,-\seite)$)}
+		% doppelt gestrichen, zwei vertikal versetzte Striche
+		\newcommand{\sstrich}[1]{
+			\strich{($#1-(0,0.05)$)}
+			\strich{($#1+(0,0.05)$)}
+		}
+		\sstrich{($(sqr)-(\seite,0)$)}
+		\sstrich{($(sqr)+(\seite,0)$)}
+		
+		\foreach \i in {0,1,2}{
+			\coordinate (unten) at ($(sqr) - (\seite,\seite) + (\i/3*2*\seite,0)$);
+			\coordinate (oben) at ($(unten) + (2/3*\seite,2*\seite)$);
+			\fill[gray] (unten) circle(0.05) (oben) circle(0.05);
+			\draw[gray] (unten) -- (oben);
+		}
+		\path[gray] ($(sqr) - (\seite,\seite) + (2/3*\seite,0)$) --node[right]{$c$} ($(sqr) - (\seite,\seite) + (2/3*\seite,0) + (2/3*\seite,2*\seite)$);
+		
+		\coordinate (tor) at (4.75,-2);
+		\tikztorus[0.75]{(tor)}
+		
+		%\path (tor) ellipse[x radius=1.5,y radius=0.75];
+		\coordinate (1) at ($(tor)+(90:1.5 and 0.75)$); % aussen oben
+		\coordinate (2) at ($(tor)+(225:1.5 and 0.75)$); % aussen sued-west
+		\coordinate (3) at ($(tor)+(300:1.5 and 0.75)$); % aussen sued-ost
+		%\path[draw,green] ($(tor) - 0.75*(0,0.5)$) ellipse (0.75 and 0.75*0.75);
+		\coordinate (4) at ($(tor) - 0.75*(0,0.5) + (50:0.75 and 0.75*0.75)$); % innen ost
+		\coordinate (5) at ($(tor) - 0.75*(0,0.5) + (135:0.75 and 0.75*0.75)$); % innen west
+		%\path[draw,green] ($(tor) + 0.75*(0,0.75)$) ellipse (0.75*1.25 and 0.75*1);
+		\coordinate (6) at ($(tor) + 0.75*(0,0.75) + (250:0.75*1.25 and 0.75*1)$); % innen sued
+		%\draw[red] (1) circle(0.05); \draw[red] (2) circle(0.05); \draw[red] (3) circle(0.05); \draw[red] (4) circle(0.05); \draw[red] (5) circle(0.05); \draw[red] (6) circle(0.05);
+		
+		\def\angle{180}
+		\coordinate (ctrl1l) at (\angle:0.2); \coordinate (ctrl1r) at (180+\angle:0.2);
+		\def\angle{150}
+		\coordinate (ctrl2l) at (\angle:0.25); \coordinate (ctrl2r) at (180+\angle:0.25);
+		\def\angle{200}
+		\coordinate (ctrl3l) at (\angle:0.6); \coordinate (ctrl3r) at (180+\angle:0.3);
+		\def\angle{150}
+		\coordinate (ctrl4l) at (\angle:0.2); \coordinate (ctrl4r) at (20:0.45);
+		\def\angle{210}
+		\coordinate (ctrl5l) at (\angle:0.25); \coordinate (ctrl5r) at (180+\angle:0.3);
+		\def\angle{160}
+		\coordinate (ctrl6l) at (\angle:0.4); \coordinate (ctrl6r) at (180+\angle:0.3);
+		
+		\draw[gray] (3) ..controls($(3) + (ctrl3r)$) and ($(4) + (ctrl4r)$).. (4) (1) ..controls($(1) + (ctrl1l)$) and ($(5) + (ctrl5r)$).. (5) (2) ..controls($(2) + (ctrl2r)$) and ($(6) + (ctrl6l)$).. (6);
+		\draw[dashed,gray] (3) ..controls($(3) + (ctrl3l)$) and ($(6) + (ctrl6r)$)..coordinate[pos=0.6](pkt) node[right,gray]{$c$} (6) (1) ..controls($(1) + (ctrl1r)$) and ($(4) + (ctrl4l)$).. (4) (2) ..controls($(2) + (ctrl2l)$) and ($(5) + (ctrl5l)$).. (5);
+		\fill[gray] (pkt) circle(0.05);
+		
+		\draw[->] (0.75,-2) ..controls(1.5,-1.75) and (2,-2.25).. (2.75,-2);
+		
+		\node[gray] at (6.5,-3) {$c = \pi \circ \tilde c$};
+		\end{tikzpicture}\end{center}
 	\end{bew}
 \end{enumerate}\end{Bsp}
 
