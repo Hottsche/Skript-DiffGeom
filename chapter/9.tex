@@ -1184,10 +1184,112 @@ Ist diese Wirkung zudem frei, so ist der Bahnenraum $\FakRaum{\Gamma}{\Gamma}$ i
 		\draw[->] (0.75,-2) ..controls(1.5,-1.75) and (2,-2.25).. (2.75,-2);
 		
 		\node[gray] at (6.5,-3) {$c = \pi \circ \tilde c$};
-		\end{tikzpicture}\end{center}
+		\end{tikzpicture}\end{center}	
 	\end{bew}
+\item
+	Der $n$-dimensionale reell-projektive Raum $\R\P^n$: betrachte $\Z_2 \curvearrowright S^n$, $\gamma.p = -p$, $\gamma \ne 1_{\Z_2}$
+	\begin{center}\textcolor{red}{[BILD]}\end{center}
+	$\R\P^n = \FakRaum{S}{\Z_2}$
+	\begin{center}\textcolor{red}{[BILD]}\end{center}
 \end{enumerate}\end{Bsp}
 
+Es sei $(M, g)$ vollst"andig und $\ric_{(M,g)} \ge (n-1) \frac{1}{r^2} g$ f"ur ein $r > 0$.
+Dann erf"ullt auch $\tilde M$ diese Voraussetzungen; insbesondere ist $\tilde M$ (ebenfalls) kompakt. Da $\pi_1(M) \curvearrowright \tilde M$ eigentlich diskontinuierlich wirkt, gilt
+\begin{align*}
+\# \pi(M) = \# \{ \gamma \in \pi_1(M) | \gamma.\tilde{M} \cap \tilde M \ne \emptyset \} < \infty
+\end{align*}
+
+\begin{kor}[zum Satz von Bonnet-Myers]
+Unter den Voraussetzungen des Satzes hat $M$ eine endliche Fundamentalgruppe.
+\end{kor}
+
+\begin{Satz}[Hadamard-Cartan]
+Es sei $(M,g)$ eine vollst"andige Riemannsche Mannigfaltigkeit mit $\sec_{(M,g)} \le 0$. Dann ist f"ur alle $p \in M$ die Exponentialabbildung $\exp_p: \T_pM \to M$ eine "Uberlagerung.
+Insbesondere ist jede einfach zusammenh"angende vollst"andige Riemannsche Mannigfaltigkeit mit $\sec \le 0$ diffeomorph zu $\R^m$.
+\end{Satz}
+
+\begin{bew}
+Es sei $c$ eine Geod"atische und $Y$ ein Jacobifeld entlang $c$ mit $Y(0) = 0$. Dann gilt f"ur $f(t) = \|Y(t)\|^2$:
+\begin{align*}
+	f'(0) = 2 \langle Y'(0), Y(0) \rangle = 0
+\end{align*}
+und
+\begin{align*}
+	f'' &= 2 (\langle Y'', Y \rangle + \langle Y', Y' \rangle)\\
+	&= 2 (\|Y'\|^2 - \langle \underbrace{R(Y, \dot c) \dot c, Y}_{=\lambda\sec(\dot c, Y) \le 0}) \ge 0
+\end{align*}
+Also ist $f$ nichtnegativ und konvex. W"are $Y$ ein nichttriviales Jacobifeld, welches in Punkten $0$ und $t_0$ verschwindet, so folgte aus $f(0) = 0$ und $f(t_0) = 0$, dass $f$, und damit $Y$ verschwindet.
+Somit existieren auf $M$ keine zueinander konjugierten Punkte.
+Die Exponentialabbildung ist also ein lokaler Diffeomorphismus.
+Die Metrik $\tilde g = \exp_{p*}(g)$ auf $\T_pM$ ist nach dem Gau"s-Lemma und dem Satz von Hopf-Rinow vollst"andig.
+Nach Proposition \ref{prop-9-12} ist damit $\exp_p(\T_pM, \tilde g) \to (M,g)$ eine Riemannsche "Uberlagerung.
+\end{bew}
+
+\begin{emptythm}[Erinnerung (Blatt 12, Aufgabe 2)]
+Seien $\gamma_1$ und $\gamma_2$ Geod"atische mit $\gamma_i(0) = p$, $v = \dot\gamma_1(0)$, $w = \dot\gamma_2(0)$ und $\calL(t) = \dop(\gamma_1(t), \gamma_2(t))$. Dann gilt:
+\begin{align*}
+	\calL(t) = t \|v-w\| \left(1 - \frac{1}{12} \sec(v,w) (1 + \langle v, w \rangle) t^2\right) + o(t^3)\\
+	\left(1 - \frac{1}{12} \sec(v,w) (1 + \langle v, w \rangle) t^2\right) + o(t^3) \begin{cases}
+		>1 & f"ur \sec < 0\\
+		=1 & f"ur \sec = 0\\
+		<1 & f"ur \sec > 0
+	\end{cases}
+\end{align*}
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+\end{emptythm}
+
+\textbf{Ziel:} Wir suchen ein globales Analogum
+
+\section{Kr"ummungsschranken und Trigonometrie}
+
+Es bezeichne $\dop_p$ die Abstandsfunktion $\dop_p(q) = \dop(p, q)$.
+Diese ist, in einer punktierten Umgebung von $p$, glatt und es gilt $\dop_p(q) = \| \exp_p^{-1}(q) \|$. Es folgt dann
+\begin{align*}
+	X(\dop_p)(q) &= \difffrac{}{t} \| \exp_p^{-1}(\exp_p(tX))\|\\
+	&= \frac{1}{\| \underbrace{\exp_p^{-1}(q)}_{=v}\|} \langle \exp_{p*v}^{-1}(X), v \rangle\\
+	&\overset{\mathclap{\text{G.L.}}}{=} \frac{1}{\|v\|} \langle X, \underbrace{\exp_{p*v}(v)}_{\dot c_v(1)} \rangle \qquad\textcolor{gray}{\text{(nach Gau"s-Lemma)}}
+\end{align*}
+F"ur eine glatte Funktion $f$ hei"st das durch $X(f) = \langle \grad f, X \rangle$ definierte Vektorfeld der \CmMark{Gradient} von $f$.
+Es ist $X(f) = \dop f(X)$ und $\langle \grad f, \cdot \rangle = \dop f$. F"ur den Gradienten von $\dop_p$ gilt nach der obigen Rechnung:
+\begin{align*}
+	\grad \dop_p = \frac{\exp_{p*v}(v)}{\|v\|} = \frac{\dot c(1)}{\|\dot c(0)\|} = \frac{\dot c(1)}{\|\dot c(1)\|},
+\end{align*}
+also $\|\grad \dop_p\| \equiv 1$. Eine Funktion $f: U \to \R$, $U$ offen in $M$, hei"st \CmMark[Abstandsfunktion!lokale]{lokale Abstandsfunktion}, wenn $\|\grad f|| \equiv 1$ gilt.
+F"ur $p \in U$ sei $c_p$ die Integralkurve von $\grad f$ mit $c_p(f(p)) = p$. Ist $c$ eine (st"uckweise) glatte Kurve von $p$ nach $q$, so gilt
+\begin{align*}
+	\calL(c) = \int_0^1 ||\dot c\| \overset{C.S.}{\ge} \left| \int_0^1 \langle \grad f, \dot c \rangle \right| = | f(q) - f(p) |
+\end{align*}
+wobei Gleichheit genau dann gilt, wenn $c$ eine monotone Reparametrisierung von $c_p$ ist. Damit ist $c_p$ eine (minimale) Geod"atische, welche die Niveaumengen von $f$ durchl"auft.
+Es gilt
+\begin{align*}
+	H_f(X, Y) &= X(Y, f) - (\nabla_X Y)(f)\\
+	&= X \langle \grad f, Y \rangle - \langle \grad f, \nabla_x Y \rangle\\
+	&= \langle \nabla_X \grad f, Y \rangle
+\end{align*}
+und mit $\|\grad\| \equiv 1$ folgt
+\begin{align*}
+	0 &= \frac{1}{2} X \|\grad f\|^2\\
+	&= \langle \nabla_X \grad f, \grad f \rangle\\
+	&= H_f(X, \grad f).
+\end{align*}
+F"ur ein $r \in \R$ sei $M_r = f^{-1}(r)$ eine Niveaufl"ache von $f$.
+Ist $X$ tangential zu $M$, das hei"st existiert eine Integralkurve $\gamma$ von $X$ in $M$, dann gilt
+\begin{align*}
+	0 = \difffrac[t=0]{}{t} (f(\gamma(t))) = X(f) = \langle \grad f, X \rangle,
+\end{align*}
+also ist $\grad f$ orthogonal zu $M_r$. F"ur zu $M_r$ tangentiale Vektorfelder $X$ und $Y$ gilt dann
+\begin{align*}
+	0 = X \langle \grad f, Y \rangle = \langle \nabla_X \grad f, Y \rangle + \langle \grad f, \nabla_X Y \rangle
+\end{align*}
+also $H_f(X,Y) = - \langle \grad f, \nabla_X Y \rangle$. F"ur $p \in U$ wird durch $X \mapsto \nabla_X \grad f$ ein linearer Endomorphismus $A_p: \grad f^\perp \to \grad f^\perp$ definiert.
+Es bezeichne
+\begin{align*}
+	A_t = A_{c_p(t)}: \underset{\mathclap{\textcolor{gray}{\grad f|_{c_p(t)}}}}{\dot{c}_p(t)^\perp} \to \dot c_p(t)^\perp
+\end{align*}
+eine Einschr"ankung auf $c_p$. Es sei $\sigma: (-\epsilon, \epsilon) \to M_r$ eine glatte Kurve mit $\sigma(0) = p$.
+\begin{center}\textcolor{red}{[BILD]}\end{center}
+Dann ist $(t, s) \mapsto c_{\sigma(s)}(t)$ glatt und f"ur alle $s \in (-\epsilon, \epsilon)$ ist dann $c_{\sigma(s)}$ eine Geod"atische durch $\sigma(s)$; also ist $c_s = c_{\sigma(s)}$ eine geod"atische Variation von $c_0 = c_p$.
+Es bezeichne $\calJ$ das zugeh"orige Jacobifeld entlang $c_p$.
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "../skript-diffgeom"
