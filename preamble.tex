@@ -173,6 +173,8 @@
 
 % common mathematical operators and sets
 \DeclareMathOperator{\aff}{aff} % affine Huelle
+\DeclareMathOperator{\cs}{cs} % allgemeiner Cosinus
+\DeclareMathOperator{\ct}{ct} % allgemeiner Cotangens
 \DeclareMathOperator{\ddet}{det} % Determinante
 \DeclareMathOperator{\diam}{diam} % diameter
 \DeclareMathOperator{\dist}{dist} % distance
@@ -192,6 +194,7 @@
 \DeclareMathOperator{\rg}{rg} % rank (i)
 \DeclareMathOperator{\scal}{scal} % Skalarkruemmung
 \DeclareMathOperator{\sgn}{sgn} % Signum
+\DeclareMathOperator{\sn}{sn} % allgemeiner Sinus
 \DeclareMathOperator{\spur}{spur} % Spur
 \DeclareMathOperator{\supp}{supp} % support
 \DeclareMathOperator{\sternf}{sternf}
@@ -261,6 +264,7 @@
 % canonic sets
 \DeclareMathOperator{\C}{\mathbb{C}}
 \DeclareMathOperator{\F}{\mathbb{F}}
+%\DeclareMathOperator{\F}{\mathbb{H}}
 \DeclareMathOperator{\K}{\mathbb{K}}
 \DeclareMathOperator{\N}{\mathbb{N}}
 \DeclareMathOperator{\Q}{\mathbb{Q}}
@@ -281,6 +285,8 @@
 % Redeclare \P (Prim or Propability) and put the old, reversed "breakline P" in \BreakLineP
 \let\BreakLineP\P
 \renewcommand{\P}{\ensuremath{\mathbb{P}}}
+\let\umlautsH\H % long Hungarian umlaut (double acute)
+\renewcommand{\H}{\ensuremath{\mathbb{H}}}
 
 % Differentialoperatoren als Brüche
 \newcommand{\dop}{\mathrm{d}}	

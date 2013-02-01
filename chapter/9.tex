@@ -1385,40 +1385,78 @@ eine Einschr"ankung auf $c_p$. Es sei $\sigma: (-\epsilon, \epsilon) \to M_r$ ei
 	\draw[->] (p) -- ++($0.7*(perp)$);
 	\draw[->] (2,0.5) -- ++(-0.25,1);\draw[->] (2.5,0.25) -- ++(-0.25,1.5); \draw[->] (3.25,0.5) -- ++(0,2);
 	
-	\node at (5.5,1) {$M_r$}; \node at (4.25,2.25) {$M_R$};
+	\node at (6,1) {$M_r = \dop_p^{-1}(r)$}; \node at (4.25,2.25) {$M_R$};
 \end{tikzpicture}\end{center}
 Dann ist $(t, s) \mapsto c_{\sigma(s)}(t)$ glatt und f"ur alle $s \in (-\epsilon, \epsilon)$ ist dann $c_{\sigma(s)}$ eine Geod"atische durch $\sigma(s)$; also ist $c_s = c_{\sigma(s)}$ eine geod"atische Variation von $c_0 = c_p$.
-Es bezeichne $\calJ$ das zugeh"orige Jacobifeld entlang $c_p$.
-
-
+Es bezeichne $\calJ$ das zugeh"orige Jacobifeld entlang $c_p$ mit $\calJ'(t) = A_t \cdot \calJ(p)$.
 %%
 %% Vorlesung <2013-2-1 Fri>
 %%
 
-\begin{center}
-  \textcolor{red}{Erster Teil der Vorlesung verpasst.}
-\end{center}
-
-Allgemeiner gilt für eine Lösung $j$ von $j'+\kappa j = 0$ und $b = (\ln j)$:
+Sei $f = \dop_p$ die Abstandsfunktion zu $p \in M$ und $c$ eine Geod"atische von $p$ nach $q = c(r)$ (nicht konjugiert zu $c$), das hei"st $q \in M_r = \dop_p^{-1}(r)$.
+Dann ist jedes Jacobifeld $\calJ$ entlang $c$ mit $\calJ(0) = 0$ und $\calJ \perp \dot c$ von obiger Gestalt:
+$\calJ$ wird von einer geod"atischen Variation $c_s$ ezeugt.
+Jede Geod"atische $t \mapsto c_s(t)$ ist minimierend, also
+\begin{itemize}
+\item $c_s(r) \in M_r = \dop_p^{-1}(r)$
+\item $\dop_p(c_s(t)) = t$ $\Rightarrow$ $c_s$ ist eine Integralkurve von $\grad \dop_p$
+\end{itemize}
+Für $\sigma(s) = c_s(r)$ stimmt dann $\calJ$ mit obiger Konstruktion "uberein.
 \begin{align*}
-  b' = \left(\frac{j'}{j}\right)'
-  = \frac{j''j-j'^2}{j^2}
-  = \frac{-\kappa j^2 -j'^2}{j^2}
-  = -\kappa - b^2
+	A'\calJ &= (A \calJ)' - A \calJ' = \calJ'' - A^2\calJ = -R(\calJ, \dot c) \dot c - A^2 \calJ
 \end{align*}
-d.h. $b$ löst die eindimensionale Riccatigleichung.
-
-Es sei $J$ ein Jacobifeld entlang einer Geodätischen $c$ in $M^n_{\kappa}$ mit $J(0) = 0$ und $J \perp \dot c$.
-Dann ist $J = \sin_{\kappa}Y$, wobei $Y$ ein zu $c$ orthogonales und entlang $c$ paralleles Vektorfeld ist.
-
+Setzt man $R_t = R(\cdot, \dot c)\dot c$, so gilt
 \begin{align*}
-  AY - A \frac{1}{\sin_{\kappa}}J
-  = \frac{1}{\sin_{\kappa}}J' 
-  = \frac{\sin'_{\kappa}}{\sin_{\kappa}}Y
-  = \frac{\cos_{\kappa}}{\sin_{\kappa}}Y
-  = \cot_{\kappa}Y.
+	A_t' + A_t^2 + R_t = 0,
 \end{align*}
-Ziel: Abschätzung für Eigenwerte, bzw. Operatornorm von $A_t$ und für das Wachstum von Jacobifeldern bei unteren Krümmungsschranken.
+die sogenannte \CmMark{Riccatigleichung}. Ist $E$ ein entlang $c$ paralleles Vektorfeld mit $\| E \| = 1$ und $E \perp \dot c$, so gilt
+\begin{align*}
+	\langle AE, E \rangle' &= \langle A'E, E \rangle = -\langle R(E, \dot c)\dot c, E \rangle - \langle A^2E, E \rangle = -\sec(E, \dot c) - \|AE\|^2
+\end{align*}
+Ist die Kr"ummung  von $(M,g)$ nach unten beschr"ankt, $\sec_{(M,g)} \ge \kappa$, so folgt die sogenannte \CmMark{Riccatiungleichung}:
+\begin{align*}
+	\langle AE, E \rangle' = -\sec(E,i) - \|AE\|^2 \le -\kappa - \langle AE, E \rangle^2
+\end{align*}
+Setzt man $a = \langle AE, E \rangle$, so gilt
+\begin{align*}
+	a' \le -\kappa - a^2
+\end{align*}
+
+\begin{emptythm}[R"aume konstanter Kr"ummung]
+Es bezeichne $M_\kappa^n$ den endlich zusammenh"angenden $n$-dimensionalen Raum  mit konstanter Kr"ummung $\kappa$, also f"ur $\kappa = -1$ den hyperbolischen Raum $\H^n$, f"ur $\kappa = 0$ die Ebene $\R^n$ und die Sph"are $S^n$ im Falle $\kappa = 1$.
+Dann ist ein Jacobifeld entlang einer Geod"atischen $c$ in $M_\kappa^n$ eine Linearkombination von Jacobifeldern $j \cdot E$, wobei $E$ ein entlang $c$ paralleles Einheitsfeld ist und $j$ eine L"osung der eindimensionalen Jacobigleichung
+\begin{align*}
+	j'' + \kappa j = 0
+\end{align*}\end{emptythm}
+
+Es bezeichnen $\sn_\kappa$ und $\cs_\kappa$ die Lösungen mit $\sn_\kappa(0) = 0$, $\sn_\kappa'(0) = 1$ und $\cs_\kappa(0) = 1$, $\cs_\kappa'(0) = 0$, das hei"st
+\begin{align*}
+	&\sn_\kappa(t) = \begin{cases}
+		\frac{1}{\sqrt{-\kappa}} \sinh(\sqrt{-\kappa}t) & \text{f"ur } \kappa < 0\\
+		t & \text{f"ur } \kappa = 0\\
+		\frac{1}{\sqrt{\kappa}} \sin(\sqrt{\kappa}t) & \text{f"ur } \kappa > 0\\
+	\end{cases}\\
+	&\cs_\kappa(t) = \begin{cases}
+		\cosh(\sqrt{-\kappa}t) & \text{f"ur } \kappa < 0\\
+		t & \text{f"ur } \kappa = 0\\
+		\cosh(\sqrt{\kappa}t) & \text{f"ur } \kappa > 0\\
+	\end{cases}
+\end{align*}
+Dabei gilt $\sn_\kappa' = \cs_\kappa$ und $\cs_\kappa' = -\kappa \sn_\kappa$. Setzt man $\ct_\kappa(t) = \frac{\cs_\kappa(t)}{\sn_\kappa(t)}$ ($= (\ln \sn_\kappa)'$), so gilt $\ct_\kappa' = -\kappa - \ct_\kappa^2$. Allgemeiner gilt f"ur eine L"osung $j$ von $j'' + \kappa j = 0$ und $b = (\ln j)'$
+\begin{align*}
+	b' = \left( \frac{j'}{j} \right)' = \frac{j''j - {j'}^2}{j^2} = \frac{-\kappa j^2 - {j'}^2}{j^2} = -\kappa - b^2
+\end{align*}
+das hei"st $b$ löst die eindimensionale Riccatigleichung.
+Es sei $\calJ$ ein Jacobifeld entlang einer Geodätischen $c$ in $M^n_{\kappa}$ mit $\calJ(0) = 0$ und $\calJ \perp \dot c$.
+Dann ist $\calJ = \sn_{\kappa}Y$, wobei $Y$ ein zu $c$ orthogonales und entlang $c$ paralleles Vektorfeld ist.
+\begin{align*}
+  AY = A \frac{1}{\sn_{\kappa}}\calJ
+  = \frac{1}{\sn_{\kappa}}\calJ'
+  = \frac{\sn'_{\kappa}}{\sn_{\kappa}}Y
+  = \frac{\cs_{\kappa}}{\sn_{\kappa}}Y
+  = \ct_{\kappa}Y.
+\end{align*}
+\emph{Ziel:} Wir suchen eine Abschätzung für Eigenwerte, beziehungsweise Operatornorm von $A_t$ und für das Wachstum von Jacobifeldern bei unteren Krümmungsschranken.
 
 % Lemma 9.16
 \begin{Lemma}\label{thm:lemma-9-16}
@@ -1430,9 +1468,9 @@ Ziel: Abschätzung für Eigenwerte, bzw. Operatornorm von $A_t$ und für das Wac
   \end{itemize}
   Dann gilt:
   \begin{enumerate}[label=(\roman*)]
-  \item $a(t) \leq b(t)$ für $t > t_0$
+  \item $a(t) \leq b(t)$ f"ur alle $t \ge t_0$
   \item Gilt $a(t_0) = b(t_0)$ und $a(t_1) = b(t_1)$ für $t_1 > t_0$, so folgt $a|_{[t_0,t_1]} = b|_{[t_0,t_1]}$.
-  \item Gilt $\calI = (0,t_1]$ und $\lim\limits_{t \to 0}a(t) = \infty$, so folgt $a \leq \cot_{\kappa}$ und falls $a(t_0) = \cot_{\kappa}(t_0)$, so gilt $a = \cot_{\kappa}$ auf $\calI$.
+  \item Gilt $\calI = (0,t_1]$ und $\lim\limits_{t \to 0}a(t) = \infty$, so folgt $a \leq \ct_{\kappa}$ und falls $a(t_0) = \ct_{\kappa}(t_0)$, so gilt $a = \ct_{\kappa}$ auf $\calI$.
   \end{enumerate}
 \end{Lemma}
 
@@ -1444,52 +1482,72 @@ Ziel: Abschätzung für Eigenwerte, bzw. Operatornorm von $A_t$ und für das Wac
     & = \big(\underbrace{b'+b^2}_{= -\kappa} - \underbrace{(a' + a^2)}_{\leq - \kappa}\big)e^{\int b+a}
     \geq 0
   \end{align*}
-  Also ist $(b-a)e^{\int b+a}$ monoton wachsend, d.h. $b-a \geq 0$ und es gilt (i). (ii) folgt sofort.
-
-  Gilt $a(t) \xrightarrow{t\to 0} \infty$, so existiert ein $\phi \colon \calI \to \R$ mit $a(t) = (\cot_{\kappa}\circ \phi)(t)$ und $\phi(0) = 0$.
-
-  Nun gilt $a' = \phi'(\cot'_{\kappa} \circ \phi)$ also
+  Also ist $(b-a)e^{\int b+a}$ monoton wachsend, das hei"st $b-a \geq 0$ und es gilt (i). (ii) folgt sofort aus der Monotonie.
+  Gilt $a(t) \xrightarrow{t\to 0} \infty$, so existiert ein $\phi \colon \calI \to \R$ mit $a(t) = (\ct_{\kappa}\circ \phi)(t)$ und $\phi(0) = 0$.
+  Nun gilt $a' = \phi'(\ct'_{\kappa} \circ \phi)$, also
   \begin{align*}
-    0 \leq -\kappa + \kappa
-    & = (\cot'_{\kappa} + \cot_{\kappa}^2) \circ \phi - (a' + a^2)\\
-    & = \cot'_{\kappa} \circ \phi + (\cot_{\kappa} \circ \phi)^2 - \phi'(\cot'_{\kappa} \circ \phi) - (\cot_{\kappa} \circ \phi)^2\\
-    & = (1-\phi')\underbrace{(\cot'_{\kappa} \circ \phi)}_{\leq 0}
+    0 = -\kappa + \kappa
+    & = (\ct'_{\kappa} + \ct_{\kappa}^2) \circ \phi - (a' + a^2)\\
+    & = \ct'_{\kappa} \circ \phi + (\ct_{\kappa} \circ \phi)^2 - \phi'(\ct'_{\kappa} \circ \phi) - (\ct_{\kappa} \circ \phi)^2\\
+    & = (1-\phi')\underbrace{(\ct'_{\kappa} \circ \phi)}_{\leq 0}
   \end{align*}
-  und es folgt $\phi' \geq 1$
-
+  und es folgt $\phi' \geq 1$.
   Da $\phi(0) = 0$, folgt $\phi(t) \geq t$.
-  Da $\cot_{\kappa}$ monoton falled ist, gilt
+  Da $\ct_{\kappa}$ monoton falled ist, gilt
   \begin{align*}
-    a = (\cot_{\kappa} \circ \phi) \leq \cot_{\kappa}.
+    a = (\ct_{\kappa} \circ \phi) \leq \ct_{\kappa}.
   \end{align*}
-  Gleichheit wie oben..
+  Die Gleichheit wird wie oben gezeigt.
 \end{bew}
 
 Es gelte $\sec_{(M,g)} \geq \kappa$ und es sei $c$ eine nach Bogenlänge parametrisierte Geodätische mit $c(0) = p$.
-Wie oben bezeichne $A_t$ das symmetrische Endomorphismenfeld $A_t \colon \dot c(t) ^{\perp} \to \dot c(t)^{\perp}, X \mapsto \nabla_X \grad \dop_p$.
-
+Wie oben bezeichne $A_t$ das symmetrische Endomorphismenfeld $A_t \colon \dot c(t) ^{\perp} \to \dot c(t)^{\perp}$, $X \mapsto \nabla_X \grad \dop_p$.
 Für ein entlang $c$ paralleles Vektorfeld $E$ mit $\|E\| = 1$ und $E \perp \dot c$ sei $a = \left<AE,E\right>$.
 Dann gilt:
 \begin{align*}
   a' = \left<A'E,E\right> 
-  = -\left<R(E,\dot c)\dot c,E\right> - \left<A^2E,E\right>
-  \leq - \kappa - \left<AE,E\right>^2
+  = -\langle R(E,\dot c)\dot c,E\rangle - \langle A^2E,E\rangle
+  \leq - \kappa - \langle AE,E\rangle^2
   = -\kappa - a^2.
 \end{align*}
-
-\begin{center}
-  \textcolor{red}{Abbildung: Krümmung auf der Abstandssphäre}
-\end{center}
-
-An jeder Stelle (solange kein konjugierter Punkt vorliegt) kann $E$ als normalisiertes Jacobifeld $\frac{J}{\|J\|}(t)$ realisiert werden, wobei $J(0) = 0$ und $J \perp \dot c$.
+\begin{center}\begin{tikzpicture}[font=\scriptsize,normal/.style={below,sloped, inner sep=0pt,outer sep=0pt,allow upside down},tangent/.style={decoration={
+	markings,mark=at position #1 with{
+		\coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,0pt);
+		\coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
+		\coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
+		}
+	},postaction=decorate},use tangent/.style={shift=(tangent point-#1),x=(tangent unit vector-#1),y=(tangent orthogonal unit vector-#1)},use tangent/.default=1]
+	
+	%\tikzgitter{(-6,-5)}{(6,5)}
+	
+	% Haifischflosse
+	\coordinate (h1) at (-1.5,3.5); \coordinate (h2) at (4,-0.25); \coordinate (h3) at (0.5,0);
+	\coordinate (ctrlh1a) at (4,0.5); \coordinate (ctrlh1b) at (1.5,-1); \coordinate (ctrlh2a) at (0,1.5); \coordinate (ctrlh2b) at (-0.75,0.5); \coordinate (ctrlh3a) at (1,0.5); \coordinate (ctrlh3b) at (0,0.75);
+	\draw (h1) ..controls($(h1)+(ctrlh1a)$) and ($(h2)+(ctrlh2a)$).. (h2) node[right]{$M_r$} ..controls($(h2)+(ctrlh2b)$) and ($(h3)+(ctrlh3a)$).. (h3) ..controls($(h3)+(ctrlh3b)$) and ($(h1)+(ctrlh1b)$).. (h1) -- cycle;
+	% Kurve
+	\coordinate (k1) at (-3,-2); \coordinate (k2) at (5,3);
+	\coordinate (ctrlk1) at (1,2); \coordinate (ctrlk2) at (-3,0);
+	\draw[name path=kurve,tangent=0.3] (k1) ..controls($(k1)+(ctrlk1)$) and ($(k2)+(ctrlk2)$).. coordinate[pos=0.6](pkt) (k2) node[above]{$c$};
+	\draw[name path=normale,use tangent,->] (0,0) coordinate(a) --node[right]{$E_t$} (0,-1.5) coordinate(b) ;
+	\begin{scope}
+		\clip (k1) ..controls($(k1)+(ctrlk1)$) and ($(k2)+(ctrlk2)$).. coordinate[pos=0.6](pkt) (k2) -- (b) -- (a);
+		\clip (a) -- ++(0,-0.5) -- ++(0.5,0) -- ++(0,1) -- ++(-0.5,0) -- cycle;
+		\draw (a) circle(0.25);
+		\fill ($(a)+(0:0.125)$) circle(0.03);
+	\end{scope}
+	
+	\fill (pkt) circle(0.05);
+	\draw (k1) circle(0.25) node[right,xshift=4]{$M_\epsilon$};
+\end{tikzpicture}\end{center}
+An jeder Stelle, solange kein konjugierter Punkt vorliegt, kann $E$ als normalisiertes Jacobifeld $\frac{\calJ}{\|\calJ\|}(t)$ realisiert werden, wobei $\calJ(0) = 0$ und $\calJ \perp \dot c$.
 \begin{align*}
-  a = \left<A \frac{J}{\|J\|},\frac{J}{\|J\|}\right>
-= \frac{\left<J',J\right>}{\left<J,J\right>} = \underbrace{(\ln \underbrace{\|J\|}_{\to 0})'}_{\to - \infty}
+	a = \left<A \frac{\calJ}{\|\calJ\|},\frac{\calJ}{\|\calJ\|}\right>
+	= \frac{\left<\calJ',\calJ\right>}{\left<\calJ,\calJ\right>} = (\underbrace{\ln \overbrace{\|\calJ\|}^{\to 0}}_{\to \infty})' \to \infty
 \end{align*}
-Mit $a \xrightarrow{t\to 0} \infty$ und Lemma \ref{thm:lemma-9-16} folgt $a \leq \cot_{\kappa}$ (bis zum ersten konjugierten Punkt).
+Mit $a \xrightarrow{t\to 0} \infty$ und Lemma \ref{thm:lemma-9-16} folgt $a \leq \ct_{\kappa}$ (bis zum ersten konjugierten Punkt).
 Insbesondere folgt
 \begin{align*}
-  \|A\| = \sup_{\|E\| = 1} \left<AE,E\right> \leq \cot_{\kappa}.
+  \|A\| = \sup_{\|E\| = 1} \left<AE,E\right> \leq \ct_{\kappa}.
 \end{align*}
 
 %%% Local Variables: 
