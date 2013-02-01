@@ -1389,6 +1389,109 @@ eine Einschr"ankung auf $c_p$. Es sei $\sigma: (-\epsilon, \epsilon) \to M_r$ ei
 \end{tikzpicture}\end{center}
 Dann ist $(t, s) \mapsto c_{\sigma(s)}(t)$ glatt und f"ur alle $s \in (-\epsilon, \epsilon)$ ist dann $c_{\sigma(s)}$ eine Geod"atische durch $\sigma(s)$; also ist $c_s = c_{\sigma(s)}$ eine geod"atische Variation von $c_0 = c_p$.
 Es bezeichne $\calJ$ das zugeh"orige Jacobifeld entlang $c_p$.
+
+
+%%
+%% Vorlesung <2013-2-1 Fri>
+%%
+
+\begin{center}
+  \textcolor{red}{Erster Teil der Vorlesung verpasst.}
+\end{center}
+
+Allgemeiner gilt für eine Lösung $j$ von $j'+\kappa j = 0$ und $b = (\ln j)$:
+\begin{align*}
+  b' = \left(\frac{j'}{j}\right)'
+  = \frac{j''j-j'^2}{j^2}
+  = \frac{-\kappa j^2 -j'^2}{j^2}
+  = -\kappa - b^2
+\end{align*}
+d.h. $b$ löst die eindimensionale Riccatigleichung.
+
+Es sei $J$ ein Jacobifeld entlang einer Geodätischen $c$ in $M^n_{\kappa}$ mit $J(0) = 0$ und $J \perp \dot c$.
+Dann ist $J = \sin_{\kappa}Y$, wobei $Y$ ein zu $c$ orthogonales und entlang $c$ paralleles Vektorfeld ist.
+
+\begin{align*}
+  AY - A \frac{1}{\sin_{\kappa}}J
+  = \frac{1}{\sin_{\kappa}}J' 
+  = \frac{\sin'_{\kappa}}{\sin_{\kappa}}Y
+  = \frac{\cos_{\kappa}}{\sin_{\kappa}}Y
+  = \cot_{\kappa}Y.
+\end{align*}
+Ziel: Abschätzung für Eigenwerte, bzw. Operatornorm von $A_t$ und für das Wachstum von Jacobifeldern bei unteren Krümmungsschranken.
+
+% Lemma 9.16
+\begin{Lemma}\label{thm:lemma-9-16}
+  Es seien $a,b \colon \calI \to \R$ glatt für ein Interval $\calI$, sowie
+  \begin{itemize}
+  \item $a' \leq -\kappa - a^2$
+  \item $b' = -\kappa - b^2$
+  \item $a(t_0) \leq b(t_0)$ für ein $t_0 \in \calI$.
+  \end{itemize}
+  Dann gilt:
+  \begin{enumerate}[label=(\roman*)]
+  \item $a(t) \leq b(t)$ für $t > t_0$
+  \item Gilt $a(t_0) = b(t_0)$ und $a(t_1) = b(t_1)$ für $t_1 > t_0$, so folgt $a|_{[t_0,t_1]} = b|_{[t_0,t_1]}$.
+  \item Gilt $\calI = (0,t_1]$ und $\lim\limits_{t \to 0}a(t) = \infty$, so folgt $a \leq \cot_{\kappa}$ und falls $a(t_0) = \cot_{\kappa}(t_0)$, so gilt $a = \cot_{\kappa}$ auf $\calI$.
+  \end{enumerate}
+\end{Lemma}
+
+\begin{bew}
+  Es gilt
+  \begin{align*}
+    \left((b-a)e^{\int b+a}\right)'
+    & = \left((b'-a') + (b-a)(b+a)\right)e^{\int b+a} \\
+    & = \big(\underbrace{b'+b^2}_{= -\kappa} - \underbrace{(a' + a^2)}_{\leq - \kappa}\big)e^{\int b+a}
+    \geq 0
+  \end{align*}
+  Also ist $(b-a)e^{\int b+a}$ monoton wachsend, d.h. $b-a \geq 0$ und es gilt (i). (ii) folgt sofort.
+
+  Gilt $a(t) \xrightarrow{t\to 0} \infty$, so existiert ein $\phi \colon \calI \to \R$ mit $a(t) = (\cot_{\kappa}\circ \phi)(t)$ und $\phi(0) = 0$.
+
+  Nun gilt $a' = \phi'(\cot'_{\kappa} \circ \phi)$ also
+  \begin{align*}
+    0 \leq -\kappa + \kappa
+    & = (\cot'_{\kappa} + \cot_{\kappa}^2) \circ \phi - (a' + a^2)\\
+    & = \cot'_{\kappa} \circ \phi + (\cot_{\kappa} \circ \phi)^2 - \phi'(\cot'_{\kappa} \circ \phi) - (\cot_{\kappa} \circ \phi)^2\\
+    & = (1-\phi')\underbrace{(\cot'_{\kappa} \circ \phi)}_{\leq 0}
+  \end{align*}
+  und es folgt $\phi' \geq 1$
+
+  Da $\phi(0) = 0$, folgt $\phi(t) \geq t$.
+  Da $\cot_{\kappa}$ monoton falled ist, gilt
+  \begin{align*}
+    a = (\cot_{\kappa} \circ \phi) \leq \cot_{\kappa}.
+  \end{align*}
+  Gleichheit wie oben..
+\end{bew}
+
+Es gelte $\sec_{(M,g)} \geq \kappa$ und es sei $c$ eine nach Bogenlänge parametrisierte Geodätische mit $c(0) = p$.
+Wie oben bezeichne $A_t$ das symmetrische Endomorphismenfeld $A_t \colon \dot c(t) ^{\perp} \to \dot c(t)^{\perp}, X \mapsto \nabla_X \grad \dop_p$.
+
+Für ein entlang $c$ paralleles Vektorfeld $E$ mit $\|E\| = 1$ und $E \perp \dot c$ sei $a = \left<AE,E\right>$.
+Dann gilt:
+\begin{align*}
+  a' = \left<A'E,E\right> 
+  = -\left<R(E,\dot c)\dot c,E\right> - \left<A^2E,E\right>
+  \leq - \kappa - \left<AE,E\right>^2
+  = -\kappa - a^2.
+\end{align*}
+
+\begin{center}
+  \textcolor{red}{Abbildung: Krümmung auf der Abstandssphäre}
+\end{center}
+
+An jeder Stelle (solange kein konjugierter Punkt vorliegt) kann $E$ als normalisiertes Jacobifeld $\frac{J}{\|J\|}(t)$ realisiert werden, wobei $J(0) = 0$ und $J \perp \dot c$.
+\begin{align*}
+  a = \left<A \frac{J}{\|J\|},\frac{J}{\|J\|}\right>
+= \frac{\left<J',J\right>}{\left<J,J\right>} = \underbrace{(\ln \underbrace{\|J\|}_{\to 0})'}_{\to - \infty}
+\end{align*}
+Mit $a \xrightarrow{t\to 0} \infty$ und Lemma \ref{thm:lemma-9-16} folgt $a \leq \cot_{\kappa}$ (bis zum ersten konjugierten Punkt).
+Insbesondere folgt
+\begin{align*}
+  \|A\| = \sup_{\|E\| = 1} \left<AE,E\right> \leq \cot_{\kappa}.
+\end{align*}
+
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "../skript-diffgeom"
