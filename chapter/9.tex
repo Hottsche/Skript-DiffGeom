@@ -1434,7 +1434,7 @@ Es bezeichnen $\sn_\kappa$ und $\cs_\kappa$ die Lösungen mit $\sn_\kappa(0) = 0
   &\sn_\kappa(t) = \begin{cases}
     \frac{1}{\sqrt{-\kappa}} \sinh(\sqrt{-\kappa}t) & \text{f"ur } \kappa < 0\\
     t & \text{f"ur } \kappa = 0\\
-    \frac{1}{\sqrt{\kappa}} \sin(\sqrt{\kappa}t) & \text{f"ur } \kappa > 0\\
+    \nicefrac{1}{\sqrt{\kappa}} \sin(\sqrt{\kappa}t) & \text{f"ur } \kappa > 0\\
   \end{cases}\\
   &\cs_\kappa(t) = \begin{cases}
     \cosh(\sqrt{-\kappa}t) & \text{f"ur } \kappa < 0\\
@@ -1555,27 +1555,25 @@ Insbesondere folgt
 %% 
 
 \begin{dfn}
-  Ein \CmMark[Dreieck!geodätisches]{(geodätisches) Dreieck} $\Delta(a,b,c)$ in $M$ besteht aus drei geodätischen Segmenten $a, b$ und $c$ mit $a(0) = b(0), a(1) = c(0)$ und $c(1) = b(1)$.
-  Es bezeichnen $\alpha, \beta, \gamma$ die inneren Winkel in $\Delta$.
-
-  Ferner sei $|a| = \mathcal L(a)$ die Länge von $a$ (analog für $b$ und $c$). 
-\end{dfn}
-
-Ein Vergleichsdreieck in $M^2_{\kappa}$ der vollständigen Riemannschen Mannigfaltigkeit mit $\sec \cong \kappa$, ist ein Dreieck $\overline \Delta(\overline a,\overline b, \overline c)$ mit $|\overline a| = |a|$, $|\overline b| = |b|$ und $|\overline c| = |c|$.
-Es existiert ein (bis auf Isomorphie) eindeutiges Vergleichsdreieck, wenn gilt:
-\begin{enumerate}[label=(\roman*)]
-\item $|a| + |b| \geq \kappa, |b| + |c| \geq |a|, |c| + |a| \geq |b|$
-\item $\kappa(\Delta(a,b,c)) = |a| + |b| + |c| < \frac{2\pi}{\sqrt{\kappa}}$ (für $\kappa > 0$)
-\end{enumerate}
-
+Ein \CmMark[Dreieck!geodätisches]{(geodätisches) Dreieck} $\Delta(a,b,c)$ in $M$ besteht aus drei geodätischen Segmenten $a$, $b$ und $c$ mit $a(0) = b(0)$, $a(1) = c(0)$ und $c(1) = b(1)$.
+Es bezeichnen $\alpha$, $\beta$ und $\gamma$ die inneren Winkel in $\Delta$.
+Ferner sei $|a| = \mathcal L(a)$ die Länge von $a$ (analog für $b$ und $c$). 
 \begin{center}
   \textcolor{red}{Abbildung: geodätische Dreiecke auf $S^2$}
 \end{center}
+\end{dfn}
+
+Ein Vergleichsdreieck in $M^2_{\kappa}$, der einfach zusammenh"angenden vollständigen Riemannschen Mannigfaltigkeit mit $\sec \equiv \kappa$, ist ein Dreieck $\overline \Delta(\overline a,\overline b, \overline c)$ mit $|\overline a| = |a|$, $|\overline b| = |b|$ und $|\overline c| = |c|$.
+Es existiert ein (bis auf Isomorphie) eindeutiges Vergleichsdreieck, wenn gilt:
+\begin{enumerate}[label=(\roman*)]
+\item $|a| + |b| \geq |c|$, $|b| + |c| \geq |a|$, $|c| + |a| \geq |b|$
+\item $U(\Delta(a,b,c)) = |a| + |b| + |c| < \frac{2\pi}{\sqrt{\kappa}}$ (für $\kappa > 0$)
+\end{enumerate}
 
 \begin{Satz}[Alexander-Toponogov]\index{Alexander-Toponogov}\label{thm:satz-alexander-toponogov}
-  Es sei $(M,g)$ eine vollständige Riemannsche $m$-Mannigfaltigkeit mit $\sec_{(M,g)} \geq \kappa$ und im Falle $\kappa > 0$ gelte $M \not\cong S^m_{\frac{1}{\sqrt{\kappa}}}$.
-  Ist dann $\Delta(a,b,c)$ ein geodätisches Dreieck mit $|c| \leq |a| + |b|$ sowie, zum Falle $\kappa > 0$, $|c| < \frac{\pi}{\sqrt{\kappa}}$ und $a$ und $b$ seien minimierende Geodätische.
-  Dann gilt für das Vergleichsdreieck $\overline\Delta(\overline a,\overline b, \overline c)$ in $M_{\kappa}$.
+  Es sei $(M,g)$ eine vollständige Riemannsche $m$-Mannigfaltigkeit mit $\sec_{(M,g)} \geq \kappa$ und im Falle $\kappa > 0$ gelte $M \not\cong S^m_{\nicefrac{1}{\sqrt{\kappa}}}$.
+  Ist dann $\Delta(a,b,c)$ ein geodätisches Dreieck mit $|c| \leq |a| + |b|$, sowie, im Falle $\kappa > 0$, $|c| < \frac{\pi}{\sqrt{\kappa}}$ und $a$ und $b$ seien minimierende Geodätische.
+  Dann gilt für das Vergleichsdreieck $\overline\Delta(\overline a,\overline b, \overline c)$ in $M_{\kappa}^2$: $\overline{\dop}_{\overline{p}} \le \dop_p$
   \begin{enumerate}[label=(\roman*)]
   \item $\dop(\overline p,\overline c(t)) \leq \dop(p,c(t))$
   \item $\overline \alpha \leq \alpha$ und $\overline \beta \leq \beta$.
@@ -1586,12 +1584,11 @@ Es existiert ein (bis auf Isomorphie) eindeutiges Vergleichsdreieck, wenn gilt:
   \textcolor{red}{Abbildung: geodätisches Dreieck gegenüberliegende Seite}
 \end{center}
 
-
 \begin{bem}
-  Das Aussschließen von $S^m_{\frac{1}{\sqrt{\kappa}}}$ ist nach dem Satz von Cheng keine Einschränkung.
+  Das Aussschließen von $S^m_{\nicefrac{1}{\sqrt{\kappa}}}$ ist nach dem Satz von Cheng\cite{Cheng1975} keine Einschränkung.
 \end{bem}
 
-Es seien $a,b,c$ nach Bogenlänge parametrisiert und $p = a(0) = b(0)$.
+Es seien $a$, $b$ und $c$ nach Bogenlänge parametrisiert und $p = a(0) = b(0)$.
 
 \begin{center}
   \textcolor{red}{Abbildung: Eindeutige Geodätische von $p$ nach $c(t)$}
@@ -1599,7 +1596,7 @@ Es seien $a,b,c$ nach Bogenlänge parametrisiert und $p = a(0) = b(0)$.
 
 Es existiere zu jedem $c(t)$ eine eindeutige Geodätische von $p$.
 Dann ist insbesondere $\dop_p$ um $c(t)$ glatt.
-Die Abstandsfunktion wird nun so modifiziert, dass in dem Abschnitt nicht zwischen dem zu $\grad \dop_p$ kollinearen Anteil und dem zur Abstandssühäre tangentialen Teil unterschieden werden muss.
+Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwischen dem zu $\grad \dop_p$ kollinearen Anteil und dem zur Abstandssphäre tangentialen Teil unterschieden werden muss.
 
 \begin{emptythm}[Karchers Trick]\index{Karchers Trick}
   Es sei
@@ -1612,21 +1609,20 @@ Die Abstandsfunktion wird nun so modifiziert, dass in dem Abschnitt nicht zwisch
   \end{align*}
   dann ist $m_{\kappa}(0) = 0, m_{\kappa}' = \sn_{\kappa}$, also $m_{\kappa}$ streng monoton auf $[0,\frac{\pi}{\sqrt{\kappa}}]$, und es gilt $\cs_{\kappa} + \kappa m_{\kappa} \equiv 1$.
   Es sei $r(t) = \dop(p, c(t))$ und $e = m_k \circ r$.
-
   Dann ist
   \begin{align*}
     r' & = \difffrac{}{t}(\dop_p \circ c) = \dot c(\dop_p) = \left<\grad \dop_p,\dot c\right>,\\
-    r'' & = \left<\nabla_{\dot c} \grad \dop_p,\dot c\right> = H_{\dop_p}(\dot c, \dot c).\cos
+    r'' & = \left<\nabla_{\dot c} \grad \dop_p,\dot c\right> = H_{\dop_p}(\dot c, \dot c)
   \end{align*}
   Zerlegt man $\dot c$ orthogonal in $\dot c = v + w$ mit $w \perp \grad \dop_p$, so folgt aus $H_{\dop_p}(\grad \dop_p, \cdot) \equiv 0$ gerade
   \begin{align*}
     H_{\dop_p}(\dot c,\dot c) = H_{\dop_p}(w,w)
-    = \|w\|^2\left>A \frac{w}{\|w\|},\frac{w}{\|w\|}\right>
-    \leq (\ct_{\kappa} \circ r) \|w\|^2.
+    = \|w\|^2\left\langle A \frac{w}{\|w\|},\frac{w}{\|w\|}\right\rangle
+    \leq (\ct_{\kappa}) \|w\|^2.
   \end{align*}
   Somit gilt
   \begin{align*}
-    c'' & = (m_{\kappa}''\circ r)r'^2 + (m_{\kappa}' \circ r) r''
+    e'' & = (m_{\kappa}''\circ r)r'^2 + (m_{\kappa}' \circ r) r''
     = (\cs_{\kappa} \circ r) \left<\grad \dop_p,\dot c\right>^2 + (\sn_{\kappa} \circ r)H_{\dop_p}(\dot c, \dot c)\\
     & \leq (\cs_{\kappa} \circ r)\|v\|^2 + (\sn_{\kappa} \circ r)(\ct_{\kappa} \circ r)\|w\|^2
     = (\cs_{\kappa} \circ r)(\|v\|^2 + \|w\|^2)
@@ -1642,7 +1638,7 @@ Die Abstandsfunktion wird nun so modifiziert, dass in dem Abschnitt nicht zwisch
 
   Im Fall konstanter Krümmung gilt für eine analog definierte modifizierte Abstandsfunktion
   \begin{align*}
-    \overline e = (\overline m_{\kappa} \circ \overline r), \
+    \overline e = (m_{\kappa} \circ \overline r), \
     \overline e '' + \kappa \overline e \equiv 1.
   \end{align*}
   Ist wie oben $\dot{\overline c} = \overline v + \overline w$ (mit $w,\overline w \neq 0$), so existiert ein Jacobifeld entlang der Geodätischen von $p$ nach $c(t)$ von der Form $J = \sn_{\kappa} E$, wobei $E$ die parallele Fortsetzung von $\overline w$ ist, und es gilt $J(\dop_{\overline p}(\overline c(t))) = w$.
@@ -1656,47 +1652,41 @@ Die Abstandsfunktion wird nun so modifiziert, dass in dem Abschnitt nicht zwisch
   und in der obigen Abschätzung gilt die Gleichheit.
 \end{emptythm}
 
-\begin{emptythm}[Beweisskizze]
-  (zum Satz von Alexander-Toponogov \ref{thm:satz-alexander-toponogov})
-  Annahme: $|a| + |b| + |c| < \frac{2\pi}{\sqrt{\kappa}}$.
-
-  Fall $|a| + |b| = |c|$, korrekt.
-
-  Es gelte also $|a| + |b| > |c|$, dann ist jedenfalls $p \notin c$.
-  Es seien $r = \dop_p \circ c$ und $e = m_{\kappa} \circ r$ wie oben, sowie $\overline r$ und $\overline c$ für das Vergleichsdreieck.
-
-  Betrachte $f = e - \overline e$.
-  Fall 1: zu jedem $c(t)$ existiert eine eindeutige minimierende Geodätische, damit ist $r$ und damit $f$ differenzierbar.
-  Es gilt
-  \begin{align*}
-    f'' = e'' - \overline e''
-    \leq 1 - \kappa e - (1-\kappa \overline e)
-    = -\kappa f.
-  \end{align*}
-  Angenommen es gäbe ein $s \in (0,l)$ $l = |c|$ mit $f(s) < 0$.
-  Es sei $\epsilon > 0$ so, dass gilt
-  \begin{align*}
-    l + \epsilon < \frac{\pi}{\sqrt{\kappa + \epsilon}}.
-  \end{align*}
-
-  Es sei $g(t) = \sn_{\kappa + \epsilon}(t + \epsilon)$ die, auf $[0,l]$ positiv, Lösung von $g'' +(\kappa + \epsilon)g = 0$.
-  Betrachte $h = \frac{f}{g}$.
-  Dann gilt $h(s) < 0$ und $h(0) = 0 = h(l)$ und somit nimmt $h$ eine negatives Minimum, etwa $t_0$, an.
-
-  Es gilt also $h(t_0) < 0, h'(t_0) = 0$ und $h''(t_0) \geq 0$.
-  Dann folgt
-  \begin{align*}
-    f'' + \kappa f & = g'' h + 2 g'h' + gh'' + \kappa g h
-    = -(\kappa + \epsilon)gh + 2 g'h' + gh'' + \kappa g h\\
-    & = \underbrace{-\epsilon g h}_{> 0} + \underbrace{2 g' h'}_{= 0} + \underbrace{gh''}_{\geq 0} 
-    > 0
-  \end{align*}
-  im Widerspruch zu $f'' + \kappa f \leq 0$.
-
-  \begin{center}
-    \textcolor{red}{Abbildung: nicht Fall 1}
-  \end{center}
-\end{emptythm}
+\begin{emptythm}[Beweisskizze (zum Satz von Alexander-Toponogov \ref{thm:satz-alexander-toponogov})]
+\emph{Annahme:} $|a| + |b| + |c| < \frac{2\pi}{\sqrt{\kappa}}$.
+Der Fall $|a| + |b| = |c|$ ist trivialerweise korrekt.
+Es gelte also $|a| + |b| > |c|$, dann ist jedenfalls $p \notin c$.
+Es seien $r = \dop_p \circ c$ und $e = m_{\kappa} \circ r$ wie oben, sowie $\overline r$ und $\overline c$ für das Vergleichsdreieck.
+Betrachte $f = e - \overline e$.
+\begin{description}[font=\normalfont\bfseries]
+\item[Fall 1:] zu jedem $c(t)$ existiert eine eindeutige minimierende Geodätische, damit ist $r$ und damit auch $f$ differenzierbar.
+	Es gilt
+	\begin{align*}
+		f'' = e'' - \overline e''
+		\leq 1 - \kappa e - (1-\kappa \overline e) = -\kappa f.
+	\end{align*}
+	Angenommen es gäbe ein $s \in (0,l)$, $l = |c|$ mit $f(s) < 0$.
+	Weiter sei $\epsilon > 0$ so, dass gilt
+	\begin{align*}
+		l + \epsilon < \frac{\pi}{\sqrt{\kappa + \epsilon}}.
+	\end{align*}
+	
+	Es sei $g(t) = \sn_{\kappa + \epsilon}(t + \epsilon)$ die, auf $[0,l]$ positive, Lösung von $g'' +(\kappa + \epsilon)g = 0$.
+	Betrachte $h = \frac{f}{g}$.
+	Dann gilt $h(s) < 0$ und $h(0) = 0 = h(l)$ und somit nimmt $h$ ein negatives Minimum, etwa $t_0$, an.
+	
+	Es gilt also $h(t_0) < 0$, $h'(t_0) = 0$ und $h''(t_0) \geq 0$.
+	Dann folgt
+	\begin{align*}
+		f'' + \kappa f & = g'' h + 2 g'h' + gh'' + \kappa g h = -(\kappa + \epsilon)gh + 2 g'h' + gh'' + \kappa g h\\
+		\underset{\text{in } t_0:}{\hphantom{}} & = \underbrace{-\epsilon g h}_{> 0} + \underbrace{2 g' h'}_{= 0} + \underbrace{gh''}_{\geq 0} > 0
+	\end{align*}
+	im Widerspruch zu $f'' + \kappa f \leq 0$.
+\item[Fall 1 gilt nicht:] Es gibt nun keine eindeutige Geod"atische
+\begin{center}
+	\textcolor{red}{Abbildung: nicht Fall 1}
+\end{center}
+\end{description}\end{emptythm}
 
 %%% Local Variables: 
 %%% mode: latex
