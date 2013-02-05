@@ -23,3 +23,12 @@ vc.tex: .git/logs/HEAD
 	echo "\gdef\GITVersionTag{" >> vc.tex
 	git describe --abbrev=0 --tags >> vc.tex
 	echo "}" >> vc.tex
+
+umlauts: chapter/*.tex
+	find . -name "*.tex" | xargs sed -i 's/ä/"a/g'
+	find . -name "*.tex" | xargs sed -i 's/ö/"o/g'
+	find . -name "*.tex" | xargs sed -i 's/ü/"u/g'
+	find . -name "*.tex" | xargs sed -i 's/Ä/"A/g'
+	find . -name "*.tex" | xargs sed -i 's/Ö/"O/g'
+	find . -name "*.tex" | xargs sed -i 's/Ü/"U/g'
+	find . -name "*.tex" | xargs sed -i 's/ß/"s/g'
