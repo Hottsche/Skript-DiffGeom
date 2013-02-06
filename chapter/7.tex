@@ -11,9 +11,9 @@
 
 \chapter{Kovariante Ableitungen}
 
-\paragraph{Frage:} Was ist eine \quot{gute} Differentialrechnung für Vektorfelder?
+\paragraph{Frage:} Was ist eine \quot{gute} Differentialrechnung f"ur Vektorfelder?
 
-Das gewöhnliche Differential im $\R^n$ für $Y \colon \R^n \to \R^n$ ist gerade die lineare Abbildung $\D Y|_p \cdot v = \lim \frac{1}t \left(Y(p+tv) -Y(p)\right) = \difffrac[t=0]{}{t} Y(p+tr)$.
+Das gew"ohnliche Differential im $\R^n$ f"ur $Y \colon \R^n \to \R^n$ ist gerade die lineare Abbildung $\D Y|_p \cdot v = \lim \frac{1}t \left(Y(p+tv) -Y(p)\right) = \difffrac[t=0]{}{t} Y(p+tr)$.
 Betrachte im euklidischen Fall einen Punkt $p$, sowie einen Tangentialvektor $Y_p$.
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
 	\coordinate (end) at (1.5,0.75); %Endrichtung
@@ -30,7 +30,7 @@ Betrachte im euklidischen Fall einen Punkt $p$, sowie einen Tangentialvektor $Y_
 	\draw[->,dashed] ($(q) + 0.5*\scl*(dir)$) --node[above,sloped]{Parallelverschiebung} ($(p) + 0.5*\scl*(dir)$);
 \end{tikzpicture}\end{center}
 
-Nun gehe zur Betrachtung von Vektorfeldern $X \colon \R^n \to \R^n$ über und setze $\D_XY|_p = \D Y|_p\cdot X_p$. Hierfür gilt:
+Nun gehe zur Betrachtung von Vektorfeldern $X \colon \R^n \to \R^n$ "uber und setze $\D_XY|_p = \D Y|_p\cdot X_p$. Hierf"ur gilt:
 \begin{itemize}
 \item $\D$ ist $\R$-linear in $Y$: $\D(Y + \tilde Y) = \D Y + \D \tilde Y$.
 \item Es gilt die Leibnizregel: $\D(fY) = \D f \cdot Y + f\D Y$.
@@ -44,7 +44,7 @@ Nun gehe zur Betrachtung von Vektorfeldern $X \colon \R^n \to \R^n$ über und se
 
 % Definition 7.1
 \begin{Dfn}
-  Es seien $M$ eine glatte Mannigfaltigkeit und $E$ ein Vektorbündel über $M$.
+  Es seien $M$ eine glatte Mannigfaltigkeit und $E$ ein Vektorb"undel "uber $M$.
   Eine \CmMark{kovariante Ableitung} (oder \CmMark{Zusammenhang} ([engl.] \quot{connection}) auf $E$ ist eine Abbildung
   \begin{align*}
     \nabla \colon \mathcal V(M) \times \Gamma(E) \to \Gamma(E), \quad \nabla(X,S) = \nabla_XS
@@ -60,7 +60,7 @@ Nun gehe zur Betrachtung von Vektorfeldern $X \colon \R^n \to \R^n$ über und se
     \begin{align*}
       \nabla_X(\mu S + \nu T) = \mu\nabla_XS + \nu\nabla_XT.
     \end{align*}
-  \item $\nabla_X$ erfüllt die folgende Leibnizregel:
+  \item $\nabla_X$ erf"ullt die folgende Leibnizregel:
     \begin{align*}
       \nabla_X(fS) = \dop f(X) \cdot S + f\cdot \nabla_XS = X(f)\cdot S + f \cdot \nabla_XS.
     \end{align*}
@@ -70,7 +70,7 @@ Nun gehe zur Betrachtung von Vektorfeldern $X \colon \R^n \to \R^n$ über und se
 
 \begin{bsp}\begin{enumerate}[label=\arabic*),leftmargin=*]
 \item
-	Das gewöhnliche Differential $\D$ definiert in kanonischer Weise eine kovariante Ableitung auf $\T\R^n$.
+	Das gew"ohnliche Differential $\D$ definiert in kanonischer Weise eine kovariante Ableitung auf $\T\R^n$.
 	\begin{align*}
 		X \in \mathcal V(\R^n), X \colon \R^n \to \T\R^n \cong \R^n \times \R^n \text{ via } \calI\colon X_p \mapsto (p,\underbrace{\calI_p(X_p)}_{=:\overline X_p}).
 	\end{align*}
@@ -85,7 +85,7 @@ Nun gehe zur Betrachtung von Vektorfeldern $X \colon \R^n \to \R^n$ über und se
 	\end{align*}
 \item
 	Sei $E = M \times \R^n$, ein Schnitt $S = (\Id, \sigma)$, $\sigma: M \to \R^n$. Dann ist $(\nabla_X S)_p = (p, \calI_p(\sigma_{*p}(X_p))$, $\sigma_{*p}: \T_pM \to \T_{\sigma(p)}\R^n$. Sei $ \omega = (\omega_j^k)_{j,k \le n}$ eine $(n\times n)$-Matrix von 1-Formen auf $M$, das hei"st $\omega(X)|_p \in \mathfrak M^{n\times n}(\R)$.
-	Für einen Schnitt $S = (\Id, \sigma)$ und sei dann
+	F"ur einen Schnitt $S = (\Id, \sigma)$ und sei dann
 		\[ (\nabla_XS)_p = (\Id, \calI_p(\sigma_{*p}(X_p)) + \omega(X)|_p \cdot \sigma(p). \]
 	Dies definiert eine kovariante Ableitung auf $E = M \X \R^n$.
 \item
@@ -100,16 +100,16 @@ Nun gehe zur Betrachtung von Vektorfeldern $X \colon \R^n \to \R^n$ über und se
 \item
 	Es sei $M \subseteq \R^k$ eine glatte Untermannigfaltigkeit und $\nabla$ die kanonische kovariante Ableitung auf $\T \R^k$.
 
-	Erster Ansatz für eine kovariante Ableitung:
+	Erster Ansatz f"ur eine kovariante Ableitung:
 	\begin{align*}
 		\tilde \nabla_XY = \nabla_{\tilde X}\tilde Y|_M \text{ das funktioniert noch nicht.}
 	\end{align*}
-	Für $X,Y \in \mathcal V(M)$ seien $\tilde X, \tilde Y$ Fortsetzungen, das hei"st $\tilde X|_M = X$ und $\tilde Y|_M = Y$.
+	F"ur $X,Y \in \mathcal V(M)$ seien $\tilde X, \tilde Y$ Fortsetzungen, das hei"st $\tilde X|_M = X$ und $\tilde Y|_M = Y$.
 	\begin{align*}
 		(\nabla_{\tilde X}\tilde Y)_p \in \T_p\R^k \supseteq \T_pM.
 	\end{align*}
 
-	Nächster Ansatz, der tasächlich eine kovariante Ableitung definiert.
+	N"achster Ansatz, der tas"achlich eine kovariante Ableitung definiert.
 	\begin{align*}
 		\tilde \nabla_XY = (\nabla_{\tilde X}\tilde Y|_M)^{\text{proj}\T_pM},
 	\end{align*}
@@ -193,7 +193,7 @@ Durch eine kovariante Ableitung auf einem Vektorb"undel $E$ erhalten wir kovaria
 \begin{Prop}\label{prop-7-3}
 Die f"ur $X \in \calV(M)$, $S^* \in \Gamma(E^*)$ und $v \in E_p$ sowie eine Fortsetzung $\tilde v \in \Gamma(E)$ von $v_p$ durch
 	\[ (\nabla_X^* S^*)_p(v) = X_p(S^*(\tilde v)) - S^*|_p (\nabla_X \tilde v) \]
-definierte Abbildung ist eine kovariante Ableitung auf $E^*$. Dass $S^*(\tilde v) = (S^*, \tilde v)$ ist führt zu $X_p(S^*, \tilde v) = (\nabla_X^* S^*, \tilde v) + (S^*, \nabla_X \tilde v)$.
+definierte Abbildung ist eine kovariante Ableitung auf $E^*$. Dass $S^*(\tilde v) = (S^*, \tilde v)$ ist f"uhrt zu $X_p(S^*, \tilde v) = (\nabla_X^* S^*, \tilde v) + (S^*, \nabla_X \tilde v)$.
 \end{Prop}
 Der Beweis sei zur "Ubung "uberlassen.
 
@@ -387,7 +387,7 @@ Es seien $S \in \Gamma(E)$ und $X_p \in \T_pM$. Ist $c$ eine Integralkurve von $
 
 \section{Der Levi-Civita Zusammenhang}
 
-Für das \quot{gew"ohnliche} Differential auf $\R^k$ gilt:
+F"ur das \quot{gew"ohnliche} Differential auf $\R^k$ gilt:
 \begin{align*}
   \D Y(X) - \D X(Y) = \sum_i^k\pdifffrac{y^j}{x^i}X^i - \pdifffrac{x^j}{x^i}Y^i = [X,Y].
 \end{align*}
@@ -398,8 +398,8 @@ Für das \quot{gew"ohnliche} Differential auf $\R^k$ gilt:
   \begin{align*}
     T(X,Y) = \nabla_XY - \nabla_YX - [X,Y]
   \end{align*}
-heißt \CmMark{Torsion} oder der \CmMark{Torsionstensor} von $\nabla$.
-Die kovariante Ableitung heißt \CmMark{torsionslos}, wenn $T \equiv 0$ gilt.
+hei"st \CmMark{Torsion} oder der \CmMark{Torsionstensor} von $\nabla$.
+Die kovariante Ableitung hei"st \CmMark{torsionslos}, wenn $T \equiv 0$ gilt.
 \end{Dfn}
 
 Betrachtet man die Standardmetrik $g^{\text{std}} = \left<\cdot,\cdot\right>$ des $\R^k$ in den Koordinaten $(\Id, \R^k)$, so gilt:
@@ -407,16 +407,16 @@ Betrachtet man die Standardmetrik $g^{\text{std}} = \left<\cdot,\cdot\right>$ de
   g^{\text{std}} & = \sum_{i,j} g_{ij} \dop x^i \otimes \dop x^j = \sum_{i,j} \delta_{ij} \dop x^i \otimes x^j\\
   & = \sum_i \dop x^i \otimes \dop x^i.
 \end{align*}
-Das heißt die Metrik $g^{\text{std}}$ (das hei"st die $g_{ij}$) ist konstant.
+Das hei"st die Metrik $g^{\text{std}}$ (das hei"st die $g_{ij}$) ist konstant.
 
 % Satz 7.12
 \begin{Satz}[Levi-Civita, 1961] \label{satz-7-12}
-  Auf einer Riemannschen Mannigfaltigkeit existiert genau ein torsionsloser Zusammenhang bezüglich dessen kovarianter Ableitung die Metrik parallel ist ($\nabla g \equiv 0$).
+  Auf einer Riemannschen Mannigfaltigkeit existiert genau ein torsionsloser Zusammenhang bez"uglich dessen kovarianter Ableitung die Metrik parallel ist ($\nabla g \equiv 0$).
 \end{Satz}
 
-\emph{Zur Parallelität:} Die Metrik $g$ einer Riemannschen Mannigfaltigkeit ist ein $(0,2)$-Tensorfeld, das heißt lokal ist $g$ endliche Summe von Elementen der Form $\omega \otimes \eta$, wobei $\omega, \eta \in \Omega^1(M)$.
+\emph{Zur Parallelit"at:} Die Metrik $g$ einer Riemannschen Mannigfaltigkeit ist ein $(0,2)$-Tensorfeld, das hei"st lokal ist $g$ endliche Summe von Elementen der Form $\omega \otimes \eta$, wobei $\omega, \eta \in \Omega^1(M)$.
 
-Für $X,Y,Z \in \mathcal V(M)$ gilt:
+F"ur $X,Y,Z \in \mathcal V(M)$ gilt:
 \begin{align*}
   \nabla_Z(\omega \otimes \eta)(X,Y) & = \big((\nabla^{*}_Z\omega) \otimes \eta + \omega \otimes (\nabla^{*}_Z \eta)\big)(X,Y)\\
 & = (\nabla^{*}_Z \omega)(X)\eta(Y) + \omega(X)(\nabla^{*}_Z \eta)(Y)\\
@@ -425,7 +425,7 @@ Für $X,Y,Z \in \mathcal V(M)$ gilt:
 & = Z\big((\omega \otimes \eta)(X,Y)\big) - (\omega \otimes \eta)(\nabla_ZX,Y) - (\omega \otimes \eta)(X,\nabla_Z Y)
 \end{align*}
 
-Somit ist $g$ genau dann parallel, wenn für $X,Y,Z \in \mathcal V(M)$ gilt:
+Somit ist $g$ genau dann parallel, wenn f"ur $X,Y,Z \in \mathcal V(M)$ gilt:
 \begin{align*}
   0 = (\nabla_Z g)(X,Y) = Z(g(X,Y)) - g(\nabla_ZX,Y) - g(X,\nabla_ZY)
 \end{align*}
@@ -434,8 +434,8 @@ beziehungsweise
   Z\left<X,Y\right> = \left<\nabla_ZX,Y\right> + \left<X,\nabla_ZY\right>.
 \end{align*}
 
-Dies ist genau dann der Fall, wenn der Paralleltransport entlang von Kurven eine lineare Isometrie ist (vgl. Aufgabe 3 auf dem Übungsblatt 8).
-Ist $c$ eine glatte Kurve, $P_t \colon \T_{c(0)}M \to \T_{c(t)}M$ eine Isometrie, so gilt für alle $X,Y \in \T_{c(0)}M$: 
+Dies ist genau dann der Fall, wenn der Paralleltransport entlang von Kurven eine lineare Isometrie ist (vgl. Aufgabe 3 auf dem "Ubungsblatt 8).
+Ist $c$ eine glatte Kurve, $P_t \colon \T_{c(0)}M \to \T_{c(t)}M$ eine Isometrie, so gilt f"ur alle $X,Y \in \T_{c(0)}M$: 
 \begin{align*}
   g_{c(0)}(X,Y) = g_{c(t)}(P_tX,P_tY) = (P^{*}_tg_{c(t)})(X,Y).
 \end{align*}
@@ -445,7 +445,7 @@ Also gilt $P_t^{*} g_{c(t)} = g_{c(0)}$ und es folgt:
 \end{align*}
 
 \begin{bew}[von Satz \ref{satz-7-12}]
-Ist $\nabla$ eine kovariante Ableitung mit den geforderten Eigenschaften, so gilt für $X,Y,Z \in \mathcal V(M)$:
+Ist $\nabla$ eine kovariante Ableitung mit den geforderten Eigenschaften, so gilt f"ur $X,Y,Z \in \mathcal V(M)$:
 \begin{align*}
 	X\left<Y,Z\right> & = \left<\nabla_XY,Z\right> + \left<Y,\nabla_XZ\right>\\
 	Y\left<Z,X\right> & = \left<\nabla_YZ,X\right> + \left<Z,\nabla_YX\right>\\
@@ -459,13 +459,13 @@ Indem man die ersten beiden Gleichungen addiert und die Dritte abzieht erh"alt m
 	& - \left<Y,\nabla_XZ - \nabla_ZX\right> + \left<Z,[X,Y]\right>\\
 	= & \ X\left<Y,Z\right> + Y\left<Z,X\right> - Z\left<X,Y\right> - \left<X,[Y,Z]\right> - \left<Y,[X,Z]\right> + \left<Z,[X,Y]\right>.
 \end{align*}
-Die rechte Seite der Gleichung ist $C^{\infty}(M)$-linear in $Z$, definiert also für alle $X,Y \in \mathcal V(M)$ eine $1$-Form $\omega_{(X,Y)}$.
+Die rechte Seite der Gleichung ist $C^{\infty}(M)$-linear in $Z$, definiert also f"ur alle $X,Y \in \mathcal V(M)$ eine $1$-Form $\omega_{(X,Y)}$.
 Da die Metrik $\left<\cdot,\cdot\right>$ positiv definit ist, existiert ein Vektorfeld $A_{(X,Y)} \in \mathcal V(M)$ mit $\omega_{(X,Y)} = \left<A_{(X,Y)},\cdot\right>$, das, wie man leicht nachrechnet, $A_{(X,Y)}$-linear und derivativ in $Y$ und $C^{\infty}(M)$-linear in $X$ ist und durch
 \[\begin{array}{cccc}
 	\nabla \colon & \mathcal V(M) \times \mathcal V(M) &\to& \mathcal V(M)\\
 	&(X,Y) &\mapsto& A_{(X,Y)}
 \end{array}\]
-wird eine eindeutige kovariante Ableitung definert, die die geforderten Eigenschaften erfüllt.
+wird eine eindeutige kovariante Ableitung definert, die die geforderten Eigenschaften erf"ullt.
 \end{bew}
 
 \begin{bem}
@@ -474,18 +474,18 @@ wird eine eindeutige kovariante Ableitung definert, die die geforderten Eigensch
 
 % Definition 7.13
 \begin{Dfn}
-  Die nach obigem Satz eindeutig bestimmte, torsionsfreie Zusammenhang bezüglich dessen die Metrik parallel ist, heißt \CmMark{Levi-Civita Zusammenhang}.
+  Die nach obigem Satz eindeutig bestimmte, torsionsfreie Zusammenhang bez"uglich dessen die Metrik parallel ist, hei"st \CmMark{Levi-Civita Zusammenhang}.
 \end{Dfn}
 
 \begin{bsp}\begin{enumerate}[label=\arabic*),leftmargin=*]
 \item
-	Der Levi-Civita Zusammenhang des $\R^k$ mit der Standardmetrik ist die gewöhnliche Ableitung $\D$.
+	Der Levi-Civita Zusammenhang des $\R^k$ mit der Standardmetrik ist die gew"ohnliche Ableitung $\D$.
 \item
 	Ist $M \subseteq \R^k$ eine Untermannigfaltigkeit mit der induzierten Metrik, so ist durch
 	\begin{align*}
 		(\nabla_XY)_p = (\D_XY|_p)^T = \D_XY|_p - (D_XY|_p)^{\perp}
 	\end{align*}
-	ein Zusammenhang definiert, der gerade der Levi-Civita Zusammenhang ist, denn $\nabla$ ist torsionslos, da $\D$ torsionslos ist und für Vektorfelder $X,Y,Z \in \mathcal V(M)$ gilt:
+	ein Zusammenhang definiert, der gerade der Levi-Civita Zusammenhang ist, denn $\nabla$ ist torsionslos, da $\D$ torsionslos ist und f"ur Vektorfelder $X,Y,Z \in \mathcal V(M)$ gilt:
 	\begin{align*}
 		Z\left<X,Y\right> & = \left<\D_ZY, Y\right> + \left<X, \D_ZY\right>\\
 		& = \left<(D_ZX)^T + (\D_ZX)^{\perp}, Y\right> + \left<X,(\D_ZY)^T + (\D_ZY)^{\perp}\right>\\
@@ -518,7 +518,7 @@ Dann ist
 \end{align*}
 
 
-\section{Krümmungen}
+\section{Kr"ummungen}
 
 Man definiert die zweite kovariante Ableitung als
 \begin{align*}
@@ -543,13 +543,13 @@ F"ur $X,Y,Z,W \in \mathcal V(M)$ gilt:
 	$\left<R(X,Y)Z,W\right> = \left<R(Z,W)X,Y\right>$.
 \end{enumerate}\end{Prop}
 
-Der Beweis sei als Übung überlassen.
+Der Beweis sei als "Ubung "uberlassen.
 
-Es seien $X,Y \in \T_pM$ linear unabhängig. Dann hängt
+Es seien $X,Y \in \T_pM$ linear unabh"angig. Dann h"angt
 \begin{align*}
   \frac{\left<R(X,Y)Y,X\right>}{\|X\|^2\|Y\|^2 - \left<X,Y\right>^2}
 \end{align*}
-nur von der von $X$ und $Y$ aufgespannten Ebene ab. Um das zu zeigen seien $Z = aX + bY, \ W = cX + dY$ und ohne Einschränkung seien $X,Y$ orthonormal.
+nur von der von $X$ und $Y$ aufgespannten Ebene ab. Um das zu zeigen seien $Z = aX + bY, \ W = cX + dY$ und ohne Einschr"ankung seien $X,Y$ orthonormal.
 Dann gilt:
 \begin{align*}
   \|Z\|^2\|W\|^2 - \left<Z,W\right>^2 & = \|aX + bY\|^2\|cX + dY\|^2 - \left<aX + bY, cX + dY\right>^2\\
@@ -565,11 +565,11 @@ Also
 % Definition 7.15
 \begin{Dfn}
 Es sei $\sigma$ eine von $X,Y \in \mathcal V(M)$ aufgespannte Ebene in $\T_pM$.
-Dann heißt 
+Dann hei"st 
 \begin{align*}
 	\sec_p(\sigma) = \sec_p(X,Y) = \frac{\left<R(X,Y)Y,X\right>}{\|X\|^2\|Y\|^2 - \left<X,Y\right>^2}
 \end{align*}
-die \CmMark{Schnittkrümmung} der Ebene $\sigma$.
+die \CmMark{Schnittkr"ummung} der Ebene $\sigma$.
 \end{Dfn}
 
 
@@ -577,29 +577,29 @@ die \CmMark{Schnittkrümmung} der Ebene $\sigma$.
 %% Vorlesung <2012-12-14 Fri>
 %% 
 
-Es sei $e_1, \ldots, e_m \in  \T_pM$ eine Orthonormalbasis bezüglich $g(p)$. Die für $X,Y \in \T_pM$ durch Spurbildung definierte Abbildung
+Es sei $e_1, \ldots, e_m \in  \T_pM$ eine Orthonormalbasis bez"uglich $g(p)$. Die f"ur $X,Y \in \T_pM$ durch Spurbildung definierte Abbildung
 \begin{align*}
   \ric_p(X,Y) = \gls{spur} R(\cdot,X)Y = \sum_i\left<R(e_i,X)Y,e_i\right>
 % spur = trace (tr)
 \end{align*}
-heißt \CmMark{Ricci-Tensor} in $p$. Aus den Symmetrien von $R$ folgt, dass $\ric_p$ symmetrisch ist.
+hei"st \CmMark{Ricci-Tensor} in $p$. Aus den Symmetrien von $R$ folgt, dass $\ric_p$ symmetrisch ist.
 Es existiert ein $(1,1)$-Tensorfeld $\Ric$, so dass
 \begin{align*}
   \ric_p(X,Y) = \left<\Ric(X),Y\right>
 \end{align*}
-für alle $p \in M, \ X,Y \in \T_pM$ gilt.
+f"ur alle $p \in M, \ X,Y \in \T_pM$ gilt.
 
 % Definition 7.16
 \begin{Dfn}
-  Für $X \in \T_pM$, $X \neq 0$ heißt
+  F"ur $X \in \T_pM$, $X \neq 0$ hei"st
   \begin{align*}
     \frac{\ric_p(X,X)}{\|X\|^2} = \left<\Ric\left(\frac{X}{\|X\|}\right),\frac{X}{\|X\|}\right>
   \end{align*}
-die \CmMark{Ricci-Krümmung} in $p$ in Richtung $X$. Die Spur von $\Ric$
+die \CmMark{Ricci-Kr"ummung} in $p$ in Richtung $X$. Die Spur von $\Ric$
 \begin{align*}
   \scal(p) = \spur \Ric_p(\cdot) = \sum_i \ric_p(e_i,e_i) = \sum_{i,j} \left\langle R(e_i,e_j)e_j,e_i \right\rangle
 \end{align*}
-heißt die \CmMark{Skalarkrümmung} von $M$ in $p$.
+hei"st die \CmMark{Skalarkr"ummung} von $M$ in $p$.
 \end{Dfn}
 
 

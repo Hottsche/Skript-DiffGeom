@@ -16,17 +16,17 @@ Fasern : $\T_pM = \pi^{-1}(p)$ $m$-dimensionaler Vektorraum und $X_p = \sum \xi^
 \begin{Dfn}
   Ein \CmMark[Vektorb{\"u}ndel!glattes reelles]{glattes reelles Vektorb"undel} vom Rang $k$ "uber einer glatten Mannigfaltigkeit $M$ ist eine glatte Mannigfaltigkeit $E$, der sogenannte \CmMark{Totalraum} des B"undels, zusammen mit einer glatten Abbildung $\pi \colon E \to M$, der Projektion, sodass f"ur jedes $p \in M$ gilt:
   \begin{enumerate}[label=(\roman*)]
-  \item Die Faser $E_p = \pi^{-1}(p)$ trägt die Struktur eines $k$-dimensionalen reellen Vektorraumes.
+  \item Die Faser $E_p = \pi^{-1}(p)$ tr"agt die Struktur eines $k$-dimensionalen reellen Vektorraumes.
   \item Es existiert eine Umgebung $U$ von $p$ in $M$ und ein Diffeomorphismus
     \begin{align*}
       \tau \colon E|_U = \pi^{-1}(U) \to U \times \R^k,
     \end{align*}
-    so dass die Einschränkung
+    so dass die Einschr"ankung
     \begin{align*}
       \tau_p \colon E_p \to \R^k \quad ( \cong \{p\} \times \R^k)
     \end{align*}
     ein linearer Isomorphismus ist.
-    Ein solches $\tau$ heißt \CmMark[Karte!B\"undel-]{B"undelkarte}.
+    Ein solches $\tau$ hei"st \CmMark[Karte!B\"undel-]{B"undelkarte}.
   \end{enumerate}
 \end{Dfn}
 
@@ -64,12 +64,12 @@ Gilt $M = N$ so ist ein $M$-Vektorb"undelmorphismus $F$ von $E$ nach $E'$ eine g
 	\node at (0,0) {$\#$};
 \end{tikzpicture}\end{center}
 
-Die Vektorb"undel $E,E'$ "uber $M$ heißen \CmMark[Vektorb{\"u}ndel!isomorphes]{isomorph}, wenn ein $M$-Vektor"-b"undel"-morphismus
+Die Vektorb"undel $E,E'$ "uber $M$ hei"sen \CmMark[Vektorb{\"u}ndel!isomorphes]{isomorph}, wenn ein $M$-Vektor"-b"undel"-morphismus
 $G$ existiert mit $G F = \Id_E$ und $FG = \Id_{E'}$.
 Dies ist genau dann der Fall, wenn $F$ faserweise ein Inverses besitzt.
 (Der Beweis dieser Aussage sei als "Ubungsaufgabe "uberlassen.)
 
-Ein Vektorb"undel $E \xrightarrow{\pi} M$ heißt \CmMark[Vektorb{\"u}ndel!triviales]{trivial}, wenn es einen Vektorb"undelisomorphismus von $E$ auf $M \times \R^k$ gibt. Jedes
+Ein Vektorb"undel $E \xrightarrow{\pi} M$ hei"st \CmMark[Vektorb{\"u}ndel!triviales]{trivial}, wenn es einen Vektorb"undelisomorphismus von $E$ auf $M \times \R^k$ gibt. Jedes
 \begin{align*}
   \tau \colon E|_U \to U \times \R^k
 \end{align*}
@@ -130,7 +130,7 @@ Der Beweis sei erneut als Aufgabe "uberlassen.
 \end{kor}
 
 Es sei $E \xrightarrow{\pi} N$ ein Vektorb"undel und $\Phi \colon M \to N$ glatt.
-Das längs $\Phi$ zur"uckgezogene B"undel ("`\CmMark{pullback}"') ist definiert durch den Totalraum
+Das l"angs $\Phi$ zur"uckgezogene B"undel ("`\CmMark{pullback}"') ist definiert durch den Totalraum
 \begin{align*}
   E' = \Phi^{\ast}E = \{(p,x) \mid x \in E_{\Phi(p)}\} \subseteq M \times E,
 \end{align*}
@@ -154,7 +154,7 @@ Es sei $\Delta \colon M \to M \times M$, $p \mapsto (p,p)$.
 	\draw[->] (1) -- (3); \draw[->] (2) -- (4);
 \end{tikzpicture}\end{center}
 
-Das längs $\Delta$ zur"uckgezogene B"undel $E \oplus E' = \Delta^{\ast}(E \times E')$ heißt die \CmMark{Whitneysumme} von $E$ und $E'$.
+Das l"angs $\Delta$ zur"uckgezogene B"undel $E \oplus E' = \Delta^{\ast}(E \times E')$ hei"st die \CmMark{Whitneysumme} von $E$ und $E'$.
 Faserweise gilt
 \begin{align*}
   (E \oplus E')_p = E_p \oplus E'_p.
@@ -316,7 +316,7 @@ Es sei $E \xrightarrow{\pi} M$ ein Vektorb"undel "uber M. Ein \CmMark{Schnitt} i
 \end{tikzpicture}\end{center}
 Die $S_i$ bilden punktweise eine Basis der Fasern.
 
-Die Schnitte des $(r,s)$-Tensorbündels $\Gamma(\T_s^r(\T M)) = \mathcal T_s^r(M)$ bezeichnet man als $(r,s)$-\CmMark[Tensor!-feld]{Tensorfelder} auf $M$. Die $(1,0)$-Tensorfelder sind genau die Vektorfelder auf $M$; $\mathcal T_0^1(M) = \mathcal V(M)$. Es bezeichne $\mathcal V^{*}(M) = \mathcal T_1^0(M)$ den Raum der $(0,1)$-Tensorfelder.
+Die Schnitte des $(r,s)$-Tensorb"undels $\Gamma(\T_s^r(\T M)) = \mathcal T_s^r(M)$ bezeichnet man als $(r,s)$-\CmMark[Tensor!-feld]{Tensorfelder} auf $M$. Die $(1,0)$-Tensorfelder sind genau die Vektorfelder auf $M$; $\mathcal T_0^1(M) = \mathcal V(M)$. Es bezeichne $\mathcal V^{*}(M) = \mathcal T_1^0(M)$ den Raum der $(0,1)$-Tensorfelder.
 
 \begin{Prop}\label{prop-5-4}
 Die $(r,s)$-Tensorfelder auf $M$ entsprechen genau den $C^{\infty}(M)$-multilinearen Abbildungen
@@ -328,7 +328,7 @@ verm"oge der linearen Forsetzung
 \end{align*}
 \end{Prop}
 
-Der Beweis sei als Übung überlassen.
+Der Beweis sei als "Ubung "uberlassen.
 
 \begin{bsp}\begin{enumerate}[label=\arabic*)]
 \item
@@ -341,13 +341,13 @@ Der Beweis sei als Übung überlassen.
 	Die Lieklammer $[\cdot,\cdot]$ ist \emph{nicht} $C^{\infty}(M)$-linear, also kein Tensorfeld.
 \end{enumerate}\end{bsp}
 
-Ein Element von $\T_p^*M$ bezeichnet man als \CmMark[Kotangentialvektor]{Kotangentialvektoren}, $\T_p^*M$ als \CmMark{Kotangentialvektorraum} und das Bündel $\T^{*}M$ als \CmMark{Kotangentialbündel}. \textcolor{red}{(in der Vorlesung wurde das Element von $\T_p^*M$ selbst das Kotangententialvektorraum bezeichnet und der kotangentialvektor wurde "uberhaupt nicht er"ahnt, das erscheint falsch, also haben wir es ge"andert)}
+Ein Element von $\T_p^*M$ bezeichnet man als \CmMark[Kotangentialvektor]{Kotangentialvektoren}, $\T_p^*M$ als \CmMark{Kotangentialvektorraum} und das B"undel $\T^{*}M$ als \CmMark{Kotangentialb"undel}. \textcolor{red}{(in der Vorlesung wurde das Element von $\T_p^*M$ selbst das Kotangententialvektorraum bezeichnet und der kotangentialvektor wurde "uberhaupt nicht er"ahnt, das erscheint falsch, also haben wir es ge"andert)}
 
 Ist $(\phi, U)$ eine Karte von $M$, dann bilden die Differentiale $\dop \phi^i = \dop x^i$ der Koordinatenfunktionen (punktweise) eine Basis von $\T_p^{*}M$, denn
 \begin{align*}
   \dop x^i|_p\left(\pdifffrac[p]{}{x^j}\right) = \pdifffrac{}{x^j}(\phi^i) = \delta_j^i.
 \end{align*}
-Die $\dop x^i$ sind also punktweise linear unabhängige $(0,1)$-Tensorfelder über dem Kartengebiet $U$.
+Die $\dop x^i$ sind also punktweise linear unabh"angige $(0,1)$-Tensorfelder "uber dem Kartengebiet $U$.
 
 Ist $\psi$ eine weitere Karte und bezeichnen $\pdifffrac{}{y^i}$ beziehungsweise $\dop y^i$ die entsprechenden Koordinaten(ko)tangentialvektoren, so gilt:
 	\[ \dop x^i = \sum \alpha_j^i\dop y^j \]
@@ -359,7 +359,7 @@ Es gilt also $\alpha = \D(\psi \circ \phi^{-1})^{x^{-1}}$, vergleiche Satz \ref{
 \begin{align*}
   \pdifffrac{}{x^i} = \sum \partial_i (\psi^j \circ \phi^{-1})\pdifffrac{}{y^j}.
 \end{align*}
-Diese transponierten Inversen der Differentiale der Kartenwechsel sind genau die Übergangsfunktionen $h_{\alpha\beta} = (g_{\alpha\beta}^{*})^{-1}$ in der Definition von $(\T M)^{*} = \T^{*}M$.
+Diese transponierten Inversen der Differentiale der Kartenwechsel sind genau die "Ubergangsfunktionen $h_{\alpha\beta} = (g_{\alpha\beta}^{*})^{-1}$ in der Definition von $(\T M)^{*} = \T^{*}M$.
 
 Ist $S$ ein Tensorfeld vom Typ $(0,s)$ auf einer Mannigfaltigkeit $N$ und $\Phi \colon M \to N$ eine glatte Abbildung.
 \begin{center}\begin{tikzpicture}
@@ -377,13 +377,13 @@ Ist $S$ ein Tensorfeld vom Typ $(0,s)$ auf einer Mannigfaltigkeit $N$ und $\Phi 
 		\Phi^{*}S \colon & \mathcal V(M) \X \cdots \X \mathcal V(M) &\to& C^{\infty}(M) \end{array} \]
 Dann ergibt
 	\[ \Phi^{*}S(X_{1},\ldots,X_{s}) = S(\Phi_{*}X_{1},\ldots,\Phi_{*}X_{s}) \]
-ein $(0,s)$-Tensorfeld auf $M$, das entlang $\Phi$ zurückgezogene Tensorfeld (\CmMark{pullback}).
+ein $(0,s)$-Tensorfeld auf $M$, das entlang $\Phi$ zur"uckgezogene Tensorfeld (\CmMark{pullback}).
 
-Es gilt $\Phi^{*}(S \otimes T) = \Phi^{*}S \otimes \Phi^{*}T$ für $S \in \mathcal T_s^0(N), T \in \mathcal T_t^0(N)$.
+Es gilt $\Phi^{*}(S \otimes T) = \Phi^{*}S \otimes \Phi^{*}T$ f"ur $S \in \mathcal T_s^0(N), T \in \mathcal T_t^0(N)$.
 Ist $\Psi \colon P \to M$ glatt, so gilt
 	\[ (\Phi \circ \Psi)^{*} = \Psi^{*} \circ \Phi^{*}.\]
 
-Ist $\Phi$ ein Diffeomorphismus, so lässt sich $\Phi^{*}$ für beliebige Tensorfelder $S \in \mathcal T_s^r(M)$ definieren:
+Ist $\Phi$ ein Diffeomorphismus, so l"asst sich $\Phi^{*}$ f"ur beliebige Tensorfelder $S \in \mathcal T_s^r(M)$ definieren:
 	\[ \begin{array}{rl} p \mapsto& \Phi^{*}S (\omega_1,\ldots,\omega_r,X_1,\ldots,X_s)(p)\\
 		& S((\Phi^{*})^{-1}\omega_1, \ldots, (\Phi^{*})^{-1}\omega_{r}, \Phi_{*}X_1,\ldots,\Phi_{*}X_s)(p) \end{array} \]
 mit
@@ -406,7 +406,7 @@ also $\Phi^{*}X = \Phi_{*}^{-1}X$.
 
   \textcolor{red}{Abbildung 10.4 Diagram Beispiel/Anwendung}
 
-  Für alle $\alpha, \beta$ mit $U_{\alpha} \cap U_{\beta}$ gilt
+  F"ur alle $\alpha, \beta$ mit $U_{\alpha} \cap U_{\beta}$ gilt
   \begin{align*}
     (\phi_{\alpha} \circ \phi_{\beta}^{-1})^{*}S_{\alpha}|_{V_{\alpha} \cap V_{\beta}} & = (\phi_{\alpha} \circ \phi_{\beta}^{-1})^{*}\left((\phi_{\alpha}^{-1})^{*}S|_{U_{\alpha}}\right)|_{V_{\alpha}\cap V_{\beta}}\\
     & = \left.(\phi_{\beta}^{-1})^{*} \circ \phi_{\alpha}^{*} \circ (\phi_{\alpha}^{-1})^{*} S|_{U_{\alpha}}\right|_{V_{\alpha} \cap V_{\beta}}\\
@@ -417,7 +417,7 @@ also $\Phi^{*}X = \Phi_{*}^{-1}X$.
 \end{bsp}
 
 \begin{Dfn}\label{def-5-5}
-  Es sei $X \in \mathcal V(M)$ mit dem Fluss $\gamma$ und $S \in \mathcal T_s^r(M)$ ein glattes Tensorfeld auf $M$. Dann heißt
+  Es sei $X \in \mathcal V(M)$ mit dem Fluss $\gamma$ und $S \in \mathcal T_s^r(M)$ ein glattes Tensorfeld auf $M$. Dann hei"st
   \begin{align*}
     \mathcal L_X S = \difffrac[t=0]{}{t}(\gamma^{t*}S)
   \end{align*}
@@ -433,17 +433,17 @@ also $\Phi^{*}X = \Phi_{*}^{-1}X$.
 		\mathcal L_XY = [X,Y].
 	\end{align*}
 \item
-	Für $S \in \mathcal T_s^r(M), T \in \mathcal T_{s'}^{r'}(M)$ gilt:
+	F"ur $S \in \mathcal T_s^r(M), T \in \mathcal T_{s'}^{r'}(M)$ gilt:
 	\begin{align*}
 		\mathcal L_X(S \otimes T) = (\mathcal L_XS) \otimes T + S \otimes (\mathcal L_X T).
 	\end{align*}
 \end{enumerate}\end{emptythm}
 
 
-\section{Differentialformen und die äußere Ableitung}
+\section{Differentialformen und die "au"sere Ableitung}
 
 \begin{Dfn}
-  Das Vektorbündel $\Lambda^k(\T^{*}M)$ wird mit $\Lambda^k(M)$ bezeichnet und der Raum seiner Schnitte $\Gamma(\Lambda^k(\T^{*}M))$ mit $\Omega^k(M)$. Die Elemente von $\Omega^k(M)$ heißen \CmMark{Differentialformen} vom Grad $k$ oder kurz \CmMark{$k$-Formen} auf $M$.
+  Das Vektorb"undel $\Lambda^k(\T^{*}M)$ wird mit $\Lambda^k(M)$ bezeichnet und der Raum seiner Schnitte $\Gamma(\Lambda^k(\T^{*}M))$ mit $\Omega^k(M)$. Die Elemente von $\Omega^k(M)$ hei"sen \CmMark{Differentialformen} vom Grad $k$ oder kurz \CmMark{$k$-Formen} auf $M$.
 \end{Dfn}
 
 Ist $(\phi, U)$ eine Karte von $M$, so bilden die Differentiale der Koordinatenfunktionen $\dop x^i = \dop \phi^i$ eine Basis von $\T^{*}M$.
@@ -463,7 +463,7 @@ Desweiteren sind (lokal) die $\left( \begin{smallmatrix} m \\ k\end{smallmatrix}
 Jede $k$-Form definiert eine schiefsymmetrische $C^{\infty}(M)$-multilineare Abbildung 
 	\[ \underbrace{\mathcal V(M) \X \cdots \X \mathcal V(M)}_{k\text{-mal}} \to C^{\infty}(M) \]
 	\[ \omega(X_1,\ldots,X_k) (p)= \sum_{\sigma}\sgn(\sigma)f_{i_1, \ldots, i_k}\dop x^{i_1}(X_{\sigma(i_1)}|_p)\dop x^{i_2}(X_{\sigma(i_2)}|_p) \cdots \]
-Analog zu Proposition \ref{prop-5-4} gilt, dass jede solche schiefe $C^{\infty}(M)$-multilineare Abbildung eine $k$-Form definiert. Insbesondere gilt für
+Analog zu Proposition \ref{prop-5-4} gilt, dass jede solche schiefe $C^{\infty}(M)$-multilineare Abbildung eine $k$-Form definiert. Insbesondere gilt f"ur
 	\[ \omega = \sum f_{i_1,\ldots, i_k}\dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k} \]
 dass
 	\[ \begin{array}{rl}\omega\overset{\textcolor{gray}{i_1 < \ldots < i_k}}{\left(\pdifffrac{}{x^{i_1}},\ldots, \pdifffrac{}{x^{i_k}}\right)} &= \sum\limits_{\sigma} \sgn(\sigma)f_{i_1,\ldots,i_k}\dop x^i\left(\pdifffrac{}{x^{i_{\sigma(1)}}}\right) \ldots \dop x^{i_k}\left(\pdifffrac{}{x^{i_{{\sigma(k)}}}}\right)\\
@@ -473,22 +473,22 @@ dass
 
 Sind $\omega \in \Omega^k(M)$ und $\eta \in \Omega^l(M)$, so definiert $\omega \wedge \eta$ (punktweise) eine $(k+l)$-Form auf $M$.
 Ist $\Phi \colon M \to N$ glatt und $\omega \in \Omega^k(N)$, so definiert $(\Phi^{*}\omega)(X_1,\ldots,X_k) = \omega(\Phi_{*}X_1,\ldots, \Phi_{*}X_k)$ (\quot{push forward}) eine $k$-Form auf $M$.
-Für $\eta \in \Omega^l(N)$ gilt $\Phi^{*}(\omega \wedge \eta) = \Phi^{*}\omega \wedge \Phi^{*}\eta$.
+F"ur $\eta \in \Omega^l(N)$ gilt $\Phi^{*}(\omega \wedge \eta) = \Phi^{*}\omega \wedge \Phi^{*}\eta$.
 
-Damit ist für $\omega \in \Omega^k(M)$ und $X \in \mathcal V(M), \gamma $ der Fluss von $X$, die \CmMark{Lieableitung} von $\omega$ längs $X$ definiert:
+Damit ist f"ur $\omega \in \Omega^k(M)$ und $X \in \mathcal V(M), \gamma $ der Fluss von $X$, die \CmMark{Lieableitung} von $\omega$ l"angs $X$ definiert:
 	\[ \mathcal L_X\omega = \difffrac[t=0]{}{t}(\gamma^{t*}\omega). \]
 Es gilt 
 	\[ \mathcal L_X(\omega \wedge \eta) = (\mathcal L_X\omega) \wedge \eta + \omega \wedge (\mathcal L_X\eta). \]
 
-Die $0$-Formen sind die $C^{\infty}$-Funktionen auf $M$, $\Omega^0(M) = C^{\infty}(M)$. Die $1$-Formen sind genau die Schnitte des Kotangentialbündels von $M$.
+Die $0$-Formen sind die $C^{\infty}$-Funktionen auf $M$, $\Omega^0(M) = C^{\infty}(M)$. Die $1$-Formen sind genau die Schnitte des Kotangentialb"undels von $M$.
 
-Für eine $C^{\infty}$-Funktion $f$ auf $M$ definiert $\dop f$ eine $1$-Form auf $M$ durch $\dop f (X) = X(f)$.
+F"ur eine $C^{\infty}$-Funktion $f$ auf $M$ definiert $\dop f$ eine $1$-Form auf $M$ durch $\dop f (X) = X(f)$.
 In lokalen Koordinaten gilt damit $\dop f = \sum_ig_i\dop x^i$ mit $g_i = \dop f\left(\pdifffrac{}{x^i}\right) = \pdifffrac{}{x^i}(f) = \pdifffrac{f}{x^i}$, also gilt $\dop f = \sum \pdifffrac{f}{x^i}\dop x^i$.
 
-Die $\R$-lineare Abbildung $\dop \colon \Omega^0(M) \to \Omega^1(M)$ soll für beliebige Formen definiert werden.
-In lokalen Koordinaten definiert man für $\omega \in \Omega^k(M)$, $\omega = f \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k}$ durch Lineare Fortsetzung
+Die $\R$-lineare Abbildung $\dop \colon \Omega^0(M) \to \Omega^1(M)$ soll f"ur beliebige Formen definiert werden.
+In lokalen Koordinaten definiert man f"ur $\omega \in \Omega^k(M)$, $\omega = f \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k}$ durch Lineare Fortsetzung
 	\[ \dop \omega = \dop f \wedge \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k}. \]
-Es bleibt zu zeigen, dass diese Definition unabhängig von der Wahl der Karte ist. Man geht dabei entweder vor wie im Beispiel vor Definition \ref{def-5-5} beschrieben oder verwendet den folgenden Satz.
+Es bleibt zu zeigen, dass diese Definition unabh"angig von der Wahl der Karte ist. Man geht dabei entweder vor wie im Beispiel vor Definition \ref{def-5-5} beschrieben oder verwendet den folgenden Satz.
 
 \begin{Satz}
   Es seien $\omega \in \Omega^k(M)$ und $X_0, \ldots, X_k \in \mathcal V(M)$.
@@ -500,8 +500,8 @@ Es bleibt zu zeigen, dass diese Definition unabhängig von der Wahl der Karte is
 \end{Satz}
 
 \begin{bew}
-Man zeigt zunächst, dass der Term auf der rechten Seite, welcher offensichtlich schief ist, auch $C^{\infty}(M)$-linear ist.
-Es bezeichne dafür $\eta$ den rechten Term und es seien $X_0, \ldots, X_k \in \mathcal V(M)$ und $f \in C^{\infty}(M)$. Dann gilt:
+Man zeigt zun"achst, dass der Term auf der rechten Seite, welcher offensichtlich schief ist, auch $C^{\infty}(M)$-linear ist.
+Es bezeichne daf"ur $\eta$ den rechten Term und es seien $X_0, \ldots, X_k \in \mathcal V(M)$ und $f \in C^{\infty}(M)$. Dann gilt:
 \begin{align*}
     \eta(X_0,\ldots,fX_l,\ldots, X_k) = & \sum_{i \neq l}(-1)^iX_i(f) \omega(X_0,\ldots, \textcolor{red}{\hat X_l}, \ldots, X_k)\\
 & + \sum_{i \neq l}(-1)^ifX_i(\omega(X_0,\ldots, \hat X_i, \ldots, X_k))\\
@@ -510,7 +510,7 @@ Es bezeichne dafür $\eta$ den rechten Term und es seien $X_0, \ldots, X_k \in \
 & + \sum_{l < j}(-1)^{l+j}\omega([fX_l,X_j], \ldots )\\
 & + \sum_{i<l}(-1)^{i+l}\omega([X_i,fX_l], \ldots )
   \end{align*}
-Nebenrechnung (beziehungsweise Überlegung):
+Nebenrechnung (beziehungsweise "Uberlegung):
 	\[ [fX, Y] = f[X,Y] - Y(f)X \]
 Damit folgt weiter:
 \begin{align*}
@@ -542,19 +542,19 @@ Es gilt
 
 % Definition 5.9
 \begin{Dfn}
-  Es sei $\omega \in \Omega^k(M)$. Die $(k+1)$-Form $\dop \omega$ heißt das \CmMark[Differential]{(äußere) Differential}\index{Differential!\"au\ss eres} der Form $\omega$.
-  Gilt $\dop \omega = 0$, so heißt $\omega$ \CmMark{geschlossen}.
-  Existiert ein $\eta \in \Omega^{k-1}(M)$ mit $\dop \eta = \omega$, so heißt $\omega$ \CmMark{exakt}.
+  Es sei $\omega \in \Omega^k(M)$. Die $(k+1)$-Form $\dop \omega$ hei"st das \CmMark[Differential]{("au"sere) Differential}\index{Differential!\"au\ss eres} der Form $\omega$.
+  Gilt $\dop \omega = 0$, so hei"st $\omega$ \CmMark{geschlossen}.
+  Existiert ein $\eta \in \Omega^{k-1}(M)$ mit $\dop \eta = \omega$, so hei"st $\omega$ \CmMark{exakt}.
 \end{Dfn}
 
 \begin{bsp}\begin{enumerate}[label=\arabic*),leftmargin=*]
 \item
-	Für eine $1$-Form $\omega$ ist $\dop \omega$ eine $2$-Form:
+	F"ur eine $1$-Form $\omega$ ist $\dop \omega$ eine $2$-Form:
 	\begin{align*}
 		\dop \omega(X,Y) = X(\omega(Y)) - Y(\omega(X)) - \omega([X,Y]).
 	\end{align*}
 \item
-	Für $f \in C^{\infty}(M)$ ist $\dop f \in \Omega^1(M)$ und $\dop (\dop f)$ eine $2$-Form:
+	F"ur $f \in C^{\infty}(M)$ ist $\dop f \in \Omega^1(M)$ und $\dop (\dop f)$ eine $2$-Form:
 	\begin{align*}
 		\dop(\dop f) (X,Y) & = X(\dop f(Y)) - Y(\dop f(X)) - \dop f [X,Y]\\
 		& = X(Y(f)) - Y(X(f)) -[X,Y](f)\\
@@ -573,7 +573,7 @@ Es gilt
 		\dop \omega = \pdifffrac{xy}{x} \dop x \wedge \dop y + \pdifffrac{xy}{y}\underbrace{ \dop y \wedge \dop y}_{=0} = y \dop x \wedge \dop y \in \Omega^2(\R^2).
 	\end{align*}
 \item
-	$\omega = y \dop x + x \dop y \in \Omega^1(\R^2)$ ist exakt, denn für $f(x,y) = xy$ gilt:
+	$\omega = y \dop x + x \dop y \in \Omega^1(\R^2)$ ist exakt, denn f"ur $f(x,y) = xy$ gilt:
 	\begin{align*}
 		\dop f = \pdifffrac{f}{x}\dop x + \pdifffrac{f}{y}\dop y = y \dop x + x \dop y = \omega.
 	\end{align*}
@@ -583,9 +583,9 @@ Es gilt
 \begin{Lemma}\label{lemma-5-9}
   \begin{enumerate}[label=(\roman*)]
   \item $\dop \colon \Omega^k(M) \to \Omega^{k+1}(M)$ ist $\R$-linear.
-  \item $\dop(\omega \wedge \eta) = \dop \omega \wedge \eta + (-1)^k \omega \wedge \dop \eta$ für $\omega \in \Omega^k(M), \eta \in \Omega^l(M)$.
+  \item $\dop(\omega \wedge \eta) = \dop \omega \wedge \eta + (-1)^k \omega \wedge \dop \eta$ f"ur $\omega \in \Omega^k(M), \eta \in \Omega^l(M)$.
   \item $\dop \circ \dop = 0$.
-  \item\label{lemma-5-9-iv} $\Phi^*(\dop \omega) = \dop (\Phi^{*}\omega)$ für $\Phi \colon M \to N$ glatt und $\omega \in \Omega^k(M)$.
+  \item\label{lemma-5-9-iv} $\Phi^*(\dop \omega) = \dop (\Phi^{*}\omega)$ f"ur $\Phi \colon M \to N$ glatt und $\omega \in \Omega^k(M)$.
   \end{enumerate}
 \end{Lemma}
 
@@ -657,7 +657,7 @@ insbesondere gilt $\Id_M^* = \Id_{H_{\dR}^k}$ und ein Diffeomorphismus $M \to N$
 	
 	Die Form $\omega(x,y) = \frac{1}{x^2+y^2} (x \dop y - y \dop x)$ ist geschlossen. W"are $\omega$ exakt, so g"abe es $h \in C^{\infty}(\R^2 \setminus \{0\})$ mit $\dop h = \omega$, das hei"st
 		\[ \pdifffrac{h}{x}(x,y) = \frac{-y}{x^2+y^2},\quad \pdifffrac{h}{y}(x,y) = \frac{x}{x^2+y^2} \]
-	Dann wäre
+	Dann w"are
 		\begin{align*}
 			0 = h(1,0) - h(1,0) &= \int_{0}^{2\pi} \difffrac{}{t} h(\cos t, \sin t) \dop t\\
 			&= \int_{0}^{2\pi} - \sin t \pdifffrac{h}{x} (\cos t, \sin t) + \cos t \pdifffrac{h}{y} (\cos t, \sin t) \dop t\\

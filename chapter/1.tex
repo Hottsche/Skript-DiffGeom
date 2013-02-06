@@ -14,7 +14,7 @@
 \item Mannigfaltigkeiten, Tangentialvektoren
 \item Kovariante Ableitung
 \item Riemannsche Metriken
-\item Krümmung
+\item Kr"ummung
 \item Jacobifelder
 \item Satz von Bonnet
 \end{itemize}
@@ -22,7 +22,7 @@
 \chapter{Differenzierbare Mannigfaltigkeiten}
 
 \begin{dfn}
-  Eine $n$-dimensionale \CmMark[Mannigfaltigkeit!topologische]{topologische Mannigfaltigkeit} $M$ ist ein topologischer \gls{Hausdorff-Raum} mit einer abzählbaren Basis der \gls{Topologie} in dem zu jedem Punkt $p \in M$ eine offene Menge $U$ mit $p \in U$ existiert und ein \gls{Homoeomorphismus} $\phi \colon U \to V$ auf eine offene Menge $V \subset \R^{n}$.
+  Eine $n$-dimensionale \CmMark[Mannigfaltigkeit!topologische]{topologische Mannigfaltigkeit} $M$ ist ein topologischer \gls{Hausdorff-Raum} mit einer abz"ahlbaren Basis der \gls{Topologie} in dem zu jedem Punkt $p \in M$ eine offene Menge $U$ mit $p \in U$ existiert und ein \gls{Homoeomorphismus} $\phi \colon U \to V$ auf eine offene Menge $V \subset \R^{n}$.
 
 % Abbildung 1-1
 %\CmPutSvg{1-1-topologische-mf}{8.5cm}
@@ -63,7 +63,7 @@
 
   Eine Menge von Karten $\mathcal A = \{(\phi_{\alpha}, U_{\alpha}) \mid \alpha \in J \}$ hei\ss t \CmMark{Atlas} von $M$, falls $\bigcup_{\alpha \in J}U_{\alpha} = M$.\\
 
-  Ein Atlas $\mathcal A$ von $M$ hei\ss t $C^k$-Atlas, wenn für alle $\alpha, \beta \in J$ mit $U_{\alpha} \cap U_{\beta} \neq \emptyset$ der sogenannte \CmMark{Kartenwechsel}:
+  Ein Atlas $\mathcal A$ von $M$ hei\ss t $C^k$-Atlas, wenn f"ur alle $\alpha, \beta \in J$ mit $U_{\alpha} \cap U_{\beta} \neq \emptyset$ der sogenannte \CmMark{Kartenwechsel}:
   \begin{align*}
     \phi_{\beta} \circ \phi_{\alpha}^{-1}\colon \phi_{\alpha}(U_{\alpha} \cap U_{\beta}) \to \phi_{\beta}(U_{\alpha} \cap U_{\beta})
   \end{align*}
@@ -89,11 +89,11 @@
   \end{tikzpicture}\end{center}
 
 
-  Eine Karte $\psi \colon U \to V$ von $M$ hei\ss t \CmMark[Karte!vertr{\"a}gliche]{verträglich} mit einem $C^k$-Atlas $\mathcal A = \{(\phi_{\alpha},U_{\alpha}) \mid \alpha \in J\}$ wenn jeder Kartenwechsel
+  Eine Karte $\psi \colon U \to V$ von $M$ hei\ss t \CmMark[Karte!vertr{\"a}gliche]{vertr"aglich} mit einem $C^k$-Atlas $\mathcal A = \{(\phi_{\alpha},U_{\alpha}) \mid \alpha \in J\}$ wenn jeder Kartenwechsel
   \begin{align*}
     \phi_{\alpha} \circ \psi^{-1}: \psi(U \cap U_{\alpha}) \to \phi_{\alpha}(U \cap U_{\alpha})
   \end{align*}
-  ein $C^k$-Diffeomorphismus ist, also $\mathcal A' = \mathcal A \cup \{(\psi, U)\}$ ebenfalls ein $C^k$-Atlas ist. Die Menge aller mit $\mathcal A$ verträglichen Karten ist ein \CmMark[Atlas!maximaler]{maximaler $C^k$-Atlas}. Jeder maximale Atlas enthält alle mit ihm verträglichen Karten. Ein maximaler $C^k$-Atlas hei\ss t auch \CmMark{$C^k$-differenzierbare Struktur}.
+  ein $C^k$-Diffeomorphismus ist, also $\mathcal A' = \mathcal A \cup \{(\psi, U)\}$ ebenfalls ein $C^k$-Atlas ist. Die Menge aller mit $\mathcal A$ vertr"aglichen Karten ist ein \CmMark[Atlas!maximaler]{maximaler $C^k$-Atlas}. Jeder maximale Atlas enth"alt alle mit ihm vertr"aglichen Karten. Ein maximaler $C^k$-Atlas hei\ss t auch \CmMark{$C^k$-differenzierbare Struktur}.
 
 \end{dfn}
 
@@ -143,8 +143,8 @@
     \begin{align*}
       \phi\left(\sum\lambda_iv_i\right) = (\lambda_1, \ldots, \lambda_n)
     \end{align*}
-    eine Bijektion auf $\R^n$. Damit erhält man eine globale Karte von $V$.
-    Der zugehörige Atlas h"angt nicht von der Wahl der Basis ab, denn ist $\{w_1, \ldots, w_n\}$ eine weitere Basis von $V$ und $\psi(\sum \lambda_iw_i) = (\lambda_1, \ldots, \lambda_n)$ eine weitere Karte, so ist $\phi \circ \psi^{-1}$ als \gls{Endomorphismus} des $\R^n$ schon $C^{\infty}$.
+    eine Bijektion auf $\R^n$. Damit erh"alt man eine globale Karte von $V$.
+    Der zugeh"orige Atlas h"angt nicht von der Wahl der Basis ab, denn ist $\{w_1, \ldots, w_n\}$ eine weitere Basis von $V$ und $\psi(\sum \lambda_iw_i) = (\lambda_1, \ldots, \lambda_n)$ eine weitere Karte, so ist $\phi \circ \psi^{-1}$ als \gls{Endomorphismus} des $\R^n$ schon $C^{\infty}$.
 
   \item $S^n = \{(x^0, x^1, \ldots, x^n) \mid \sum_{i = 0}^n(x^{i})^2 = 1\}$.\\
 
@@ -219,15 +219,15 @@ Die Menge aller glatten Abbildungen von $M$ nach $N$ wird $C^{\infty}(M,N)$ gena
 \end{Dfn}
 
 \begin{emptythm}[Konvention:]
-Ab jetzt seien zunächst alle Mannigfaltigkeiten, wie auch alle Abbildungen als glatt vorrausgesetzt.
+Ab jetzt seien zun"achst alle Mannigfaltigkeiten, wie auch alle Abbildungen als glatt vorrausgesetzt.
 \end{emptythm}
 
 \begin{bem}
-  Da Kartenwechsel $C^{\infty}$ sind, gilt obige Bedingung automatisch für alle Karten von $M$ und $N$ (evtl. nach Einschränkung).
+  Da Kartenwechsel $C^{\infty}$ sind, gilt obige Bedingung automatisch f"ur alle Karten von $M$ und $N$ (evtl. nach Einschr"ankung).
 \end{bem}
 
 \begin{bsp}
-  Es folgen zwei Beispiele für differenzierbare Abbildungen:
+  Es folgen zwei Beispiele f"ur differenzierbare Abbildungen:
   \begin{enumerate}
   \item $(\phi,U) \in \mathcal A \Rightarrow \phi \in C^{\infty}(U,\R^n)$, denn
     \begin{align*}
@@ -249,8 +249,8 @@ Eine Abbildung $f \colon M \to N$ hei\ss t \CmMark[Diffeomorphismus]{Dif"-feo"-m
 
 \section{Produkte von Mannigfaltigkeiten}
 
-Es seien $M$ und $N$ glatte Mannigfaltigkeiten der Dimensionen $m$ und $n$. Dann hat $M \times N$ versehen mit der \gls{Produkttopologie}, die Struktur einer Mannigfaltigkeit. Da $M$ und $N$ hausdorffsch sind und abzählbare Basen ihrer Topologie besitzen gilt dies auch für $M \times N$.
-Sind $(\phi, U)$ und $(\psi, V)$ Karten von $M$ bzw. $N$, so ist $\phi \times \psi$ ein Homöomorphismus von $U \times V$ auf sein offenes Bild in $\R^m \times \R^n \cong \R^{m + n}$.
+Es seien $M$ und $N$ glatte Mannigfaltigkeiten der Dimensionen $m$ und $n$. Dann hat $M \times N$ versehen mit der \gls{Produkttopologie}, die Struktur einer Mannigfaltigkeit. Da $M$ und $N$ hausdorffsch sind und abz"ahlbare Basen ihrer Topologie besitzen gilt dies auch f"ur $M \times N$.
+Sind $(\phi, U)$ und $(\psi, V)$ Karten von $M$ bzw. $N$, so ist $\phi \times \psi$ ein Hom"oomorphismus von $U \times V$ auf sein offenes Bild in $\R^m \times \R^n \cong \R^{m + n}$.
 
 Seien $\mathcal A = \{(\phi_{\alpha}, U_{\alpha}) \mid \alpha \in \calI \}$ und $\mathcal A' = \{(\psi_{\beta}, V_{\beta}) \mid \beta \in \calJ\}$ $C^{\infty}$-Atlanten von $M$ und $N$. Dann ist $\mathcal B = \{(\phi_{\alpha}\times\psi_{\beta},U_{\alpha}\times V_{\beta}) \mid (\alpha, \beta) \in \calI \times \calJ\}$ ein $C^{\infty}$-Atlas von $M\times N$, denn 
 \begin{align*}
@@ -272,7 +272,7 @@ ist ein $C^{\infty}$-Diffeomorphismus. Damit ist $M\times N$ in kanonischer Weis
 	\node[below,font=\scriptsize] at (torusUnten) {$S^1$}; \node[font=\normalsize] at (-1.5,1) {$T^2$};
 	\draw[->] (1.75,1) node[right]{$S^1$} to[out=180,in=450] (1.25,0.5);
 \end{tikzpicture}}
-Es folgen einige Beispiele für Produkt-Mannigfaltigkeiten:
+Es folgen einige Beispiele f"ur Produkt-Mannigfaltigkeiten:
 \begin{enumerate}[label=\arabic*)]
 \item
 	Zylinder $\R \times S^1$
@@ -287,11 +287,11 @@ Es folgen einige Beispiele für Produkt-Mannigfaltigkeiten:
 \section{Untermannigfaltigkeiten}
 
 \begin{Dfn}[Untermannigfaltigkeit]\label{def-1-4}
-  Es sei $N$ eine glatte Mannigfaltigkeit. Eine Teilmenge $M \subseteq N$ heißt \CmMark{Untermannigfaltigkeit} von $N$, wenn für alle $p \in M$ eine Karte $(\phi, U)$ von $N$ um $p$ existiert, so dass
+  Es sei $N$ eine glatte Mannigfaltigkeit. Eine Teilmenge $M \subseteq N$ hei"st \CmMark{Untermannigfaltigkeit} von $N$, wenn f"ur alle $p \in M$ eine Karte $(\phi, U)$ von $N$ um $p$ existiert, so dass
   \begin{align*}
     \phi(U \cap M) = \phi(U) \cap \underbrace{(\R^m \times \{0\})}_{\mathclap{\{(x^1,\ldots,x^m,0,\ldots,0) \in \R^m\times\R^{n-m} \cong \R^{n} \}}}
   \end{align*}
-gilt. Eine solche Karte heißt an $M$ \CmMark[Karte!adaptierte]{adaptierte Karte}. Die Zahl $n-m$ heißt \CmMark{Kodimension} von $M$ in $N$.
+gilt. Eine solche Karte hei"st an $M$ \CmMark[Karte!adaptierte]{adaptierte Karte}. Die Zahl $n-m$ hei"st \CmMark{Kodimension} von $M$ in $N$.
 
 % Abbildung 1-7
 %\CmPutSvg{1-7-untermf}{8cm}
@@ -336,8 +336,8 @@ gilt. Eine solche Karte heißt an $M$ \CmMark[Karte!adaptierte]{adaptierte Karte
 \end{Lemma}
 
 \begin{bew}
-Die Hausdorff-Eigenschaft und die Abzählbarkeit der Topologie werden von $N$ auf $M$ vererbt.
-Ist $p \in N$, so existiert eine adaptierte Karte $(\phi,U)$ von $N$ um $p$ und $\pi \circ \phi|_{U \cap M}$ ist ein Homöomorphismus von $U \cap M$ auf eine offene Teilmenge des $\R^m$. Jeder Kartenwechsel
+Die Hausdorff-Eigenschaft und die Abz"ahlbarkeit der Topologie werden von $N$ auf $M$ vererbt.
+Ist $p \in N$, so existiert eine adaptierte Karte $(\phi,U)$ von $N$ um $p$ und $\pi \circ \phi|_{U \cap M}$ ist ein Hom"oomorphismus von $U \cap M$ auf eine offene Teilmenge des $\R^m$. Jeder Kartenwechsel
 \begin{align*}
 	(\pi \circ \phi|_{U \cap M}) \circ (\pi \circ \psi|_{V \cap M})^{-1} = (\pi \circ \phi) \circ (\psi^{-1} \circ \imath) = \pi \circ (\phi \circ \psi^{-1}) \circ \imath
 \end{align*}
@@ -345,7 +345,7 @@ ist ein $C^{\infty}$-Diffeomorphismus.
 \end{bew}
 
 \begin{bem}
-  Erinnerung: $M \subseteq \R^n$ heißt glatte $n$-dimensionale Untermannigfaltigkeit des $\R^n$, wenn für alle $p \in M$ eine offene Umgebung $U$ und eine Abbildung $\phi \colon U \to \R^n$  mit folgenden Eigenschaften existiert:
+  Erinnerung: $M \subseteq \R^n$ hei"st glatte $n$-dimensionale Untermannigfaltigkeit des $\R^n$, wenn f"ur alle $p \in M$ eine offene Umgebung $U$ und eine Abbildung $\phi \colon U \to \R^n$  mit folgenden Eigenschaften existiert:
   \begin{enumerate}[label=(\roman*),widest=ii]
   \item $\phi \colon U \to \phi(U)$ ist ein Diffeomorphismus auf sein offenes Bild im $\R^{n}$.
   \item $\phi(U \cap M) = \phi(U) \cap (\R^{m} \times \{0\})$.

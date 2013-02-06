@@ -4,8 +4,8 @@
 
 \chapter{Geod\"atische und die Exponentialabbildung}
 
-\begin{emptythm}[Heuristik:] Geodätische sind Minimalstellen des Energiefunktionals $\gamma \mapsto E(\gamma) = \int \|\dot\gamma\|^2$. 
-Was sind kritische Punkte dieser Abbildung? Für $f \in C^{\infty}(M)$ ist $p$ kritischer Punkt, wenn alle Richtungsableitungen verschwinden, das hei"st $0 = X(f) = \difffrac[t=0]{}{t}(f(c(t)))$.
+\begin{emptythm}[Heuristik:] Geod"atische sind Minimalstellen des Energiefunktionals $\gamma \mapsto E(\gamma) = \int \|\dot\gamma\|^2$. 
+Was sind kritische Punkte dieser Abbildung? F"ur $f \in C^{\infty}(M)$ ist $p$ kritischer Punkt, wenn alle Richtungsableitungen verschwinden, das hei"st $0 = X(f) = \difffrac[t=0]{}{t}(f(c(t)))$.
 \end{emptythm}
 
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
@@ -54,16 +54,16 @@ Nun betrachte
 
 % Definition 8.1
 \begin{Dfn}\label{dfn-8-1}
-  Eine glatte Kurve $c$ in $M$ heißt \CmMark{Geod\"atische}\footnote{Die Äquivalenz zur bereits bekannten Definition wird in Kürze gezeigt.}, wenn $\nabla_t\dot c \equiv 0$ gilt.
+  Eine glatte Kurve $c$ in $M$ hei"st \CmMark{Geod\"atische}\footnote{Die "Aquivalenz zur bereits bekannten Definition wird in K"urze gezeigt.}, wenn $\nabla_t\dot c \equiv 0$ gilt.
 \end{Dfn}
 
-Ist $c$ Geodätische, so ist $c$ proportional zur Bogenlängenparametrisierung, das hei"st $\|\dot c\| = $const, denn $\difffrac{}{t}\|\dot c(t)\|^{2} = \difffrac{}{t}\left<\dot c(t),\dot c(t) \right> = 2\left<\nabla_t\dot c(t), \dot c(t)\right> = 0$.
-Mit $c$ ist auch jede affine Umparametrisierung $t \mapsto c(at + b)$ eine Geodätische.
+Ist $c$ Geod"atische, so ist $c$ proportional zur Bogenl"angenparametrisierung, das hei"st $\|\dot c\| = $const, denn $\difffrac{}{t}\|\dot c(t)\|^{2} = \difffrac{}{t}\left<\dot c(t),\dot c(t) \right> = 2\left<\nabla_t\dot c(t), \dot c(t)\right> = 0$.
+Mit $c$ ist auch jede affine Umparametrisierung $t \mapsto c(at + b)$ eine Geod"atische.
 
 % Proposition 8.2
 \begin{Prop}
-Für jedes $p \in M$ und $v \in \T_pM$ existiert genau eine Geodätische $\gamma_{p,v}\colon[0,\epsilon] \to M$ mit $\gamma_{p,v}(0) = p$ und $\dot \gamma_{p,v}(0) = v$.
-Zudem hängt $\gamma_{p,v}$ glatt von $p$ und $v$ ab.
+F"ur jedes $p \in M$ und $v \in \T_pM$ existiert genau eine Geod"atische $\gamma_{p,v}\colon[0,\epsilon] \to M$ mit $\gamma_{p,v}(0) = p$ und $\dot \gamma_{p,v}(0) = v$.
+Zudem h"angt $\gamma_{p,v}$ glatt von $p$ und $v$ ab.
 \end{Prop}
 
 \begin{bew}\begin{enumerate}[label=(\Alph*),leftmargin=*,widest=B]
@@ -76,7 +76,7 @@ Zudem hängt $\gamma_{p,v}$ glatt von $p$ und $v$ ab.
 			\dot\gamma^i(0) = \xi_p^i, \quad v = \sum \xi^i_p\pdifffrac[p]{}{x^i}
 		\end{cases}
 	\end{align*}
-	eine eindeutige Lösung (lokal), wleche glatt von den Startwerten $p$ und $v$ abhängt.
+	eine eindeutige L"osung (lokal), wleche glatt von den Startwerten $p$ und $v$ abh"angt.
 \item
 	(Alternativ) Ist $(\phi, U)$ eine Karte von $M$ um $p$, dann ist
 	\[ \overline \phi \colon \left\{\begin{array}{cccl}
@@ -108,8 +108,8 @@ Zudem hängt $\gamma_{p,v}$ glatt von $p$ und $v$ ab.
 	\begin{align*}
 		\gamma(t) = \overline\phi^{-1}(\gamma^1(t), \ldots, \gamma^m(t))
 	\end{align*}
-	eine Geodätische durch $p$ mit $\dot \gamma(0) = X_p$ ist.	
-	Der maximale Fluss $g^t$ von $S$ heißt \CmMark[Fluss!geod\"atischer]{geod"atischer Fluss}.
+	eine Geod"atische durch $p$ mit $\dot \gamma(0) = X_p$ ist.	
+	Der maximale Fluss $g^t$ von $S$ hei"st \CmMark[Fluss!geod\"atischer]{geod"atischer Fluss}.
 	Mit Satz \ref{satz-4-9} folgt die Aussage der Proposition.
 \end{enumerate}\end{bew}
 
@@ -138,14 +138,14 @@ Zudem hängt $\gamma_{p,v}$ glatt von $p$ und $v$ ab.
 	\draw (pkt1) ..controls($(pkt1) + 0.25*(ctrl1)$) and ($(pkt2) + 0.5*(ctrl2)$).. (pkt2) ..controls($(pkt2) - 0.5*(ctrl2)$) and (pkt3).. (pkt3);
 \end{tikzpicture}\end{center}
 
-Für $v \in \T_pM$ sei $\gamma_v(t) = \pi(g^t(v))$ die eindeutige Geodätische mit $\gamma_v(0) = p$ und $\dot \gamma_v(0) = v$.
-Ist $\delta \in \R$ und $c(t) = \gamma_v(\delta t)$, so ist $c$ eine Geodätische durch $p$ mit $\dot c(0) = \delta v$, das hei"st $c = \gamma_{\delta v}$, beziehungsweise $\gamma_{\delta v}(t) = \gamma_v(\delta t)$.
+F"ur $v \in \T_pM$ sei $\gamma_v(t) = \pi(g^t(v))$ die eindeutige Geod"atische mit $\gamma_v(0) = p$ und $\dot \gamma_v(0) = v$.
+Ist $\delta \in \R$ und $c(t) = \gamma_v(\delta t)$, so ist $c$ eine Geod"atische durch $p$ mit $\dot c(0) = \delta v$, das hei"st $c = \gamma_{\delta v}$, beziehungsweise $\gamma_{\delta v}(t) = \gamma_v(\delta t)$.
 
-Der Definitionsbereich $\mathcal D_S$ des geodätischen Flusses ist eine offene Menge in $\R \X \T_pM$ und somit sind sowohl $\mathcal D = \{v \in \T M \mid (1,v) \in \mathcal D_S\}$, als auch $\mathcal D_p = \mathcal D \cap T_pM$ offen für alle $p \in M$ (in $\T M$, beziehungsweise $\T_pM$). Weiterhin gilt $0_p \in \mathcal D_p$.
+Der Definitionsbereich $\mathcal D_S$ des geod"atischen Flusses ist eine offene Menge in $\R \X \T_pM$ und somit sind sowohl $\mathcal D = \{v \in \T M \mid (1,v) \in \mathcal D_S\}$, als auch $\mathcal D_p = \mathcal D \cap T_pM$ offen f"ur alle $p \in M$ (in $\T M$, beziehungsweise $\T_pM$). Weiterhin gilt $0_p \in \mathcal D_p$.
 
 % Definition 8.3
 \begin{Dfn}
-  Die Abbildung $\exp_p\colon\mathcal D_p \to M$, $v \mapsto \gamma_v(1)$ heißt \CmMark{Exponentialabbildung}.
+  Die Abbildung $\exp_p\colon\mathcal D_p \to M$, $v \mapsto \gamma_v(1)$ hei"st \CmMark{Exponentialabbildung}.
 \end{Dfn}
 
 
@@ -153,7 +153,7 @@ Der Definitionsbereich $\mathcal D_S$ des geodätischen Flusses ist eine offene 
 %% Vorlesung <2012-12-18 Tue>
 %%
 
-Es wurde bereits gezeigt, dass $\nabla_t \dot \gamma_v \equiv 0$ ist (Geodätische Differentialgelichung).
+Es wurde bereits gezeigt, dass $\nabla_t \dot \gamma_v \equiv 0$ ist (Geod"atische Differentialgelichung).
 Die Exponentialabbildung is nach Satz \ref{satz-4-6} glatt.
 Es gilt $\exp_p(0_p) = p$.
 Zur Berechnung des Differentiales von $\exp_p$ in $0_p$
@@ -166,8 +166,8 @@ Es gilt
   \exp_{p*0_p}(v) = \difffrac[t=0]{}{t}\exp_p(tv) = \difffrac[t=0]{}{t}\gamma_{tv}(1) = \difffrac[t=0]{}{t}\gamma_v(t) = \dot \gamma_v(0) = v,
 \end{align*}
 also $\exp_{p*0_p} = 1 \dop_{\T_pM}$.
-Es existiert für alle $p \in M$ eine Umgebung $V$ von $0_p \in \T_pM$ und $U$ von $p$, so dass $\exp_p \colon V \to U$ ein Diffeomorphismus ist.
-Wählt man eine Orthonormalbasis $e_1, \ldots, e_m$ von $\T_pM$ und setzt
+Es existiert f"ur alle $p \in M$ eine Umgebung $V$ von $0_p \in \T_pM$ und $U$ von $p$, so dass $\exp_p \colon V \to U$ ein Diffeomorphismus ist.
+W"ahlt man eine Orthonormalbasis $e_1, \ldots, e_m$ von $\T_pM$ und setzt
 \begin{align*}
   \psi \colon \T_pM \to \R^m, v = \sum_i b^ie_i \mapsto (b^1, \ldots, b^m),
 \end{align*}
@@ -181,7 +181,7 @@ Diese Karte bezeichnet man als \CmMark[Normalkoordinaten!Riemannsche]{Riemannsch
 
 % Proposition 8.5
 \begin{Prop}
-In Riemannschen Normalkoordinaten gilt für alle $i,j,k \leq m$:
+In Riemannschen Normalkoordinaten gilt f"ur alle $i,j,k \leq m$:
 \begin{enumerate}[label=(\roman*)]
 \item
 	$g_{ij}(0) = \delta_{ij}$
@@ -201,7 +201,7 @@ Der Beweis sei zur "Ubung "uberlassen.
 
 \section{Polarkoordinaten}
 
-Es ist $\phi = (r, \theta^1, \ldots, \theta^{m-1})$ die Hintereinanderausführung von Riemannschen Normalkoordinaten des $\R^m$.
+Es ist $\phi = (r, \theta^1, \ldots, \theta^{m-1})$ die Hintereinanderausf"uhrung von Riemannschen Normalkoordinaten des $\R^m$.
 
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
 %	\draw[step=0.25,gray!15] (-3,-6) grid (9,6); \draw[step=0.5,gray!30] (-3,-6) grid (9,6); \fill (0,0) circle(0.1); %Hilfsgitter
@@ -238,11 +238,11 @@ Die Umkehrabbildung ist ein Diffeomorphismus
   f \colon (0, \epsilon) \times S^{m-1} \to U \subseteq M, \ 
   (t,v) \mapsto \exp_p(tv) = \gamma_v(t).
 \end{align*}
-Für jedes $v \in S^{m-1}$ ist $t \mapsto f(t,v) = \gamma_v(t)$ eine Geodätische in $M$. Wir bezeichnen solche Geod"atischen im Folgenden als \CmMark[Geod\"atische!radiale]{radiale Geod\"atische}.
+F"ur jedes $v \in S^{m-1}$ ist $t \mapsto f(t,v) = \gamma_v(t)$ eine Geod"atische in $M$. Wir bezeichnen solche Geod"atischen im Folgenden als \CmMark[Geod\"atische!radiale]{radiale Geod\"atische}.
 
 % Lemma 8.6
-\begin{Lemma}[Gauß-Lemma]
-  Jede radiale Geodätische $\gamma_v$ ist orthogonal zu der geodätischen Sphäre
+\begin{Lemma}[Gau"s-Lemma]
+  Jede radiale Geod"atische $\gamma_v$ ist orthogonal zu der geod"atischen Sph"are
   \begin{align*}
     S_r = \{q \in M \mid \ \exists v \in \T_pM: \|v\| = r \text{ und } q = \exp_p(v) \}.
   \end{align*}
@@ -303,7 +303,7 @@ also $\left<Y,\pdifffrac{}{r}\right> \equiv 0$.
 \end{bew}
 
 \begin{bem}
-  Insbesondere gilt für alle $i \leq m-1$:
+  Insbesondere gilt f"ur alle $i \leq m-1$:
   \begin{align*}
     \left<\pdifffrac{}{r}, \pdifffrac{}{\theta^i}\right> = 0.
   \end{align*}
@@ -311,7 +311,7 @@ also $\left<Y,\pdifffrac{}{r}\right> \equiv 0$.
 
 % Satz 8.7
 \begin{Satz}\label{satz-8-7}
-Für jedes $p \in M$ existiert ein $\epsilon > 0$, so dass für alle $q \in \B_{\epsilon}(p)$ genau eine minimierende Geodätische von $p$ nach $q$ existiert, das hei"st eine Geodätische $\gamma$ im Sinne der Definition \ref{dfn-8-1} mit $\mathcal L(\gamma) = \dop(p,q)$.
+F"ur jedes $p \in M$ existiert ein $\epsilon > 0$, so dass f"ur alle $q \in \B_{\epsilon}(p)$ genau eine minimierende Geod"atische von $p$ nach $q$ existiert, das hei"st eine Geod"atische $\gamma$ im Sinne der Definition \ref{dfn-8-1} mit $\mathcal L(\gamma) = \dop(p,q)$.
 Ist $q \notin \exp_p(\B_{\epsilon}(0_p)) = \B_{\epsilon}(p)$, so existiert ein $q' \in \partial \B_{\epsilon}(p)$ mit
 \begin{align*}
 	\dop(p,q) = \epsilon + \dop(q',q).
@@ -371,7 +371,7 @@ Es sei $\epsilon > 0$ so, dass auf $\B_{\epsilon}(p)$ Polorkoordinaten $\phi = (
 \end{tikzpicture}\\
 Das Bild von $c$ ist nicht notwendig in $\B_\epsilon(0)$ enthalten
 \end{center}
-Für $t_0 = \inf\{t \in [0,1] \mid c(t) \notin \B_{\epsilon}(p)\}$ ist $c|_{[0,t_0]}$ eine Kurve zu $\B_{\epsilon}(p)$.
+F"ur $t_0 = \inf\{t \in [0,1] \mid c(t) \notin \B_{\epsilon}(p)\}$ ist $c|_{[0,t_0]}$ eine Kurve zu $\B_{\epsilon}(p)$.
 Es gilt
 \begin{align*}
 	\left\|\pdifffrac[t]{}{r}\right\| = \|\dot\gamma_w(t)\| = \|w\| = 1.
@@ -384,7 +384,7 @@ Aus der Cauchy-Schwarz-Ungleichung folgt
 	& = \left|\left<\dot r(t)\pdifffrac[c(t)]{}{r}, \pdifffrac[c(t)]{}{r}\right>\right|\\
 	& = \left|\dot r(t)\right|,
 \end{align*}
-wobei die Gleichheit genau dann gilt, wenn $\dot c(t)$ und $\pdifffrac[c(t)]{}{r}$ linear abhängig sind.
+wobei die Gleichheit genau dann gilt, wenn $\dot c(t)$ und $\pdifffrac[c(t)]{}{r}$ linear abh"angig sind.
 \begin{align*}
 	\mathcal L(c) = \int_0^{t_0}\|\dot c\| + \int_{t_0}^T\|\dot c\| \geq \int_0^{t_0} \left|\left<\dot c,\pdifffrac{}{r}\right>\right| = \int_0^{t_0}|\dot r| = r(t_0)
 \end{align*}

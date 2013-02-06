@@ -9,13 +9,13 @@
 %% 5. Vorlesung <2012-10-30 Tue>, Fortsetzung
 %%
 
-\chapter{Tangentialbündel und Vektorfelder}
+\chapter{Tangentialb"undel und Vektorfelder}
 
-\begin{Dfn}[Tangentialbündel]
-  Es sei $M$ eine glatte Mannigfaltigkeit. Die Menge $\T M = \dot \bigcup_{p \in M}\T_pM$ zusammen mit der sogenannten kanonischen Projektion $\pi \colon \T M \to M, \T_pM \ni X_p \mapsto p$ heißt das \CmMark[Tangential!-b\"undel]{Tangentialb"undel} von $M$.
+\begin{Dfn}[Tangentialb"undel]
+  Es sei $M$ eine glatte Mannigfaltigkeit. Die Menge $\T M = \dot \bigcup_{p \in M}\T_pM$ zusammen mit der sogenannten kanonischen Projektion $\pi \colon \T M \to M, \T_pM \ni X_p \mapsto p$ hei"st das \CmMark[Tangential!-b\"undel]{Tangentialb"undel} von $M$.
 \end{Dfn}
 
-\section{Das Tangentialbündel als glatte Mannigfaltigkeit}
+\section{Das Tangentialb"undel als glatte Mannigfaltigkeit}
 
 Es sei $(\phi, U)$ eine Karte von $M$. Setzt man $\T M|_U = \pi^{-1}(U) = \dot \bigcup_{p\in U}\T_pM$, so ist nach Satz \ref{satz-2-9}
 die Abbildung
@@ -23,33 +23,33 @@ die Abbildung
 	&\T_p M \ni X_p = \sum \xi^i\pdifffrac[p]{}{x^i} &\mapsto& (\phi(p),\xi)
 \end{array}\]
 bijektiv.
-Es sei eine Topologie auf $\T M$ dadurch erklärt, dass eine Menge $V \subset \T M$ genau dann offen ist, wenn für alle Karten $(\phi, U)$ die Menge $\overline \phi(V \cap \T M|_U)$ offen in $\R^{2m}$ ist. Diese Topologie ist hausdorffsch und besitzt eine abzählbare Basis, da dies für $M$ und $\R^m$ gilt. Nach Konstruktion sind alle $\overline \phi$ Homöomorphismen. Ist $\mathcal A = \{(\phi, U\}$ ein $C^{\infty}$-Atlas von $M$, so definiert
+Es sei eine Topologie auf $\T M$ dadurch erkl"art, dass eine Menge $V \subset \T M$ genau dann offen ist, wenn f"ur alle Karten $(\phi, U)$ die Menge $\overline \phi(V \cap \T M|_U)$ offen in $\R^{2m}$ ist. Diese Topologie ist hausdorffsch und besitzt eine abz"ahlbare Basis, da dies f"ur $M$ und $\R^m$ gilt. Nach Konstruktion sind alle $\overline \phi$ Hom"oomorphismen. Ist $\mathcal A = \{(\phi, U\}$ ein $C^{\infty}$-Atlas von $M$, so definiert
 \begin{align*}
   \overline A = \{(\overline \phi, \T M|_U) \mid (\phi, U) \in \mathcal A\}
 \end{align*}
-eine glatte Struktur auf $\T M$. Für Karten $(\phi, U), (\psi, V)$ von $M$ ist der Kartenwechsel
+eine glatte Struktur auf $\T M$. F"ur Karten $(\phi, U), (\psi, V)$ von $M$ ist der Kartenwechsel
 \[\begin{array}{ccc}
   \overline \psi \circ \overline \phi^{-1} \colon \phi(U \cap V) \times \R^m &\to& \psi(U \cap V) \times \R^m \\
   (x, \xi) &\mapsto& (\psi \circ \phi^{-1}(x),\D(\psi \circ \phi^{-1}|_x\xi),
 \end{array}\]
-$(X_p = \sum \xi^i \pdifffrac[p]{}{x^i})$ ist glatt. Damit trägt $\T M$ in kanonischer Weise eine glatte Struktur.
-Darüber hinaus ist die kanonische Projektion $\pi \colon \T M \to M$ bezüglich dieser glatten Struktur eine Submersion. (Beweis als Übungsaufgabe)
+$(X_p = \sum \xi^i \pdifffrac[p]{}{x^i})$ ist glatt. Damit tr"agt $\T M$ in kanonischer Weise eine glatte Struktur.
+Dar"uber hinaus ist die kanonische Projektion $\pi \colon \T M \to M$ bez"uglich dieser glatten Struktur eine Submersion. (Beweis als "Ubungsaufgabe)
 
-Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so ist $\Phi_{*} \colon \T M \to \T N, \ X_p \mapsto \Phi_{*p}X_p$ eine glatte Abbildung (ebensfalls Übungsaufgabe).
+Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so ist $\Phi_{*} \colon \T M \to \T N, \ X_p \mapsto \Phi_{*p}X_p$ eine glatte Abbildung (ebensfalls "Ubungsaufgabe).
 
 \begin{Dfn}
-  Eine stetige Abbildung $X \colon M \to \T M$ mit $\pi \circ X = \Id_M$ heißt \CmMark{Vektorfeld} auf $M$.
-  Ist $X$ glatt (als Abbildung zwischen glatten Mannigfaltigkeiten), so heißt $X$ ein \CmMark[Vektorfeld!glattes]{glattes Vektorfeld}.
+  Eine stetige Abbildung $X \colon M \to \T M$ mit $\pi \circ X = \Id_M$ hei"st \CmMark{Vektorfeld} auf $M$.
+  Ist $X$ glatt (als Abbildung zwischen glatten Mannigfaltigkeiten), so hei"st $X$ ein \CmMark[Vektorfeld!glattes]{glattes Vektorfeld}.
 \end{Dfn}
 
 \begin{bem}
 Ist $(\phi, U)$ eine Karte von $M$, so sind die Abbildungen $U \to \T M|_U, \ p \mapsto \pdifffrac[p]{}{x^{i}}$ glatte Vektorfelder (in der Karte $\overline \phi$ sind diese genau die Abbildungen $(x,e_i)$).
 
-Ist $X$ ein glattes Vektorfeld, so gilt für jedes $u \in U$:
+Ist $X$ ein glattes Vektorfeld, so gilt f"ur jedes $u \in U$:
 \begin{align*}
 	X_u = \sum \xi^i(u) \pdifffrac[u]{}{x^i},
 \end{align*}
-wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$ ist. Ein Vektorfeld ist genau dann glatt, wenn für jede Karte $(\phi, U)$ die Koeffizientenfunktionen $\xi^i(u)$ von $X_u = \sum \xi^i(u) \pdifffrac[u]{}{x^i}$ glatte Funktionen sind.
+wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$ ist. Ein Vektorfeld ist genau dann glatt, wenn f"ur jede Karte $(\phi, U)$ die Koeffizientenfunktionen $\xi^i(u)$ von $X_u = \sum \xi^i(u) \pdifffrac[u]{}{x^i}$ glatte Funktionen sind.
 \end{bem}
 
 
@@ -58,7 +58,7 @@ wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$
 %%% 
 
 \begin{bsp}
-  Betrachte die $n$-Sphäre $S^n \subset \R^{n+1}$ und deren Tangentialraum $\T_pS^n = p^{\perp}$.
+  Betrachte die $n$-Sph"are $S^n \subset \R^{n+1}$ und deren Tangentialraum $\T_pS^n = p^{\perp}$.
   Ein glattes Vektorfeld auf $S^n$ ist also eine glatte Abbildung $X \colon S^n \to \R^{n+1}$ mit $X_p \perp p$.  
   Es sei $n=2k-1$, dann ist
   \begin{align*}
@@ -68,7 +68,7 @@ wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$
 \end{bsp}
 
 \begin{bem}
-  Der \CmMark[Igel, Satz vom]{Satz vom Igel} besagt gerade: Jedes glatte Vektorfeld auf einer Sphäre gerader Dimension hat eine Nullstelle.
+  Der \CmMark[Igel, Satz vom]{Satz vom Igel} besagt gerade: Jedes glatte Vektorfeld auf einer Sph"are gerader Dimension hat eine Nullstelle.
 \end{bem}
 
 \begin{bem}
@@ -96,7 +96,7 @@ Es seien $X,Y \in \mathcal V(M)$ glatte Vektorfelder. Die \CmMark{Lieklammer} $[
 
 % Lemma 4.3
 \begin{Lemma}
-  Die Lieklammer ist eine schiefsymmetrische $\R$-bilineare Abbildung $\mathcal V(M) \times \mathcal V(M) \to \mathcal V(M)$. Es gilt die sogenannte \CmMark{Jacobiidentität}:
+  Die Lieklammer ist eine schiefsymmetrische $\R$-bilineare Abbildung $\mathcal V(M) \times \mathcal V(M) \to \mathcal V(M)$. Es gilt die sogenannte \CmMark{Jacobiidentit"at}:
   \begin{align*}
     [X,[Y,Z]] + [Y,[Z,X]] + [Z,[X,Y]] = 0.
   \end{align*}
@@ -111,7 +111,7 @@ Es seien $X,Y \in \mathcal V(M)$ glatte Vektorfelder. Die \CmMark{Lieklammer} $[
     ={} & (X_p(Y(f))-Y_p(X(f))g(p) + f(p)(X_p(Y(g))-Y_p(X(g))\\
     ={} & [X,Y]_p (f)g(p) + f(p)[X,Y]_p(g).
   \end{align*}
-  Damit gilt $[X,Y] \in \mathcal V(M)$. Schiefsymmetrie und $\R$-Linearität gelten offensichtlich. Die Jacobiidentität sei als Übungsaufgabe überlassen (Nachrechnen!).
+  Damit gilt $[X,Y] \in \mathcal V(M)$. Schiefsymmetrie und $\R$-Linearit"at gelten offensichtlich. Die Jacobiidentit"at sei als "Ubungsaufgabe "uberlassen (Nachrechnen!).
 \end{bew}
 
 
@@ -124,10 +124,10 @@ Es seien $X,Y \in \mathcal V(M)$ glatte Vektorfelder. Die \CmMark{Lieklammer} $[
   \end{align*}
 \end{Lemma} 
 
-Der Beweis ist als Übungs überlassen.
+Der Beweis ist als "Ubungs "uberlassen.
 
 
-\section{Flüsse}
+\section{Fl"usse}
 
 \marginnote{\begin{tikzpicture}[scale=0.75]
     % \draw[step=0.25,gray!15] (-3,-1) grid (2,5); \draw[step=0.5,gray!30] (-3,-1) grid (2,5); \fill (0,0) circle(0.1); %Hilfsgitter
@@ -150,25 +150,25 @@ oder in lokalen Koordinaten:
     \tilde \gamma(0) = 0, \text{ falls } \phi(p) = 0,
   \end{cases}
 \end{align*}
-mit $\tilde \gamma = \phi \circ \gamma$ für eine Karte $(\phi,U)$ um $p$ und $X|_U = \sum \xi^i \pdifffrac{}{x^i}$.
+mit $\tilde \gamma = \phi \circ \gamma$ f"ur eine Karte $(\phi,U)$ um $p$ und $X|_U = \sum \xi^i \pdifffrac{}{x^i}$.
 
 % Definition 4.5
 \begin{Dfn}
-  Es sei $X \in \mathcal V(M)$ ein glattes Vektorfeld und $p \in M$, sowie $\calI \subset \R$ ein offenes, zusammenhängendes Intervall um $0$. Eine glatte Kurve $\gamma \colon \calI \to M$ mit
+  Es sei $X \in \mathcal V(M)$ ein glattes Vektorfeld und $p \in M$, sowie $\calI \subset \R$ ein offenes, zusammenh"angendes Intervall um $0$. Eine glatte Kurve $\gamma \colon \calI \to M$ mit
   \begin{align*}
     \dot \gamma(t) = X_{\gamma(t)}, \ \gamma(0) = p
   \end{align*}
-  heißt \CmMark{Integralkurve} oder \CmMark{Trajektorie} von $X$ durch $p$.
+  hei"st \CmMark{Integralkurve} oder \CmMark{Trajektorie} von $X$ durch $p$.
 \end{Dfn}
 
 \begin{bem}
-  Eine Kurve $\gamma$ ist genau dann Integralkurve von $X$ durch $p$, wenn für jede Karte $(\phi,U)$ die Kurve $\tilde \gamma = \phi \circ \gamma$ eine Lösung des (autonomen) Anfangswertproblems
+  Eine Kurve $\gamma$ ist genau dann Integralkurve von $X$ durch $p$, wenn f"ur jede Karte $(\phi,U)$ die Kurve $\tilde \gamma = \phi \circ \gamma$ eine L"osung des (autonomen) Anfangswertproblems
   \begin{align*}
     \dot{\tilde \gamma} = \xi(\gamma(t)),  \ \tilde \gamma(0) = \phi(p)
   \end{align*}
   ist, wobei $X|_U = \sum \xi^i \pdifffrac{}{x^i}$ gelte.
 
-  Für jedes $p \in M$ ist somit (lokal) ein Anfangswertproblem gestellt. Gesucht ist eine \quot{simultane} Lösung all dieser Anfangswertprobleme, also eine Abbildung $(t,p) \mapsto \gamma(t,p) = \gamma^t(p)$ mit 
+  F"ur jedes $p \in M$ ist somit (lokal) ein Anfangswertproblem gestellt. Gesucht ist eine \quot{simultane} L"osung all dieser Anfangswertprobleme, also eine Abbildung $(t,p) \mapsto \gamma(t,p) = \gamma^t(p)$ mit 
   \begin{align*}
     \begin{cases}
       \dot \gamma^t(p) = X_{\gamma^t(p)}\\
@@ -180,12 +180,12 @@ mit $\tilde \gamma = \phi \circ \gamma$ für eine Karte $(\phi,U)$ um $p$ und $X
 % Satz 4.6
 \begin{Satz}[Lokale Existenz und Eindeutigkeit]\label{satz-4-6}
   Es sei $U \subseteq \R^n$ offen und $\calI_{\epsilon}=(-\epsilon,\epsilon)$ und $F \colon \calI_{\epsilon} \times \R^n \to \R^n$ $C^k$-differenzierbar.
-  Dann existiert für alle $x \in U$ eine Umgebung $V$ von $x$ in $U$ und ein $\delta > 0$, so dass
+  Dann existiert f"ur alle $x \in U$ eine Umgebung $V$ von $x$ in $U$ und ein $\delta > 0$, so dass
   \begin{enumerate}[label=(\roman*),leftmargin=*,widest=iii]
-  \item Für alle $x \in V$ existiert eine $C^{k+1}$-Lösung $y_x\colon \calI_{\delta} \to V$, von $y_x'(t)=F(t,y(t))$ und $y_x(0) = x$.
-  \item\label{satz-4-6-ii} Diese Lösung ist lokal eindeutig, das hei\ss t falls $\tilde y_x$ eine weitere Lösung auf $\calI_{\tilde\delta}$ ist, so gilt
+  \item F"ur alle $x \in V$ existiert eine $C^{k+1}$-L"osung $y_x\colon \calI_{\delta} \to V$, von $y_x'(t)=F(t,y(t))$ und $y_x(0) = x$.
+  \item\label{satz-4-6-ii} Diese L"osung ist lokal eindeutig, das hei\ss t falls $\tilde y_x$ eine weitere L"osung auf $\calI_{\tilde\delta}$ ist, so gilt
     \begin{align*}
-      y_x(t) = \tilde y_x(t) \text{ für alle } |t| \leq \min\{\delta, \tilde\delta\}.
+      y_x(t) = \tilde y_x(t) \text{ f"ur alle } |t| \leq \min\{\delta, \tilde\delta\}.
     \end{align*}
   \item Die Abbildung 
     \begin{align*}
@@ -209,7 +209,7 @@ Zum Beweis siehe Lang: "`Differential and Riemannian Manifolds"', 3. Auflage, 19
 % Korollar 4.8
 \begin{Kor}\label{korollar-4-8}
   Sind $\gamma_1 \colon \calJ_1 \to M, \ \gamma_2 \colon \calJ_2 \to M$ Integralkurven eines Vektorfeldes $X \in \mathcal V(M)$ durch $p$, dann gilt $0 \in \calJ_1 \cap \calJ_2$ und $\gamma_1(0)= p = \gamma_2(0)$.
-  Nach Satz \ref{satz-4-6} \ref{satz-4-6-ii} gilt dann $\gamma_1(t) = \gamma_2(t)$ für alle $t \in \calJ_1 \cap \calJ_2$. Damit ist
+  Nach Satz \ref{satz-4-6} \ref{satz-4-6-ii} gilt dann $\gamma_1(t) = \gamma_2(t)$ f"ur alle $t \in \calJ_1 \cap \calJ_2$. Damit ist
   \begin{align*}
     \gamma \colon \calJ_1 \cap \calJ_2, \ t \mapsto 
     \begin{cases}
@@ -218,11 +218,11 @@ Zum Beweis siehe Lang: "`Differential and Riemannian Manifolds"', 3. Auflage, 19
     \end{cases}
   \end{align*}
   eine Integralkurve von $X$ durch $p$.
-  Damit existiert für jedes $p \in M$ ein maximaler Definitionsbereich $\calI_p$ für Integralkurven von $X$ durch $p$; dieser ist offen.
+  Damit existiert f"ur jedes $p \in M$ ein maximaler Definitionsbereich $\calI_p$ f"ur Integralkurven von $X$ durch $p$; dieser ist offen.
 \end{Kor}
 
 \begin{dfn}
-  Für $X \in \mathcal V(M)$ heißt die, wie im vorigen Korollar definierte, Familie maximaler Integralkurven
+  F"ur $X \in \mathcal V(M)$ hei"st die, wie im vorigen Korollar definierte, Familie maximaler Integralkurven
   \begin{align*}
     \gamma(t,p) = \gamma^t(p),\ t \in \calI_p
   \end{align*}
@@ -254,7 +254,7 @@ Zum Beweis siehe Lang: "`Differential and Riemannian Manifolds"', 3. Auflage, 19
 %%% 
 
 \begin{bem}[Erinnerung]
-\textcolor{red}{TODO: Diesen Absatz aufräumen. (ich würde das komplett weglassen weil es bloß eine Wiederholung von der Woche davor ist -Aleks)}
+\textcolor{red}{TODO: Diesen Absatz aufr"aumen. (ich w"urde das komplett weglassen weil es blo"s eine Wiederholung von der Woche davor ist -Aleks)}
 Ist $X \in \mathcal V(M)$, $c$ Integralkurve von $X$ durch $p$, wenn $c(t) = X_{c(t)}$ maximales Existenzintervall $I_p$\\
 
 %%% 
@@ -265,23 +265,23 @@ Ist $X \in \mathcal V(M)$, $c$ Integralkurve von $X$ durch $p$, wenn $c(t) = X_{
 \begin{align*}
 	\gamma \colon \mathcal D_X = \{(t,p) \mid p \in M, t \in I_p\} \to M
 \end{align*}
-Fluß von $X$, wobei
+Flu"s von $X$, wobei
 \begin{align*}
 	\dot \gamma^t = X_{\gamma^t(p)}, \gamma^0 = \Id_M.
 \end{align*}
-Für $f \in C^{\infty}$ gilt
+F"ur $f \in C^{\infty}$ gilt
 \begin{align*}
 	X_p(t) = \dot \gamma^t(pXf) = \difffrac[t=0]{}{t}(f \circ \gamma^t)(p).
 \end{align*}
-Aus der lokalen Eindeutigkeit folgt (für kleine Zeiten)
+Aus der lokalen Eindeutigkeit folgt (f"ur kleine Zeiten)
 \begin{align*}
 	\gamma^{s-t} = \gamma^s \circ \gamma^t.
 \end{align*}
-Für alle $t$ ist $\gamma^t$ (lokalaer) Diffeomorphismus mit Inversen $\gamma^{-t}$.
+F"ur alle $t$ ist $\gamma^t$ (lokalaer) Diffeomorphismus mit Inversen $\gamma^{-t}$.
 \end{bem}
 
 \begin{bew}
-Es sei $p \in M$ und $\calJ_p^{+}$ die Menge aller $t \geq 0$, für welche eine offene Umgebung $U$ von $[0,t] \times \{p\}$ in $\R \times M$ existiert, so dass $\gamma$ auf $U$ glatt ist.
+Es sei $p \in M$ und $\calJ_p^{+}$ die Menge aller $t \geq 0$, f"ur welche eine offene Umgebung $U$ von $[0,t] \times \{p\}$ in $\R \times M$ existiert, so dass $\gamma$ auf $U$ glatt ist.
 \begin{itemize}
 \item $\calJ_p^{+}$ ist ein Intervall,
 \item $\calJ_p^{+} \subseteq \calJ_p \cap \R_{\geq 0}$
@@ -301,7 +301,7 @@ Dann existieren $\epsilon > 0$ und eine Umgebung $U$ von $q$, so dass $\gamma$ a
 Es sei $t \in \calJ_p^{+}$ mit $s-t < \epsilon$ und $\gamma^t(p) \in U$.
 Nach Definition von $\calJ_p^{+}$ existiert eine offene Umgebung $V$ von $p$ in $M$ und $\delta > 0$, so dass $(-\delta,t+\delta)\times V \subseteq \mathcal D_X$ gilt und darauf $\gamma$ glatt ist.
 Dann ist $V' = \left(\left.\gamma^t\right|_V\right)^{-1}(U) = \{p' \in V \mid \gamma^t(p') \in U\}$ eine offene Umgebung von $p$.
-Für alle $p' \in V'$ gilt:
+F"ur alle $p' \in V'$ gilt:
 \begin{align*}
 	r \mapsto
 	\begin{cases}
@@ -311,17 +311,17 @@ Für alle $p' \in V'$ gilt:
 \end{align*}
 ist eine Integralkurve von $X$ durch $p'$.
 
-Es gilt also $(-\delta,t+\epsilon) \subseteq \calJ_{p'}$ für alle $p' \in V'$ und somit $(-\delta,t+\epsilon) \times V' \subset \mathcal D_X$. An der obigen Darstellung sieht man, dass $\gamma$ darauf glatt ist.
-Also gilt $s \in \calJ_p^{+}$. Analog argumentiert man für $\calJ_p^{-}$.
+Es gilt also $(-\delta,t+\epsilon) \subseteq \calJ_{p'}$ f"ur alle $p' \in V'$ und somit $(-\delta,t+\epsilon) \times V' \subset \mathcal D_X$. An der obigen Darstellung sieht man, dass $\gamma$ darauf glatt ist.
+Also gilt $s \in \calJ_p^{+}$. Analog argumentiert man f"ur $\calJ_p^{-}$.
 \end{bew}
 
 % Definition 4.10
-\begin{Dfn}[vollständiges Vektorfeld]
-  Ein Vektorfeld auf $M$ heißt \CmMark[Vektorfeld!vollst\"andiges]{voll"-stän"-dig}, wenn der Definitionsbereich seines Flusses gleich $\R \times M$ ist.
+\begin{Dfn}[vollst"andiges Vektorfeld]
+  Ein Vektorfeld auf $M$ hei"st \CmMark[Vektorfeld!vollst\"andiges]{voll"-st"an"-dig}, wenn der Definitionsbereich seines Flusses gleich $\R \times M$ ist.
 \end{Dfn}
 
 \begin{bem}
-  Dies ist genau dann der Fall, wenn alle Integralkurven für alle Zeiten existieren. Ist $X \in \mathcal V(M)$ vollständig und bezeichnet $\gamma$ seinen Fluss, so ist jede $\gamma^t$ ein Diffeomorphismus von $M$ mit Inversen $\gamma^{-t}$.
+  Dies ist genau dann der Fall, wenn alle Integralkurven f"ur alle Zeiten existieren. Ist $X \in \mathcal V(M)$ vollst"andig und bezeichnet $\gamma$ seinen Fluss, so ist jede $\gamma^t$ ein Diffeomorphismus von $M$ mit Inversen $\gamma^{-t}$.
 \end{bem}
 
 % Lemma 4.11
@@ -334,12 +334,12 @@ Also gilt $s \in \calJ_p^{+}$. Analog argumentiert man für $\calJ_p^{-}$.
 \begin{bew}
   Nach Korollar \ref{korollar-4-7} existiert eine Umgebung $U$ von $q$ und $\epsilon > 0$, so dass auf $(-\epsilon,\epsilon) \times U$ ein lokaler Fluss von $X$ definiert ist.
   
-  Wählt man $k$ so groß, dass $t_{\infty} - t_k < \epsilon$ gilt, so ist für $\overline q = c(t_k)$ und $t$ mit $|t-t_k| < \epsilon$ der Fluss $t \mapsto \gamma^{t-t_k}(\overline q)$ erklärt. Aus Korollar \ref{korollar-4-8} folgt, dass $\gamma^{t_k}(p) = c(t_k) = \overline q$ gilt.
+  W"ahlt man $k$ so gro"s, dass $t_{\infty} - t_k < \epsilon$ gilt, so ist f"ur $\overline q = c(t_k)$ und $t$ mit $|t-t_k| < \epsilon$ der Fluss $t \mapsto \gamma^{t-t_k}(\overline q)$ erkl"art. Aus Korollar \ref{korollar-4-8} folgt, dass $\gamma^{t_k}(p) = c(t_k) = \overline q$ gilt.
   Damit ist die Kurve
   \begin{align*}
     \overline c(t) =
     \begin{cases}
-      c(t) & \text{ für } t < t_{\infty}\\
+      c(t) & \text{ f"ur } t < t_{\infty}\\
       \gamma^{t-t_k}(\overline q) & \text{ falls } |t-t_k| < \epsilon
     \end{cases}
   \end{align*}
@@ -351,15 +351,15 @@ Also gilt $s \in \calJ_p^{+}$. Analog argumentiert man für $\calJ_p^{-}$.
 \end{bew}
 
 \begin{Bem}[Moral des obigen Lemmas]
-  Integralkurven existieren für alle Zeiten oder aber sie verlassen jedes Kompaktum.
+  Integralkurven existieren f"ur alle Zeiten oder aber sie verlassen jedes Kompaktum.
 \end{Bem}
 
 \begin{Kor}
-Hat $X \in \mathcal V(M)$ kompakten Träger, so ist $X$ vollständig. Ist $M$ kompakt, os ist jedes glatte Vektorfeld vollständig.
+Hat $X \in \mathcal V(M)$ kompakten Tr"ager, so ist $X$ vollst"andig. Ist $M$ kompakt, os ist jedes glatte Vektorfeld vollst"andig.
 \end{Kor}
 
 \begin{bsp}
-  Das Vektorfeld $X \colon \R \to \T\R, t \mapsto t^2\pdifffrac{}{t}$ ist nicht vollständig, denn $c(t) = (1-t)^{-1}$ ist die Integralkurve von $X$ durch $1$.
+  Das Vektorfeld $X \colon \R \to \T\R, t \mapsto t^2\pdifffrac{}{t}$ ist nicht vollst"andig, denn $c(t) = (1-t)^{-1}$ ist die Integralkurve von $X$ durch $1$.
 \end{bsp}
 
 
@@ -371,7 +371,7 @@ Ist $\Phi \colon M \to N$ glatt, so ist $\Phi_{\ast} \colon \T M \to \T N$ glatt
 	\node (0) at (-\hor,\vert) {$\T M$}; \node (1) at (\hor,\vert) {$\T N$}; \node (2) at (\hor,-\vert) {$N$}; \node (3) at (-\hor,-\vert) {$M$};
 	\draw[->] (0) --node[above,font=\scriptsize]{$\Phi_*$} (1); \draw[->] (2) --node[right,font=\scriptsize]{$\Phi_*X$} (1); \draw[->] (2) --node[above,font=\scriptsize]{$\Phi^{-1}$} (3); \draw[->] (3) --node[left,font=\scriptsize]{$X$} (0);
 \end{tikzpicture}}
-Ist $\Phi$ ein Diffeomorphismus, so ist $\Phi^{-1}$ glatt und $q \mapsto (\Phi_{\ast}X)_q = \Phi_{*\Phi^{-1}(q)}X_{\Phi^{-1}(q)}$ ist ein glattes Vektorfeld auf $N$. Es gilt für $f \in C^{\infty}(N)$:
+Ist $\Phi$ ein Diffeomorphismus, so ist $\Phi^{-1}$ glatt und $q \mapsto (\Phi_{\ast}X)_q = \Phi_{*\Phi^{-1}(q)}X_{\Phi^{-1}(q)}$ ist ein glattes Vektorfeld auf $N$. Es gilt f"ur $f \in C^{\infty}(N)$:
 \begin{align*}
   (\Phi_{\ast}X)(f)(q) = X_{\Phi^{-1}(q)}(f \circ \Phi).
 \end{align*}
@@ -389,7 +389,7 @@ der Fluss von $\Phi_{*}X$.
 \end{Lemma}
 
 \begin{bew}
-Für $f \in \C^{\infty}(N)$ und $q \in N$ gilt
+F"ur $f \in \C^{\infty}(N)$ und $q \in N$ gilt
 \begin{align*}
 	(\Phi_{\ast}X)(f)(q) & = X_{\Phi^{-1}(q)}(f \circ \Phi)\\
 	& = \difffrac[t=0]{}{t} (f \circ \Phi)(\gamma^t(\Phi^{-1}(q)))\\
@@ -398,7 +398,7 @@ Für $f \in \C^{\infty}(N)$ und $q \in N$ gilt
 \end{bew}
 
 %\begin{Bem}
-\emph{Erinnerung:} $\frac{1}t(F(x+tv)-F(x))$ oder für $c$ mit $c(0) = x, \dot c(0) = v$: $\frac{1}t(F(c(t))-F(x))$.
+\emph{Erinnerung:} $\frac{1}t(F(x+tv)-F(x))$ oder f"ur $c$ mit $c(0) = x, \dot c(0) = v$: $\frac{1}t(F(c(t))-F(x))$.
 
 Nun seien $X,Y \in \mathcal V(M)$.
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
@@ -413,8 +413,8 @@ Nun seien $X,Y \in \mathcal V(M)$.
 	
 	\node[font=\normalsize] at (0,0) {$\gamma^t$};
 \end{tikzpicture}\end{center}
-Im Allgemeinen liegen $y_{\gamma^t(p)}$ und $y_p$ in unterschiedlichen Tangentialräumen.
-Da aber $\gamma^t$ (für kleine Zeiten) ein (lokaler) Diffeomorphismus ist, gilt
+Im Allgemeinen liegen $y_{\gamma^t(p)}$ und $y_p$ in unterschiedlichen Tangentialr"aumen.
+Da aber $\gamma^t$ (f"ur kleine Zeiten) ein (lokaler) Diffeomorphismus ist, gilt
 \begin{align*}
   \gamma_{*}^{-t}(y_{\gamma^t(p)})-(\gamma_{*}^{-t}y)_p \in \T_pM.
 \end{align*}
@@ -427,7 +427,7 @@ Das durch
 \begin{align*}
   p \mapsto \lim_{t\to 0}\frac{1}t\left(\left(\gamma_{*}^{-t}y\right)_p-y_p\right)
 \end{align*}
-definierte glatte Vektorfeld heißt \CmMark{Lieableitung} von $Y$ längs $X$. Man schreibt $\mathcal L_XY$.
+definierte glatte Vektorfeld hei"st \CmMark{Lieableitung} von $Y$ l"angs $X$. Man schreibt $\mathcal L_XY$.
 \end{Dfn}
 
 %\begin{Bem}
@@ -436,7 +436,7 @@ Die Kurve $(\gamma_{*}^{-t}y)_p$ in $\T_pM$ ist glatt und $(\mathcal L_XY)_p = \
 
 % Satz 4.15
 \begin{Satz}
-  Für $X,Y \in \mathcal V(M)$ gilt:
+  F"ur $X,Y \in \mathcal V(M)$ gilt:
   \begin{align*}
     \mathcal L_XY = [X,Y].
   \end{align*}
@@ -478,13 +478,13 @@ Es folgt:
 
 % Satz 4.16
 \begin{Satz}
-  Die Lieklammer $[X,Y]$ zweier Vektorfelder $X,Y \in \mathcal V(M)$ verschwindet genau dann, wenn ihre Flüsse (lokal) kommutieren, i.e.
+  Die Lieklammer $[X,Y]$ zweier Vektorfelder $X,Y \in \mathcal V(M)$ verschwindet genau dann, wenn ihre Fl"usse (lokal) kommutieren, i.e.
   \begin{align*}
     \gamma_X^s \circ \gamma_Y^t = \gamma_Y^t \circ \gamma_X^s.
   \end{align*}
 \end{Satz}
 
-Der Beweis sei als Übungsaufgabe überlassen.
+Der Beweis sei als "Ubungsaufgabe "uberlassen.
 
 Es seien $X,Y \in \mathcal V(M)$ und $\Phi \colon M \to N$.
 Bezeichnet $\gamma$ den Fluss von $X$, so gilt
@@ -495,7 +495,7 @@ Bezeichnet $\gamma$ den Fluss von $X$, so gilt
   = \Phi_{\ast}\left(\difffrac[t=0]{}{t}\gamma_{\ast}^{-t}Y\right)\\
   & = \Phi_{\ast}(\mathcal L_XY) = \Phi_{\ast}[X,Y].
 \end{align*}
-Man erhält einen alternativen Beweis der Jacobiidentität.
+Man erh"alt einen alternativen Beweis der Jacobiidentit"at.
 
 
 \begin{bew}

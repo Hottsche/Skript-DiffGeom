@@ -358,7 +358,7 @@ Es gilt:
 %% 
 
 \begin{emptythm}[Erinnerung]
-  Für eine glatte Funktion $f$ auf $M$ gilt in kritischen Punkten $p$:
+  F"ur eine glatte Funktion $f$ auf $M$ gilt in kritischen Punkten $p$:
   \begin{align*}
     H_f(v,v) = \difffrac[t=0]{^2}{t^2}f(\gamma(t))
   \end{align*}
@@ -367,7 +367,7 @@ Es gilt:
 \end{emptythm}
 
 \begin{Dfn}
-  Es sei $Y$ ein Vektorfeld entlang einer nach Bogenlänge parametrisierte geod"atische Kurve $c$ und $c_s$ die von $Y$ erzeugte Variation. Die durch
+  Es sei $Y$ ein Vektorfeld entlang einer nach Bogenl"ange parametrisierte geod"atische Kurve $c$ und $c_s$ die von $Y$ erzeugte Variation. Die durch
   \begin{align*}
     \calI(Y,Y) = \difffrac[s=0]{^2}{s^2} E(c_s)
   \end{align*}
@@ -389,20 +389,20 @@ gilt
   & = - \int_0^{\mathcal L}\left<Y'' + R(Y,\dot c) \dot c, Y\right>.
 \end{align*}
 
-Die Indexform um eine Geodätische $c$ ist genau dann ausgeartet, wenn ein in den Endpunkten verschwindendes Vektorfeld entlang $c$ existiert mit
+Die Indexform um eine Geod"atische $c$ ist genau dann ausgeartet, wenn ein in den Endpunkten verschwindendes Vektorfeld entlang $c$ existiert mit
 \begin{align*}
   Y'' + R(Y,\dot c) \dot c \equiv 0. \tag{*}
 \end{align*}
 
 % Definition 9.3
 \begin{Dfn}
-  Ein Vektorfeld entlang einer Geodätischen $c$ heißt \CmMark{Jacobifeld}, wenn es die obige Differentialgleichung (*) erfüllt.
+  Ein Vektorfeld entlang einer Geod"atischen $c$ hei"st \CmMark{Jacobifeld}, wenn es die obige Differentialgleichung (*) erf"ullt.
 \end{Dfn}
 
 % Lemma 9.4
 \begin{Lemma}\label{thm:lemma-9-4}
   Es sei $c \colon [0,1] \to M$ eine Geod"atische, $p = c(0)$.
-  Dann existiert für alle $v,w \in \T_pM$ genau ein Jacobifeld $J$ entlang $c$ mit $J(0) = v, \ J'(0) = w$.
+  Dann existiert f"ur alle $v,w \in \T_pM$ genau ein Jacobifeld $J$ entlang $c$ mit $J(0) = v, \ J'(0) = w$.
 \end{Lemma}
 
 \begin{bew}
@@ -416,17 +416,17 @@ Die Indexform um eine Geodätische $c$ ist genau dann ausgeartet, wenn ein in de
     \eta^i E_i
   \end{align*}
   und $Y'' = \sum \ddot \eta^i E_i$. Setzt man $R(E_j,\dot c)\dot c =
-  \sum_i\rho_j^i E_i$, so ist (*) äquivalent
+  \sum_i\rho_j^i E_i$, so ist (*) "aquivalent
   zum System linearer Differentialgleichungen zweiter Ordnung
   \begin{align*}
     \ddot \eta^i + \sum_i \eta^i\rho_j^i = 0.
   \end{align*}
-  Existens und Eindeutigkeit folgen mit der Lösungstheorie
-  gewöhnlicher Differentialgleichungen.
+  Existens und Eindeutigkeit folgen mit der L"osungstheorie
+  gew"ohnlicher Differentialgleichungen.
 \end{bew}
 
 \begin{bsp}[Jacobifelder des $\R^n$]
-  Die Geodätischen des $\R^n$ sind genau die Geraden.
+  Die Geod"atischen des $\R^n$ sind genau die Geraden.
   Ein Vektorfeld $Y$ entlang einer Geraden ist genau dann ein Jacobifeld, wenn $Y'' = 0$ gilt; jedes solche ist der Form $Y(t) = v + tw$.
   \begin{center}\begin{tikzpicture}
       %	\tikzgitter{(-5,-5)}{(5,5)}
@@ -463,25 +463,25 @@ denn
   J''(t) = \nabla_t(\mu \dot c(t) + (\lambda + t \mu)\underbrace{\nabla_t\dot c(t)}_{=0}) = \mu\nabla_t\dot c = 0,\\
   \left.R(J,\dot c)\dot c\right|_t = (\lambda + t\mu)R(\dot c, \dot c)\dot c = 0.
 \end{align*}
-Zu $c$ tangentiale Jacobifelder tragen keine geometrischen Informationen; vgl. zweite Ableitung des Längenfunktionals.
-Gilt für die Startwerte eines Jacobifeldes $J(0)$ und $J'(0) = \dot c(0)^{\perp}$
+Zu $c$ tangentiale Jacobifelder tragen keine geometrischen Informationen; vgl. zweite Ableitung des L"angenfunktionals.
+Gilt f"ur die Startwerte eines Jacobifeldes $J(0)$ und $J'(0) = \dot c(0)^{\perp}$
 \begin{align*}
   \left<J',\dot c\right>' = \left<J'',\dot c\right> + \left<J', \nabla_t\dot c\right> = - \left<R(J,\dot c)\dot c,\dot c\right> = 0,
 \end{align*}
-also $J'(t) \perp \dot c(t)$ für alle Zeiten $t$ und $\left<J,\dot c\right>' = \left<J',\dot c\right> = 0$, somit $J(t) \perp \dot c(t)$ für alle $t$.
+also $J'(t) \perp \dot c(t)$ f"ur alle Zeiten $t$ und $\left<J,\dot c\right>' = \left<J',\dot c\right> = 0$, somit $J(t) \perp \dot c(t)$ f"ur alle $t$.
 
-Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dimension $2 \dim(M)$ und die zu $c$ normalen Jacobifelder bilden einen Vektorraum der Dimension $2 \dim(M) - 2$.
+Der $\R$-Vektorraum der Jacobifelder entlang einer Geod"atischen $c$ hat die Dimension $2 \dim(M)$ und die zu $c$ normalen Jacobifelder bilden einen Vektorraum der Dimension $2 \dim(M) - 2$.
 
 % Satz 9.5
 \begin{Satz}\label{satz-9-5}
-  Es sei $c \colon [0,1] \to M$ eine Geodätische und $c_s$ eine Variation von $c$, so dass alle Kurven $c_s$ Geodätische sind.
-  Dann ist das zugehörige Variationsfeld ein Jacobifeld entlang $c$.
+  Es sei $c \colon [0,1] \to M$ eine Geod"atische und $c_s$ eine Variation von $c$, so dass alle Kurven $c_s$ Geod"atische sind.
+  Dann ist das zugeh"orige Variationsfeld ein Jacobifeld entlang $c$.
   Jedes Jacobifeld ist von dieser Gestalt.
 \end{Satz}
 
 \begin{bew}
   Es sei $c_s$ eine Variation von $c$ und alle $c_s$ seien
-  Geodätische. Dann gilt:
+  Geod"atische. Dann gilt:
   \begin{align*}
     Y'' & = \left.\nabla_t \left(\nabla_t\difffrac{}{s}c_s \right)\right|_{s=0} \\
     & = \left.\nabla_t \left(\nabla_s\difffrac{}{t}c_s \right)\right|_{s=0}\\
@@ -489,14 +489,14 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
     & = -R(Y,\dot c)\dot c
   \end{align*}
   Es sei umgekehrt $J$ ein Jacobifeld entlang $c$, $\gamma$ die durch
-  $\gamma(0) = c(0), \ \dot \gamma(0) = J(0)$ definierte Geodätische,
+  $\gamma(0) = c(0), \ \dot \gamma(0) = J(0)$ definierte Geod"atische,
   sowie $V$ und $W$ die entlang $\gamma$ parallelen Vektorfelder mit
   $V(0) = \dot c(0)$ und $W(0) = J'(0)$. Dann ist
   \begin{align*}
     c_s(t) = \exp_{\gamma(s)}(t(V(s) + sW(s)))
   \end{align*}
-  eine Variation von $c$ und alle Kurven $c_s$ sind Geodätische.
-  Das zugehörige Variationsfeld $Y = \difffrac[s=0]{}{s} c_s$ ist nach
+  eine Variation von $c$ und alle Kurven $c_s$ sind Geod"atische.
+  Das zugeh"orige Variationsfeld $Y = \difffrac[s=0]{}{s} c_s$ ist nach
   dem oben Bewiesenen ein Jacobifeld. Es gilt
   \begin{align*}
     Y(0) = \difffrac[s=0]{}{s}\exp_{\gamma(s)}(0) =
@@ -511,7 +511,7 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
     & = V'(0) + W(0) + 0W'(0)\\
     & = W(0) = J'(0)
   \end{align*}
-  Nach Lemma \ref{thm:lemma-9-4} stimmen $J$ und $Y$ überein.
+  Nach Lemma \ref{thm:lemma-9-4} stimmen $J$ und $Y$ "uberein.
 \end{bew}
 
 \begin{emptythm}[Erinnerung (Korollar \ref{thm:kor-8-12} \ref{thm:kor-8-12-iii})]
@@ -538,14 +538,14 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
 
 % Definition 9.6
 \begin{Dfn}
-  Ein Punkt $p \in M$ heißt zu $q$ \CmMark{konjugiert}, wenn $q$ ein singulärer Wert von $\exp_p$ ist.
-  $p$ heißt \CmMark[konjugiert!entlang einer Geodätischen]{konjugiert zu $\bm{q}$ entlang der Geodätischen $\bm{c}$}, wenn $\exp_{p*\dot c(0)}$ singulär ist, das hei"st $\Kern \exp_{p*\dot c(0)} \neq \{0\}$.
+  Ein Punkt $p \in M$ hei"st zu $q$ \CmMark{konjugiert}, wenn $q$ ein singul"arer Wert von $\exp_p$ ist.
+  $p$ hei"st \CmMark[konjugiert!entlang einer Geod"atischen]{konjugiert zu $\bm{q}$ entlang der Geod"atischen $\bm{c}$}, wenn $\exp_{p*\dot c(0)}$ singul"ar ist, das hei"st $\Kern \exp_{p*\dot c(0)} \neq \{0\}$.
 \end{Dfn}
 
 % Proposition 9.7
 \begin{Prop}
   Ein Punkt $p$ ist gnau dann konjugiert zu $q$ entlang einer
-  Geodätischen $c$, wenn es ein nichttriviales Jacobifeld entlang $c$
+  Geod"atischen $c$, wenn es ein nichttriviales Jacobifeld entlang $c$
   gibt, welches in den Endpunkten verschwindet.
 \end{Prop}
 
@@ -656,7 +656,7 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
 
 % Lemma 9.10
 \begin{Lemma}\label{thm:lemma-9-10}
-  Es sei $c \colon [0,1] \to M$ eine Geodätische, $v = \dot c(0) \in \T_{p}M$ und $\psi$ (stückweise) glatte Kurve in $\T_pM$ mit $\psi(0) = 0$ und $\psi(1) = v$, dann gilt
+  Es sei $c \colon [0,1] \to M$ eine Geod"atische, $v = \dot c(0) \in \T_{p}M$ und $\psi$ (st"uckweise) glatte Kurve in $\T_pM$ mit $\psi(0) = 0$ und $\psi(1) = v$, dann gilt
   \begin{align*}
     \mathcal L(\exp_p \circ \psi) \geq \mathcal L(c),
   \end{align*}
@@ -681,9 +681,9 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
 
 \begin{bew}[von Satz \ref{satz-9-8}]\begin{enumerate}[label=(\roman*),leftmargin=*,widest=ii]
   \item
-    Es sei $c \colon [0,1] \to M$ eine Geodätische, seien $p = c(0)$ und $q = c(1)$ und es existieren keine zu $p$ konjugierten Punkte entlang $c$.
-    Es bezeichne $\phi \colon [0,1] \to \T_pM$ mit $\phi(t) = tv$. Für jedes $t \in [0,1]$ ist nach Voraussetzung $\exp_{p*\phi(t)}$ regulär, also eine lokaler Diffeomorphismus.
-    Es sei $\{W_i\}$ eine endliche offene Überdeckung von $\phi([0,1])$, so dass $\exp_p|_{W_i} \colon W_i \to \exp_p(W_i) = U_i$ ein Diffeomorphismus ist.
+    Es sei $c \colon [0,1] \to M$ eine Geod"atische, seien $p = c(0)$ und $q = c(1)$ und es existieren keine zu $p$ konjugierten Punkte entlang $c$.
+    Es bezeichne $\phi \colon [0,1] \to \T_pM$ mit $\phi(t) = tv$. F"ur jedes $t \in [0,1]$ ist nach Voraussetzung $\exp_{p*\phi(t)}$ regul"ar, also eine lokaler Diffeomorphismus.
+    Es sei $\{W_i\}$ eine endliche offene "Uberdeckung von $\phi([0,1])$, so dass $\exp_p|_{W_i} \colon W_i \to \exp_p(W_i) = U_i$ ein Diffeomorphismus ist.
     
     \emph{Ziel:} Lifte Variationen von $M$ nach $\T_pM$.
     \begin{center}\begin{tikzpicture}[font=\scriptsize]
@@ -717,7 +717,7 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
         }
         \node at (1,0.75) {$U_i$};
       \end{tikzpicture}\end{center}
-    Es sei $t_i$ eine Partition von $[0,1]$, so dass $\phi([t_{i-1},t_i]) \subseteq W_i$. Ist $c_s$ eine Variation von $c$, so kann $\epsilon > 0$ so gewählt werden, dass
+    Es sei $t_i$ eine Partition von $[0,1]$, so dass $\phi([t_{i-1},t_i]) \subseteq W_i$. Ist $c_s$ eine Variation von $c$, so kann $\epsilon > 0$ so gew"ahlt werden, dass
     \begin{align*}
       c_s \colon [t_{i-1},t_i]\X(-\epsilon,\epsilon) \to U_i = \exp_p(W_i)
     \end{align*}
@@ -727,7 +727,7 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
     \begin{align*}
       \mathcal L(\exp_p\circ \psi_s) = \mathcal L(c_s) \geq \mathcal L(c)
     \end{align*}
-    für alle $s$. Mit der Cauchy-Schwarz Ungleichung folgt dann:
+    f"ur alle $s$. Mit der Cauchy-Schwarz Ungleichung folgt dann:
     \begin{align*}
       E(c_s) \geq \frac{1}{2} \mathcal L(c_s)^2 \geq \frac{1}{2} \mathcal
       L(c)^2 = E(c)
@@ -735,8 +735,8 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
   \item
     Es sei $c(t_0)$ entlang $c$ zu $p = c(0)$ konjugiert.
     
-    \begin{description}\item[Behauptung:] Dann existiert ein zu $c$ orthogonales Vektorfeld $Y$ entlang der Geodätischen $c$ mit $Y(0) = 0$, $Y(1) = 0$ und $\calI(Y,Y) = 0$.\end{description}
-    Dann gilt für die zugehärige eigentliche Variation $c_s$ von $c$:
+    \begin{description}\item[Behauptung:] Dann existiert ein zu $c$ orthogonales Vektorfeld $Y$ entlang der Geod"atischen $c$ mit $Y(0) = 0$, $Y(1) = 0$ und $\calI(Y,Y) = 0$.\end{description}
+    Dann gilt f"ur die zugeh"arige eigentliche Variation $c_s$ von $c$:
     \begin{align*}
       \difffrac[s=0]{}{s}\mathcal L(c_s) = \lambda
       \difffrac[s=0]{}{s}E(c_s) = 0
@@ -752,10 +752,10 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
       %% 
       %% Vorlesung <2013-1-22 Tue>
       %% 
-      \emph{Erinnerung:} Ist $c \in \Omega_{pq}$ eine Geodätische und $t_o \in (0,1)$, so dass $c(t_0)$ zu $p = c(0)$ entlang $c$ konjugiert ist, so existiert ein Vektorfeld $Y$ entlang $c$ mit $\calI(Y,Y) < 0$.
+      \emph{Erinnerung:} Ist $c \in \Omega_{pq}$ eine Geod"atische und $t_o \in (0,1)$, so dass $c(t_0)$ zu $p = c(0)$ entlang $c$ konjugiert ist, so existiert ein Vektorfeld $Y$ entlang $c$ mit $\calI(Y,Y) < 0$.
 
       \begin{center}
-        \textcolor{red}{Abbildung 1: Wdh: Sphäre}
+        \textcolor{red}{Abbildung 1: Wdh: Sph"are}
       \end{center}
       \begin{description}[font=\normalfont\itshape]
       \item[Beweis der Existenz von $Y$:] Da $c(t_0)$ zu $p$ entlang $c$ konjugiert ist, existiert ein nichttriviales Jacobifeld $J$ entlang $c|_{[0,t_0]}$ mit $J(0) = 0, J(t_0) = 0$.
@@ -763,16 +763,16 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
       Es sei $X$ das entlang $c$ parallele Vektorfeld mit $X(t_0) = -J'(t_0)$
       (nach Lemma \ref{thm:lemma-9-4} ist $J'(t_0) \neq 0)$ und
       $\alpha\colon[0,1] \to \R$ mit $\alpha(0) = 0 = \alpha(1)$ und
-      $\alpha(t_0) = 1$. Für $z = \alpha \cdot X$ und $\eta > 0$ sei
+      $\alpha(t_0) = 1$. F"ur $z = \alpha \cdot X$ und $\eta > 0$ sei
       \begin{align*}
         Y(t) =
         \begin{cases}
-          J(t) + \eta \cdot Z(t) & \text{ für } 0 \leq t \leq t_0\\
-          \eta \cdot Z(t) & \text{ für } t_0 < t \leq 1
+          J(t) + \eta \cdot Z(t) & \text{ f"ur } 0 \leq t \leq t_0\\
+          \eta \cdot Z(t) & \text{ f"ur } t_0 < t \leq 1
         \end{cases}
       \end{align*}
-      $Y$ ist nun stückweise glatt, die Variantionsformeln für $\mathcal L$ und $E$, beziehungsweise die Indexform lassen sich aber ganz analog für stückweise glatte Vektorfelder beziehungsweise Variationen formalisieren.
-      Es gilt, da $Y$ orthogonal zu $c$ ist, für die zu $Y$ gehörigen Variationen $c_s$:
+      $Y$ ist nun st"uckweise glatt, die Variantionsformeln f"ur $\mathcal L$ und $E$, beziehungsweise die Indexform lassen sich aber ganz analog f"ur st"uckweise glatte Vektorfelder beziehungsweise Variationen formalisieren.
+      Es gilt, da $Y$ orthogonal zu $c$ ist, f"ur die zu $Y$ geh"origen Variationen $c_s$:
       \begin{align*}
         J(Y,Y) = & \difffrac[s=0]{^2}{s^2}E(c_s) = \difffrac[s=0]{^2}{s^2} \mathcal L(c_s)\\
         = &{} \int_0^1\|Y'\|^2 - \left<R(Y,\dot c)\dot c,Y\right>\\
@@ -793,11 +793,11 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geodätischen $c$ hat die Dim
         & = 0 + 2 \eta\left(\left<J'(t_0),Z(t_0) \right> - \left<J'(0),Z(0)\right>\right) + \eta^2 J(Z,Z)\\
         & = -2\eta \|J'(t_0)\|^2 + \eta^2J(Z,Z)
       \end{align*}
-      Für hinreichend kleines $\eta > 0$ ist damit $\calJ(Y,Y) < 0$.
+      F"ur hinreichend kleines $\eta > 0$ ist damit $\calJ(Y,Y) < 0$.
     \end{description}
   \end{enumerate}\end{bew}
 
-Betrachte die Sphäre vom Radius $r > 0$, $S^n_r \subseteq \R^{n+1}$:
+Betrachte die Sph"are vom Radius $r > 0$, $S^n_r \subseteq \R^{n+1}$:
 
 \begin{center}
   \begin{tikzpicture}[font=\scriptsize]
@@ -832,10 +832,10 @@ Betrachte die Sphäre vom Radius $r > 0$, $S^n_r \subseteq \R^{n+1}$:
     \node at (-1.25,1) {$S^n$}; \node at (-2,2.5) {$S_r^n$};
   \end{tikzpicture}\end{center}
 
-Als differenzierbare Mannigfaltigkeit ist $S^n_r$ diffeomorph zur Standardsphäre $S^n = S^n_1$, vermöge der Abbildung $p \mapsto \frac{1}{r}p$. Bezeichnet $\left<\cdot,\cdot\right>_r$, die von
+Als differenzierbare Mannigfaltigkeit ist $S^n_r$ diffeomorph zur Standardsph"are $S^n = S^n_1$, verm"oge der Abbildung $p \mapsto \frac{1}{r}p$. Bezeichnet $\left<\cdot,\cdot\right>_r$, die von
 $\R^{n+1}$ auf $S^n_r$ induzierte Riemannsche Metrik, so sind $(S^n_r,\left<\cdot,\cdot\right>_r)$ und $(S^n,r^2\left<\cdot,\cdot\right>_1)$ isometrisch.
 Es folgt also $\diam(S^n_r,\left<\cdot,\cdot\right>_r) = \pi r = r \diam(S^n,\left<\cdot,\cdot\right>_1)$.
-Für die Schnittkrümmung einer von $v,w \in \T_pM$ aufgespannte Ebene
+F"ur die Schnittkr"ummung einer von $v,w \in \T_pM$ aufgespannte Ebene
 \begin{align*}
   \sec_p^{S^n_r}(\{v,w\}) & =
   \frac{\left<R(v,w)w,r\right>_r}{\|v\|_r^2\|w\|_r^2-\left<v,w\right>_r}
@@ -843,7 +843,7 @@ Für die Schnittkrümmung einer von $v,w \in \T_pM$ aufgespannte Ebene
   \frac{r^2\left<R(v,w)w,v\right>_1}{r^4(\|v\|_1^2\|w\|_1^2-\left<v,w\right>_1)}\\
   & = \frac{1}{r^2} \sec_p^{S^n}(\{v,w\}) = \frac{1}{r^2}.
 \end{align*}
-Insbesondere gilt für die Ricci-Krümmung:
+Insbesondere gilt f"ur die Ricci-Kr"ummung:
 \begin{align*}
   \ric_p^{S_r^n}(v,v) & = \sum_i \left<R\left(e_i,\frac{v}{\|v\|_1}\right)\frac{v}{\|v\|_1},e_i\right>\\
   & = \|v\|_1^2\sum_{i \geq 2}\sec_p^{S^n_r}(\{v,e_i\}) = \|v\|_1^2 \frac{1}{r^2}(n-1)\\
@@ -853,11 +853,11 @@ wobei $\{\frac{v}{\|v\|_1}, e_2, \ldots, e_n\}$ eine Orthonormalbasis ist.
 
 % Satz 9.11
 \begin{Satz}[Bonnet-Myers]
-  Es sei $(M,g)$ eine vollständige $m$-dimensionale Riemannsche Mannigfaltigkeit mit 
+  Es sei $(M,g)$ eine vollst"andige $m$-dimensionale Riemannsche Mannigfaltigkeit mit 
   \begin{align*}
     \ric_p \geq (m-1) \frac{1}{r^2} g
   \end{align*}
-  für ein $r > 0$.
+  f"ur ein $r > 0$.
   Dann gilt
   \begin{align*}
     \diam(M,g) \leq \pi r = r \diam(S^m,\left<\cdot,\cdot\right>_1).
@@ -867,10 +867,10 @@ wobei $\{\frac{v}{\|v\|_1}, e_2, \ldots, e_n\}$ eine Orthonormalbasis ist.
 
 \begin{bew}
   Es sei $l < \diam(M,g)$.
-  Dann existieren $p,q \in M$ mit $\d(p,q) = l$ und nach dem Satz von Hopf-Rinow eine minimale Geodätische $c\colon[0,l] \to M$ von $p$ nach $q$.
-  Für jedes Vektorfeld $Y$ entlang $c$, welches in den Endpunkten verschwindet, ist $J(Y,Y) \geq 0$.
-  Es sei $\dot c(0) = e_1, \ldots, e_m \in \T_pM$ eine Orthonormalbasis und $E_i$ die entlang $c$ parallelen Vektorfelder mit $E_i(0) = e_i$ für $i \leq m$.
-  Für 
+  Dann existieren $p,q \in M$ mit $\d(p,q) = l$ und nach dem Satz von Hopf-Rinow eine minimale Geod"atische $c\colon[0,l] \to M$ von $p$ nach $q$.
+  F"ur jedes Vektorfeld $Y$ entlang $c$, welches in den Endpunkten verschwindet, ist $J(Y,Y) \geq 0$.
+  Es sei $\dot c(0) = e_1, \ldots, e_m \in \T_pM$ eine Orthonormalbasis und $E_i$ die entlang $c$ parallelen Vektorfelder mit $E_i(0) = e_i$ f"ur $i \leq m$.
+  F"ur 
   \begin{align*}
     Y_i(t) & = \sin \left(\frac{\pi}{l}t \right) E_i(t)\\
     0  \leq J(Y_i,Y_i) &= -\int\limits_0^l\left<Y_i''+R(Y_i,\dot c)\dot c,Y_i\right>\\
@@ -886,7 +886,7 @@ wobei $\{\frac{v}{\|v\|_1}, e_2, \ldots, e_n\}$ eine Orthonormalbasis ist.
 
 \begin{bem}\begin{enumerate}[label=(\arabic*),leftmargin=*]
   \item
-    Die Existenz einer uniformen positiven Krümmungsschranke ist entprechend
+    Die Existenz einer uniformen positiven Kr"ummungsschranke ist entprechend
     \begin{align*}
       M = \{x \in \R^3 \mid x_1^2 + x_2^2 - x_3^2 = -1, x_3 > 0\}
     \end{align*}
@@ -922,23 +922,23 @@ wobei $\{\frac{v}{\|v\|_1}, e_2, \ldots, e_n\}$ eine Orthonormalbasis ist.
     \end{align*}
     also $\sec > 0$, aber $\sec_x \xrightarrow{\|x\|\to\infty}0$ und $M$ ist nicht kompakt.
   \item
-    Die Durchmesserschranke im Satz von Bonnet-Myers ist scharf in dem Sinne, dass falls $(M,g)$ eine vollständige Riemannsche Mannigfaltigkeit mit $\ric \geq (m-1)\frac{1}{r^2}$ ist und $\diam(M,g) = \pi r$ gilt, so folgt $(M,g)$ ist isometrisch zu $S^m_r$. (Cheng, 1975 \cite{Cheng1975})\index{Cheng}
+    Die Durchmesserschranke im Satz von Bonnet-Myers ist scharf in dem Sinne, dass falls $(M,g)$ eine vollst"andige Riemannsche Mannigfaltigkeit mit $\ric \geq (m-1)\frac{1}{r^2}$ ist und $\diam(M,g) = \pi r$ gilt, so folgt $(M,g)$ ist isometrisch zu $S^m_r$. (Cheng, 1975 \cite{Cheng1975})\index{Cheng}
   \end{enumerate}\end{bem}
 
-\section{Exkurs: Überlagerungen, Fundamentalgruppe und Gruppenwirkungen}
+\section{Exkurs: "Uberlagerungen, Fundamentalgruppe und Gruppenwirkungen}
 
 \begin{emptythm}[Erinnerung]
-  Zwei Wege, stetige Abbildungen, $c_0,c_1 \colon[0,1] \to M$ heißen \CmMark{homotop}, wenn eine stetige Abbildung
+  Zwei Wege, stetige Abbildungen, $c_0,c_1 \colon[0,1] \to M$ hei"sen \CmMark{homotop}, wenn eine stetige Abbildung
   \begin{align*}
     H \colon [0,1]\X[0,1] \to M
   \end{align*}
   existiert mit $H(0,\cdot) = c_0$ und $H(1,\cdot) = c_1$.
-  Gilt $H(\cdot, 0) \equiv c_0(0) = c_1(0) = p$ und $H(\cdot,1) \equiv c_0(1) = c_1(1) = q$, so heißt $H$ eigentlich.
+  Gilt $H(\cdot, 0) \equiv c_0(0) = c_1(0) = p$ und $H(\cdot,1) \equiv c_0(1) = c_1(1) = q$, so hei"st $H$ eigentlich.
 \end{emptythm}
 
 \begin{bem}
-  Sind zwei glatte Wege homotop, so kann eine glatte Homotopie gewählt werden.
-  Die \CmMark{Fundamentalgruppe} $\pi_1(M,p)$ ist die Menge der Homotopieklassen von Wegen $c \in \Omega_{pq}$ bezüglich eigentlicher Homotopien mit der durch die Verkettung von Wegen induzierten Gruppenstruktur.
+  Sind zwei glatte Wege homotop, so kann eine glatte Homotopie gew"ahlt werden.
+  Die \CmMark{Fundamentalgruppe} $\pi_1(M,p)$ ist die Menge der Homotopieklassen von Wegen $c \in \Omega_{pq}$ bez"uglich eigentlicher Homotopien mit der durch die Verkettung von Wegen induzierten Gruppenstruktur.
   \begin{center}\begin{tikzpicture}[font=\scriptsize]
       %	\tikzgitter{(-4,-4)}{(4,4)}
       \coordinate (p) at (0,0); \coordinate (q) at (-1,1.5);
@@ -949,8 +949,8 @@ wobei $\{\frac{v}{\|v\|_1}, e_2, \ldots, e_n\}$ eine Orthonormalbasis ist.
       \draw (p) ..controls(1.5,1.5) and (1.25,-1).. node[pos=0.5,sloped]{$>$} node[above,pos=0.3]{$c_1$} (p);
       \draw (q) ..controls(-2.25,2.75) and (0.5,3).. (q);
     \end{tikzpicture}	\end{center}
-  Für eine zusammenhängende Mannigfaltigkeit sind $\pi_1(M,p)$ und $\pi_1(M,q)$ isomorph, schreibe $\pi_1(M)$.
-  Eine Mannigfaltigkeit heißt \CmMark{einfach zusammenhängend}, falls $M$ zusammenhängend ist und $\pi_1(M) = 0$ gilt.
+  F"ur eine zusammenh"angende Mannigfaltigkeit sind $\pi_1(M,p)$ und $\pi_1(M,q)$ isomorph, schreibe $\pi_1(M)$.
+  Eine Mannigfaltigkeit hei"st \CmMark{einfach zusammenh"angend}, falls $M$ zusammenh"angend ist und $\pi_1(M) = 0$ gilt.
 \end{bem}
 
 Eine glatte Abbildung $\pi: \tilde M \to M$ hei"st \CmMark{\"Uberlagerung}, wenn f"ur alle $p \in M$ eine Umgebung $U$ existiert, so dass $\pi^{-1}(U) = \dot \bigcup U_i$ eine disjunkte Vereinigung offener Mengen $U_i$ ist und f"ur alle $U_i: \pi|_{U_i}: U_i \to U$ ein Diffeomorphismus ist.
@@ -1005,7 +1005,7 @@ Sind $M$ und $\tilde M$ Riemannsch, so hei"st eine "Uberlagerung $\pi$ \CmMark[\
 
 F"ur jede zusammenh"angende Riemannsche Mannigfaltigkeit $M$ existiert eine bis auf Isometrie eindeutige einfachzusammenh"angende Riemannsche "Uberlagerung $\tilde M$.
 Betrachte die topologisch universelle "Uberlagerung $\tilde M$ von $M$.
-Zieht man die differenzierbare und geometrische Struktur von $M$ auf $\tilde M$ zurück, so wird $\tilde M$ zu einer Riemannschen Mannigfaltigkeit und die "Uberlagerungsabbildung zu einer Riemannschen "Uberlagerung,
+Zieht man die differenzierbare und geometrische Struktur von $M$ auf $\tilde M$ zur"uck, so wird $\tilde M$ zu einer Riemannschen Mannigfaltigkeit und die "Uberlagerungsabbildung zu einer Riemannschen "Uberlagerung,
 
 \emph{Problem:} Es ist nicht klar, warum $\tilde M$ eine abz"ahlbare Basis der Topologie hat.
 Es gibt dabei zwei Auswege, zum Einen kann man zeigen dass $\pi_1(M)$ abz"ahlbar ist (Diplomarbeit von M. Mermann), die andere M"oglichkeit ist in \quot{Foundations of Differential Geometry}, Band I, Appendix 2 \cite{kobayashi-nomizu1963foundations-diffgeo} beschrieben.
@@ -1401,7 +1401,7 @@ Jede Geod"atische $t \mapsto c_s(t)$ ist minimierend, also
 \item $c_s(r) \in M_r = \dop_p^{-1}(r)$
 \item $\dop_p(c_s(t)) = t$ $\Rightarrow$ $c_s$ ist eine Integralkurve von $\grad \dop_p$
 \end{itemize}
-Für $\sigma(s) = c_s(r)$ stimmt dann $\calJ$ mit obiger Konstruktion "uberein.
+F"ur $\sigma(s) = c_s(r)$ stimmt dann $\calJ$ mit obiger Konstruktion "uberein.
 \begin{align*}
   A'\calJ &= (A \calJ)' - A \calJ' = \calJ'' - A^2\calJ = -R(\calJ, \dot c) \dot c - A^2 \calJ
 \end{align*}
@@ -1429,7 +1429,7 @@ Setzt man $a = \langle AE, E \rangle$, so gilt
     j'' + \kappa j = 0
   \end{align*}\end{emptythm}
 
-Es bezeichnen $\sn_\kappa$ und $\cs_\kappa$ die Lösungen mit $\sn_\kappa(0) = 0$, $\sn_\kappa'(0) = 1$ und $\cs_\kappa(0) = 1$, $\cs_\kappa'(0) = 0$, das hei"st
+Es bezeichnen $\sn_\kappa$ und $\cs_\kappa$ die L"osungen mit $\sn_\kappa(0) = 0$, $\sn_\kappa'(0) = 1$ und $\cs_\kappa(0) = 1$, $\cs_\kappa'(0) = 0$, das hei"st
 \begin{align*}
   &\sn_\kappa(t) = \begin{cases}
     \frac{1}{\sqrt{-\kappa}} \sinh(\sqrt{-\kappa}t) & \text{f"ur } \kappa < 0\\
@@ -1446,8 +1446,8 @@ Dabei gilt $\sn_\kappa' = \cs_\kappa$ und $\cs_\kappa' = -\kappa \sn_\kappa$. Se
 \begin{align*}
   b' = \left( \frac{j'}{j} \right)' = \frac{j''j - {j'}^2}{j^2} = \frac{-\kappa j^2 - {j'}^2}{j^2} = -\kappa - b^2
 \end{align*}
-das hei"st $b$ löst die eindimensionale Riccatigleichung.
-Es sei $\calJ$ ein Jacobifeld entlang einer Geodätischen $c$ in $M^n_{\kappa}$ mit $\calJ(0) = 0$ und $\calJ \perp \dot c$.
+das hei"st $b$ l"ost die eindimensionale Riccatigleichung.
+Es sei $\calJ$ ein Jacobifeld entlang einer Geod"atischen $c$ in $M^n_{\kappa}$ mit $\calJ(0) = 0$ und $\calJ \perp \dot c$.
 Dann ist $\calJ = \sn_{\kappa}Y$, wobei $Y$ ein zu $c$ orthogonales und entlang $c$ paralleles Vektorfeld ist.
 \begin{align*}
   AY = A \frac{1}{\sn_{\kappa}}\calJ
@@ -1456,20 +1456,20 @@ Dann ist $\calJ = \sn_{\kappa}Y$, wobei $Y$ ein zu $c$ orthogonales und entlang 
   = \frac{\cs_{\kappa}}{\sn_{\kappa}}Y
   = \ct_{\kappa}Y.
 \end{align*}
-\emph{Ziel:} Wir suchen eine Abschätzung für Eigenwerte, beziehungsweise Operatornorm von $A_t$ und für das Wachstum von Jacobifeldern bei unteren Krümmungsschranken.
+\emph{Ziel:} Wir suchen eine Absch"atzung f"ur Eigenwerte, beziehungsweise Operatornorm von $A_t$ und f"ur das Wachstum von Jacobifeldern bei unteren Kr"ummungsschranken.
 
 % Lemma 9.16
 \begin{Lemma}\label{thm:lemma-9-16}
-  Es seien $a,b \colon \calI \to \R$ glatt für ein Interval $\calI$, sowie
+  Es seien $a,b \colon \calI \to \R$ glatt f"ur ein Interval $\calI$, sowie
   \begin{itemize}
   \item $a' \leq -\kappa - a^2$
   \item $b' = -\kappa - b^2$
-  \item $a(t_0) \leq b(t_0)$ für ein $t_0 \in \calI$.
+  \item $a(t_0) \leq b(t_0)$ f"ur ein $t_0 \in \calI$.
   \end{itemize}
   Dann gilt:
   \begin{enumerate}[label=(\roman*)]
   \item $a(t) \leq b(t)$ f"ur alle $t \ge t_0$
-  \item Gilt $a(t_0) = b(t_0)$ und $a(t_1) = b(t_1)$ für $t_1 > t_0$, so folgt $a|_{[t_0,t_1]} = b|_{[t_0,t_1]}$.
+  \item Gilt $a(t_0) = b(t_0)$ und $a(t_1) = b(t_1)$ f"ur $t_1 > t_0$, so folgt $a|_{[t_0,t_1]} = b|_{[t_0,t_1]}$.
   \item Gilt $\calI = (0,t_1]$ und $\lim\limits_{t \to 0}a(t) = \infty$, so folgt $a \leq \ct_{\kappa}$ und falls $a(t_0) = \ct_{\kappa}(t_0)$, so gilt $a = \ct_{\kappa}$ auf $\calI$.
   \end{enumerate}
 \end{Lemma}
@@ -1500,9 +1500,9 @@ Dann ist $\calJ = \sn_{\kappa}Y$, wobei $Y$ ein zu $c$ orthogonales und entlang 
   Die Gleichheit wird wie oben gezeigt.
 \end{bew}
 
-Es gelte $\sec_{(M,g)} \geq \kappa$ und es sei $c$ eine nach Bogenlänge parametrisierte Geodätische mit $c(0) = p$.
+Es gelte $\sec_{(M,g)} \geq \kappa$ und es sei $c$ eine nach Bogenl"ange parametrisierte Geod"atische mit $c(0) = p$.
 Wie oben bezeichne $A_t$ das symmetrische Endomorphismenfeld $A_t \colon \dot c(t) ^{\perp} \to \dot c(t)^{\perp}$, $X \mapsto \nabla_X \grad \dop_p$.
-Für ein entlang $c$ paralleles Vektorfeld $E$ mit $\|E\| = 1$ und $E \perp \dot c$ sei $a = \left<AE,E\right>$.
+F"ur ein entlang $c$ paralleles Vektorfeld $E$ mit $\|E\| = 1$ und $E \perp \dot c$ sei $a = \left<AE,E\right>$.
 Dann gilt:
 \begin{align*}
   a' = \left<A'E,E\right> 
@@ -1555,9 +1555,9 @@ Insbesondere folgt
 %% 
 
 \begin{dfn}
-Ein \CmMark[Dreieck!geodätisches]{(geodätisches) Dreieck} $\Delta(a,b,c)$ in $M$ besteht aus drei geodätischen Segmenten $a$, $b$ und $c$ mit $a(0) = b(0)$, $a(1) = c(0)$ und $c(1) = b(1)$.
+Ein \CmMark[Dreieck!geod"atisches]{(geod"atisches) Dreieck} $\Delta(a,b,c)$ in $M$ besteht aus drei geod"atischen Segmenten $a$, $b$ und $c$ mit $a(0) = b(0)$, $a(1) = c(0)$ und $c(1) = b(1)$.
 Es bezeichnen $\alpha$, $\beta$ und $\gamma$ die inneren Winkel in $\Delta$.
-Ferner sei $|a| = \mathcal L(a)$ die Länge von $a$ (analog für $b$ und $c$). 
+Ferner sei $|a| = \mathcal L(a)$ die L"ange von $a$ (analog f"ur $b$ und $c$). 
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
 %	\tikzgitter{(-3,0)}{(3,4)}
 	
@@ -1575,11 +1575,11 @@ Ferner sei $|a| = \mathcal L(a)$ die Länge von $a$ (analog für $b$ und $c$).
 \end{tikzpicture}\end{center}
 \end{dfn}
 
-Ein Vergleichsdreieck in $M^2_{\kappa}$, der einfach zusammenh"angenden vollständigen Riemannschen Mannigfaltigkeit mit $\sec \equiv \kappa$, ist ein Dreieck $\overline \Delta(\overline a,\overline b, \overline c)$ mit $|\overline a| = |a|$, $|\overline b| = |b|$ und $|\overline c| = |c|$.
+Ein Vergleichsdreieck in $M^2_{\kappa}$, der einfach zusammenh"angenden vollst"andigen Riemannschen Mannigfaltigkeit mit $\sec \equiv \kappa$, ist ein Dreieck $\overline \Delta(\overline a,\overline b, \overline c)$ mit $|\overline a| = |a|$, $|\overline b| = |b|$ und $|\overline c| = |c|$.
 Es existiert ein (bis auf Isomorphie) eindeutiges Vergleichsdreieck, wenn gilt:
 \begin{enumerate}[label=(\roman*)]
 \item $|a| + |b| \geq |c|$, $|b| + |c| \geq |a|$, $|c| + |a| \geq |b|$
-\item $U(\Delta(a,b,c)) = |a| + |b| + |c| < \frac{2\pi}{\sqrt{\kappa}}$ (für $\kappa > 0$)
+\item $U(\Delta(a,b,c)) = |a| + |b| + |c| < \frac{2\pi}{\sqrt{\kappa}}$ (f"ur $\kappa > 0$)
 \end{enumerate}
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
 %	\tikzgitter{(-3,-3)}{(3,3)}
@@ -1619,9 +1619,9 @@ Es existiert ein (bis auf Isomorphie) eindeutiges Vergleichsdreieck, wenn gilt:
 
 
 \begin{Satz}[Alexandrov-Toponogov]\index{Alexandrov-Toponogov}\label{thm:satz-alexandrov-toponogov}
-  Es sei $(M,g)$ eine vollständige Riemannsche $m$-Mannigfaltigkeit mit $\sec_{(M,g)} \geq \kappa$ und im Falle $\kappa > 0$ gelte $M \not\cong S^m_{\nicefrac{1}{\sqrt{\kappa}}}$.
-  Ist dann $\Delta(a,b,c)$ ein geodätisches Dreieck mit $|c| \leq |a| + |b|$, sowie, im Falle $\kappa > 0$, $|c| < \frac{\pi}{\sqrt{\kappa}}$ und $a$ und $b$ seien minimierende Geodätische.
-  Dann gilt für das Vergleichsdreieck $\overline\Delta(\overline a,\overline b, \overline c)$ in $M_{\kappa}^2$: $\overline{\dop}_{\overline{p}} \le \dop_p$
+  Es sei $(M,g)$ eine vollst"andige Riemannsche $m$-Mannigfaltigkeit mit $\sec_{(M,g)} \geq \kappa$ und im Falle $\kappa > 0$ gelte $M \not\cong S^m_{\nicefrac{1}{\sqrt{\kappa}}}$.
+  Ist dann $\Delta(a,b,c)$ ein geod"atisches Dreieck mit $|c| \leq |a| + |b|$, sowie, im Falle $\kappa > 0$, $|c| < \frac{\pi}{\sqrt{\kappa}}$ und $a$ und $b$ seien minimierende Geod"atische.
+  Dann gilt f"ur das Vergleichsdreieck $\overline\Delta(\overline a,\overline b, \overline c)$ in $M_{\kappa}^2$: $\overline{\dop}_{\overline{p}} \le \dop_p$
   \begin{enumerate}[label=(\roman*)]
   \item $\dop(\overline p,\overline c(t)) \leq \dop(p,c(t))$
   \item $\overline \alpha \leq \alpha$ und $\overline \beta \leq \beta$.
@@ -1646,13 +1646,13 @@ Es existiert ein (bis auf Isomorphie) eindeutiges Vergleichsdreieck, wenn gilt:
 \end{tikzpicture}\end{center}
 
 \begin{bem}
-  Das Aussschließen von $S^m_{\nicefrac{1}{\sqrt{\kappa}}}$ ist nach dem Satz von Cheng\cite{Cheng1975} keine Einschränkung.
+  Das Aussschlie"sen von $S^m_{\nicefrac{1}{\sqrt{\kappa}}}$ ist nach dem Satz von Cheng\cite{Cheng1975} keine Einschr"ankung.
 \end{bem}
 
-Es seien $a$, $b$ und $c$ nach Bogenlänge parametrisiert und $p = a(0) = b(0)$.
-Es existiere zu jedem $c(t)$ eine eindeutige Geodätische von $p$.
+Es seien $a$, $b$ und $c$ nach Bogenl"ange parametrisiert und $p = a(0) = b(0)$.
+Es existiere zu jedem $c(t)$ eine eindeutige Geod"atische von $p$.
 Dann ist insbesondere $\dop_p$ um $c(t)$ glatt.
-Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwischen dem zu $\grad \dop_p$ kollinearen Anteil und dem zur Abstandssphäre tangentialen Teil unterschieden werden muss.
+Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwischen dem zu $\grad \dop_p$ kollinearen Anteil und dem zur Abstandssph"are tangentialen Teil unterschieden werden muss.
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
 %	\tikzgitter{(-4,0)}{(4,4)}
 	
@@ -1729,12 +1729,12 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
 	\draw[->] (intersection-1) --node[right]{$w$} +(310:1.25);
 	\draw[->] (intersection-2) --node[above]{$\dot c$} +(325:1.25);
 \end{tikzpicture}\end{center}
-Im Fall konstanter Krümmung gilt für eine analog definierte modifizierte Abstandsfunktion
+Im Fall konstanter Kr"ummung gilt f"ur eine analog definierte modifizierte Abstandsfunktion
   \begin{align*}
     \overline e = (m_{\kappa} \circ \overline r), \
     \overline e '' + \kappa \overline e \equiv 1.
   \end{align*}
-  Ist wie oben $\dot{\overline c} = \overline v + \overline w$ (mit $w,\overline w \neq 0$), so existiert ein Jacobifeld entlang der Geodätischen von $p$ nach $c(t)$ von der Form $J = \sn_{\kappa} E$, wobei $E$ die parallele Fortsetzung von $\overline w$ ist, und es gilt $J(\dop_{\overline p}(\overline c(t))) = w$.
+  Ist wie oben $\dot{\overline c} = \overline v + \overline w$ (mit $w,\overline w \neq 0$), so existiert ein Jacobifeld entlang der Geod"atischen von $p$ nach $c(t)$ von der Form $J = \sn_{\kappa} E$, wobei $E$ die parallele Fortsetzung von $\overline w$ ist, und es gilt $J(\dop_{\overline p}(\overline c(t))) = w$.
   Damit folgt
   \begin{align*}
     H_{\dop_{\overline p}}(\dot{\overline c}, \dot{\overline c})|_r = \left<AJ,J\right>|_r
@@ -1742,29 +1742,29 @@ Im Fall konstanter Krümmung gilt für eine analog definierte modifizierte Absta
     = \cs_{\kappa}(r)\left<E,w\right>
     = \ct_{\kappa}\|w\|^2
   \end{align*}
-  und in der obigen Abschätzung gilt die Gleichheit.
+  und in der obigen Absch"atzung gilt die Gleichheit.
 \end{emptythm}
 
 \begin{emptythm}[Beweisskizze (zum Satz von Alexander-Toponogov \ref{thm:satz-alexander-toponogov})]
 \emph{Annahme:} $|a| + |b| + |c| < \frac{2\pi}{\sqrt{\kappa}}$.
 Der Fall $|a| + |b| = |c|$ ist trivialerweise korrekt.
 Es gelte also $|a| + |b| > |c|$, dann ist jedenfalls $p \notin c$.
-Es seien $r = \dop_p \circ c$ und $e = m_{\kappa} \circ r$ wie oben, sowie $\overline r$ und $\overline c$ für das Vergleichsdreieck.
+Es seien $r = \dop_p \circ c$ und $e = m_{\kappa} \circ r$ wie oben, sowie $\overline r$ und $\overline c$ f"ur das Vergleichsdreieck.
 Betrachte $f = e - \overline e$.
 \begin{description}[font=\normalfont\bfseries]
-\item[Fall 1:] zu jedem $c(t)$ existiert eine eindeutige minimierende Geodätische, damit ist $r$ und damit auch $f$ differenzierbar.
+\item[Fall 1:] zu jedem $c(t)$ existiert eine eindeutige minimierende Geod"atische, damit ist $r$ und damit auch $f$ differenzierbar.
 	Es gilt
 	\begin{align*}
 		f'' = e'' - \overline e''
 		\leq 1 - \kappa e - (1-\kappa \overline e) = -\kappa f.
 	\end{align*}
-	Angenommen es gäbe ein $s \in (0,l)$, $l = |c|$ mit $f(s) < 0$.
+	Angenommen es g"abe ein $s \in (0,l)$, $l = |c|$ mit $f(s) < 0$.
 	Weiter sei $\epsilon > 0$ so, dass gilt
 	\begin{align*}
 		l + \epsilon < \frac{\pi}{\sqrt{\kappa + \epsilon}}.
 	\end{align*}
 	
-	Es sei $g(t) = \sn_{\kappa + \epsilon}(t + \epsilon)$ die, auf $[0,l]$ positive, Lösung von $g'' +(\kappa + \epsilon)g = 0$.
+	Es sei $g(t) = \sn_{\kappa + \epsilon}(t + \epsilon)$ die, auf $[0,l]$ positive, L"osung von $g'' +(\kappa + \epsilon)g = 0$.
 	Betrachte $h = \frac{f}{g}$.
 	Dann gilt $h(s) < 0$ und $h(0) = 0 = h(l)$ und somit nimmt $h$ ein negatives Minimum, etwa $t_0$, an.
 	

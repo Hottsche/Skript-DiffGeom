@@ -289,12 +289,12 @@
 \let\umlautsH\H % long Hungarian umlaut (double acute)
 \renewcommand{\H}{\ensuremath{\mathbb{H}}}
 
-% Differentialoperatoren als Brüche
+% Differentialoperatoren als Br"uche
 \newcommand{\dop}{\mathrm{d}}	
 \newcommand{\difffrac}[3][]{\ifthenelse{\isempty{#1}}{\frac{\dop #2}{\dop #3}}{\left. \frac{\dop #2}{\dop #3} \right|_{#1}}}
 \newcommand{\pdifffrac}[3][]{\ifthenelse{\isempty{#1}}{\frac{\partial #2}{\partial #3}}{\left. \frac{\partial #2}{\partial #3} \right|_{#1}}}
 
-% stellt einen großen vertikalen Strich an einen Term, nuetzlich in Bruechen
+% stellt einen gro"sen vertikalen Strich an einen Term, nuetzlich in Bruechen
 \newcommand{\bigvert}[1]{\left. #1 \right|}
 
 % quotient space or group

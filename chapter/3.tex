@@ -82,12 +82,12 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 
 % Definition 3.1
 \begin{Dfn}
-  Die lineare Abbildung $\Phi_{*p} \colon \T_pM \to \T_{\Phi(p)}N$ heißt das \CmMark{Differential} von $\Phi$ in $p$. Der Rang von $\Phi_{*p}$ bezeichnet man als den Rang von $\Phi$ in $p$.
+  Die lineare Abbildung $\Phi_{*p} \colon \T_pM \to \T_{\Phi(p)}N$ hei"st das \CmMark{Differential} von $\Phi$ in $p$. Der Rang von $\Phi_{*p}$ bezeichnet man als den Rang von $\Phi$ in $p$.
 \end{Dfn}
 
 % Lemma 3.2
 \begin{Lemma}[Differentiale in lokalen Koordinaten]
-  Sind $\phi$ und $\psi$ Karten von $M$ und $N$ um $p$ und $\Phi(p) = q$, sowie $\pdifffrac[p]{}{x^i}$ und $\pdifffrac[q]{}{y^i}$ die Standardbasen von $\T_pM$ und $\T_qN$ bezüglich der Karten $\phi$ und $\psi$, so gilt:
+  Sind $\phi$ und $\psi$ Karten von $M$ und $N$ um $p$ und $\Phi(p) = q$, sowie $\pdifffrac[p]{}{x^i}$ und $\pdifffrac[q]{}{y^i}$ die Standardbasen von $\T_pM$ und $\T_qN$ bez"uglich der Karten $\phi$ und $\psi$, so gilt:
   \begin{align*}
     \Phi_{*p}\pdifffrac[p]{}{x^i} = \sum \partial_i\left(\psi^j \circ \Phi \circ \phi^{-1}\right)\big(\phi(p)\big)\pdifffrac[q]{}{y^j}.
   \end{align*}
@@ -95,7 +95,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 \end{Lemma}
 
 \begin{bem}
-  Aus der Linearität von $\Phi_{*p}$ folgt, dass für $X_p = \sum \xi^i\pdifffrac[p]{}{x^i} \in \T_pM$ und $\Phi_{*p}X_p = \sum \eta^j\pdifffrac[q]{}{y^j}$ gilt:
+  Aus der Linearit"at von $\Phi_{*p}$ folgt, dass f"ur $X_p = \sum \xi^i\pdifffrac[p]{}{x^i} \in \T_pM$ und $\Phi_{*p}X_p = \sum \eta^j\pdifffrac[q]{}{y^j}$ gilt:
   \begin{align*}
     \eta^j = \sum \frac{\partial \Phi^j}{\partial x^i}\xi^i \text{, beziehungsweise } \eta = \D(\psi \circ \Phi \circ \phi^{-1})\xi.
   \end{align*}
@@ -108,14 +108,14 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 \end{bew}
 
 \begin{bem}[Charakterisierung durch Kurven]
-  Ist $[c] \in \T_p M$, so gilt für $f \in C^{\infty}(N)$:
+  Ist $[c] \in \T_p M$, so gilt f"ur $f \in C^{\infty}(N)$:
   \begin{align*}
     \Phi_{*p}[c](f) = [c](f \circ \Phi) = \difffrac[t=0]{}{t}(\underbrace{f \circ \Phi \circ c)}_{\substack{\text{glatte Kurve}\\ \text{auf }N}} = [\Phi \circ c](f)
   \end{align*}
   also $\Phi_{*p}[c] = [\Phi \circ c]$.
 \end{bem}
 
-\begin{bem}[Tangentialräume an Untermannigfaltigkeiten des $\R^n$]
+\begin{bem}[Tangentialr"aume an Untermannigfaltigkeiten des $\R^n$]
   \marginnote{\begin{tikzpicture}
 	%\draw[step=0.25,gray!15] (-6,-5) grid (6,3); \draw[step=0.5,gray!30] (-6,-5) grid (6,3); \fill (0,0) circle(0.1); %Hilfsgitter
 	\draw[->] (-0.5,0) -- (2.75,0); \draw[->] (0,-0.5) -- (0,2); \draw[->] (-0.5,-0.25) -- (2,1);
@@ -130,12 +130,12 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 \end{tikzpicture}}[-3cm]
   Ist $U$ eine Untermannigfaltigkeit in $\R^n$ mit den Eigenschaften
   \begin{enumerate}[label=(\roman*)]
-  \item $F \colon U \to M \cap F(U)$ ist ein Homöomorphismus,
-  \item $\D F|_x\colon \R^m \to \R^{m+k}$ ist injektiv für alle $x \in U$.
+  \item $F \colon U \to M \cap F(U)$ ist ein Hom"oomorphismus,
+  \item $\D F|_x\colon \R^m \to \R^{m+k}$ ist injektiv f"ur alle $x \in U$.
   \end{enumerate}
-  Dann ist $\psi = F^{-1}$ eine Karte von $M$. Es bezeichnen $\pdifffrac[p]{}{y^i}$ die Standardbasis bezüglich $\psi$ und $\pdifffrac[x]{}{x^i}$ die Standardbasis bezüglich der kanonischen Karte $\Id_{\R^m}$ des $\R^m$.
+  Dann ist $\psi = F^{-1}$ eine Karte von $M$. Es bezeichnen $\pdifffrac[p]{}{y^i}$ die Standardbasis bez"uglich $\psi$ und $\pdifffrac[x]{}{x^i}$ die Standardbasis bez"uglich der kanonischen Karte $\Id_{\R^m}$ des $\R^m$.
   
-  Dann gilt für $g \in C^{\infty}(M)$ beliebig:
+  Dann gilt f"ur $g \in C^{\infty}(M)$ beliebig:
   \begin{align*}
        \pdifffrac[p]{}{y^i}(g) = \partial_i(g \circ \psi^{-1})(\underbrace{\psi(p)}_{=x}) = \partial_i(g \circ F)(x) = F_{*x}\left(\pdifffrac[p]{}{x_i}\right)(f)
   \end{align*}
@@ -158,13 +158,13 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 \end{emptythm}
 
 % Definition 2.3
-\begin{Dfn}[Reguläre Punkte, Submersion, Immersion]
+\begin{Dfn}[Regul"are Punkte, Submersion, Immersion]
   Es sei $\Phi \colon M \to N$ glatt.
   \begin{enumerate}[label=(\roman*),leftmargin=*,widest=iii]
-  \item Es Punkt $p \in M$ heißt \CmMark{regulärer Punkt} von $\Phi$, wenn $\Phi_{*p}$ surjektiv ist. Ein Punkt $q \in N$ heißt \CmMark{regulärer Wert}, wenn jeder Punkt $p \in \Phi^{-1}(q)$ regulär ist.
-  \item Die Abbildung $\Phi$ heißt \CmMark{Submersion}, wenn $\Phi$ surjektiv ist und alle $p \in M$ reguläre Punkte sind.
-  \item Die Abbildung $\Phi$ heißt \CmMark{Immersion}, wenn für alle $p \in M$ $\Phi_{*p}$ injektiv ist.
-  \item Die Abbildung $\Phi$ heißt \CmMark{Einbettung}, wenn $\Phi$ Immersion und Homöomorphismus auf sein Bild ist.
+  \item Es Punkt $p \in M$ hei"st \CmMark{regul"arer Punkt} von $\Phi$, wenn $\Phi_{*p}$ surjektiv ist. Ein Punkt $q \in N$ hei"st \CmMark{regul"arer Wert}, wenn jeder Punkt $p \in \Phi^{-1}(q)$ regul"ar ist.
+  \item Die Abbildung $\Phi$ hei"st \CmMark{Submersion}, wenn $\Phi$ surjektiv ist und alle $p \in M$ regul"are Punkte sind.
+  \item Die Abbildung $\Phi$ hei"st \CmMark{Immersion}, wenn f"ur alle $p \in M$ $\Phi_{*p}$ injektiv ist.
+  \item Die Abbildung $\Phi$ hei"st \CmMark{Einbettung}, wenn $\Phi$ Immersion und Hom"oomorphismus auf sein Bild ist.
   \end{enumerate}
 \end{Dfn}
 
@@ -221,7 +221,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 \begin{Kor}
   \begin{enumerate}[label=(\roman*),widest=iii,leftmargin=*]
   \item Falls $\Phi$ auf einer offenen Umgebung von $P = \Phi^{-1}(q)$ konstanten Rang $r$ hat, so ist $P$ eine Untermannigfaltigkeit der Kodimension $r$.
-  \item Ist $q$ ein regulärer Wert von $\Phi$, so ist $P = \Phi^{-1}(q)$ eine Untermannigfaltigkeit von $M$ der Kodimension $n$.
+  \item Ist $q$ ein regul"arer Wert von $\Phi$, so ist $P = \Phi^{-1}(q)$ eine Untermannigfaltigkeit von $M$ der Kodimension $n$.
   
     Beispiel: $\|\cdot\|^{-1}(1) = S^n \supset \R^{n+1} \to \R, x \mapsto \|x\|$.
   \item Ist $\Phi_{*p}$ injektiv, so existiert eine Umgebung $U$ von $p$, so dass $\Phi(U) = Q \subset N$ eine Untermannigfaltigkeit von $N$ ist.
@@ -239,9 +239,9 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 		& = \{x \in \alpha (U) \mid x^1 = \ldots = x^r = 0\} = \alpha(U) \cap \{0\} \times \R^{m-r}.
 	\end{align*} 
 \item
-	Ist $q$ ein regulärer Wert von $\Phi$, so existieren nach Satz \ref{satz-3-4} (i) Karten $\psi, \alpha$ mit 
+	Ist $q$ ein regul"arer Wert von $\Phi$, so existieren nach Satz \ref{satz-3-4} (i) Karten $\psi, \alpha$ mit 
 		\[ (\psi \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^n) \qquad m \geq n = r \]
-	f"ur alle $x \in \alpha(U)$. Es gilt also für alle $u \in U$:
+	f"ur alle $x \in \alpha(U)$. Es gilt also f"ur alle $u \in U$:
 	\begin{align*}
 		\Rang \Phi_{*u} = \Rang \D(\psi \circ \Phi \circ \alpha^{-1})|_x = \Rang
 		\left(\begin{array}{ccc|c}
@@ -268,7 +268,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 	\begin{align*}
 		(\beta \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^m, 0, \ldots, 0) \in \R^{m} \times \{0\},
 	\end{align*}
-	wobei $\beta$ eine adaptierte Karte für $\Phi(U) = Q$ ist.
+	wobei $\beta$ eine adaptierte Karte f"ur $\Phi(U) = Q$ ist.
 \item
 	folgt aus (iii).
 \end{enumerate}\end{bew}
@@ -289,7 +289,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \begin{align*}
     \alpha^j =
     \begin{cases}
-      \psi^j \circ \Phi & \text{ für } j \leq r\\
+      \psi^j \circ \Phi & \text{ f"ur } j \leq r\\
       \phi^j & \text{ sonst}
     \end{cases}
   \end{align*}
@@ -307,14 +307,14 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
         \end{array}
       \end{array}\right)
   \end{align*}
-  Der Rang von $\alpha$ in $p$ ist damit gleich $m$. Nach dem Umkehrsatz ist $\alpha$ ein lokaler Diffeomorphismus, also eine Karte von $M$. Ferner gilt für $j \leq r$:
+  Der Rang von $\alpha$ in $p$ ist damit gleich $m$. Nach dem Umkehrsatz ist $\alpha$ ein lokaler Diffeomorphismus, also eine Karte von $M$. Ferner gilt f"ur $j \leq r$:
   \begin{align*}
     \left((\psi \circ \Phi \circ \alpha^{-1})(x^1,\ldots,x^m)\right)^j = (\psi^j \circ \Phi \circ \alpha^{-1})(\alpha(U)) = (\psi^j\circ \Phi)(U) = \alpha^j(U) = x^j.
   \end{align*}
   Damit hat $\psi \circ \Phi \circ \alpha^{-1}$ die gesuchte Darstellung.
 
   \item
-  Der Rang von $\Phi$ sei auf $U$ konstant gleich $r$. Dann gilt für alle $x \in \alpha(U)$.
+  Der Rang von $\Phi$ sei auf $U$ konstant gleich $r$. Dann gilt f"ur alle $x \in \alpha(U)$.
   \begin{align*}
     r = \Rang \D(\psi \circ \Phi \circ \alpha^{-1})|_x = \left(
       \begin{array}{c | c}
@@ -326,7 +326,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
         \ast & \underbrace{\left(\pdifffrac{f^{r+j}}{x^{r+i}}\right)}_{\rightsquigarrow \Rang 0}.
       \end{array}\right)
   \end{align*}
-  Somit gilt auf einer Umgebung der $0$ für alle $i,j > r$: $\pdifffrac{f^j}{x^i} \equiv 0$.
+  Somit gilt auf einer Umgebung der $0$ f"ur alle $i,j > r$: $\pdifffrac{f^j}{x^i} \equiv 0$.
   Es gibt also glatte Funktionen $g^{r+1}, \ldots, g^n$ mit $g^{r+j}(x^1, \ldots, x^r) = f^{r+j}(x^1,\ldots,x^n)$.\\
   Setzt man nun
   \begin{align*}
@@ -381,7 +381,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 \end{bem}
 
 \begin{Bsp}
-  Die $n$-dimensionale Sphäre $S^n \subset \R^{n+1}$ ist das reguläre Urbild der glatten Abbildung $\Phi \colon \R^{n+1}\setminus \{0\} \to \R_{> 0}, x \mapsto \|x\|^2; \ S^n = \Phi^{-1}(1)$. Der Tangentialraum $\T_x\R^{n+1}$ ist vermöge der Abbildung
+  Die $n$-dimensionale Sph"are $S^n \subset \R^{n+1}$ ist das regul"are Urbild der glatten Abbildung $\Phi \colon \R^{n+1}\setminus \{0\} \to \R_{> 0}, x \mapsto \|x\|^2; \ S^n = \Phi^{-1}(1)$. Der Tangentialraum $\T_x\R^{n+1}$ ist verm"oge der Abbildung
 \begin{align*}
   \R^{n+1} \ni V \mapsto [t \mapsto x + tv] \in \T_x\R^{n+1}.
 \end{align*}

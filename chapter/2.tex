@@ -9,7 +9,7 @@
 %% 2. Vorlesung <2012-10-19 Fri>, Fortsetung
 %%
 
-\chapter{Tangentialvektoren und Tangentialräume}
+\chapter{Tangentialvektoren und Tangentialr"aume}
 
 % Abbildung 2-1
 %\CmMarginSvg{2-1-tangentialvektoren-motivation}{3.5cm}
@@ -42,13 +42,13 @@ Betrachte in der nebenstehenden Abbildung eine differenzierbare \gls{Kurve} $c \
 
 % Bemerke $1 = \left<c(t),c(t)\right>$
 
-Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\phi,U)$ von $M$ und $p$ gibt, so dass gilt
+Die Kurven hei"sen \CmMark{"aquivalent}, wenn es eine Karte $(\phi,U)$ von $M$ und $p$ gibt, so dass gilt
 \begin{align*}
   \difffrac[t=0]{}{t}(\phi \circ c_1) = \difffrac[t=0]{}{t}(\phi \circ c_2)
 \end{align*}
 
 \begin{Lemma}
-  Der oben definierte Begriff der Äquivalenz ist unabhängig von der Wahl der Karte.
+  Der oben definierte Begriff der "Aquivalenz ist unabh"angig von der Wahl der Karte.
 \end{Lemma}
 
 \begin{bew}
@@ -60,11 +60,11 @@ Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\phi,U)$ von $M$ u
 \end{bew}
 
 \begin{Dfn}[Geometrische Definition des Tangentialraums]
-  Es sei $M$ eine glatte Mannigfaltigkeit und $p \in M$. Ein (geometrischer) \CmMark[Tangential!-vektor]{Tangentialvektor} an $M$ in $p$ ist eine Äquivalenzklasse von Kurven $c$ mit $c(0) = p$. Die Menge
+  Es sei $M$ eine glatte Mannigfaltigkeit und $p \in M$. Ein (geometrischer) \CmMark[Tangential!-vektor]{Tangentialvektor} an $M$ in $p$ ist eine "Aquivalenzklasse von Kurven $c$ mit $c(0) = p$. Die Menge
   \begin{align*}
     \T_{p}^{\text{geo}}M = \{ [c] \mid c \colon (-\epsilon,\epsilon) \to M \text{ glatt}, c(0) = p\}
   \end{align*}
-  heißt (geometrischer) \CmMark[Tangential!-raum]{Tangentialraum} an $M$ in $p$.
+  hei"st (geometrischer) \CmMark[Tangential!-raum]{Tangentialraum} an $M$ in $p$.
 \end{Dfn}
 
 \begin{bem}
@@ -75,7 +75,7 @@ Die Kurven heißen \CmMark{äquivalent}, wenn es eine Karte $(\phi,U)$ von $M$ u
 \end{bem}
 
 \begin{bew}
-Zu jedem Vektor $v \in \R^n$ sei $B(v) = [t \mapsto \phi^{-1}(\phi(p) + tv)]$ die Äquivalenzklasse der abgebildeten Kurve auf der Mannigfaltigkeit.
+Zu jedem Vektor $v \in \R^n$ sei $B(v) = [t \mapsto \phi^{-1}(\phi(p) + tv)]$ die "Aquivalenzklasse der abgebildeten Kurve auf der Mannigfaltigkeit.
 % Abbildung 2-2
 %\CmPutSvg{2-2-beweis-bijektivitaet-tpm-rn}{10cm}
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
@@ -117,17 +117,17 @@ Zu jedem Vektor $v \in \R^n$ sei $B(v) = [t \mapsto \phi^{-1}(\phi(p) + tv)]$ di
 \end{tikzpicture}\end{center}
 	\[ A B(v) = \difffrac[t=0]{}{t}(\phi \circ B(v)) = \difffrac[t=0]{}{t}(\phi \circ \phi^{-1}(\phi(p) + tv)) = \difffrac[t=0]{}{t}(\phi(p) + tv) = v. \]
 	\[ B A (\underbrace{[c]}_{\ni c}) = B(v_c) = [t \mapsto \phi^{-1}(\phi(p) + tv_c)] \text{ wobei } v_c = \difffrac[t=0]{}{t}(\phi \circ c). \]
-Die Kurven $c$ und $t \mapsto \phi^{-1}(\phi(p) + tv_c)$ sind äquivalent, also ist $B A[c] = [c]$ und somit $A$ bijektiv.
+Die Kurven $c$ und $t \mapsto \phi^{-1}(\phi(p) + tv_c)$ sind "aquivalent, also ist $B A[c] = [c]$ und somit $A$ bijektiv.
 \end{bew}
 
-Damit erhält $\T_p^{\text{geo}}M$ die Struktur eines reellen Vektorraumes vermöge der folgenden Verknüpfung:
+Damit erh"alt $\T_p^{\text{geo}}M$ die Struktur eines reellen Vektorraumes verm"oge der folgenden Verkn"upfung:
 \begin{align*}
   \lambda[c_1] + \mu[c_2] = A^{-1}(\lambda A[c_1]+ \mu A[c_2]).
 \end{align*}
-Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \phi^{-1}(\phi(p) + t(\lambda v_1 + \mu v_2))$ mit $v_i = \difffrac[t=0]{}{t}(\phi \circ c_i)$.
+Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ f"ur $c(t) = \phi^{-1}(\phi(p) + t(\lambda v_1 + \mu v_2))$ mit $v_i = \difffrac[t=0]{}{t}(\phi \circ c_i)$.
 
 \begin{Lemma}
-  Die oben definierte Lineare Struktur ist unabhängig von der Wahl der Karte.
+  Die oben definierte Lineare Struktur ist unabh"angig von der Wahl der Karte.
 \end{Lemma}
 
 \begin{bew}
@@ -149,18 +149,18 @@ Dabei gilt $\lambda[c_1]+\mu[c_2] = [c]$ für $c(t) = \phi^{-1}(\phi(p) + t(\lam
 
 \paragraph{Motivation: Richtungsableitungen im $\R^n$}\hfill
 \begin{bem}
-Für $f,g \in C^{\infty}(\R^n), \ x,y \in \R^n$ ist die \CmMark{Richtungsableitung} wie folgt definiert:
+F"ur $f,g \in C^{\infty}(\R^n), \ x,y \in \R^n$ ist die \CmMark{Richtungsableitung} wie folgt definiert:
 \begin{align*}
 	\partial_vf(x) = \D f(x) \cdot v = \difffrac[t=0]{}{t}f(x+tv).
 \end{align*}
-Diese erfüllt die Leibniz-Regel:
+Diese erf"ullt die Leibniz-Regel:
 \begin{align*}
 	\partial_v(fg)(x) = \partial_vf(x)\cdot g(x) + f(x) \cdot \partial_v g(x).
 \end{align*}
 \end{bem}
 
 \begin{Dfn}[Algebraische Definition des Tangentialraumes]
-  Es sei $M$ eine glatte Mannigfaltigkeit und $p\in M$. Ein (algebraischer) \CmMark[Tangential!-vektor]{Tangentialvektor} an $M$ in $p$ ist eine Lineare Abbildung $X_p \colon C^{\infty}(M) \to \R$, welche die Leibniz-Regel erfüllt:
+  Es sei $M$ eine glatte Mannigfaltigkeit und $p\in M$. Ein (algebraischer) \CmMark[Tangential!-vektor]{Tangentialvektor} an $M$ in $p$ ist eine Lineare Abbildung $X_p \colon C^{\infty}(M) \to \R$, welche die Leibniz-Regel erf"ullt:
   \begin{align*}
     X_p(fg) = X_p(f) \cdot g(p) + f(p) \cdot X_p(g).
   \end{align*}
@@ -188,23 +188,23 @@ Diese erfüllt die Leibniz-Regel:
   %%% 
   \textcolor{red}{Abbildung 2-4}
 
-  Ist dann $\eta$ eine glatte Funktion auf $\R$ mit $\eta \equiv 1$ auf $\left[\frac{-\epsilon^{2}}{2},\frac{\epsilon^2}{2}\right]$ und $\eta \equiv 0$ auf $\R \setminus (-\epsilon^2,\epsilon^2)$, so hat für $U_1 = \phi^{-1}(B_{\frac{\epsilon}{2}}(0))$ die Funktion
+  Ist dann $\eta$ eine glatte Funktion auf $\R$ mit $\eta \equiv 1$ auf $\left[\frac{-\epsilon^{2}}{2},\frac{\epsilon^2}{2}\right]$ und $\eta \equiv 0$ auf $\R \setminus (-\epsilon^2,\epsilon^2)$, so hat f"ur $U_1 = \phi^{-1}(B_{\frac{\epsilon}{2}}(0))$ die Funktion
   \begin{align*}
     \sigma(q) =
     \begin{cases}
-      \eta(\|\phi(q)\|^2) & \text{ für } q \in U_1\\
+      \eta(\|\phi(q)\|^2) & \text{ f"ur } q \in U_1\\
       0 & \text{ sonst }
     \end{cases}.
   \end{align*}
-  die gewünschten Eigenschaften.
+  die gew"unschten Eigenschaften.
 \end{bew}
 
 % Lemma 2.
 \begin{Lemma}
-Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
+F"ur alle $X_p\in\T_p^{\text{alg}}M$ gilt:
 \begin{enumerate}[label=(\roman*),widest=ii]
 \item $X_p(f) = 0$ falls $f$ in einer Umgebung von $p$ konstant ist.
-\item $X_p(f) = X_p(g)$ falls $f$ und $g$ auf einer Umgebung übereinstimmen.
+\item $X_p(f) = X_p(g)$ falls $f$ und $g$ auf einer Umgebung "ubereinstimmen.
 \end{enumerate}
 \end{Lemma}
 
@@ -216,7 +216,7 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
 	\end{align*}
 	folgt $X_p(f) = X_p(g)$.\\
 \item[(i)]
-	Wegen der $\R$-Linearität und (ii) genügt es $f \equiv 1$ zu betrachten. Es gilt
+	Wegen der $\R$-Linearit"at und (ii) gen"ugt es $f \equiv 1$ zu betrachten. Es gilt
 	\begin{align*}
 		X_p(1) = X_p(1 \cdot 1) = X_p(1) \cdot 1 + 1 \cdot X_p(1) = 2 \cdot X_p(1),
 	\end{align*}
@@ -224,7 +224,7 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
 \end{enumerate}\end{bew}
 
 \begin{bem}
-  Also gilt für $f \in C^{\infty}(M)$ und $g \in C^{\infty}(U)$ direkt:
+  Also gilt f"ur $f \in C^{\infty}(M)$ und $g \in C^{\infty}(U)$ direkt:
   \begin{align*}
     & \sigma g =
     \begin{cases}
@@ -234,7 +234,7 @@ Für alle $X_p\in\T_p^{\text{alg}}M$ gilt:
     & \sigma g \in C^{\infty}(M) 
     \Rightarrow X_p(g) = X_p(\sigma g).
   \end{align*}
-  Für eine Karte $\phi \colon U \to V$ von $M$ und $p$ seien algebraische Tangentialvektoren definiert:
+  F"ur eine Karte $\phi \colon U \to V$ von $M$ und $p$ seien algebraische Tangentialvektoren definiert:
   \begin{align*}
     \pdifffrac[p]{}{x^i} \in \T_p^{\text{alg}}M, \pdifffrac[p]{}{x^i}(f) = \partial_i(f \circ \phi^{-1})(\phi(p)) = \D(f \circ \phi^{-1})|_{\phi(p)}e_i.
   \end{align*}
@@ -259,10 +259,10 @@ Die $j$-te Komponente $\phi^j$ der Karte ist glatt und es gilt:
 \begin{align*}
 	\pdifffrac[p]{}{x^i}(\phi^j) = \partial_i(\phi^j \circ \phi^i)(\phi(p)) = \partial_ix^j(\phi(p)) = \delta_i^j.
 \end{align*}
-Damit sind die Vektoren linear unabhängig.
+Damit sind die Vektoren linear unabh"angig.
 
 Es sei $X_p\in \T_p^{\text{alg}}M$ und $f \in C^{\infty}(M)$.
-Für $x_0=\phi(p) \in \R^n, \ B_{\rho}(x_0) \subset \phi(U)$ und für $g = f \circ \phi^{-1}|_{B_{\rho}(x_0)}$ gilt mit den Bezeichnungen wie im letzten Lemma:
+F"ur $x_0=\phi(p) \in \R^n, \ B_{\rho}(x_0) \subset \phi(U)$ und f"ur $g = f \circ \phi^{-1}|_{B_{\rho}(x_0)}$ gilt mit den Bezeichnungen wie im letzten Lemma:
 \begin{align*}
 	X_p(f) & = X_p(g \circ \phi) = X_p \left( (g(\phi(p))) + \sum ( \phi^i - \phi(p)^i ) (h_i \circ \phi) \right)\\
 	& = \underbrace{X_p \big(g(\phi(p))\big)}_{\mathclap{=0}} + \sum X_p \left((\phi^i-\phi(p)^i)(h_i \circ \phi) \right)\\
@@ -284,7 +284,7 @@ Es gilt:
 \end{bew}
 
 % Satz 2.9
-\begin{Satz}[Äquivalenz der Tangentialraumbegriffe]\label{satz-2-9}
+\begin{Satz}["Aquivalenz der Tangentialraumbegriffe]\label{satz-2-9}
   Die Abbildung
   \begin{align*}
     J_p \colon \T_p^{\text{geo}}M \to \T_p^{\text{alg}}M, \ J_{p}[c](f) = \difffrac[t=0]{}{t}(f\circ c)
@@ -305,8 +305,8 @@ Es gilt:
 
 \begin{bem}
   \begin{enumerate}[label=\arabic*),leftmargin=*]
-  \item Ist $X_p = \sum \xi^i\pdifffrac[p]{}{x^i}$, so gilt $X_p = \dot c(0)$ für $c(t) = \phi^{-1}(\phi(p) + t\xi)$.
-\item Für jede glatte Kurve $c$ durch $p$ ist $\difffrac[t=0]{}{t}(\phi \circ c)$ der Koeffizientenvektor von $\dot c(0)$ in der Basis $\pdifffrac[p]{}{x^i}$.
+  \item Ist $X_p = \sum \xi^i\pdifffrac[p]{}{x^i}$, so gilt $X_p = \dot c(0)$ f"ur $c(t) = \phi^{-1}(\phi(p) + t\xi)$.
+\item F"ur jede glatte Kurve $c$ durch $p$ ist $\difffrac[t=0]{}{t}(\phi \circ c)$ der Koeffizientenvektor von $\dot c(0)$ in der Basis $\pdifffrac[p]{}{x^i}$.
   \end{enumerate}
 \end{bem}
 
