@@ -1558,9 +1558,21 @@ Insbesondere folgt
 Ein \CmMark[Dreieck!geodätisches]{(geodätisches) Dreieck} $\Delta(a,b,c)$ in $M$ besteht aus drei geodätischen Segmenten $a$, $b$ und $c$ mit $a(0) = b(0)$, $a(1) = c(0)$ und $c(1) = b(1)$.
 Es bezeichnen $\alpha$, $\beta$ und $\gamma$ die inneren Winkel in $\Delta$.
 Ferner sei $|a| = \mathcal L(a)$ die Länge von $a$ (analog für $b$ und $c$). 
-\begin{center}
-  \textcolor{red}{Abbildung: geodätische Dreiecke auf $S^2$}
-\end{center}
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+%	\tikzgitter{(-3,0)}{(3,4)}
+	
+	\coordinate (a) at (3,0); \coordinate (b) at (1.5,3); \coordinate (c) at (-3,0);
+	
+	\draw (c) --node[above]{$a$} node[pos=0.3,sloped]{$>$} (b) --node[right]{$c$} node[pos=0.5,sloped]{$>$} coordinate[pos=0.3] (ct) (a) (c) --node[below]{$b$} node[pos=0.3,sloped]{$>$} (a);
+	\draw[dashed] (c) -- (ct) node[right]{$c(t)$}; \fill (ct) circle (0.05);
+	
+	\begin{scope}
+		\clip (a) -- (b) -- (c) -- cycle;
+		\draw (a) circle(0.75) (b) circle(0.75) (c) circle(0.75);
+	\end{scope}
+	
+	\node at ($(c) + (20:0.5)$) {$\gamma$}; \node at ($(b) + (260:0.5)$) {$\beta$}; \node at ($(a) + (150:0.5)$) {$\alpha$};
+\end{tikzpicture}\end{center}
 \end{dfn}
 
 Ein Vergleichsdreieck in $M^2_{\kappa}$, der einfach zusammenh"angenden vollständigen Riemannschen Mannigfaltigkeit mit $\sec \equiv \kappa$, ist ein Dreieck $\overline \Delta(\overline a,\overline b, \overline c)$ mit $|\overline a| = |a|$, $|\overline b| = |b|$ und $|\overline c| = |c|$.
@@ -1569,8 +1581,44 @@ Es existiert ein (bis auf Isomorphie) eindeutiges Vergleichsdreieck, wenn gilt:
 \item $|a| + |b| \geq |c|$, $|b| + |c| \geq |a|$, $|c| + |a| \geq |b|$
 \item $U(\Delta(a,b,c)) = |a| + |b| + |c| < \frac{2\pi}{\sqrt{\kappa}}$ (für $\kappa > 0$)
 \end{enumerate}
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+%	\tikzgitter{(-3,-3)}{(3,3)}
+	
+	\def\radius{2}
+	\coordinate (pkt) at (220:\radius); \coordinate (ctrlpkt1) at (-0.25,0.75);
+	
+	\draw (0,0) circle(\radius); \fill (0,\radius) circle(0.05) node[above]{$N$};
+	\begin{scope}
+		\clip (-\radius,0) rectangle (\radius,1);
+		\draw[dashed] (0,0) ellipse[x radius=\radius,y radius=0.75];
+	\end{scope}\begin{scope}
+		\clip (-\radius,0) rectangle (\radius,-1);
+		\draw (0,0) ellipse[x radius=\radius,y radius=0.75];
+	\end{scope}
+	
+	\node[xshift=6] at ($(50:0.75 and \radius)$) {$a$}; \node[rotate=110] at ($(50:0.75 and \radius)$) {$>$};
+	\node[xshift=-5] at ($(130:0.75 and \radius)$) {$b$}; \node[rotate=250] at ($(130:0.75 and \radius)$) {$>$};
+	
+	\begin{scope}
+		\clip (0,-\radius) rectangle (1,\radius);
+		\draw (0,0) ellipse[x radius=0.75,y radius=\radius];
+	\end{scope}\begin{scope}
+		\clip (0,-\radius) rectangle (-1,\radius);
+		\draw[dashed] (0,0) ellipse[x radius=0.75,y radius=\radius];
+	\end{scope}
+	
+	\path[name path=quer] (0,0) ellipse[x radius=\radius,y radius=0.75];
+	\path[name path=hoch] (0,0) ellipse[x radius=0.75,y radius=\radius];
+	\path[name intersections={of=hoch and quer}];
 
-\begin{Satz}[Alexander-Toponogov]\index{Alexander-Toponogov}\label{thm:satz-alexander-toponogov}
+	\draw[dashed] (intersection-2) .. controls(intersection-2) and ($(pkt) + (ctrlpkt1)$).. (pkt);
+	\draw (pkt) .. controls($(pkt) - 0.5*(ctrlpkt1)$) and (intersection-4).. (intersection-4);
+	
+	\node[align=left] at (4,0) {mehrere M"oglichkeiten\\ f"ur $c$ in diesem Beispiel};
+\end{tikzpicture}\end{center}
+
+
+\begin{Satz}[Alexandrov-Toponogov]\index{Alexandrov-Toponogov}\label{thm:satz-alexandrov-toponogov}
   Es sei $(M,g)$ eine vollständige Riemannsche $m$-Mannigfaltigkeit mit $\sec_{(M,g)} \geq \kappa$ und im Falle $\kappa > 0$ gelte $M \not\cong S^m_{\nicefrac{1}{\sqrt{\kappa}}}$.
   Ist dann $\Delta(a,b,c)$ ein geodätisches Dreieck mit $|c| \leq |a| + |b|$, sowie, im Falle $\kappa > 0$, $|c| < \frac{\pi}{\sqrt{\kappa}}$ und $a$ und $b$ seien minimierende Geodätische.
   Dann gilt für das Vergleichsdreieck $\overline\Delta(\overline a,\overline b, \overline c)$ in $M_{\kappa}^2$: $\overline{\dop}_{\overline{p}} \le \dop_p$
@@ -1580,23 +1628,55 @@ Es existiert ein (bis auf Isomorphie) eindeutiges Vergleichsdreieck, wenn gilt:
   \end{enumerate}
 \end{Satz}
 
-\begin{center}
-  \textcolor{red}{Abbildung: geodätisches Dreieck gegenüberliegende Seite}
-\end{center}
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+%	\tikzgitter{(-3,0)}{(3,4)}
+	
+	\coordinate (a) at (3,0); \coordinate (b) at (1.5,3); \coordinate (c) at (-3,0);
+	
+	\draw (c) --node[above]{$a$} node[pos=0.3,sloped]{$>$} (b) --node[right]{$c$} node[pos=0.5,sloped]{$>$} coordinate[pos=0.3] (ct) (a) (c) --node[below]{$b$} node[pos=0.3,sloped]{$>$} (a);
+	\draw[dashed] (c) -- (ct) node[right]{$c(t)$}; \fill (ct) circle (0.05);
+	
+	\begin{scope}
+		\clip (a) -- (b) -- (c) -- cycle;
+		\draw (a) circle(0.75) (b) circle(0.75);
+	\end{scope}
+	
+	\node at ($(b) + (260:0.5)$) {$\beta$}; \node at ($(a) + (150:0.5)$) {$\alpha$};
+	\fill (c) circle(0.05); \node at ($(c) - (0.25,0)$) {$p$};
+\end{tikzpicture}\end{center}
 
 \begin{bem}
   Das Aussschließen von $S^m_{\nicefrac{1}{\sqrt{\kappa}}}$ ist nach dem Satz von Cheng\cite{Cheng1975} keine Einschränkung.
 \end{bem}
 
 Es seien $a$, $b$ und $c$ nach Bogenlänge parametrisiert und $p = a(0) = b(0)$.
-
-\begin{center}
-  \textcolor{red}{Abbildung: Eindeutige Geodätische von $p$ nach $c(t)$}
-\end{center}
-
 Es existiere zu jedem $c(t)$ eine eindeutige Geodätische von $p$.
 Dann ist insbesondere $\dop_p$ um $c(t)$ glatt.
 Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwischen dem zu $\grad \dop_p$ kollinearen Anteil und dem zur Abstandssphäre tangentialen Teil unterschieden werden muss.
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+%	\tikzgitter{(-4,0)}{(4,4)}
+	
+	\coordinate (0) at (-2,4); \coordinate (1) at (3,0.5);
+	\coordinate (ctrl0) at (2,-0.25); \coordinate (ctrl1) at (-0.25,1);
+	\coordinate (p) at (-3.5,0); \coordinate (dir) at (30:1);
+	
+	\draw[name path=kurve] (0) ..controls($(0)+(ctrl0)$) and ($(1)+(ctrl1)$)..node[right,pos=0.8]{$c$} (1);
+	
+	\path[name path=strich] (p) -- ($(p) + 6*(dir)$);
+	\path[name intersections={of=strich and kurve}];
+	
+	\draw[dashed] (p) node[left]{$p$} -- (intersection-1) node[above]{$c(t)$};
+	\fill (p) circle(0.05) (intersection-1) circle(0.05);
+	
+	\draw[->] (intersection-1) -- ($(intersection-1) + (dir)$) node[above right]{$\grad \dop_p$};
+	\draw[->] (intersection-1) --node[above,pos=0.6]{$\dot c(t)$} ($(intersection-1) + (329:1.25)$); % <-- keine echte Tangente; ich kann inzwischen keine Tangen mehr ansehen ohne Schweissausbrueche
+	
+	\begin{scope}
+		\clip (-4,0) rectangle (4,4);
+		\node [draw,circle through=(intersection-1),dashed] at (p) {};
+	\end{scope}
+	\node at (2,-0.25) {\textcolor{gray}{Abstandssph"are}};
+\end{tikzpicture}\end{center}
 
 \begin{emptythm}[Karchers Trick]\index{Karchers Trick}
   Es sei
@@ -1631,12 +1711,25 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
     = 1 - \kappa e,
   \end{align*}
   also $e'' + \kappa e \leq 1$.
-
-  \begin{center}
-    \textcolor{red}{Abbildung}
-  \end{center}
-
-  Im Fall konstanter Krümmung gilt für eine analog definierte modifizierte Abstandsfunktion
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+%	\tikzgitter{(-4,0)}{(4,4)}
+	
+	\coordinate (0) at (-2,4); \coordinate (1) at (0.5,2.5); \coordinate (2) at (3,0.5);
+	\coordinate (ctrl1) at (1.75,-0.25);
+	\coordinate (p) at (-3.5,0); \coordinate (ctrlp) at (0,0); \coordinate (q) at (2.5,2.5);
+	
+	\filldraw[name path=strich,fill=gray!20] ($(p) + 1.3*(1) - 1.1*(p)$) --node[pos=0.7,above]{$c_0$} (p) node[left]{$p$} ..controls(ctrlq) and (q)..node[pos=0.3,below]{$\calJ$} (q); \fill (p) circle(0.05);
+	\draw[name path=kurve] (0) ..controls(0) and ($(1) - (ctrl1)$).. (1) ..controls($(1) + (ctrl1)$) and (2).. (2);
+	\path[name intersections={of=kurve and strich}];
+	
+	\begin{scope}
+		\clip (-4,0) rectangle (4,4);
+		\node [draw,circle through=(intersection-1),dashed] at (p) {};
+	\end{scope}
+	\draw[->] (intersection-1) --node[right]{$w$} +(310:1.25);
+	\draw[->] (intersection-2) --node[above]{$\dot c$} +(325:1.25);
+\end{tikzpicture}\end{center}
+Im Fall konstanter Krümmung gilt für eine analog definierte modifizierte Abstandsfunktion
   \begin{align*}
     \overline e = (m_{\kappa} \circ \overline r), \
     \overline e '' + \kappa \overline e \equiv 1.
@@ -1683,9 +1776,20 @@ Betrachte $f = e - \overline e$.
 	\end{align*}
 	im Widerspruch zu $f'' + \kappa f \leq 0$.
 \item[Fall 1 gilt nicht:] Es gibt nun keine eindeutige Geod"atische
-\begin{center}
-	\textcolor{red}{Abbildung: nicht Fall 1}
-\end{center}
+\begin{center}\begin{tikzpicture}[font=\scriptsize,baseline=0]
+%	\tikzgitter{(-3,0)}{(3,4)}
+	
+	\coordinate (a) at (3,0); \coordinate (b) at (1.5,3); \coordinate (c) at (-3,0);
+	
+	\draw (c) --node[above]{$a$} (b) --node[right,pos=0.7]{$c$} coordinate[pos=0.3] (ct) coordinate[pos=0.5] (ct0) (a) (c) --node[below]{$b$} (a);
+	\path (c) -- coordinate[pos=0.2] (c0t) (ct0); \fill (ct0) circle (0.05);
+	\draw[dashed] (c0t) --node[below,pos=0.7]{$c_0$} (ct0) node[right]{$c(t_0)$};
+	\draw[->,thick] (c) -- (c0t);
+	\draw[dashed] (c0t) -- (ct) node[right]{$c(t)$}; \fill (ct) circle (0.05);
+	\draw[->] ($(c0t) -(0,0.75)$)node[below]{$c_0(\tau)$} to[bend right=30] ($(c0t) + (0,-0.05)$);
+	
+	\fill (c) circle(0.05); \node at ($(c) - (0.25,0)$) {$p$};
+\end{tikzpicture}$\quad r_\tau(t) = \tau + \dop (c_0(\tau), c(t))$\end{center}
 \end{description}\end{emptythm}
 
 %%% Local Variables: 
