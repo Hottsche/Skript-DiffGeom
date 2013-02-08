@@ -1803,7 +1803,7 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
   \end{center}
 
   Es sei $t_0 = \sup \{t \mid \operatorname{Umfang} \delta(a,b_t,c_t) < \frac{2\pi}{\sqrt{\kappa}}$.
-  Für $t \to t_0$ konvergiert $\delta(a,b_t,c_t)$ gegen ein Dreieck mit Umfang $\frac{2\pi}{\sqrt{\kappa}}$, d.h. das Vergleichsdreieck konvergiert gegen einen Großkreis.
+  F"ur $t \to t_0$ konvergiert $\delta(a,b_t,c_t)$ gegen ein Dreieck mit Umfang $\frac{2\pi}{\sqrt{\kappa}}$, d.h. das Vergleichsdreieck konvergiert gegen einen Gro"skreis.
   Insbesondere folgt mit dem ersten Teil aus (i):
   \begin{align*}
     \max\limits_{s \in [0,t]} \dop(p,c(s)) \xrightarrow{t \to t_0} \frac{\pi}{\sqrt{\kappa}}.
@@ -1815,7 +1815,7 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
     \textcolor{red}{Abbildung: Variationsfeld}
   \end{center}
 
-  Es sei $c_s$ die minimierende, nach Bogenlänge parametrisierte Geodätische von $p$ nach $c(s)$ und $Y$ das von $c_s$ erzeugte Varationsfeld.
+  Es sei $c_s$ die minimierende, nach Bogenl"ange parametrisierte Geod"atische von $p$ nach $c(s)$ und $Y$ das von $c_s$ erzeugte Varationsfeld.
   Dann gilt
   \begin{align*}
     - \cos \beta & = \left<\dot c(0), \dot a(|a|)\right> 
@@ -1835,39 +1835,39 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
 \begin{Satz}[Gronov]\index{Gronov}
   Es existieren Konstanten $c(n), c(n,\lambda,D)$, so dass gilt:
   \begin{enumerate}[label=(\roman*)]
-  \item Hat $M^n$ $\sec \geq 0$, so läßt sich $\pi_1(M^n)$ mit $\leq c(n)$ Elementen erzeugen.
-  \item Hat $M^n$ $\sec \geq - \lambda^2$ und $\diam(M) \leq D$, so lässt sich $\pi_1(M)$ mit $\leq c(n,\lambda,D)$ 
+  \item Hat $M^n$ $\sec \geq 0$, so l"a"st sich $\pi_1(M^n)$ mit $\leq c(n)$ Elementen erzeugen.
+  \item Hat $M^n$ $\sec \geq - \lambda^2$ und $\diam(M) \leq D$, so l"asst sich $\pi_1(M)$ mit $\leq c(n,\lambda,D)$ 
   \end{enumerate}
 \end{Satz}
 
 \begin{emptythm}[Beweisskizze]
   Es sei $\Gamma = \pi_1(M,p_0) \curvearrowright \tilde M, x_0 \in \pi^{-1}(p_0)$.
   \begin{center}
-    \textcolor{red}{Abbildung: Überlagerung}
+    \textcolor{red}{Abbildung: "Uberlagerung}
   \end{center}
-  Für $\gamma \in \Gamma$ sie $|\gamma| = \dop(x_0, \gamma \cdot x_0)$.
+  F"ur $\gamma \in \Gamma$ sie $|\gamma| = \dop(x_0, \gamma \cdot x_0)$.
   Ist dann $c_{\gamma}$ minimal von $x_0$ nach $\gamma \cdot x_0$, so ist eine Projektion $\overline c_{\gamma} = \pi \circ c_{\gamma}$ eine Schleife in $\gamma$.
 
-  $\#\{\gamma \in \Gamma \mid | \gamma | \leq r \} < \infty$, denn andernfalls gäbe es eine (nichtkonstante) Folge $\gamma_i \in M$ mit $|\gamma_i| \leq r$, d.h. 
+  $\#\{\gamma \in \Gamma \mid | \gamma | \leq r \} < \infty$, denn andernfalls g"abe es eine (nichtkonstante) Folge $\gamma_i \in M$ mit $|\gamma_i| \leq r$, d.h. 
   \begin{align*}
     \gamma_i \cdot x_0 \in \overline B_r(x_0),
     \text{ d.h. o.E. } \gamma_i \cdot c_0 \xrightarrow{i \to \infty} y
   \end{align*}
-  $q = \pi(y)$. Dann gälte
+  $q = \pi(y)$. Dann g"alte
   \begin{align*}
     \pi^{-1}(B_{\delta}(q)) = \dot \bigcup_i B_{\delta}
     = \dot \bigcup_{\gamma \in \Gamma} \gamma \cdot B_{\delta}(y). \text{Wid.}
   \end{align*}
-  Wähle $\gamma_1 \in \Gamma$ mit $|\gamma_1| = \min \{ |\gamma| \mid \gamma \in \Gamma \setminus \{1_p\} \}$.
-  Sind $\gamma_1, \ldots, \gamma_k$ gewählt mit $|\gamma_1| \leq |\gamma_2| \leq \cdots \leq |\gamma_k|$, so bezeichne $G_k = \left< \gamma_1, \ldots, \gamma_k\right>$.
+  W"ahle $\gamma_1 \in \Gamma$ mit $|\gamma_1| = \min \{ |\gamma| \mid \gamma \in \Gamma \setminus \{1_p\} \}$.
+  Sind $\gamma_1, \ldots, \gamma_k$ gew"ahlt mit $|\gamma_1| \leq |\gamma_2| \leq \cdots \leq |\gamma_k|$, so bezeichne $G_k = \left< \gamma_1, \ldots, \gamma_k\right>$.
   Ist $G_k \neq \Gamma$, so sei $\gamma_{k+1} \in \Gamma$ mit $|\gamma_{k+1}| = \min \{ |\gamma| \mid \gamma \in \Gamma \setminus G_k\}$.
 
   Es bezeichne $l_i = |\gamma_i|, l_{ij} = \dop(\gamma_i \cdot c_0, \gamma_j\cdot x_0) = \dop(x_0, \gamma_i^{-1}\gamma_j \cdot x_0) = |\gamma_i^{-1}\gamma_j|$.
-  Dann gilt für $i < j$:
+  Dann gilt f"ur $i < j$:
   \begin{align*}
     l_i \leq l_j \leq l_{ij}.
   \end{align*}
-  Wäre $l_{ij} < l_j = |\gamma_j|$, so gälte für
+  W"are $l_{ij} < l_j = |\gamma_j|$, so g"alte f"ur
   \begin{align*}
     \tilde \gamma_j = \tilde \gamma_i \gamma_j, \ |\tilde\gamma_j| < |\gamma_j| \text{ und }
     \left<\gamma_1, \ldots, \gamma_j\right> = \left<\gamma_1, \ldots, \tilde \gamma_j\right>
@@ -1895,8 +1895,8 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
   \begin{center}
     \textcolor{red}{Abbildung: Ball auf der $S^{n-1}$}
   \end{center}
-  $r = \sin \frac{\pi}{6} = \frac{1}{2}$, also sind die Bälle $B_{\frac{1}{2}}(v_i)$ disjunkt.
-  Betrachte das Volumen der \quot{unteren Hälfte}, diese liegt in $B_{\frac{\sqrt{5}}{2}}(0)$.
+  $r = \sin \frac{\pi}{6} = \frac{1}{2}$, also sind die B"alle $B_{\frac{1}{2}}(v_i)$ disjunkt.
+  Betrachte das Volumen der \quot{unteren H"alfte}, diese liegt in $B_{\frac{\sqrt{5}}{2}}(0)$.
   Damit gilt
   \begin{align*}
     \frac{\kappa}{2} \operatorname{vol}(B_{\frac{1}{2}}(0)) \leq \operatorname{vol}B_{\frac{\sqrt 5}{2}}(0),
@@ -1918,17 +1918,17 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
   $\pi_1(\sum g)$ wird erzeugt von $2g$ Elementen.
 
   $\cos \overline \alpha_{ij} = \frac{\cosh(\lambda l_i)^2 + \cosh(\lambda l_j)^2 - \cosh(\lambda l_{ij})^2}{\sinh(\lambda l_i)\sinh(\lambda l_j)}$.
-  $\overline \alpha_{ij}$ fällt monoton in $l_i$, so wächst $\cos \overline \alpha_{ij}$ monotin in $l_i$ und es lässt sich folge Abschätzung verwenden:
+  $\overline \alpha_{ij}$ f"allt monoton in $l_i$, so w"achst $\cos \overline \alpha_{ij}$ monotin in $l_i$ und es l"asst sich folge Absch"atzung verwenden:
   \begin{align*}
     \cos \overline \alpha_{ij} \leq \cdots \leq \frac{\cosh(\lambda l_j}{\cosh(\lambda l_j) + 1}
     \leq \frac{\cosh(2 \lambda D + 1)}{\cosh(2 \lambda D + 1) + 1}
   \end{align*}
-  Jedes $\gamma \in \pi_1(M)$ ist Produkt von Klassen von Schleifen der Länge $\leq 2D + \epsilon$.
+  Jedes $\gamma \in \pi_1(M)$ ist Produkt von Klassen von Schleifen der L"ange $\leq 2D + \epsilon$.
   \begin{center}
-    \textcolor{red}{Abbildung: Schleife mit Geodätischen an die Ecken}
+    \textcolor{red}{Abbildung: Schleife mit Geod"atischen an die Ecken}
   \end{center}
 
-  Damit funktioniert des Rest des Beweises ähnlich wie oben.
+  Damit funktioniert des Rest des Beweises "ahnlich wie oben.
 \end{emptythm}
 
 
