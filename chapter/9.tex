@@ -1745,190 +1745,182 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
   und in der obigen Absch"atzung gilt die Gleichheit.
 \end{emptythm}
 
-\begin{emptythm}[Beweisskizze (zum Satz von Alexandrov-Toponogov \ref{thm:satz-alexandrov-toponogov})]
-  \emph{Annahme:} $|a| + |b| + |c| < \frac{2\pi}{\sqrt{\kappa}}$.
-  Der Fall $|a| + |b| = |c|$ ist trivialerweise korrekt.
-  Es gelte also $|a| + |b| > |c|$, dann ist jedenfalls $p \notin c$.
-  Es seien $r = \dop_p \circ c$ und $e = m_{\kappa} \circ r$ wie oben, sowie $\overline r$ und $\overline c$ f"ur das Vergleichsdreieck.
-  Betrachte $f = e - \overline e$.
-  \begin{description}[font=\normalfont\bfseries]
-  \item[Fall 1:] zu jedem $c(t)$ existiert eine eindeutige minimierende Geod"atische, damit ist $r$ und damit auch $f$ differenzierbar.
-    Es gilt
-    \begin{align*}
-      f'' = e'' - \overline e''
-      \leq 1 - \kappa e - (1-\kappa \overline e) = -\kappa f.
-    \end{align*}
-    Angenommen es g"abe ein $s \in (0,l)$, $l = |c|$ mit $f(s) < 0$.
-    Weiter sei $\epsilon > 0$ so, dass gilt
-    \begin{align*}
-      l + \epsilon < \frac{\pi}{\sqrt{\kappa + \epsilon}}.
-    \end{align*}
-    
-    Es sei $g(t) = \sn_{\kappa + \epsilon}(t + \epsilon)$ die, auf $[0,l]$ positive, L"osung von $g'' +(\kappa + \epsilon)g = 0$.
-    Betrachte $h = \frac{f}{g}$.
-    Dann gilt $h(s) < 0$ und $h(0) = 0 = h(l)$ und somit nimmt $h$ ein negatives Minimum, etwa $t_0$, an.
-    
-    Es gilt also $h(t_0) < 0$, $h'(t_0) = 0$ und $h''(t_0) \geq 0$.
-    Dann folgt
-    \begin{align*}
-      f'' + \kappa f & = g'' h + 2 g'h' + gh'' + \kappa g h = -(\kappa + \epsilon)gh + 2 g'h' + gh'' + \kappa g h\\
-      \underset{\text{in } t_0:}{\hphantom{}} & = \underbrace{-\epsilon g h}_{> 0} + \underbrace{2 g' h'}_{= 0} + \underbrace{gh''}_{\geq 0} > 0
-    \end{align*}
-    im Widerspruch zu $f'' + \kappa f \leq 0$.
-  \item[Fall 1 gilt nicht:] Es gibt nun keine eindeutige Geod"atische
-    \begin{center}\begin{tikzpicture}[font=\scriptsize,baseline=0]
-        %	\tikzgitter{(-3,0)}{(3,4)}
-	
-	\coordinate (a) at (3,0); \coordinate (b) at (1.5,3); \coordinate (c) at (-3,0);
-	
-	\draw (c) --node[above]{$a$} (b) --node[right,pos=0.7]{$c$} coordinate[pos=0.3] (ct) coordinate[pos=0.5] (ct0) (a) (c) --node[below]{$b$} (a);
-	\path (c) -- coordinate[pos=0.2] (c0t) (ct0); \fill (ct0) circle (0.05);
-	\draw[dashed] (c0t) --node[below,pos=0.7]{$c_0$} (ct0) node[right]{$c(t_0)$};
-	\draw[->,thick] (c) -- (c0t);
-	\draw[dashed] (c0t) -- (ct) node[right]{$c(t)$}; \fill (ct) circle (0.05);
-	\draw[->] ($(c0t) -(0,0.75)$)node[below]{$c_0(\tau)$} to[bend right=30] ($(c0t) + (0,-0.05)$);
-	
-	\fill (c) circle(0.05); \node at ($(c) - (0.25,0)$) {$p$};
-      \end{tikzpicture}$\quad r_\tau(t) = \tau + \dop (c_0(\tau), c(t))$\end{center}
-  \end{description}
-
-  %% 
-  %% Vorlesung <2013-2-8 Fri>
-  %% 
-
-  Falls $\mathcal L(a) + \mathcal L(b) + \mathcal L(c) \geq \frac{2\pi}{\sqrt{\kappa}}$.
-
-  \begin{center}
-    \textcolor{red}{Abbildung: Beweisskizze Dreieck (Fortsetzung)}
-  \end{center}
-
-  Es sei $t_0 = \sup \{t \mid \operatorname{Umfang} \delta(a,b_t,c_t) < \frac{2\pi}{\sqrt{\kappa}}$.
-  F"ur $t \to t_0$ konvergiert $\delta(a,b_t,c_t)$ gegen ein Dreieck mit Umfang $\frac{2\pi}{\sqrt{\kappa}}$, d.h. das Vergleichsdreieck konvergiert gegen einen Gro"skreis.
-  Insbesondere folgt mit dem ersten Teil aus (i):
-  \begin{align*}
-    \max\limits_{s \in [0,t]} \dop(p,c(s)) \xrightarrow{t \to t_0} \frac{\pi}{\sqrt{\kappa}}.
-  \end{align*}
-  Damit existiert ein $q \in M$ mit $\dop(p,q) = \frac{\pi}{\sqrt{\kappa}}$, im Widerspruch zur Voraussetzung $M \not\cong S^n_{\frac{1}{\sqrt{\kappa}}}$ (siehe Cheng \cite{Cheng1975}).\index{Cheng}
-
-  (i) $\to$ (ii).
-  \begin{center}
-    \textcolor{red}{Abbildung: Variationsfeld}
-  \end{center}
-
-  Es sei $c_s$ die minimierende, nach Bogenl"ange parametrisierte Geod"atische von $p$ nach $c(s)$ und $Y$ das von $c_s$ erzeugte Varationsfeld.
-  Dann gilt
-  \begin{align*}
-    - \cos \beta & = \left<\dot c(0), \dot a(|a|)\right> 
-    = \left<Y(|a|), \dot a(|a|) \right>
-    = \int\limits_0^{|a|} \left<Y, \dot a\right>'
-    = \mathcal L'(c_s) \geq \mathcal L'(\overline c_s)\\
-    & = \ldots 
-    = -\cos \overline \beta\\
-    & \Rightarrow \overline \beta \leq \beta.
-  \end{align*}
+\begin{emptythm}[Beweisskizze (zum Satz von Alexandrov-Toponogov \ref{thm:satz-alexandrov-toponogov})]\begin{enumerate}[label=(\roman*),leftmargin=*,widest=ii]
+\item
+	\emph{Annahme:} $|a| + |b| + |c| < \frac{2\pi}{\sqrt{\kappa}}$.
+	Der Fall $|a| + |b| = |c|$ ist trivialerweise korrekt.
+	Es gelte also $|a| + |b| > |c|$, dann ist jedenfalls $p \notin c$.
+	Es seien $r = \dop_p \circ c$ und $e = m_{\kappa} \circ r$ wie oben, sowie $\overline r$ und $\overline c$ f"ur das Vergleichsdreieck.
+	Betrachte $f = e - \overline e$.
+	\begin{description}[font=\normalfont\bfseries]
+	\item[Fall 1:]
+		zu jedem $c(t)$ existiert eine eindeutige minimierende Geod"atische, damit ist $r$ und damit auch $f$ differenzierbar.
+		Es gilt
+		\begin{align*}
+			f'' = e'' - \overline e''
+			\leq 1 - \kappa e - (1-\kappa \overline e) = -\kappa f.
+		\end{align*}
+		Angenommen es g"abe ein $s \in (0,l)$, $l = |c|$ mit $f(s) < 0$.
+		Weiter sei $\epsilon > 0$ so, dass gilt
+		\begin{align*}
+			l + \epsilon < \frac{\pi}{\sqrt{\kappa + \epsilon}}.
+		\end{align*}
+		
+		Es sei $g(t) = \sn_{\kappa + \epsilon}(t + \epsilon)$ die, auf $[0,l]$ positive, L"osung von $g'' +(\kappa + \epsilon)g = 0$.
+		Betrachte $h = \frac{f}{g}$.
+		Dann gilt $h(s) < 0$ und $h(0) = 0 = h(l)$ und somit nimmt $h$ ein negatives Minimum, etwa $t_0$, an.
+		
+		Es gilt also $h(t_0) < 0$, $h'(t_0) = 0$ und $h''(t_0) \geq 0$.
+		Dann folgt
+		\begin{align*}
+			f'' + \kappa f & = g'' h + 2 g'h' + gh'' + \kappa g h = -(\kappa + \epsilon)gh + 2 g'h' + gh'' + \kappa g h\\
+			\underset{\text{in } t_0:}{\hphantom{}} & = \underbrace{-\epsilon g h}_{> 0} + \underbrace{2 g' h'}_{= 0} + \underbrace{gh''}_{\geq 0} > 0
+		\end{align*}
+		im Widerspruch zu $f'' + \kappa f \leq 0$.
+	\item[Fall 1 gilt nicht:]
+		Es gibt nun keine eindeutige Geod"atische und f"ur den Umfang gilt $\|a\| + \|b\| + \|c\| \ge \frac{2 \pi}{\sqrt \kappa}$
+		\begin{center}\begin{tikzpicture}[font=\scriptsize,baseline=0]
+		%	\tikzgitter{(-3,0)}{(3,4)}
+		
+			\coordinate (a) at (3,0); \coordinate (b) at (1.5,3); \coordinate (c) at (-3,0);
+		
+			\draw (c) --node[above]{$a$} (b) --node[right,pos=0.7]{$c$} coordinate[pos=0.3] (ct) coordinate[pos=0.5] (ct0) (a) (c) --node[below]{$b$} (a);
+			\path (c) -- coordinate[pos=0.2] (c0t) (ct0); \fill (ct0) circle (0.05);
+			\draw[dashed] (c0t) --node[below,pos=0.7]{$c_0$} (ct0) node[right]{$c(t_0)$};
+			\draw[->,thick] (c) -- (c0t);
+			\draw[dashed] (c0t) -- (ct) node[right]{$c(t)$}; \fill (ct) circle (0.05);
+			\draw[->] ($(c0t) -(0,0.75)$)node[below]{$c_0(\tau)$} to[bend right=30] ($(c0t) + (0,-0.05)$);
+		
+			\fill (c) circle(0.05); \node at ($(c) - (0.25,0)$) {$p$};
+		\end{tikzpicture}$\quad r_\tau(t) = \tau + \dop (c_0(\tau), c(t))$\\
+		\textcolor{red}{Zeichnung unvollst.}\end{center}		
+%%
+%% Vorlesung <2013-2-8 Fri>
+%%
+		Es sei $t_0 = \sup \{t \mid \operatorname{Umfang} \Delta(a,b_t,c_t) < \frac{2\pi}{\sqrt{\kappa}}$.
+		F"ur $t \to t_0$ konvergiert $\Delta(a,b_t,c_t)$ gegen ein Dreieck mit Umfang $\frac{2\pi}{\sqrt{\kappa}}$, das hei"st das Vergleichsdreieck konvergiert gegen einen Gro"skreis.
+		Insbesondere folgt mit dem ersten Teil aus (i):
+		\begin{align*}
+			\max\limits_{s \in [0,t]} \dop(p,c(s)) \xrightarrow{t \to t_0} \frac{\pi}{\sqrt{\kappa}}.
+		\end{align*}
+		Damit existiert ein $q \in M$ mit $\dop(p,q) = \frac{\pi}{\sqrt{\kappa}}$, im Widerspruch zur Voraussetzung $M \not\cong S^n_{\frac{1}{\sqrt{\kappa}}}$ (siehe Cheng \cite{Cheng1975}).\index{Cheng}
+	\end{description}	
+\item asdf
+	\begin{center}
+		\textcolor{red}{Abbildung: Variationsfeld}
+	\end{center}
+	Es sei $c_s$ die minimierende, nach Bogenl"ange parametrisierte Geod"atische von $p$ nach $c(s)$ und $Y$ das von $c_s$ erzeugte Varationsfeld.
+	Dann gilt
+	\begin{align*}
+		- \cos \beta  = \left<\dot c(0), \dot a(|a|)\right> 
+		= \left<Y(|a|), \dot a(|a|) \right>
+		= \int\limits_0^{|a|} \left<Y, \dot a\right>'
+		= \mathcal L'(c_s)
+		&\overset{\text{(i)}}{\geq} \mathcal L'(\overline c_s)\\
+		& = \ldots = -\cos \overline \beta
+	\end{align*}
+	Also insgesamt: $\overline \beta \leq \beta$.
+\end{enumerate}
+\hfill\ensuremath{(\Box)}
 \end{emptythm}
 
 
 \section{Anwendung}
 
 % Satz 9.18
-\begin{Satz}[Gronov]\index{Gronov}
+\begin{Satz}[Gromov]\index{Gromov}
   Es existieren Konstanten $c(n), c(n,\lambda,D)$, so dass gilt:
   \begin{enumerate}[label=(\roman*)]
-  \item Hat $M^n$ $\sec \geq 0$, so l"a"st sich $\pi_1(M^n)$ mit $\leq c(n)$ Elementen erzeugen.
-  \item Hat $M^n$ $\sec \geq - \lambda^2$ und $\diam(M) \leq D$, so l"asst sich $\pi_1(M)$ mit $\leq c(n,\lambda,D)$ 
+  \item Hat $M^n$ die Schnittkr"ummung $\sec \geq 0$, so l"a"st sich $\pi_1(M^n)$ mit $\leq c(n)$ Elementen erzeugen.
+  \item Hat $M^n$ die Schnittkr"ummung $\sec \geq - \lambda^2$ und $\diam(M) \leq D$, so l"asst sich $\pi_1(M)$ mit $\leq c(n,\lambda,D)$ Elementen erzeugen.
   \end{enumerate}
 \end{Satz}
 
 \begin{emptythm}[Beweisskizze]
-  Es sei $\Gamma = \pi_1(M,p_0) \curvearrowright \tilde M, x_0 \in \pi^{-1}(p_0)$.
-  \begin{center}
-    \textcolor{red}{Abbildung: "Uberlagerung}
-  \end{center}
-  F"ur $\gamma \in \Gamma$ sie $|\gamma| = \dop(x_0, \gamma \cdot x_0)$.
-  Ist dann $c_{\gamma}$ minimal von $x_0$ nach $\gamma \cdot x_0$, so ist eine Projektion $\overline c_{\gamma} = \pi \circ c_{\gamma}$ eine Schleife in $\gamma$.
+Es sei $\Gamma = \pi_1(M,p_0) \curvearrowright \tilde M$ und sei $x_0 \in \pi^{-1}(p_0)$.
+\begin{center}
+	\textcolor{red}{Abbildung: "Uberlagerung}
+\end{center}
+F"ur $\gamma \in \Gamma$ sei $|\gamma| = \dop(x_0, \gamma . x_0)$.
+Ist dann $c_{\gamma}$ minimal von $x_0$ nach $\gamma . x_0$, so ist eine Projektion $\overline c_{\gamma} = \pi \circ c_{\gamma}$ eine Schleife in $\gamma$.
+Ferner gilt $\#\{\gamma \in \Gamma \mid | \gamma | \leq r \} < \infty$, denn andernfalls g"abe es eine (nichtkonstante) Folge $\gamma_i \in M$ mit $|\gamma_i| \leq r$, das hei"st $\gamma_i . x_0 \in \overline B_r(x_0)$, also ohne Einschr"ankung $\gamma_i . x_0 \xrightarrow{i \to \infty} y$ und $q = \pi(y)$. Dann g"alte
+\begin{align*}
+	\pi^{-1}(B_{\delta}(q)) = \dot \bigcup_{i} B_{\delta} = \dot \bigcup_{\gamma \in \Gamma} \gamma . B_{\delta}(y) \qquad \lightning
+\end{align*}
+W"ahle $\gamma_1 \in \Gamma$ mit $|\gamma_1| = \min \{ |\gamma| \mid \gamma \in \Gamma \setminus \{1_p\} \}$.
+Sind $\gamma_1, \ldots, \gamma_k$ gew"ahlt mit $|\gamma_1| \leq |\gamma_2| \leq \cdots \leq |\gamma_k|$, so bezeichne $G_k = \left< \gamma_1, \ldots, \gamma_k\right>$.
+Ist $G_k \neq \Gamma$, so sei $\gamma_{k+1} \in \Gamma$ mit $|\gamma_{k+1}| = \min \{ |\gamma| \mid \gamma \in \Gamma \setminus G_k\}$.
 
-  $\#\{\gamma \in \Gamma \mid | \gamma | \leq r \} < \infty$, denn andernfalls g"abe es eine (nichtkonstante) Folge $\gamma_i \in M$ mit $|\gamma_i| \leq r$, d.h. 
-  \begin{align*}
-    \gamma_i \cdot x_0 \in \overline B_r(x_0),
-    \text{ d.h. o.E. } \gamma_i \cdot c_0 \xrightarrow{i \to \infty} y
-  \end{align*}
-  $q = \pi(y)$. Dann g"alte
-  \begin{align*}
-    \pi^{-1}(B_{\delta}(q)) = \dot \bigcup_i B_{\delta}
-    = \dot \bigcup_{\gamma \in \Gamma} \gamma \cdot B_{\delta}(y). \text{Wid.}
-  \end{align*}
-  W"ahle $\gamma_1 \in \Gamma$ mit $|\gamma_1| = \min \{ |\gamma| \mid \gamma \in \Gamma \setminus \{1_p\} \}$.
-  Sind $\gamma_1, \ldots, \gamma_k$ gew"ahlt mit $|\gamma_1| \leq |\gamma_2| \leq \cdots \leq |\gamma_k|$, so bezeichne $G_k = \left< \gamma_1, \ldots, \gamma_k\right>$.
-  Ist $G_k \neq \Gamma$, so sei $\gamma_{k+1} \in \Gamma$ mit $|\gamma_{k+1}| = \min \{ |\gamma| \mid \gamma \in \Gamma \setminus G_k\}$.
+Es bezeichne $l_i = |\gamma_i|, l_{ij} = \dop(\gamma_i . x_0, \gamma_j. x_0) = \dop(x_0, \gamma_i^{-1}\gamma_j . x_0) = |\gamma_i^{-1}\gamma_j|$.
+Dann gilt f"ur $i < j$:
+\begin{align*}
+	l_i \leq l_j \leq l_{ij}.
+\end{align*}
+W"are $l_{ij} < l_j = |\gamma_j|$, so g"alte f"ur $\tilde \gamma_j = \gamma_i^{-1} \gamma_j$:
+\begin{align*}
+	|\tilde\gamma_j| < |\gamma_j| \text{ und }
+	\left<\gamma_1, \ldots, \gamma_j\right> = \left<\gamma_1, \ldots, \tilde \gamma_j\right>
+\end{align*}
+im Widerspruch zur Wahl von $\gamma_j$.
 
-  Es bezeichne $l_i = |\gamma_i|, l_{ij} = \dop(\gamma_i \cdot c_0, \gamma_j\cdot x_0) = \dop(x_0, \gamma_i^{-1}\gamma_j \cdot x_0) = |\gamma_i^{-1}\gamma_j|$.
-  Dann gilt f"ur $i < j$:
-  \begin{align*}
-    l_i \leq l_j \leq l_{ij}.
-  \end{align*}
-  W"are $l_{ij} < l_j = |\gamma_j|$, so g"alte f"ur
-  \begin{align*}
-    \tilde \gamma_j = \tilde \gamma_i \gamma_j, \ |\tilde\gamma_j| < |\gamma_j| \text{ und }
-    \left<\gamma_1, \ldots, \gamma_j\right> = \left<\gamma_1, \ldots, \tilde \gamma_j\right>
-  \end{align*}
-  im Widerspruch zur Wahl von $\gamma_j$.
-
-  \begin{center}
-    \textcolor{red}{Abbildung}
-  \end{center}
-  $\overline \alpha = \overline \alpha_{ij} \leq \alpha_{ij}$ (Toponogov).
-
-  Von nun an sei $\sec \geq 0$.
-  \begin{align*}
-    \cos \overline \alpha_{ij} = \frac{l_i^2 + l_j^2 - l_{ij}^2}{2l_il_j} \leq \frac{l_i^2 + l_j^2 - l_j^2}{2l_i^2} 
-    = \frac{1}{2} 
-    = \cos \frac{\pi}{3}.\\
-    \Rightarrow \alpha
-  \end{align*}
-
-  \begin{center}
-    \textcolor{red}{Abbildung: Winkel}
-  \end{center}
-  $\{v_i\} \subseteq \underbrace{\overline B_1(0)}_{\mathclap{\text{kompakt}}} \subseteq T_{x_0}\tilde M$ und $\#\{v_i\} = \#\{\gamma_i\}$ endlich.
-
-  \begin{center}
-    \textcolor{red}{Abbildung: Ball auf der $S^{n-1}$}
-  \end{center}
-  $r = \sin \frac{\pi}{6} = \frac{1}{2}$, also sind die B"alle $B_{\frac{1}{2}}(v_i)$ disjunkt.
-  Betrachte das Volumen der \quot{unteren H"alfte}, diese liegt in $B_{\frac{\sqrt{5}}{2}}(0)$.
-  Damit gilt
-  \begin{align*}
-    \frac{\kappa}{2} \operatorname{vol}(B_{\frac{1}{2}}(0)) \leq \operatorname{vol}B_{\frac{\sqrt 5}{2}}(0),
-  \end{align*}
-  also 
-  \begin{align*}
-    \kappa \leq 2 \frac{\operatorname{vol}\left(B_{\frac{\sqrt{5}}{2}}(0)\right)}{\operatorname{vol}\left(B_{\sqrt{\frac{5}{2}}}\right)}
-    = 2\sqrt{5}^n 
-    ( = c(n))
-  \end{align*}
-
-  Fall: $\kappa \geq -\lambda^2$.
-
-  Gibt es eine Durchmesserschranke?
-  \begin{center}
-    \textcolor{red}{Abbildung: Mannigfaltigkeite von bel. Geschlecht}
-  \end{center}
-
-  $\pi_1(\sum g)$ wird erzeugt von $2g$ Elementen.
-
-  $\cos \overline \alpha_{ij} = \frac{\cosh(\lambda l_i)^2 + \cosh(\lambda l_j)^2 - \cosh(\lambda l_{ij})^2}{\sinh(\lambda l_i)\sinh(\lambda l_j)}$.
-  $\overline \alpha_{ij}$ f"allt monoton in $l_i$, so w"achst $\cos \overline \alpha_{ij}$ monotin in $l_i$ und es l"asst sich folge Absch"atzung verwenden:
-  \begin{align*}
-    \cos \overline \alpha_{ij} \leq \cdots \leq \frac{\cosh(\lambda l_j}{\cosh(\lambda l_j) + 1}
-    \leq \frac{\cosh(2 \lambda D + 1)}{\cosh(2 \lambda D + 1) + 1}
-  \end{align*}
-  Jedes $\gamma \in \pi_1(M)$ ist Produkt von Klassen von Schleifen der L"ange $\leq 2D + \epsilon$.
-  \begin{center}
-    \textcolor{red}{Abbildung: Schleife mit Geod"atischen an die Ecken}
-  \end{center}
-
-  Damit funktioniert des Rest des Beweises "ahnlich wie oben.
+\begin{center}
+	\textcolor{red}{Abbildung}
+\end{center}
+Nach Topogonov folgt $\overline \alpha = \overline \alpha_{ij} \leq \alpha_{ij}$.\begin{enumerate}[label=(\roman*),leftmargin=*,widest=ii]
+\item
+	Von nun an sei $\sec \geq 0$.
+	\begin{align*}
+		\cos \overline \alpha_{ij} = \frac{l_i^2 + l_j^2 - l_{ij}^2}{2l_il_j} \leq \frac{l_i^2 + l_j^2 - l_j^2}{2l_i^2} 
+		= \frac{1}{2} 
+		= \cos \frac{\pi}{3}
+	\end{align*}
+	Daraus folgt $\alpha_{ij} \ge \overline\alpha_{ij} \ge \frac{\pi}{3}$
+	\begin{center}
+		\textcolor{red}{Abbildung: Winkel}
+	\end{center}
+	$\{v_i\} \subseteq \underbrace{\overline B_1(0)}_{\mathclap{\text{kompakt}}} \subseteq T_{x_0}\tilde M$ und $\#\{v_i\} = \#\{\gamma_i\}$ endlich.
+	
+	\begin{center}
+		\textcolor{red}{Abbildung: Ball auf der $S^{n-1}$}
+	\end{center}
+	$r = \sin \frac{\pi}{6} = \frac{1}{2}$, also sind die B"alle $B_{\frac{1}{2}}(v_i)$ disjunkt.
+	Betrachte das Volumen der \quot{unteren H"alfte}, diese liegt in $B_{\frac{\sqrt{5}}{2}}(0)$.
+	Damit gilt
+	\begin{align*}
+		\frac{\kappa}{2} \operatorname{vol}(B_{\frac{1}{2}}(0)) \leq \operatorname{vol}B_{\frac{\sqrt 5}{2}}(0),
+	\end{align*}
+	also 
+	\begin{align*}
+		\kappa \leq 2 \frac{\operatorname{vol}\left(B_{\frac{\sqrt{5}}{2}}(0)\right)}{\operatorname{vol}\left(B_{\sqrt{\frac{5}{2}}}\right)}
+		= 2\sqrt{5}^n 
+		( = c(n))
+	\end{align*}
+	
+\item
+	Fall: $\kappa \geq -\lambda^2$.
+	
+	Gibt es eine Durchmesserschranke?
+	\begin{center}
+		\textcolor{red}{Abbildung: Mannigfaltigkeite von bel. Geschlecht}
+	\end{center}
+	
+	$\pi_1(\sum g)$ wird erzeugt von $2g$ Elementen und es gilt
+	\begin{align*}
+		\cos \overline \alpha_{ij} = \frac{\cosh(\lambda l_i)^2 + \cosh(\lambda l_j)^2 - \cosh(\lambda l_{ij})^2}{\sinh(\lambda l_i)\sinh(\lambda l_j)}
+	\end{align*}
+	$\overline \alpha_{ij}$ f"allt monoton in $l_i$, also w"achst $\cos \overline \alpha_{ij}$ monoton in in $l_i$ und es l"asst sich folge Absch"atzung verwenden:
+	\begin{align*}
+		\cos \overline \alpha_{ij} \leq \cdots \leq \frac{\cosh(\lambda l_j)}{\cosh(\lambda l_j) + 1}
+		\leq \frac{\cosh(2 \lambda D + 1)}{\cosh(2 \lambda D + 1) + 1}
+	\end{align*}
+	Jedes $\gamma \in \pi_1(M)$ ist Produkt von Klassen von Schleifen der L"ange $\leq 2D + \epsilon$.
+	\begin{center}
+		\textcolor{red}{Abbildung: Schleife mit Geod"atischen an die Ecken}
+	\end{center}
+	
+	Damit funktioniert des Rest des Beweises "ahnlich wie oben.
+\end{enumerate}
+\hfill\ensuremath{(\Box)}
 \end{emptythm}
 
 
