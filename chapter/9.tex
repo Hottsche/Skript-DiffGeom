@@ -1629,21 +1629,25 @@ Es existiert ein (bis auf Isomorphie) eindeutiges Vergleichsdreieck, wenn gilt:
 \end{Satz}
 
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
-    %	\tikzgitter{(-3,0)}{(3,4)}
-    
-    \coordinate (a) at (3,0); \coordinate (b) at (1.5,3); \coordinate (c) at (-3,0);
-    
-    \draw (c) --node[above]{$a$} node[pos=0.3,sloped]{$>$} (b) --node[right]{$c$} node[pos=0.5,sloped]{$>$} coordinate[pos=0.3] (ct) (a) (c) --node[below]{$b$} node[pos=0.3,sloped]{$>$} (a);
-    \draw[dashed] (c) -- (ct) node[right]{$c(t)$}; \fill (ct) circle (0.05);
-    
-    \begin{scope}
-      \clip (a) -- (b) -- (c) -- cycle;
-      \draw (a) circle(0.75) (b) circle(0.75);
-    \end{scope}
-    
-    \node at ($(b) + (260:0.5)$) {$\beta$}; \node at ($(a) + (150:0.5)$) {$\alpha$};
-    \fill (c) circle(0.05); \node at ($(c) - (0.25,0)$) {$p$};
-  \end{tikzpicture}\end{center}
+	%	\tikzgitter{(-3,0)}{(3,4)}
+	
+	\coordinate (a) at (3,0); \coordinate (ctrla1) at (-0.25,1); \coordinate (ctrla2) at (-1.5,-0.25);
+	\coordinate (b) at (1.5,3); \coordinate (ctrlb1) at (-1,-0.25); \coordinate (ctrlb2) at (0.5,-0.75);
+	\coordinate (c) at (-3,0); \coordinate (ctrlc1) at (1.5,-0.25); \coordinate (ctrlc2) at (1,1);
+	
+	\draw (c) ..controls($(c) + (ctrlc2)$) and($(b) + (ctrlb1)$)..node[above]{$a$} node[pos=0.3,sloped]{$>$} (b) ..controls($(b) + (ctrlb2)$) and($(a) + (ctrla1)$).. node[right,pos=0.6]{$c$} node[pos=0.65,sloped]{$>$} coordinate[pos=0.4] (ct) (a)
+		(c) ..controls($(c) + (ctrlc1)$) and($(a) + (ctrla2)$).. node[below]{$b$} node[pos=0.3,sloped]{$>$} (a);
+	\draw[dashed] (c) -- (ct) node[right]{$c(t)$}; \fill (ct) circle (0.05);
+	
+	\begin{scope}
+		\clip (a) ..controls($(a) + (ctrla1)$) and($(b) + (ctrlb2)$).. (b) ..controls($(b) + (ctrlb1)$) and($(c) + (ctrlc2)$).. (c) ..controls($(c) + (ctrlc1)$) and($(a) + (ctrla2)$).. (a) -- cycle;
+		\draw (a) circle(0.75) (b) circle(0.75);
+	\end{scope}
+	
+	\node at ($(b) + (260:0.5)$) {$\beta$}; \node at ($(a) + (150:0.5)$) {$\alpha$};
+	\fill (c) circle(0.05); \node at ($(c) - (0.25,0)$) {$p$};
+	\node[font=\normalsize] at (3.5,1.5) {$\subset M$};
+\end{tikzpicture}\end{center}
 
 \begin{bem}
   Das Aussschlie"sen von $S^m_{\nicefrac{1}{\sqrt{\kappa}}}$ ist nach dem Satz von Cheng\cite{Cheng1975} keine Einschr"ankung.
@@ -1780,20 +1784,23 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
 	\item[Fall 1 gilt nicht:]
 		Es gibt nun keine eindeutige Geod"atische und f"ur den Umfang gilt $\|a\| + \|b\| + \|c\| \ge \frac{2 \pi}{\sqrt \kappa}$
 		\begin{center}\begin{tikzpicture}[font=\scriptsize,baseline=0]
-		%	\tikzgitter{(-3,0)}{(3,4)}
+			%\tikzgitter{(-3,-3)}{(3,4)}
 		
-			\coordinate (a) at (3,0); \coordinate (b) at (1.5,3); \coordinate (c) at (-3,0);
+			\coordinate (a) at (3,0); \coordinate (ctrla1) at (-0.25,1); \coordinate (ctrla2) at (-1.5,-0.25);
+			\coordinate (b) at (1.5,3); \coordinate (ctrlb1) at (-1,-0.25); \coordinate (ctrlb2) at (0.5,-0.75);
+			\coordinate (c) at (-3,0); \coordinate (ctrlc1) at (1.5,-0.25); \coordinate (ctrlc2) at (1,1);
 		
-			\draw (c) --node[above]{$a$} (b) --node[right,pos=0.7]{$c$} coordinate[pos=0.3] (ct) coordinate[pos=0.5] (ct0) (a) (c) --node[below]{$b$} (a);
+			\draw (c) ..controls($(c) + (ctrlc2)$) and($(b) + (ctrlb1)$).. node[above]{$a$} (b) ..controls($(b) + (ctrlb2)$) and($(a) + (ctrla1)$).. node[right,pos=0.7]{$c$} coordinate[pos=0.3] (ct) coordinate[pos=0.5] (ct0) (a)
+				(c) ..controls($(c) + (ctrlc1)$) and($(a) + (ctrla2)$).. node[below]{$b$} (a);
 			\path (c) -- coordinate[pos=0.2] (c0t) (ct0); \fill (ct0) circle (0.05);
 			\draw[dashed] (c0t) --node[below,pos=0.7]{$c_0$} (ct0) node[right]{$c(t_0)$};
 			\draw[->,thick] (c) -- (c0t);
-			\draw[dashed] (c0t) -- (ct) node[right]{$c(t)$}; \fill (ct) circle (0.05);
+			\draw[dashed] (c0t) --node[above]{$b_t$} (ct) node[right]{$c(t)$}; \fill (ct) circle (0.05);
 			\draw[->] ($(c0t) -(0,0.75)$)node[below]{$c_0(\tau)$} to[bend right=30] ($(c0t) + (0,-0.05)$);
-		
+			
 			\fill (c) circle(0.05); \node at ($(c) - (0.25,0)$) {$p$};
-		\end{tikzpicture}$\quad r_\tau(t) = \tau + \dop (c_0(\tau), c(t))$\\
-		\textcolor{red}{Zeichnung unvollst.}\end{center}		
+			\draw[decorate,decoration={brace}] ($(b)+(0.05,0.01)$) --node[right]{$c_t$} ($(ct)+(0.05,0.01)$);
+		\end{tikzpicture}$\quad r_\tau(t) = \tau + \dop (c_0(\tau), c(t))$\end{center}		
 %%
 %% Vorlesung <2013-2-8 Fri>
 %%
@@ -1838,9 +1845,26 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
 
 \begin{emptythm}[Beweisskizze]
 Es sei $\Gamma = \pi_1(M,p_0) \curvearrowright \tilde M$ und sei $x_0 \in \pi^{-1}(p_0)$.
-\begin{center}
-	\textcolor{red}{Abbildung: "Uberlagerung}
-\end{center}
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+	%\tikzgitter{(-3,-2)}{(3,5)}
+	
+	\tikztorus{(0,0)}
+	\begin{scope}
+		\clip (-1,-1.5) rectangle (0,0);
+		\draw (0,-0.625) ellipse[x radius=0.25,y radius=0.375];
+	\end{scope}\begin{scope}
+		\clip (1,-1.5) rectangle (0,0);
+		\draw[dashed] (0,-0.625) ellipse[x radius=0.25,y radius=0.375];
+	\end{scope}
+	\node at (-0.5,-0.5) {$p_0$};
+	
+	\draw[->] (-3,2) -- (3,2);
+	\draw[->] (-3,2) --node[left]{$\tilde T^2$} (-2,4.5);
+	
+	\draw (-1.25,2.5) node[below left]{$x_0$} --node[right]{$c_\gamma$} (0.75,4) node[right]{$\gamma.c_0$}; \fill (-1.25,2.5) circle(0.05) (0.75,4) circle (0.05);
+	
+	\draw[->] (0.375,3.25) to[out=270+30,in=90-30] (0.375,-0.625);
+\end{tikzpicture}\end{center}
 F"ur $\gamma \in \Gamma$ sei $|\gamma| = \dop(x_0, \gamma . x_0)$.
 Ist dann $c_{\gamma}$ minimal von $x_0$ nach $\gamma . x_0$, so ist eine Projektion $\overline c_{\gamma} = \pi \circ c_{\gamma}$ eine Schleife in $\gamma$.
 Ferner gilt $\#\{\gamma \in \Gamma \mid | \gamma | \leq r \} < \infty$, denn andernfalls g"abe es eine (nichtkonstante) Folge $\gamma_i \in M$ mit $|\gamma_i| \leq r$, das hei"st $\gamma_i . x_0 \in \overline B_r(x_0)$, also ohne Einschr"ankung $\gamma_i . x_0 \xrightarrow{i \to \infty} y$ und $q = \pi(y)$. Dann g"alte
@@ -1914,9 +1938,14 @@ Nach Topogonov folgt $\overline \alpha = \overline \alpha_{ij} \leq \alpha_{ij}$
 		\leq \frac{\cosh(2 \lambda D + 1)}{\cosh(2 \lambda D + 1) + 1}
 	\end{align*}
 	Jedes $\gamma \in \pi_1(M)$ ist Produkt von Klassen von Schleifen der L"ange $\leq 2D + \epsilon$.
-	\begin{center}
-		\textcolor{red}{Abbildung: Schleife mit Geod"atischen an die Ecken}
-	\end{center}
+	\begin{center}\begin{tikzpicture}[font=\scriptsize,decoration={markings,mark=between positions 0 and 1 step 0.05 with{\draw (0,-0.1) -- coordinate(mark-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) (0,0.1);}}]
+			%\tikzgitter{(-0.5,-0.5)}{(10,10)}
+			\clip (-0.5,-0.5) rectangle (3.5,3); %clip weil die Tangentialvektoren so weit rausgehen
+			\fill (0,0) circle(0.05) node[left]{$p_0$}; % Beschriftung fuer p
+			\draw[postaction={decorate}] (0,0) ..controls(0,6.5) and (6.5,0)..node[right,pos=0.8,xshift=1,yshift=-1]{$c_\gamma \in \Gamma$} (0,0); % Kurve mit Strichen als Markierung drauf
+			\draw (0,0) to[out=50,in=180] (mark-13) -- (mark-14) to[out=180,in=40] (0,0); % das Dreieck
+			\draw [decorate,decoration={brace}] ($(mark-13) + (0.15,0)$) --node[xshift=0.2cm] {$\epsilon$} ($(mark-14) + (0.15,0)$); % geschweifte Klammer
+	\end{tikzpicture}\end{center}
 	
 	Damit funktioniert des Rest des Beweises "ahnlich wie oben.
 \end{enumerate}
