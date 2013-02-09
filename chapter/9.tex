@@ -1632,7 +1632,7 @@ Es existiert ein (bis auf Isomorphie) eindeutiges Vergleichsdreieck, wenn gilt:
 	%	\tikzgitter{(-3,0)}{(3,4)}
 	
 	\coordinate (a) at (3,0); \coordinate (ctrla1) at (-0.25,1); \coordinate (ctrla2) at (-1.5,-0.25);
-	\coordinate (b) at (1.5,3); \coordinate (ctrlb1) at (-1,-0.25); \coordinate (ctrlb2) at (0.5,-0.75);
+	\coordinate (b) at (1.5,3); \coordinate (ctrlb1) at (-1,-0.25); \coordinate (ctrlb2) at (0.5,-0.25);
 	\coordinate (c) at (-3,0); \coordinate (ctrlc1) at (1.5,-0.25); \coordinate (ctrlc2) at (1,1);
 	
 	\draw (c) ..controls($(c) + (ctrlc2)$) and($(b) + (ctrlb1)$)..node[above]{$a$} node[pos=0.3,sloped]{$>$} (b) ..controls($(b) + (ctrlb2)$) and($(a) + (ctrla1)$).. node[right,pos=0.6]{$c$} node[pos=0.65,sloped]{$>$} coordinate[pos=0.4] (ct) (a)
@@ -1749,9 +1749,9 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
   und in der obigen Absch"atzung gilt die Gleichheit.
 \end{emptythm}
 
-\begin{emptythm}[Beweisskizze (zum Satz von Alexandrov-Toponogov \ref{thm:satz-alexandrov-toponogov})]\begin{enumerate}[label=(\roman*),leftmargin=*,widest=ii]
+\begin{emptythm}[Beweisskizze (zum Satz von Alexandrov-Toponogov \ref{thm:satz-alexandrov-toponogov})] \textcolor{white}{asdf} \begin{enumerate}[label=(\roman*),leftmargin=*,widest=ii]
 \item
-	\emph{Annahme:} $|a| + |b| + |c| < \frac{2\pi}{\sqrt{\kappa}}$.
+	\emph{Annahme:} Es gelte $|a| + |b| + |c| < \frac{2\pi}{\sqrt{\kappa}}$.
 	Der Fall $|a| + |b| = |c|$ ist trivialerweise korrekt.
 	Es gelte also $|a| + |b| > |c|$, dann ist jedenfalls $p \notin c$.
 	Es seien $r = \dop_p \circ c$ und $e = m_{\kappa} \circ r$ wie oben, sowie $\overline r$ und $\overline c$ f"ur das Vergleichsdreieck.
@@ -1787,7 +1787,7 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
 			%\tikzgitter{(-3,-3)}{(3,4)}
 		
 			\coordinate (a) at (3,0); \coordinate (ctrla1) at (-0.25,1); \coordinate (ctrla2) at (-1.5,-0.25);
-			\coordinate (b) at (1.5,3); \coordinate (ctrlb1) at (-1,-0.25); \coordinate (ctrlb2) at (0.5,-0.75);
+			\coordinate (b) at (1.5,3); \coordinate (ctrlb1) at (-1,-0.25); \coordinate (ctrlb2) at (0.5,-0.25);
 			\coordinate (c) at (-3,0); \coordinate (ctrlc1) at (1.5,-0.25); \coordinate (ctrlc2) at (1,1);
 		
 			\draw (c) ..controls($(c) + (ctrlc2)$) and($(b) + (ctrlb1)$).. node[above]{$a$} (b) ..controls($(b) + (ctrlb2)$) and($(a) + (ctrla1)$).. node[right,pos=0.7]{$c$} coordinate[pos=0.3] (ct) coordinate[pos=0.5] (ct0) (a)
@@ -1799,7 +1799,7 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
 			\draw[->] ($(c0t) -(0,0.75)$)node[below]{$c_0(\tau)$} to[bend right=30] ($(c0t) + (0,-0.05)$);
 			
 			\fill (c) circle(0.05); \node at ($(c) - (0.25,0)$) {$p$};
-			\draw[decorate,decoration={brace}] ($(b)+(0.05,0.01)$) --node[right]{$c_t$} ($(ct)+(0.05,0.01)$);
+			\draw[decorate,decoration={brace}] ($(b)+(0.05,0.01)$) --node[right,yshift=0.125cm]{$c_t$} ($(ct)+(0.05,0.01)$);
 		\end{tikzpicture}$\quad r_\tau(t) = \tau + \dop (c_0(\tau), c(t))$\end{center}		
 %%
 %% Vorlesung <2013-2-8 Fri>
@@ -1812,10 +1812,30 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
 		\end{align*}
 		Damit existiert ein $q \in M$ mit $\dop(p,q) = \frac{\pi}{\sqrt{\kappa}}$, im Widerspruch zur Voraussetzung $M \not\cong S^n_{\frac{1}{\sqrt{\kappa}}}$ (siehe Cheng \cite{Cheng1975}).\index{Cheng}
 	\end{description}	
-\item asdf
-	\begin{center}
-		\textcolor{red}{Abbildung: Variationsfeld}
-	\end{center}
+\item
+	Variationsfeld:
+	\begin{center}\begin{tikzpicture}[font=\scriptsize]
+		%\tikzgitter{(-3,0)}{(3,4)}
+		
+		\coordinate (a) at (3,0); \coordinate (ctrla1) at (-0.25,1); \coordinate (ctrla2) at (-1.5,-0.25);
+		\coordinate (b) at (1.5,3); \coordinate (ctrlb1) at (-1,-0.25); \coordinate (ctrlb2) at (0.5,-0.25);
+		\coordinate (c) at (-3,0); \coordinate (ctrlc1) at (1.5,-0.25); \coordinate (ctrlc2) at (1,1);
+		
+		\draw (c) ..controls($(c) + (ctrlc2)$) and ($(b) + (ctrlb1)$).. node[above]{$a$} (b) ..controls($(b) + (ctrlb2)$) and ($(a) + (ctrla1)$).. node[right]{$c$} (a);
+		\begin{scope}
+			\clip (a) ..controls($(a) + (ctrla1)$) and($(b) + (ctrlb2)$).. (b) ..controls($(b) + (ctrlb1)$) and($(c) + (ctrlc2)$).. (c) ..controls($(c) + (ctrlc1)$) and($(a) + (ctrla2)$).. (a) -- cycle;
+			\draw (b) circle(0.75);
+			\node at ($(b) + (260:0.5)$) {$\beta$};
+		\end{scope}
+		
+		\draw[->] (b) --node[above]{$- \dot a(\|a\|)$} ++($1.5*(ctrlb1)$); \draw[->] (b) --node[above]{$ \dot c(0)$} ++($2*(ctrlb2)$);
+		
+		\foreach \i in {0.1, 0.2, ..., 0.5}{
+			\path (b) ..controls($(b) + (ctrlb2)$) and ($(a) + (ctrla1)$).. coordinate[pos=\i] (pkt) (a);
+			\draw[gray] (c) ..controls(c) and ($(pkt) - (1,0)$).. (pkt);
+		}
+		\fill (c) circle(0.05) node[left]{$p$} (a) circle(0.05);
+	\end{tikzpicture}\end{center}
 	Es sei $c_s$ die minimierende, nach Bogenl"ange parametrisierte Geod"atische von $p$ nach $c(s)$ und $Y$ das von $c_s$ erzeugte Varationsfeld.
 	Dann gilt
 	\begin{align*}
@@ -1887,9 +1907,21 @@ W"are $l_{ij} < l_j = |\gamma_j|$, so g"alte f"ur $\tilde \gamma_j = \gamma_i^{-
 \end{align*}
 im Widerspruch zur Wahl von $\gamma_j$.
 
-\begin{center}
-	\textcolor{red}{Abbildung}
-\end{center}
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+	%\tikzgitter{(-3,0)}{(3,4)}
+	
+	\coordinate (a) at (3,0); \coordinate (ctrla1) at (-0.25,1); \coordinate (ctrla2) at (-1.5,-0.25);
+	\coordinate (b) at (1.5,3); \coordinate (ctrlb1) at (-1,-0.25); \coordinate (ctrlb2) at (0.5,-0.25);
+	\coordinate (c) at (-3,0); \coordinate (ctrlc1) at (1.5,-0.25); \coordinate (ctrlc2) at (1,1);
+	
+	\draw[decoration={markings,mark=at position 0.1 with{\arrow{>}},mark=at position 0.5 with{\arrow{>}}},postaction={decorate}] (c) node[left]{$x_0$} ..controls($(c) + (ctrlc2)$) and($(b) + (ctrlb1)$).. node[above]{$l_i$} node[below]{$c_i$} (b) node[right]{$\gamma_i.x_0=p$} ..controls($(b) + (ctrlb2)$) and($(a) + (ctrla1)$).. node[right,pos=0.7]{$l_{ij}$} (a) node[right]{$\gamma_j.x_0$} ..controls($(a) + (ctrla2)$) and($(c) + (ctrlc1)$).. node[below]{$l_j$} node[above]{$c_j$} (c) -- cycle;
+	\begin{scope}
+		\clip (c) ..controls($(c) + (ctrlc2)$) and($(b) + (ctrlb1)$).. (b) ..controls($(b) + (ctrlb2)$) and($(a) + (ctrla1)$).. (a) ..controls($(a) + (ctrla2)$) and($(c) + (ctrlc1)$).. (c) -- cycle;
+		\draw (c) circle (1);
+		\node at ($(c) + (15:0.6)$) {$\alpha_{ij}$};
+	\end{scope}
+	\fill (a) circle(0.05) (b) circle(0.05) (c) circle(0.05);
+\end{tikzpicture}\end{center}
 Nach Topogonov folgt $\overline \alpha = \overline \alpha_{ij} \leq \alpha_{ij}$.\begin{enumerate}[label=(\roman*),leftmargin=*,widest=ii]
 \item
 	Von nun an sei $\sec \geq 0$.
