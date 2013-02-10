@@ -1631,9 +1631,9 @@ Es existiert ein (bis auf Isomorphie) eindeutiges Vergleichsdreieck, wenn gilt:
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
 	%	\tikzgitter{(-3,0)}{(3,4)}
 	
-	\coordinate (a) at (3,0); \coordinate (ctrla1) at (-0.25,1); \coordinate (ctrla2) at (-1.5,-0.25);
-	\coordinate (b) at (1.5,3); \coordinate (ctrlb1) at (-1,-0.25); \coordinate (ctrlb2) at (0.5,-0.25);
-	\coordinate (c) at (-3,0); \coordinate (ctrlc1) at (1.5,-0.25); \coordinate (ctrlc2) at (1,1);
+	\coordinate (ctrla1) at (-0.25,1); \coordinate (ctrla2) at (-1.5,-0.25);
+	\coordinate (ctrlb1) at (-1,-0.25); \coordinate (ctrlb2) at (0.5,-0.25);
+	\coordinate (ctrlc1) at (1.5,-0.5); \coordinate (ctrlc2) at (0.75,1);
 	
 	\draw (c) ..controls($(c) + (ctrlc2)$) and($(b) + (ctrlb1)$)..node[above]{$a$} node[pos=0.3,sloped]{$>$} (b) ..controls($(b) + (ctrlb2)$) and($(a) + (ctrla1)$).. node[right,pos=0.6]{$c$} node[pos=0.65,sloped]{$>$} coordinate[pos=0.4] (ct) (a)
 		(c) ..controls($(c) + (ctrlc1)$) and($(a) + (ctrla2)$).. node[below]{$b$} node[pos=0.3,sloped]{$>$} (a);
@@ -1785,11 +1785,7 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
 		Es gibt nun keine eindeutige Geod"atische und f"ur den Umfang gilt $\|a\| + \|b\| + \|c\| \ge \frac{2 \pi}{\sqrt \kappa}$
 		\begin{center}\begin{tikzpicture}[font=\scriptsize,baseline=0]
 			%\tikzgitter{(-3,-3)}{(3,4)}
-		
-			\coordinate (a) at (3,0); \coordinate (ctrla1) at (-0.25,1); \coordinate (ctrla2) at (-1.5,-0.25);
-			\coordinate (b) at (1.5,3); \coordinate (ctrlb1) at (-1,-0.25); \coordinate (ctrlb2) at (0.5,-0.25);
-			\coordinate (c) at (-3,0); \coordinate (ctrlc1) at (1.5,-0.25); \coordinate (ctrlc2) at (1,1);
-		
+					
 			\draw (c) ..controls($(c) + (ctrlc2)$) and($(b) + (ctrlb1)$).. node[above]{$a$} (b) ..controls($(b) + (ctrlb2)$) and($(a) + (ctrla1)$).. node[right,pos=0.7]{$c$} coordinate[pos=0.3] (ct) coordinate[pos=0.5] (ct0) (a)
 				(c) ..controls($(c) + (ctrlc1)$) and($(a) + (ctrla2)$).. node[below]{$b$} (a);
 			\path (c) -- coordinate[pos=0.2] (c0t) (ct0); \fill (ct0) circle (0.05);
@@ -1816,10 +1812,6 @@ Die Abstandsfunktion wird nun so modifiziert, dass in der Absch"atzung nicht zwi
 	Variationsfeld:
 	\begin{center}\begin{tikzpicture}[font=\scriptsize]
 		%\tikzgitter{(-3,0)}{(3,4)}
-		
-		\coordinate (a) at (3,0); \coordinate (ctrla1) at (-0.25,1); \coordinate (ctrla2) at (-1.5,-0.25);
-		\coordinate (b) at (1.5,3); \coordinate (ctrlb1) at (-1,-0.25); \coordinate (ctrlb2) at (0.5,-0.25);
-		\coordinate (c) at (-3,0); \coordinate (ctrlc1) at (1.5,-0.25); \coordinate (ctrlc2) at (1,1);
 		
 		\draw (c) ..controls($(c) + (ctrlc2)$) and ($(b) + (ctrlb1)$).. node[above]{$a$} (b) ..controls($(b) + (ctrlb2)$) and ($(a) + (ctrla1)$).. node[right]{$c$} (a);
 		\begin{scope}
@@ -1910,10 +1902,6 @@ im Widerspruch zur Wahl von $\gamma_j$.
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
 	%\tikzgitter{(-3,0)}{(3,4)}
 	
-	\coordinate (a) at (3,0); \coordinate (ctrla1) at (-0.25,1); \coordinate (ctrla2) at (-1.5,-0.25);
-	\coordinate (b) at (1.5,3); \coordinate (ctrlb1) at (-1,-0.25); \coordinate (ctrlb2) at (0.5,-0.25);
-	\coordinate (c) at (-3,0); \coordinate (ctrlc1) at (1.5,-0.25); \coordinate (ctrlc2) at (1,1);
-	
 	\draw[decoration={markings,mark=at position 0.1 with{\arrow{>}},mark=at position 0.5 with{\arrow{>}}},postaction={decorate}] (c) node[left]{$x_0$} ..controls($(c) + (ctrlc2)$) and($(b) + (ctrlb1)$).. node[above]{$l_i$} node[below]{$c_i$} (b) node[right]{$\gamma_i.x_0=p$} ..controls($(b) + (ctrlb2)$) and($(a) + (ctrla1)$).. node[right,pos=0.7]{$l_{ij}$} (a) node[right]{$\gamma_j.x_0$} ..controls($(a) + (ctrla2)$) and($(c) + (ctrlc1)$).. node[below]{$l_j$} node[above]{$c_j$} (c) -- cycle;
 	\begin{scope}
 		\clip (c) ..controls($(c) + (ctrlc2)$) and($(b) + (ctrlb1)$).. (b) ..controls($(b) + (ctrlb2)$) and($(a) + (ctrla1)$).. (a) ..controls($(a) + (ctrla2)$) and($(c) + (ctrlc1)$).. (c) -- cycle;
@@ -1931,14 +1919,64 @@ Nach Topogonov folgt $\overline \alpha = \overline \alpha_{ij} \leq \alpha_{ij}$
 		= \cos \frac{\pi}{3}
 	\end{align*}
 	Daraus folgt $\alpha_{ij} \ge \overline\alpha_{ij} \ge \frac{\pi}{3}$
-	\begin{center}
-		\textcolor{red}{Abbildung: Winkel}
-	\end{center}
+	\begin{center}\begin{tikzpicture}[font=\scriptsize]
+		%\tikzgitter{(-3,0)}{(3,4)}
+		
+		\draw (a) ..controls($(a) + (ctrla2)$) and ($(c) + (ctrlc1)$).. node[above]{$c_j$} (c) ..controls($(c) + (ctrlc2)$) and ($(b) + (ctrlb1)$).. node[below]{$c_i$} (b);
+		\begin{scope}
+			\clip (a) ..controls($(a) + (ctrla2)$) and ($(c) + (ctrlc1)$).. (c) ..controls($(c) + (ctrlc2)$) and ($(b) + (ctrlb1)$).. (b) -- (a);
+			\draw (c) circle (1);
+			\node at ($(c) + (15:0.6)$) {$\alpha_{ij}$};
+		\end{scope}
+		\fill (c) circle(0.05);
+		
+		\draw[->] (c) --node[left]{$v_i = \dot{c}_i(0)$} ++($1.5*(ctrlc2)$);
+		\draw[->] (c) --node[below left]{$v_j = \dot{c}_j(0)$} ++($1.5*(ctrlc1)$);
+	\end{tikzpicture}\end{center}
 	$\{v_i\} \subseteq \underbrace{\overline B_1(0)}_{\mathclap{\text{kompakt}}} \subseteq T_{x_0}\tilde M$ und $\#\{v_i\} = \#\{\gamma_i\}$ endlich.
-	
-	\begin{center}
-		\textcolor{red}{Abbildung: Ball auf der $S^{n-1}$}
-	\end{center}
+	\begin{center}\begin{tikzpicture}[font=\scriptsize]
+		%\tikzgitter{(0,-1.5)}{(6,4)}
+		
+		\def\Radius{4.5};
+		\def\radius{0.5 * \Radius};
+
+		\coordinate (vi) at (30:\Radius);
+		\coordinate (x) at (6,0);
+		
+		\begin{pgfinterruptboundingbox}\begin{scope} % do not update the bounding box
+			\clip (0,0) circle(\Radius);
+			\fill[gray!20] (vi) circle(\radius);
+		\end{scope}\end{pgfinterruptboundingbox}
+		
+		\draw[->] (0,0) --node[above,pos=0.4]{$v_i$} ++(vi);
+		\draw[dashed,name path=waagrecht] (0,0) -- (x);
+		\begin{scope}
+			\clip (0,0) -- (vi) -- (x) -- cycle;
+			\draw (0,0) node[right,xshift=1cm,yshift=0.25cm]{$\ge \frac{\pi}{6}$} circle(1);
+		\end{scope}
+		
+		\draw ($(0,0) + (-10:\Radius)$) node[right]{$S^{n-1}$} arc(-10:70:\Radius);
+		\node at (6,4) {$\B_{\frac{1}{2}}(v_i)$};
+		\draw[name path=kleiner Kreis] (vi) circle (\radius);
+		
+		\draw (vi) --node[left]{$r$} ++(0,-\radius);
+		\draw ($(vi)-(0,\radius)+(0,0.25)$) arc(90:180:0.25);
+		\fill ($(vi)-(0,\radius)+(135:0.125)$) circle(0.02);
+		
+		\begin{pgfinterruptboundingbox} % do not update the bounding box
+			\path [name path global=tangente] ($(vi)!-1!90:(0,0)$) -- ($(vi)!1!90:(0,0)$); % define the tangent path, make it long (20 times the radius of the small circle) to catch all intersections
+		\end{pgfinterruptboundingbox}
+		\path[name intersections={of=kleiner Kreis and tangente}];
+		\coordinate (1) at (intersection-1);
+		\path[name intersections={of=waagrecht and tangente}];
+		\coordinate (2) at (intersection-1);
+		\draw[dashed] (1) -- (2);
+		
+		\draw[decorate,decoration={brace,mirror}] (0,-0.1) --node[below]{$\frac{\sqrt{5}}{2}$} ($(2)-(0,0.1)$);
+		\begin{pgfinterruptboundingbox} % do not update the bounding box
+			\node at (8,2) {$r = \sin \frac{\pi}{6} = \frac{1}{2}$};
+		\end{pgfinterruptboundingbox}
+	\end{tikzpicture}\end{center}
 	$r = \sin \frac{\pi}{6} = \frac{1}{2}$, also sind die B"alle $B_{\frac{1}{2}}(v_i)$ disjunkt.
 	Betrachte das Volumen der \quot{unteren H"alfte}, diese liegt in $B_{\frac{\sqrt{5}}{2}}(0)$.
 	Damit gilt
@@ -1956,9 +1994,57 @@ Nach Topogonov folgt $\overline \alpha = \overline \alpha_{ij} \leq \alpha_{ij}$
 	Fall: $\kappa \geq -\lambda^2$.
 	
 	Gibt es eine Durchmesserschranke?
-	\begin{center}
-		\textcolor{red}{Abbildung: Mannigfaltigkeite von bel. Geschlecht}
-	\end{center}
+	\begin{center}\begin{tikzpicture}%Abbildung: Mannigfaltigkeite von bel. Geschlecht
+		%\tikzgitter{(-7,-2)}{(7,2)}
+		
+		\def\seit{2}
+		\def\hoch{0.7}
+		\def\Hoch{1}
+		
+		% die "Eckpunkte" der Figur
+		\coordinate (a) at (-3*\seit,0); \coordinate (b) at (-2*\seit,\Hoch); \coordinate (c) at (-\seit,\hoch); \coordinate (d) at (0,\Hoch); \coordinate (e) at (\seit,\hoch); \coordinate (f) at (2*\seit,\Hoch);
+		\coordinate (g) at (3*\seit,0);\coordinate (h) at (2*\seit,-\Hoch); \coordinate (i) at (\seit,-\hoch); \coordinate (j) at (0,-\Hoch); \coordinate (k) at (-\seit,-\hoch); \coordinate (l) at (-2*\seit,-\Hoch);
+		
+		\coordinate (ctrlhor) at (0.75,0); \coordinate (ctrlvert) at (0,0.75); %horizontale und vertikale Kruemmungstangenten
+		
+		\coordinate (-1) at (-2*\seit,0); \coordinate (0) at (0,0); \coordinate (1) at (2*\seit,0); %Koordinate der Loecher
+		
+		\draw (a) ..controls+(ctrlvert) and ($(b)-(ctrlhor)$).. (b) ..controls+(ctrlhor) and ($(c)-(ctrlhor)$).. (c) ..controls+(ctrlhor) and ($(d)-(ctrlhor)$).. (d) ..controls+(ctrlhor) and ($(e)-(ctrlhor)$).. (e) ..controls+(ctrlhor) and($(f)-(ctrlhor)$).. (f) ..controls+(ctrlhor) and($(g)+(ctrlvert)$).. (g) ..controls($(g)-(ctrlvert)$) and ($(h) + (ctrlhor)$).. (h) ..controls($(h) - (ctrlhor)$) and ($(i)+(ctrlhor)$).. (i) ..controls($(i) - (ctrlhor)$) and ($(j)+(ctrlhor)$).. (j) ..controls($(j) - (ctrlhor)$) and ($(k)+(ctrlhor)$).. (k) ..controls($(k) - (ctrlhor)$) and ($(l)+(ctrlhor)$).. (l) ..controls($(l) - (ctrlhor)$) and ($(a)-(ctrlvert)$).. (a) -- cycle;
+		
+		%die frei Loecher
+		\foreach \i in {-1, 0, 1}{
+			\begin{scope} % dem Loch aus \tikztorus entnommen
+				\clip ($(\i) - (1,0.5)$) rectangle ($(\i) + (1,1)$);
+				\draw[name path=gkreis] ($(\i)+(0,0.75)$) ellipse[x radius=1.25,y radius = 1];
+			\end{scope}
+			\path[name path=kkreis] ($(\i) - (0,0.5)$) ellipse[x radius=1,y radius = 0.75];
+			\path[name intersections={of=gkreis and kkreis}];
+			\begin{scope}
+				\clip (intersection-1) rectangle ($(intersection-2)+(0,0.5)$);
+				\draw ($(\i) - (0,0.5)$) ellipse[x radius=1,y radius = 0.75];
+			\end{scope}
+			\draw coordinate (l\i) at (intersection-1);
+			\draw coordinate (r\i) at (intersection-2);
+			% nun die Ellipsen um jedes Loch harum
+			\path[name path=kreis] (\i) ellipse[x radius=0.875,y radius = 0.5];
+			\path[name intersections={of=kreis and gkreis}];
+			\begin{scope}
+				\clip ($(intersection-1)+(0.25,0)$) rectangle ($(intersection-2) + (-0.25,1)$);
+				\draw[gray] (\i) ellipse[x radius=0.875,y radius = 0.5];
+			\end{scope}\begin{scope}
+				\clip ($(intersection-1)+(0.25,0)$) rectangle ($(intersection-2) - (0.25,1)$);
+				\draw[gray,dashed] (\i) ellipse[x radius=0.875,y radius = 0.5];
+			\end{scope}
+		}
+		
+		\def\ellipshoehe{0.375cm}
+		
+		\draw[gray] let \p1 = ($ (r-1) - (l0) $), \n2 = {0.5*veclen(\x1,\y1)} in (l0) arc(0:180:\n2 and \ellipshoehe) (r0) arc(180:0:\n2 and \ellipshoehe);
+		\draw[gray,dashed] let \p1 = ($ (r-1) - (l0) $), \n2 = {0.5*veclen(\x1,\y1)} in (l0) arc(360:180:\n2 and \ellipshoehe) (r0) arc(180:360:\n2 and \ellipshoehe);
+		
+		\draw[gray] let \p1 = ($ (l-1) - (a) $), \n2 = {0.5*veclen(\x1,\y1)} in (l-1) arc(0:180:\n2 and \ellipshoehe) (r1) arc(180:0:\n2 and \ellipshoehe);
+		\draw[gray,dashed] let \p1 = ($ (l-1) - (a) $), \n2 = {0.5*veclen(\x1,\y1)} in (l-1) arc(360:180:\n2 and \ellipshoehe) (r1) arc(180:360:\n2 and \ellipshoehe);
+	\end{tikzpicture}\end{center}
 	
 	$\pi_1(\sum g)$ wird erzeugt von $2g$ Elementen und es gilt
 	\begin{align*}

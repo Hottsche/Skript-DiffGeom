@@ -142,17 +142,17 @@
 	
 	% dann das Loch
 	\begin{scope}
-      \clip ($#2 - #1*(1, 0.5)$) rectangle ($#2 + #1*(1, 1)$);
-      \path[draw,name path=gkreis] ($#2 + #1*(0,0.75)$) ellipse (#1*1.25 and #1*1);
-    \end{scope}
-    \path[name path=kkreis] ($#2 - #1*(0,0.5)$) ellipse (#1*1 and #1*0.75);
-    \path[name intersections={of=gkreis and kkreis}];
-    \begin{scope}
-      \clip (intersection-1) rectangle ($(intersection-2)+(0,0.5)$);
-      \draw ($#2 - #1*(0,0.5)$) ellipse (#1*1 and #1*0.75);
-    \end{scope}
-    
-    % definiere Werte auf die wir in der restlichen Zeichnung zurueckgreifen koennen
+		\clip ($#2 - #1*(1, 0.5)$) rectangle ($#2 + #1*(1, 1)$);
+		\path[draw,name path=gkreis] ($#2 + #1*(0,0.75)$) ellipse (#1*1.25 and #1*1);
+	\end{scope}
+	\path[name path=kkreis] ($#2 - #1*(0,0.5)$) ellipse (#1*1 and #1*0.75);
+	\path[name intersections={of=gkreis and kkreis}];
+	\begin{scope}
+		\clip (intersection-1) rectangle ($(intersection-2)+(0,0.5)$);
+		\draw ($#2 - #1*(0,0.5)$) ellipse (#1*1 and #1*0.75);
+	\end{scope}
+	
+	% definiere Werte auf die wir in der restlichen Zeichnung zurueckgreifen koennen
 	\def\torusbreite{#1*2}
 	\def\torushoehe{#1*1}
 	\def\torusdicke{#1*0.75}
