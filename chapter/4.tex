@@ -355,7 +355,7 @@ Also gilt $s \in \calJ_p^{+}$. Analog argumentiert man f"ur $\calJ_p^{-}$.
 \end{Bem}
 
 \begin{Kor}
-Hat $X \in \mathcal V(M)$ kompakten Tr"ager, so ist $X$ vollst"andig. Ist $M$ kompakt, os ist jedes glatte Vektorfeld vollst"andig.
+Hat $X \in \mathcal V(M)$ kompakten Tr"ager, so ist $X$ vollst"andig. Ist $M$ kompakt, so ist jedes glatte Vektorfeld vollst"andig.
 \end{Kor}
 
 \begin{bsp}
@@ -413,25 +413,26 @@ Nun seien $X,Y \in \mathcal V(M)$.
 	
 	\node[font=\normalsize] at (0,0) {$\gamma^t$};
 \end{tikzpicture}\end{center}
-Im Allgemeinen liegen $y_{\gamma^t(p)}$ und $y_p$ in unterschiedlichen Tangentialr"aumen.
+
+Im Allgemeinen liegen $Y_{\gamma^t(p)}$ und $Y_p$ in unterschiedlichen Tangentialr"aumen.
 Da aber $\gamma^t$ (f"ur kleine Zeiten) ein (lokaler) Diffeomorphismus ist, gilt
 \begin{align*}
-  \gamma_{*}^{-t}(y_{\gamma^t(p)})-(\gamma_{*}^{-t}y)_p \in \T_pM.
+  \gamma_{*}^{-t}(Y_{\gamma^t(p)})-(\gamma_{*}^{-t}Y)_p \in \T_pM.
 \end{align*}
-Die Differenz $(\gamma_{*}^{-t}y)_p - y_p$ ist also wohldefiniert. \textcolor{red}{(Ich bin mir nicht sicher ob die $y$ gro\ss  oder klein geschrieben sein sollen -Aleks)}
+Die Differenz $(\gamma_{*}^{-t}Y)_p - Y_p$ ist also wohldefiniert. 
 %\end{Bem}
 
 \begin{Dfn}
   Es seien $X,Y \in \mathcal V(M)$ und $\gamma$ der Fluss von $X$.
 Das durch 
 \begin{align*}
-  p \mapsto \lim_{t\to 0}\frac{1}t\left(\left(\gamma_{*}^{-t}y\right)_p-y_p\right)
+  p \mapsto \lim_{t\to 0}\frac{1}t\left(\left(\gamma_{*}^{-t}Y\right)_p-Y_p\right)
 \end{align*}
 definierte glatte Vektorfeld hei"st \CmMark{Lieableitung} von $Y$ l"angs $X$. Man schreibt $\mathcal L_XY$.
 \end{Dfn}
 
 %\begin{Bem}
-Die Kurve $(\gamma_{*}^{-t}y)_p$ in $\T_pM$ ist glatt und $(\mathcal L_XY)_p = \difffrac[t=0]{}{t}(\gamma_{*}^{-t}Y)_p$. Dass $\mathcal L_XY$ glatt ist, rechnet man entweder in lokalen Koordinaten nach oder benutzt den folgenden Satz.
+Die Kurve $(\gamma_{*}^{-t}Y)_p$ in $\T_pM$ ist glatt und $(\mathcal L_XY)_p = \difffrac[t=0]{}{t}(\gamma_{*}^{-t}Y)_p$. Dass $\mathcal L_XY$ glatt ist, rechnet man entweder in lokalen Koordinaten nach oder benutzt den folgenden Satz.
 %\end{Bem}
 
 % Satz 4.15
@@ -445,7 +446,7 @@ Die Kurve $(\gamma_{*}^{-t}y)_p$ in $\T_pM$ ist glatt und $(\mathcal L_XY)_p = \
 \begin{bew}
 Es seinen $X,Y \in \mathcal V(M)$, $f \in \C^{\infty}(M)$ und $\gamma$ der Fluss von $X$.
 
-Es ist zu zeigen: $[X,Y]_p(f) = \lim_{t \to \infty} \frac{1}{t}\left((\gamma_{*}^{-t}y)_p(f)-y_p(f)\right)$.
+Es ist zu zeigen: $[X,Y]_p(f) = \lim_{t \to \infty} \frac{1}{t}\left((\gamma_{*}^{-t}Y)_p(f)-y_p(f)\right)$.
 Dazu sei (um $(0,p)$)
 \begin{align*}
   h(t,q) = f(\gamma^{-t}(q))-f(q) \text{ und } g_t(q) = \int_0^1 h'(ts,q)ds.
@@ -460,14 +461,14 @@ also $f \circ \gamma^t = f + tg_t$ und
 \end{align*}
 Betrachte:
 \begin{align*}
-  \left(\gamma_{*}^{-t}y\right)_p(f) = y\left(f \circ \gamma^{-t}\right)\left(\gamma^t(p)\right) = y(f)\left(\gamma^t(p)\right) + ty_{g_t}\left(\gamma^t(p)\right).
+  \left(\gamma_{*}^{-t}y\right)_p(f) = Y\left(f \circ \gamma^{-t}\right)\left(\gamma^t(p)\right) = Y(f)\left(\gamma^t(p)\right) + tY_{g_t}\left(\gamma^t(p)\right).
 \end{align*}
 Es folgt:
 \begin{align*}
-  \left(L_XY\right)_q(f) & = \lim \frac{1}t \left((\gamma_{*}^{-t}y)_p(f) - y_p(f)\right)\\
-& = \lim_{t\to 0} \frac{1}t \left(yf(\gamma^t(p))-y_p(f)\right) + \lim_{t\to 0} y_{g_t}\left(\gamma^t(p)\right)\\
-& = \difffrac[t=0]{}{t}\left(yf \circ \gamma^t\right)(p) + yg_0(p)\\
-& = X_p(yf) - y_p(Xf) = [X,Y]_p(f).
+  \left(L_XY\right)_q(f) & = \lim \frac{1}t \left((\gamma_{*}^{-t}Y)_p(f) - Y_p(f)\right)\\
+& = \lim_{t\to 0} \frac{1}t \left(Yf(\gamma^t(p))-Y_p(f)\right) + \lim_{t\to 0} Y_{g_t}\left(\gamma^t(p)\right)\\
+& = \difffrac[t=0]{}{t}\left(Yf \circ \gamma^t\right)(p) + Yg_0(p)\\
+& = X_p(Y f) - Y_p(Xf) = [X,Y]_p(f).
 \end{align*} 
 \end{bew}
 
