@@ -13,7 +13,7 @@
 \setcounter{Loes}{0}
 
 \begin{dfn}[Gra\ss mann-Manningfaltigkeiten]
-Sei $k \le n$ und $\Gr_k(\R^n) = \{ V \subseteq \R^n | \ddim V = k\}$
+Sei $k \le n$ und $\Gr_k(\R^n) = \{ V \subseteq \R^n | \dim V = k\}$
 \end{dfn}
 
 \emph{Behauptung:} $\Gr_k(\R^n)$ ist eine glatte Manningfaltigkeit.
@@ -48,11 +48,11 @@ Definiere
 
 \textbf{Welche Topologie eigentlich?} Sei $V = \{ (v_1,\ldots, v_k) \in (\R^n)^k | v_1,\ldots, v_k$ linear unabh"angig$\}$ und $\pi: V \to \Gr_k(\R^n), (v_1,\ldots ,v_k) \mapsto \mspan\{v_1,\ldots ,v_k\}$. Topologie auf $\Gr_k(\R^n)$: induziert von der Quotientopologie auf $V\modulo{\sim\pi}$, also
 	\[U \subset \Gr_k(\R^n) \text{ offen } \Leftrightarrow \pi^{-1}(U) \text{ offen} \]
-$V$ ist offen in $(\R^n)^k$: $V = \widetilde{\ddet}^{-1}(\R^{\left(\begin{smallmatrix}n \\ k\end{smallmatrix}\right)} \setminus \{0\})$ mit $\widetilde{\ddet}(v_1,\ldots,v_k) = (\ddet(k \times k\text{-Untermatrizen}))$
+$V$ ist offen in $(\R^n)^k$: $V = \widetilde{\det}^{-1}(\R^{\left(\begin{smallmatrix}n \\ k\end{smallmatrix}\right)} \setminus \{0\})$ mit $\widetilde{\det}(v_1,\ldots,v_k) = (\det(k \times k\text{-Untermatrizen}))$
 
 \emph{Zu zeigen:} $\pi^{-1}(U_{X_0})$ offen
 
-$\pi^{-1}(U_{X_0}) = \{(v_1,\ldots ,v_k) \in V |\ \pr_{X_0}|_{\mspan\{v_i\}} \text{ hat vollen Rang}\} = \{(v_1,\ldots ,v_k) \in V|\ \pr_{X_0}(V-i) \text{ sind linear unabh"angig} \} = (\widetilde{\ddet} \circ (\pr_{X_0},\ldots ,\pr_{X_0}))^{-1}(\R^{\left(\begin{smallmatrix}n \\ k\end{smallmatrix}\right)} \textcolor{red}{\setminus \{0\}})$
+$\pi^{-1}(U_{X_0}) = \{(v_1,\ldots ,v_k) \in V |\ \pr_{X_0}|_{\mspan\{v_i\}} \text{ hat vollen Rang}\} = \{(v_1,\ldots ,v_k) \in V|\ \pr_{X_0}(V-i) \text{ sind linear unabh"angig} \} = (\widetilde{\det} \circ (\pr_{X_0},\ldots ,\pr_{X_0}))^{-1}(\R^{\left(\begin{smallmatrix}n \\ k\end{smallmatrix}\right)} \textcolor{red}{\setminus \{0\}})$
 
 $\Rightarrow U_{Y_0}$ ist offen.
 \begin{description}[font=\normalfont\bfseries]
@@ -74,7 +74,7 @@ $\Rightarrow U_{Y_0}$ ist offen.
 	
 	$\varphi_{X_0} \circ \pi$ ist glatt, da $\varphi_{X_0} \circ \pi(v_1,\ldots ,v_k)(x_i) = (\underbrace{B_{X_0} \circ \pi}_{\substack{\text{glatt (Darst.}\\ \text{aus Beh.)}}})(v_1,\ldots ,v_k) - x_i$
 \item[zu 4)]
-	Abz"ahlbare Basis der Topologie wird von $V$ geerbt. \emph{Hausdorffsch}: Seien $X_0 \ne \tilde X_0 \in \Gr_k(\R^n) \xRightarrow[\text{"Ub. Aufg.}]{\text{L. A.}} \exists Z \subseteq \R^n, \ddim Z = n-k: Z \cap X_0 = \{0\} = Z \cap \tilde X_0, U_{\underbrace{Z^\perp}_{k\text{-dim}}} \ni X_0, \tilde X_0$
+	Abz"ahlbare Basis der Topologie wird von $V$ geerbt. \emph{Hausdorffsch}: Seien $X_0 \ne \tilde X_0 \in \Gr_k(\R^n) \xRightarrow[\text{"Ub. Aufg.}]{\text{L. A.}} \exists Z \subseteq \R^n, \dim Z = n-k: Z \cap X_0 = \{0\} = Z \cap \tilde X_0, U_{\underbrace{Z^\perp}_{k\text{-dim}}} \ni X_0, \tilde X_0$
 	
 	\emph{Alternativ:} Sei $w \in X_0 \setminus \tilde X_0$ und $d_w^2: \Gr_k(\R^n) \to \R, Y \mapsto (\dist(w, Y))^2 \Rightarrow d_w^2(X_0) = 0, d_w^2(\tilde X_0) > 0$. Falls $d_w^2$ stetig ist, gilt: $(d_w^2)^{-1}((-\infty, \frac{d_w^2(\tilde X_0)}{2}))$ und $(d_w^2)^{-1}((\frac{d_w^2(\tilde X_0)}{2}, \infty))$ trennen und sind offen.
 \end{description}

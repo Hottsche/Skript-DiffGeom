@@ -93,7 +93,7 @@ Es sei nun ein offenes $U  \subseteq M$ mit den Trivialisierungen $E|_U$ und $E'
 	\draw[->] (2) to[out=270-\angle,in=90+\angle]node[left,font=\scriptsize]{$\Phi' \circ F \circ \Phi^{-1} = \tilde F$} (4);
 	\draw[->] (4) to[out=90-\angle,in=270+\angle]node[right,font=\scriptsize]{$\tilde G = \Phi \circ G \circ \Phi'^{-1}$} (2);
 \end{tikzpicture}\end{center}
-Da $\pi' \circ F = F$ ist, existiert eine Abbildung $f: U \to \GL(k, \R)$ sodass $\tilde F(p,v) = (p, f(p) \cdot v)$ ist. Daraus folgt dass $\tilde G(p,w) = (p, (f(p))^{-1}w)$ glatt ist, da $\cdot^{-1}: \GL(k,\R) \to \GL(k, \R)$ glatt ist (denn $A^{-1} = \frac{1}{\ddet A}((-1)^{i+j} \ddet A[i,j])_{i,j}^T$). Damit ist $G$ glatt und somit auch ein B"undelmorphismus.
+Da $\pi' \circ F = F$ ist, existiert eine Abbildung $f: U \to \GL(k, \R)$ sodass $\tilde F(p,v) = (p, f(p) \cdot v)$ ist. Daraus folgt dass $\tilde G(p,w) = (p, (f(p))^{-1}w)$ glatt ist, da $\cdot^{-1}: \GL(k,\R) \to \GL(k, \R)$ glatt ist (denn $A^{-1} = \frac{1}{\det A}((-1)^{i+j} \det A[i,j])_{i,j}^T$). Damit ist $G$ glatt und somit auch ein B"undelmorphismus.
 \end{Loes}
 
 \begin{Loes}\begin{enumerate}[label=(\alph*),leftmargin=*,widest=a]

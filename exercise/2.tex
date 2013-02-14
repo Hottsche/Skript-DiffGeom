@@ -64,14 +64,14 @@ Also:
 	\item[Variante 1:]
 		Es folgt dass $\D(\phi_i \circ \pi_i \circ (\phi_1 \times \phi_2)^{-1}) = \left( \begin{smallmatrix} 1 & & \\ & \ddots & \\ & & 1\\ & 0 &\end{smallmatrix} \right)$
 		
-		Dies ist die Darstellungsmatrix von $\pi_{1*}$ bez"uglich den Basen $\pdifffrac{}{\phi_1^1}, \ldots, \pdifffrac{}{\phi_1^d}$ und $\pdifffrac{}{(\phi_1 \times \phi_2)^1}, \ldots, \pdifffrac{}{(\phi_1 \times \phi_2)^{\ddim M_1 + \ddim M_2}}$. Also ist $\pi_{1*}$ surjektiv. Auch $\pi_1$ ist surjektiv, also ist $\pi_1$ eine Submersion. Der Beweis f"ur $\pi_2$ folgt analog.
+		Dies ist die Darstellungsmatrix von $\pi_{1*}$ bez"uglich den Basen $\pdifffrac{}{\phi_1^1}, \ldots, \pdifffrac{}{\phi_1^d}$ und $\pdifffrac{}{(\phi_1 \times \phi_2)^1}, \ldots, \pdifffrac{}{(\phi_1 \times \phi_2)^{\dim M_1 + \dim M_2}}$. Also ist $\pi_{1*}$ surjektiv. Auch $\pi_1$ ist surjektiv, also ist $\pi_1$ eine Submersion. Der Beweis f"ur $\pi_2$ folgt analog.
 	\item[Variante 2:]
-		Sei $X = \sum_{j = 0}^{\ddim M_1} \xi^j \pdifffrac[p_1]{}{\phi_1^j} \in \T_{p_1}M_1$. Setze
-			\[ \tilde X = \sum_{j=1}^{\ddim M_1} \xi^j \pdifffrac[p]{}{(\phi_1 \times \phi_2)^j} \in \T_p(M_1 \times M_2). \]
+		Sei $X = \sum_{j = 0}^{\dim M_1} \xi^j \pdifffrac[p_1]{}{\phi_1^j} \in \T_{p_1}M_1$. Setze
+			\[ \tilde X = \sum_{j=1}^{\dim M_1} \xi^j \pdifffrac[p]{}{(\phi_1 \times \phi_2)^j} \in \T_p(M_1 \times M_2). \]
 		Dann ist
 		\begin{align*}
-			\pi_{1*_p} \tilde X &= \sum_{k=1}^{\ddim M_1} \left( \sum_j \smash{\underbrace{\partial_j \left( \phi^k \circ \pi_1 \circ (\phi_1 \times \phi_2)^{-1} \right)}_{= \delta(k,j)}} \left( \phi_1(p_1), \phi_2(p_2) \right) \xi^j \right) \pdifffrac[p_1]{}{\phi_1^k} \\
-			&= \sum_{k=1}^{\ddim M_1} \xi^k \pdifffrac[p_1]{}{\phi_1^k} = X
+			\pi_{1*_p} \tilde X &= \sum_{k=1}^{\dim M_1} \left( \sum_j \smash{\underbrace{\partial_j \left( \phi^k \circ \pi_1 \circ (\phi_1 \times \phi_2)^{-1} \right)}_{= \delta(k,j)}} \left( \phi_1(p_1), \phi_2(p_2) \right) \xi^j \right) \pdifffrac[p_1]{}{\phi_1^k} \\
+			&= \sum_{k=1}^{\dim M_1} \xi^k \pdifffrac[p_1]{}{\phi_1^k} = X
 		\end{align*}
 		Daraus folgt dass $\pi_{1*}$ surjektiv ist.
 	\end{description}
@@ -108,11 +108,11 @@ Also:
 
 \setcounter{Loes}{3}
 \begin{Loes}
-Zeige dass die Gruppen $\SL(n,\R) = \{A \in \R^{n\times n} | \ddet A = 1\}$ und $\Oo(n,\R) = \{A \in \R^{n \times n} | AA^T = I_n\}$ glatte Untermannigfaltigkeiten des $R^{n \times n}$ sind.
+Zeige dass die Gruppen $\SL(n,\R) = \{A \in \R^{n\times n} | \det A = 1\}$ und $\Oo(n,\R) = \{A \in \R^{n \times n} | AA^T = I_n\}$ glatte Untermannigfaltigkeiten des $R^{n \times n}$ sind.
 
 Definiere $f = \det$, dann ist $\SL(n, \R) = f^{-1}(1)$. Dann gilt\marginnote{\scriptsize{\textcolor{gray}{$A[k,j]$ bezeichnet die Matrix $A$ bei der die $k$-te Zeile und die $i$-te Spalte weggelassen wurden}}}
-	\[\pdifffrac{(f)}{a_{ij}} = \pdifffrac{}{a_{ij}} \left( \sum_{k=1}^n(-1)^{k+j} \ddet A[k,j]a_{jk} \right) = (-1)^{i+j} \ddet A[i,j]\]
-Es ist $\D f(A) = 0 \Leftrightarrow \forall i,j \ddet A[i,j] = 0 \Rightarrow \ddet A = 0$, damit ist $1$ regul"arer Wert. Also ist $\ddim \SL(n,\R) = \ddim \R^{n\times n} - \ddim \R = n^2 -1$.
+	\[\pdifffrac{(f)}{a_{ij}} = \pdifffrac{}{a_{ij}} \left( \sum_{k=1}^n(-1)^{k+j} \det A[k,j]a_{jk} \right) = (-1)^{i+j} \det A[i,j]\]
+Es ist $\D f(A) = 0 \Leftrightarrow \forall i,j \det A[i,j] = 0 \Rightarrow \det A = 0$, damit ist $1$ regul"arer Wert. Also ist $\dim \SL(n,\R) = \dim \R^{n\times n} - \dim \R = n^2 -1$.
 
 Definiere nun $g: \R^{n \times n} \to \R^{n \X n}$, $A \mapsto AA^T$. Dann ist $\Oo(n) = g^{-1}(I_n)$ und es gilt
 	\begin{align*}
@@ -121,5 +121,5 @@ Definiere nun $g: \R^{n \times n} \to \R^{n \X n}$, $A \mapsto AA^T$. Dann ist $
 	\end{align*}
 	Seien nun $A \in \Oo(n,\R)$ und $C \in \R_{\text{sym}}^{n \X n}$. Es bleibt zu zeigen dass ein $B \in \R^{n \X n}$ existiert sodass $\D g(A)(B) = C$. Es gilt:
 		\[ \D g\left(A\right)\left(\frac{1}{2}CA\right) = \frac{1}{2} \left( \underbrace{AA^T}_{=I}C^T + C\underbrace{AA^T}_{=I} \right) = C \]
-	Daraus folgt dass $I$ ein regul"arer Wert von $g$ ist und $\Oo(n,\R)$ eine Untermannigfaltigkeit von $\R^{n \X n}$ der Dimension $n^2-\ddim \R_{\text{sym}}^{n \X n} = n^2 - \frac{n(n+1)}{2} = \frac{n(n-1)}{2}$.
+	Daraus folgt dass $I$ ein regul"arer Wert von $g$ ist und $\Oo(n,\R)$ eine Untermannigfaltigkeit von $\R^{n \X n}$ der Dimension $n^2-\dim \R_{\text{sym}}^{n \X n} = n^2 - \frac{n(n+1)}{2} = \frac{n(n-1)}{2}$.
 \end{Loes}
