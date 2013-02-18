@@ -402,7 +402,7 @@ Die Indexform um eine Geod"atische $c$ ist genau dann ausgeartet, wenn ein in de
 % Lemma 9.4
 \begin{Lemma}\label{thm:lemma-9-4}
   Es sei $c \colon [0,1] \to M$ eine Geod"atische, $p = c(0)$.
-  Dann existiert f"ur alle $v,w \in \T_pM$ genau ein Jacobifeld $J$ entlang $c$ mit $J(0) = v, \ J'(0) = w$.
+  Dann existiert f"ur alle $v,w \in \T_pM$ genau ein Jacobifeld $\calJ$ entlang $c$ mit $\calJ(0) = v, \ \calJ'(0) = w$.
 \end{Lemma}
 
 \begin{bew}
@@ -453,22 +453,22 @@ Die Indexform um eine Geod"atische $c$ ist genau dann ausgeartet, wenn ein in de
     \end{tikzpicture}\end{center}
 \end{bsp}
 
-Sind die Startwerte eines Jacobifeldes tangential an $c$, etwa $J(0) =
-\lambda \dot c(0)$ und $J'(0) = \mu \dot c(0)$, so gilt
+Sind die Startwerte eines Jacobifeldes tangential an $c$, etwa $\calJ(0) =
+\lambda \dot c(0)$ und $\calJ'(0) = \mu \dot c(0)$, so gilt
 \begin{align*}
-  J(t) = (\lambda + t\mu)\dot c(t),
+  \calJ(t) = (\lambda + t\mu)\dot c(t),
 \end{align*}
 denn
 \begin{align*}
-  J''(t) = \nabla_t(\mu \dot c(t) + (\lambda + t \mu)\underbrace{\nabla_t\dot c(t)}_{=0}) = \mu\nabla_t\dot c = 0,\\
-  \left.R(J,\dot c)\dot c\right|_t = (\lambda + t\mu)R(\dot c, \dot c)\dot c = 0.
+  \calJ''(t) = \nabla_t(\mu \dot c(t) + (\lambda + t \mu)\underbrace{\nabla_t\dot c(t)}_{=0}) = \mu\nabla_t\dot c = 0,\\
+  \left.R(\calJ,\dot c)\dot c\right|_t = (\lambda + t\mu)R(\dot c, \dot c)\dot c = 0.
 \end{align*}
 Zu $c$ tangentiale Jacobifelder tragen keine geometrischen Informationen; vgl. zweite Ableitung des L"angenfunktionals.
-Gilt f"ur die Startwerte eines Jacobifeldes $J(0)$ und $J'(0) = \dot c(0)^{\perp}$
+Gilt f"ur die Startwerte eines Jacobifeldes $\calJ(0)$ und $\calJ'(0) = \dot c(0)^{\perp}$
 \begin{align*}
-  \left<J',\dot c\right>' = \left<J'',\dot c\right> + \left<J', \nabla_t\dot c\right> = - \left<R(J,\dot c)\dot c,\dot c\right> = 0,
+  \left<\calJ',\dot c\right>' = \left<\calJ'',\dot c\right> + \left<\calJ', \nabla_t\dot c\right> = - \left<R(\calJ,\dot c)\dot c,\dot c\right> = 0,
 \end{align*}
-also $J'(t) \perp \dot c(t)$ f"ur alle Zeiten $t$ und $\left<J,\dot c\right>' = \left<J',\dot c\right> = 0$, somit $J(t) \perp \dot c(t)$ f"ur alle $t$.
+also $\calJ'(t) \perp \dot c(t)$ f"ur alle Zeiten $t$ und $\left<\calJ,\dot c\right>' = \left<\calJ',\dot c\right> = 0$, somit $\calJ(t) \perp \dot c(t)$ f"ur alle $t$.
 
 Der $\R$-Vektorraum der Jacobifelder entlang einer Geod"atischen $c$ hat die Dimension $2 \dim(M)$ und die zu $c$ normalen Jacobifelder bilden einen Vektorraum der Dimension $2 \dim(M) - 2$.
 
@@ -488,10 +488,10 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geod"atischen $c$ hat die Dim
     & = \nabla_s\underbrace{\nabla_t \difffrac{}{t} c_s}_{=0} + \left. R\left(\smash{\underbrace{\difffrac{}{t}c_s}_{=\dot c},\underbrace{\difffrac{}{s}c_s}_{=Y}}\vphantom{\difffrac{}{}}\right) \smash{\underbrace{\difffrac{}{t}c_s}_{=\dot c}}\right|_{s=0}\\
     & = -R(Y,\dot c)\dot c
   \end{align*}
-  Es sei umgekehrt $J$ ein Jacobifeld entlang $c$, $\gamma$ die durch
-  $\gamma(0) = c(0), \ \dot \gamma(0) = J(0)$ definierte Geod"atische,
+  Es sei umgekehrt $\calJ$ ein Jacobifeld entlang $c$, $\gamma$ die durch
+  $\gamma(0) = c(0), \ \dot \gamma(0) = \calJ(0)$ definierte Geod"atische,
   sowie $V$ und $W$ die entlang $\gamma$ parallelen Vektorfelder mit
-  $V(0) = \dot c(0)$ und $W(0) = J'(0)$. Dann ist
+  $V(0) = \dot c(0)$ und $W(0) = \calJ'(0)$. Dann ist
   \begin{align*}
     c_s(t) = \exp_{\gamma(s)}(t(V(s) + sW(s)))
   \end{align*}
@@ -500,7 +500,7 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geod"atischen $c$ hat die Dim
   dem oben Bewiesenen ein Jacobifeld. Es gilt
   \begin{align*}
     Y(0) = \difffrac[s=0]{}{s}\exp_{\gamma(s)}(0) =
-    \difffrac[s=0]{}{s}\gamma(s) = J(0).
+    \difffrac[s=0]{}{s}\gamma(s) = \calJ(0).
   \end{align*}
   und 
   \begin{align*}
@@ -509,9 +509,9 @@ Der $\R$-Vektorraum der Jacobifelder entlang einer Geod"atischen $c$ hat die Dim
       sW(s)))\right|_{s=0}\\
     & = \left.\nabla_s(V(s) + sW(s))\right|_{s=0}\\
     & = V'(0) + W(0) + 0W'(0)\\
-    & = W(0) = J'(0)
+    & = W(0) = \calJ'(0)
   \end{align*}
-  Nach Lemma \ref{thm:lemma-9-4} stimmen $J$ und $Y$ "uberein.
+  Nach Lemma \ref{thm:lemma-9-4} stimmen $\calJ$ und $Y$ "uberein.
 \end{bew}
 
 \begin{emptythm}[Erinnerung (Korollar \ref{thm:kor-8-12} \ref{thm:kor-8-12-iii})]
