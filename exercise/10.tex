@@ -9,6 +9,199 @@
 \setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
 \setcounter{Loes}{0}
 
-\begin{Loes}
-asdf
-\end{Loes}
+"Ubungsblatt 10 enthielt keine Aufgaben, deshalb befassen wir uns hier mit den Geod"atischen von $\H^2$.
+Wir betrachten zun"achst die folgenden drei bisherigen Modelle \begin{description}[leftmargin=*]
+\item[Hyperboloid:]
+	$\{ x \in \R^{2+1} \mid \overbrace{-x_0^2 + x_1^2 + x_2^2}^{= \langle x,x \rangle} = -1, x_0 > 0 \}$ und $\langle \cdot, \cdot \rangle|_{\T_p\H^2 \X \T_p\H^2}$ ist das Skalarprodukt.
+\item[Poincare Kreisscheibenmodell:]
+	$D := \{ \xi \in \R^2 \mid \|\xi\| < 1 \}$, $g_D = \frac{4}{(1 - \|\xi||)^2} \sum \dop \xi^{i} \otimes \dop \xi^{i}$
+\item[Poincare obere Halbebene Modell:]
+	$H := \{ x + iy \in \C \mid y > 0 \}$, $g_H = \frac{1}{y^2}(\dop x \otimes \dop x + \dop y \otimes \dop y)$
+\end{description}
+
+\begin{emptythm}[Isometrie zwischen $D$ und $H$:]
+Betrachte $D$ als Teilmenge von $\C$ mittels $\psi: H \to D$, $z \mapsto \frac{z-i}{z+i}$
+\begin{align*}
+	|\psi(z)|^2 &= \frac{z-i}{z+i} \cdot \frac{\overline z+i}{\overline z-i} = \frac{z \overline z + i\overbrace{(z - \overline z)}^{=2i\Im(z)} + 1}{z \overline z - i(z - \overline z) + 1} = \frac{|z|^2 - 2 \Im(z) + 1}{|z|^2 + 2 \Im(z) + 1} \overset{\Im(z) > 0}{<} 1
+\end{align*}
+Definiere weiter $\phi: D \to H$ mit $\xi = \xi_1 + i \xi_2 \mapsto -i \frac{\xi + 1}{\xi - 1}$. Dann folgt
+\begin{align*}
+	\Im(\phi(\xi)) = \frac{\overbrace{1 - |\xi|^2}^{>0}}{\underbrace{|\xi|^2 - 2 \Re(\xi) + 1}_{\ge (\Re(\xi) - 1)^2 > 0}} > 0
+\end{align*}
+Durch Nachrechnen ergibt sich $\phi \circ \psi = \id$ und $\psi \circ \phi = \id$.
+Da $\phi$ und $\psi$ holomorph sind, folgt dass sie auf $C^\infty$ glatt sind.
+Wir zeigen schlie"slich dass $\psi$ eine Isometrie ist. Dazu fassen wir $\psi$ als reelle Funktion auf:
+\begin{align*}
+	\psi(x, y) = \begin{pmatrix}\psi_1(x,y) \\ \psi_2(x,y)\end{pmatrix}
+\end{align*}
+Da $\psi$ holomorph ist erf"ullt $\psi$ auch die Cauchy-Riemannschen Differentialgleichungen:
+\begin{align*}
+	\pdifffrac{\psi_1}{x} = \pdifffrac{\psi_2}{y}& &\pdifffrac{\psi_1}{y} = \pdifffrac{\psi_2}{x}
+\end{align*}
+Es sei $p = (x, y) \in H$ und sei $ye_1, ye_2$ eine Orthonormalbasis von $\T_pH$. Dann gilt:
+\begin{align*}
+	g_D(\psi_{*p}(y e_1), \psi_{*p}(ye_2)) &= y^2 g_D \left(\pdifffrac{\psi}{x}, \pdifffrac{\psi}{y} \right) \\
+	&= \frac{4y^2}{(1 - \|\psi\|^2)^2} \cdot \left( \pdifffrac{\psi_1}{x} \cdot \pdifffrac{\psi_1}{y} + \pdifffrac{\psi_2}{x} \cdot \pdifffrac{\psi_2}{y} \right) \\
+	&= 0 \\
+	g_D(\psi_{*p}(y e_1), \psi_{*p}(ye_1)) &= \frac{4y^2}{(1 - \|\psi\|^2)^2} \cdot \left( \left( \pdifffrac{\psi_1}{x} \right)^2 + \left( \pdifffrac{\psi_2}{x} \right)^2 \right) \\
+	&= \ldots = 1 \\
+	g_D(\psi_{*p}(y e_2), \psi_{*p}(ye_2)) &= \ldots = 1
+\end{align*}
+Daraus folgt dass $\psi_*$ eine Orthonormalbasis auf eine Orthonormalbasis abbildet und daher ist $\psi$ eine Isometrie.
+\end{emptythm}
+
+\begin{emptythm}[Isometrien von $H$]
+Zu $a, b, c, d \in \R$ mit $ad - bc > 0$ betrachte 
+\begin{align*}
+	h(z) = \frac{az + b}{bz + d} \tag{(spezielle) M"obiustransformation}
+\end{align*}
+Es gilt:
+\begin{align*}
+	\Im(h(z)) &= \Im \left( \frac{(az + b)(c\overline{z} + d)}{|cz + d|^2} \right) \\
+	&= \Im \left( \frac{acz\overline{z} + bd + adz + bc\overline{z}}{|cz + d|^2} \right) \\
+	&= \frac{(ad - bc) \Im(z)}{|cz + d|^2} > 0 \tag{f"ur $z \in H$}
+\end{align*}
+Es gilt somit $h: H \to H$, sowie
+\begin{align*}
+	h^{-1}(z) = \frac{1}{ad-bc} \cdot \frac{dz-b}{-cz+a} \tag{nachrechnen}
+\end{align*}
+Daraus folgt dass $h$ ein Diffeomorphismus ist.
+F"ur $v \in \T_zH$ und $v = \left( \begin{smallmatrix} v_1 \\ v_2 \end{smallmatrix} \right)$ gilt:
+\begin{align*}
+	h_{*z}V = Dh|_z V &= \begin{pmatrix} v_i \pdifffrac{\Re(h)}{x} + v_2 \pdifffrac{\Re(h)}{y} \\ v_2 \pdifffrac{\Im(h)}{x} + v_2 \pdifffrac{\Im(h)}{y} \end{pmatrix} \overset{\text{C-R}}{\underset{\text{DGL}}{=}} \begin{pmatrix} v_1 \lambda - v_2 \mu \\ v_2 \mu + v_2 \lambda \end{pmatrix} & \begin{matrix} \pdifffrac{\Re(h)}{x} =: \lambda \\ \pdifffrac{\Im(h)}{x} =: \mu \end{matrix}\\
+	&= \begin{pmatrix} \Re((\lambda + i \mu)(v_1 + i v_2)) \\ \Im((\lambda + i \mu)(v_1 + i v_2)) \end{pmatrix} \\
+	&= \begin{pmatrix} \Re(h'(z) \cdot (v_1 + i v_2)) \\ \Im(h'(z) \cdot (v_1 + i v_2)) \end{pmatrix}
+\end{align*}
+F"ur $v, w \in \T_zH$ gilt:
+\begin{align*}
+	g_H(v, w) &= \frac{1}{\Im(z)^2} (v_1 w_1 + v_2 w_2) \\
+	&= \frac{1}{\Im(z)^2} \Re(\underbrace{(v_1 + iv_2)}_{=: \tilde{v}} \overline{\underbrace{(w_1 + i w_2)}_{=:\overline{\tilde{w}}}})
+\end{align*}
+Es ist
+\begin{align*}
+	h'(x) = \frac{a(cz + d) - c(az + b)}{(cz + d)^2} = \frac{ad - bc}{(cz + d)^2}
+\end{align*}
+Daraus folgt dann
+\begin{align*}
+	g_H|_{h(z)}(h_{*z}v, h_{*z}w) &= \frac{1}{(\Im(h(z)))^2} \cdot \Re(h'(z) \tilde{v} \overline{h'(z) \tilde{w}}) \\
+	&= \frac{|h'(z)|^2}{\Im(h(z))^2} \cdot \Re(\tilde{v} \overline{\tilde{w}}) = \frac{|h'(z)|^2}{\Im(h(z))^2} \cdot g_h|_z(v,w)
+\end{align*}
+Wobei $\Im(h(z)) = \frac{ad - bc}{|cz + d|^2} \cdot \Im(z) = |h'(z)| \cdot \Im(z)$ gilt, daraus folgt dass $h$ eine Isometrie ist.
+\end{emptythm}
+
+\begin{bsp}\begin{enumerate}[label=(\arabic*),leftmargin=*]
+\item
+	F"ur $w \in H$ ist
+	\begin{align*}
+		h_w(z) = \frac{\Im(w) \cdot z + \Re(w)}{0 \cdot z + 1} = \Im(w) \cdot z + \Re(w)
+	\end{align*}
+	eine Isometrie von $H$, da $\Im(w) > 0$ und $h_w(i) = \Im(w) i + \Re(w) = w$. Daraus folgt dass es gen"ugt die Geod"atischen durch $i$ zu betrachten.
+\item
+	F"ur $\vartheta \in \R$ ist
+	\begin{align*}
+		h_\vartheta = \frac{\cos(\vartheta)z - \sin(\vartheta)}{\sin(\vartheta)z + \cos(\vartheta)}
+	\end{align*}
+	Eine Isometrie von $H$ mit
+	\begin{align*}
+		h_\vartheta(i) = i \frac{\cos(\vartheta) - \frac{1}{i} \sin(\vartheta)}{\sin(\vartheta) i + \cos(\vartheta)} = i
+	\end{align*}
+	und
+	\begin{align*}
+		h_{\vartheta}'(i) = \frac{1}{(\sin(\vartheta) i + \cos(\vartheta))^2} = e^{-2i\vartheta}
+	\end{align*}
+	F"ur $v \in \T_iH$ mit $\|v\| = 1$ k"onnen wir also $\vartheta \in \R$ w"ahlen mit $h_{\vartheta *}e_2 = v$.
+	Daraus folgt dass es gen"ugt die Geod"atischen $\gamma$ mit $\gamma(0) = i$ und $\dot\gamma(0) = e_2$ zu bestimmen.
+	\begin{align*}
+		g_{ij,1} &= \pdifffrac{g_{ij}}{x} = \delta_{ij} \cdot \pdifffrac{}{x} \left( \frac{1}{y^2} \right) = 0 \\
+		g_{ij,2} &= \pdifffrac{g_{ij}}{y} = \delta_{ij} \cdot \frac{-2}{y^3} \\
+		g_{kl} &= y^2 \cdot \delta_{kl} \\
+		\Gamma_{ij}^k &= \frac{1}{2} \sum_{l=1}^2 g^{kl} (g_{jl,i} - g_{ij,l} + g_{il,j})
+	\end{align*}
+	Daraus folgt
+	\begin{align*}
+		\Gamma_{12}^1 &= \Gamma_{21}^1 = - \frac{1}{y} \\
+		\Gamma_{11}^2 &= \frac{1}{y}, \Gamma_{22}^2 = - \frac{1}{y}
+	\end{align*}
+	alle Anderen sind \quot{$=0$}.
+	Die geod"atische Differentialgleichung lautet $\ddot\gamma^k + \sum_{ij} (\Gamma_{ij}^k \circ \gamma) \cdot \dot\gamma^{i} \cdot \dot\gamma^j = 0$. Daraus folgt
+	\begin{align*}
+		\ddot\gamma^1 - \frac{2}{\gamma^2} \dot\gamma^1 \cdot \dot\gamma^2 &= 0 \\
+		\ddot\gamma^2 - \frac{1}{\gamma^2} ((\dot\gamma^2)^2 - (\dot\gamma^1)^2) &= 0
+	\end{align*}
+	\begin{description}[font=\normalfont\itshape,leftmargin=*]
+	\item[Ansatz:]
+		$\gamma^1 \equiv 0$ (erf"ullt die erste Gleichung) $\leadsto \ddot\gamma^2 = \frac{1}{\gamma^2}(\dot\gamma^2)^2$
+	\item[L"osung:]
+		$\gamma^2(t) = e^t$
+	\end{description}
+	Damit ist $\gamma(t) = ie^t$ die Geod"atische durch $i$ mit der Startrichtung $e_2$.
+	Die anderen Geod"atischen, die in $i$ starten sind von der Form
+	\begin{align*}
+		h_\vartheta(\gamma(t)) = \frac{\cos(\vartheta) i e^t - \sin(\vartheta)}{\sin(\vartheta) i e^t + \cos(\vartheta)}
+	\end{align*}
+	M"obiustransformationen bilden Geraden und Kreise auf Geraden und Kreise ab.
+	Damit ist $\gamma_\vartheta = h_\vartheta \circ \gamma$ eine Gerade oder ein Kreis.
+	\begin{align*}
+		\gamma_\vartheta(t) \to \begin{cases} -\frac{\sin \vartheta}{\cos \vartheta} & \text{ f"ur } t \to -\infty \\ \frac{\cos \vartheta}{\sin \vartheta} & \text{f"ur } t \to \infty \end{cases}
+	\end{align*}
+	F"ur $\sin \vartheta, \cos \vartheta \ne 0$ ergibt sich:
+	\begin{center}\begin{tikzpicture}[font=\scriptsize]
+		\def\Radius{1.5}
+		\def\radius{1}
+		\draw[name path=achse] (-2,0) -- (4,0);
+		\draw (0,-0.5) --node[left,pos=0.8]{$\gamma$} (0,2);
+		
+		\draw (2*\Radius,0) arc[start angle=0,end angle=180,radius=\Radius];
+		\draw (2*\Radius,0) -- ++(0,1) (2*\Radius + 0.25,0) arc[start angle=0,end angle=90,radius=0.25];
+		\fill ($(2*\Radius,0) + (45:0.125)$) circle(0.03);
+		
+		\draw (\Radius,0.25) -- +(300:1.25) node[right]{?};
+		
+		\clip (0,0) rectangle (2*\Radius,2*\Radius);
+		\draw[name path=kreis] (\Radius+\radius,-0.5) arc[start angle=0,end angle=180,radius=\radius];
+		
+		\path[name intersections={of=kreis and achse}];
+		\coordinate (pkt) at (intersection-1);
+		\draw ($(pkt)!-1!0:(\Radius+\radius,-0.5)$) coordinate (endpkt) -- ($(pkt)!1!0:(\Radius+\radius,-0.5)$); % Tangente
+		\clip (pkt) --(endpkt) -- (4,0) -- cycle;
+		\draw (pkt) circle(0.25);
+	\end{tikzpicture}\end{center}
+	Es ist
+	\begin{align*}
+		\frac{\dot\gamma_\vartheta(t)}{|\dot\gamma_\vartheta(t)|} = \ldots = \frac{i \cos \vartheta + e^t \sin \vartheta}{\cos \vartheta + i e^t \sin \vartheta} \to \begin{cases} i & \text{f"ur } t \to -\infty \\ -i & \text{f"ur } t \to \infty \end{cases}
+	\end{align*}
+	Also schneidet der Kreis die $\R$-Achse im rechten Winkel und damit liegt der Mittelpunkt in $\R$: $\frac{1}{2} \left( \frac{\cos \vartheta}{\sin \vartheta} - \frac{\sin \vartheta}{\cos \vartheta} \right)$.
+	Wegen $h_w(\R) \subset \R$ gilt das Gleiche f"ur alle Geod"atischen.
+	\begin{center}\begin{tikzpicture}[font=\scriptsize,remember picture]
+		\def\Radius{2.5}
+		\tikzstyle{reverseclip}=[insert path={(current page.north east) -- (current page.south east) -- (current page.south west) -- (current page.north west) -- (current page.north east)}]
+		
+		\draw[name path=Kreis] (0,0) circle(\Radius);
+		\clip (0,0) circle(\Radius);
+		
+		\def\angleA{250}
+		\def\angleB{\angleA - 180}
+		\coordinate (a) at (\angleA:\Radius); \coordinate (b) at ($-1*(a)$);
+		\draw (a) -- (b);
+		\begin{scope}
+			\clip (a) arc[start angle=\angleA,end angle=430,radius=\Radius] -- cycle;
+			\draw (a) circle(0.25);
+			\fill ($(a) + (45 - 270 + \angleA:0.125)$) circle(0.03);
+		\end{scope}\begin{scope}
+			\clip (b) arc[start angle=\angleB,end angle=\angleA,radius=\Radius] -- cycle;
+			\draw (b) circle(0.25);
+			\fill ($(b) + (225 - 90 + \angleB:0.125)$) circle(0.03);
+		\end{scope}
+		
+		\begin{pgfinterruptboundingbox}		
+			\draw[name path=kreis] (\angleA:1.5*\Radius) circle(1.5*\Radius);
+			\path[clip] (\angleA:1.5*\Radius) circle(1.5*\Radius) [reverseclip];
+			\path[name intersections={of=kreis and Kreis}];
+			\foreach \i in {1,2}{
+				\draw (intersection-\i) circle (0.25);
+				\draw ($(intersection-\i)!-0.25!90:(\angleA:1.5*\Radius)$) -- ($(intersection-\i)!0.25!90:(\angleA:1.5*\Radius)$); % Tangente
+			}
+			\fill ($(intersection-1) + (85:0.125)$) circle(0.03) ($(intersection-2) + (55:0.125)$) circle(0.03);
+		\end{pgfinterruptboundingbox}
+	\end{tikzpicture}\end{center}
+\end{enumerate}\end{bsp}
