@@ -10,5 +10,58 @@
 \setcounter{Loes}{0}
 
 \begin{Loes}
+Offensichtlich gilt $\calJ(0) = 0$.
+Au"serdem gilt nach der Kettenregel f"ur die Ableitung
+\begin{align*}
+\difffrac[s=0]{}{s} (\exp_p(t(v+sw))) = (\exp_p)_{*tv}(tw) = \calJ(t)
+\end{align*}
+Wir erhalten dann
+\begin{align*}
+	\calJ'(0) &= \nabla_t (\exp_{p*tv}(tw))|_0 = \nabla_t (t \cdot \exp_{p*tv}(w))|_0 \\
+	&= \exp_{p*tv}(w) + t \cdot \nabla_t (\exp_{p*tv}(w))|_0 \\
+	&= w
+\end{align*}
+Ferner gilt $|\calJ(t)|^2 = \langle \calJ(t), \calJ(t) \rangle$. Wir betrachten nun die Ableitungen davon:
+\begin{align*}
+	\langle \calJ, \calJ \rangle' (0) &= 2 \langle \calJ', \calJ \rangle (0) = 0 \\
+	\langle \calJ, \calJ \rangle'' (0) &= 2 \left( \langle \calJ'', \calJ \rangle + \langle \calJ', \calJ' \rangle \right) (0) \\
+	&= 2 \|w\|^2 = 2 \\
+	\langle \calJ, \calJ \rangle''' (0) &= 2 \left( \langle \calJ''', \calJ \rangle + \langle \calJ'', \calJ' \rangle + 2 \langle \calJ'', \calJ' \rangle \right) (0) \\
+	&= 6 \langle \calJ''(0), \calJ'(0) \rangle = -6 \langle R(\dot\gamma(0), \underbrace{\calJ(0)}_{=0}) \dot\gamma(0), \calJ'(0) \rangle = 0 \\
+	\calJ'''(0) &= \nabla_t(\calJ''(t))|_0 = \nabla_t (-R(\calJ, \dot\gamma) \dot\gamma)|_0 \\
+	&= \nabla_{\dot\gamma} (-R(\calJ, \dot\gamma) \dot\gamma) \overset{\text{Hinweis}}{=} -R(\calJ', \dot\gamma) \dot\gamma|_0 \\
+	&= -R(w,v) v \\
+	\langle \calJ, \calJ \rangle^{(4)}(0) &= 2 \left( \langle \calJ^{(4)}, \calJ \rangle + \langle \calJ''', \calJ' \rangle + 3 \left( \langle \calJ''', \calJ' \rangle + \langle \calJ'', \calJ'' \rangle \right) \right) (0) \\
+	&= 8 \langle \calJ'''(0), \calJ'(0) \rangle = -8 \langle R(w, v) v, w \rangle \\
+	&= -8 \sec(\sigma)
+\end{align*}
+\begin{description}[leftmargin=*]\item[Beweis des Hinweises]
+F"ur alle Vektorfelder $W$ l"angs $\gamma$ gilt:
+\begin{align*}
+	\langle \nabla_t (R(\dot\gamma, \calJ) \dot\gamma), w \rangle (0) &= \difffrac[t=0]{}{t} ( \langle R(\dot\gamma, \calJ) \dot\gamma, w \rangle) - \langle \underbrace{R(\dot\gamma, \calJ) \dot\gamma}_{= 0 \text{ in } 0}, \nabla_t w \rangle (0) \\
+	&= \difffrac[t=0]{}{t} ( \langle R(\dot\gamma, w) \dot\gamma, \overbrace{\calJ}^{\mathclap{=0 \text{ in } 0}}) \\
+	&= \langle \nabla_t ( R(\dot\gamma, w) \dot\gamma), \calJ \rangle (0) + \langle R(\dot\gamma, w) \dot\gamma, \calJ' \rangle (0) \\
+	&= \langle R(\dot\gamma, \calJ') \dot\gamma, w \rangle (0)
+\end{align*}
+\hfill\ensuremath{\Box}
+\end{description}
+Aus den Ableitungen folgt nun
+\begin{align*}
+	|\calJ(t)|^2 &= 0 + 0 \cdot t + \frac{1}{2} \cdot 2 \cdot t^2 + 0 \cdot t^3 + \frac{1}{4} \cdot (-8) \cdot \sec(\sigma) \cdot t^4 + O(t^4) \\
+	&= t^2 - \frac{1}{3} \sec(\sigma) t^4 + O(t^4) 
+\end{align*}
+Es sei nun
+\begin{align*}
+	|\calJ(t)| &= a_0 + a_1 t + a_2 t^2 + a_3 t^3 + O(t^3) \\
+	|\calJ(t)|^2 &= a_0^2 + 2 a_0 a_1 t + (2 a_0 a_2 + a_1^2) t^2 + 2( a_0a_3 + a_1 a_2) t^3 + (2 a_3 a_1 + a_2^2) t^4 + O(t^4)
+\end{align*}
+Der Koeffizientenvergleich liefert:
+\begin{align*}
+	a_0 = 0, && a_1^2 = 1, && a_2 = 0, && a_3 = -\frac{1}{6} \sec(\sigma)
+\end{align*}
+und es gilt $a_1 = 1$ denn $|\calJ(t)| \ge 0$.
+\end{Loes}
+
+\begin{Loes}
 asdf
 \end{Loes}
