@@ -86,8 +86,10 @@ eine Karte von $\T M$. Alle diese Karten bilden dann einen Atlas von $\T M$.
 		$t \mapsto \gamma_*^t(p)$ ist Integralkurve von $X$ mit $\gamma_x^0(p) = p$. \emph{Gesucht:} Kurve mit $\gamma(0) = p$, $\gamma_{*t}\pdifffrac{}{t} = X(\gamma(t)) \Leftrightarrow \gamma_{*t}\pdifffrac{}{t}(x) = X(\gamma(t))(x)$ und $\gamma_{*t}\pdifffrac{}{t}(y) = X(\gamma(t))(y) \Leftrightarrow \gamma_1'(t) = - \gamma_2(t)$ und $\gamma_2'(t) = \gamma_1(t)$. Das Anfangswertproblem
 			\[ \begin{pmatrix} \gamma_1 \\ \gamma_2 \end{pmatrix}' (t) = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \begin{pmatrix} \gamma_1(t) \\ \gamma_2(t) \end{pmatrix} \text{ und } \gamma(0) = p \]
 		hat als L"osung $t \mapsto \exp(t \left( \begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix} \right) ) \cdot p$. Es gilt:
-			\[ \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}^{2n} = \begin{pmatrix} (-1)^n & 0 \\ 0 & (-1)^n \end{pmatrix} \text{ und } 
-				\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}^{2n+1} = (-1)^n \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \]
+			\begin{align*}
+				\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}^{2n} = \begin{pmatrix} (-1)^n & 0 \\ 0 & (-1)^n \end{pmatrix} &&\text{und}&&
+				\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}^{2n+1} = (-1)^n \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}
+			\end{align*}
 		Damit gilt:
 		\begin{align*}
 			\exp\left(t \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \right) &= \sum_{k=0}^{\infty} \frac{1}{k!} t^k (\ldots)^k\\

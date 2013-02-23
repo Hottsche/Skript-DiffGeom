@@ -31,19 +31,21 @@ Sei $\{U_\alpha | \alpha \in I\}$ eine offene "Uberdeckung vom $M$, $g_{\alpha\b
 	\[ [(p,v)_\alpha] + \lambda[(p,w)_\alpha] := [(p, v + \lambda w)_\alpha] \]
 	\begin{description}[font=\normalfont\itshape,leftmargin=*]
 	\item[unabh"angig von $\alpha$:]
-		\[\begin{array}{rl}
-			[(p,v)_\beta] + \lambda[(p,w)_\beta] &= [(p,g_{\alpha\beta}(p)v)_\alpha] + \lambda[(p,g_{\alpha\beta}(p)w)_\alpha]\\
-				&= [(p,g_{\alpha\beta}(p)v + \lambda g_{\alpha\beta}(p)w)_\alpha]\\
+		\begin{align*}
+			[(p,v)_\beta] + \lambda[(p,w)_\beta] &= [(p,g_{\alpha\beta}(p)v)_\alpha] + \lambda[(p,g_{\alpha\beta}(p)w)_\alpha] \\
+				&= [(p,g_{\alpha\beta}(p)v + \lambda g_{\alpha\beta}(p)w)_\alpha] \\
 				&= [(p,g_{\alpha\beta}(p) \cdot(v + \lambda w))_\alpha] = [(p,v + \lambda w)_\beta]
-		\end{array}\]
+		\end{align*}
 	\item[$k$-dimensional:]
 		$q|_{\{p\} \X \R^k} : \{p\} \X \R^k \to E_p$ ist Vektorraum-Isomorphismus (wobei $q: \dot \bigcup_{\alpha \in I} (U_\alpha \X \R^k) \to E$)
 	\end{description}
 \item[B"undelkarten (glatt):]
 	$\Phi_\alpha: U_\alpha \X \R^k \to E|_{U_\alpha}$, $(p,v) \mapsto [(p,v)_\alpha]$ ist Hom"oomorphismus, da $\sim|_{(U_\alpha \X \R^k) \X (U_\alpha \X \R^k)}$ die triviale "Aquivalenzrelation ist.
-	\[\begin{array}{rl} \Phi_\alpha \circ \Phi_\beta^{-1}(p,v) &= \Phi_\alpha([(p,v)_\beta])\\
+	\begin{align*}
+		\Phi_\alpha \circ \Phi_\beta^{-1}(p,v) &= \Phi_\alpha([(p,v)_\beta])\\
 		&= \Phi_\alpha([(p,g_{\alpha\beta}(p)v)_\alpha])\\
-		&= (p, g_{\alpha\beta}(p)v) \end{array}\]
+		&= (p, g_{\alpha\beta}(p)v)
+	\end{align*}
 	$\Rightarrow \Phi_\alpha \circ \Phi_\beta^{-1}$ ist glatt. $\Phi_\alpha|_{E_p}$ ist Vektorraum-Isomorphismus.
 \item[\quot{normale} Karten:]
 	Sei $\phi$ Karte von $M$ mit Kartengebiet $U \subset U_\alpha$ $\leadsto$ $\overline\phi_\alpha: E|_U \to \phi(U) \X \R^k$, $e \mapsto (\phi(\pi(e)), (\Phi_\alpha)^2(e))$.
@@ -59,9 +61,11 @@ Sei $\{U_\alpha | \alpha \in I\}$ eine offene "Uberdeckung vom $M$, $g_{\alpha\b
 	\end{description}
 \item[abz"ahlbare basis der Topologie (f"ur $\bm{U_{\alpha}} \bm{\X} \R^{\bm{k}} \bm{\checkmark}$):]
 	Es gibt ein $I ' \subseteq I$ mit $I$ abz"ahlbar und $M = \bigcup_{\alpha \in I'} U_\alpha$. Sei $\{V_j | j \in J'\}$ abz"ahlbare Basis der Topologie von $M$. Dann ist mit $J = \{j \in J' | V_j \subset U_\alpha \text{ f"ur ein } \alpha \in I\}$, $\{V_j | j \in J\}$ auch abz"ahlbare Basis der Topologie von $M$, denn $U \underset{\mathclap{\text{offen}}}{\subset} M$ $\Rightarrow$
-		\[\begin{array}{rcl} U &=& \bigcup\limits_{\alpha \in I} (U_\alpha \cap U)\\
-			&=& \bigcup\limits_{\alpha \in I} \bigcup\limits_{\substack{j \in J' \\ U_j \subset U_\alpha \cap U}} V_j \qquad \textcolor{gray}{(U_j \subset U_\alpha \cap U \Rightarrow j \in J)}\\
-			&=& \bigcup\limits_{\alpha \in I} \bigcup\limits_{\substack{j \in J \\ V_j \subset U_\alpha \cap M}} V_j \end{array}\]
+	\begin{align*}
+		U &= \bigcup\limits_{\alpha \in I} (U_\alpha \cap U) \\
+		&= \bigcup\limits_{\alpha \in I} \bigcup\limits_{\substack{j \in J' \\ U_j \subset U_\alpha \cap U}} V_j \tag{$U_j \subset U_\alpha \cap U \Rightarrow j \in J$} \\
+		&= \bigcup\limits_{\alpha \in I} \bigcup\limits_{\substack{j \in J \\ V_j \subset U_\alpha \cap M}} V_j
+	\end{align*}
 	F"ur $j \in J$ sei $\alpha(j) \in I$, sodass $V_j \subset U_{\alpha(j)}$. Setze $I' := \{ \alpha(j) | j \in J\}$.
 		\[ \bigcup_{\alpha \in I'} U_\alpha = \bigcup_{j \in J} U_{\alpha(j)} \supseteq \bigcup_{j \in J} V_j = M \]
 \end{description}\end{Loes}

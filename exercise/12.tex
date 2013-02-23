@@ -47,13 +47,13 @@ F"ur alle Vektorfelder $W$ l"angs $\gamma$ gilt:
 \end{description}
 Aus den Ableitungen folgt nun
 \begin{align*}
-	|\calJ(t)|^2 &= 0 + 0 \cdot t + \frac{1}{2} \cdot 2 \cdot t^2 + 0 \cdot t^3 + \frac{1}{4} \cdot (-8) \cdot \sec(\sigma) \cdot t^4 + O(t^4) \\
-	&= t^2 - \frac{1}{3} \sec(\sigma) t^4 + O(t^4) 
+	|\calJ(t)|^2 &= 0 + 0 \cdot t + \frac{1}{2} \cdot 2 \cdot t^2 + 0 \cdot t^3 + \frac{1}{4} \cdot (-8) \cdot \sec(\sigma) \cdot t^4 + o(t^4) \\
+	&= t^2 - \frac{1}{3} \sec(\sigma) t^4 + o(t^4) 
 \end{align*}
 Es sei nun
 \begin{align*}
-	|\calJ(t)| &= a_0 + a_1 t + a_2 t^2 + a_3 t^3 + O(t^3) \\
-	|\calJ(t)|^2 &= a_0^2 + 2 a_0 a_1 t + (2 a_0 a_2 + a_1^2) t^2 + 2( a_0a_3 + a_1 a_2) t^3 + (2 a_3 a_1 + a_2^2) t^4 + O(t^4)
+	|\calJ(t)| &= a_0 + a_1 t + a_2 t^2 + a_3 t^3 + o(t^3) \\
+	|\calJ(t)|^2 &= a_0^2 + 2 a_0 a_1 t + (2 a_0 a_2 + a_1^2) t^2 + 2( a_0a_3 + a_1 a_2) t^3 + (2 a_3 a_1 + a_2^2) t^4 + o(t^4)
 \end{align*}
 Der Koeffizientenvergleich liefert:
 \begin{align*}
@@ -62,6 +62,102 @@ Der Koeffizientenvergleich liefert:
 und es gilt $a_1 = 1$ denn $|\calJ(t)| \ge 0$.
 \end{Loes}
 
-\begin{Loes}
-asdf
+\begin{Loes} Skizze:
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+	%\tikzgitter{(-2,-2)}{(4,4)}
+	
+	\coordinate (v) at (10:1); \coordinate (w) at (100:1);
+	\coordinate (1) at (3.5,2.25); \coordinate (2) at (2.5,3.25);
+	
+	\fill (0,0) circle(0.05) node[below left]{$p$};
+	\draw[->] (0,0) --node[below]{$v$} (v); \draw[->] (0,0) --node[left]{$w$} (w);
+	\draw[decoration={markings,mark=at position 0.8 with{\arrow{>}}},postaction={decorate}] (0,0) ..controls (v) and ($(1) - (0.25,1)$).. coordinate[pos=0.6](a) (1);
+	\draw[decoration={markings,mark=at position 0.8 with{\arrow{>}}},postaction={decorate}] (0,0) ..controls (w) and ($(2) - (1,0.25)$).. coordinate[pos=0.6](b) (2);
+	
+	\fill (a) circle(0.05) node[below right]{$\gamma_1(t)$} (b) circle(0.05) node[above left]{$\gamma_2(t)$};
+	\draw (a) --node[right]{$L(t)$} (b);
+\end{tikzpicture}\end{center}
+Sei $\sigma = \mathop{\mathrm{span}}\{v,w\}$ und $V(t,s) := \exp_{\gamma_1(t)} (s \cdot \exp_{\gamma_1(t)}^{-1} (\gamma_2(t))$.
+%\marginnote{\begin{tikzpicture}[font=\scriptsize,allow upside down] % Ich bin mir hier nicht sicher bei dem Bild was wie sein soll
+%	\coordinate (v) at (10:1); \coordinate (w) at (100:1);
+%	\coordinate (1) at (3.5,2.25); \coordinate (2) at (2.5,3.25);
+%	\draw[decoration={markings,mark=at position 0.4 with{\arrow{>}}},postaction={decorate}] (0,0) ..controls (v) and ($(1) - (0.25,1)$).. node[below right,pos=0.4]{$\gamma_1$} coordinate[pos=0.7](a) (1);
+%	\draw[decoration={markings,mark=at position 0.4 with{\arrow{>}}},postaction={decorate}] (0,0) ..controls (w) and ($(2) - (1,0.25)$).. node[above left,pos=0.4]{$\gamma_2$} coordinate[pos=0.7](b) (2);
+%	\fill (a) circle(0.05) node[below right]{$\gamma_1(t)$} (b) circle(0.05);
+%	\draw[decoration={markings,mark=at position 0.8 with{\arrow{>}}},postaction={decorate}] (a) to[out=110,in=340] node[pos=0.35,sloped,inner sep=0pt,outer sep=0pt,anchor=north]{\tikz \draw[->] (0,0) -- ++(0,-0.5);} node[above right,pos=0.8]{$V(t,s)$} (b);
+%	\node at (3,2) {$T$};
+%	\draw[->] (1.25,1.25) node[below]{Geod"atische} to[out=90,in=200] (2,2.25);
+%\end{tikzpicture}}
+Wir definieren desweiteren
+\begin{align*}
+	T(t,s) := \difffrac{}{t} (V(t,s)) && S(t,s) := \difffrac{}{s} (V(t,s))
+\end{align*}
+Die Abbildung $c_t := s \mapsto V(t,s)$ ist eine Geod"atische von $\gamma_1(t)$ nach $\gamma_2(t)$ und daraus folg dann $S(t,s) = \dot c_t$.
+Desweiteren ist $t \mapsto c_t$ eine Variation durch Geod"atische und damit $s \mapsto T(t,s)$ ein Jacobifeld l"angs $c_t$.
+Es gilt
+\begin{align*}
+	c_t(0) = \gamma_1(t) && c_t(1) = \gamma_2(t)
+\end{align*}
+und daraus folgt $L(c_t) = \| S(t,0) \|$. F"ur gen"ugend kleines $t$ gilt dann:
+\begin{align*}
+	L(t) = L(c_t) = \| S(t,0) \|
+\end{align*}
+Es gilt:\begin{itemize}
+\item
+	$\nabla_s \nabla_s T = -R(T,S)S$ ($T$ Jacobifeld l"angs $c_t$)
+\item
+	$\nabla_s S = 0$ ($c_t$ Geod"atische, $\dot c_t = S(t, \cdot)$)
+\item
+	$\nabla_t S = \nabla_s T$
+\end{itemize}
+Ferner gilt $L^2(t) = \langle S(t,0), S(t,0) \rangle$ f"ur kleines $t$ und daraus folgt dann
+\begin{align*}
+	(L^2)'(0) = 2 \langle \nabla_t S, S \rangle ((0,0))
+\end{align*}
+mit $S(0,0) = \dot c_0(0) = 0$ und $c_0 \equiv p$. Damit folgt also:
+\begin{align*}
+	(L^2)'' = 2 ( \langle \nabla_t \nabla_t S, S \rangle + \langle \nabla_t S, \nabla_t S \rangle ) (0,0) = 2 \langle \nabla_s T, \nabla_s T \rangle (0,0)
+\end{align*}
+Wir wissen bereits dass $T(0,0) = \dot\gamma_1(0) = v$, $T(0,1) = w$ und $c_0 \equiv p$, also $\nabla_s = \difffrac{}{s}$. Es gilt
+\begin{align*}
+	\nabla_s \nabla_s T(0,s) = -R ( T(0,s), \underbrace{S(0, s)}_{=0} ) \underbrace{S(0,s)}_{=0} = 0
+\end{align*}
+Damit ist $T(0,\cdot)$ linear, also $T(0,s) = v + S(w - v)$ und damit $\nabla_s T(0,s) = w - v$.
+Daraus folgt dann $(L^2)'' = 2 \cdot \|w - v\|^2$.
+Wir m"ochten nun dass folgendes gilt:
+\begin{align*}
+	(L^2)'''(0) = 6 ( \langle \nabla_t \nabla_t S, \nabla_t S \rangle (0,0) ) \overset{!}{=} 0
+\end{align*}
+Dazu zeigen wir zun"achst die folgenden drei Gleichungen:\begin{enumerate}[label=(\arabic*)]
+	\item $\nabla_t T(0,s) = 0$
+	\item $\nabla_s \nabla_t T(0,s) = 0$
+	\item $\nabla_t \nabla_t S(0,s) = 0$
+\end{enumerate}
+Dass (2) aus (1) folgt ist klar. Dass (3) aus (2) folgt zeigt Folgendes (in $(0,s)$):
+\begin{align*}
+	\nabla_t \nabla_t S = \nabla_t \nabla_s T = \underbrace{\nabla_s \nabla_t T}_{=0} + \underbrace{R(T,S)T}_{=0}
+\end{align*}
+Um (1) zu zeigen gilt $(\nabla_t T)(0,0) = (\nabla_t T)(0,1)$ und dann bleibt noch zu zeigen, dass $(\nabla_t T)(0,s)$ linear ist.
+Mit (3) folgt dann schlie"slich $(L^2)'''(0) = 0$.
+F"ur die vierte Ableitung gilt dann
+\begin{align*}
+	(L^2)^{(4)}(0) = \underset{\mathclap{\substack{S(0,s)=0 \\ (\nabla_t \nabla_t S(0,0) = 0)}}}{\ldots} = 8 \langle \nabla_t\nabla_t\nabla_t S, \nabla_t S \rangle (0,0)
+\end{align*}
+Es gilt:
+\begin{align*}
+	\nabla_t\nabla_t\nabla_t S &= \nabla_t (\nabla_t \nabla_s T) = \nabla_t (R(T,S)T + \nabla_s \nabla_t T) \overset{\text{Hinweis}}{\underset{\text{A 1}}{=}} R(T, \nabla_t S) T + \nabla_t \nabla_s \nabla_t T
+\end{align*}
+In $(0,0)$ gilt:
+\begin{align*}
+	R (T, \underbrace{\nabla_t S}_{= \nabla_s T}) T (0,0) = R(\underbrace{\dot\gamma_1(0)}_{=v}, w - v) \underbrace{\dot\gamma_1(0)}_{=v}
+\end{align*}
+Damit folgt dann insgesamt:
+\begin{align*}
+	(L^2)^{(4)}(0) &= 8 \langle R(v, w - v) v, \overbrace{\nabla_t S(0,0)}^{=w-v} \rangle + 8 \underbrace{\langle \nabla_t\nabla_s\nabla_t T, \nabla_t S \rangle}_{= \ldots = 0} (0,0) \\
+	&= 8 \langle R(v, w - v) v, w - v \rangle \\
+	&= 8 \langle R(v, w) v, w \rangle \\
+	&= -8 \langle R(v, w) w, v \rangle \\
+	&= -8 \sec(\sigma) (\underbrace{\|v\|^2 \|w\|^2}_{=1} - \langle v, w \rangle^2)
+\end{align*}
+
 \end{Loes}

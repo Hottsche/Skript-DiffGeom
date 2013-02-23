@@ -75,10 +75,10 @@ durch
 \item[$\bm{F(S)}$ ist $\bm{C^\infty(M)}$-multilinear:]
 	Seien $f \in C^\infty(M)$ und $\tilde\omega_i \in \calV^*(M)$, damit ist dann:
 	\begin{align*}
-		F(S)(\omega_1,\ldots ,\omega_i + f \tilde\omega_i, \ldots ,X_s)(p) =& F_p(S_p)(\omega_1|_p,\ldots ,\omega_i|_p + f(p)\tilde\omega_i|_p,\ldots ,X_s|_p)\\
-		=& F_p(S_p)(\omega_1|_p,\ldots ,\omega_i|_p,\ldots ,X_s|_p)\\
+		F(S)(\omega_1,\ldots ,\omega_i + f \tilde\omega_i, \ldots ,X_s)(p) ={}& F_p(S_p)(\omega_1|_p,\ldots ,\omega_i|_p + f(p)\tilde\omega_i|_p,\ldots ,X_s|_p)\\
+		={}& F_p(S_p)(\omega_1|_p,\ldots ,\omega_i|_p,\ldots ,X_s|_p)\\
 		 & + f(p)F_p(S_p)(\omega_1|_p,\ldots ,\tilde\omega_i|_p,\ldots ,X_s|_p)\\
-		=& F(S)(\omega_1,\ldots ,\omega_i,\ldots ,X_s)(p)\\
+		={}& F(S)(\omega_1,\ldots ,\omega_i,\ldots ,X_s)(p)\\
 		 & + f(p)F(S)(\omega_1,\ldots ,\tilde\omega_i,\ldots ,X_s)(p)
 	\end{align*}
 \item[$\bm{F}$ ist $\bm{C^\infty(M)}$-linear] $\checkmark$
@@ -87,11 +87,11 @@ durch
 \item[$\bm{F}$ ist surjektiv:]
 	Sei $g: \calV^*(M) \X \ldots \calV^*(M) \X \calV(M) \X \ldots \X \calV(M) \to C^\infty(M)$ eine $C^\infty(M)$-multilineare Abbildung. Seien weiter $p \in M$, $\phi$ eine Karte um $p$ und $\chi$ eine glatte cut-off Funktion mit $\supp \chi \subset$\marginnote{\scriptsize{$\supp$ \quot{Tr"ager}}} Kartengebiet von $\phi$ und $\chi \equiv 1$ auf einer Umgebung $V$ von $p$. F"ur $q \in V$ ist
 	\begin{align*}
-		g(\omega_1, \ldots ,X_s)(q) =&\, g(\chi\omega_1 + (1-\chi)\omega_1,\ldots ,\chi X_s + (1 - \chi) X_s)(q)\\
-		=&\, g(\chi \omega_1, \chi \omega_2 + (1 - \chi) \omega_2, \ldots \chi X_s + (1-\chi) X_s)(q)\\
+		g(\omega_1, \ldots ,X_s)(q) ={}&\, g(\chi\omega_1 + (1-\chi)\omega_1,\ldots ,\chi X_s + (1 - \chi) X_s)(q)\\
+		={}&\, g(\chi \omega_1, \chi \omega_2 + (1 - \chi) \omega_2, \ldots \chi X_s + (1-\chi) X_s)(q)\\
 		 &\, + \underbrace{(1-\chi)(q)}_{=0} g(\omega_1, \chi \omega_2 + (1-\chi) \omega_2,\ldots )\\
-		=&\, g(\chi\omega_1, \chi\omega_2 + (1-\chi)\omega_2,\ldots ,\chi X_s+ (1-\chi) X_s)(q)\\
-		=&\, \ldots = g(\chi \omega_1, \ldots ,\chi X_s)(q) \qquad (*)
+		={}&\, g(\chi\omega_1, \chi\omega_2 + (1-\chi)\omega_2,\ldots ,\chi X_s+ (1-\chi) X_s)(q)\\
+		={}&\, \ldots = g(\chi \omega_1, \ldots ,\chi X_s)(q) \qquad (*)
 	\end{align*}
 	Sei $S_p := \sum A_{\alpha_1, \ldots, \beta_s}(p) \pdifffrac[p]{}{x^{\alpha_1}} \otimes \ldots \otimes \dop x^{\beta_s}|_p$ mit
 		\[ A_{\alpha_1, \ldots, \beta_s}(p) = g(\chi \dop x^{\alpha_1},\ldots ,\chi \pdifffrac{}{x^{\beta_s}}) \]
