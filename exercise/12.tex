@@ -9,6 +9,28 @@
 \setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
 \setcounter{Loes}{0}
 
+\begin{Aufg}
+asdf
+\end{Aufg}
+
+\begin{Aufg}
+Skizze:
+\begin{center}\begin{tikzpicture}[font=\scriptsize]
+	%\tikzgitter{(-2,-2)}{(4,4)}
+	
+	\coordinate (v) at (10:1); \coordinate (w) at (100:1);
+	\coordinate (1) at (3.5,2.25); \coordinate (2) at (2.5,3.25);
+	
+	\fill (0,0) circle(0.05) node[below left]{$p$};
+	\draw[->] (0,0) --node[below]{$v$} (v); \draw[->] (0,0) --node[left]{$w$} (w);
+	\draw[decoration={markings,mark=at position 0.8 with{\arrow{>}}},postaction={decorate}] (0,0) ..controls (v) and ($(1) - (0.25,1)$).. coordinate[pos=0.6](a) (1);
+	\draw[decoration={markings,mark=at position 0.8 with{\arrow{>}}},postaction={decorate}] (0,0) ..controls (w) and ($(2) - (1,0.25)$).. coordinate[pos=0.6](b) (2);
+	
+	\fill (a) circle(0.05) node[below right]{$\gamma_1(t)$} (b) circle(0.05) node[above left]{$\gamma_2(t)$};
+	\draw (a) --node[right]{$L(t)$} (b);
+\end{tikzpicture}\end{center}
+\end{Aufg}
+
 \begin{Loes}
 Offensichtlich gilt $\calJ(0) = 0$.
 Au"serdem gilt nach der Kettenregel f"ur die Ableitung
@@ -62,21 +84,7 @@ Der Koeffizientenvergleich liefert:
 und es gilt $a_1 = 1$ denn $|\calJ(t)| \ge 0$.
 \end{Loes}
 
-\begin{Loes} Skizze:
-\begin{center}\begin{tikzpicture}[font=\scriptsize]
-	%\tikzgitter{(-2,-2)}{(4,4)}
-	
-	\coordinate (v) at (10:1); \coordinate (w) at (100:1);
-	\coordinate (1) at (3.5,2.25); \coordinate (2) at (2.5,3.25);
-	
-	\fill (0,0) circle(0.05) node[below left]{$p$};
-	\draw[->] (0,0) --node[below]{$v$} (v); \draw[->] (0,0) --node[left]{$w$} (w);
-	\draw[decoration={markings,mark=at position 0.8 with{\arrow{>}}},postaction={decorate}] (0,0) ..controls (v) and ($(1) - (0.25,1)$).. coordinate[pos=0.6](a) (1);
-	\draw[decoration={markings,mark=at position 0.8 with{\arrow{>}}},postaction={decorate}] (0,0) ..controls (w) and ($(2) - (1,0.25)$).. coordinate[pos=0.6](b) (2);
-	
-	\fill (a) circle(0.05) node[below right]{$\gamma_1(t)$} (b) circle(0.05) node[above left]{$\gamma_2(t)$};
-	\draw (a) --node[right]{$L(t)$} (b);
-\end{tikzpicture}\end{center}
+\begin{Loes}
 Sei $\sigma = \mathop{\mathrm{span}}\{v,w\}$ und $V(t,s) := \exp_{\gamma_1(t)} (s \cdot \exp_{\gamma_1(t)}^{-1} (\gamma_2(t))$.
 %\marginnote{\begin{tikzpicture}[font=\scriptsize,allow upside down] % Ich bin mir hier nicht sicher bei dem Bild was wie sein soll
 %	\coordinate (v) at (10:1); \coordinate (w) at (100:1);
