@@ -9,6 +9,39 @@
 \setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
 \setcounter{Loes}{0}
 
+\begin{Aufg}
+Es sei $M$ eine glatte Mannigfaltigkeit. Zeigen Sie:
+\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
+\item
+	Die kanonische Projektion $\pi:\mathrm{T}M \to M$ ist ein Submersion.
+\item
+	Der Nullschnitt $\sigma:M\to \mathrm{T}M$, $p\mapsto 0 \in \mathrm{T}_p M$ ist eine Einbettung.
+\item
+	Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi:M \to N$ glatt, so ist $\Phi_*:\mathrm{T}M \to \mathrm{T}N$ glatt.
+\end{enumerate}\end{Aufg}
+
+\begin{Aufg}
+Es sei $M$ eine glatte $n$-dimensionale Mannigfaltigkeit und $X,Y \in \mathcal{V}(M)$.
+\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
+\item
+	Zeigen Sie, dass die Lieklammer im Allgemeinen nicht $C^{\infty}(M)$-bilinear ist.
+\item
+	Zeigen Sie, dass $XY$ mit $XY(p)(f):=X_p(Y(f))$ für $p \in M$ und $f\in C^\infty(M)$ im Allgemeinen kein Vektorfeld ist.
+\end{enumerate}
+Es sei ferner $(\phi,U)$  eine Karte von $M$ und $X|_U=\sum\limits_{i=1}^n \xi^i \pdifffrac{}{x^i}$, $Y|_U=\sum\limits_{i=1}^n \eta^i \pdifffrac{}{x^i}$, sowie $[X,Y]|_U=\sum\limits_{i=1}^n \zeta^i \pdifffrac{}{x^i}$ die lokalen Darstellungen von $X$, $Y$ und $[X,Y]$ bezüglich $\phi$.
+\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
+\item[c)]
+	Zeigen Sie, dass gilt: 
+		\[\zeta^j=\sum_{i=1}^n \left(\xi^i \frac{\partial \eta^j}{\partial x^i} - \eta^i \frac{\partial \xi^j}{\partial x^i}\right).\]
+\end{enumerate}\end{Aufg}
+
+\begin{Aufg}\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
+\item
+	Es seien auf $\R^2$ die beiden Vektorfelder $X=-y \pdifffrac{}{x}+x \pdifffrac{}{y}$ und $Y=-2 y \pdifffrac{}{x}+\tfrac{1}{2} x \pdifffrac{}{y}$ gegeben. Skizzieren Sie die Vektorfelder und bestimmen Sie die Flüsse von $X$ und $Y$.
+\item
+	Auf dem Torus $\mathrm{T}^2=\mathrm{S}^1 \times \mathrm{S}^1=\{(e^{i \theta^1}, e^{i \theta^2})\in \C^2 | \theta^1, \theta^2 \in \R\}$ betrachten wir für $k \in \N$  das Vektorfeld $X_k=\pdifffrac{}{\theta^1}+ \tfrac{1}{k}\pdifffrac{}{\theta^2}$. Bestimmen Sie die Integralkurve von $X_k$ durch den Punkt $(1,1) \in \mathrm{T}^2$.
+\end{enumerate}\end{Aufg}
+
 \begin{Loes}
 Sei $M$ eine glatte Mannigfaltigkeit. Sei desweiteren f"ur alle drei Teilaufgaben $p \in M$, $\phi$ eine Karte um $p$ mit Kartengebiet $U$ und
 	\[ \overline \phi: \left\{ \begin{array}{ccc}  \T M|_U &\to& \R^{2n} \\

@@ -8,7 +8,19 @@
 \setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
 \setcounter{Loes}{0}
 
-Allgemein sei $\kappa \in \R$
+\begin{Aufg}
+Es sei $\kappa \in \R$ und \[C_\kappa(t)=\begin{cases}\cos(\sqrt{\kappa} t )&\kappa>0\\ 1 & \kappa=0\\ \cosh(\sqrt{|\kappa|} t)& \kappa <0\end{cases}, \qquad S_\kappa (t)=\begin{cases}\frac{1}{\sqrt{\kappa}}\sin(\sqrt{\kappa} t )&\kappa>0\\ t & \kappa=0\\ \frac{1}{\sqrt{|\kappa|}}\sinh(\sqrt{|\kappa|} t)& \kappa <0\end{cases} \]
+Es sei $(M,g)$ eine Riemannsche Mannigfaltigkeit und $\gamma$ eine nach Bogenlänge parametrisierte Geodätische. Für alle $t$ und jede Ebene $P \leq \T_{\gamma(t)} M$ mit $\dot{\gamma}(t) \in P$ gelte $\sec(P)=\kappa$. 
+
+Zeigen Sie, dass jedes orthogonale Jacobivektorveld $J$ längs $\gamma$ die Form \[J(t)=C_\kappa(t) A(t) + S_\kappa(t)B(t)\] mit parallelen Vektorfeldern $A,B$ längs $\gamma$ hat.
+\end{Aufg}
+
+\begin{Aufg}
+Es sei $(M,g)$ eine vollständige Riemannsche Mannigfaltigkeit von konstanter Schnittkrümmung $\kappa \in \R$ und $p \in M$. Zeigen Sie, dass es genau dann zu $p$ konjugierte Punkte gibt, wenn $\kappa >0$ gilt.
+\end{Aufg}
+
+% ----------
+
 \begin{Loes}
 \emph{Erinnerung:} Definition von Jacobifeldern
 \begin{align*}

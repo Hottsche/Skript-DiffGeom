@@ -9,7 +9,43 @@
 \setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
 \setcounter{Loes}{0}
 
-\begin{Loes}\ \\
+\begin{Aufg}\begin{enumerate}[leftmargin=*,label=\alph*),widest=b]
+\item
+	Es seien $\mathrm{S}^n=\{(x^0,\dots,x^n)\in \R^{n+1}|\sum\limits_{i=0}^n (x^i)^2=1\}$, $N=(1,0,\dots,0)$ und $S=(-1,0,\dots,0)$.  Weiter seien
+		\[\phi: \mathrm{S}^n\setminus\{N\} \to \R^n, \quad x \mapsto \left(\frac{x^1}{1-x^0},\dots,\frac{x^n}{1-x^0}\right)\]
+	und
+		\[\psi: \mathrm{S}^n\setminus\{S\} \to \R^n, \quad x \mapsto \left(\frac{x^1}{1+x^0},\dots,\frac{x^n}{1+x^0}\right).\]
+	
+	Zeigen Sie, dass $\{(\phi,  \mathrm{S}^n\setminus\{N\} ),(\psi,  \mathrm{S}^n\setminus\{S\})\}$ ein $C^\infty$-Atlas für $\mathrm{S}^n$ ist.
+\item
+	Für $i=0,\dots,n$ sei $U_i^\pm=\{(x_0,\dots,x_n)\in \mathrm{S}^n|\pm x_i>0\}$ und 
+		\[\phi_i^\pm :U_i^\pm \to \R^n, (x^0, \dots,x^n) \mapsto (x^0,\dots,x^{i-1},x^{i+1},\dots,x^n).\]
+	Zeigen Sie, dass $\big\{(\phi_i^\epsilon,U_i^\epsilon)\big|i=0,\dots,n, \epsilon\in\{+,-\}\big\}$ ein $C^\infty$-Atlas ist, der mit dem durch stereographische Projekton gegebenen verträglich ist.
+\end{enumerate}\end{Aufg}
+
+\begin{Aufg}
+Zeigen Sie, dass durch die Karte
+	\[\phi: \R \to \R, \;\; x \mapsto x^3\]
+eine $C^\infty$-Struktur induziert wird, die von der kanonischen (von $\id_{\R}$ induzierten) $C^\infty$-Struktur auf $\R$ abweicht. 
+Sind die beiden Strukturen diffeomorph?
+\end{Aufg}
+
+\begin{Aufg}
+Es sei $k\in \N\cup\{\infty\}$. Weiter seien $M_1$ und $M_2$ zwei $C^k$-Mannigfaltigkeiten und $N_i \subseteq M_i$ Untermannigfaltigkeiten. 
+
+Zeigen Sie: Ist $f \in C^j(M_1,M_2)$ für $1\leq j\leq k$ und ist $f( N_1)\subseteq N_2$, so ist $f|_{N_1}\in C^j(N_1,N_2)$.
+\end{Aufg}
+
+\begin{Aufg}
+In welchen der folgenden Fälle ist $N$ eine Untermannigfaltigkeit der glatten Mannigfaltigkeit $M$?
+\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
+\item
+	$M=\mathrm{S}^n$, $N=\{(x^0,\dots,x^n) \in \mathrm{S}^n| x^2=\dots =x^n=0\}$
+\item
+	$M=\R^2$, $N=\{(0,y)|y\geq 0\}\cup \{(x,0)|x\geq 0\}$
+\end{enumerate}\end{Aufg}
+
+\begin{Loes}\ 
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
 	%\draw[step=0.25,gray!15] (-3,-3) grid (3,3); \draw[step=0.5,gray!30] (-3,-3) grid (3,3); %\fill (0,0) circle(0.1); %Hilfsgitter
 	\def\radius{1.5}
@@ -97,7 +133,7 @@ Dazu m"ussen wir zeigen:\begin{enumerate}[font=\normalfont,label=(\roman*)]
 		\[ \Id_{\R} \circ \phi^{-1} = \phi^{-1}: x \mapsto \sqrt[3]{x} \]
 	$\Id_{\R} \circ \phi^{-1}$ ist in $0$ nicht differenzierbar $\Rightarrow$ (ii) $\checkmark$
 \end{enumerate}
-\begin{description}[font=\normalfont\itshape]
+\begin{description}[font=\normalfont\itshape,leftmargin=*]
 \item[Behauptung:]
 	Die beiden $C^\infty$ Strukturen sind diffeomorph
 \item[Beweis:]
@@ -118,7 +154,7 @@ Dazu m"ussen wir zeigen:\begin{enumerate}[font=\normalfont,label=(\roman*)]
 
 \begin{Loes}
 $k \in \N \cup \{\infty\}$, $M_1, M_2$ $C^k$-Mannigfaltigkeiten, $N_i \subseteq M_i$ Untermannigfaltigkeit, $f \in C^j(M_1, M_2)$ wobei $j \le k$, $f(N_1) \subseteq N_2$.
-\begin{description}[font=\normalfont\itshape]
+\begin{description}[font=\normalfont\itshape,leftmargin=*]
 \item[Behauptung:]
 	$f|_{N_1} \in C^j(N_1, N_2)$
 \item[Beweis:]
@@ -147,7 +183,7 @@ $k \in \N \cup \{\infty\}$, $M_1, M_2$ $C^k$-Mannigfaltigkeiten, $N_i \subseteq 
 		\node at (0.75,0.75) {$S^2$}; \node (N) at (1,-0.5) {$N$};
 		\draw[->] (N) to[out=180,in=270] (0.5,-0.2);
 	\end{tikzpicture}\end{center}
-	\begin{description}[font=\normalfont\itshape]
+	\begin{description}[font=\normalfont\itshape,leftmargin=*]
 	\item[Behauptung:]
 		$N$ ist eine Untermannigfaltigkeit von $M$.\marginnote{\begin{tikzpicture}
 			\draw[->] (-1.25,0) -- (1.25,0); \draw[->] (0,-1.25) -- (0,1.25);
@@ -167,7 +203,7 @@ $k \in \N \cup \{\infty\}$, $M_1, M_2$ $C^k$-Mannigfaltigkeiten, $N_i \subseteq 
 		\draw (0,-0.5) -- (0,0); \draw[very thick,->] (0,0) -- (0,1.5);
 		\node at (-1,1) {$M$}; \node at (0.75,0.75) {$N$};
 	\end{tikzpicture}\end{center}
-	\begin{description}[font=\normalfont\itshape]
+	\begin{description}[font=\normalfont\itshape,leftmargin=*]
 	\item[Behauptung:]
 		$N$ ist keine glatte Untermannigfaltigkeit von $\R$.
 	\item[Beweis:]

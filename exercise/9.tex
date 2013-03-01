@@ -9,6 +9,22 @@
 \setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
 \setcounter{Loes}{0}
 
+\begin{Aufg}
+Es sei $(M,g)$ eine Riemannsche Mannigfaltigkeit und $p\in M$. Berechnen Sie $g_{ij}(p)$, $\frac{\partial g_{ij}}{\partial x^k}(p)$  und $\Gamma_{ij}^k(p)$ in Riemannschen Normalkoordinaten um $p$.
+
+{\footnotesize \textbf{Hinweis:} Welche Form haben die Geodätischen durch $p$ in dieser Karte?}
+\end{Aufg}
+
+\begin{Aufg}
+Bestimmen Sie die Schnittkrümmungen der Riemannschen Mannigfaltigkeiten $(\R^n,g_{\mathrm{eukl}})$ und $\mathbb{H}^n$ (siehe Blatt 6 Aufgaben 2 und 3).
+\end{Aufg}
+
+\begin{Aufg}
+Bestimmen Sie die Schnittkrümmungen der $n$-Sphäre vom Radius $r>0$, also von $S^n$ mit der von $S^n=\{x \in \R^{n+1} | \|x\|=r\}$ induzierten Riemannschen Metrik.
+
+{\footnotesize \textbf{Hinweis:} Benutzen Sie, dass der Levi-Civita Zusammenhang auf $S^n$  durch $(\nabla_X Y)_p=((\mathrm{D} Y)_p \cdot X_p)^{\T_p S^n}$ gegeben ist.}
+\end{Aufg}
+
 \begin{Loes}
 Nach der Vorlesung gibt es einen Diffeomorphismus
 \begin{align*}
@@ -96,7 +112,64 @@ Mit dieser Nebenrechnung folgern wir schlie"slich $R(X,Y)Z = 0$ und daraus folgt
 \begin{align*}
 	\sec(\mspan\{X,Y\}) = \frac{g(R(X,Y)Y,X)}{\|X\|^2\{Y\|^2 - \langle X,Y \rangle^2} = 0
 \end{align*}
-\item n"achste Woche\end{enumerate}\end{Loes}
+\item
+	Wir berechnen die Komponenten $R_{ijkl}=R(\pdifffrac{}{\xi^i},\pdifffrac{}{\xi^j},\pdifffrac{}{\xi^k},\pdifffrac{}{\xi^l})=g(R(\pdifffrac{}{\xi^i},\pdifffrac{}{\xi^j})\pdifffrac{}{\xi^k},\pdifffrac{}{\xi^l})$ in der Karte $\phi$ aus Aufgabe 6.3. In dieser Karte gilt $g=\frac{4}{(1-\|\xi\|^2)^2}\sum\limits_i d\xi^i\tensor d\xi^i$, also $g_{ij}=\delta_{ij} \frac{4}{(1-\|\xi\|^2)^2}$.
+	
+	Für die Ableitungen der Metrik gilt dann:
+		\[g_{ij,k}=\frac{\partial g_{ij}}{\partial \xi^k}=16\delta_{ij} \frac{\xi^k}{(1-\|\xi\|^2)^3}.\]
+	Die Koeffizienten der zu $(g_{ij})$ inversen Matrix sind $g^{kl}=\delta_{kl} \frac{(1-\|\xi\|^2)^2}{4}$. Damit gilt für die Christoffelsymbole
+		\[\Gamma_{ij}^k=\frac{1}{2}\sum_l g^{kl}(g_{jl,i}-g_{ij,l} + g_{li,j})=\frac{2}{1-\|\xi\|^2}(\delta_{jk}\xi^i-\delta_{ij} \xi^k + \delta_{ki} \xi^j).\]
+	Für die Ableitungen gilt also:
+	\begin{align*}
+		\pdifffrac{}{\xi^l}(\Gamma_{ij}^k)&=\pdifffrac{}{\xi^l} \left(\frac{2}{1-\|\xi\|^2}\right)(\delta_{jk}\xi^i-\delta_{ij} \xi^k + \delta_{ki} \xi^j)+ \frac{2}{1-\|\xi\|^2} \pdifffrac{}{\xi^l}(\delta_{jk}\xi^i-\delta_{ij} \xi^k + \delta_{ki} \xi^j)\\
+		&=\frac{4\xi^l}{(1-\|\xi\|^2)^2}(\delta_{jk}\xi^i-\delta_{ij} \xi^k + \delta_{ki} \xi^j)+ \frac{2}{1-\|\xi\|^2}(\delta_{jk}\delta_{li}-\delta_{ij} \delta_{lk} + \delta_{ki} \delta_{lj}).
+	\end{align*}
+	
+	Nun können wir die Koeffizienten des Krümmungstensors berechnen. Es gilt :
+	\begin{align*}
+		R(\pdifffrac{}{\xi^i}, \pdifffrac{}{\xi^j})\pdifffrac{}{\xi^k}&=\nabla_{\pdifffrac{}{\xi^i}}\nabla_{\pdifffrac{}{\xi^j}}\pdifffrac{}{\xi^k}-\nabla_{\pdifffrac{}{\xi^j}}\nabla_{\pdifffrac{}{\xi^i}}\pdifffrac{}{\xi^k}-\nabla_{[\pdifffrac{}{\xi^i},\pdifffrac{}{\xi^j}]=0}\pdifffrac{}{\xi^k}\\ 
+		&=\nabla_{\pdifffrac{}{\xi^i}}\Big(\sum_l \Gamma_{jk}^l\pdifffrac{}{\xi^l}\Big)-\nabla_{\pdifffrac{}{\xi^j}}\Big(\sum_l \Gamma_{ik}^l\pdifffrac{}{\xi^l}\Big)\\
+		&=\sum_l\left( \pdifffrac{}{\xi^i}(\Gamma_{jk}^l) \pdifffrac{}{\xi^l} + \Gamma_{jk}^l \nabla_{\pdifffrac{}{\xi^i}}\pdifffrac{}{\xi^l} - \pdifffrac{}{\xi^j}(\Gamma_{ik}^l) \pdifffrac{}{\xi^l} - \Gamma_{ik}^l \nabla_{\pdifffrac{}{\xi^j}}\pdifffrac{}{\xi^l}\right)\\
+		&=\sum_l\left( \pdifffrac{}{\xi^i}(\Gamma_{jk}^l) \pdifffrac{}{\xi^l}  - \pdifffrac{}{\xi^j}(\Gamma_{ik}^l) \pdifffrac{}{\xi^l}\right)+\sum_{l,m}\left(\Gamma_{jk}^l\Gamma_{il}^m \pdifffrac{}{\xi^m}-\Gamma_{ik}^l \Gamma_{jl}^m \pdifffrac{} {\xi^m} \right)\\
+		&=\sum_l \left(\pdifffrac{}{\xi^i}(\Gamma_{jk}^l)  - \pdifffrac{}{\xi^j}(\Gamma_{ik}^l)+\sum_{\alpha}\left(\Gamma_{jk}^\alpha\Gamma_{i\alpha}^l-\Gamma_{ik}^\alpha \Gamma_{j\alpha}^l \right)\right)  \pdifffrac{} {\xi^l}=: \sum_l R_{ijk}^{\phantom{ijk}l} \;\pdifffrac{}{\xi^l}
+	\end{align*}
+	und
+	\begin{align*}
+		R_{ijk}^{\phantom{ijk}l}&=\tfrac{4}{(1-\|\xi\|^2)^2}\Big(\xi^i(\delta_{kl} \xi^j- \delta_{jk} \xi^l + \delta_{lj}\xi^k)-\xi^j(\delta_{kl} \xi^i- \delta_{ik} \xi^l + \delta_{li}\xi^k)\\
+		&\qquad\qquad + \tfrac{1-\|\xi\|^2}{2}\big((\delta_{kl} \delta_{ij} - \delta_{jk} \delta_{il}+\delta_{lj}\delta_{ik})-(\delta_{kl} \delta_{ij}-\delta_{ik}\delta_{jl}+\delta_{li}\delta_{jk})\big)\\
+		&\qquad \qquad + \sum_\alpha \big( ( \delta_{k\alpha} \xi^j-\delta_{jk}\xi^{\alpha}+\delta_{\alpha j} \xi^k)(\delta_{\alpha l} \xi^i-\delta_{i \alpha}\xi^l+\delta_{li}\xi^\alpha)\\[-0.8em]
+		&\qquad \qquad \qquad -  ( \delta_{k\alpha} \xi^i-\delta_{ik}\xi^{\alpha}+\delta_{\alpha i} \xi^k)(\delta_{\alpha l} \xi^j-\delta_{j \alpha}\xi^l+\delta_{lj}\xi^\alpha)\big)\Big)\\
+		&= \tfrac{4}{(1-\|\xi\|^2)^2}\Big(- \delta_{jk}\xi^i \xi^l + \delta_{lj}\xi^i\xi^k+ \delta_{ik}\xi^j \xi^l - \delta_{li}\xi^j\xi^k\\
+		&\qquad\qquad + \tfrac{1-\|\xi\|^2}{2}\big( - \delta_{jk} \delta_{il}+\delta_{lj}\delta_{ik}+\delta_{ik}\delta_{jl}-\delta_{li}\delta_{jk}\big)\\
+		&\qquad \qquad + \sum_\alpha \big( ( \delta_{k\alpha} \delta_{\alpha l} \xi^i \xi^j-\delta_{k\alpha} \delta_{i \alpha}  \xi^j\xi^l+\delta_{k\alpha} \delta_{li} \xi^j \xi^\alpha\\
+		&\qquad \qquad \qquad -\delta_{jk}\delta_{\alpha l} \xi^i\xi^{\alpha}+\delta_{jk}\delta_{i \alpha}\xi^l\xi^{\alpha} -\delta_{jk}\delta_{li}(\xi^{\alpha})^2\\
+		&\qquad \qquad \qquad+ \delta_{\alpha j}\delta_{\alpha l} \xi^i \xi^k - \delta_{\alpha j}\delta_{i \alpha}\xi^k \xi^l + \delta_{\alpha j} \delta_{li}   \xi^k \xi^\alpha)\\
+		& \qquad \qquad - (  \delta_{k\alpha} \delta_{\alpha l} \xi^i \xi^j-\delta_{k\alpha} \delta_{j \alpha}  \xi^i\xi^l+\delta_{k\alpha} \delta_{lj} \xi^i \xi^\alpha\\
+		&\qquad \qquad \qquad -\delta_{ik}\delta_{\alpha l} \xi^j\xi^{\alpha}+\delta_{ik}\delta_{j \alpha}\xi^l\xi^{\alpha} -\delta_{ik}\delta_{lj}(\xi^{\alpha})^2\\
+		&\qquad \qquad \qquad+ \delta_{\alpha i}\delta_{\alpha l} \xi^j \xi^k - \delta_{\alpha i}\delta_{j \alpha}\xi^k \xi^l + \delta_{\alpha i} \delta_{lj}  \xi^k \xi^\alpha)\big)\Big)\\
+	\end{align*}
+	\begin{align*}
+		&= \tfrac{4}{(1-\|\xi\|^2)^2}\Big(- \delta_{jk}\xi^i \xi^l + \delta_{lj}\xi^i\xi^k+ \delta_{ik}\xi^j \xi^l - \delta_{li}\xi^j\xi^k + (1-\|\xi\|^2)\big(\delta_{ik}\delta_{jl}-\delta_{li}\delta_{jk}\big)\\
+		&\qquad \qquad + \sum_\alpha \big( ( \delta_{k l} \xi^i \xi^j- \delta_{i k}  \xi^j\xi^l+ \delta_{li} \xi^j \xi^k -\delta_{jk} \xi^i\xi^{l}+\delta_{jk}\xi^l\xi^{i} -\delta_{jk}\delta_{li}\|\xi\|^2+ \delta_{j l} \xi^i \xi^k - \delta_{i j}\xi^k \xi^l + \delta_{li} \xi^k \xi^j)\\
+		&\qquad \qquad \qquad - (  \delta_{k l} \xi^i \xi^j- \delta_{j k}  \xi^i\xi^l+ \delta_{lj} \xi^i \xi^k -\delta_{ik} \xi^j\xi^{l}+\delta_{ik}\xi^l\xi^{j} -\delta_{ik}\delta_{lj}\|\xi\|^2 + \delta_{i l} \xi^j \xi^k - \delta_{ij}\xi^k \xi^l + \delta_{lj} \xi^k \xi^i)\big)\Big)\\
+		&=  \tfrac{4}{(1-\|\xi\|^2)^2}\Big( (1-\|\xi\|^2)\big(\delta_{ik}\delta_{jl}-\delta_{li}\delta_{jk}\big) +  \|\xi\|^2 \big(\delta_{ik}\delta_{jl}-\delta_{li}\delta_{jk}\big)\\
+		&=  \tfrac{4}{(1-\|\xi\|^2)^2}\big(\delta_{ik}\delta_{jl}-\delta_{li}\delta_{jk}\big)
+	\end{align*}
+	Und somit 
+		\[R_{ijkl}=g(\sum_m R_{ijk}^{\phantom{ijk}m} \pdifffrac{}{\xi^m},\pdifffrac{}{\xi^l})=\sum_m  R_{ijk}^{\phantom{ijk}m} g(\pdifffrac{}{\xi^m},\pdifffrac{}{\xi^l})=\frac{4}{(1-\|\xi\|^2)^2} R_{ijk}^{\phantom{ijk}l}=\frac{16}{(1-\|\xi\|^2)^4}\big(\delta_{ik}\delta_{jl}-\delta_{li}\delta_{jk}\big).\]
+	Für linear unabhängige $X=\sum X_i \pdifffrac{}{\xi^i}$, $Y=\sum Y_j \pdifffrac{}{\xi^j} \in \T_p\mathbb{H}^n$ gilt dann
+	\begin{align*}
+		R(X,Y,Y,X)&= \sum_{i,j,k,l} X_iX_lY_j Y_k \;R(\pdifffrac{}{\xi^i},\pdifffrac{}{\xi^j},\pdifffrac{}{\xi^k},\pdifffrac{}{\xi^l}) \\
+		{}=& \sum_{i,j,k,l} X_iX_lY_j Y_k \;\tfrac{16}{(1-\|\xi\|^2)^4}\big(\delta_{ik}\delta_{jl}-\delta_{li}\delta_{jk}\big)\\
+		{}=& \sum_{i,j} X_iX_jY_jY_i \; \left(\tfrac{4}{(1-\|\xi\|^2)^2}\right)^2- \sum_{i,j} X_i^2 Y_j^2 \; \left(\tfrac{4}{(1-\|\xi\|^2)^2}\right)^2\\
+		{}=& \sum_{i,j} X_iX_jY_jY_i g(\pdifffrac{}{\xi^i},\pdifffrac{}{\xi^i})g(\pdifffrac{}{\xi^j},\pdifffrac{}{\xi^j})-  \sum_{i,j} X_i^2 Y_j^2 \;g(\pdifffrac{}{\xi^i},\pdifffrac{}{\xi^i})g(\pdifffrac{}{\xi^j},\pdifffrac{}{\xi^j})\\
+		{}=& \Big(\sum_ig(X_i\pdifffrac{}{\xi^i}, Y_i\pdifffrac{}{\xi^i})\Big)\Big(\sum_jg(X_j\pdifffrac{}{\xi^j}, Y_j\pdifffrac{}{\xi^j})\Big) \\
+		&- \Big(\sum_ig(X_i\pdifffrac{}{\xi^i}, X_i\pdifffrac{}{\xi^i})\Big)\Big(\sum_jg(Y_j\pdifffrac{}{\xi^j}, Y_j\pdifffrac{}{\xi^j})\Big)\\
+		{}=& g(X,Y)^2 - \|X\|^2 \|Y\|^2=-(\|X\|^2 \|Y\|^2 - g(X,Y)^2).
+	\end{align*}
+	Hieraus folgt
+		\[\sec(\mathrm{span}\{X,Y\})=\frac{R(X,Y,Y,X)}{\|X\|^2 \|Y\|^2 - g(X,Y)^2}=-1.\]
+\end{enumerate}\end{Loes}
 
 \begin{Loes}
 Sei $S^n(r) := \{x \in \R^{n+1} | \|x\| = r\}$, \emph{Behauptung:} $\sec_{S^n(r)} \equiv \frac{1}{r^2}$

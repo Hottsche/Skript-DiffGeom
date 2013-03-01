@@ -9,6 +9,42 @@
 \setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
 \setcounter{Loes}{0}
 
+\begin{Aufg}
+Es seien $X,Y \in \mathcal{V}(M)$. Der Einfachheit halber nehmen wir an, dass $X$ und $Y$ vollständig sind. Zeigen Sie dass die folgenden Aussagen äquivalent sind:
+\begin{enumerate}[label=(\roman*),widest=ii]
+\item
+	$[X,Y]=0$.
+\item
+	Die Flüsse von $X$ und $Y$ kommutieren, d.h. $\gamma_X^t \circ \gamma_Y^s=\gamma_Y^s \circ \gamma_X^t$ für alle $s, t \in \R$.
+\end{enumerate}
+{\footnotesize \textbf{Anmerkung:} Die Aussage gilt auch für nicht vollständige Vektorfelder für geeignete Zeiten $s$ und $t$.}
+\end{Aufg}
+
+\begin{Aufg}
+Es sei $(U_\alpha)_{\alpha \in I}$ eine offene Überdeckung von $M$ und für alle $\alpha, \beta \in I$ mit $U_\alpha \cap U_\beta \neq \emptyset$ seien eine glatte Funktion $g_{\alpha \beta}:U_\alpha \cap U_\beta \to \mathrm{GL}_k(\R)$ gegeben. Es gelte $g_{\alpha \beta}(p)=g_{\alpha \gamma}(p) \cdot g_{\gamma \beta}(p)$ für alle $\alpha,\beta,\gamma \in I$ und $p \in U_\alpha \cap U_\beta \cap U_\gamma$. 
+
+Weiter sei
+	\[E:=\dot{\bigcup}_{\alpha \in I}(U_\alpha \times \R^k)/ \sim, \]
+wobei für $p \in U_\alpha$, $q \in U_\beta$ und $v,w \in \R^k$ gelte:
+	\[(p,v) \sim (q,w) \Leftrightarrow p=q \text{ und } v=g_{\alpha \beta}(q) w\]
+Zeigen Sie, dass $\pi: E \to M, [p,v]\mapsto p$ ein Vektorbündel über $M$ vom Rang $k$ ist.
+\end{Aufg}
+
+\begin{Aufg}
+Es seien $E, E'$ Vektorbündel über $M$ und $F:E \to E'$ ein Bündelmorphismus, der faserweise ein Isomorphismus ist, d.h für alle $p \in M$ ist $F_p:E_p \to E'_p$ ein Isomorphismus.
+
+Zeigen Sie, dass $F$ ein Bündelisomorphismus ist, es also einen zu $F$ inversen Bündelmorphismus gibt.
+\end{Aufg}
+
+\begin{Aufg}\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
+\item
+	In einem Vektorbündel $E$ vom Rang $k$ über $M$ gebe es $k$ punktweise linear unabhängige Schnitte. Zeigen Sie, dass $E$ trivial ist.
+\item
+	Zeigen Sie, dass $\mathrm{T}\,\mathrm{S}^3$ trivial ist.
+\end{enumerate}
+{\footnotesize \textbf{Hinweis:} Unter dem kanonischen Isomorphismus $\mathrm{T}_p \R^4 \cong \R^4$ entspricht $\mathrm{T}_p\mathrm{S}^3 \subset \mathrm{T}_p\R^4$ dem orthogonalen Komplement $p^{\perp}$.}
+\end{Aufg}
+
 \begin{Loes}
 asdf
 \end{Loes}

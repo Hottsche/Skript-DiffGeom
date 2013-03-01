@@ -9,6 +9,32 @@
 \setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
 \setcounter{Loes}{0}
 
+\begin{Aufg}
+Es sei $S^2$ versehen mit der von der euklidischen Metrik auf $\R^3$ induzierten Metrik. Weiter sei $c:[0,1] \to S^2$ eine kürzeste $C^1$-Kurve zwischen $c(0)=N=(0,0,1)$ und $c(1)$. Zeigen Sie, dass das Bild von $c$ in einem Großkreis enthalten ist.
+
+{\footnotesize \textbf{Hinweis:} Betrachten Sie die Parametrisierung $(\phi,\theta)\mapsto (\cos(\theta) \cos(\phi),\cos(\theta) \sin(\phi),\sin(\theta))$.}
+\end{Aufg}
+
+\begin{Aufg}
+Es sei $M$ eine Untermannigfaltigkeit des $\R^k$ und $\nabla$ der kanonische Zusammenhang auf dem Tangentialbündel des $\R^k$. Für ein Vektorfeld $X$ auf $M$ bezeichne $\tilde{X}$ eine beliebige Fortsetzung von $X$ zu einem Vektorfeld auf $\R^k$ und für $v\in \R^k \cong \mathrm{T}_p\R^k$ bezeichne $v^{\mathrm{T}_pM}$ die orthogonale Projektion von $v$ auf den Tangentialraum von $M$ an $p$. 
+
+Zeigen Sie, dass
+	\[\nabla^M:\mathcal{V}(M) \times \mathcal{V}(M) \to \mathcal{V}(M), \quad (\nabla^M_X Y)_p:=((\nabla_{\tilde{X}} \tilde{Y})_p)^{\mathrm{T}_pM},\]
+einen Zusammenhang auf dem Tangentialbündel von $M$ definiert.
+\end{Aufg}
+
+\begin{Aufg}
+\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
+\item
+	Es sei $E$ ein Vektorbündel über $M$ und $\nabla$ ein Zusammenhang auf $E$. Weiter sei 
+		\[\nabla^*:\mathcal{V}(M)\times \Gamma(E^*) \to \Gamma(E^*), \quad (\nabla^*_X(s^*))_p(v):=X_p(s^*(\tilde{v}))-s^*_p((\nabla_X(\tilde{v}))_p)\]
+	für $X\in \mathcal{V}(M)$, $s^* \in \Gamma(E^*)$, $v \in E_p$ und $\tilde{v}\in \Gamma(E)$ eine Fortsetzung von $v$. 
+
+	Zeigen Sie, dass $\nabla^*$ ein Zusammenhang auf $E^*$ ist.
+\item
+	Es seien $E_1$ und $E_2$ Vektorbündel über $M$ mit Zusammenhängen $\nabla^1$ und $\nabla^2$. Zeigen Sie, dass es auf $E_1 \tensor E_2$ genau einen Zusammenhang $\nabla$ gibt, der  \[\nabla_X(s_1 \tensor s_2)=\nabla^1_X(s_1) \tensor s_2 + s_1 \tensor \nabla^2_X(s_2)\] für $X \in \mathcal{V}(M)$ und $s_i \in \Gamma(E_i)$ erfüllt.
+\end{enumerate}\end{Aufg}
+
 \begin{Loes}
 $c: [0,1] \to (S^2, g_{\text{std}})$ k"urzeste $C^1$-Kurve zwischen $c(0) = N = (0,0,1)$ und $c(1)$. \emph{Behauptung:} $\Bild c$ ist im Gro"skreis enthalten.
 

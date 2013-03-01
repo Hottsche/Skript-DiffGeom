@@ -9,6 +9,38 @@
 \setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
 \setcounter{Loes}{0}
 
+\begin{Aufg}
+Es sei $(M,g)$ eine zusammenhängende Riemannsche Mannigfaltigkeit. Zeigen Sie:
+\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
+\item
+	Für je zwei Punkte in $M$ existiert eine stückweise glatte Kurve, die diese verbindet.
+\item
+	Die Abstandsfunktion 
+		\[d(p,q)=\inf\{\mathcal{L}(c)|\text{ $c:[0,1] \to M$ ist stückweise glatt, } c(0)=p, c(1)=q\}\]
+	ist eine Metrik, welche die ursprüngliche Topologie erzeugt.
+\end{enumerate}\end{Aufg}
+
+\begin{Aufg}
+Es sei für $x,y\in \R^{n+1}$ 
+	\[\langle x,y \rangle:= - x^0 y^0 + x^1 y^1 +\dots + x^n y^n,\]
+sowie 
+	\[\mathbb{H}^n:= \{x\in \R^{n+1}| \langle x,x \rangle =-1, x^0 > 0\}.\]
+Zeigen Sie, dass $\mathbb{H}^n$ eine glatte Mannigfaltigkeit ist, und $\langle. \,, . \rangle$ für alle $p\in \mathbb{H}^n$ ein Skalarprodukt auf $\T_p \mathbb{H}^n \subset \T_p \R^{n+1}$   definiert und die Gesamtheit dieser Skalarprodukte eine Riemannsche Metrik $g$ auf $\mathbb{H}^n$ ist.
+
+Die Riemannsche Mannigfaltigkeit $(\mathbb{H}^n, g)$ heißt \emph{$n$-dimensionaler hyperbolischer Raum}.
+\end{Aufg}
+
+\begin{Aufg}
+Es sei $s=(-1,0,\dots,0) \in \R^{n+1}$. Zeigen Sie:
+\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
+\item
+	Die Abbildung $\phi$ mit 
+		\[\phi(x):=s-\frac{2 (x-s)}{\langle x-s,x-s\rangle}, \quad x\in \mathbb{H}^n, \]
+	ist ein Diffeomorphismus von $\mathbb{H}^n$ auf $\{\xi \in \R^n \cong \{0\} \times \R^n\subset \R^{n+1}\;|\; \| \xi\|<1\}$.
+\item
+	In der Karte $\phi$ hat die Riemannsche Metrik auf $\mathbb{H}^n$ die Form \[ \frac{4}{(1-\|\xi \|^2)^2} \sum_{i=1}^nd\xi^i \tensor d\xi^i.\] 
+\end{enumerate}\end{Aufg}
+
 \begin{Loes}\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
 \item
 	asdf

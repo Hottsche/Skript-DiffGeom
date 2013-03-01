@@ -169,8 +169,35 @@
 \usepackage{amssymb}
 \usepackage{stmaryrd}
 \usepackage{bm} % fette Mathe Zeichen
-%\usepackage{amsthm}
 \usepackage[hyperref,amsmath,thmmarks,thref]{ntheorem}
+
+% --- Mathe Symbole ---
+
+% canonic sets
+\DeclareMathOperator{\C}{\mathbb{C}}
+\DeclareMathOperator{\F}{\mathbb{F}}
+\DeclareMathOperator{\K}{\mathbb{K}}
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\RP}{\mathbb{RP}} % real projection plane
+\DeclareMathOperator{\Tor}{\mathbb{T}} % torus
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\B}{\mathbb{B}} % unit ball
+
+% Redeclare \P (Prim or Propability) and put the old, reversed "breakline P" in \BreakLineP
+\let\BreakLineP\P
+\renewcommand{\P}{\ensuremath{\mathbb{P}}}
+\let\umlautsH\H % long Hungarian umlaut (double acute)
+\renewcommand{\H}{\ensuremath{\mathbb{H}}}
+
+%  geschwungene Buchstaben
+\DeclareMathOperator{\calD}{\mathcal{D}}
+\DeclareMathOperator{\calI}{\mathcal{I}}
+\DeclareMathOperator{\calJ}{\mathcal{J}}
+\DeclareMathOperator{\calL}{\mathcal{L}}
+\DeclareMathOperator{\calT}{\mathcal{T}}
+\DeclareMathOperator{\calV}{\mathcal{V}}
 
 % common mathematical operators and sets
 \DeclareMathOperator{\aff}{aff} % affine Huelle
@@ -192,6 +219,7 @@
 \DeclareMathOperator{\pr}{pr}
 \DeclareMathOperator{\res}{res} % Residuum
 \DeclareMathOperator{\rg}{rg} % rank (i)
+\DeclareMathOperator{\ric}{ric} % Ricci Tensor
 \DeclareMathOperator{\scal}{scal} % Skalarkruemmung
 \DeclareMathOperator{\sgn}{sgn} % Signum
 \DeclareMathOperator{\sn}{sn} % allgemeiner Sinus
@@ -221,14 +249,12 @@
 \DeclareMathOperator{\Kern}{Kern}
 \DeclareMathOperator{\Oo}{O} % Matrizen sie mit ihrer Transponierten multipiziert die Einheitsmatrix ergeben
 \DeclareMathOperator{\Relation}{\scriptstyle\mathrm{R}} % custom Relation
+\DeclareMathOperator{\Ric}{Ric} % Ricci Tensor field
 \DeclareMathOperator{\Rang}{Rang} % rank (ii)
 \DeclareMathOperator{\SL}{SL} % Matrizen mit Deteminante 1
 \DeclareMathOperator{\Stab}{Stab} % Stabilisator
 \DeclareMathOperator{\Sym}{Sym} % symmetric group
 \DeclareMathOperator{\T}{T} % tangent bundle
-
-\DeclareMathOperator{\ric}{ric} % Ricci Tensor
-\DeclareMathOperator{\Ric}{Ric} % Ricci Tensor field
 
 \newcommand{\Zentrum}[1]{\ensuremath{\mathrm Z(#1)}} % Zentrum einer Gruppe
 \newcommand{\Ordnung}[1][]{ % Ordnung einer Gruppe
@@ -239,8 +265,23 @@
   }
 }
 
-% X als Malzeichen
+% X als Malzeichen und andere Operatorzeichen
+\newcommand{\dop}{\mathrm{d}}
 \newcommand{\X}{\times}
+\newcommand{\tensor}{\otimes}
+\newcommand{\ii}{{\mathrm i}}
+
+%Realteil und Imaginaerteil
+\renewcommand{\Re}{\ensuremath{\operatorname{Re}}}
+\renewcommand{\Im}{\ensuremath{\operatorname{Im}}}
+% sollte man da nicht besser \DeclareMathOperator verwenden? [kann man nicht, weil \Re und \Im schon deklariert sind, einen "\ReDeclareMathOperator" Befehl gibt es nicht. JB]
+
+% stellt einen gro"sen vertikalen Strich an einen Term, nuetzlich in Bruechen
+\newcommand{\bigvert}[1]{\left. #1 \right|}
+
+% Differentialoperatoren als Br"uche
+\newcommand{\difffrac}[3][]{\ifthenelse{\isempty{#1}}{\frac{\dop #2}{\dop #3}}{\left. \frac{\dop #2}{\dop #3} \right|_{#1}}}
+\newcommand{\pdifffrac}[3][]{\ifthenelse{\isempty{#1}}{\frac{\partial #2}{\partial #3}}{\left. \frac{\partial #2}{\partial #3} \right|_{#1}}}
 
 % ein schoener aussehender Faktorraum anstatt einfach nur A/B
 \newcommand{\FakRaum}[2]{
@@ -252,49 +293,6 @@
 	\ensuremath{\mkern-3mu}\ / \ensuremath{\mkern-3mu}
 	\raisebox{-0.6ex}{\ensuremath{#2}}}}
 
-%Realteil und Imaginaerteil
-\renewcommand{\Re}{\ensuremath{\operatorname{Re}}} % <-- sollte man da nicht besser \DeclareMathOperator verwenden?
-% [kann man nicht, weil \Re und \Im schon deklariert sind
-% einen "\ReDeclareMathOperator" Befehl gibt es nicht. JB]
-\renewcommand{\Im}{\ensuremath{\operatorname{Im}}}
-
-% \DeclareMathOperator{\Real}{Re} % real part
-% \DeclareMathOperator{\Imag}{Im} % imaginary part
-
-% canonic sets
-\DeclareMathOperator{\C}{\mathbb{C}}
-\DeclareMathOperator{\F}{\mathbb{F}}
-\DeclareMathOperator{\K}{\mathbb{K}}
-\DeclareMathOperator{\N}{\mathbb{N}}
-\DeclareMathOperator{\Q}{\mathbb{Q}}
-\DeclareMathOperator{\R}{\mathbb{R}}
-\DeclareMathOperator{\RP}{\mathbb{RP}} % real projection plane
-\DeclareMathOperator{\Tor}{\mathbb{T}} % torus
-\DeclareMathOperator{\Z}{\mathbb{Z}}
-\DeclareMathOperator{\B}{\mathbb{B}} % unit ball
-
-%  geschwungene Buchstaben
-\DeclareMathOperator{\calD}{\mathcal{D}}
-\DeclareMathOperator{\calI}{\mathcal{I}}
-\DeclareMathOperator{\calJ}{\mathcal{J}}
-\DeclareMathOperator{\calL}{\mathcal{L}}
-\DeclareMathOperator{\calT}{\mathcal{T}}
-\DeclareMathOperator{\calV}{\mathcal{V}}
-
-% Redeclare \P (Prim or Propability) and put the old, reversed "breakline P" in \BreakLineP
-\let\BreakLineP\P
-\renewcommand{\P}{\ensuremath{\mathbb{P}}}
-\let\umlautsH\H % long Hungarian umlaut (double acute)
-\renewcommand{\H}{\ensuremath{\mathbb{H}}}
-
-% Differentialoperatoren als Br"uche
-\newcommand{\dop}{\mathrm{d}}	
-\newcommand{\difffrac}[3][]{\ifthenelse{\isempty{#1}}{\frac{\dop #2}{\dop #3}}{\left. \frac{\dop #2}{\dop #3} \right|_{#1}}}
-\newcommand{\pdifffrac}[3][]{\ifthenelse{\isempty{#1}}{\frac{\partial #2}{\partial #3}}{\left. \frac{\partial #2}{\partial #3} \right|_{#1}}}
-
-% stellt einen gro"sen vertikalen Strich an einen Term, nuetzlich in Bruechen
-\newcommand{\bigvert}[1]{\left. #1 \right|}
-
 % quotient space or group
 \newcommand{\modulo}[1]{\ensuremath{/_{\displaystyle #1}}}
 
@@ -302,81 +300,31 @@
 \newcommand{\Index}[2]{\ensuremath{(#1 \SlimDdot #2)}}
 
 
-% canonic environments
-\newcounter{thmglobal}
-%\swapnumbers
-\theoremstyle{plain}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \makeatletter
 
-% Options
-\newboolean{enableDeepNumbering}
-\setboolean{enableDeepNumbering}{false}
-
-\DeclareOption{deepnum}{
-  \setboolean{enableDeepNumbering}{true}
-}
-
-\newboolean{enableMarginThm}
-\setboolean{enableMarginThm}{false}
-
-\DeclareOption{marginthm}{
-  \setboolean{enableMarginThm}{true}
-}
-
-\ProcessOptions\relax
-
-% call makeindex for an index register
-%\makeindex
-
-% Name language settings
-
-% theorem names, ngerman
-\newcommand{\cmLangThmSatz}{Satz\xspace}
-\newcommand{\cmLangThmLemma}{Lemma\xspace}
-\newcommand{\cmLangThmKor}{Korollar\xspace}
-\newcommand{\cmLangThmProp}{Proposition\xspace}
-
-\newcommand{\cmLangThmDfn}{Definition\xspace}
-\newcommand{\cmLangThmBsp}{Beispiel\xspace}
-
-\newcommand{\cmLangThmBem}{Bemerkung\xspace}
-
-% short forms, ngerman
-\newcommand{\cmLangThmShortSatz}{Satz\xspace}
-\newcommand{\cmLangThmShortLemma}{Lemma\xspace}
-\newcommand{\cmLangThmShortKor}{Kor\xspace}
-\newcommand{\cmLangThmShortProp}{Prop\xspace}
-
-\newcommand{\cmLangThmShortDfn}{Def\xspace}
-\newcommand{\cmLangThmShortBsp}{Bsp\xspace}
-
-\newcommand{\cmLangThmShortBem}{Bem\xspace}
-
-
 \theoremstyle{plain}
-\newtheorem{Dfn}{\cmLangThmDfn}[chapter]
+\newtheorem{Dfn}{Definition}[chapter]
 \newtheorem{Satz}[Dfn]{Satz}
-\newtheorem{Lemma}[Dfn]{\cmLangThmLemma}
-\newtheorem{Kor}[Dfn]{\cmLangThmKor}
-\newtheorem{Prop}[Dfn]{\cmLangThmProp}
+\newtheorem{Lemma}[Dfn]{Lemma}
+\newtheorem{Kor}[Dfn]{Korollar}
+\newtheorem{Prop}[Dfn]{Proporition}
 \theorembodyfont{\normalfont}
-\newtheorem{Bsp}[Dfn]{\cmLangThmBsp}
-\newtheorem{Bem}[Dfn]{\cmLangThmBem}
-\newtheorem{Aufg}{Aufgabe}
-\newtheorem{Loes}{L\"osung}
+\newtheorem{Bsp}[Dfn]{Beispiel}
+\newtheorem{Bspe}[Dfn]{Beispiele}
+\newtheorem{Bem}[Dfn]{Bemerkung}
 
 \theoremstyle{nonumberplain}
-\newtheorem{dfn}{\cmLangThmDfn}
+\newtheorem{dfn}{Definition}
 \newtheorem{satz}{Satz}
-\newtheorem{lemma}{\cmLangThmLemma}
-\newtheorem{kor}{\cmLangThmKor}
-\newtheorem{prop}{\cmLangThmProp}
+\newtheorem{lemma}{Lemma}
+\newtheorem{kor}{Korollar}
+\newtheorem{prop}{Proposition}
 
-\newtheorem{bsp}{\cmLangThmBsp}
-\newtheorem{bem}{\cmLangThmBem}
+\newtheorem{bsp}{Beispiel}
+\newtheorem{bspe}{Beispiele}
+\newtheorem{bem}{Bemerkung}
 
 \theoremsymbol{\ensuremath{\Box}}
 \theorembodyfont{\normalfont}
@@ -387,87 +335,18 @@
 \newtheorem{emptythm}{}% druckt nur den optionalen Namen aus
 
 \theoremstyle{break}
-
-% Add unnumbered Theorems, use amsthm style in both style modes
-\theoremstyle{plain}
-%\newtheorem*{satz*}{\cmLangThmSatz}
-%\newtheorem*{lemma}{\cmLangThmLemma}
-%\newtheorem*{kor*}{\cmLangThmKor}
-%\newtheorem*{prop*}{\cmLangThmProp}
-
-\theoremstyle{definition}
-%\newtheorem*{dfn}{\cmLangThmDfn}
-%\newtheorem*{bsp*}{\cmLangThmBsp}
-
-\theoremstyle{remark}
-%\newtheorem*{bem*}{\cmLangThmBem}
-\newtheorem*{beh*}{Behauptung}
-
-
-% 2-level numbering$
-\numberwithin{thmglobal}{section}
-
-% check if 3-level numbering is enabled
-\ifthenelse{\boolean{enableDeepNumbering}}{
-  \numberwithin{thmglobal}{subsection}
-}{}
-
-
-% some other customisations
+\newtheorem{Aufg}{Aufgabe}
+\newtheorem{Loes}{L\"osung}
 
 % changing enumerations
-\setlist[enumerate]{label=(\arabic*), itemsep=0cm, leftmargin=2cm}
-\setlist[itemize]{itemsep=0cm} %\setlist[itemize]{itemsep=0cm, leftmargin=2cm}
-
-% replace the slim emptyset symbol
-%\let\emptyset\varnothing
+\setlist[enumerate]{label=(\arabic*), itemsep=0cm, leftmargin=1cm}
+\setlist[itemize]{itemsep=0cm}
 
 % set line distances
 \linespread{1.1}
 
 % Add a ':' for mathmode with tiny whitespaces around
 \newcommand{\SlimDdot}{\ensuremath{\mathrm{:}}}
-
-
-% headline and cover generation commands
-
-% generate a simple headline
-% usage: \CmHeadline[date]{title}{topic}{author}
-\newcommand{\CmHeadline}[4][]{
-  \begin{minipage}[t]{\textwidth}
-    \huge{\textbf{#2}}\\
-    \large{#3, #4}\relax
-    \ifthenelse{\isempty{#1}}{}{\relax\large{, #1}}
-  \end{minipage}
-}
-
-% generate a simple cover page
-% usage: \CmCover[type(,skript)]{title}{subtitle}{date}
-\newcommand{\CmCover}[4][]{
-  \thispagestyle{empty}
-  \begin{titlepage}
-    \begin{center}
-      \begin{minipage}[b]{0.8\textwidth}
-	\vspace*{5cm}
-        \ifthenelse{\isempty{#1}}{
-          % Default cover arrangement
-          \Huge{\textbf{#2}}\\[0.5cm]
-          \huge{#3}\\[0.8cm]
-          \Large{#4}
-        }{
-          \ifthenelse{\equal{#1}{skript}}{
-            % Cover for lecture scripts
-            \huge{#3}\\[0.5cm]
-            \Huge{\textbf{#2}}\\[0.5cm]
-            \Large{#4}
-          }{}
-        }
-      \end{minipage}
-    \end{center}
-  \end{titlepage}
-  \pagebreak
-}
-
 
 % indexing support
 
@@ -478,90 +357,7 @@
 % Highlight(bold) and index the given text
 % usage: \CmMark[(optionally put another text for the index in here)]{(text to highlight and add to index)}
 \newcommand{\CmMark}[2][]{\textbf{\CmIndex[#1]{#2}}}
-%\newcommand{\CmMark}[2][]{\textbf{\CmIndex[#1]{#2}}\marginnote{\scriptsize{#2}}} % <-- Das ist nur ein Versuch die definierten Begriffe in den Rand zu stellen
 
-
-% sectioning support
-
-% Prints a description for a section in italic, bold. Most likely to use right under \section.
-% usage: \CmSectionDescription{(short description of section contents)}
-\newcommand{\CmSectionDescription}[1]{
-  \vspace{-0.3cm}
-  \hangindent=0.4cm
-  \hangafter=0
-  \begin{itshape}
-    \textbf{#1}
-  \end{itshape}
-  \vspace{0.3cm}
-}
-
-% Starts a new paragraph inside of a theorem environment (as defined above)
-% usage \CmSubThm[(paragraph title)]
-\newenvironment{CmSubThm}[1]{
-  \begin{itemize}[leftmargin=0.5cm,label=]
-  \item
-    \ifthenelse{\isempty{#1}}{}{
-      \hspace{-0.5cm}(\textit{#1})\\[0.2cm]
-    }
-  }{
-  \end{itemize}
-}
-
-
-% svg updater
-% needs shell escape option
-
-% Checks if the given image file has been modified and a custom command (if possible) via command line to generate something new.
-\newcommand{\CmExecuteIfFileNewer}[3]{
-  \ifnum\pdfstrcmp{\pdffilemoddate{#1}}
-  {\pdffilemoddate{#2}}>0
-  {\immediate\write18{#3}}\fi
-}
-
-% Tries to include an image file and checks if the given one has been modified. If so it calls inkscape (if possible) via command line to generate new pdf und pdf_tex files from the corresponding svg.
-\newcommand{\CmIncludeSvg}[1]{
-  \def\svg@filepath{}
-  
-  % check if corrosponding svg file exists
-  \IfFileExists{#1.svg}
-  {
-    \def\svg@filepath{#1}
-  }{
-    % if it does not, search in the graphicspath for it
-    \expandafter\@tfor\expandafter\currentsvgpath\expandafter:\expandafter=\Ginput@path\do{
-      \IfFileExists{\currentsvgpath#1.svg}{
-        \edef\svg@filepath{\currentsvgpath #1}
-      }{}
-    }
-  }
-  % if something was found, include the graphic, TODO: Make it work correctly
-  \ifthenelse{\isundefined{\svg@filepath} \OR \isempty{\svg@filepath}}{
-    \PackageError{canonicalmath}{Image file not found!}
-  }{
-    \PackageWarning{FilePath}{|\svg@filepath|}
-    \CmExecuteIfFileNewer{\svg@filepath.svg}{\svg@filepath.pdf}{inkscape -z -D --file=\svg@filepath.svg --export-pdf=\svg@filepath.pdf --export-latex}
-    \input{\svg@filepath.pdf_tex}
-  }
-}
-
-% Tries to include an image file on the center of the margin at the current position.
-\newcommand{\CmMarginSvg}[3][0cm]{
-  \marginnote{
-    \centering
-    \def\svgwidth{#3}
-    \CmIncludeSvg{#2}
-  }[#1]
-}
-
-% Tries to include an image file centering it at the current position
-\newcommand{\CmPutSvg}[3][0cm]{
-  \begin{figure}[h!]
-    \vspace{#1}
-    \centering
-    \def\svgwidth{#3}
-    \CmIncludeSvg{#2}
-  \end{figure}
-}
 \makeatother
 
 
@@ -574,13 +370,7 @@
 \usepackage{transparent}
 \usepackage{wrapfig}
 
-\graphicspath{{img/}}
-
 \parindent0pt
 
 % Befehl fuer Anfuerungszeichen unten und oben
 \newcommand{\quot}[1]{\textrm{\glqq}{#1}\textrm{\grqq}}
-
-
-
-\setlist[enumerate]{label=(\arabic*), itemsep=0cm, leftmargin=1cm}

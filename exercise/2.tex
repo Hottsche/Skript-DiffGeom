@@ -9,6 +9,31 @@
 \setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
 \setcounter{Loes}{0}
 
+\begin{Aufg}
+Es sei $\psi: (0,\infty)\times (0,2\pi)\to \mathrm{Bild}(\psi)\subset \R^2, \;(r,\theta) \mapsto r (\cos(\theta),\sin(\theta))$. Dann ist die Inverse $\phi=\psi^{-1}$ eine Karte von $\R^2$ mit Kartengebiet $\mathrm{Bild}(\psi)$ und Komponenten $r=\phi^1$, $\theta=\phi^2$.
+
+Berechnen Sie $\frac{\partial\phantom{r}}{\partial r}$ und $\frac{\partial \phantom{\theta}}{\partial \theta}$ in kartesischen Koordinaten, d.h. bzgl der kanonischen Karte $\mathrm{id}_{\R^2}$, und skizzieren Sie diese.
+\end{Aufg}
+
+\begin{Aufg}\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
+\item
+	Es seien $M_1$ und $M_2$ glatte Mannigfaltigkeiten. Zeigen sie, dass die Projektionen \[\pi_i:M_1 \times M_2 \to M_i, (p_1,p_2)\mapsto p_i\]Submersionen sind.
+\item
+	Es sei
+		\[f:(0,2\pi) \to \R^2,\quad t \mapsto \big(\sin(t),\sin(2t)\big).\]
+	Zeigen Sie, dass $f$ eine injektive Immersion, aber keine Einbettung ist und skizzieren Sie $\mathrm{Bild}(f)$.
+\end{enumerate}\end{Aufg}
+
+\begin{Aufg}
+Es sei $f:\R^3 \to \R$ mit $f(x,y,z) = x^2 +y^2 +a z^2$. Skizzieren Sie für $a=0$, $a=1$ und $a=-1$ die Niveaumengen
+	\[f^{-1}(c) =\left\{(x,y,z) \in \R^3 \middle| f(x,y,z) =c\right\}\]
+mit $c\in \R$. Welche Niveaumengen sind $C^\infty$-Untermannigfaltigkeiten von $\R^3$?
+\end{Aufg}
+
+\begin{Aufg}
+Zeigen Sie, dass die Gruppen $\mathrm{SL}(n,\R)$ und $\mathrm{O}(n,\R)$ glatte Untermannigfaltigkeiten des $\R^{n\times n}$ sind, indem Sie sie als reguläre Urbilder darstellen und bestimmen Sie ihre Dimensionen.
+\end{Aufg}
+
 \begin{Loes}
 Es sei $\psi: (0, \infty) \times (0, 2\pi) \to \R^2 \setminus (\R_{\ge0} \times \{0\})$, $(r, \theta) \mapsto r(\cos \theta, \sin \theta)$, die Inverse $\phi = \psi^{-1}$ ist eine Karte von $\R^2$.
 \begin{align*}
@@ -60,7 +85,7 @@ Also:
 	F"ur $(x_1,x_2) \in \phi_1(U_1) \times \phi_2(U_2)$ ist
 		\[ \phi_i \circ \pi_i \circ (\phi_1 \times \phi_2)^{-1} (x_1,x_2) = \phi_i(\pi_i(\phi_1^{-1}(x_1), \phi_2^{-1}(x_2)))	= \phi_i(\phi_i^{-1}(x_i)) = x_i. \]
 	Daraus folgt dass $\phi_i \circ \pi_i \circ (\phi_1 \times \phi_2)^{-1}$ glatt ist. Der Rest des Beweises kann auf zwei Arten erfolgen.
-	\begin{description}[font=\normalfont\itshape]
+	\begin{description}[font=\normalfont\itshape,leftmargin=*]
 	\item[Variante 1:]
 		Es folgt dass $\D(\phi_i \circ \pi_i \circ (\phi_1 \times \phi_2)^{-1}) = \left( \begin{smallmatrix} 1 & & \\ & \ddots & \\ & & 1\\ & 0 &\end{smallmatrix} \right)$
 		
@@ -77,7 +102,7 @@ Also:
 	\end{description}
 \item
 	Zeige dass $f: (0,2\pi) \to \R^2$, $t \mapsto (\sin(t), \sin(2t))$ eine injektive Immersion aber keine Einbettung ist.
-	\begin{description}[font=\normalfont\itshape]
+	\begin{description}[font=\normalfont\itshape,leftmargin=*]
 	\item[$f$ ist injektiv:]
 		Seien $t_1, t_2 \in (0,2\pi)$ mit $f(t_1) = f(t_2)$. Damit muss auch gelten dass $\sin(t_1) = \sin(t_2)$ und $\sin(2t_1) = \sin(2t_2)$. Aus diesen beiden Bedingungen folgt dass f"ur $t_1, t_2$ gelten muss:
 		\begin{itemize}

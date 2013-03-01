@@ -9,7 +9,37 @@
 \setcounter{Aufg}{0} %Damit die Aufgaben jedes Mal bei Aufgabe 1 anfangen
 \setcounter{Loes}{0}
 
-\begin{description}[font=\normalfont\itshape]
+\begin{Aufg}
+Es sei $E$ ein Vektorb"undel über $M$ mit kovarianter Ableitung $\nabla$.
+Zeigen Sie, dass
+\begin{align*}
+	R \, : \; &\mathcal{V} (M) \times \mathcal{V} (M) \times \Gamma (E) \longrightarrow \Gamma (E) \\[1ex]
+	& R(X,Y)S = \nabla_X \nabla_Y S - \nabla_Y \nabla_X S - \nabla_{[X,Y]} S
+\end{align*}
+eine $\mathrm{C}^{\infty} (M)$-multilineare Abbildung ist.
+\end{Aufg}
+
+\begin{Aufg}
+Es sei $(M,g)$ eine Riemannsche Mannigfaltigkeit und $R$ der Krümmungstensor des Levi-Civita-Zusammenhanges auf $M$.
+Zeigen Sie, daß für alle $X,Y,Z,W \in \mathcal{V} (M)$ gilt:
+\begin{enumerate}[label=\alph*),leftmargin=*,widest=b]
+\item
+	$R(X,Y)Z + R(Y,Z)X + R(Z,X)Y = 0$
+\item
+	$\left\langle R(X,Y)Z,W \right\rangle = - \left\langle R(X,Y)W,Z \right\rangle$
+\item
+	$\left\langle R(X,Y)Z,W \right\rangle = \left\langle R(Z,W)X,Y \right\rangle$
+\end{enumerate}\end{Aufg}
+
+\begin{Aufg}
+Es sei $(M,g)$ eine Riemannsche Mannigfaltigkeit.
+Für eine glatte Kurve $c : [a,b] \rightarrow M$ bezeichne $P^c_{a,b} : T_{c(a)} M \rightarrow T_{c(b)} M$ den Paralleltransport entlang $c$ bezüglich des Levi-Civita-Zusammenhanges.
+Zeigen Sie, daß $P^c_{a,b}$ eine lineare Isometrie ist.
+\end{Aufg}
+
+Bevor wir mit den L"osungen beginnen zeigen wir zun"achst den folgenden Sachverhalt
+
+\begin{description}[font=\normalfont\itshape,leftmargin=*]
 \item[Behauptung:]
 	F"ur eine glatte Kurve $c$ und Vektorfelder $X, Y$ l"angs $c$ gilt:
 		\[ \difffrac{}{t}g_{c(t)} \left( X(t), Y(t) \right) = g_{c(t)} \left( (\nabla_tX)(t), Y(t) \right) + g_{c(t)} \left( X(t), (\nabla_tY)(t) \right) \]

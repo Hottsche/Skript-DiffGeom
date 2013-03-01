@@ -10,10 +10,21 @@
 \setcounter{Loes}{0}
 
 \begin{Aufg}
-asdf
+Es sei $\gamma:[0,a]\to M$ eine Geodätische mit $\gamma(0)=p$, $\gamma'(0)=v$, $\|v\|=1$ und $w\in \T_pM$ mit $\|w\|=1$ und $\langle v,w\rangle=0$.  Es sei $J$ das durch 
+	\[J(t)=(\exp_p)_{*_{tv}}tw \in \T_{\gamma(t)}M\]
+gegebene Jacobivektorfeld längs $\gamma$ und $\sigma=\mathrm{span}\{v,w\}$. Zeigen Sie, dass die Taylorentwicklung von $|J(t)|$ gegeben ist durch
+	\[|J(t)|=t-\frac{1}{6}\sec(\sigma)t^3+o(t^3) \quad \text{für }t\to0.\]
+{\footnotesize \textbf{Hinweis:} Berechnen Sie zunächst die Entwicklung von $|J(t)|^2$ und zeigen Sie hierfür die Identität $\nabla_{\gamma'}(R(\gamma',J)\gamma')(0)=R(\gamma',J')\gamma'(0)$.}
 \end{Aufg}
 
 \begin{Aufg}
+Es seien $\gamma_1, \gamma_2:[0,a] \to M$ zwei Geodätische mit $\gamma_1(0)=\gamma_2=(0)=:p$, deren Ableitungen $v:=\dot{\gamma}_1(0)$ und $w:=\dot{\gamma}_2(0)$ normiert und linear unabhängig seien. Weiter sei $L(t)=d(\gamma_1(t), \gamma_2(t))$.
+
+Zeigen Sie, dass
+	\[L(t)=t\|v-w\|-\frac{1}{12}\sec(\mathrm{span}\{v,w\})\|v-w\|(1+\langle v,w\rangle)t^3 + o(t^3)\quad \text{für }t\to 0\]gilt.
+
+{\footnotesize \textbf{Hinweis:} Betrachten Sie die Variation $(t,s)\mapsto\exp(s\exp^{-1}_{\gamma_1(t)}(\gamma_2(t)))$.}
+
 Skizze:
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
 	%\tikzgitter{(-2,-2)}{(4,4)}
