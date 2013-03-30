@@ -1,0 +1,97 @@
+%%
+%% 3-1 Differenzierbarkeit
+%%
+\begin{tikzpicture}[font=\scriptsize]
+
+    % Die Abbildungspfeile
+    \draw[->] (-1,0) to node[above]{$\psi \circ \Phi \circ \phi^{-1}$}node[below]{differenzierbar} (1,0);
+    \draw[->] (-1,3) to node[above]{$\Phi$} (1,3);
+    
+    % Die Achsen
+    \draw[->] (-5.25,-0.5) -- (-2.5,-0.5);
+    \draw[->] (-5,-0.75) -- (-5, 1.25);
+    \node[font=\normalfont] at (-5.5,1.25) {$\R^m$};
+    \draw[->] (2.75,-0.5) -- (5.5,-0.5);
+    \draw[->] (3,-0.75) -- (3, 1.25); 
+    \node[font=\normalfont] at (2.5,1.25) {$\R^n$};
+
+    \node[font=\normalfont] at (2.5,4) {$N$};
+    \node[font=\normalfont] at (-5.5,3) {$M$};
+    
+    % das linke Ding
+    \coordinate (L0) at (-5,4.5);
+    \coordinate (L1) at (-4.3,1.8);
+    \coordinate (L2) at (-1.4,4);
+
+    \coordinate (LD0) at (1,-1);
+    \coordinate (LD1) at (1,-0.4);
+
+    \draw (L0) ..controls($(L0)+1*(LD0)$) and ($(L1)-2*(LD1)$).. 
+(L1) ..controls($(L1)+3*(LD1)$) and($(L2)-(LD1)$).. (L2);
+
+    % Loch Links
+    \coordinate (HoleCenter) at (-3.4,3.1);
+	\coordinate (HI0) at ($(HoleCenter) + (0.6,0)$); % innen
+	\coordinate (HI1) at ($(HoleCenter) + (-0.6,0)$);
+	\coordinate (HA0) at ($(HoleCenter) + (0.8,0.2)$); % auÃen
+	\coordinate (HA1) at ($(HoleCenter) + (-0.8,0.2)$);
+
+	\coordinate (HD0) at (1,0.5);
+	\coordinate (HD1) at (1,-0.5);
+
+	\draw (HA0) ..controls ($(HI0) + 0.1*(HD0)$)..
+	(HI0) ..controls($(HI0) - 0.4*(HD0)$) and ($(HI1) + 0.4*(HD1)$)..
+	(HI1) ..controls($(HI1) - 0.1*(HD1)$) .. (HA1);
+
+	\draw (HI0) .. controls($(HI0) - 0.3*(HD1)$) and ($(HI1) + 0.3*(HD0)$).. (HI1);
+
+    % das rechte Ding
+    \draw (4, 3)  ellipse (2 and 1);
+    % Loch Rchts
+    \coordinate (HoleCenter2) at (4,3);
+	\coordinate (HI2) at ($(HoleCenter2) + (0.8,0)$); % innen
+	\coordinate (HI3) at ($(HoleCenter2) + (-0.8,0)$);
+	\coordinate (HA2) at ($(HoleCenter2) + (1,0.2)$); % auÃen
+	\coordinate (HA3) at ($(HoleCenter2) + (-1,0.2)$);
+
+	\draw (HA2) ..controls ($(HI2) + 0.1*(HD0)$)..
+	(HI2) ..controls($(HI2) - 0.4*(HD0)$) and ($(HI3) + 0.4*(HD1)$)..
+	(HI3) ..controls($(HI3) - 0.1*(HD1)$) .. (HA3);
+
+	\draw (HI2) .. controls($(HI2) - 0.3*(HD1)$) and ($(HI3) + 0.3*(HD0)$).. (HI3);
+    
+    % die linke Kartoffel
+    \coordinate (K0) at (-4,2);
+    \coordinate (K1) at (-3,2);
+    \coordinate (K5) at (-4,2.6); 
+    \coordinate (ctrlk0) at (0.25,0.3);
+    \coordinate (ctrlk1) at (1,0.4);
+    \coordinate (ctrlk4) at (0,0.25);
+
+    \draw (K0) ..controls($(K0)-(ctrlk0)$) and ($(K1)-0.5*(ctrlk1)$).. 
+(K1) ..controls($(K1)+0.5*(ctrlk1)$)  and ($(K5)+(ctrlk1)$).. 
+(K5) ..controls($(K5)-0.5*(ctrlk1)$) and ($(K0)+(ctrlk0)$)..
+(K0) -- cycle;
+
+    \coordinate (p) at (-3.75,2.25);
+    \filldraw[fill=white] (p) circle(0.05)node[right]{$p$};
+    
+    % die rechte Kartoffel (Kreis)
+    \coordinate (q) at (4,2.4);
+    \filldraw[fill=white] (q) circle(0.05)node[right]{$q$};
+    \draw (q) ellipse (0.6 and 0.3);
+    
+    % die beiden Umgebungen unten
+
+    \coordinate (x) at (-3.75,0.3);
+    \filldraw[fill=white] (x) circle(0.05)node[right]{$x$};
+    \draw (x) circle (0.65);
+
+    \coordinate (y) at (4,0.3);
+    \filldraw[fill=white] (y) circle(0.05)node[right]{$y$};
+    \draw (y) circle (0.65);
+    
+    % Abbildungspfeile
+    \draw[->] (-4.2, 2.1) to[out=230,in=110] node[left]{$\phi$} (-4.2,1);
+    \draw[->] (4.4, 2.1) to[out=290,in=70] node[right]{$\psi$} (4.4,1);
+  \end{tikzpicture}

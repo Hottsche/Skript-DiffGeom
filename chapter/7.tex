@@ -45,7 +45,7 @@ Nun gehe zur Betrachtung von Vektorfeldern $X \colon \R^n \to \R^n$ "uber und se
 % Definition 7.1
 \begin{Dfn}
   Es seien $M$ eine glatte Mannigfaltigkeit und $E$ ein Vektorb"undel "uber $M$.
-  Eine \CmMark{kovariante Ableitung} (oder \CmMark{Zusammenhang} ([engl.] \quot{connection}) auf $E$ ist eine Abbildung
+  Eine \CmMark{kovariante Ableitung} (oder \CmMark{Zusammenhang} ([engl.] \quot{connection})) auf $E$ ist eine Abbildung
   \begin{align*}
     \nabla \colon \mathcal V(M) \times \Gamma(E) \to \Gamma(E), \quad \nabla(X,S) = \nabla_XS
   \end{align*}
@@ -68,158 +68,173 @@ Nun gehe zur Betrachtung von Vektorfeldern $X \colon \R^n \to \R^n$ "uber und se
   Kurzform: $\nabla \colon \Gamma(E) \to \Gamma(\T^{*}M \otimes E), S \mapsto \nabla_{(.)}S$ ist eine $C^{\infty}(M)$-Modulderivation.
 \end{Dfn}
 
-\begin{bsp}\begin{enumerate}[label=\arabic*),leftmargin=*]
-\item
-	Das gew"ohnliche Differential $\D$ definiert in kanonischer Weise eine kovariante Ableitung auf $\T\R^n$.
-	\begin{align*}
-		X \in \mathcal V(\R^n), X \colon \R^n \to \T\R^n \cong \R^n \times \R^n \text{ via } \calI\colon X_p \mapsto (p,\underbrace{\calI_p(X_p)}_{=:\overline X_p}).
-	\end{align*}
-	Nun ist wie folgt eine kovariante Ableitung gegeben: $(\nabla_XY)_p = \calI^{-1}(p,\D_{\overline X_p}\overline Y)$.
-\item
-	$E = M \times \R^n$, ein Schnitt $S$ von $E$ ist von der Form $S_p = (p,s(p))$, $s \colon M \to \R^n$ glatt.
+\begin{bsp}
+  \begin{enumerate}[label=(\arabic*),leftmargin=*]
+  \item Das gew"ohnliche Differential $\D$ definiert in kanonischer Weise eine kovariante Ableitung auf $\T\R^n$.
+    \begin{align*}
+      X \in \mathcal V(\R^n), X \colon \R^n \to \T\R^n \cong \R^n \times \R^n \text{ via } \calI\colon X_p \mapsto (p,\underbrace{\calI_p(X_p)}_{=:\overline X_p}).
+    \end{align*}
+    Nun ist wie folgt eine kovariante Ableitung gegeben: $(\nabla_XY)_p = \calI^{-1}(p,\D_{\overline X_p}\overline Y)$.
+  \item $E = M \times \R^n$, ein Schnitt $S$ von $E$ ist von der Form $S_p = (p,s(p))$, $s \colon M \to \R^n$ glatt.
 
-	Hier definiert man die kovariante Ableitung:
-	\begin{align*}
-		& \nabla_XS = (p,\calI_{s(p)}^{-1}(s_{*p},X_p))\\
-		&  s_{*p}\colon \T_{*p}M \to \T_{*p}\R^n, s_{*p}\colon X_p \in \T_{*p}\R^n \xrightarrow{\calI_{s(p)}} \R^n.
-	\end{align*}
-\item
-	Sei $E = M \times \R^n$, ein Schnitt $S = (\Id, \sigma)$, $\sigma: M \to \R^n$. Dann ist $(\nabla_X S)_p = (p, \calI_p(\sigma_{*p}(X_p))$, $\sigma_{*p}: \T_pM \to \T_{\sigma(p)}\R^n$. Sei $ \omega = (\omega_j^k)_{j,k \le n}$ eine $(n\times n)$-Matrix von 1-Formen auf $M$, das hei"st $\omega(X)|_p \in \mathfrak M^{n\times n}(\R)$.
-	F"ur einen Schnitt $S = (\Id, \sigma)$ und sei dann
-		\[ (\nabla_XS)_p = (\Id, \calI_p(\sigma_{*p}(X_p)) + \omega(X)|_p \cdot \sigma(p). \]
-	Dies definiert eine kovariante Ableitung auf $E = M \X \R^n$.
-\item
-	$\dop \colon \Omega^0(M) = C^{\infty}(M) = \Gamma(M\times \R) \to \Omega^1(M) = \Gamma(\T^{*}M) = \Gamma(\underbrace{\T^{*}M \otimes (M \times \R)}_{\mathclap{\text{Fasern: } \T_p^{*}M\otimes\R \cong \T_p^{*}M}})$ mit $f \mapsto [\dop f \colon X \mapsto \dop f(X) = X(f)]$.
+    Hier definiert man die kovariante Ableitung:
+    \begin{align*}
+      & \nabla_XS = (p,\calI_{s(p)}^{-1}(s_{*p},X_p))\\
+      &  s_{*p}\colon \T_{*p}M \to \T_{*p}\R^n, s_{*p}\colon X_p \in \T_{*p}\R^n \xrightarrow{\calI_{s(p)}} \R^n.
+    \end{align*}
+  \item Sei $E = M \times \R^n$, ein Schnitt $S = (\Id, \sigma)$, $\sigma: M \to \R^n$. Dann ist $(\nabla_X S)_p = (p, \calI_p(\sigma_{*p}(X_p))$, $\sigma_{*p}: \T_pM \to \T_{\sigma(p)}\R^n$. Sei $ \omega = (\omega_j^k)_{j,k \le n}$ eine $(n\times n)$-Matrix von 1-Formen auf $M$, das hei"st $\omega(X)|_p \in \mathfrak M^{n\times n}(\R)$.
+    F"ur einen Schnitt $S = (\Id, \sigma)$ und sei dann
+    \[ (\nabla_XS)_p = (\Id, \calI_p(\sigma_{*p}(X_p)) + \omega(X)|_p \cdot \sigma(p). \]
+    Dies definiert eine kovariante Ableitung auf $E = M \X \R^n$.
+  \item $\dop \colon \Omega^0(M) = C^{\infty}(M) = \Gamma(M\times \R) \to \Omega^1(M) = \Gamma(\T^{*}M) = \Gamma(\underbrace{\T^{*}M \otimes (M \times \R)}_{\mathclap{\text{Fasern: } \T_p^{*}M\otimes\R \cong \T_p^{*}M}})$ mit $f \mapsto [\dop f \colon X \mapsto \dop f(X) = X(f)]$.
 
-	Dann ist
-	\begin{align*}
-		& \dop \colon \mathcal V(M) \times C^{\infty}(M) \to C^{\infty}(M),\\
-		& \nabla_Xf = \dop (X,f) \mapsto X(f)
-	\end{align*}
-	eine kovariante Ableitung auf $C^{\infty}(M)$.
-\item
-	Es sei $M \subseteq \R^k$ eine glatte Untermannigfaltigkeit und $\nabla$ die kanonische kovariante Ableitung auf $\T \R^k$.
+    Dann ist
+    \begin{align*}
+      & \dop \colon \mathcal V(M) \times C^{\infty}(M) \to C^{\infty}(M),\\
+      & \nabla_Xf = \dop (X,f) \mapsto X(f)
+    \end{align*}
+    eine kovariante Ableitung auf $C^{\infty}(M)$.
+  \item
+    Es sei $M \subseteq \R^k$ eine glatte Untermannigfaltigkeit und $\nabla$ die kanonische kovariante Ableitung auf $\T \R^k$.
 
-	Erster Ansatz f"ur eine kovariante Ableitung:
-	\begin{align*}
-		\tilde \nabla_XY = \nabla_{\tilde X}\tilde Y|_M \text{ das funktioniert noch nicht.}
-	\end{align*}
-	F"ur $X,Y \in \mathcal V(M)$ seien $\tilde X, \tilde Y$ Fortsetzungen, das hei"st $\tilde X|_M = X$ und $\tilde Y|_M = Y$.
-	\begin{align*}
-		(\nabla_{\tilde X}\tilde Y)_p \in \T_p\R^k \supseteq \T_pM.
-	\end{align*}
+    Erster Ansatz f"ur eine kovariante Ableitung:
+    \begin{align*}
+      \tilde \nabla_XY = \nabla_{\tilde X}\tilde Y|_M \text{ das funktioniert noch nicht.}
+    \end{align*}
+    F"ur $X,Y \in \mathcal V(M)$ seien $\tilde X, \tilde Y$ Fortsetzungen, das hei"st $\tilde X|_M = X$ und $\tilde Y|_M = Y$.
+    \begin{align*}
+      (\nabla_{\tilde X}\tilde Y)_p \in \T_p\R^k \supseteq \T_pM.
+    \end{align*}
 
-	N"achster Ansatz, der tas"achlich eine kovariante Ableitung definiert.
-	\begin{align*}
-		\tilde \nabla_XY = (\nabla_{\tilde X}\tilde Y|_M)^{\text{proj}\T_pM},
-	\end{align*}
-	wobei $X^{\text{proj}\T_pM}$ die orthogonale Projektion von X auf den Tangentialraum $\T_pM$ bzgl. des Standardskalarproduktes ist.
-\end{enumerate}\end{bsp}
+    N"achster Ansatz, der tas"achlich eine kovariante Ableitung definiert.
+    \begin{align*}
+      \tilde \nabla_XY = (\nabla_{\tilde X}\tilde Y|_M)^{\text{proj}\T_pM},
+    \end{align*}
+    wobei $X^{\text{proj}\T_pM}$ die orthogonale Projektion von X auf den Tangentialraum $\T_pM$ bzgl. des Standardskalarproduktes ist.
+  \end{enumerate}
+\end{bsp}
 
 Schreibt man in Beispiel 3) $\sigma = ( \sigma^1, \ldots ,\sigma^n)$, so kann man $\dop \sigma = (\dop \sigma^1,\ldots ,\dop\sigma^n)$ als 1-Form auf $M$ mit Werten in $\R^n$ auffassen:
-	\begin{align*}
-		\dop \sigma(X)_p &= (\dop \sigma^1(X)_p,\ldots , \dop \sigma^n(X)_p)\\
-		&= (X(\sigma^1)_p,\ldots ,X(\sigma^n)_p)\\
-		&= \calI_p(\sum X(\sigma^{i}) \partial_i),
-	\end{align*}
-	wobei $\partial_i$ das $i$-te Koordinatenfeld in der Karte $(\Id, \R^n)$ ist. Identifiziert man $E = M \X \R^n$ mit $C^{\infty}(M, \R^n)$, so gilt $\nabla_X S = \dop \sigma(X) \omega(X) \sigma$ (Kurzschreibweise f"ur die zweite Komponente von $S$). Lokal ist \emph{jede} kovariante Ableitung von dieser Form.
+\begin{align*}
+  \dop \sigma(X)_p &= (\dop \sigma^1(X)_p,\ldots , \dop \sigma^n(X)_p)\\
+  &= (X(\sigma^1)_p,\ldots ,X(\sigma^n)_p)\\
+  &= \calI_p(\sum X(\sigma^{i}) \partial_i),
+\end{align*}
+wobei $\partial_i$ das $i$-te Koordinatenfeld in der Karte $(\Id, \R^n)$ ist.
+Identifiziert man $E = M \X \R^n$ mit $C^{\infty}(M, \R^n)$, so gilt $\nabla_X S = \dop \sigma(X) \omega(X) \sigma$ (Kurzschreibweise f"ur die zweite Komponente von $S$). 
+Lokal ist \emph{jede} kovariante Ableitung von dieser Form.
 
 \begin{Lemma}
-Die kovariante Ableitung $(\nabla_XS)_p$ h"angt nur von den Werten von $X$ und $S$ in einer Umgebung von $p$ ab.
+  Die kovariante Ableitung $(\nabla_XS)_p$ h"angt nur von den Werten von $X$ und $S$ in einer Umgebung von $p$ ab.
 \end{Lemma}
 
 \begin{bew}
-Es seien $p \in M$ und $X_1, X_2 \in \calV(M)$ sowie $S_1, S_2 \in \Gamma(E)$ und $U$ eine Umgebung von $p$ mit $X_1|_U = X_2|_U$ und $S_1|_U = S_2|_U$. W"ahle nun ein $\sigma \in C^{\infty}(M)$ mit dem Tr"ager $\supp \sigma \subseteq U$ und $\sigma|_V \equiv 1$ auf einer Umgebung $V$ von $p$. Dann gilt: $\sigma X_1 = \sigma X_2$ und $\sigma S_1 = \sigma S_2$. F"ur $q \in V$ folgt dann:
-\begin{align*}
-	(\nabla_{\sigma X_i} \sigma S_i)_q &= \sigma(q)(\nabla_{X_i} \sigma S_i)|_q\\
-	&= \sigma(q)(\underbrace{X_i(\sigma)|_q}_{=0} S_i + \underbrace{\sigma(q)}_{=1}\nabla_{X_i} S_i|_q)\\
-	&= \nabla_{X_i} S_i|_q
-\end{align*}
-Damit folgt $\nabla_{X_1} S_1 = \nabla_{X_2} S_2$
+  Es seien $p \in M$ und $X_1, X_2 \in \calV(M)$ sowie $S_1, S_2 \in \Gamma(E)$ und $U$ eine Umgebung von $p$ mit $X_1|_U = X_2|_U$ und $S_1|_U = S_2|_U$. 
+  W"ahle nun ein $\sigma \in C^{\infty}(M)$ mit dem Tr"ager $\supp \sigma \subseteq U$ und $\sigma|_V \equiv 1$ auf einer Umgebung $V$ von $p$.
+  Dann gilt: $\sigma X_1 = \sigma X_2$ und $\sigma S_1 = \sigma S_2$. F"ur $q \in V$ folgt dann:
+  \begin{align*}
+    (\nabla_{\sigma X_i} \sigma S_i)_q &= \sigma(q)(\nabla_{X_i} \sigma S_i)|_q\\
+    &= \sigma(q)(\underbrace{X_i(\sigma)|_q}_{=0} S_i + \underbrace{\sigma(q)}_{=1}\nabla_{X_i} S_i|_q)\\
+    &= \nabla_{X_i} S_i|_q
+  \end{align*}
+  Damit folgt $\nabla_{X_1} S_1 = \nabla_{X_2} S_2$
 \end{bew}
+
 
 \section{Lokale Koordinaten}
 
-Es sei $(\phi, U)$ eine Karte von $M$ um $p \in M$ und $E|_U \overset{\tau}{\to} U \X \R^n$. Dann ist $s_i(p) = \tau^{-1}(p, e_i)$ eine lokale Basis. Jeder Schnitt $S$ ist also lokal von der Form $S|_U = \sum_i \sigma^{i} s_i$. Somit existieren glatte Funktionen $\Gamma_{ij}^k$, die sogenannten \CmMark{Christoffelsymbole} mit 
-	\[ \nabla_{\pdifffrac{}{x^{i}}} s^j = \sum_k \Gamma_{ij}^k s^k. \]
+Es sei $(\phi, U)$ eine Karte von $M$ um $p \in M$ und $E|_U \overset{\tau}{\to} U \X \R^n$. Dann ist $s_i(p) = \tau^{-1}(p, e_i)$ eine lokale Basis.
+Jeder Schnitt $S$ ist also lokal von der Form $S|_U = \sum_i \sigma^{i} s_i$.
+Somit existieren glatte Funktionen $\Gamma_{ij}^k$, die sogenannten \CmMark{Christoffelsymbole} mit 
+\[ \nabla_{\pdifffrac{}{x^{i}}} s^j = \sum_k \Gamma_{ij}^k s^k. \]
 F"ur $S = \sum \sigma^j s_j$ und $X = \sum \xi^{i} \pdifffrac{}{x^{i}}$ folgt dann:
 \begin{align*}
-	(\nabla_XS)_p &= \sum_{i,j} \xi_p^{i} \nabla_{\pdifffrac{}{x^{i}}} \left(\sigma^j s_j\right)\\
-	&= \sum_{i,j} \xi_p^{i} \left(\pdifffrac{\sigma^j}{x^{i}} \cdot s_j(p) \nabla_{\pdifffrac{}{x^{i}}} s_j|_p\right)\\
-	&= \sum_{i,j} \xi_p^{i} \left(\pdifffrac[p]{\sigma^j}{x^{i}} s_j(p) + \sigma^j(p) \sum_k \Gamma_{ij}^k(p) s_k(p)\right)\\
-	&= \sum_k \Bigg(\underbrace{\sum_i \xi_p^{i} \pdifffrac[p]{\sigma^k}{x^{i}}}_{\mathclap{= X(\sigma^k)|_p = \difffrac[t=0]{}{t} (\sigma^k \circ \gamma) \text{ mit } \dot\gamma(0) = X_p}} + \sum_{i,j} \xi_p^{i} \sigma^j(p) \Gamma_{ij}^k(p)\Bigg) s_k(p)
+  (\nabla_XS)_p &= \sum_{i,j} \xi_p^{i} \nabla_{\pdifffrac{}{x^{i}}} \left(\sigma^j s_j\right)\\
+  &= \sum_{i,j} \xi_p^{i} \left(\pdifffrac{\sigma^j}{x^{i}} \cdot s_j(p) \nabla_{\pdifffrac{}{x^{i}}} s_j|_p\right)\\
+  &= \sum_{i,j} \xi_p^{i} \left(\pdifffrac[p]{\sigma^j}{x^{i}} s_j(p) + \sigma^j(p) \sum_k \Gamma_{ij}^k(p) s_k(p)\right)\\
+  &= \sum_k \Bigg(\underbrace{\sum_i \xi_p^{i} \pdifffrac[p]{\sigma^k}{x^{i}}}_{\mathclap{= X(\sigma^k)|_p = \difffrac[t=0]{}{t} (\sigma^k \circ \gamma) \text{ mit } \dot\gamma(0) = X_p}} + \sum_{i,j} \xi_p^{i} \sigma^j(p) \Gamma_{ij}^k(p)\Bigg) s_k(p)
 \end{align*}
 
-\begin{bem}\begin{enumerate}[label=\arabic*),leftmargin=*]
-\item
-	$X \mapsto (\nabla_XS)_p$ h"angt nur von dem Wert $X_p$ von  $X$ in $p$ ab, Schreibweise $(\nabla_XS)_p = \nabla_{X_p}S$.
-\item
-	$S \mapsto \nabla_{X_p}S$ h"angt nur von den Werten von $S$ entlang einer Kurve $\gamma$ mit $\dot\gamma(0) = X_p$ ab. Es gilt
-		\[ \nabla_XS = \sum_k X(\sigma^k)S_k + \sum_k \sum_j\left(\left(\sum_i \Gamma_{ij}^k \xi^{i}\right) \sigma^j\right) s_k. \]
-	Schreibt man $\sigma = (\sigma^1,\ldots ,\sigma^n)$ und fasst $\dop \sigma = (\dop \sigma^1,\ldots ,\dop \sigma^n)$ also lokale 1-Form mit Werten in $\R^n$ auf, so ist f"ur $s=(s_1,\ldots ,s_n)$ $\dop\sigma \cdot s = \sum \dop \sigma^j s^j$ eine lokale 1-Form mit Werten in $E$. Es gilt: $\dop \sigma \cdot s(X) = \D_X \sigma \cdot s$. Analog definiert $\omega(X) = (\omega_j^k(X))_{k,j}$ eine lokale 1-Form mit Werten in den reellen $(n\X n)$-Matrizen. Dann ist 
-	\[ \omega \sigma : X \mapsto \omega(X) \sigma = \left( \sum_{i,j} \Gamma_{ij}^k \xi^{i} \sigma^j \right)^k \]
-eine lokale 1-Form mit Werten in $\R^n$ und $\omega\sigma \cdot s$ eine lokale 1-Form mit Werten in $E$. Damit gilt
-	\[ \nabla_XS = (\dop \sigma(X) + \omega(X) \sigma) \cdot s \]
-oder kurz
-	\[ \nabla = \dop + \omega. \]
-\end{enumerate}\end{bem}
+\begin{bem}
+  \begin{enumerate}[label=(\arabic*),leftmargin=*]
+  \item $X \mapsto (\nabla_XS)_p$ h"angt nur von dem Wert $X_p$ von  $X$ in $p$ ab, Schreibweise $(\nabla_XS)_p = \nabla_{X_p}S$.
+  \item $S \mapsto \nabla_{X_p}S$ h"angt nur von den Werten von $S$ entlang einer Kurve $\gamma$ mit $\dot\gamma(0) = X_p$ ab.
+    Es gilt
+    \[ \nabla_XS = \sum_k X(\sigma^k)S_k + \sum_k \sum_j\left(\left(\sum_i \Gamma_{ij}^k \xi^{i}\right) \sigma^j\right) s_k. \]
+    Schreibt man $\sigma = (\sigma^1,\ldots ,\sigma^n)$ und fasst $\dop \sigma = (\dop \sigma^1,\ldots ,\dop \sigma^n)$ als lokale 1-Form mit Werten in $\R^n$ auf, so ist f"ur $s=(s_1,\ldots ,s_n)$ $\dop\sigma \cdot s = \sum \dop \sigma^j s^j$ eine lokale 1-Form mit Werten in $E$. Es gilt: $\dop \sigma \cdot s(X) = \D_X \sigma \cdot s$.
+    Analog definiert $\omega(X) = (\omega_j^k(X))_{k,j}$ eine lokale 1-Form mit Werten in den reellen $(n\X n)$-Matrizen.
+    Dann ist 
+    \[ \omega \sigma : X \mapsto \omega(X) \sigma = \left( \sum_{i,j} \Gamma_{ij}^k \xi^{i} \sigma^j \right)^k \]
+    eine lokale 1-Form mit Werten in $\R^n$ und $\omega\sigma \cdot s$ eine lokale 1-Form mit Werten in $E$. Damit gilt
+    \[ \nabla_XS = (\dop \sigma(X) + \omega(X) \sigma) \cdot s \]
+    oder kurz
+    \[ \nabla = \dop + \omega. \]
+  \end{enumerate}
+\end{bem}
+
 
 \section{Transformationsverhalten}
 
 Es seien $E|_{U_\alpha} \overset{\tau_\alpha}{\to} U_\alpha \X \R^n$ und $E|_{U_\beta} \overset{\tau_\beta}{\to} U_{\beta} \X \R^n$ lokale Trivialisierungen. Die "Ubergangsfunktion
-	\[ \psi = \psi_{\beta\alpha}: U_\alpha \cap U_\beta \to \GL_n(\R) \]
+\[ \psi = \psi_{\beta\alpha}: U_\alpha \cap U_\beta \to \GL_n(\R) \]
 war durch
-	\[ \tau_\beta \circ \tau_\alpha^{-1} (p,x) = (p, \psi x) \]
+\[ \tau_\beta \circ \tau_\alpha^{-1} (p,x) = (p, \psi x) \]
 definiert. F"ur die lokalen Darstellungen $S = \sum \sigma^j s_j = \sum \tilde\sigma^j s_j$ in $\tau_\alpha$ beziehungsweise $\tau_\beta$ gilt damit $\tilde\sigma^{i} = \sum_k \psi_k^{i} \sigma^k$, kurz $\tilde\sigma = \psi \sigma$. Es folgt daraus:
-	\[ (\dop \sigma(X) + \omega(X) \sigma) S = \nabla_X S = (\dop \tilde\sigma(X) + \tilde\omega(X)\tilde\sigma) \tilde S \]
+\[ (\dop \sigma(X) + \omega(X) \sigma) S = \nabla_X S = (\dop \tilde\sigma(X) + \tilde\omega(X)\tilde\sigma) \tilde S \]
 also
 \begin{align*}
-	\dop \sigma(X) + \omega(X) \sigma &= \psi^{-1}(\dop \tilde\sigma(X) + \tilde\omega(X) \tilde\sigma)\\
-	&= \psi^{-1} (\dop(\psi\sigma)(X) + \tilde\omega(X) \psi \sigma)\\
-	&= \psi^{-1} ((D_X f) \sigma + \psi \dop \sigma(X) + \tilde\omega(X) \psi \sigma)\\
-	&= \dop \sigma(X) + (\underbrace{\psi^{-1}(D_X \psi) + \psi^{-1} \tilde\omega(X) \psi}_{=\omega(X)}) \sigma.
+  \dop \sigma(X) + \omega(X) \sigma &= \psi^{-1}(\dop \tilde\sigma(X) + \tilde\omega(X) \tilde\sigma)\\
+  &= \psi^{-1} (\dop(\psi\sigma)(X) + \tilde\omega(X) \psi \sigma)\\
+  &= \psi^{-1} ((D_X f) \sigma + \psi \dop \sigma(X) + \tilde\omega(X) \psi \sigma)\\
+  &= \dop \sigma(X) + (\underbrace{\psi^{-1}(D_X \psi) + \psi^{-1} \tilde\omega(X) \psi}_{=\omega(X)}) \sigma.
 \end{align*}
 Damit gilt
-	\[ \tilde\omega(X) = \psi \omega(X) \psi^{-1} - D_X \psi \cdot \psi^{-1}. \qquad (*) \]
+\begin{align}
+  \tilde\omega(X) = \psi \omega(X) \psi^{-1} - D_X \psi \cdot \psi^{-1}.\label{eqn:omega-tilde}
+\end{align}
 Daher definiert $\omega(X)$ \emph{keinen} Schnitt in $\Hom(E, E)$, denn in Kapitel \ref{kapitel-5} wurde gezeigt, dass die "Ubergangsfunktion von $\Hom(E, E)$ gegeben ist durch
-	\[ (p, \eta) \to (p, \psi \circ \eta \circ \psi^{-1}). \]
+\[ (p, \eta) \to (p, \psi \circ \eta \circ \psi^{-1}). \]
 
 \begin{bem}
-Der zweite Summand in (*) h"angt \emph{nur} von der "Ubergangsfunktion $\psi$ und $X$ ab, und somit \emph{nicht} von $\nabla$. Das hei"st sind $\nabla$ und $\tilde\nabla$ kovariante Ableitungen auf $E$, so ist ihre Differenz $\nabla - \tilde\nabla$ eine globale 1-Form mit Werten in $\Hom(E,E)$.
+  Der zweite Summand in (\ref{eqn:omega-tilde}) h"angt \emph{nur} von der "Ubergangsfunktion $\psi$ und $X$ ab, und somit \emph{nicht} von $\nabla$.
+  Das hei"st sind $\nabla$ und $\tilde\nabla$ kovariante Ableitungen auf $E$, so ist ihre Differenz $\nabla - \tilde\nabla$ eine globale 1-Form mit Werten in $\Hom(E,E)$.
 \end{bem}
 
 Durch eine kovariante Ableitung auf einem Vektorb"undel $E$ erhalten wir kovariante Ableitungen auf dem dualen Vektorb"undel $E^*$ und Tensorprodukte von Vektorb"undeln wie folgt:
 
 \begin{Prop}\label{prop-7-3}
-Die f"ur $X \in \calV(M)$, $S^* \in \Gamma(E^*)$ und $v \in E_p$ sowie eine Fortsetzung $\tilde v \in \Gamma(E)$ von $v_p$ durch
-	\[ (\nabla_X^* S^*)_p(v) = X_p(S^*(\tilde v)) - S^*|_p (\nabla_X \tilde v) \]
-definierte Abbildung ist eine kovariante Ableitung auf $E^*$. Dass $S^*(\tilde v) = (S^*, \tilde v)$ ist f"uhrt zu $X_p(S^*, \tilde v) = (\nabla_X^* S^*, \tilde v) + (S^*, \nabla_X \tilde v)$.
+  Die f"ur $X \in \calV(M)$, $S^* \in \Gamma(E^*)$ und $v \in E_p$ sowie eine Fortsetzung $\tilde v \in \Gamma(E)$ von $v_p$ durch
+  \[ (\nabla_X^* S^*)_p(v) = X_p(S^*(\tilde v)) - S^*|_p (\nabla_X \tilde v) \]
+  definierte Abbildung ist eine kovariante Ableitung auf $E^*$.
+  Dass $S^*(\tilde v) = (S^*, \tilde v)$ ist f"uhrt zu $X_p(S^*, \tilde v) = (\nabla_X^* S^*, \tilde v) + (S^*, \nabla_X \tilde v)$.
 \end{Prop}
 Der Beweis sei zur "Ubung "uberlassen.
 
 \begin{Prop}
-Es seien $E_1$ und $E_2$ Vektorb"undel mit kovarianten Ableitungen  $\nabla^1$ und $\nabla^2$ "uber $M$. Dann definiert f"ur $X \in \calV(M)$, $S_i \in \Gamma(E_i)$
-	\[ \nabla_X (S_1 \otimes S_2) = \nabla_X^1 S_1 \otimes S_2 + \nabla_X^2 S_1 \otimes S_2 \]
-durch lineare Fortsetzungen eine kovariante Abbildung auf $E_1 \otimes E_2$.
+  Es seien $E_1$ und $E_2$ Vektorb"undel mit kovarianten Ableitungen  $\nabla^1$ und $\nabla^2$ "uber $M$. 
+  Dann definiert f"ur $X \in \calV(M)$, $S_i \in \Gamma(E_i)$
+  \[ \nabla_X (S_1 \otimes S_2) = \nabla_X^1 S_1 \otimes S_2 + \nabla_X^2 S_1 \otimes S_2 \]
+  durch lineare Fortsetzungen eine kovariante Ableitung auf $E_1 \otimes E_2$.
 \end{Prop}
 
 \begin{Dfn}
-Die Abbildung
-\begin{align*}
-	R^\nabla & = R : \calV(M) \X \calV(M) \X \Gamma(E) \to \Gamma(E)\\
-	R(X,Y)S & = \nabla_X \nabla_Y S - \nabla_Y \nabla_X S - \nabla_{[X,Y]} S
-\end{align*}
-hei"st der \CmMark[Tensor!Kr\"ummungs-]{Kr"ummungstensor} der Abbildung $\nabla$.
+  Die Abbildung
+  \begin{align*}
+    R^\nabla & = R : \calV(M) \X \calV(M) \X \Gamma(E) \to \Gamma(E)\\
+    R(X,Y)S & = \nabla_X \nabla_Y S - \nabla_Y \nabla_X S - \nabla_{[X,Y]} S
+  \end{align*}
+  hei"st der \CmMark[Tensor!Kr\"ummungs-]{Kr"ummungstensor} der Abbildung $\nabla$.
 \end{Dfn}
 
 \begin{bem}
-F"ur alle $X, Y \in \calV(M)$ gilt $R(Y,X) = - R(X,Y)$.
+  F"ur alle $X, Y \in \calV(M)$ gilt $R(Y,X) = - R(X,Y)$.
 \end{bem}
 
 \begin{Prop}
-$R$ ist $C^\infty(M)$-linear in allen Argumenten.
+  $R$ ist $C^\infty(M)$-linear in allen Argumenten.
 \end{Prop}
 Der Beweis sei zur "Ubung "uberlassen.
+
 
 \section{Schnitte entlang von Ableitungen}
 
@@ -276,7 +291,7 @@ Es sei $s_1,\ldots ,s_n$ eine lokale Basis "uber einer Trivialisierungsumgebung 
 	\[ S_p = \sum_j \sigma^j(p) s_j(\Phi(p)) \]
 f"ur $p \in V = \Phi^{-1}(U) \subseteq N$, und damit
 	\[ \nabla_{X_p}S = \left( \dop \sigma(X_p) + \omega(\Phi_{*p}X_p) \sigma(p) \right) S(\Phi(p)).\]
-Dies H"angt nicht von der Wahl der Trivialisierung ab, denn ist $U'$ ein weiteres Trivialisierungsgebiet mit lokaler Basis $\tilde s_1, \ldots , \tilde s_n$ und "Ubergangsfunktion $\psi: C \cap U' \to \GL_n(\R)$, so gilt
+Dies h"angt nicht von der Wahl der Trivialisierung ab, denn ist $U'$ ein weiteres Trivialisierungsgebiet mit lokaler Basis $\tilde s_1, \ldots , \tilde s_n$ und "Ubergangsfunktion $\psi: C \cap U' \to \GL_n(\R)$, so gilt
 \begin{align*}
 	\tilde\sigma &= (\psi \circ \Phi) \sigma \qquad \text{und}\\
 	\tilde\omega &= (\psi \circ \Phi) \omega(\psi \circ \Phi)^{-1} - \dop (\psi \circ \Phi)(\psi \circ \Phi)^{-1}
@@ -324,7 +339,7 @@ wobei $A(t) = -\omega(\dot c(t))$. Ist $[t, T]$ ein kompaktes Teilintervall in $
 Es sei $c$ eine glatte Kurve in $M$. Die lineare Abbildung
 	\[\begin{array}{cccc} P_{s,t}^c: & E_{c(s)} &\to& E_{c(t)} \\
 		& \xi &\mapsto& S_\xi(t), \end{array}\]
-wobei $S_\xi$ den nach Proposition \ref{prop-7-9} eindeutigen parallelen Schnitt einlang $c$ mit $S_\xi(s) = \xi$ bezeichnet, hei"st \CmMark{Paralleltransport} entlang $c$.
+wobei $S_\xi$ den nach Proposition \ref{prop-7-9} eindeutigen parallelen Schnitt entlang $c$ mit $S_\xi(s) = \xi$ bezeichnet, hei"st \CmMark{Paralleltransport} entlang $c$.
 \end{Dfn}
 
 \begin{bem}\begin{enumerate}[label=\arabic*),leftmargin=*]

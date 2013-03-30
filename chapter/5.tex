@@ -64,8 +64,7 @@ Gilt $M = N$ so ist ein $M$-Vektorb"undelmorphismus $F$ von $E$ nach $E'$ eine g
 	\node at (0,0) {$\#$};
 \end{tikzpicture}\end{center}
 
-Die Vektorb"undel $E,E'$ "uber $M$ hei"sen \CmMark[Vektorb{\"u}ndel!isomorphes]{isomorph}, wenn ein $M$-Vektor"-b"undel"-morphismus
-$G$ existiert mit $G \circ F = \Id_E$ und $F \circ G = \Id_{E'}$.
+Die Vektorb"undel $E,E'$ "uber $M$ hei"sen \CmMark[Vektorb{\"u}ndel!isomorphes]{isomorph}, wenn ein $M$-Vektor"-b"undel"-morphismus $G$ existiert mit $G \circ F = \Id_E$ und $F \circ G = \Id_{E'}$.
 Dies ist genau dann der Fall, wenn $F$ faserweise ein Inverses besitzt.
 (Der Beweis dieser Aussage sei als "Ubungsaufgabe "uberlassen.)
 
@@ -162,8 +161,11 @@ Faserweise gilt
  
 \emph{"Uberlege:} $\Hom(E,E')$, sowie $E \otimes E', \bigotimes E$ und $\bigwedge^pE, \bigwedge E$ sind "`vern"unftige"' B"undel.
 
+
 \section{Intermezzo: Multilineare Algebra}
-Es seien $V$ und $W$ $K$-Vektorr"aume. Das \CmMark[Tensor!-produkt]{Tensorprodukt} $V \otimes W$ ist der von den Elementen $v \otimes w$ mit $v \in V$, $w \in W$, $\lambda \in K$ und den Relationen \begin{enumerate}[label=(\roman*),widest=iii]
+
+Es seien $V$ und $W$ $K$-Vektorr"aume. Das \CmMark[Tensor!-produkt]{Tensorprodukt} $V \otimes W$ ist der von den Elementen $v \otimes w$ mit $v \in V$, $w \in W$, $\lambda \in K$ und den Relationen
+\begin{enumerate}[label=(\roman*),widest=iii]
 \item
 	$(v + v') \otimes w = v \otimes w + v' \otimes w$
 \item
@@ -172,20 +174,16 @@ Es seien $V$ und $W$ $K$-Vektorr"aume. Das \CmMark[Tensor!-produkt]{Tensorproduk
 	$(\lambda v) \otimes w = \lambda (v \otimes w) = v \otimes (\lambda w)$
 \end{enumerate} erzeugte Vektorraum.
 
-\begin{emptythm}[Eigenschaften:]\begin{enumerate}[label=\arabic*),leftmargin=*]
-\item
-	Die Abbildung $b: V \X W \to V \otimes W$, $(v, w) \mapsto v \otimes w$ ist bilinear.
-\item
-	$v \otimes w = 0 \Leftrightarrow v = 0$ oder $w = 0$
-\item
-	$V \otimes K \cong V$
-\item
-	$V \otimes W \cong W \otimes V$
-\item
-	$V^* \otimes W \cong \Hom(V, W)$ verm"oge $(\phi \otimes w)(v) = \phi(v) \cdot w$ wobei $V^*$ der \gls{Dualraum} zu $V$ ist
-\item
-	Sind $\{v_i\}_{i \in \calI}$ und $\{w_j\}_{j \in \calJ}$ Basen von $V$ und $W$, so ist $\{v_i \otimes w_j\}_{(i,j) \in \calI \X \calJ}$ eine Basis von $V \otimes W$. Insbesondere gilt f"ur Vektorr"aume endlicher Dimension, dass $\dim (V \otimes W) = \dim V \cdot \dim W$
-\end{enumerate}\end{emptythm}
+\begin{emptythm}[Eigenschaften:]
+\begin{enumerate}[label=(\arabic*),leftmargin=*]
+\item Die Abbildung $b: V \X W \to V \otimes W$, $(v, w) \mapsto v \otimes w$ ist bilinear.
+\item $v \otimes w = 0 \Leftrightarrow v = 0$ oder $w = 0$
+\item $V \otimes K \cong V$
+\item $V \otimes W \cong W \otimes V$
+\item $V^* \otimes W \cong \Hom(V, W)$ verm"oge $(\phi \otimes w)(v) = \phi(v) \cdot w$ wobei $V^*$ der \gls{Dualraum} zu $V$ ist
+\item Sind $\{v_i\}_{i \in \calI}$ und $\{w_j\}_{j \in \calJ}$ Basen von $V$ und $W$, so ist $\{v_i \otimes w_j\}_{(i,j) \in \calI \X \calJ}$ eine Basis von $V \otimes W$. Insbesondere gilt f"ur Vektorr"aume endlicher Dimension, dass $\dim (V \otimes W) = \dim V \cdot \dim W$
+\end{enumerate}
+\end{emptythm}
 
 \begin{emptythm}[Universelle Eigenschaft:]
 Ist $U$ ein Vektorraum und $\beta$ eine bilineare Abbildung von $V \X W$ in $U$. Dann existiert genau eine lineare Abbildung $\phi: V \otimes W \to U$ mit $\beta = \phi \circ b$.
@@ -200,7 +198,7 @@ Diese Eigenschaft bestimmt $(V \otimes W, b)$ eindeutig bis auf Isomorphie.
 
 Das Bilden von Tensorprodukten ist bis auf Isomorphie assoziativ. Man schreibt daher
 	\[ \bigotimes^p V = \underbrace{V \otimes \cdots \otimes V}_{p\text{-mal}} \]
-Setzt man $\bigotimes^0 V = k$, so wird $\bigotimes V = \bigoplus_{p=0}^{\infty} \bigotimes^p V$ mit dem durch die Zuordnungen
+Setzt man $\bigotimes^0 V = K$, so wird $\bigotimes V = \bigoplus_{p=0}^{\infty} \bigotimes^p V$ mit dem durch die Zuordnungen
 	\[ (v_1 \otimes \cdots \otimes v_{p+1} \otimes \cdots \otimes v_{p+q}) \mapsto v_1 \otimes \ldots \otimes v_{p+q} \in \bigotimes^{p+q} V \]
 induzierten Produkt zu einer graduierten Algebra.
 
@@ -214,15 +212,15 @@ Das $p$-fach \CmMark[Produkt!{\"a}u{\ss}eres]{"au"sere Produkt} $\bigwedge^pV$ i
 \end{enumerate}
 erzeugte Vektorraum.
 
-\begin{emptythm}[Eigenschaften:]\begin{enumerate}[label=\arabic*),leftmargin=*]
-\item
-	Die Abbildung $s: V \X \cdots \X V \to \bigwedge^p V$, $(v_1, \ldots ,v_p) \mapsto v_1 \wedge \cdots \wedge v_p$ ist multilinear und schief
-\item
-	Es gilt $v_1 \wedge \cdots \wedge v_p = 0$ genau dann wenn $v_1, \ldots , v_p$ linear abh"angig sind
-\item
-	Ist $\{e_i\}_{i \le n}$ eine Basis von $V$, so ist $\{e_{i_1} \wedge \cdots \wedge e_{i_p} | i_1 < i_2 < \cdots < i_p\}$ eine Basis von $\bigwedge^pV$, es gilt also $\dim \bigwedge^pV = \left( \begin{smallmatrix} n \\ p \end{smallmatrix} \right)$. Insbesondere ist $\bigwedge^pV = 0$ falls $p > n$ und $\dim \bigwedge^nV = 1$ und f"ur $v_i = \sum \alpha_i^j e_j$ gilt:
-		\[ v_1 \wedge \cdots \wedge v_p = \det (\alpha_i^j) \cdot e_1 \wedge \cdots \wedge e_n \]
-\end{enumerate}\end{emptythm}
+\begin{emptythm}[Eigenschaften:]
+  \begin{enumerate}[label=(\arabic*),leftmargin=*]
+  \item Die Abbildung $s: V \X \cdots \X V \to \bigwedge^p V$, $(v_1, \ldots ,v_p) \mapsto v_1 \wedge \cdots \wedge v_p$ ist multilinear und schief.
+  \item Es gilt $v_1 \wedge \cdots \wedge v_p = 0$ genau dann wenn $v_1, \ldots , v_p$ linear abh"angig sind.
+  \item Ist $\{e_i\}_{i \le n}$ eine Basis von $V$, so ist $\{e_{i_1} \wedge \cdots \wedge e_{i_p} | i_1 < i_2 < \cdots < i_p\}$ eine Basis von $\bigwedge^pV$, es gilt also $\dim \bigwedge^pV = \left( \begin{smallmatrix} n \\ p \end{smallmatrix} \right)$.
+    Insbesondere ist $\bigwedge^pV = 0$ falls $p > n$ und $\dim \bigwedge^nV = 1$ und f"ur $v_i = \sum \alpha_i^j e_j$ gilt:
+    \[ v_1 \wedge \cdots \wedge v_p = \det (\alpha_i^j) \cdot e_1 \wedge \cdots \wedge e_n \]
+  \end{enumerate}
+\end{emptythm}
 
 \begin{emptythm}[Universelle Eigenschaft:]
 Ist $U$ ein Vektorraum und $\sigma$ eine schiefsymmetrische multilineare Abbildung $\underbrace{V \X \cdots \X V}_{p\text{-mal}} \to U$, so existiert genau eine lineare Abbildung $\phi: \bigwedge^pV \to U$ mit $\sigma = \phi \circ s$.
@@ -244,14 +242,21 @@ ein Element $\phi \otimes \psi \in \Hom(V_1 \otimes V_2, W_1 \otimes W_2)$. Sind
 und
 	\[ \phi_1 \wedge \cdots  \wedge \phi_p : \bigwedge^pV \to \bigwedge^pW \]
 
+
 \section{B"undelkonstruktion}
-Es seien $E$ und $E'$ Vektorb"undel vom Rang $k$ und $l$. Es bezeichnen stets $\tau$ und $\tau'$ lokale Trivialisierungen mit dem gleichen Trivialisierungsgebiet $U$ sowie $g_{\alpha\beta}$ und $g'_{\alpha\beta}$ die "Ubergangsfunktionen von $E$ beziehungsweise $E'$. Das \CmMark[Tensor!-produkt]{Tensorprodukt} $E \otimes E'$ von $E$ und $E'$ ist das Vektorb"undel mit den Fasern $(E \otimes E')_p = E_p \otimes E'_p$, also $E \otimes E' = \bigcup_{p \in M} E_p \otimes E'_p \to M$ mit lokalen Trivialisierungen
+
+Es seien $E$ und $E'$ Vektorb"undel vom Rang $k$ und $l$.
+Es bezeichnen stets $\tau$ und $\tau'$ lokale Trivialisierungen mit dem gleichen Trivialisierungsgebiet $U$ sowie $g_{\alpha\beta}$ und $g'_{\alpha\beta}$ die "Ubergangsfunktionen von $E$ beziehungsweise $E'$.
+Das \CmMark[Tensor!-produkt]{Tensorprodukt} $E \otimes E'$ von $E$ und $E'$ ist das Vektorb"undel mit den Fasern $(E \otimes E')_p = E_p \otimes E'_p$, also $E \otimes E' = \bigcup_{p \in M} E_p \otimes E'_p \to M$ mit lokalen Trivialisierungen
 	\[ \sigma: \left\{\begin{array}{ccc} (E \otimes E')|_U = \bigcup\limits_{p \in U} E_p \otimes E'_p &\to& U \X (\R^k \otimes \R^l) \cong U \X \R^{kl} \\
 		E_p \otimes E'_p \ni w = \sum v_i \otimes u_i &\mapsto& (p, \sum \tau_p(v_i) \otimes \tau'_p(u_i)) \end{array}\right. \]
-das hei"st dass $\sigma = (\pi, \tau_p \otimes \tau'_p)$ ist. Wie in Kapitel 4 zeigt man dass $E \otimes E'$ ein B"undel ist. Alternativ l"asst sich $E \otimes E'$ mit Satz \ref{satz-5-2} durch die "Ubergangsfunktion definieren:
+das hei"st dass $\sigma = (\pi, \tau_p \otimes \tau'_p)$ ist.
+Wie in Kapitel 4 zeigt man dass $E \otimes E'$ ein B"undel ist.
+Alternativ l"asst sich $E \otimes E'$ mit Satz \ref{satz-5-2} durch die "Ubergangsfunktion definieren:
 	\[\begin{array}{ccc} E \otimes E' &=& \FakRaum{\dot \bigcup \ U_{\alpha} \X (\R^k \otimes \R^l)}{\sim} \\
 		h_{\alpha\beta} &=& g_{\alpha\beta} \otimes g'_{\alpha\beta} \end{array}\]
-Die Relation $\sim$ ist durch $h_{\alpha\beta}$ wie in Satz \ref{satz-5-2} definiert. Analog definiert man h"ohere Tensorprodukte $\bigotimes^pE$, die Tensoralgebra $\bigotimes E$ und "au"sere Produkte $\bigwedge^pE$ und $\Lambda E$.
+Die Relation $\sim$ ist durch $h_{\alpha\beta}$ wie in Satz \ref{satz-5-2} definiert.
+Analog definiert man h"ohere Tensorprodukte $\bigotimes^pE$, die Tensoralgebra $\bigotimes E$ und "au"sere Produkte $\bigwedge^pE$ und $\Lambda E$.
 
 Das \CmMark{duale B{\"u}ndel} $E^*$ hat die Fasern $E_p^* = \Hom(E_p, \R)$ und lokale Trivialisierungen:
 	\[ \begin{array}{rcl} \sigma: E^*|_U &\to& U \X \R^k\\
@@ -261,7 +266,8 @@ Die "Ubergangsfunktionen von $E^*$ sind die transponierten Inversen der "Ubergan
 	\[ h_{\alpha\beta} = (g_{\alpha\beta}^{-1})^* \]
 Das B"undel
 	\[ \T_s^r E = \underbrace{E \otimes \cdots \otimes E}_{r} \otimes \underbrace{E^* \otimes \cdots \otimes E^*}_{s} \]
-hei"st das $(r,s)$-\CmMark[Tensor!-b\"undel]{Tensorb"undel} von $E$. Das Homomorphismenb"undel $\Hom(E,E^*)$ ist definiert durch
+hei"st das $(r,s)$-\CmMark[Tensor!-b\"undel]{Tensorb"undel} von $E$.
+Das Homomorphismenb"undel $\Hom(E,E^*)$ ist definiert durch
 	\[ \sigma: \left\{ \begin{array}{ccc} \Hom(E,E')|_U = \bigcup\limits_{p \in U}^{\cdot} \Hom(E_p, E_p') &\to& U \X \Hom(\R^k, \R^l)\\
 		\phi \in \Hom(E_p, E'_p) &\mapsto& (p, \tau'_p \circ \phi \circ \tau_p^{-1}) \end{array} \right. \]
 Zur Definition der "Ubergangsfunktionen schreibt man $\Hom(E, E') \cong E^* \otimes E'$ und definiert $h_{\alpha\beta} = (g_{\alpha\beta}^{-1})^* \otimes g'_{\alpha\beta}$.
@@ -274,7 +280,8 @@ Zur Definition der "Ubergangsfunktionen schreibt man $\Hom(E, E') \cong E^* \oti
 \end{tikzpicture}\end{center}
 
 \begin{Dfn}
-Es sei $E \xrightarrow{\pi} M$ ein Vektorb"undel "uber M. Ein \CmMark{Schnitt} in $E$ ist eine glatte Abbildung $S: M \to E$ mit $\pi \circ S = \Id_M$, also $S(p) \in E_p = \pi^{-1}(p)$. Der Raum der Schnitte wird mit $\Gamma(E)$ bezeichnet. $\Gamma(E)$ ist ein $C^{\infty}$-Modul.
+Es sei $E \xrightarrow{\pi} M$ ein Vektorb"undel "uber M. Ein \CmMark{Schnitt} in $E$ ist eine glatte Abbildung $S: M \to E$ mit $\pi \circ S = \Id_M$, also $S(p) \in E_p = \pi^{-1}(p)$.
+Der Raum der Schnitte wird mit $\Gamma(E)$ bezeichnet. $\Gamma(E)$ ist ein $C^{\infty}$-Modul.
 \begin{center}\begin{tikzpicture}[scale=0.9]
 %	\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
 	
@@ -316,30 +323,32 @@ Es sei $E \xrightarrow{\pi} M$ ein Vektorb"undel "uber M. Ein \CmMark{Schnitt} i
 \end{tikzpicture}\end{center}
 Die $S_i$ bilden punktweise eine Basis der Fasern.
 
-Die Schnitte des $(r,s)$-Tensorb"undels $\Gamma(\T_s^r(\T M)) = \mathcal T_s^r(M)$ bezeichnet man als $(r,s)$-\CmMark[Tensor!-feld]{Tensorfelder} auf $M$. Die $(1,0)$-Tensorfelder sind genau die Vektorfelder auf $M$; $\mathcal T_0^1(M) = \mathcal V(M)$. Es bezeichne $\mathcal V^{*}(M) = \mathcal T_1^0(M)$ den Raum der $(0,1)$-Tensorfelder.
+Die Schnitte des $(r,s)$-Tensorb"undels $\Gamma(\T_s^r(\T M)) = \mathcal T_s^r(M)$ bezeichnet man als $(r,s)$-\CmMark[Tensor!-feld]{Tensorfelder} auf $M$.
+Die $(1,0)$-Tensorfelder sind genau die Vektorfelder auf $M$; $\mathcal T_0^1(M) = \mathcal V(M)$.
+Es bezeichne $\mathcal V^{*}(M) = \mathcal T_1^0(M)$ den Raum der $(0,1)$-Tensorfelder.
 
 \begin{Prop}\label{prop-5-4}
 Die $(r,s)$-Tensorfelder auf $M$ entsprechen genau den $C^{\infty}(M)$-multilinearen Abbildungen
 	\[ \underbrace{\mathcal V^{*}(M) \X \cdots \X \mathcal V^{*}(M)}_{r-\text{mal}} \X \underbrace{\mathcal V(M) \X \cdots \X \mathcal V(M)}_{s-\text{mal}} \to C^{\infty}(M) \]
 verm"oge der linearen Forsetzung
 \begin{align*}
-	p \mapsto & X_1 \otimes \cdots \otimes X_r \otimes \omega_1 \otimes \cdots \otimes \omega_s (\eta_1, \ldots, \eta_r, Y_1, \ldots, Y_s)\\
-	& = \eta_1(X_1)\eta_2(X_2)\cdots\eta_r(X_r) \cdot \omega(Y_1)\cdots \omega_s(Y_s) (p)
+  p \mapsto & X_1 \otimes \cdots \otimes X_r \otimes \omega_1 \otimes \cdots \otimes \omega_s (\eta_1, \ldots, \eta_r, Y_1, \ldots, Y_s)\\
+  & = \eta_1(X_1)\eta_2(X_2)\cdots\eta_r(X_r) \cdot \omega(Y_1)\cdots \omega_s(Y_s) (p)
 \end{align*}
 \end{Prop}
 
 Der Beweis sei als "Ubung "uberlassen (siehe dazu auch Übungsblatt 5, Aufgabe \ref{exc:ueb5-a1}).
 
-\begin{bsp}\begin{enumerate}[label=\arabic*)]
-\item
-	Ist $f \in C^{\infty}(M)$, so ist durch sein Differential
-	\begin{align*}
-		\dop f|_p(X_p) = X_p(f)
-	\end{align*}
-	ein $(0,1)$-Tensorfeld gegeben.
-\item
-	Die Lieklammer $[\cdot,\cdot]$ ist \emph{nicht} $C^{\infty}(M)$-linear, also kein Tensorfeld.
-\end{enumerate}\end{bsp}
+\begin{bsp}
+  \begin{enumerate}[label=(\arabic*)]
+  \item Ist $f \in C^{\infty}(M)$, so ist durch sein Differential
+    \begin{align*}
+      \dop f|_p(X_p) = X_p(f)
+    \end{align*}
+    ein $(0,1)$-Tensorfeld gegeben.
+  \item Die Lieklammer $[\cdot,\cdot]$ ist \emph{nicht} $C^{\infty}(M)$-linear, also kein Tensorfeld.
+  \end{enumerate}
+\end{bsp}
 
 Ein Element von $\T_p^*M$ bezeichnet man als \CmMark[Kotangential!-vektor]{Kotangentialvektoren}, $\T_p^*M$ als \CmMark[Kotangential!-vektorraum]{Kotangentialvektorraum} und das B"undel $\T^{*}M$ als \CmMark[Kotangential!-b\"undel]{Kotangentialb\"undel}.
 
@@ -387,8 +396,8 @@ Ist $\Phi$ ein Diffeomorphismus, so l"asst sich $\Phi^{*}$ f"ur beliebige Tensor
 	\[ \begin{array}{rl} p \mapsto& \Phi^{*}S (\omega_1,\ldots,\omega_r,X_1,\ldots,X_s)(p)\\
 		& S((\Phi^{*})^{-1}\omega_1, \ldots, (\Phi^{*})^{-1}\omega_{r}, \Phi_{*}X_1,\ldots,\Phi_{*}X_s)(p) \end{array} \]
 mit
-	\[ \begin{array}{rccc} S \colon& \underbrace{\mathcal V^{*}(N) \cdots \mathcal V^{*}(N)}_{r\text{-mal}} \X \underbrace{ \mathcal V(N) \cdots\mathcal V(N)}_{s\text{-mal}} &\to& C^{\infty}(N)\\
-		\Phi^*S \colon& \mathcal V^{*}(M) \cdots \mathcal V^{*}(M) \X \mathcal V(N) \cdots\mathcal V(N) &\to& C^{\infty}(M) \end{array} \]
+	\[ \begin{array}{rccc} S \colon& \underbrace{\mathcal V^{*}(N) \X \cdots \X \mathcal V^{*}(N)}_{r\text{-mal}} \X \underbrace{ \mathcal V(N) \X \cdots \X \mathcal V(N)}_{s\text{-mal}} &\to& C^{\infty}(N)\\
+		\Phi^*S \colon& \mathcal V^{*}(M) \X \cdots \X \mathcal V^{*}(M) \X \mathcal V(N) \X \cdots \X \mathcal V(N) &\to& C^{\infty}(M) \end{array} \]
 	\[ \begin{array}{rccc} \textcolor{red}{\omega \in}& \mathcal V^{*}(M) = \mathcal T_1^0(M) &\to& C^{\infty}(M)\\
 		\textcolor{red}{X \in}& \mathcal V(M) = \calT_0^1(M) &\to& C^{\infty}(M) \end{array} \]
 Insbesondere: $X \in \mathcal T_0^1(M) = \mathcal V(M) = \{\calV^*(M) \to C^{\infty}(M)\}$
@@ -424,20 +433,19 @@ also $\Phi^{*}X = \Phi_{*}^{-1}X$.
   die \CmMark{Lieableitung} von $S$ in Richtung $X$.
 \end{Dfn}
 
-\begin{emptythm}[Eigenschaften]\begin{enumerate}[label=\arabic*)]
-\item
-	$f \in \mathcal T_0^0(M) = C^{\infty}(M)$. Dann ist $\mathcal L_Xf = \dop f (X) = X(f)$.
-\item
-	$X,Y \in \mathcal T_0^1(M) = \mathcal V(M)$, so gilt
-	\begin{align*}
-		\mathcal L_XY = [X,Y].
-	\end{align*}
-\item
-	F"ur $S \in \mathcal T_s^r(M), T \in \mathcal T_{s'}^{r'}(M)$ gilt:
-	\begin{align*}
-		\mathcal L_X(S \otimes T) = (\mathcal L_XS) \otimes T + S \otimes (\mathcal L_X T).
-	\end{align*}
-\end{enumerate}\end{emptythm}
+\begin{emptythm}[Eigenschaften]
+  \begin{enumerate}[label=(\arabic*)]
+  \item $f \in \mathcal T_0^0(M) = C^{\infty}(M)$. Dann ist $\mathcal L_Xf = \dop f (X) = X(f)$.
+  \item $X,Y \in \mathcal T_0^1(M) = \mathcal V(M)$, so gilt
+    \begin{align*}
+      \mathcal L_XY = [X,Y].
+    \end{align*}
+  \item F"ur $S \in \mathcal T_s^r(M), T \in \mathcal T_{s'}^{r'}(M)$ gilt:
+    \begin{align*}
+      \mathcal L_X(S \otimes T) = (\mathcal L_XS) \otimes T + S \otimes (\mathcal L_X T).
+    \end{align*}
+  \end{enumerate}
+\end{emptythm}
 
 
 \section{Differentialformen und die "au"sere Ableitung}
@@ -547,37 +555,35 @@ Es gilt
   Existiert ein $\eta \in \Omega^{k-1}(M)$ mit $\dop \eta = \omega$, so hei"st $\omega$ \CmMark{exakt}.
 \end{Dfn}
 
-\begin{bsp}\begin{enumerate}[label=\arabic*),leftmargin=*]
-\item
-	F"ur eine $1$-Form $\omega$ ist $\dop \omega$ eine $2$-Form:
-	\begin{align*}
-		\dop \omega(X,Y) = X(\omega(Y)) - Y(\omega(X)) - \omega([X,Y]).
-	\end{align*}
-\item
-	F"ur $f \in C^{\infty}(M)$ ist $\dop f \in \Omega^1(M)$ und $\dop (\dop f)$ eine $2$-Form:
-	\begin{align*}
-		\dop(\dop f) (X,Y) & = X(\dop f(Y)) - Y(\dop f(X)) - \dop f [X,Y]\\
-		& = X(Y(f)) - Y(X(f)) -[X,Y](f)\\
-		& = 0
-	\end{align*}
-	Betrachte alternativ in lokalen Koordinaten:
-	\begin{align*}
-		\dop(\dop f) & = \dop\left(\sum_i \pdifffrac{f}{x^i}\dop x^i\right)\\
-		& = \sum \dop \left(\pdifffrac{f}{x^i}\right) \wedge \dop x^i\\
-		& = \sum_{i,j} \underbrace{\pdifffrac{^2 f}{\textcolor{red}{x^i \partial x^j}}}_{\pdifffrac{^2f}{x^j \partial x^{i}}} \underbrace{\textcolor{red}{\dop x^j \wedge \dop x^i}}_{- \dop x^i \wedge \dop x^{j}}\\
-		& = 0
-	\end{align*}
-\item
-	$\omega = xy \dop y \in \Omega^1(\R^2)$ ist nicht geschlossen, denn
-	\begin{align*}
-		\dop \omega = \pdifffrac{xy}{x} \dop x \wedge \dop y + \pdifffrac{xy}{y}\underbrace{ \dop y \wedge \dop y}_{=0} = y \dop x \wedge \dop y \in \Omega^2(\R^2).
-	\end{align*}
-\item
-	$\omega = y \dop x + x \dop y \in \Omega^1(\R^2)$ ist exakt, denn f"ur $f(x,y) = xy$ gilt:
-	\begin{align*}
-		\dop f = \pdifffrac{f}{x}\dop x + \pdifffrac{f}{y}\dop y = y \dop x + x \dop y = \omega.
-	\end{align*}
-\end{enumerate}\end{bsp}
+\begin{bsp}
+  \begin{enumerate}[label=(\arabic*),leftmargin=*]
+  \item F"ur eine $1$-Form $\omega$ ist $\dop \omega$ eine $2$-Form:
+    \begin{align*}
+      \dop \omega(X,Y) = X(\omega(Y)) - Y(\omega(X)) - \omega([X,Y]).
+    \end{align*}
+  \item F"ur $f \in C^{\infty}(M)$ ist $\dop f \in \Omega^1(M)$ und $\dop (\dop f)$ eine $2$-Form:
+    \begin{align*}
+      \dop(\dop f) (X,Y) & = X(\dop f(Y)) - Y(\dop f(X)) - \dop f [X,Y]\\
+      & = X(Y(f)) - Y(X(f)) -[X,Y](f)\\
+      & = 0
+    \end{align*}
+    Betrachte alternativ in lokalen Koordinaten:
+    \begin{align*}
+      \dop(\dop f) & = \dop\left(\sum_i \pdifffrac{f}{x^i}\dop x^i\right)\\
+      & = \sum \dop \left(\pdifffrac{f}{x^i}\right) \wedge \dop x^i\\
+      & = \sum_{i,j} \underbrace{\pdifffrac{^2 f}{\textcolor{red}{x^i \partial x^j}}}_{\pdifffrac{^2f}{x^j \partial x^{i}}} \underbrace{\textcolor{red}{\dop x^j \wedge \dop x^i}}_{- \dop x^i \wedge \dop x^{j}}\\
+      & = 0
+    \end{align*}
+  \item $\omega = xy \dop y \in \Omega^1(\R^2)$ ist nicht geschlossen, denn
+    \begin{align*}
+      \dop \omega = \pdifffrac{xy}{x} \dop x \wedge \dop y + \pdifffrac{xy}{y}\underbrace{ \dop y \wedge \dop y}_{=0} = y \dop x \wedge \dop y \in \Omega^2(\R^2).
+    \end{align*}
+  \item $\omega = y \dop x + x \dop y \in \Omega^1(\R^2)$ ist exakt, denn f"ur $f(x,y) = xy$ gilt:
+    \begin{align*}
+      \dop f = \pdifffrac{f}{x}\dop x + \pdifffrac{f}{y}\dop y = y \dop x + x \dop y = \omega.
+    \end{align*}
+  \end{enumerate}
+\end{bsp}
 
 % Lemma 5.10
 \begin{Lemma}\label{lemma-5-9}
@@ -631,42 +637,42 @@ Der Quotient $H_{\dR}^k(M) = \frac{\Kern\{\dop: \Omega^k \to \Omega^{k+1}\}}{\Bi
 	\[ (\Phi \circ \Psi)^* = \Psi^* \circ \Phi^* \]
 insbesondere gilt $\Id_M^* = \Id_{H_{\dR}^k}$ und ein Diffeomorphismus $M \to N$ induziert einen Isomorphismus von $H_{\dR}^k(N)$ nach $H_{\dR}^k(M)$.
 
-\begin{bsp}\begin{enumerate}[label=\arabic*),leftmargin=*]
-\item
-	$H_{\dR}^1(\R^2) = \{0\}$, \emph{zu zeigen:} $\dop \omega = 0 \Rightarrow \omega = \dop h, \omega \n \Omega^1$
-	
-	$\omega = f \dop x + g \dop y$ geschlossen
-	\begin{align*}
-		0 = \dop (\omega) &= \dop f \wedge \dop x + \dop g \wedge \dop y\\
-		&= \pdifffrac{f}{y} \dop y \wedge \dop x + \pdifffrac{g}{x} \dop x \wedge \dop y\\
-		&= \left( \pdifffrac{g}{x} - \pdifffrac{f}{y} \right) \dop x \wedge \dop y
-	\end{align*}
-	Setzt man
-		\[ h(x,y) = \int_0^{x} f(t,0) \dop t + \int_0^{y} g(x,t) \dop t \]
-	so gilt
-	\begin{align*}
-		\pdifffrac{h}{x}(x) &= f(x,0) + \int_0^{y} \pdifffrac{g}{x}(x,t) \dop t\\
-		&= f(x,0) + \int_0^{y} \pdifffrac{f}{y} (x,t) \dop t\\
-		&= f(x,y)
-	\end{align*}
-	Analog zeigt man, dass $\pdifffrac{h}{y}(x,y) = g(x,y)$. Damit gilt
-		\[ \dop h = \pdifffrac{h}{x} \dop x + \pdifffrac{h}{y} \dop y = f \dop x + g \dop y = \omega \]
-	Daraus folgt $H_{\dR}^1(\R^2) = \{0\}$
-\item
-	$H_{\dR}^1(\R^2 \setminus \{0\}) \ne \{0\}$
-	
-	Die Form $\omega(x,y) = \frac{1}{x^2+y^2} (x \dop y - y \dop x)$ ist geschlossen. W"are $\omega$ exakt, so g"abe es $h \in C^{\infty}(\R^2 \setminus \{0\})$ mit $\dop h = \omega$, das hei"st
-		\[ \pdifffrac{h}{x}(x,y) = \frac{-y}{x^2+y^2},\quad \pdifffrac{h}{y}(x,y) = \frac{x}{x^2+y^2} \]
-	Dann w"are
-		\begin{align*}
-			0 = h(1,0) - h(1,0) &= \int_{0}^{2\pi} \difffrac{}{t} h(\cos t, \sin t) \dop t\\
-			&= \int_{0}^{2\pi} - \sin t \pdifffrac{h}{x} (\cos t, \sin t) + \cos t \pdifffrac{h}{y} (\cos t, \sin t) \dop t\\
-			&= \int_{0}^{2\pi} \sin^2 t + \cos^2 t \dop t = 2 \pi
-		\end{align*}
-	$\omega$ ist geschlossen aber \emph{nicht} exakt und definiert eine Klasse
-		\[ 0 \ne [\omega] \in H_{\dR}^1(\R^2 \setminus \{0\}) \]
-	Insbesondere sind $\R^2$ und $\R^2 \setminus \{0\}$ \emph{nicht} diffeomorph.
-\end{enumerate}\end{bsp}
+\begin{bsp}
+  \begin{enumerate}[label=(\arabic*),leftmargin=*]
+  \item $H_{\dR}^1(\R^2) = \{0\}$, \emph{zu zeigen:} $\dop \omega = 0 \Rightarrow \omega = \dop h, \omega \n \Omega^1$
+    
+    $\omega = f \dop x + g \dop y$ geschlossen
+    \begin{align*}
+      0 = \dop (\omega) &= \dop f \wedge \dop x + \dop g \wedge \dop y\\
+      &= \pdifffrac{f}{y} \dop y \wedge \dop x + \pdifffrac{g}{x} \dop x \wedge \dop y\\
+      &= \left( \pdifffrac{g}{x} - \pdifffrac{f}{y} \right) \dop x \wedge \dop y
+    \end{align*}
+    Setzt man
+    \[ h(x,y) = \int_0^{x} f(t,0) \dop t + \int_0^{y} g(x,t) \dop t \]
+    so gilt
+    \begin{align*}
+      \pdifffrac{h}{x}(x) &= f(x,0) + \int_0^{y} \pdifffrac{g}{x}(x,t) \dop t\\
+      &= f(x,0) + \int_0^{y} \pdifffrac{f}{y} (x,t) \dop t\\
+      &= f(x,y)
+    \end{align*}
+    Analog zeigt man, dass $\pdifffrac{h}{y}(x,y) = g(x,y)$. Damit gilt
+    \[ \dop h = \pdifffrac{h}{x} \dop x + \pdifffrac{h}{y} \dop y = f \dop x + g \dop y = \omega \]
+    Daraus folgt $H_{\dR}^1(\R^2) = \{0\}$
+  \item $H_{\dR}^1(\R^2 \setminus \{0\}) \ne \{0\}$
+    
+    Die Form $\omega(x,y) = \frac{1}{x^2+y^2} (x \dop y - y \dop x)$ ist geschlossen. W"are $\omega$ exakt, so g"abe es $h \in C^{\infty}(\R^2 \setminus \{0\})$ mit $\dop h = \omega$, das hei"st
+    \[ \pdifffrac{h}{x}(x,y) = \frac{-y}{x^2+y^2},\quad \pdifffrac{h}{y}(x,y) = \frac{x}{x^2+y^2} \]
+    Dann w"are
+    \begin{align*}
+      0 = h(1,0) - h(1,0) &= \int_{0}^{2\pi} \difffrac{}{t} h(\cos t, \sin t) \dop t\\
+      &= \int_{0}^{2\pi} - \sin t \pdifffrac{h}{x} (\cos t, \sin t) + \cos t \pdifffrac{h}{y} (\cos t, \sin t) \dop t\\
+      &= \int_{0}^{2\pi} \sin^2 t + \cos^2 t \dop t = 2 \pi
+    \end{align*}
+    $\omega$ ist geschlossen aber \emph{nicht} exakt und definiert eine Klasse
+    \[ 0 \ne [\omega] \in H_{\dR}^1(\R^2 \setminus \{0\}) \]
+    Insbesondere sind $\R^2$ und $\R^2 \setminus \{0\}$ \emph{nicht} diffeomorph.
+  \end{enumerate}
+\end{bsp}
 
 
 %%% Local Variables: 

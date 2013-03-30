@@ -20,65 +20,12 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 	\Phi_{*p}X_p(fg) & = X_p((f \circ \Phi)(g \circ \Phi)) = X_p(f \circ \Phi)(g \circ \Phi)(p) + (f \circ \Phi)(p)X_p(g \circ \Phi)\\
 	& = \Phi_{*p}X_p(f)g(\Phi(p)) + f(\Phi(p)) \Phi_{*p}X_p(g).
 \end{align*}
-\begin{center}\begin{tikzpicture}[font=\scriptsize]
-    % \draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
-    
-    % Die Abbildungspfeile
-    \draw[->] (-1.5,0) to[out=20, in=160]node[above]{$\psi \circ \Phi \circ \phi^{-1}$}node[below]{diff'bar} (1.5,0);
-    \draw[->] (-1.5,3) to[out=20, in=160]node[above]{$\Phi$} (1.5,3);
-    
-    % Die Achsen
-    \draw[->,thick] (-5.5,-0.5) -- (-2,-0.5); \draw[->,thick] (-5.25,-0.75) -- (-5.25, 1.25); \node[font=\normalfont] at (-2,1.25) {$\R^m$};
-    \draw[->,thick] (2,-0.5) -- (5.5,-0.5); \draw[->,thick] (2.25,-0.75) -- (2.25, 1.25); \node[font=\normalfont] at (5.5,1.25) {$\R^n$};
-    
-    % das linke Ding
-    \coordinate (ding0) at (-3.5,4.5); \coordinate (ding1) at (-4.25,3.5); \coordinate (ding2) at (-4.5,2); \coordinate (ding3) at (-2.75,2.5); \coordinate (ding4) at (-1.5,4);
-    \coordinate (ctrld0) at (0.5,-0.25); \coordinate (ctrld1) at (0.75,0.5); \coordinate (ctrld2) at (-0.5,0.5); \coordinate (ctrld3) at (0.25,0.5); \coordinate (ctrld4) at (-0.75,0); 
-    \draw[thick] (ding0) ..controls($(ding0)+(ctrld0)$) and ($(ding1)+(0.75,0.5)$).. (ding1) ..controls($(ding1)-(ctrld1)$) and($(ding2)+(ctrld2)$).. (ding2) ..controls($(ding2)-(ctrld2)$) and ($(ding3)-2*(ctrld3)$).. (ding3) ..controls($(ding3)+(ctrld3)$) and ($(ding4)+(ctrld4)$).. (ding4);
-    % das Loch in der Mitte nicht vergessen, es besteht aus zwei geclipten Kreisen
-    \begin{scope}
-      \clip (-4.25,2.5) rectangle (-2.75,3);
-      % \draw[thick] (-4.25,3) to[out=330,in=180] (-3.5,2.75) to[out=0,in=210] (-2.75,3);
-      \path[draw,thick,name path=gkreis] (-3.5,4.25) circle (1.5);
-    \end{scope}
-    \path[name path=kkreis] (-3.5,2) circle(1);
-    \path[name intersections={of=gkreis and kkreis}];
-    \begin{scope}
-      \clip (intersection-1) rectangle ($(intersection-2)+(0,0.5)$);
-      \draw[thick]  (-3.5,2) circle(1);
-    \end{scope}
-    
-    % das rechte Ding
-    \draw[thick] (4, 3)  ellipse (2 and 1);
-    % und das Loch
-    \begin{scope}
-      \clip (3, 2.75) rectangle (5, 4);
-      \path[draw,thick,name path=gkreis] (4,3.75) ellipse (1.25 and 1);
-    \end{scope}
-    \path[name path=kkreis] (4,2.5) ellipse (1 and 0.75);
-    \path[name intersections={of=gkreis and kkreis}];
-    \begin{scope}
-      \clip (intersection-1) rectangle ($(intersection-2)+(0,0.5)$);
-      \draw[thick] (4,2.5) ellipse (1 and 0.75);
-    \end{scope}
-    
-    % die linke Kartoffel
-    \coordinate (kartoffel0) at (-4.25,2.5); \coordinate (kartoffel1) at (-4.25,2); \coordinate (kartoffel2) at (-4,2.125); \coordinate (kartoffel3) at (-3.75,2); \coordinate (kartoffel4) at (-3.25,2.5); \coordinate (kartoffel5) at (-3.75,2.5); 
-    \coordinate (ctrlk0) at (0.25,0.25); \coordinate (ctrlk1235) at (0.25,0); \coordinate (ctrlk4) at (0,0.25);
-    \draw (kartoffel0) ..controls($(kartoffel0)-(ctrlk0)$) and ($(kartoffel1)-0.5*(ctrlk1235)$).. (kartoffel1) ..controls($(kartoffel1)+0.5*(ctrlk1235)$) and ($(kartoffel2)-(ctrlk1235)$).. (kartoffel2) ..controls($(kartoffel2)+(ctrlk1235)$) and ($(kartoffel3)-0.5*(ctrlk1235)$).. (kartoffel3) ..controls($(kartoffel3)+2*(ctrlk1235)$) and ($(kartoffel4)-(ctrlk4)$).. (kartoffel4) ..controls($(kartoffel4)+(ctrlk4)$) and ($(kartoffel5)+(ctrlk1235)$).. (kartoffel5) ..controls($(kartoffel5)-0.5*(ctrlk1235)$) and ($(kartoffel0)+(ctrlk0)$).. (kartoffel0) -- cycle;
-    \fill (-3.75,2.25) circle (0.05) node[right]{$p$};
-    
-    % die rechte Kartoffel (Kreis)
-    \draw (4,2.5) ellipse (0.5 and 0.25); \fill (4,2.5) circle (0.05) node[right]{$q$};
-    
-    % die beiden Umgebungen unten
-    \draw (-3.75,0.25) circle (0.5); \fill (-3.75,0.25) circle (0.05) node[right]{$x$};
-    \draw (4,0.25) circle (0.5); \fill (4,0.25) circle (0.05) node[right]{$y$};
-    
-    % Abbildungspfeile
-    \draw[->] (-4, 2.25) to[out=250,in=110] node[left]{$\phi$} (-4,0.75);
-    \draw[->] (3.75, 2.5) to[out=250,in=110] node[left]{$\psi$} (3.75,0.75);
-  \end{tikzpicture}\end{center}
+%%
+%% Abbildung 3-1
+%%
+\begin{center}
+  \input{img/3-1-differenzierbarkeit}
+\end{center}
 
 % Definition 3.1
 \begin{Dfn}
@@ -157,7 +104,7 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
   \end{enumerate}
 \end{emptythm}
 
-% Definition 2.3
+% Definition 3.3
 \begin{Dfn}[Regul"are Punkte, Submersion, Immersion]
   Es sei $\Phi \colon M \to N$ glatt.
   \begin{enumerate}[label=(\roman*),leftmargin=*,widest=iii]

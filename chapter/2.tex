@@ -107,7 +107,7 @@ Zu jedem Vektor $v \in \R^n$ sei $B(v) = [t \mapsto \phi^{-1}(\phi(p) + tv)]$ di
 	\draw (a) ..controls(a) and ($(b) - 0.25*(ctrlb)$).. (b) ..controls($(b) + 0.25*(ctrlb)$) and ($(c) - 0.25*(ctrlc)$).. (c) ..controls($(c) + 0.25*(ctrlc)$) and ($(d) - 0.25*(ctrld)$).. (d) ..controls($(d) + 0.25*(ctrld)$) and ($(e) - 0.25*(ctrle)$).. (e) ..controls($(e) + 1.25*(ctrle)$) and (f).. (f);
 	
 	\draw (e) circle(0.75); \filldraw[fill=white] (e) circle(0.05)node[anchor=north west]{$p$}; \node at (-3.25,0) {$U$};
-	\draw[dashed] (-4,-2)node[below]{$\phi^{-1}(\phi(p) + tv$} to[out=70,in=220] (-3.25,-0.75);
+	\draw[dashed] (-4,-2)node[below]{$\phi^{-1}(\phi(p) + tv)$} to[out=70,in=220] (-3.25,-0.75);
 	
 	\coordinate (cntr) at (0.25,0);
 	\def\lnge{2.0}
@@ -175,18 +175,22 @@ Diese erf"ullt die Leibniz-Regel:
 %%%
 %%% Abbildung 2-3
 %%% 
-\textcolor{red}{Abbildung 2-3}
+\begin{center}
+  \input{img/2-3-existenz-von-sigma}
+\end{center}
 
 
 \begin{bew}
   Man kann o.E. annehmen, dass $U$ Kartengebiet einer Karte $\phi$ von $M$ um $p$ ist und $\phi(p) = 0 \in \R^n$.\\
 
-  Es sei $\epsilon > 0$ so, dass $\overline B_c(0) \subset \phi(U)$. \\
+  Es sei $\epsilon > 0$ so, dass $\overline B_\epsilon(0) \subset \phi(U)$. \\
 
   %%% 
   %%% Abbildung 2-4
   %%% 
-  \textcolor{red}{Abbildung 2-4}
+\begin{center}
+  \input{img/2-4-konstruktion-von-sigma}
+\end{center}
 
   Ist dann $\eta$ eine glatte Funktion auf $\R$ mit $\eta \equiv 1$ auf $\left[\frac{-\epsilon^{2}}{2},\frac{\epsilon^2}{2}\right]$ und $\eta \equiv 0$ auf $\R \setminus (-\epsilon^2,\epsilon^2)$, so hat f"ur $U_1 = \phi^{-1}(B_{\frac{\epsilon}{2}}(0))$ die Funktion
   \begin{align*}
