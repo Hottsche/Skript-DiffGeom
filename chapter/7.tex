@@ -16,19 +16,19 @@
 Das gew"ohnliche Differential im $\R^n$ f"ur $Y \colon \R^n \to \R^n$ ist gerade die lineare Abbildung $\D Y|_p \cdot v = \lim \frac{1}t \left(Y(p+tv) -Y(p)\right) = \difffrac[t=0]{}{t} Y(p+tr)$.
 Betrachte im euklidischen Fall einen Punkt $p$, sowie einen Tangentialvektor $Y_p$.
 \begin{center}\begin{tikzpicture}[font=\scriptsize]
-	\coordinate (end) at (1.5,0.75); %Endrichtung
-	\draw (0,0) -- ($(0,0) + 4*(end)$);
-	% die Punkte
-	\coordinate (p) at ($(0,0) + 0.5*(end)$); \coordinate (q) at ($(0,0) + 2.75*(end)$);
-	\fill (p) circle(0.1)node[anchor=north west]{$p$}; \fill (q) circle(0.1)node[anchor=north west]{$p + tv$};
-	% die Pfeile
-	\draw[->] (p) --node[left]{$Y_p$} ($(p) + 1.25*(-0.75,2)$);
-	\coordinate (dir) at (0.15,1);
-	\def\scl{1.5}
-	\draw[->] (q) --node[right]{$Y_{p+tv}$} ($(q) + \scl*(dir)$); \draw[->] (p) -- ($(p) + \scl*(dir)$);
-	% Parallelverschiebung
-	\draw[->,dashed] ($(q) + 0.5*\scl*(dir)$) --node[above,sloped]{Parallelverschiebung} ($(p) + 0.5*\scl*(dir)$);
-\end{tikzpicture}\end{center}
+    \coordinate (end) at (1.5,0.75); %Endrichtung
+    \draw (0,0) -- ($(0,0) + 4*(end)$);
+    % die Punkte
+    \coordinate (p) at ($(0,0) + 0.5*(end)$); \coordinate (q) at ($(0,0) + 2.75*(end)$);
+    \fill (p) circle(0.1)node[anchor=north west]{$p$}; \fill (q) circle(0.1)node[anchor=north west]{$p + tv$};
+    % die Pfeile
+    \draw[->] (p) --node[left]{$Y_p$} ($(p) + 1.25*(-0.75,2)$);
+    \coordinate (dir) at (0.15,1);
+    \def\scl{1.5}
+    \draw[->] (q) --node[right]{$Y_{p+tv}$} ($(q) + \scl*(dir)$); \draw[->] (p) -- ($(p) + \scl*(dir)$);
+    % Parallelverschiebung
+    \draw[->,dashed] ($(q) + 0.5*\scl*(dir)$) --node[above,sloped]{Parallelverschiebung} ($(p) + 0.5*\scl*(dir)$);
+  \end{tikzpicture}\end{center}
 
 Nun gehe zur Betrachtung von Vektorfeldern $X \colon \R^n \to \R^n$ "uber und setze $\D_XY|_p = \D Y|_p\cdot X_p$. Hierf"ur gilt:
 \begin{itemize}
@@ -179,7 +179,9 @@ Es seien $E|_{U_\alpha} \overset{\tau_\alpha}{\to} U_\alpha \X \R^n$ und $E|_{U_
 \[ \psi = \psi_{\beta\alpha}: U_\alpha \cap U_\beta \to \GL_n(\R) \]
 war durch
 \[ \tau_\beta \circ \tau_\alpha^{-1} (p,x) = (p, \psi x) \]
-definiert. F"ur die lokalen Darstellungen $S = \sum \sigma^j s_j = \sum \tilde\sigma^j s_j$ in $\tau_\alpha$ beziehungsweise $\tau_\beta$ gilt damit $\tilde\sigma^{i} = \sum_k \psi_k^{i} \sigma^k$, kurz $\tilde\sigma = \psi \sigma$. Es folgt daraus:
+definiert.
+F"ur die lokalen Darstellungen $S = \sum \sigma^j s_j = \sum \tilde\sigma^j s_j$ in $\tau_\alpha$ beziehungsweise $\tau_\beta$ gilt damit $\tilde\sigma^{i} = \sum_k \psi_k^{i} \sigma^k$, kurz $\tilde\sigma = \psi \sigma$.
+Es folgt daraus:
 \[ (\dop \sigma(X) + \omega(X) \sigma) S = \nabla_X S = (\dop \tilde\sigma(X) + \tilde\omega(X)\tilde\sigma) \tilde S \]
 also
 \begin{align*}
@@ -239,160 +241,173 @@ Der Beweis sei zur "Ubung "uberlassen.
 \section{Schnitte entlang von Ableitungen}
 
 \begin{center}\begin{tikzpicture}
-%	\draw[step=0.25,gray!15] (-6,-5) grid (6,5); \draw[step=0.5,gray!30] (-6,-5) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
-	
-	\node (1) at (-5,0.5) {$\calI$}; \node (2) at (-5,2) {$M$}; \node (3) at (-3,2) {$\T M$};
-	\draw[->] (1) --node[left,font=\scriptsize]{$c$} (2); \draw[->] (2) -- (3);
-	
-	\node at (5,1) {$\nabla_{\dot c} \tilde X = \gamma$};
-	
-	\draw[name path=kurve] (-2,-0.5) ..controls(-2,-0.5) and (-1.5,0).. (0.5,0)node[above,font=\scriptsize]{$c$} ..controls(2.5,0) and (3,1.5).. (3,1.5);
-	
-	\path[name path=pkt] (-1.5,-1) -- (-1.5,2);
-	\path[name intersections={of=kurve and pkt}];
-	\coordinate (a) at (intersection-1);
-	\draw[->] (a) -- ($(a) + 0.8*(0.7,1.5)$);
-	
-	\path[name path=pkt] (-0.5,-1) -- (-0.5,2);
-	\path[name intersections={of=kurve and pkt}];
-	\coordinate (a) at (intersection-1);
-	\draw[->] (a) -- ($(a) + 0.8*(1,0.8)$);
-	
-	\path[name path=pkt] (0.75,-1) -- (0.75,2);
-	\path[name intersections={of=kurve and pkt}];
-	\coordinate (a) at (intersection-1);
-	\draw[->] (a) -- ($(a) + 0.5*(0.7,-1.5)$);
-	
-	\path[name path=pkt] (1.75,-1) -- (1.75,2);
-	\path[name intersections={of=kurve and pkt}];
-	\coordinate (a) at (intersection-1);
-	\draw[->] (a) -- ($(a) + (1,-0.5)$);
-	
-	\path[name path=pkt] (2.5,-1) -- (2.5,2);
-	\path[name intersections={of=kurve and pkt}];
-	\coordinate (a) at (intersection-1);
-	\draw[->] (a) -- ($(a) + 0.5*(0.7,2.5)$);
-\end{tikzpicture}\end{center}
+    %	\draw[step=0.25,gray!15] (-6,-5) grid (6,5); \draw[step=0.5,gray!30] (-6,-5) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+    
+    \node (1) at (-5,0.5) {$\calI$}; \node (2) at (-5,2) {$M$}; \node (3) at (-3,2) {$\T M$};
+    \draw[->] (1) --node[left,font=\scriptsize]{$c$} (2); \draw[->] (2) -- (3);
+    
+    \node at (5,1) {$\nabla_{\dot c} \tilde X = \gamma$};
+    
+    \draw[name path=kurve] (-2,-0.5) ..controls(-2,-0.5) and (-1.5,0).. (0.5,0)node[above,font=\scriptsize]{$c$} ..controls(2.5,0) and (3,1.5).. (3,1.5);
+    
+    \path[name path=pkt] (-1.5,-1) -- (-1.5,2);
+    \path[name intersections={of=kurve and pkt}];
+    \coordinate (a) at (intersection-1);
+    \draw[->] (a) -- ($(a) + 0.8*(0.7,1.5)$);
+    
+    \path[name path=pkt] (-0.5,-1) -- (-0.5,2);
+    \path[name intersections={of=kurve and pkt}];
+    \coordinate (a) at (intersection-1);
+    \draw[->] (a) -- ($(a) + 0.8*(1,0.8)$);
+    
+    \path[name path=pkt] (0.75,-1) -- (0.75,2);
+    \path[name intersections={of=kurve and pkt}];
+    \coordinate (a) at (intersection-1);
+    \draw[->] (a) -- ($(a) + 0.5*(0.7,-1.5)$);
+    
+    \path[name path=pkt] (1.75,-1) -- (1.75,2);
+    \path[name intersections={of=kurve and pkt}];
+    \coordinate (a) at (intersection-1);
+    \draw[->] (a) -- ($(a) + (1,-0.5)$);
+    
+    \path[name path=pkt] (2.5,-1) -- (2.5,2);
+    \path[name intersections={of=kurve and pkt}];
+    \coordinate (a) at (intersection-1);
+    \draw[->] (a) -- ($(a) + 0.5*(0.7,2.5)$);
+  \end{tikzpicture}\end{center}
 
 \begin{Dfn}
-Es seien $E$ ein Vektorb"undel "uber $M$ mit kovarianter Ableitung $\nabla$ und $\Phi: N \to M$. Ein \CmMark{Schnitt} entlang $\Phi$ ist eine glatte Abbildung $S: N \to E$, so dass $S(p) \in E_{\Phi(p)}$ gilt, dies entspricht genau dem Schnitt in das l"angs $\Phi$ zur"uckgezogene B"undel $\Phi^*$.
-\begin{center}\begin{tikzpicture}
-	\def\hor{1.75}
-	\def\vert{1}
-	\node (1) at (-\hor,\vert) {$\Phi^*E$}; \node (2) at (\hor,\vert) {$E$}; \node (3) at (-\hor,-\vert) {$N$}; \node (4) at (\hor,-\vert) {$M$};
-	
-	\draw[right hook->] (1) -- (2); \draw[->] (1) -- (3); \draw[->] (2) --node[right,font=\scriptsize]{$\pi$} (4); \draw[->] (3) --node[above,font=\scriptsize]{$\Phi$} (4); \draw[->] (3) --node[above,font=\scriptsize]{$S$} (2);
-	\draw[->,dashed] (3) to[out=120,in=240]node[left,font=\scriptsize]{$\tilde S$} (1);
-\end{tikzpicture}\end{center}
+  Es seien $E$ ein Vektorb"undel "uber $M$ mit kovarianter Ableitung $\nabla$ und $\Phi: N \to M$.
+  Ein \CmMark{Schnitt} entlang $\Phi$ ist eine glatte Abbildung $S: N \to E$, so dass $S(p) \in E_{\Phi(p)}$ gilt, dies entspricht genau dem Schnitt in das l"angs $\Phi$ zur"uckgezogene B"undel $\Phi^*$.
+  \begin{center}\begin{tikzpicture}
+      \def\hor{1.75}
+      \def\vert{1}
+      \node (1) at (-\hor,\vert) {$\Phi^*E$}; \node (2) at (\hor,\vert) {$E$}; \node (3) at (-\hor,-\vert) {$N$}; \node (4) at (\hor,-\vert) {$M$};
+      
+      \draw[right hook->] (1) -- (2); \draw[->] (1) -- (3); \draw[->] (2) --node[right,font=\scriptsize]{$\pi$} (4); \draw[->] (3) --node[above,font=\scriptsize]{$\Phi$} (4); \draw[->] (3) --node[above,font=\scriptsize]{$S$} (2);
+      \draw[->,dashed] (3) to[out=120,in=240]node[left,font=\scriptsize]{$\tilde S$} (1);
+    \end{tikzpicture}\end{center}
 \end{Dfn}
 F"ur einen Schnitt $S$ in $E$ l"angs $\Phi$ und $X_p \in \T_pN$ ist die kovariante Abbildung $\nabla_{X_p}S$ von $S$ in Richtung $X_p$ wie folgt definiert:
 
 Es sei $s_1,\ldots ,s_n$ eine lokale Basis "uber einer Trivialisierungsumgebung $U \subseteq M$. Dann ist $S$ lokal gegeben durch
-	\[ S_p = \sum_j \sigma^j(p) s_j(\Phi(p)) \]
+\[ S_p = \sum_j \sigma^j(p) s_j(\Phi(p)) \]
 f"ur $p \in V = \Phi^{-1}(U) \subseteq N$, und damit
-	\[ \nabla_{X_p}S = \left( \dop \sigma(X_p) + \omega(\Phi_{*p}X_p) \sigma(p) \right) S(\Phi(p)).\]
+\[ \nabla_{X_p}S = \left( \dop \sigma(X_p) + \omega(\Phi_{*p}X_p) \sigma(p) \right) S(\Phi(p)).\]
 Dies h"angt nicht von der Wahl der Trivialisierung ab, denn ist $U'$ ein weiteres Trivialisierungsgebiet mit lokaler Basis $\tilde s_1, \ldots , \tilde s_n$ und "Ubergangsfunktion $\psi: C \cap U' \to \GL_n(\R)$, so gilt
 \begin{align*}
-	\tilde\sigma &= (\psi \circ \Phi) \sigma \qquad \text{und}\\
-	\tilde\omega &= (\psi \circ \Phi) \omega(\psi \circ \Phi)^{-1} - \dop (\psi \circ \Phi)(\psi \circ \Phi)^{-1}
+  \tilde\sigma &= (\psi \circ \Phi) \sigma \qquad \text{und}\\
+  \tilde\omega &= (\psi \circ \Phi) \omega(\psi \circ \Phi)^{-1} - \dop (\psi \circ \Phi)(\psi \circ \Phi)^{-1}
 \end{align*}
 damit folgt
 \begin{align*}
-	\dop \tilde\sigma(X_p) &+ \tilde\omega(\Phi_{*p}X_p) \tilde\sigma(p) - \dop((\psi \circ \Phi)\sigma) (X_p)\\
-	&+ (\psi \circ \Phi) \omega (\Phi_{*p}X_p)(\psi \circ \Phi)^{-1}(\psi \circ \Phi)\sigma\\
-	&- \dop(\psi \circ \Phi)(X_p)(\psi \circ \Phi)^{-1}(\psi \circ \Phi)\sigma
+  \dop \tilde\sigma(X_p) &+ \tilde\omega(\Phi_{*p}X_p) \tilde\sigma(p) - \dop((\psi \circ \Phi)\sigma) (X_p)\\
+  &+ (\psi \circ \Phi) \omega (\Phi_{*p}X_p)(\psi \circ \Phi)^{-1}(\psi \circ \Phi)\sigma\\
+  &- \dop(\psi \circ \Phi)(X_p)(\psi \circ \Phi)^{-1}(\psi \circ \Phi)\sigma
 \end{align*}\begin{align*}
-	&= \dop(\psi \circ \Phi)(X_p)\sigma + (\psi \circ \Phi)\omega(\Phi_{*p}X_p)\sigma - \dop(\psi \circ \Phi)(X_p)\sigma\\
-	&= (\psi \circ \Phi)(\dop\sigma(X_p) + \omega(\Phi_{*p}X_p)\sigma)
+  &= \dop(\psi \circ \Phi)(X_p)\sigma + (\psi \circ \Phi)\omega(\Phi_{*p}X_p)\sigma - \dop(\psi \circ \Phi)(X_p)\sigma\\
+  &= (\psi \circ \Phi)(\dop\sigma(X_p) + \omega(\Phi_{*p}X_p)\sigma)
 \end{align*}
 Damit ist $p \mapsto \nabla_{X_p}S$ als Schnitt entlang $\Phi$ wohldefiniert.
 \begin{bem}
-Dies definiert eine kovariante Ableitung auf $\Phi^*E \subseteq N \X E$. Sind umgekehrt $S \in \Gamma(E)$ und $X_p \in \T_pN$, so ist $S \circ \Phi$ ein Schnitt entlang $\Phi$ und es gilt
-	\[ \nabla_{X_p}(S \circ \Phi) = \nabla_{\Phi_{*p}X_p}S \]
+  Dies definiert eine kovariante Ableitung auf $\Phi^*E \subseteq N \X E$.
+  Sind umgekehrt $S \in \Gamma(E)$ und $X_p \in \T_pN$, so ist $S \circ \Phi$ ein Schnitt entlang $\Phi$ und es gilt
+  \[ \nabla_{X_p}(S \circ \Phi) = \nabla_{\Phi_{*p}X_p}S \]
 \end{bem}
 
 \begin{emptythm}[Spezialfall:]
-Sei $\Phi = c : \calI = [a,b] \to M$. Ein Schnitt in $E$ entlang $c$ ist eine glatte Abbildung $S: \calI \to E$ mit $S(t) \in E_{c(t)}$. Die kovariante Abbildung $\nabla_{\pdifffrac[t]{}{t}} S$ wird kurz als $\nabla_tS$ oder $S'(t)$ geschrieben. In lokalen Koordinaten gilt
-\begin{align*}
-	S' &= \left( \dop \sigma \left( \pdifffrac{}{t} \right) + \omega\left( c_* \left( \pdifffrac{}{t} \right) \right) \sigma \right) S \circ c\\
-	&= \left( \sigma' + \omega(\dot c) \sigma \right) S \circ c
-\end{align*}
+  Sei $\Phi = c : \calI = [a,b] \to M$.
+  Ein Schnitt in $E$ entlang $c$ ist eine glatte Abbildung $S: \calI \to E$ mit $S(t) \in E_{c(t)}$.
+  Die kovariante Abbildung $\nabla_{\pdifffrac[t]{}{t}} S$ wird kurz als $\nabla_tS$ oder $S'(t)$ geschrieben.
+  In lokalen Koordinaten gilt
+  \begin{align*}
+    S' &= \left( \dop \sigma \left( \pdifffrac{}{t} \right) + \omega\left( c_* \left( \pdifffrac{}{t} \right) \right) \sigma \right) S \circ c\\
+    &= \left( \sigma' + \omega(\dot c) \sigma \right) S \circ c
+  \end{align*}
 \end{emptythm}
 
 \begin{Dfn}
-Ein Schnitt $S \in \Gamma(E)$ hei"st \CmMark[Schnitt!paralleler]{parallel} (oder \CmMark[Schnitt!konstanter]{konstant}), wenn $\nabla S \equiv 0$. Ein Schnitt $S$ entlang $c$ hei"st \CmMark[Schnitt!paralleler]{parallel}, wenn $S' \equiv 0$ gilt.
+  Ein Schnitt $S \in \Gamma(E)$ hei"st \CmMark[Schnitt!paralleler]{parallel} (oder \CmMark[Schnitt!konstanter]{konstant}), wenn $\nabla S \equiv 0$.
+  Ein Schnitt $S$ entlang $c$ hei"st \CmMark[Schnitt!paralleler]{parallel}, wenn $S' \equiv 0$ gilt.
 \end{Dfn}
 
 \begin{Prop}\label{prop-7-9}
-Es sei $c: \calI \to M$ eine (st"uckweise) glatte Kurve und $\xi \in E_{c(s)}$. Dann existiert genau ein entlang $c$ paralleler Schnitt $S_\xi$ in $E$ mit $S_\xi(s) = \xi$.
+  Es sei $c: \calI \to M$ eine (st"uckweise) glatte Kurve und $\xi \in E_{c(s)}$.
+  Dann existiert genau ein entlang $c$ paralleler Schnitt $S_\xi$ in $E$ mit $S_\xi(s) = \xi$.
 \end{Prop}
 
 \begin{bew}
-in lokalen Koordinaten definiert
-	\[ 0 = S_\xi'(t) = (\sigma'(t) + \omega(\dot c(t) \sigma(t)) S(\dop t)) \]
-ein lineares Differentialgleichungssystem:
-	\[ \sigma'(t)  = A(t) \cdot \sigma(t) \]
-wobei $A(t) = -\omega(\dot c(t))$. Ist $[t, T]$ ein kompaktes Teilintervall in $\calI$ mit $s \in [t, T]$, so existiert eine Partition $t = t_0 < \ldots < t_k = T$, so dass $c([t_i, t_{i+1}])$ in einer Trivialisierungsumgebung liegt. Man findet so sukzessive eindeutige L"osungen auf den Teilintervallen (\emph{lineares} System), welche durch Fortsetzungen eine eindeutige L"osung auf $[t, T]$ definieren. Erneut folgt aus der Eindeutigkeit, dass ein f"ur alle Zeiten definierter paralleler Schnitt $S_\xi$ existiert.
+  in lokalen Koordinaten definiert
+  \[ 0 = S_\xi'(t) = (\sigma'(t) + \omega(\dot c(t) \sigma(t)) S(\dop t)) \]
+  ein lineares Differentialgleichungssystem:
+  \[ \sigma'(t)  = A(t) \cdot \sigma(t) \]
+  wobei $A(t) = -\omega(\dot c(t))$.
+  Ist $[t, T]$ ein kompaktes Teilintervall in $\calI$ mit $s \in [t, T]$, so existiert eine Partition $t = t_0 < \ldots < t_k = T$, so dass $c([t_i, t_{i+1}])$ in einer Trivialisierungsumgebung liegt.
+  Man findet so sukzessive eindeutige L"osungen auf den Teilintervallen (\emph{lineares} System), welche durch Fortsetzungen eine eindeutige L"osung auf $[t, T]$ definieren.
+  Erneut folgt aus der Eindeutigkeit, dass ein f"ur alle Zeiten definierter paralleler Schnitt $S_\xi$ existiert.
 \end{bew}
 
 \begin{Dfn}
-Es sei $c$ eine glatte Kurve in $M$. Die lineare Abbildung
-	\[\begin{array}{cccc} P_{s,t}^c: & E_{c(s)} &\to& E_{c(t)} \\
-		& \xi &\mapsto& S_\xi(t), \end{array}\]
-wobei $S_\xi$ den nach Proposition \ref{prop-7-9} eindeutigen parallelen Schnitt entlang $c$ mit $S_\xi(s) = \xi$ bezeichnet, hei"st \CmMark{Paralleltransport} entlang $c$.
+  Es sei $c$ eine glatte Kurve in $M$. Die lineare Abbildung
+  \[\begin{array}{cccc} P_{s,t}^c: & E_{c(s)} &\to& E_{c(t)} \\
+    & \xi &\mapsto& S_\xi(t), \end{array}\]
+  wobei $S_\xi$ den nach Proposition \ref{prop-7-9} eindeutigen parallelen Schnitt entlang $c$ mit $S_\xi(s) = \xi$ bezeichnet, hei"st \CmMark{Paralleltransport} entlang $c$.
 \end{Dfn}
 
-\begin{bem}\begin{enumerate}[label=\arabic*),leftmargin=*]
-\item
-	$P_{s,t}^c$ ist invertierbar mit Inversen $(P_{s,t}^c)^{-1} = P_{t,s}^c = P_{s,t}^{\overline c}$, wobei $\overline c = (s+t-\tau)$.
-\item
-	Die Abbildung $P_{s,t}^c$ ist im Allgemeinen \emph{nicht} unabh"angig von der Wahl von $c$.
-\end{enumerate}\end{bem}
+\begin{bem}
+  \begin{enumerate}[label=(\arabic*),leftmargin=*]
+  \item $P_{s,t}^c$ ist invertierbar mit Inversen $(P_{s,t}^c)^{-1} = P_{t,s}^c = P_{s,t}^{\overline c}$, wobei $\overline c = (s+t-\tau)$.
+  \item Die Abbildung $P_{s,t}^c$ ist im Allgemeinen \emph{nicht} unabh"angig von der Wahl von $c$.
+  \end{enumerate}
+\end{bem}
 
 \begin{bsp}
-In $\R^n$ ist ein Vektorfeld $X$ genau dann parallel, wenn $X$ (beziehungsweise $\overline X_p \in \calI_p(X_p)$) konstant im \quot{"ublichen} Sinne ist: Paralleltransport entlang einer Kurve entspricht der gew"ahlten Parallelverschiebung.
-\begin{center}\begin{tikzpicture}[font=\scriptsize]
-%	\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
-	
-	\draw[name path=kurve] (-4.5,-0.5) ..controls(-4.5,-0.5) and (-4,0.5).. (0,0.5)node[below]{$c$} ..controls(4,0.5) and (4.5,3).. (4.5,3);
-	
-	\foreach \x in {3.5, 1.5, ..., -1.5}{% Schleife von rechts nach links
-		\path[name path=strich] (\x,-1) -- (\x,5);
-		\path[name intersections={of=strich and kurve}];
-		\coordinate (a) at (intersection-1);
-		\draw[->] (a) -- +(0,3);
-		\draw[dashed] ($(a) + (0,1)$) -- +(-1,0);
-		
-		\path[name path=strich] (\x - 1,-1) -- (\x - 1,5);
-		\path[name intersections={of=strich and kurve}];
-		\coordinate (a) at (intersection-1);
-		\draw[->] (a) -- +(0,3);
-		\draw[dashed] ($(a) + (0,2)$) -- +(-1,0);
-	}
-	\path[name path=strich] (-2.5,-1) -- (-2.5,5);
-	\path[name intersections={of=strich and kurve}];
-	\coordinate (a) at (intersection-1);
-	\draw[->] (a) -- +(0,3);
-	\draw[dashed] ($(a) + (0,1)$) -- +(-1,0);
-	
-	\path[name path=strich] (-3.5,-1) -- (-3.5,5);
-	\path[name intersections={of=strich and kurve}];
-	\coordinate (a) at (intersection-1);
-	\draw[->] (a) -- +(0,3);
+  In $\R^n$ ist ein Vektorfeld $X$ genau dann parallel, wenn $X$ (beziehungsweise $\overline X_p \in \calI_p(X_p)$) konstant im \quot{"ublichen} Sinne ist: Paralleltransport entlang einer Kurve entspricht der gew"ahlten Parallelverschiebung.
+  \begin{center}\begin{tikzpicture}[font=\scriptsize]
+      %	\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
+      
+      \draw[name path=kurve] (-4.5,-0.5) ..controls(-4.5,-0.5) and (-4,0.5).. (0,0.5)node[below]{$c$} ..controls(4,0.5) and (4.5,3).. (4.5,3);
+      
+      \foreach \x in {3.5, 1.5, ..., -1.5}{% Schleife von rechts nach links
+        \path[name path=strich] (\x,-1) -- (\x,5);
+        \path[name intersections={of=strich and kurve}];
+        \coordinate (a) at (intersection-1);
+        \draw[->] (a) -- +(0,3);
+        \draw[dashed] ($(a) + (0,1)$) -- +(-1,0);
+        
+        \path[name path=strich] (\x - 1,-1) -- (\x - 1,5);
+        \path[name intersections={of=strich and kurve}];
+        \coordinate (a) at (intersection-1);
+        \draw[->] (a) -- +(0,3);
+        \draw[dashed] ($(a) + (0,2)$) -- +(-1,0);
+      }
+      \path[name path=strich] (-2.5,-1) -- (-2.5,5);
+      \path[name intersections={of=strich and kurve}];
+      \coordinate (a) at (intersection-1);
+      \draw[->] (a) -- +(0,3);
+      \draw[dashed] ($(a) + (0,1)$) -- +(-1,0);
+      
+      \path[name path=strich] (-3.5,-1) -- (-3.5,5);
+      \path[name intersections={of=strich and kurve}];
+      \coordinate (a) at (intersection-1);
+      \draw[->] (a) -- +(0,3);
 
-	\fill (a) circle(0.05) node[anchor=north west]{$c(s)$};% nur am letzten Strich
-\end{tikzpicture}\end{center}
+      \fill (a) circle(0.05) node[anchor=north west]{$c(s)$};% nur am letzten Strich
+    \end{tikzpicture}\end{center}
 \end{bsp}
 
-Es seien $S \in \Gamma(E)$ und $X_p \in \T_pM$. Ist $c$ eine Integralkurve von $X_p$, das hei"st $c(0) = p$ und $\dot c(0) = X_p$, so ist $\tilde S = S \circ c$ ein Schnitt entlang $c$ und es gilt $\tilde S'(0) = \nabla_{X_p} S$. Nun sei ferner $\xi_1,\ldots ,\xi_n$ eine Basis von $E_p$ und es bezeichnen $s_1,\ldots ,s_n$ die parallelen Schnitte  entlang $c$ mit $s_i(0) = \xi_i$. Dann gilt $\tilde S(t) = \sum \sigma^j(t)s_j(t)$ und es folgt
+Es seien $S \in \Gamma(E)$ und $X_p \in \T_pM$.
+Ist $c$ eine Integralkurve von $X_p$, das hei"st $c(0) = p$ und $\dot c(0) = X_p$, so ist $\tilde S = S \circ c$ ein Schnitt entlang $c$ und es gilt $\tilde S'(0) = \nabla_{X_p} S$.
+Nun sei ferner $\xi_1,\ldots ,\xi_n$ eine Basis von $E_p$ und es bezeichnen $s_1,\ldots ,s_n$ die parallelen Schnitte entlang $c$ mit $s_i(0) = \xi_i$.
+Dann gilt $\tilde S(t) = \sum \sigma^j(t)s_j(t)$ und es folgt
 \begin{align*}
-	\nabla_{X_p}S &= \tilde S'(0) = \nabla_t \big( \sum_j \sigma^j s_j \big)(0)\\
-	&= \sum_j \big( (\sigma^j)' s_j + \sigma^j \underbrace{\nabla_t s_j}_{\equiv 0} \big) (0)\\
-	&= \sum_j \lim_{t \to 0} \left( \frac{\sigma^j(t) - \sigma^j(0)}{t} \right) s_j(0)\\
-	&= \lim_{t \to 0} \frac{1}{t} \left( \sum_j \sigma^j(t) s_j(0) - \sigma^j(0) s_j(0) \right)\\
-	&= \lim_{t \to 0} \frac{1}{t} \left( \sum_j \sigma^j \big(P_{t,0}^c (s_j(t) \big) - \sigma^j(0) s_j(0) \right)\\
-	&= \lim_{t \to 0} \frac{1}{t} \left( P_{t,0}^c \big( \sum \sigma^j s_j(t) \big) - \sum \sigma^j s_j(0) \right)\\
-	&= \lim_{t \to 0} \frac{1}{t} \left( P_{t,0}^c \big( \tilde S(t) - \tilde S(0) \big) \right)
+  \nabla_{X_p}S &= \tilde S'(0) = \nabla_t \big( \sum_j \sigma^j s_j \big)(0)\\
+  &= \sum_j \big( (\sigma^j)' s_j + \sigma^j \underbrace{\nabla_t s_j}_{\equiv 0} \big) (0)\\
+  &= \sum_j \lim_{t \to 0} \left( \frac{\sigma^j(t) - \sigma^j(0)}{t} \right) s_j(0)\\
+  &= \lim_{t \to 0} \frac{1}{t} \left( \sum_j \sigma^j(t) s_j(0) - \sigma^j(0) s_j(0) \right)\\
+  &= \lim_{t \to 0} \frac{1}{t} \left( \sum_j \sigma^j \big(P_{t,0}^c (s_j(t) \big) - \sigma^j(0) s_j(0) \right)\\
+  &= \lim_{t \to 0} \frac{1}{t} \left( P_{t,0}^c \big( \sum \sigma^j s_j(t) \big) - \sum \sigma^j s_j(0) \right)\\
+  &= \lim_{t \to 0} \frac{1}{t} \left( P_{t,0}^c \big( \tilde S(t) - \tilde S(0) \big) \right)
 \end{align*}
 
 
@@ -413,8 +428,8 @@ F"ur das \quot{gew"ohnliche} Differential auf $\R^k$ gilt:
   \begin{align*}
     T(X,Y) = \nabla_XY - \nabla_YX - [X,Y]
   \end{align*}
-hei"st \CmMark{Torsion} oder der \CmMark{Torsionstensor} von $\nabla$.
-Die kovariante Ableitung hei"st \CmMark{torsionslos}, wenn $T \equiv 0$ gilt.
+  hei"st \CmMark{Torsion} oder der \CmMark{Torsionstensor} von $\nabla$.
+  Die kovariante Ableitung hei"st \CmMark{torsionslos}, wenn $T \equiv 0$ gilt.
 \end{Dfn}
 
 Betrachtet man die Standardmetrik $g^{\text{std}} = \left<\cdot,\cdot\right>$ des $\R^k$ in den Koordinaten $(\Id, \R^k)$, so gilt:
@@ -434,10 +449,10 @@ Das hei"st die Metrik $g^{\text{std}}$ (das hei"st die $g_{ij}$) ist konstant.
 F"ur $X,Y,Z \in \mathcal V(M)$ gilt:
 \begin{align*}
   \nabla_Z(\omega \otimes \eta)(X,Y) & = \big((\nabla^{*}_Z\omega) \otimes \eta + \omega \otimes (\nabla^{*}_Z \eta)\big)(X,Y)\\
-& = (\nabla^{*}_Z \omega)(X)\eta(Y) + \omega(X)(\nabla^{*}_Z \eta)(Y)\\
-& = \big(Z(\omega(X)) - \omega(\nabla_ZX)\big)\eta(Y) + \omega(X)\big(Z(\eta(Y)-\eta(\nabla_ZY))\big)\\
-& = Z\big(\omega(X)\big)\eta(Y) + \omega(X)Z\big(\eta(Y)\big) - \big(\omega(\nabla_ZX)\eta(Y) + \omega(X)\eta(\nabla_ZY)\big)\\
-& = Z\big((\omega \otimes \eta)(X,Y)\big) - (\omega \otimes \eta)(\nabla_ZX,Y) - (\omega \otimes \eta)(X,\nabla_Z Y)
+  & = (\nabla^{*}_Z \omega)(X)\eta(Y) + \omega(X)(\nabla^{*}_Z \eta)(Y)\\
+  & = \big(Z(\omega(X)) - \omega(\nabla_ZX)\big)\eta(Y) + \omega(X)\big(Z(\eta(Y)-\eta(\nabla_ZY))\big)\\
+  & = Z\big(\omega(X)\big)\eta(Y) + \omega(X)Z\big(\eta(Y)\big) - \big(\omega(\nabla_ZX)\eta(Y) + \omega(X)\eta(\nabla_ZY)\big)\\
+  & = Z\big((\omega \otimes \eta)(X,Y)\big) - (\omega \otimes \eta)(\nabla_ZX,Y) - (\omega \otimes \eta)(X,\nabla_Z Y)
 \end{align*}
 
 Somit ist $g$ genau dann parallel, wenn f"ur $X,Y,Z \in \mathcal V(M)$ gilt:
@@ -460,27 +475,27 @@ Also gilt $P_t^{*} g_{c(t)} = g_{c(0)}$ und es folgt:
 \end{align*}
 
 \begin{bew}[von Satz \ref{satz-7-12}]
-Ist $\nabla$ eine kovariante Ableitung mit den geforderten Eigenschaften, so gilt f"ur $X,Y,Z \in \mathcal V(M)$:
-\begin{align*}
-	X\left<Y,Z\right> & = \left<\nabla_XY,Z\right> + \left<Y,\nabla_XZ\right>\\
-	Y\left<Z,X\right> & = \left<\nabla_YZ,X\right> + \left<Z,\nabla_YX\right>\\
-	& = \left<\nabla_YZ,X\right> + \overline{\left<Z,\nabla_XY\right>} - \left<Z,[X,Y]\right>\\
-	Z\left<X,Y\right> & = \left<\nabla_ZX,Y \right> + \left<X,\nabla_ZY\right>
-\end{align*}
-Indem man die ersten beiden Gleichungen addiert und die Dritte abzieht erh"alt man:
-\begin{align*}
-	Z\left<\nabla_XY,Z\right> = & \ X \left<Y,Z\right> + Y\left<Z,X\right> - Z\left<X,Y\right>\\
-	& - \left<X,\nabla_YZ - \nabla_ZY\right> \\
-	& - \left<Y,\nabla_XZ - \nabla_ZX\right> + \left<Z,[X,Y]\right>\\
-	= & \ X\left<Y,Z\right> + Y\left<Z,X\right> - Z\left<X,Y\right> - \left<X,[Y,Z]\right> - \left<Y,[X,Z]\right> + \left<Z,[X,Y]\right>.
-\end{align*}
-Die rechte Seite der Gleichung ist $C^{\infty}(M)$-linear in $Z$, definiert also f"ur alle $X,Y \in \mathcal V(M)$ eine $1$-Form $\omega_{(X,Y)}$.
-Da die Metrik $\left<\cdot,\cdot\right>$ positiv definit ist, existiert ein Vektorfeld $A_{(X,Y)} \in \mathcal V(M)$ mit $\omega_{(X,Y)} = \left<A_{(X,Y)},\cdot\right>$, das, wie man leicht nachrechnet, $A_{(X,Y)}$-linear und derivativ in $Y$ und $C^{\infty}(M)$-linear in $X$ ist und durch
-\[\begin{array}{cccc}
-	\nabla \colon & \mathcal V(M) \times \mathcal V(M) &\to& \mathcal V(M)\\
-	&(X,Y) &\mapsto& A_{(X,Y)}
-\end{array}\]
-wird eine eindeutige kovariante Ableitung definert, die die geforderten Eigenschaften erf"ullt.
+  Ist $\nabla$ eine kovariante Ableitung mit den geforderten Eigenschaften, so gilt f"ur $X,Y,Z \in \mathcal V(M)$:
+  \begin{align*}
+    X\left<Y,Z\right> & = \left<\nabla_XY,Z\right> + \left<Y,\nabla_XZ\right>\\
+    Y\left<Z,X\right> & = \left<\nabla_YZ,X\right> + \left<Z,\nabla_YX\right>\\
+    & = \left<\nabla_YZ,X\right> + \overline{\left<Z,\nabla_XY\right>} - \left<Z,[X,Y]\right>\\
+    Z\left<X,Y\right> & = \left<\nabla_ZX,Y \right> + \left<X,\nabla_ZY\right>
+  \end{align*}
+  Indem man die ersten beiden Gleichungen addiert und die Dritte abzieht erh"alt man:
+  \begin{align*}
+    Z\left<\nabla_XY,Z\right> = & \ X \left<Y,Z\right> + Y\left<Z,X\right> - Z\left<X,Y\right>\\
+    & - \left<X,\nabla_YZ - \nabla_ZY\right> \\
+    & - \left<Y,\nabla_XZ - \nabla_ZX\right> + \left<Z,[X,Y]\right>\\
+    = & \ X\left<Y,Z\right> + Y\left<Z,X\right> - Z\left<X,Y\right> - \left<X,[Y,Z]\right> - \left<Y,[X,Z]\right> + \left<Z,[X,Y]\right>.
+  \end{align*}
+  Die rechte Seite der Gleichung ist $C^{\infty}(M)$-linear in $Z$, definiert also f"ur alle $X,Y \in \mathcal V(M)$ eine $1$-Form $\omega_{(X,Y)}$.
+  Da die Metrik $\left<\cdot,\cdot\right>$ positiv definit ist, existiert ein Vektorfeld $A_{(X,Y)} \in \mathcal V(M)$ mit $\omega_{(X,Y)} = \left<A_{(X,Y)},\cdot\right>$, das, wie man leicht nachrechnet, $A_{(X,Y)}$-linear und derivativ in $Y$ und $C^{\infty}(M)$-linear in $X$ ist und durch
+  \[\begin{array}{cccc}
+    \nabla \colon & \mathcal V(M) \times \mathcal V(M) &\to& \mathcal V(M)\\
+    &(X,Y) &\mapsto& A_{(X,Y)}
+  \end{array}\]
+  wird eine eindeutige kovariante Ableitung definert, die die geforderten Eigenschaften erf"ullt.
 \end{bew}
 
 \begin{bem}
@@ -492,22 +507,22 @@ wird eine eindeutige kovariante Ableitung definert, die die geforderten Eigensch
   Die nach obigem Satz eindeutig bestimmte, torsionsfreie Zusammenhang bez"uglich dessen die Metrik parallel ist, hei"st \CmMark{Levi-Civita Zusammenhang}.
 \end{Dfn}
 
-\begin{bsp}\begin{enumerate}[label=\arabic*),leftmargin=*]
-\item
-	Der Levi-Civita Zusammenhang des $\R^k$ mit der Standardmetrik ist die gew"ohnliche Ableitung $\D$.
-\item
-	Ist $M \subseteq \R^k$ eine Untermannigfaltigkeit mit der induzierten Metrik, so ist durch
-	\begin{align*}
-		(\nabla_XY)_p = (\D_XY|_p)^T = \D_XY|_p - (D_XY|_p)^{\perp}
-	\end{align*}
-	ein Zusammenhang definiert, der gerade der Levi-Civita Zusammenhang ist, denn $\nabla$ ist torsionslos, da $\D$ torsionslos ist und f"ur Vektorfelder $X,Y,Z \in \mathcal V(M)$ gilt:
-	\begin{align*}
-		Z\left<X,Y\right> & = \left<\D_ZY, Y\right> + \left<X, \D_ZY\right>\\
-		& = \left<(D_ZX)^T + (\D_ZX)^{\perp}, Y\right> + \left<X,(\D_ZY)^T + (\D_ZY)^{\perp}\right>\\
-		& = \left<(\D_ZX)^T,Y\right> + \left<X,(\D_ZY)^T\right>\\
-		& = \left<\nabla_ZX,Y\right> + \left<X,\nabla_ZY\right>.
-	\end{align*}
-\end{enumerate}\end{bsp}
+\begin{bsp}
+  \begin{enumerate}[label=(\arabic*),leftmargin=*]
+  \item Der Levi-Civita Zusammenhang des $\R^k$ mit der Standardmetrik ist die gew"ohnliche Ableitung $\D$.
+  \item Ist $M \subseteq \R^k$ eine Untermannigfaltigkeit mit der induzierten Metrik, so ist durch
+    \begin{align*}
+      (\nabla_XY)_p = (\D_XY|_p)^T = \D_XY|_p - (D_XY|_p)^{\perp}
+    \end{align*}
+    ein Zusammenhang definiert, der gerade der Levi-Civita Zusammenhang ist, denn $\nabla$ ist torsionslos, da $\D$ torsionslos ist und f"ur Vektorfelder $X,Y,Z \in \mathcal V(M)$ gilt:
+    \begin{align*}
+      Z\left<X,Y\right> & = \left<\D_ZY, Y\right> + \left<X, \D_ZY\right>\\
+      & = \left<(D_ZX)^T + (\D_ZX)^{\perp}, Y\right> + \left<X,(\D_ZY)^T + (\D_ZY)^{\perp}\right>\\
+      & = \left<(\D_ZX)^T,Y\right> + \left<X,(\D_ZY)^T\right>\\
+      & = \left<\nabla_ZX,Y\right> + \left<X,\nabla_ZY\right>.
+    \end{align*}
+  \end{enumerate}
+\end{bsp}
 
 \paragraph{Lokale Koordinaten}
 Es sei $(M,g)$ eine Riemmannsche Mannigfaltigkeit mit Levi-Civita Zusammenhang $\nabla$.
@@ -542,21 +557,21 @@ Man definiert die zweite kovariante Ableitung als
 (Formale Produktregel: $\nabla_X(\nabla_YZ) = \nabla_X(\nabla Z(Y)) = (\nabla_X(\nabla Z))(Y) + (\nabla Z)(\nabla_XY) = \nabla_{X,Y}^2Z + \nabla_{\nabla_XY}Z.$)
 \begin{align*}
   R(X,Y)Z & = \nabla_X\nabla_YZ - \nabla_Y\nabla_XZ - \nabla_{[X,Y]}Z\\
-& = \nabla_X\nabla_YZ - \nabla_{\nabla_XY}Z - (\nabla_Y\nabla_XZ - \nabla_{\nabla_YX}Z)\\
-& = \nabla_{X,Y}^2Z - \nabla_{Y,Z}^2Z.
+  & = \nabla_X\nabla_YZ - \nabla_{\nabla_XY}Z - (\nabla_Y\nabla_XZ - \nabla_{\nabla_YX}Z)\\
+  & = \nabla_{X,Y}^2Z - \nabla_{Y,Z}^2Z.
 \end{align*}
 
 % Proposition 7.14
 \begin{Prop}
-F"ur $X,Y,Z,W \in \mathcal V(M)$ gilt:
-\begin{enumerate}[label=(\roman*)]
-\item
-	$R(X,Y)Z + R(Y,Z)X + R(Z,X)Y = 0$,
-\item
-	$\left<R(X,Y)Z,W\right> = -\left<R(Y,X)Z,W\right> = - \left<R(X,Y)W,Z\right>$,
-\item
-	$\left<R(X,Y)Z,W\right> = \left<R(Z,W)X,Y\right>$.
-\end{enumerate}\end{Prop}
+  F"ur $X,Y,Z,W \in \mathcal V(M)$ gilt:
+  \begin{enumerate}[label=(\roman*)]
+  \item
+    $R(X,Y)Z + R(Y,Z)X + R(Z,X)Y = 0$,
+  \item
+    $\left<R(X,Y)Z,W\right> = -\left<R(Y,X)Z,W\right> = - \left<R(X,Y)W,Z\right>$,
+  \item
+    $\left<R(X,Y)Z,W\right> = \left<R(Z,W)X,Y\right>$.
+  \end{enumerate}\end{Prop}
 
 Der Beweis sei als "Ubung "uberlassen.
 
@@ -564,27 +579,28 @@ Es seien $X,Y \in \T_pM$ linear unabh"angig. Dann h"angt
 \begin{align*}
   \frac{\left<R(X,Y)Y,X\right>}{\|X\|^2\|Y\|^2 - \left<X,Y\right>^2}
 \end{align*}
-nur von der von $X$ und $Y$ aufgespannten Ebene ab. Um das zu zeigen seien $Z = aX + bY, \ W = cX + dY$ und ohne Einschr"ankung seien $X,Y$ orthonormal.
+nur von der von $X$ und $Y$ aufgespannten Ebene ab.
+Um das zu zeigen seien $Z = aX + bY, \ W = cX + dY$ und ohne Einschr"ankung seien $X,Y$ orthonormal.
 Dann gilt:
 \begin{align*}
   \|Z\|^2\|W\|^2 - \left<Z,W\right>^2 & = \|aX + bY\|^2\|cX + dY\|^2 - \left<aX + bY, cX + dY\right>^2\\
-& = (a^2 + b^2)(c^2 + d^2) - (ac + bd)^2 = a^2d^2 + b^2c^2 - 2abcd\\
-& = (ad - bc)^2
+  & = (a^2 + b^2)(c^2 + d^2) - (ac + bd)^2 = a^2d^2 + b^2c^2 - 2abcd\\
+  & = (ad - bc)^2
 \end{align*}
 Also
 \begin{align*}
   \frac{\left<R(aX+bY,cX+dY)(cX+dY),(aX+bY)\right>}{\|aX+bY\|^2\|cX+dY\|^2 - \left<aX+bY, cX+dY\right>^2} & = \frac{(ad-bc)^2\left<R(X,Y)Y,X\right>}{(ad-bc)^2}\\
-& = \left<R(X,Y)Y,X\right>.
+  & = \left<R(X,Y)Y,X\right>.
 \end{align*}
 
 % Definition 7.15
 \begin{Dfn}
-Es sei $\sigma$ eine von $X,Y \in \mathcal V(M)$ aufgespannte Ebene in $\T_pM$.
-Dann hei"st 
-\begin{align*}
-	\sec_p(\sigma) = \sec_p(X,Y) = \frac{\left<R(X,Y)Y,X\right>}{\|X\|^2\|Y\|^2 - \left<X,Y\right>^2}
-\end{align*}
-die \CmMark{Schnittkr"ummung} der Ebene $\sigma$.
+  Es sei $\sigma$ eine von $X,Y \in \mathcal V(M)$ aufgespannte Ebene in $\T_pM$.
+  Dann hei"st 
+  \begin{align*}
+    \sec_p(\sigma) = \sec_p(X,Y) = \frac{\left<R(X,Y)Y,X\right>}{\|X\|^2\|Y\|^2 - \left<X,Y\right>^2}
+  \end{align*}
+  die \CmMark{Schnittkr"ummung} der Ebene $\sigma$.
 \end{Dfn}
 
 
@@ -595,7 +611,7 @@ die \CmMark{Schnittkr"ummung} der Ebene $\sigma$.
 Es sei $e_1, \ldots, e_m \in  \T_pM$ eine Orthonormalbasis bez"uglich $g(p)$. Die f"ur $X,Y \in \T_pM$ durch Spurbildung definierte Abbildung
 \begin{align*}
   \ric_p(X,Y) = \gls{spur} R(\cdot,X)Y = \sum_i\left<R(e_i,X)Y,e_i\right>
-% spur = trace (tr)
+  % spur = trace (tr)
 \end{align*}
 hei"st \CmMark{Ricci-Tensor} in $p$. Aus den Symmetrien von $R$ folgt, dass $\ric_p$ symmetrisch ist.
 Es existiert ein $(1,1)$-Tensorfeld $\Ric$, so dass
@@ -610,11 +626,11 @@ f"ur alle $p \in M, \ X,Y \in \T_pM$ gilt.
   \begin{align*}
     \frac{\ric_p(X,X)}{\|X\|^2} = \left<\Ric\left(\frac{X}{\|X\|}\right),\frac{X}{\|X\|}\right>
   \end{align*}
-die \CmMark{Ricci-Kr"ummung} in $p$ in Richtung $X$. Die Spur von $\Ric$
-\begin{align*}
-  \scal(p) = \spur \Ric_p(\cdot) = \sum_i \ric_p(e_i,e_i) = \sum_{i,j} \left\langle R(e_i,e_j)e_j,e_i \right\rangle
-\end{align*}
-hei"st die \CmMark{Skalarkr"ummung} von $M$ in $p$.
+  die \CmMark{Ricci-Kr"ummung} in $p$ in Richtung $X$. Die Spur von $\Ric$
+  \begin{align*}
+    \scal(p) = \spur \Ric_p(\cdot) = \sum_i \ric_p(e_i,e_i) = \sum_{i,j} \left\langle R(e_i,e_j)e_j,e_i \right\rangle
+  \end{align*}
+  hei"st die \CmMark{Skalarkr"ummung} von $M$ in $p$.
 \end{Dfn}
 
 
