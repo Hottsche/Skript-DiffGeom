@@ -5,9 +5,9 @@
 %% Kapitel 4
 %% 
 
-%%
+%% 
 %% 5. Vorlesung <2012-10-30 Tue>, Fortsetzung
-%%
+%% 
 
 \chapter{Tangentialb"undel und Vektorfelder}
 
@@ -20,7 +20,7 @@
 Es sei $(\phi, U)$ eine Karte von $M$. Setzt man $\T M|_U = \pi^{-1}(U) = \dot \bigcup_{p\in U}\T_pM$, so ist nach Satz \ref{satz-2-9}
 die Abbildung
 \[\begin{array}{cccc} \overline \phi \colon & \T M|_U &\to& \phi(U) \times \R^m \subset \R^{2m}\\
-	&\T_p M \ni X_p = \sum \xi^i\pdifffrac[p]{}{x^i} &\mapsto& (\phi(p),\xi)
+  &\T_p M \ni X_p = \sum \xi^i\pdifffrac[p]{}{x^i} &\mapsto& (\phi(p),\xi)
 \end{array}\]
 bijektiv.
 Es sei eine Topologie auf $\T M$ dadurch erkl"art, dass eine Menge $V \subset \T M$ genau dann offen ist, wenn f"ur alle Karten $(\phi, U)$ die Menge $\overline \phi(V \cap \T M|_U)$ offen in $\R^{2m}$ ist. Diese Topologie ist hausdorffsch und besitzt eine abz"ahlbare Basis, da dies f"ur $M$ und $\R^m$ gilt. Nach Konstruktion sind alle $\overline \phi$ Hom"oomorphismen. Ist $\mathcal A = \{(\phi, U\}$ ein $C^{\infty}$-Atlas von $M$, so definiert
@@ -43,13 +43,13 @@ Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so
 \end{Dfn}
 
 \begin{bem}
-Ist $(\phi, U)$ eine Karte von $M$, so sind die Abbildungen $U \to \T M|_U, \ p \mapsto \pdifffrac[p]{}{x^{i}}$ glatte Vektorfelder (in der Karte $\overline \phi$ sind diese genau die Abbildungen $(x,e_i)$).
+  Ist $(\phi, U)$ eine Karte von $M$, so sind die Abbildungen $U \to \T M|_U, \ p \mapsto \pdifffrac[p]{}{x^{i}}$ glatte Vektorfelder (in der Karte $\overline \phi$ sind diese genau die Abbildungen $(x,e_i)$).
 
-Ist $X$ ein glattes Vektorfeld, so gilt f"ur jedes $u \in U$:
-\begin{align*}
-	X_u = \sum \xi^i(u) \pdifffrac[u]{}{x^i},
-\end{align*}
-wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$ ist. Ein Vektorfeld ist genau dann glatt, wenn f"ur jede Karte $(\phi, U)$ die Koeffizientenfunktionen $\xi^i(u)$ von $X_u = \sum \xi^i(u) \pdifffrac[u]{}{x^i}$ glatte Funktionen sind.
+  Ist $X$ ein glattes Vektorfeld, so gilt f"ur jedes $u \in U$:
+  \begin{align*}
+    X_u = \sum \xi^i(u) \pdifffrac[u]{}{x^i},
+  \end{align*}
+  wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$ ist. Ein Vektorfeld ist genau dann glatt, wenn f"ur jede Karte $(\phi, U)$ die Koeffizientenfunktionen $\xi^i(u)$ von $X_u = \sum \xi^i(u) \pdifffrac[u]{}{x^i}$ glatte Funktionen sind.
 \end{bem}
 
 
@@ -91,7 +91,7 @@ wobei $\xi(u) = (\xi^1(u), \ldots, \xi^m(u))$ eine glatte Abbildung $U \to \R^m$
 
 Es seien $X,Y \in \mathcal V(M)$ glatte Vektorfelder. Die \CmMark{Lieklammer} $[X,Y]$ von $X$ und $Y$ ist dann durch den folgenden Ausdruck definiert:
 \begin{align*}
-	[X,Y](f)(p) = X_p(Yf)-Y_p(Xf).
+  [X,Y](f)(p) = X_p(Yf)-Y_p(Xf).
 \end{align*}
 
 % Lemma 4.3
@@ -105,11 +105,11 @@ Es seien $X,Y \in \mathcal V(M)$ glatte Vektorfelder. Die \CmMark{Lieklammer} $[
 \begin{bew}
   Es seien $X,Y \in \mathcal V(M)$, $f,g \in \C^{\infty}(M)$ und $p \in M$. Dann gilt:
   \begin{align*}
-    [X,Y](fg)  ={} & X_p(Y(f)g + fY(g)) - Y_p(X(f)g+fX(g))\\
-    ={} & X_p(Y(f))g(p) + Y_p(f)X_p(g) + X_p(f)Y(g)(p) + f(p)X_p(Y(g))\\
+    [X,Y](fg)[p]  = & X_p(Y(f)g + fY(g)) - Y_p(X(f)g+fX(g))\\
+    = & X_p(Y(f))g(p) + Y_p(f)X_p(g) + X_p(f)Y(g)(p) + f(p)X_p(Y(g))\\
     & - Y_p(X(f))g(p) - X_p(f)Y_p(g) - Y_p(f)X(g)(p) - f(p)Y_p(X(g))\\
-    ={} & (X_p(Y(f))-Y_p(X(f))g(p) + f(p)(X_p(Y(g))-Y_p(X(g))\\
-    ={} & [X,Y]_p (f)g(p) + f(p)[X,Y]_p(g).
+    = & (X_p(Y(f))-Y_p(X(f))g(p) + f(p)(X_p(Y(g))-Y_p(X(g))\\
+    = & [X,Y]_p (f)g(p) + f(p)[X,Y]_p(g).
   \end{align*}
   Damit gilt $[X,Y] \in \mathcal V(M)$. Schiefsymmetrie und $\R$-Linearit"at gelten offensichtlich. Die Jacobiidentit"at sei als "Ubungsaufgabe "uberlassen (Nachrechnen!).
 \end{bew}
@@ -124,7 +124,7 @@ Es seien $X,Y \in \mathcal V(M)$ glatte Vektorfelder. Die \CmMark{Lieklammer} $[
   \end{align*}
 \end{Lemma} 
 
-Der Beweis ist als "Ubungs "uberlassen.
+Der Beweis ist als "Ubung "uberlassen.
 
 
 \section{Fl"usse}
@@ -136,7 +136,8 @@ Der Beweis ist als "Ubungs "uberlassen.
     \draw (-2,0.75) ..controls(-2,0.75) and ($(-1,0.75) - 0.5*(0.75,0.25)$).. (-1,0.75) ..controls($(-1,0.75) + (0.75,0.25)$) and (0,1.75).. (0,1.75);
     \draw[->] (-1,0.75) -- ($(-1,0.75) + (0.75,0.25)$); \draw[->] (-2,0.75) -- (-1.75,1);
   \end{tikzpicture}}
-Was haben Vektorfelder mit Differentialgleichungen zu tun? Jedes glatte Vektorfeld $X$ definiert ein Anfangswertproblem
+Was haben Vektorfelder mit Differentialgleichungen zu tun?
+Jedes glatte Vektorfeld $X$ definiert ein Anfangswertproblem
 \begin{align*}
   \begin{cases}
     \dot \gamma(t) = X_{\gamma(t)}\\
@@ -154,7 +155,8 @@ mit $\tilde \gamma = \phi \circ \gamma$ f"ur eine Karte $(\phi,U)$ um $p$ und $X
 
 % Definition 4.5
 \begin{Dfn}
-  Es sei $X \in \mathcal V(M)$ ein glattes Vektorfeld und $p \in M$, sowie $\calI \subset \R$ ein offenes, zusammenh"angendes Intervall um $0$. Eine glatte Kurve $\gamma \colon \calI \to M$ mit
+  Es sei $X \in \mathcal V(M)$ ein glattes Vektorfeld und $p \in M$, sowie $\calI \subset \R$ ein offenes, zusammenh"angendes Intervall um $0$.
+  Eine glatte Kurve $\gamma \colon \calI \to M$ mit
   \begin{align*}
     \dot \gamma(t) = X_{\gamma(t)}, \ \gamma(0) = p
   \end{align*}
@@ -168,7 +170,8 @@ mit $\tilde \gamma = \phi \circ \gamma$ f"ur eine Karte $(\phi,U)$ um $p$ und $X
   \end{align*}
   ist, wobei $X|_U = \sum \xi^i \pdifffrac{}{x^i}$ gelte.
 
-  F"ur jedes $p \in M$ ist somit (lokal) ein Anfangswertproblem gestellt. Gesucht ist eine \quot{simultane} L"osung all dieser Anfangswertprobleme, also eine Abbildung $(t,p) \mapsto \gamma(t,p) = \gamma^t(p)$ mit 
+  F"ur jedes $p \in M$ ist somit (lokal) ein Anfangswertproblem gestellt.
+  Gesucht ist eine \quot{simultane} L"osung all dieser Anfangswertprobleme, also eine Abbildung $(t,p) \mapsto \gamma(t,p) = \gamma^t(p)$ mit 
   \begin{align*}
     \begin{cases}
       \dot \gamma^t(p) = X_{\gamma^t(p)}\\
@@ -180,7 +183,7 @@ mit $\tilde \gamma = \phi \circ \gamma$ f"ur eine Karte $(\phi,U)$ um $p$ und $X
 % Satz 4.6
 \begin{Satz}[Lokale Existenz und Eindeutigkeit]\label{satz-4-6}
   Es sei $U \subseteq \R^n$ offen und $\calI_{\epsilon}=(-\epsilon,\epsilon)$ und $F \colon \calI_{\epsilon} \times \R^n \to \R^n$ $C^k$-differenzierbar.
-  Dann existiert f"ur alle $x \in U$ eine Umgebung $V$ von $x$ in $U$ und ein $\delta > 0$, so dass
+  Dann existiert f"ur alle $x \in U$ eine Umgebung $V$ von $x$ in $U$ und ein $\delta > 0$, so dass gilt:
   \begin{enumerate}[label=(\roman*),leftmargin=*,widest=iii]
   \item F"ur alle $x \in V$ existiert eine $C^{k+1}$-L"osung $y_x\colon \calI_{\delta} \to V$, von $y_x'(t)=F(t,y(t))$ und $y_x(0) = x$.
   \item\label{satz-4-6-ii} Diese L"osung ist lokal eindeutig, das hei\ss t falls $\tilde y_x$ eine weitere L"osung auf $\calI_{\tilde\delta}$ ist, so gilt
@@ -195,7 +198,7 @@ mit $\tilde \gamma = \phi \circ \gamma$ f"ur eine Karte $(\phi,U)$ um $p$ und $X
   \end{enumerate}
 \end{Satz}
 
-Zum Beweis siehe Lang: "`Differential and Riemannian Manifolds"', 3. Auflage, 1995, Chapter IV.1, P.65\cite{lang1995differential}.
+Zum Beweis siehe Lang: "`Differential and Riemannian Manifolds"', 3. Auflage, 1995, Chapter IV.1, p.65\cite{lang1995differential}.
 
 % Korollar 4.7
 \begin{Kor}\label{korollar-4-7}\label{kor-4-7}
@@ -218,7 +221,7 @@ Zum Beweis siehe Lang: "`Differential and Riemannian Manifolds"', 3. Auflage, 19
     \end{cases}
   \end{align*}
   eine Integralkurve von $X$ durch $p$.
-  Damit existiert f"ur jedes $p \in M$ ein maximaler Definitionsbereich $\calI_p$ f"ur Integralkurven von $X$ durch $p$; dieser ist offen.
+  Also existiert f"ur jedes $p \in M$ ein maximaler Definitionsbereich $\calI_p$ f"ur Integralkurven von $X$ durch $p$; dieser ist offen.
 \end{Kor}
 
 \begin{dfn}
@@ -405,11 +408,11 @@ Nun seien $X,Y \in \mathcal V(M)$.
 	%\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
 	\draw[name path=kurve] (-3,0) ..controls(-3,0) and (-2.75,1).. (0,1.5) node[below] {$\gamma^{t}(p)$} ..controls(1.5,1.75) and (2.5,2.5).. (2.5,2.5) node[anchor=north west] {$\gamma^{(\cdot)}(p)$};
 	
-	\fill (0,1.5) circle(0.05); \draw[->] (0,1.5) --node[left]{$y_{\gamma^t(p)}$} (1,2.5);
+	\fill (0,1.5) circle(0.05); \draw[->] (0,1.5) --node[left]{$Y_{\gamma^t(p)}$} (1,2.5);
 	
 	\path[name path=senkrecht] (-2,0) -- (-2,3);
 	\path[name intersections={of=kurve and senkrecht}];
-	\fill (intersection-1) circle(0.05); \draw[->] (intersection-1) node[below] {$p$} --node[left]{$y_p$} (-2.5,2.5);
+	\fill (intersection-1) circle(0.05); \draw[->] (intersection-1) node[below] {$p$} --node[left]{$Y_p$} (-2.5,2.5);
 	
 	\node[font=\normalsize] at (0,0) {$\gamma^t$};
 \end{tikzpicture}\end{center}
@@ -446,7 +449,7 @@ Die Kurve $(\gamma_{*}^{-t}Y)_p$ in $\T_pM$ ist glatt und $(\mathcal L_XY)_p = \
 \begin{bew}
 Es seinen $X,Y \in \mathcal V(M)$, $f \in \C^{\infty}(M)$ und $\gamma$ der Fluss von $X$.
 
-Es ist zu zeigen: $[X,Y]_p(f) = \lim_{t \to \infty} \frac{1}{t}\left((\gamma_{*}^{-t}Y)_p(f)-y_p(f)\right)$.
+Es ist zu zeigen: $[X,Y]_p(f) = \lim_{t \to \infty} \frac{1}{t}\left((\gamma_{*}^{-t}Y)_p(f)-Y_p(f)\right)$.
 Dazu sei (um $(0,p)$)
 \begin{align*}
   h(t,q) = f(\gamma^{-t}(q))-f(q) \text{ und } g_t(q) = \int_0^1 h'(ts,q)ds.
@@ -461,7 +464,7 @@ also $f \circ \gamma^t = f + tg_t$ und
 \end{align*}
 Betrachte:
 \begin{align*}
-  \left(\gamma_{*}^{-t}y\right)_p(f) = Y\left(f \circ \gamma^{-t}\right)\left(\gamma^t(p)\right) = Y(f)\left(\gamma^t(p)\right) + tY_{g_t}\left(\gamma^t(p)\right).
+  \left(\gamma_{*}^{-t}Y\right)_p(f) = Y\left(f \circ \gamma^{-t}\right)\left(\gamma^t(p)\right) = Y(f)\left(\gamma^t(p)\right) + tY_{g_t}\left(\gamma^t(p)\right).
 \end{align*}
 Es folgt:
 \begin{align*}

@@ -216,7 +216,7 @@ erzeugte Vektorraum.
   \begin{enumerate}[label=(\arabic*),leftmargin=*]
   \item Die Abbildung $s: V \X \cdots \X V \to \bigwedge^p V$, $(v_1, \ldots ,v_p) \mapsto v_1 \wedge \cdots \wedge v_p$ ist multilinear und schief.
   \item Es gilt $v_1 \wedge \cdots \wedge v_p = 0$ genau dann wenn $v_1, \ldots , v_p$ linear abh"angig sind.
-  \item Ist $\{e_i\}_{i \le n}$ eine Basis von $V$, so ist $\{e_{i_1} \wedge \cdots \wedge e_{i_p} | i_1 < i_2 < \cdots < i_p\}$ eine Basis von $\bigwedge^pV$, es gilt also $\dim \bigwedge^pV = \left( \begin{smallmatrix} n \\ p \end{smallmatrix} \right)$.
+  \item Ist $\{e_i\}_{i \le n}$ eine Basis von $V$, so ist $\{e_{i_1} \wedge \cdots \wedge e_{i_p} \mid i_1 < i_2 < \cdots < i_p\}$ eine Basis von $\bigwedge^pV$, es gilt also $\dim \bigwedge^pV = \left( \begin{smallmatrix} n \\ p \end{smallmatrix} \right)$.
     Insbesondere ist $\bigwedge^pV = 0$ falls $p > n$ und $\dim \bigwedge^nV = 1$ und f"ur $v_i = \sum \alpha_i^j e_j$ gilt:
     \[ v_1 \wedge \cdots \wedge v_p = \det (\alpha_i^j) \cdot e_1 \wedge \cdots \wedge e_n \]
   \end{enumerate}
@@ -260,7 +260,7 @@ Analog definiert man h"ohere Tensorprodukte $\bigotimes^pE$, die Tensoralgebra $
 
 Das \CmMark{duale B{\"u}ndel} $E^*$ hat die Fasern $E_p^* = \Hom(E_p, \R)$ und lokale Trivialisierungen:
 	\[ \begin{array}{rcl} \sigma: E^*|_U &\to& U \X \R^k\\
-	v^* \in E^*_p, \sigma(v^*) &=& (p, v^* \circ \tau_p^{-1}) \\
+	v^* \in E^*_p: \; \sigma(v^*) &=& (p, v^* \circ \tau_p^{-1}) \\
 	&=& (p, (\tau_p^{-1})^*(v^*)) \end{array}\]
 Die "Ubergangsfunktionen von $E^*$ sind die transponierten Inversen der "Ubergangsfunktionen von $E$:
 	\[ h_{\alpha\beta} = (g_{\alpha\beta}^{-1})^* \]
@@ -281,7 +281,7 @@ Zur Definition der "Ubergangsfunktionen schreibt man $\Hom(E, E') \cong E^* \oti
 
 \begin{Dfn}
 Es sei $E \xrightarrow{\pi} M$ ein Vektorb"undel "uber M. Ein \CmMark{Schnitt} in $E$ ist eine glatte Abbildung $S: M \to E$ mit $\pi \circ S = \Id_M$, also $S(p) \in E_p = \pi^{-1}(p)$.
-Der Raum der Schnitte wird mit $\Gamma(E)$ bezeichnet. $\Gamma(E)$ ist ein $C^{\infty}$-Modul.
+Der Raum der Schnitte wird mit $\Gamma(E)$ bezeichnet. $\Gamma(E)$ ist ein $C^{\infty}(M)$-Modul.
 \begin{center}\begin{tikzpicture}[scale=0.9]
 %	\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
 	
@@ -413,7 +413,8 @@ also $\Phi^{*}X = \Phi_{*}^{-1}X$.
   \end{align*}
   ein $(r,s)$-Tensorfeld auf $V_{\alpha}$.
 
-  \textcolor{red}{Abbildung 10.4 Diagram Beispiel/Anwendung}
+  % Keine Ahnung was das für eine Abbildung war - bis auf weiteres herausgenommen.
+  % \textcolor{red}{Abbildung 10.4 Diagram Beispiel/Anwendung}
 
   F"ur alle $\alpha, \beta$ mit $U_{\alpha} \cap U_{\beta}$ gilt
   \begin{align*}

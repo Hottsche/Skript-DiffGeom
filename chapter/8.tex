@@ -156,10 +156,10 @@ Weiterhin gilt $0_p \in \mathcal D_p$.
 %% Vorlesung <2012-12-18 Tue>
 %% 
 
-Es wurde bereits gezeigt, dass $\nabla_t \dot \gamma_v \equiv 0$ ist (Geod"atische Differentialgelichung).
-Die Exponentialabbildung is nach Satz \ref{satz-4-6} glatt.
+Es wurde bereits gezeigt, dass $\nabla_t \dot \gamma_v \equiv 0$ ist (Geod"atische Differentialgleichung).
+Die Exponentialabbildung ist nach Satz \ref{satz-4-6} glatt.
 Es gilt $\exp_p(0_p) = p$.
-Zur Berechnung des Differentiales von $\exp_p$ in $0_p$
+Zur Berechnung des Differentials von $\exp_p$ in $0_p$
 \begin{align*}
   \exp_{p*0_p} \colon \T_{0_p}\T_pM \to \T_pM
 \end{align*}
@@ -168,7 +168,7 @@ Es gilt
 \begin{align*}
   \exp_{p*0_p}(v) = \difffrac[t=0]{}{t}\exp_p(tv) = \difffrac[t=0]{}{t}\gamma_{tv}(1) = \difffrac[t=0]{}{t}\gamma_v(t) = \dot \gamma_v(0) = v,
 \end{align*}
-also $\exp_{p*0_p} = 1 \dop_{\T_pM}$.
+also $\exp_{p*0_p} = \id_{\T_pM}$.
 Es existiert f"ur alle $p \in M$ eine Umgebung $V$ von $0_p \in \T_pM$ und $U$ von $p$, so dass $\exp_p \colon V \to U$ ein Diffeomorphismus ist.
 W"ahlt man eine Orthonormalbasis $e_1, \ldots, e_m$ von $\T_pM$ und setzt
 \begin{align*}
@@ -357,7 +357,7 @@ F"ur jedes $v \in S^{m-1}$ ist $t \mapsto f(t,v) = \gamma_v(t)$ eine Geod"atisch
       \fill (ct0) circle(0.1)node[above]{$c(t_0)$} (q') circle(0.1)node[below right]{$q'$};
     \end{tikzpicture}}
   Es sei $\epsilon > 0$ so, dass auf $\B_{\epsilon}(p)$ Polorkoordinaten $\phi = (r,\theta^1, \ldots, \theta^{m-1})$ existieren.
-  Sei weiter $c \colon [0,1]$ eine beliebige glatte Kurve von $p$ nach $q$ mit Koordinaten $\phi(c(t)) = (r(t), \theta^1(t), \ldots, \theta^{m-1}(t))$.
+  Sei weiter $c \colon [0,1] \to M$ eine beliebige glatte Kurve von $p$ nach $q$ mit Koordinaten $\phi(c(t)) = (r(t), \theta^1(t), \ldots, \theta^{m-1}(t))$.
   \begin{center}\begin{tikzpicture}[font=\scriptsize]
       %	\draw[step=0.25,gray!15] (-6,-6) grid (6,6); \draw[step=0.5,gray!30] (-6,-6) grid (6,6); \fill (0,0) circle(0.1); %Hilfsgitter
       
@@ -409,13 +409,13 @@ F"ur jedes $v \in S^{m-1}$ ist $t \mapsto f(t,v) = \gamma_v(t)$ eine Geod"atisch
 \end{bew}
 
 \begin{Kor}\label{kor-8-8}
-  F"ur alle $p \in M$ existiert ein $\rho > 0$, so dass f"ur alle $q, q' \in \B_\rho(p=$ genau eine minimierende Geod"atische von $q$ nach $q'$ existiert.
+  F"ur alle $p \in M$ existiert ein $\rho > 0$, so dass f"ur alle $q, q' \in \B_\rho(p)$ genau eine minimierende Geod"atische von $q$ nach $q'$ existiert.
 \end{Kor}
 
 \begin{bew}
   F"ur $q \in M$ existiert ein $\rho = \rho(q) > 0$, so dass $\exp$ auf $\B_\rho(q)$ ein Diffeomorphismus ist.
   Da $\exp: \calD \to \calD$ glatt und $\calD$ offen ist, existiert eine Umgebung $U_q$ von $q$, so dass $\exp_p: \B_{\frac{\rho}{2}}(0_q) \to \B_{\frac{\rho}{2}}(q')$ ein Diffeomorphismus ist f"ur alle $q' \in U_q$.
-  F"ur $p \in ;$ existiert nach Satz \ref{satz-8-7} ein $\epsilon > 0$, so dass $\overline \B_\epsilon(p)$ kompakt ist.
+  F"ur $p \in M$ existiert nach Satz \ref{satz-8-7} ein $\epsilon > 0$, so dass $\overline \B_\epsilon(p)$ kompakt ist.
   Die "Uberdeckung $\bigcup_{q \in \overline \B_\epsilon(q)} \B_{\frac{\rho(q)}{2}}(q)$ besitzt eine endliche Teil"uberdeckung.
   F"ur $\rho = \min_{i \le k} \{ \frac{\rho(q_i)}{4} \}$ existieren auf jedem $\B_{2\rho}(q)$, $q \in \B_\epsilon(p)$, Polarkoordinaten; insbesondere existiert f"ur $q, q' \in \B_\rho(p)$ eine eindeutige minimierende Geod"atische von $q$ nach $q'$.
 \end{bew}
@@ -465,17 +465,17 @@ F"ur jedes $v \in S^{m-1}$ ist $t \mapsto f(t,v) = \gamma_v(t)$ eine Geod"atisch
 \begin{Satz}[Satz von Hopf-Rinow]\label{satz-8-11}\label{hopf-rinow}
   F"ur eine Riemannsche Mannigfaltigkeit sind die folgenden Aussagen "aquivalent:
   \begin{enumerate}[label=(\roman*),widest=iii]
-  \item $M$ ist geod"atisch vollst"andig, das hei"st jede Geod"atische existiert f"ur alle Zeiten
-  \item F"ur alle $p \in M$ gilt $\calD_p = \T_pM$, also $\exp$ ist auf ganz $M$
-  \item Es existiert ein $p \in M$ mit $\calD_p = \T_pM$, also $\exp_p$ ist auf $\T_pM$ f"ur ein $p \in M$ definiert
-  \item Abgeschlossene und beschr"ankte Teilmengen sind kompakt
-  \item $M$ ist vollst"andig (als metrischer Raum)
+  \item $M$ ist geod"atisch vollst"andig, das hei"st jede Geod"atische existiert f"ur alle Zeiten.
+  \item F"ur alle $p \in M$ gilt $\calD_p = \T_pM$, also $\exp$ ist auf ganz $M$ definiert.
+  \item Es existiert ein $p \in M$ mit $\calD_p = \T_pM$, also $\exp_p$ ist auf $\T_pM$ f"ur ein $p \in M$ definiert.
+  \item Abgeschlossene und beschr"ankte Teilmengen sind kompakt.
+  \item $M$ ist vollst"andig (als metrischer Raum).
   \end{enumerate}
   Jede dieser Eigenschaften impliziert, dass je zwei Punkte $p, q$ in $M$ durch eine minimierende Geod"atische von $p$ nach $q$ verbunden werden k"onnen.
 \end{Satz}
 
 \begin{bew}
-  Man zeigt zun"achst, dass falls (iii) f"ur $p \in M$ gilt, es zu jedem  $q \in M$ eine minimierende Geod"atische von $p$ nach $q$ gibt.
+  Man zeigt zun"achst, dass es, falls (iii) f"ur $p \in M$ gilt, zu jedem  $q \in M$ eine minimierende Geod"atische von $p$ nach $q$ gibt.
   Es gelte $\calD_p = \T_pM$ und es sei $q \in M$.
   \begin{center}\begin{tikzpicture}
       %	\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
@@ -660,7 +660,7 @@ F"ur jedes $v \in S^{m-1}$ ist $t \mapsto f(t,v) = \gamma_v(t)$ eine Geod"atisch
         
         \draw (e) ..controls(2,1.5) and (2.5,2)..node[above left]{$\tilde c$} (d);
       \end{tikzpicture}\\
-      \scriptsize{die zusammengesetzte Kurve kann keine Geod"atische sein, da die Tangentialvektoren nicht "ubereinstimmen}\end{center}
+      \scriptsize{Die zusammengesetzte Kurve kann keine Geod"atische sein, da die Tangentialvektoren nicht "ubereinstimmen.}\end{center}
     F"ur hinreichend kleines $\epsilon > 0$ existiert dann nach Satz \ref{satz-8-7} eine minimierende Geod"atische $\tilde c$ von $\overline c(b-\epsilon)$ nach $c(b+\epsilon)$.
     Die L"ange von $\overline c|_{[a,b-\epsilon]} \cup \tilde c$ ist strikt kleiner als die L"ange von $c|_{[a,b+\epsilon]}$.
     Damit ist $c|_{[a,b+\epsilon]}$ nicht minimierend.
