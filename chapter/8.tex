@@ -59,7 +59,7 @@ Nun betrachte
   Eine glatte Kurve $c$ in $M$ hei"st \CmMark{Geod\"atische}\footnote{Die "Aquivalenz zur bereits bekannten Definition wird in K"urze gezeigt.}, wenn $\nabla_t\dot c \equiv 0$ gilt.
 \end{Dfn}
 
-Ist $c$ Geod"atische, so ist $c$ proportional zur Bogenl"angenparametrisierung, das hei"st $\|\dot c\| = $const, denn $\difffrac{}{t}\|\dot c(t)\|^{2} = \difffrac{}{t}\left<\dot c(t),\dot c(t) \right> = 2\left<\nabla_t\dot c(t), \dot c(t)\right> = 0$.
+Ist $c$ Geod"atische, so ist $c$ proportional zur Bogenl"ange parametrisiert, das hei"st $\|\dot c\| = $const, denn $\difffrac{}{t}\|\dot c(t)\|^{2} = \difffrac{}{t}\left<\dot c(t),\dot c(t) \right> = 2\left<\nabla_t\dot c(t), \dot c(t)\right> = 0$.
 Mit $c$ ist auch jede affine Umparametrisierung $t \mapsto c(at + b)$ eine Geod"atische.
 
 % Proposition 8.2
@@ -78,7 +78,7 @@ Mit $c$ ist auch jede affine Umparametrisierung $t \mapsto c(at + b)$ eine Geod"
         \dot\gamma^i(0) = \xi_p^i, \quad v = \sum \xi^i_p\pdifffrac[p]{}{x^i}
       \end{cases}
     \end{align*}
-    eine eindeutige L"osung (lokal), wleche glatt von den Startwerten $p$ und $v$ abh"angt.
+    eine eindeutige L"osung (lokal), welche glatt von den Startwerten $p$ und $v$ abh"angt.
   \item (Alternativ) Ist $(\phi, U)$ eine Karte von $M$ um $p$, dann ist
     \[ \overline \phi \colon \left\{\begin{array}{cccl}
         \T M|_U &\to& \R^{2m}&\\
@@ -91,7 +91,7 @@ Mit $c$ ist auch jede affine Umparametrisierung $t \mapsto c(at + b)$ eine Geod"
         \T M &\to& \T\T M\\
         X = \sum \xi^i \pdifffrac{}{x^i} &\mapsto& \sum_i^m \xi^i \pdifffrac{}{y^i} - \sum_{i,j,k=1}^{m} \Gamma_{ij}^k \xi^i\xi^j\pdifffrac{}{y^{m+k}}
       \end{array}\right.\]
-    defninierte glatte Vektorfeld auf $\T M$.	
+    definierte glatte Vektorfeld auf $\T M$.	
     $g^t$ ist genau dann Integralkurve von $S$ durch $X_p = \sum \xi_p^i\pdifffrac[p]{}{x^i}$, wenn
     \begin{align*}
       \difffrac{}{t}g^t = \dot g^t = S(g^t) \text{ und } g^0 = X_p.
@@ -485,19 +485,21 @@ F"ur jedes $v \in S^{m-1}$ ist $t \mapsto f(t,v) = \gamma_v(t)$ eine Geod"atisch
       \fill(0p) circle(0.05) node[below left]{$0_p$}; \draw[->] (0p) -- +(1.5,0.75);
       
       \coordinate (p) at ($(0p) - (0,3.25)$); \coordinate (q) at ($(p) + (7,3)$);
-      \fill (p) circle(0.05)node[left]{$p$} (q) circle(0.05)node[right]{$p$};
+      \fill (p) circle(0.05)node[left]{$p$} (q) circle(0.05)node[right]{$q$};
       \draw[dashed,name path=strich] (p) -- (q);
       
       \draw[name path=kreis] (p) circle(1.25);
       \path[name intersections={of={strich and kreis}}];
+      \fill (intersection-1) circle(0.05) node[above]{$\overline q$};
       \draw[->] (p) -- (intersection-1);
+
     \end{tikzpicture}\end{center}
-  F"ur $\epsilon > 0$ wie in Satz \ref{satz-8-7} ist um $\partial \B_{\frac{\epsilon}{2}}(p)$ kompakt; es sei $\overline q \in \partial \B_{\frac{\epsilon}{2}}(p)$ ein Punkt minimalen Abstandes zu $q$.
+  F"ur $\epsilon > 0$ wie in Satz \ref{satz-8-7} ist $\partial \B_{\frac{\epsilon}{2}}(p)$ kompakt; es sei $\overline q \in \partial \B_{\frac{\epsilon}{2}}(p)$ ein Punkt minimalen Abstandes zu $q$.
   Dann gilt $\overline q = \exp_p(\frac{\epsilon}{2}v)$ f"ur ein $v \in \T_pM$ mit $\|v\| = 1$.
   \begin{description}[font=\normalfont\itshape]
   \item[Behauptung:] Dann ist $\gamma_v|_{[0,R]}: t \mapsto \exp_p(tv)$ minimierende Geod"atische nach $q$ f"ur $R = \dop(p,q)$.
   \end{description}
-  Es sei $\calI = \{t \in [0,R] | \dop(\gamma_v(t),q) = R - t\}$. Dann ist $\calI$ nichtleer und abgeschlossen, denn $t \mapsto \dop(\gamma_v(t),q) + t$ ist stetig.
+  Es sei $\calI = \{t \in [0,R] \mid \dop(\gamma_v(t),q) = R - t\}$. Dann ist $\calI$ nichtleer und abgeschlossen, denn $t \mapsto \dop(\gamma_v(t),q) + t$ ist stetig.
   \begin{center}\begin{tikzpicture}[font=\scriptsize]
       %	\draw[step=0.25,gray!15] (-6,-1) grid (6,5); \draw[step=0.5,gray!30] (-6,-1) grid (6,5); \fill (0,0) circle(0.1); %Hilfsgitter
       
@@ -524,7 +526,7 @@ F"ur jedes $v \in S^{m-1}$ ist $t \mapsto f(t,v) = \gamma_v(t)$ eine Geod"atisch
   \end{align*}
   Damit ist die Verkettung von $\gamma_v|_{[0,t_v]}$ und der minimalen Geod"atischen von $p_0$ nach $q'$ nach Korollar \ref{kor-8-9} eine Geod"atische.
   Aus der Eindeutigkeit von kurzen Geod"atischen folgt, dass diese Zusamensetzung mit $\gamma_v$ "ubereinstimmt.
-  Es gilt also $q' = \gamma_v(t_0 + \rho)$ und mit $\dop(\gamma_v(t_0 + p), q) = \dop(p_0,q) - \rho = R - (t_0 + \rho)$ gilt $t_0 + \rho \in \calI$.
+  Es gilt also $q' = \gamma_v(t_0 + \rho)$ und mit $\dop(\gamma_v(t_0 + \rho), q) = \dop(p_0,q) - \rho = R - (t_0 + \rho)$ gilt $t_0 + \rho \in \calI$.
 
   Wir k"onnen nun die einzelnen Implikationen zeigen.
   Dabei gelten (i) $\Rightarrow$ (ii) $\Rightarrow$ (iii) offensichtlich.
@@ -540,17 +542,9 @@ F"ur jedes $v \in S^{m-1}$ ist $t \mapsto f(t,v) = \gamma_v(t)$ eine Geod"atisch
     Dann ist $q_n = c(t_n)$ wegen
     \[ \dop(c(t_n), c(t_m)) \le |t_m - t_n| \]
     eine Cauchy-Folge und konvergiert somit gegen ein $p \in M$.
-    \begin{center}\begin{tikzpicture}[font=\scriptsize,scale=0.9]
-        % \draw[step=0.25,gray!15] (-6,-3) grid (6,3); \draw[step=0.5,gray!30] (-6,-3) grid (6,3); \fill (0,0) circle(0.1); %Hilfsgitter
-        
-        \coordinate (ctn) at (0,0); \coordinate (ctrl) at (0,1); 
-        \fill (ctn) circle(0.05)node[above right]{$c(t_n)$};
-        
-        % ich muss an ddieser Stelle schummeln, auskommentiert ist der richtige Code, aber das Kompilieren dauert zu lange mit Fixed Point Arithmetic -Aleks
-        \draw[clip] (ctn) circle(2); \draw[dashed] (ctn) circle(1);
-        % \draw[fixed point arithmetic,decoration={markings, mark=at position 0.8 with {\arrow{>};}},postaction={decoration={markings, mark=at position 0.2 with {\arrow{>};}},decorate}] (-1,-2.5) .. controls(-1,-2.5) and ($(ctn) - (ctrl)$).. node[right,pos=0.6]{$c$} (ctn) ..controls($(ctn) + (ctrl)$) and (-0.5,2.5).. (-0.5,2.5);
-        \draw (-1,-2.5) .. controls(-1,-2.5) and ($(ctn) - (ctrl)$).. node[right,pos=0.6]{$c$}node[sloped]{>} (ctn) ..controls($(ctn) + (ctrl)$) and (-0.5,2.5)..node[sloped]{<} (-0.5,2.5);
-      \end{tikzpicture}\end{center}
+    \begin{center}
+      \input{img/8-beweis-hopf-rinow-v-i}
+    \end{center}
     Es sei $\rho > 0$ wie in Korollar \ref{kor-8-8}. F"ur hinreichend gro"ses $n$ gilt dann $|t_n - t| < \frac{\rho}{2}$. Die nach Bogenl"ange parametrisierte Geod"atische von $q_n = c(t_n)$ mit Startvektor $\dot c(t_n)$ existiert auf $(-\frac{\rho}{2}, \frac{\rho}{2})$, setzt also $c$ bis zum Zeitpunkt $|t_n| + \frac{\rho}{2} > |t|$ fort.
   \end{description}
 \end{bew}

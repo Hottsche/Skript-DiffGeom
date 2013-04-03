@@ -1,0 +1,18 @@
+\begin{tikzpicture}[font=\scriptsize,scale=0.9]
+% \draw[step=0.25,gray!15] (-6,-3) grid (6,3); \draw[step=0.5,gray!30] (-6,-3) grid (6,3); \fill (0,0) circle(0.1); %Hilfsgitter
+        
+\coordinate (ctn) at (0,0);
+\coordinate (ctrl) at (0,1); 
+        
+% ich muss an ddieser Stelle schummeln, auskommentiert ist der richtige Code, aber das Kompilieren dauert zu lange mit Fixed Point Arithmetic -Aleks
+
+\draw[clip] (ctn) circle(2);
+\draw[dashed] (ctn) circle(1);
+% \draw[fixed point arithmetic,decoration={markings, mark=at position 0.8 with {\arrow{>};}},postaction={decoration={markings, mark=at position 0.2 with {\arrow{>};}},decorate}] (-1,-2.5) .. controls(-1,-2.5) and ($(ctn) - (ctrl)$).. node[right,pos=0.6]{$c$} (ctn) ..controls($(ctn) + (ctrl)$) and (-0.5,2.5).. (-0.5,2.5);
+
+\draw (-1,-2.5) .. controls(-1,-2.5) and ($(ctn) - (ctrl)$).. node[right,pos=0.6]{$c$}node[sloped]{>} (ctn) ..controls($(ctn) + (ctrl)$) and (-0.5,2.5)..node[sloped]{<} (-0.5,2.5);
+
+\filldraw[fill=white] (ctn) circle(0.06)node[above right]{$p$};
+\fill ($(ctn) - (0.02,0.3)$) circle(0.05)node[right]{$c(t_n)$};
+
+\end{tikzpicture}
