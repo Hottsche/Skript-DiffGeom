@@ -62,7 +62,7 @@ Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so
   Ein glattes Vektorfeld auf $S^n$ ist also eine glatte Abbildung $X \colon S^n \to \R^{n+1}$ mit $X_p \perp p$.  
   Es sei $n=2k-1$, dann ist
   \begin{align*}
-    X \colon S^n \to \R^{n+1}, (x^1,y^1, \ldots, x^k,y^k) \mapsto (-y^1,x^1, \ldots, -y^k,x^k)
+    X \colon S^n \to \R^{n+1} && (x^1,y^1, \ldots, x^k,y^k) \mapsto (-y^1,x^1, \ldots, -y^k,x^k)
   \end{align*}
   ein glattes Vektorfeld auf $S^n$ ohne eine Nullstelle.
 \end{bsp}
@@ -74,7 +74,7 @@ Ist $N$ eine weitere glatte Mannigfaltigkeit und $\Phi \colon M \to N$ glatt, so
 \begin{bem}
   Es bezeichne $\mathcal V(M)$ die Menge aller glatten Vektorfelder auf der Mannigfaltigkeit $M$. Der sogenannte \CmMark{Nullschnitt}:
   \begin{align*}
-    \sigma \colon M \to \T M, p \mapsto 0_p \in \T_pM
+    \sigma \colon M \to \T M && p \mapsto 0_p \in \T_pM
   \end{align*}
   ist ein glattes Vektorfeld auf $M$.
   
@@ -166,7 +166,7 @@ mit $\tilde \gamma = \phi \circ \gamma$ f"ur eine Karte $(\phi,U)$ um $p$ und $X
 \begin{bem}
   Eine Kurve $\gamma$ ist genau dann Integralkurve von $X$ durch $p$, wenn f"ur jede Karte $(\phi,U)$ die Kurve $\tilde \gamma = \phi \circ \gamma$ eine L"osung des (autonomen) Anfangswertproblems
   \begin{align*}
-    \dot{\tilde \gamma} = \xi(\gamma(t)),  \ \tilde \gamma(0) = \phi(p)
+    \dot{\tilde \gamma} = \xi(\gamma(t)) && \tilde \gamma(0) = \phi(p)
   \end{align*}
   ist, wobei $X|_U = \sum \xi^i \pdifffrac{}{x^i}$ gelte.
 
@@ -188,11 +188,12 @@ mit $\tilde \gamma = \phi \circ \gamma$ f"ur eine Karte $(\phi,U)$ um $p$ und $X
   \item F"ur alle $x \in V$ existiert eine $C^{k+1}$-L"osung $y_x\colon \calI_{\delta} \to V$, von $y_x'(t)=F(t,y(t))$ und $y_x(0) = x$.
   \item\label{satz-4-6-ii} Diese L"osung ist lokal eindeutig, das hei\ss t falls $\tilde y_x$ eine weitere L"osung auf $\calI_{\tilde\delta}$ ist, so gilt
     \begin{align*}
-      y_x(t) = \tilde y_x(t) \text{ f"ur alle } |t| \leq \min\{\delta, \tilde\delta\}.
+      y_x(t) = \tilde y_x(t)
     \end{align*}
+    (f"ur alle $|t| \leq \min\{\delta, \tilde\delta\}$)
   \item Die Abbildung 
     \begin{align*}
-      y\colon \calI_{\delta} \times V \to U, \ (t,x) \mapsto y_x(t)
+      y\colon \calI_{\delta} \times V \to U && (t,x) \mapsto y_x(t)
     \end{align*}
     ist $C^k$-differenzierbar.
   \end{enumerate}
@@ -214,7 +215,7 @@ Zum Beweis siehe Lang: "`Differential and Riemannian Manifolds"', 3. Auflage, 19
   Sind $\gamma_1 \colon \calJ_1 \to M, \ \gamma_2 \colon \calJ_2 \to M$ Integralkurven eines Vektorfeldes $X \in \mathcal V(M)$ durch $p$, dann gilt $0 \in \calJ_1 \cap \calJ_2$ und $\gamma_1(0)= p = \gamma_2(0)$.
   Nach Satz \ref{satz-4-6} \ref{satz-4-6-ii} gilt dann $\gamma_1(t) = \gamma_2(t)$ f"ur alle $t \in \calJ_1 \cap \calJ_2$. Damit ist
   \begin{align*}
-    \gamma \colon \calJ_1 \cap \calJ_2, \ t \mapsto 
+    \gamma \colon \calJ_1 \cap \calJ_2 && \ t \mapsto 
     \begin{cases}
       \gamma_1(t) & t \in \calJ_1\\
       \gamma_2(t) & t \in \calJ_2
@@ -227,7 +228,7 @@ Zum Beweis siehe Lang: "`Differential and Riemannian Manifolds"', 3. Auflage, 19
 \begin{dfn}
   F"ur $X \in \mathcal V(M)$ hei"st die, wie im vorigen Korollar definierte, Familie maximaler Integralkurven
   \begin{align*}
-    \gamma(t,p) = \gamma^t(p),\ t \in \calI_p
+    \gamma(t,p) = \gamma^t(p) \tag{$t \in \calI_p$}
   \end{align*}
   der \CmMark{Fluss} des Vektorfeldes $X$.
   Seinen Definitionsbereich notiert man mit:
@@ -270,7 +271,7 @@ Ist $X \in \mathcal V(M)$, $c$ Integralkurve von $X$ durch $p$, wenn $c(t) = X_{
 \end{align*}
 Flu"s von $X$, wobei
 \begin{align*}
-	\dot \gamma^t = X_{\gamma^t(p)}, \gamma^0 = \Id_M.
+	\dot \gamma^t = X_{\gamma^t(p)} && \gamma^0 = \Id_M.
 \end{align*}
 F"ur $f \in C^{\infty}$ gilt
 \begin{align*}
@@ -280,7 +281,7 @@ Aus der lokalen Eindeutigkeit folgt (f"ur kleine Zeiten)
 \begin{align*}
 	\gamma^{s-t} = \gamma^s \circ \gamma^t.
 \end{align*}
-F"ur alle $t$ ist $\gamma^t$ (lokalaer) Diffeomorphismus mit Inversen $\gamma^{-t}$.
+F"ur alle $t$ ist $\gamma^t$ (lokaler) Diffeomorphismus mit Inversen $\gamma^{-t}$.
 \end{bem}
 
 \begin{bew}
@@ -452,7 +453,7 @@ Es seinen $X,Y \in \mathcal V(M)$, $f \in \C^{\infty}(M)$ und $\gamma$ der Fluss
 Es ist zu zeigen: $[X,Y]_p(f) = \lim_{t \to \infty} \frac{1}{t}\left((\gamma_{*}^{-t}Y)_p(f)-Y_p(f)\right)$.
 Dazu sei (um $(0,p)$)
 \begin{align*}
-  h(t,q) = f(\gamma^{-t}(q))-f(q) \text{ und } g_t(q) = \int_0^1 h'(ts,q)ds.
+  h(t,q) = f(\gamma^{-t}(q))-f(q) \quad \text{und} \quad g_t(q) = \int_0^1 h'(ts,q)ds.
 \end{align*}
 Dann gilt:
 \begin{align*}

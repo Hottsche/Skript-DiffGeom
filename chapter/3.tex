@@ -13,7 +13,7 @@
 Es seien $M$ und $N$ glatte Mannigfaltigkeiten und $\Phi \colon M \to N$ eine glatte Abbildung.
 Sind $p \in M$ und $X_p \in \T_pM$ , so ist 
 \begin{align*}
-	\Phi_{*p}X_p \colon C^{\infty}(N) \to \R, f \mapsto X_p(\underbrace{f \circ \Phi}_{\in C^{\infty}(N)}).
+	\Phi_{*p}X_p \colon C^{\infty}(N) \to \R && f \mapsto X_p(\underbrace{f \circ \Phi}_{\in C^{\infty}(N)}).
 \end{align*}
 ein Tangentialvektor an $N$ in $\Phi(p)$:
 \begin{align*}
@@ -187,7 +187,9 @@ ein Tangentialvektor an $N$ in $\Phi(p)$:
 	\end{align*} 
 \item
 	Ist $q$ ein regul"arer Wert von $\Phi$, so existieren nach Satz \ref{satz-3-4} (i) Karten $\psi, \alpha$ mit 
-		\[ (\psi \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^n) \qquad m \geq n = r \]
+	\begin{align*}
+		(\psi \circ \Phi \circ \alpha^{-1})(x^1, \ldots, x^m) = (x^1, \ldots, x^n) \tag{$m  \geq n = r$}
+	\end{align*}
 	f"ur alle $x \in \alpha(U)$. Es gilt also f"ur alle $u \in U$:
 	\begin{align*}
 		\Rang \Phi_{*u} = \Rang \D(\psi \circ \Phi \circ \alpha^{-1})|_x = \Rang

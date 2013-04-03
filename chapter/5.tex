@@ -137,7 +137,7 @@ die Projektion $\pi' \colon \Phi^{\ast}E \to M, (p,x) \mapsto p$ und die folgend
 Es sei $p \in M$ und $(\tau, U)$ eine B"undelkarte von $E$ um $\Phi(p)$, sowie $(\phi,V)$ eine Karte von $M$ um $p$ mit $\Phi(V) \subseteq U$.
 Dann definiert 
 \begin{align*}
-  \Phi^{\ast}E|_V \to V \times \R^k, (p,x) \mapsto \left(p, \tau_{\Phi(p)}(x)\right)
+  \Phi^{\ast}E|_V \to V \times \R^k && (p,x) \mapsto \left(p, \tau_{\Phi(p)}(x)\right)
 \end{align*}
 eine B"undelkarte.
 
@@ -253,15 +253,19 @@ Das \CmMark[Tensor!-produkt]{Tensorprodukt} $E \otimes E'$ von $E$ und $E'$ ist 
 das hei"st dass $\sigma = (\pi, \tau_p \otimes \tau'_p)$ ist.
 Wie in Kapitel 4 zeigt man dass $E \otimes E'$ ein B"undel ist.
 Alternativ l"asst sich $E \otimes E'$ mit Satz \ref{satz-5-2} durch die "Ubergangsfunktion definieren:
-	\[\begin{array}{ccc} E \otimes E' &=& \FakRaum{\dot \bigcup \ U_{\alpha} \X (\R^k \otimes \R^l)}{\sim} \\
-		h_{\alpha\beta} &=& g_{\alpha\beta} \otimes g'_{\alpha\beta} \end{array}\]
+\begin{align*}
+	E \otimes E' &= \FakRaum{\dot \bigcup \ U_{\alpha} \X (\R^k \otimes \R^l)}{\sim} \\
+		h_{\alpha\beta} &= g_{\alpha\beta} \otimes g'_{\alpha\beta}
+\end{align*}
 Die Relation $\sim$ ist durch $h_{\alpha\beta}$ wie in Satz \ref{satz-5-2} definiert.
 Analog definiert man h"ohere Tensorprodukte $\bigotimes^pE$, die Tensoralgebra $\bigotimes E$ und "au"sere Produkte $\bigwedge^pE$ und $\Lambda E$.
 
 Das \CmMark{duale B{\"u}ndel} $E^*$ hat die Fasern $E_p^* = \Hom(E_p, \R)$ und lokale Trivialisierungen:
-	\[ \begin{array}{rcl} \sigma: E^*|_U &\to& U \X \R^k\\
-	v^* \in E^*_p: \; \sigma(v^*) &=& (p, v^* \circ \tau_p^{-1}) \\
-	&=& (p, (\tau_p^{-1})^*(v^*)) \end{array}\]
+\begin{align*}
+	\sigma: E^*|_U &\to U \X \R^k\\
+	v^* \in E^*_p: \; \sigma(v^*) &= (p, v^* \circ \tau_p^{-1}) \\
+	&= (p, (\tau_p^{-1})^*(v^*))
+\end{align*}
 Die "Ubergangsfunktionen von $E^*$ sind die transponierten Inversen der "Ubergangsfunktionen von $E$:
 	\[ h_{\alpha\beta} = (g_{\alpha\beta}^{-1})^* \]
 Das B"undel
@@ -469,26 +473,37 @@ Desweiteren sind (lokal) die $\left( \begin{smallmatrix} m \\ k\end{smallmatrix}
 %%% 11. Vorlesung <2012-11-20 Tue>
 %%% 
 
-Jede $k$-Form definiert eine schiefsymmetrische $C^{\infty}(M)$-multilineare Abbildung 
-	\[ \underbrace{\mathcal V(M) \X \cdots \X \mathcal V(M)}_{k\text{-mal}} \to C^{\infty}(M) \]
-	\[ \omega(X_1,\ldots,X_k) (p)= \sum_{\sigma}\sgn(\sigma)f_{i_1, \ldots, i_k}\dop x^{i_1}(X_{\sigma(i_1)}|_p)\dop x^{i_2}(X_{\sigma(i_2)}|_p) \cdots \]
+Jede $k$-Form definiert eine schiefsymmetrische $C^{\infty}(M)$-multilineare Abbildung
+\begin{align*}
+	\underbrace{\mathcal V(M) \X \cdots \X \mathcal V(M)}_{k\text{-mal}} \to C^{\infty}(M)
+\end{align*}
+\begin{align*}
+	\omega(X_1,\ldots,X_k) (p)= \sum_{\sigma}\sgn(\sigma)f_{i_1, \ldots, i_k}\dop x^{i_1}(X_{\sigma(i_1)}|_p)\dop x^{i_2}(X_{\sigma(i_2)}|_p) \cdots
+\end{align*}
 Analog zu Proposition \ref{prop-5-4} gilt, dass jede solche schiefe $C^{\infty}(M)$-multilineare Abbildung eine $k$-Form definiert. Insbesondere gilt f"ur
-	\[ \omega = \sum f_{i_1,\ldots, i_k}\dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k} \]
+\begin{align*}
+	\omega = \sum f_{i_1,\ldots, i_k}\dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k}
+\end{align*}
 dass
-	\[ \begin{array}{rl}\omega\overset{\textcolor{gray}{i_1 < \ldots < i_k}}{\left(\pdifffrac{}{x^{i_1}},\ldots, \pdifffrac{}{x^{i_k}}\right)} &= \sum\limits_{\sigma} \sgn(\sigma)f_{i_1,\ldots,i_k}\dop x^i\left(\pdifffrac{}{x^{i_{\sigma(1)}}}\right) \ldots \dop x^{i_k}\left(\pdifffrac{}{x^{i_{{\sigma(k)}}}}\right)\\
+\begin{align*}
+	\omega\overset{\textcolor{gray}{i_1 < \ldots < i_k}}{\left(\pdifffrac{}{x^{i_1}},\ldots, \pdifffrac{}{x^{i_k}}\right)} &= \sum\limits_{\sigma} \sgn(\sigma)f_{i_1,\ldots,i_k}\dop x^i\left(\pdifffrac{}{x^{i_{\sigma(1)}}}\right) \ldots \dop x^{i_k}\left(\pdifffrac{}{x^{i_{{\sigma(k)}}}}\right)\\
 		& = \sum\limits_\sigma \sgn(\sigma)f_{i_1, \ldots, i_k}\pdifffrac{x^{i_{1}}}{x^{j_{\sigma(1)}}} \ldots \pdifffrac{x^{i_k}}{x^{j_{\sigma(k)}}}\\
 		& = \sum\limits_{\sigma} \sgn(\sigma) f_{i_1, \ldots, i_k} \delta_{j_{\sigma(1)}}^{i_1} \ldots \delta_{j_{\sigma(k)}}^{i_k}\\
-		& = f_{j_1,\ldots,j_k}. \end{array} \]
+		& = f_{j_1,\ldots,j_k}.
+\end{align*}
 
 Sind $\omega \in \Omega^k(M)$ und $\eta \in \Omega^l(M)$, so definiert $\omega \wedge \eta$ (punktweise) eine $(k+l)$-Form auf $M$.
 Ist $\Phi \colon M \to N$ glatt und $\omega \in \Omega^k(N)$, so definiert $(\Phi^{*}\omega)(X_1,\ldots,X_k) = \omega(\Phi_{*}X_1,\ldots, \Phi_{*}X_k)$ (\quot{push forward}) eine $k$-Form auf $M$.
 F"ur $\eta \in \Omega^l(N)$ gilt $\Phi^{*}(\omega \wedge \eta) = \Phi^{*}\omega \wedge \Phi^{*}\eta$.
 
 Damit ist f"ur $\omega \in \Omega^k(M)$ und $X \in \mathcal V(M), \gamma $ der Fluss von $X$, die \CmMark{Lieableitung} von $\omega$ l"angs $X$ definiert:
-	\[ \mathcal L_X\omega = \difffrac[t=0]{}{t}(\gamma^{t*}\omega). \]
+\begin{align*}
+	\mathcal L_X\omega = \difffrac[t=0]{}{t}(\gamma^{t*}\omega).
+\end{align*}
 Es gilt 
-	\[ \mathcal L_X(\omega \wedge \eta) = (\mathcal L_X\omega) \wedge \eta + \omega \wedge (\mathcal L_X\eta). \]
-
+\begin{align*}
+	\mathcal L_X(\omega \wedge \eta) = (\mathcal L_X\omega) \wedge \eta + \omega \wedge (\mathcal L_X\eta).
+\end{align*}
 Die $0$-Formen sind die $C^{\infty}$-Funktionen auf $M$, $\Omega^0(M) = C^{\infty}(M)$. Die $1$-Formen sind genau die Schnitte des Kotangentialb"undels von $M$.
 
 F"ur eine $C^{\infty}$-Funktion $f$ auf $M$ definiert $\dop f$ eine $1$-Form auf $M$ durch $\dop f (X) = X(f)$.
@@ -496,7 +511,9 @@ In lokalen Koordinaten gilt damit $\dop f = \sum_ig_i\dop x^i$ mit $g_i = \dop f
 
 Die $\R$-lineare Abbildung $\dop \colon \Omega^0(M) \to \Omega^1(M)$ soll f"ur beliebige Formen definiert werden.
 In lokalen Koordinaten definiert man f"ur $\omega \in \Omega^k(M)$, $\omega = f \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k}$ durch Lineare Fortsetzung
-	\[ \dop \omega = \dop f \wedge \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k}. \]
+\begin{align*}
+	\dop \omega = \dop f \wedge \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k}.
+\end{align*}
 Es bleibt zu zeigen, dass diese Definition unabh"angig von der Wahl der Karte ist. Man geht dabei entweder vor wie im Beispiel vor Definition \ref{def-5-5} beschrieben oder verwendet den folgenden Satz.
 
 \begin{Satz}
@@ -523,15 +540,15 @@ Nebenrechnung (beziehungsweise "Uberlegung):
 	\[ [fX, Y] = f[X,Y] - Y(f)X \]
 Damit folgt weiter:
 \begin{align*}
-  \eta(X_0,\ldots,fX_l,\ldots, X_k) = & f \eta(X_0,\ldots, X_k) \\
+  \eta(X_0,\ldots,fX_l,\ldots, X_k) ={} & f \eta(X_0,\ldots, X_k) \\
 & + \sum_{i\neq l} (-1)^i X_i(f)\omega(X_0, \ldots \hat X_i, \ldots, X_k)\\
 & - \sum_{l<j}(-1)^{l+j}X_j(f) \omega(X_l, X_0, \ldots, \hat X_l, \ldots, \hat X_j, \ldots, X_k)\\
 & + \sum_{i<l}(-1)^{i+l}X_i(f) \omega(X_l, X_0, \ldots, \hat X_i, \ldots, \hat X_l, \ldots, X_k)\\
-= & f \eta(X_0,\ldots, X_k) \\
+={} & f \eta(X_0,\ldots, X_k) \\
 & + \sum_{i\neq l} (-1)^i X_i(f)\omega(X_0, \ldots \hat X_i, \ldots, X_k)\\
 & - \sum_{l<j}(-1)^{j}X_j(f) \omega(X_0, \ldots, X_l, \ldots, \hat X_j, \ldots, X_k)\\
 & - \sum_{i<l}(-1)^{i}X_i(f) \omega(X_0, \ldots, \hat X_i, \ldots, X_l, \ldots, X_k)\\
-= & f \eta(X_0,\ldots, X_k).
+={} & f \eta(X_0,\ldots, X_k).
 \end{align*}
 Somit ist $\eta$ $C^{\infty}$-linear, das hei"st definiert eine $(k+1)$-Form auf $M$.
 Im Folgenden kann man also annehmen:
@@ -603,11 +620,11 @@ Es gilt
 \item
 	$\omega = f\dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k}$, $\eta = g \dop x^{j_1} \wedge \cdots \wedge \dop x^{j_l}$. Dann gilt:
 	\begin{align*}
-		\omega \wedge \eta =& fg \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k} \wedge \dop x^{j_1} \wedge \cdots \wedge \dop x^{j_l}.\\
-		\dop (\omega \wedge \eta) =& (g \dop f + f \dop g) \wedge \dop x^{i_1} \wedge \cdots \wedge \dop x^{j_l}\\
-		= & g \dop f \wedge \dop x^{i_1} \wedge \cdots \wedge \dop x^{j_l}\\
+		\omega \wedge \eta ={}& fg \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k} \wedge \dop x^{j_1} \wedge \cdots \wedge \dop x^{j_l}.\\
+		\dop (\omega \wedge \eta) ={}& (g \dop f + f \dop g) \wedge \dop x^{i_1} \wedge \cdots \wedge \dop x^{j_l}\\
+		={} & g \dop f \wedge \dop x^{i_1} \wedge \cdots \wedge \dop x^{j_l}\\
 		& + (-1)^k(f \dop x^{i_1} \wedge \cdots \wedge \dop x^{i_k}) \wedge \dop g \wedge \dop x^{j_1} \wedge \cdots \wedge \dop x^{j_l}\\
-		= & \dop \omega \wedge \eta + (-1)^k \wedge \dop \eta.
+		={} & \dop \omega \wedge \eta + (-1)^k \wedge \dop \eta.
 	\end{align*}
 \item
 	$\omega = f \dop x^{i_1} \wedge \ldots  \wedge \dop x^{i_k}$, $\dop \omega := \dop f \wedge \dop x^{i_1} \wedge \ldots \wedge \dop x^{i_k}$
@@ -662,7 +679,9 @@ insbesondere gilt $\Id_M^* = \Id_{H_{\dR}^k}$ und ein Diffeomorphismus $M \to N$
   \item $H_{\dR}^1(\R^2 \setminus \{0\}) \ne \{0\}$
     
     Die Form $\omega(x,y) = \frac{1}{x^2+y^2} (x \dop y - y \dop x)$ ist geschlossen. W"are $\omega$ exakt, so g"abe es $h \in C^{\infty}(\R^2 \setminus \{0\})$ mit $\dop h = \omega$, das hei"st
-    \[ \pdifffrac{h}{x}(x,y) = \frac{-y}{x^2+y^2},\quad \pdifffrac{h}{y}(x,y) = \frac{x}{x^2+y^2} \]
+    \begin{align*}
+	    	\pdifffrac{h}{x}(x,y) = \frac{-y}{x^2+y^2} && \pdifffrac{h}{y}(x,y) = \frac{x}{x^2+y^2}
+	\end{align*}
     Dann w"are
     \begin{align*}
       0 = h(1,0) - h(1,0) &= \int_{0}^{2\pi} \difffrac{}{t} h(\cos t, \sin t) \dop t\\

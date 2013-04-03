@@ -70,7 +70,7 @@ Die Kurven hei"sen \CmMark{"aquivalent}, wenn es eine Karte $(\phi,U)$ von $M$ u
 \begin{bem}
   Mit den Bezeichnungen wie oben ist die folgende Abbildung bijektiv:
   \begin{align*}
-    A \colon \T_p^{\text{geo}}M \to \R^n, [c] \mapsto \difffrac[t=0]{}{t}(\phi \circ c).
+    A \colon \T_p^{\text{geo}}M \to \R^n && [c] \mapsto \difffrac[t=0]{}{t}(\phi \circ c).
   \end{align*}
 \end{bem}
 
@@ -181,9 +181,8 @@ Diese erf"ullt die Leibniz-Regel:
 
 
 \begin{bew}
-  Man kann o.E. annehmen, dass $U$ Kartengebiet einer Karte $\phi$ von $M$ um $p$ ist und $\phi(p) = 0 \in \R^n$.\\
-
-  Es sei $\epsilon > 0$ so, dass $\overline B_\epsilon(0) \subset \phi(U)$. \\
+  Man kann ohne Einschr"ankung annehmen, dass $U$ das Kartengebiet einer Karte $\phi$ von $M$ um $p$ ist und $\phi(p) = 0 \in \R^n$.
+  Es sei nun $\epsilon > 0$ so, dass $\overline B_\epsilon(0) \subset \phi(U)$ gilt.
 
   %%% 
   %%% Abbildung 2-4
@@ -308,7 +307,7 @@ Es gilt:
 \end{bew}
 
 \begin{bem}
-  \begin{enumerate}[label=\arabic*),leftmargin=*]
+  \begin{enumerate}[label=\arabic*)]
   \item Ist $X_p = \sum \xi^i\pdifffrac[p]{}{x^i}$, so gilt $X_p = \dot c(0)$ f"ur $c(t) = \phi^{-1}(\phi(p) + t\xi)$.
 \item F"ur jede glatte Kurve $c$ durch $p$ ist $\difffrac[t=0]{}{t}(\phi \circ c)$ der Koeffizientenvektor von $\dot c(0)$ in der Basis $\pdifffrac[p]{}{x^i}$.
   \end{enumerate}
@@ -323,7 +322,7 @@ Es gilt:
   \end{align*}
 Es sei $X_p = \sum \xi^i \pdifffrac[p]{}{x^i} = \sum \eta^i\pdifffrac[p]{}{y^i}$. Dann gilt:
 \begin{align*}
-  \eta^j = \sum \partial_i(\psi^j \circ \phi^{-1})(\phi(p))\xi^i \text{ bzw. }
+  \eta^j = \sum \partial_i(\psi^j \circ \phi^{-1})(\phi(p))\xi^i \quad \text{ bzw. } \quad
   \eta = \D(\psi \circ \phi^{-1})(\phi(p))\xi.
 \end{align*}
 \end{Satz}
