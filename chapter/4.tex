@@ -421,16 +421,16 @@ Nun seien $X,Y \in \mathcal V(M)$.
 Im Allgemeinen liegen $Y_{\gamma^t(p)}$ und $Y_p$ in unterschiedlichen Tangentialr"aumen.
 Da aber $\gamma^t$ (f"ur kleine Zeiten) ein (lokaler) Diffeomorphismus ist, gilt
 \begin{align*}
-  \gamma_{*}^{-t}(Y_{\gamma^t(p)})-(\gamma_{*}^{-t}Y)_p \in \T_pM.
+  \gamma_{*\gamma^t(p)}^{-t}(Y_{\gamma^t(p)})=(\gamma_{*}^{-t}Y)_p \in \T_pM.
 \end{align*}
-Die Differenz $(\gamma_{*}^{-t}Y)_p - Y_p$ ist also wohldefiniert. 
+Die Differenz $(\gamma_{*\gamma^t(p)}^{-t}Y)_p - Y_p$ ist also wohldefiniert. 
 %\end{Bem}
 
 \begin{Dfn}
   Es seien $X,Y \in \mathcal V(M)$ und $\gamma$ der Fluss von $X$.
 Das durch 
 \begin{align*}
-  p \mapsto \lim_{t\to 0}\frac{1}t\left(\left(\gamma_{*}^{-t}Y\right)_p-Y_p\right)
+  p \mapsto \lim_{t\to 0}\frac{1}t\left(\left(\gamma_{*\gamma^t(p)}^{-t}Y\right)_p-Y_p\right)
 \end{align*}
 definierte glatte Vektorfeld hei"st \CmMark{Lieableitung} von $Y$ l"angs $X$. Man schreibt $\mathcal L_XY$.
 \end{Dfn}
