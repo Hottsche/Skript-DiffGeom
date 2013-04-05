@@ -167,11 +167,11 @@ Faserweise gilt
 Es seien $V$ und $W$ $K$-Vektorr"aume. Das \CmMark[Tensor!-produkt]{Tensorprodukt} $V \otimes W$ ist der von den Elementen $v \otimes w$ mit $v \in V$, $w \in W$, $\lambda \in K$ und den Relationen
 \begin{enumerate}[label=(\roman*),widest=iii]
 \item
-	$(v + v') \otimes w = v \otimes w + v' \otimes w$
+	$(v + v') \otimes w := v \otimes w + v' \otimes w$
 \item
-	$v \otimes (w + w') = v \otimes w + v' \times w'$
+	$v \otimes (w + w') := v \otimes w + v' \times w'$
 \item
-	$(\lambda v) \otimes w = \lambda (v \otimes w) = v \otimes (\lambda w)$
+	$(\lambda v) \otimes w := \lambda (v \otimes w) = v \otimes (\lambda w)$
 \end{enumerate} erzeugte Vektorraum.
 
 \begin{emptythm}[Eigenschaften:]
@@ -199,7 +199,7 @@ Diese Eigenschaft bestimmt $(V \otimes W, b)$ eindeutig bis auf Isomorphie.
 Das Bilden von Tensorprodukten ist bis auf Isomorphie assoziativ. Man schreibt daher
 	\[ \bigotimes^p V = \underbrace{V \otimes \cdots \otimes V}_{p\text{-mal}} \]
 Setzt man $\bigotimes^0 V = K$, so wird $\bigotimes V = \bigoplus_{p=0}^{\infty} \bigotimes^p V$ mit dem durch die Zuordnungen
-	\[ (v_1 \otimes \cdots \otimes v_{p+1} \otimes \cdots \otimes v_{p+q}) \mapsto v_1 \otimes \ldots \otimes v_{p+q} \in \bigotimes^{p+q} V \]
+	\bigotimes^p V \times \bigotimes^q V\ni\[ (v_1 \otimes \cdots \otimes v_p, v_{p+1} \otimes \cdots \otimes v_{p+q}) \mapsto v_1 \otimes \ldots \otimes v_{p+q} \in \bigotimes^{p+q} V \]
 induzierten Produkt zu einer graduierten Algebra.
 
 Das $p$-fach \CmMark[Produkt!{\"a}u{\ss}eres]{"au"sere Produkt} $\bigwedge^pV$ ist der von den Elementen $v_1 \wedge \cdots \wedge v_p$, $v_i \in V$ und den Relationen \begin{enumerate}[label=(\roman*),widest=iii]
