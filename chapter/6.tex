@@ -60,7 +60,7 @@ Ist $(M,g)$ eine Riemannsche Mannigfaltigkeit, $X, Y \in \calV(M)$, $X = \sum \x
 
 \begin{bsp}
   \begin{enumerate}[label=(\arabic*),leftmargin=*]
-  \item $\R^m$ tr"agt eine nat"urliche Riemannsche Metrik: F"ur $x \in \R^m$ ist $\calI_x: \T_x\R^m \to \R^n$ ein (nat"urlicher) Isomorphismus.
+  \item $\R^m$ tr"agt eine nat"urliche Riemannsche Metrik: F"ur $x \in \R^m$ ist $\calI_x: \T_x\R^m \to \R^m$ ein (nat"urlicher) Isomorphismus.
     Damit definiert
     \[ g_x(\cdot,\cdot) = \langle \calI_x(\cdot,\cdot), \calI_x(\cdot,\cdot) \rangle \]
     eine Riemannsche Metrik auf $\R^m$. Bez"uglich der Karte $(\Id, \R^m)$ gilt
@@ -132,8 +132,8 @@ Eine Riemannsche Metrik induziert eine Metrik auf dem Kotangentialb"undel: Die I
 F"ur $\omega \in \T_p^*M$ sei $X(\omega) \in \T_pM$ mit $\omega = \langle X(\omega), \cdot \rangle_p$.
 Man definiert nun durch
 \[ \langle \omega, \tilde \omega \rangle = \langle X(\omega), X(\tilde \omega) \rangle \]
-ein Skalarprodukt auf $\T_p^*M$. F"ur $\omega = \sum \omega_i \dop x^{i}$, $X(\omega) = \xi^{i} \pdifffrac{}{x^{i}}$ gilt
-\[ \omega_i = \omega \left( \pdifffrac{}{x^{i}} \right) = \left\langle X(\omega), \pdifffrac{}{x^{i}} \right\rangle = \sum_j \xi^{i} g_{ij} \]
+ein Skalarprodukt auf $\T_p^*M$. F"ur $\omega = \sum_i\omega_i \dop x^{i}$, $X(\omega) = \sum_i\xi^{i} \pdifffrac{}{x^{i}}$ gilt
+\[ \omega_i = \omega \left( \pdifffrac{}{x^{i}} \right) = \left\langle X(\omega), \pdifffrac{}{x^{i}} \right\rangle = \sum_j \xi^{j} g_{ji} \]
 Also $\xi^{i} = \sum g^{ij} \omega_i$, wobei $(g^{ij})$ die zu $(g_{ij})$ inverse Matrix ist.
 Damit gilt:
 \begin{align*}
